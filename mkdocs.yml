@@ -1,0 +1,71 @@
+site_name: GNU Toolchain for ARC User Manual — 2023.09
+repo_url: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain
+repo_name: GNU ARC Toolchain
+copyright: Copyright &copy; 2016 - 2023 Synopsys
+theme:
+  name: material
+  highlightjs: true
+  locale: en
+  logo: assets/logo.png
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    primary: deep purple
+  features:
+    - navigation.tabs
+    - navigation.path
+    - toc.integrate
+    - navigation.sections
+    - navigation.indexes
+plugins:
+  - table-reader
+  - search
+  - autorefs
+markdown_extensions:
+  - admonition
+  - footnotes
+  - tables
+  - attr_list
+  - def_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+nav:
+  - Home:
+    - index.md
+    - general/processors.md
+    - general/toolchains.md
+    - general/target-options.md
+  - Simulators:
+    - simulators/qemu.md
+    - simulators/nsim.md
+  - Baremetal:
+    - Simulators:
+      - Debugging on nSIM: baremetal/simulators/nsim.md
+      - Debugging on QEMU: baremetal/simulators/qemu.md
+    - Hardware:
+      - baremetal/hardware/memory.md
+      - baremetal/hardware/debugging.md
+  - Linux: https://github.com/foss-for-synopsys-dwc-arc-processors/linux/wiki
+  - Development platforms: https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home
+  - Tests: empty.md
+  - Eclipse IDE:
+    - eclipse/index.md
+    - Installation:
+      - Installing on Windows: eclipse/installation/windows.md
+      - Installing on Linux: eclipse/installation/linux.md
+      - Manual installation: eclipse/installation/manual.md
+  - Advanced Topics:
+    - advanced/optimizations.md
+    - advanced/custom-instructions.md
+    - advanced/intrinsics.md
+    - advanced/apex-header.md
+    - advanced/sanitizers.md
+    - advanced/jli.md
+    - advanced/secure-shield.md
+    - advanced/small-data.md
+    - advanced/manual.md
