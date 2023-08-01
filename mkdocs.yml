@@ -27,6 +27,8 @@ markdown_extensions:
   - tables
   - attr_list
   - def_list
+  - toc:
+      permalink: true
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -45,27 +47,48 @@ nav:
     - simulators/nsim.md
   - Baremetal:
     - Simulators:
-      - Debugging on nSIM: baremetal/simulators/nsim.md
-      - Debugging on QEMU: baremetal/simulators/qemu.md
+      - baremetal/simulators/nsim.md
+      - baremetal/simulators/qemu.md
     - Hardware:
       - baremetal/hardware/memory.md
       - baremetal/hardware/debugging.md
+    - General Topics:
+      - baremetal/general/heap-and-stack.md
+      - baremetal/general/specs.md
   - Linux: https://github.com/foss-for-synopsys-dwc-arc-processors/linux/wiki
-  - Development platforms: https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home
-  - Tests: empty.md
+  - Development platforms:
+    - platforms/index.md
+    - Using Boards:
+      - platforms/build-openocd.md
+      - platforms/use-openocd.md
+      - Resetting Boards: platforms/reset.md
+    - Boards Documentation:
+      - ARC HS Development Kit 4xD: https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-hs4xhs4xd-development-kit-1
+      - ARC HS Development Kit: https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-hs-development-kit-1
+      - ARC EM SDP: https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-em-software-development-platform-sdp-1
+      - ARC IoT Development Kit: https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-iot-development-kit-1
+      - ARC EM Starter Kit: https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-em-starter-kit-1
+      - ARC AXS 103 SDP: https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-axs103-software-development-platform-1
+      - ARC AXS 101 SDP: https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-axs101-software-development-platform-1
   - Eclipse IDE:
     - eclipse/index.md
     - Installation:
       - Installing on Windows: eclipse/installation/windows.md
       - Installing on Linux: eclipse/installation/linux.md
       - Manual installation: eclipse/installation/manual.md
-  - Advanced Topics:
+  - Advanced topics:
     - advanced/optimizations.md
     - advanced/custom-instructions.md
-    - advanced/intrinsics.md
     - advanced/apex-header.md
+    - advanced/intrinsics.md
     - advanced/sanitizers.md
     - advanced/jli.md
     - advanced/secure-shield.md
     - advanced/small-data.md
-    - advanced/manual.md
+    - advanced/64-bit-operations.md
+  - Testing:
+    - testing/newlib.md
+    - testing/glibc.md
+    - testing/gcc.md
+    - testing/qemu.md
+  - FAQ: faq.md

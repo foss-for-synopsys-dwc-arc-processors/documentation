@@ -1,5 +1,10 @@
 # QEMU
 
+## Running Applications
+
+* [Building Baremetal Applications and Debugging on QEMU](../baremetal/simulators/qemu.md)
+* [Building Linux and Running on QEMU](https://github.com/foss-for-synopsys-dwc-arc-processors/linux/wiki/Running-Linux-on-QEMU)
+
 ## Building QEMU
 
 !!! info "Additional packages and plugins"
@@ -83,12 +88,6 @@ export QEMU_HOME="/tools/qemu"
 export PATH="${QEMU_HOME}/bin:$PATH"
 ```
 
-## Running Applications
-
-!!! warning
-
-    Place links to pages here.
-
 ## Enhanced Logging
 
 To enable logging, it is necessary to provide the enabled log levels with the `-d` flag. Some of the more relevant ones are:
@@ -138,24 +137,3 @@ Pretty-print the binary trace file (override `<pid>` with QEMU process id for yo
 ```
 $ <QEMU-source-tree-path>/scripts/simpletrace.py <QEMU-source-tree-path>/target/arc/trace-events trace-<pid>
 ```
-
-## Running TCG Tests
-
-TCG is the internal language that powers QEMU. There are some assembly tests that validate the
-basic function of several instructions in QEMU.
-
-Firstly, make sure that QEMU if configured with `--cross-cc-arc=arc-elf32-gcc` and `--cross-cc-arc64=arc64-elf-gcc` options.
-Then after building QEMU use these commands to run TCG tests:
-
-```shell
-make clean-tcg
-make build-tcg
-make check-tcg
-```
-
-## Useful Resources
-
-* <https://github.com/foss-for-synopsys-dwc-arc-processors/qemu/wiki/Building-QEMU-for-ARC>
-* <https://github.com/foss-for-synopsys-dwc-arc-processors/qemu/wiki/QEMU-and-Zephyr>
-* <https://github.com/foss-for-synopsys-dwc-arc-processors/qemu/wiki/QEMU-traces>
-* <https://github.com/foss-for-synopsys-dwc-arc-processors/qemu/wiki/Tips-and-Tricks-for-Troubleshooting>

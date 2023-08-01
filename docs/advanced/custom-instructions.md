@@ -149,3 +149,135 @@ Disassembly of section `.text`:
    8:   392f 407f               insn3   r1
    c:   396f 403f               insn4
 ```
+
+## Support in GCC
+
+### Using Inline Functions
+
+Define a macro for a two-operand custom instruction:
+
+```c
+#define intrinsic_2OP(NAME, MOP, SOP)       \
+    ".extInstruction " NAME "," #MOP ","    \
+    #SOP ",SUFFIX_NONE, SYNTAX_2OP\n\t"
+```
+
+Instantiate the custom instruction:
+
+```c
+__asm__ (intrinsic_2OP ("chk_pkt", 0x07, 0x01));
+```
+
+Create an inline function:
+
+```c
+__extension__ static __inline int32_t __attribute__ ((__always_inline__))
+__chk_pkt (int32_t __a)
+{
+  int32_t __dst;
+  __asm__ ("chk_pkt %0, %1\n\t"
+             : "=r" (__dst)
+             : "rCal" (__a));
+  return __dst;
+}
+```
+
+Here is a full example:
+
+```c
+#include <stdint.h>
+
+#define intrinsic_2OP(NAME, MOP, SOP)       \
+    ".extInstruction " NAME "," #MOP ","    \
+    #SOP ",SUFFIX_NONE, SYNTAX_2OP\n\t"
+
+__asm__ (intrinsic_2OP ("chk_pkt", 0x07, 0x01));
+
+__extension__ static __inline int32_t __attribute__ ((__always_inline__))
+__chk_pkt (int32_t __a)
+{
+    int32_t __dst;
+    __asm__ ("chk_pkt %0, %1\n\t"
+                : "=r" (__dst)
+                : "rCal" (__a));
+    return __dst;
+}
+
+int foo (void)
+{
+    return __chk_pkt (10);
+}
+```
+
+Here is an assembler translation:
+
+```gas
+     .file   "t03.c"
+     .cpu HS
+     .extInstruction chk_pkt,0x07,0x01,SUFFIX_NONE, SYNTAX_2OP
+
+     .section        .text
+     .align 4
+     .global foo
+     .type   foo, @function
+foo:
+# 13 "t03.c" 1
+     chk_pkt r0, 10
+
+# 0 "" 2
+     j_s [blink]
+     .size   foo, .-foo
+     .ident  "GCC: (ARCompact/ARCv2 ISA elf32 toolchain arc-2016.09-rc1-2-gb04a7b5) 6.2.1 20160824"
+```
+
+### Using Defines Only
+
+Define a macro for a two-operand custom instruction in a header file:
+
+```c
+#define intrinsic_2OP(NAME, MOP, SOP)       \
+    ".extInstruction " NAME "," #MOP ","    \
+    #SOP ",SUFFIX_NONE, SYNTAX_2OP\n\t"
+```
+
+Create an inline function:
+
+```c
+__asm__ (intrinsic_2OP ("chk_pkt", 0x07, 0x01));
+```
+
+Define a macro for the custom instruction to be used in C sources:
+
+```gas
+#define chk_pkt(src) ({long __dst;                        \
+       __asm__ ("chk_pkt %0, %1\n\t"                      \
+              : "=r" (__dst)                              \
+              : "rCal" (src));                            \
+           __dst;})
+```
+
+Use the custom instruction in C-sources:
+
+```c
+result = chk_pkt(deltachk);
+```
+
+Here is a full content of the header file:
+
+```c
+#ifndef _EXT_INSTRUCTIONS_H_
+#define _EXT_INSTRUCTIONS_H_
+
+#define intrinsic_2OP(NAME, MOP, SOP)                                        \
+    ".extInstruction " NAME "," #MOP "," #SOP ",SUFFIX_NONE, SYNTAX_2OP\n\t"
+
+__asm__ (intrinsic_2OP ("chk_pkt", 0x07, 0x01));
+
+#define chk_pkt(src) ({long __dst;                   \
+        __asm__ ("chk_pkt %0, %1\n\t"                \
+          : "=r" (__dst)                             \
+          : "rCal" (src));                           \
+         __dst;})
+
+#endif /* _EXT_INSTRUCTIONS_H_ */
+```

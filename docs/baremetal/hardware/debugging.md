@@ -1,8 +1,8 @@
-# Debugging on Development Platforms
+# Building Applications and Debugging on Development Platforms
 
 ## Getting Started with OpenOCD
 
-Follow a [corresponding manual](OpenOCD-Getting-Started-Manual) to obtain and configure OpenOCD.
+Follow a [corresponding manual](../../platforms/openocd.md) to obtain and configure OpenOCD.
 
 ## Connecting Using UART
 
@@ -24,8 +24,10 @@ Please refer to board's documentation for detailed information about how to setu
 
 ### Build Applications
 
-> ℹ️ Refer to [Development Platforms Table](#development-platforms-table) section for
-> for options for all available configurations of the board.
+!!! info
+
+    Refer to [Development Platforms Table](#development-platforms-table) section
+    for options for all available configurations of the board.
 
 Suppose, that EMSK 2.2/2.3 is used and EM7D core is selected.
 

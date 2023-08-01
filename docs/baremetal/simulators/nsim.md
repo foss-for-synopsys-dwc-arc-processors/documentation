@@ -1,4 +1,4 @@
-# Debugging Baremetal Applications Using nSIM
+# Building Applications and Debugging on nSIM
 
 ## Building and Debugging Applications
 

@@ -2,9 +2,8 @@
 
 ## Running Applications
 
-!!! warning
-
-    Place links to pages here.
+* [Building Baremetal Applications and Debugging on nSIM](../baremetal/simulators/nsim.md)
+* [Building Linux and Running on nSIM](https://github.com/foss-for-synopsys-dwc-arc-processors/linux/wiki/Building-Linux-for-a-Simulation-and-Running-on-nSIM)
 
 ## Profiling and nCAM
 

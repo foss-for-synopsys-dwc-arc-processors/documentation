@@ -1,4 +1,4 @@
-# Debugging Baremetal Applications Using QEMU
+# Building Applications and Debugging on QEMU
 
 ## Building and Debugging Applications
 
