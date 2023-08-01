@@ -1,5 +1,9 @@
 # Building and Installing OpenOCD
 
+!!! warning
+
+    This section is under construction.
+
 ## Important Notes
 
 1. This document uses term "Digilent HS" to refer to both HS1 and HS2 cables.
