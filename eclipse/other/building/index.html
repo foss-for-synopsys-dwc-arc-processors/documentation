@@ -9,24 +9,24 @@
       
       
       
-        <link rel="prev" href="../processors/">
+        <link rel="prev" href="../../installation/preferences/">
       
       
-        <link rel="next" href="../target-options/">
+        <link rel="next" href="../../../advanced/optimizations/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>Toolchains for ARC Processors - GNU Toolchain for ARC User Manual — 2023.09</title>
+        <title>Building the Eclipse Plugin - GNU Toolchain for ARC User Manual — 2023.09</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -42,7 +42,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#toolchains-for-arc-processors" class="md-skip">
+        <a href="#building-the-eclipse-plugin" class="md-skip">
           Skip to content
         </a>
       
@@ -81,9 +81,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="GNU Toolchain for ARC User Manual — 2023.09" class="md-header__button md-logo" aria-label="GNU Toolchain for ARC User Manual — 2023.09" data-md-component="logo">
+    <a href="../../.." title="GNU Toolchain for ARC User Manual — 2023.09" class="md-header__button md-logo" aria-label="GNU Toolchain for ARC User Manual — 2023.09" data-md-component="logo">
       
-  <img src="../../assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Toolchains for ARC Processors
+              Building the Eclipse Plugin
             
           </span>
         </div>
@@ -173,15 +173,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link md-tabs__link--active">
+      <a href="../../.." class="md-tabs__link">
         Home
       </a>
     </li>
@@ -197,7 +195,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../simulators/qemu/" class="md-tabs__link">
+      <a href="../../../simulators/qemu/" class="md-tabs__link">
         Simulators
       </a>
     </li>
@@ -218,7 +216,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../baremetal/simulators/nsim/" class="md-tabs__link">
+      <a href="../../../baremetal/simulators/nsim/" class="md-tabs__link">
         Baremetal
       </a>
     </li>
@@ -248,7 +246,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../platforms/" class="md-tabs__link">
+      <a href="../../../platforms/" class="md-tabs__link">
         Development platforms
       </a>
     </li>
@@ -258,13 +256,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../eclipse/" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Eclipse IDE
       </a>
     </li>
@@ -280,7 +280,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../advanced/optimizations/" class="md-tabs__link">
+      <a href="../../../advanced/optimizations/" class="md-tabs__link">
         Advanced topics
       </a>
     </li>
@@ -296,7 +296,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../testing/newlib/" class="md-tabs__link">
+      <a href="../../../testing/newlib/" class="md-tabs__link">
         Testing
       </a>
     </li>
@@ -309,7 +309,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../faq/" class="md-tabs__link">
+    <a href="../../../faq/" class="md-tabs__link">
       FAQ
     </a>
   </li>
@@ -338,9 +338,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="GNU Toolchain for ARC User Manual — 2023.09" class="md-nav__button md-logo" aria-label="GNU Toolchain for ARC User Manual — 2023.09" data-md-component="logo">
+    <a href="../../.." title="GNU Toolchain for ARC User Manual — 2023.09" class="md-nav__button md-logo" aria-label="GNU Toolchain for ARC User Manual — 2023.09" data-md-component="logo">
       
-  <img src="../../assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     GNU Toolchain for ARC User Manual — 2023.09
@@ -366,16 +366,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
       
       
         
@@ -394,7 +392,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../..">Home</a>
+          <a href="../../..">Home</a>
           
             <label for="__nav_1">
               <span class="md-nav__icon md-icon"></span>
@@ -402,7 +400,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_1">
           <span class="md-nav__icon md-icon"></span>
           Home
@@ -417,7 +415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../processors/" class="md-nav__link">
+      <a href="../../../general/processors/" class="md-nav__link">
         Synopsys ARC Processors
       </a>
     </li>
@@ -429,66 +427,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Toolchains for ARC Processors
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../general/toolchains/" class="md-nav__link">
         Toolchains for ARC Processors
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#toolchains-for-baremetal-targets" class="md-nav__link">
-    Toolchains for Baremetal Targets
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#toolchains-for-linux-targets" class="md-nav__link">
-    Toolchains for Linux Targets
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-get-the-toolchain" class="md-nav__link">
-    How to Get The Toolchain
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -500,7 +443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../target-options/" class="md-nav__link">
+      <a href="../../../general/target-options/" class="md-nav__link">
         Target Specific Options
       </a>
     </li>
@@ -555,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../simulators/qemu/" class="md-nav__link">
+      <a href="../../../simulators/qemu/" class="md-nav__link">
         QEMU
       </a>
     </li>
@@ -569,7 +512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../simulators/nsim/" class="md-nav__link">
+      <a href="../../../simulators/nsim/" class="md-nav__link">
         nSIM
       </a>
     </li>
@@ -661,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../baremetal/simulators/nsim/" class="md-nav__link">
+      <a href="../../../baremetal/simulators/nsim/" class="md-nav__link">
         Building Applications and Debugging on nSIM
       </a>
     </li>
@@ -675,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../baremetal/simulators/qemu/" class="md-nav__link">
+      <a href="../../../baremetal/simulators/qemu/" class="md-nav__link">
         Building Applications and Debugging on QEMU
       </a>
     </li>
@@ -731,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../baremetal/hardware/memory/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/memory/" class="md-nav__link">
         Memory Maps and Linker Scripts
       </a>
     </li>
@@ -745,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../baremetal/hardware/debugging/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/debugging/" class="md-nav__link">
         Building Applications and Debugging on Development Platforms
       </a>
     </li>
@@ -803,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../baremetal/general/heap-and-stack/" class="md-nav__link">
+      <a href="../../../baremetal/general/heap-and-stack/" class="md-nav__link">
         Heap and Stack Size
       </a>
     </li>
@@ -817,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../baremetal/general/tcf/" class="md-nav__link">
+      <a href="../../../baremetal/general/tcf/" class="md-nav__link">
         Using TCF
       </a>
     </li>
@@ -831,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../baremetal/general/specs/" class="md-nav__link">
+      <a href="../../../baremetal/general/specs/" class="md-nav__link">
         Specs Files
       </a>
     </li>
@@ -897,7 +840,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../platforms/">Development platforms</a>
+          <a href="../../../platforms/">Development platforms</a>
           
             <label for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
@@ -961,7 +904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platforms/get-openocd/" class="md-nav__link">
+      <a href="../../../platforms/get-openocd/" class="md-nav__link">
         Getting OpenOCD
       </a>
     </li>
@@ -975,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platforms/use-openocd/" class="md-nav__link">
+      <a href="../../../platforms/use-openocd/" class="md-nav__link">
         Using OpenOCD
       </a>
     </li>
@@ -989,7 +932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platforms/winusb/" class="md-nav__link">
+      <a href="../../../platforms/winusb/" class="md-nav__link">
         Installing WinUSB on Windows
       </a>
     </li>
@@ -1003,7 +946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platforms/digilent/" class="md-nav__link">
+      <a href="../../../platforms/digilent/" class="md-nav__link">
         Installing Digilent Adept
       </a>
     </li>
@@ -1017,7 +960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platforms/reset/" class="md-nav__link">
+      <a href="../../../platforms/reset/" class="md-nav__link">
         Resetting Boards
       </a>
     </li>
@@ -1194,14 +1137,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
       
       
         
@@ -1218,7 +1163,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../eclipse/">Eclipse IDE</a>
+          <a href="../../">Eclipse IDE</a>
           
             <label for="__nav_6">
               <span class="md-nav__icon md-icon"></span>
@@ -1226,7 +1171,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Eclipse IDE
@@ -1280,7 +1225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eclipse/installation/windows/" class="md-nav__link">
+      <a href="../../installation/windows/" class="md-nav__link">
         Installing on Windows
       </a>
     </li>
@@ -1294,7 +1239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eclipse/installation/linux/" class="md-nav__link">
+      <a href="../../installation/linux/" class="md-nav__link">
         Installing on Linux
       </a>
     </li>
@@ -1308,7 +1253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eclipse/installation/manual/" class="md-nav__link">
+      <a href="../../installation/manual/" class="md-nav__link">
         Manual Installation
       </a>
     </li>
@@ -1322,7 +1267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eclipse/installation/preferences/" class="md-nav__link">
+      <a href="../../installation/preferences/" class="md-nav__link">
         Plugin Preferences
       </a>
     </li>
@@ -1341,16 +1286,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" checked>
       
       
         
@@ -1363,7 +1310,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_6_3">
           <span class="md-nav__icon md-icon"></span>
           Other
@@ -1374,11 +1321,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../eclipse/other/building/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Building the Eclipse Plugin
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Building the Eclipse Plugin
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-an-environment" class="md-nav__link">
+    Preparing an Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-plugin" class="md-nav__link">
+    Building the Plugin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-plugin" class="md-nav__link">
+    Installing the Plugin
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1454,7 +1456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/optimizations/" class="md-nav__link">
+      <a href="../../../advanced/optimizations/" class="md-nav__link">
         Optimization Options
       </a>
     </li>
@@ -1468,7 +1470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/custom-instructions/" class="md-nav__link">
+      <a href="../../../advanced/custom-instructions/" class="md-nav__link">
         Custom instructions
       </a>
     </li>
@@ -1482,7 +1484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/apex-header/" class="md-nav__link">
+      <a href="../../../advanced/apex-header/" class="md-nav__link">
         Migrating APEX Header
       </a>
     </li>
@@ -1496,7 +1498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/intrinsics/" class="md-nav__link">
+      <a href="../../../advanced/intrinsics/" class="md-nav__link">
         Intrinsics
       </a>
     </li>
@@ -1510,7 +1512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/sanitizers/" class="md-nav__link">
+      <a href="../../../advanced/sanitizers/" class="md-nav__link">
         Sanitizers
       </a>
     </li>
@@ -1524,7 +1526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/jli/" class="md-nav__link">
+      <a href="../../../advanced/jli/" class="md-nav__link">
         JLI Instructions
       </a>
     </li>
@@ -1538,7 +1540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/secure-shield/" class="md-nav__link">
+      <a href="../../../advanced/secure-shield/" class="md-nav__link">
         SecureShield Programming
       </a>
     </li>
@@ -1552,7 +1554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/small-data/" class="md-nav__link">
+      <a href="../../../advanced/small-data/" class="md-nav__link">
         Small Data Sections
       </a>
     </li>
@@ -1566,7 +1568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/64-bit-operations/" class="md-nav__link">
+      <a href="../../../advanced/64-bit-operations/" class="md-nav__link">
         Impact of 64-bit Integral Operation on GCC Toolchain
       </a>
     </li>
@@ -1580,7 +1582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/bit-file-fpga/" class="md-nav__link">
+      <a href="../../../advanced/bit-file-fpga/" class="md-nav__link">
         Writing Bit-file into FPGA with Digilent HS Cable
       </a>
     </li>
@@ -1639,7 +1641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../testing/newlib/" class="md-nav__link">
+      <a href="../../../testing/newlib/" class="md-nav__link">
         Running Newlib Tests
       </a>
     </li>
@@ -1653,7 +1655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../testing/glibc/" class="md-nav__link">
+      <a href="../../../testing/glibc/" class="md-nav__link">
         Running Glibc Tests
       </a>
     </li>
@@ -1667,7 +1669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../testing/gcc/" class="md-nav__link">
+      <a href="../../../testing/gcc/" class="md-nav__link">
         Running GCC Tests
       </a>
     </li>
@@ -1681,7 +1683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../testing/qemu/" class="md-nav__link">
+      <a href="../../../testing/qemu/" class="md-nav__link">
         Running QEMU Tests
       </a>
     </li>
@@ -1703,7 +1705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/" class="md-nav__link">
+      <a href="../../../faq/" class="md-nav__link">
         FAQ
       </a>
     </li>
@@ -1728,97 +1730,65 @@
   
 
 
-<h1 id="toolchains-for-arc-processors">Toolchains for ARC Processors<a class="headerlink" href="#toolchains-for-arc-processors" title="Permanent link">&para;</a></h1>
-<h2 id="toolchains-for-baremetal-targets">Toolchains for Baremetal Targets<a class="headerlink" href="#toolchains-for-baremetal-targets" title="Permanent link">&para;</a></h2>
-<p>GNU toolchains for ARC processors consist of GCC, Binutils and GDB. <a href="https://sourceware.org/newlib/">Newlib</a> standard library is used for building baremetal applications. This table depicts which GCC driver should be used depending on ISA:</p>
-<table>
-<thead>
-<tr>
-<th>ISA</th>
-<th>Driver/Triplet</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ARCv1</td>
-<td><code>arc-elf32-gcc</code></td>
-</tr>
-<tr>
-<td>ARCv2</td>
-<td><code>arc-elf32-gcc</code></td>
-</tr>
-<tr>
-<td>ARCv3</td>
-<td><code>arc64-elf-gcc</code></td>
-</tr>
-</tbody>
-</table>
-<p>Note that binaries for both ARCv1 and ARCv2 may be built using a single <code>arc-elf32-gcc</code> driver. It means
-that there is a single toolchain for two ISAs.</p>
-<h2 id="toolchains-for-linux-targets">Toolchains for Linux Targets<a class="headerlink" href="#toolchains-for-linux-targets" title="Permanent link">&para;</a></h2>
-<p>There is a set of GNU toolchains for ARC processors which allow to build and debug
-applications for Linux. The Linux kernel itself for ARC processors may be built using
-both baremetal and Linux toolchains.</p>
-<p>Linux toolchains are presented for all ARC processor families except ARC EM and ARC 600.
-Two Linux standard libraries are currently supported: glibc and uClibc-ng.
-This table depicts which GCC driver should be used depending on CPU family:</p>
-<table>
-<thead>
-<tr>
-<th>Family</th>
-<th>Standard library</th>
-<th>Driver/Triplet</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ARC 700</td>
-<td>glibc</td>
-<td><code>arc-linux-gnu-gcc</code></td>
-</tr>
-<tr>
-<td>ARC 700</td>
-<td>uClibc-ng</td>
-<td><code>arc-linux-uclibc-gcc</code></td>
-</tr>
-<tr>
-<td>ARC HS3x/4x/4xD</td>
-<td>glibc</td>
-<td><code>arc-linux-gnu-gcc</code></td>
-</tr>
-<tr>
-<td>ARC HS3x/4x/4xD</td>
-<td>uClibc-ng</td>
-<td><code>arc-linux-uclibc-gcc</code></td>
-</tr>
-<tr>
-<td>ARC HS5x</td>
-<td>uClibc-ng</td>
-<td><code>arc32-linux-uclibc-gcc</code></td>
-</tr>
-<tr>
-<td>ARC HS6x</td>
-<td>glibc</td>
-<td><code>arc64-linux-gnu-gcc</code></td>
-</tr>
-</tbody>
-</table>
-<p>Note, that in case of Linux toolchains, <code>arc-linux-*</code> drivers for ARC 700 and ARC HS are
-different toolchains! For example, if you want to build applications for ARC 700 Linux targets,
-then you need to use a particular toolchain for ARC 700 and the same is applicable for ARC HS,
-though they have the same names.</p>
-<h2 id="how-to-get-the-toolchain">How to Get The Toolchain<a class="headerlink" href="#how-to-get-the-toolchain" title="Permanent link">&para;</a></h2>
-<p>There are several ways of getting the toolchain:</p>
-<ol>
-<li>Download the latest release of the prebuilt toolchain on <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases">the release page</a>
-   of main <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain">toolchain's repository</a>. Also, Eclipse IDE
-   is available for downloading which is shipped with some of toolchains and OpenOCD.</li>
-<li>You can build toolchains using Crosstool-NG build system. Follow instructions presented in
-   <code>README.md</code> of main <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain">toolchain's repository</a>
-   on GitHub.</li>
-<li>You can build some of toolchains using scripts from <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/arc-gnu-toolchain">arc-gnu-toolchain</a>
-   repository. These scripts are based on the <a href="https://github.com/riscv/riscv-gnu-toolchain">RISC-V scripts</a>.</li>
-</ol>
+<h1 id="building-the-eclipse-plugin">Building the Eclipse Plugin<a class="headerlink" href="#building-the-eclipse-plugin" title="Permanent link">&para;</a></h1>
+<h2 id="preparing-an-environment">Preparing an Environment<a class="headerlink" href="#preparing-an-environment" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>All builds and mirrors for Eclipse IDE itself may be found on
+<a href="https://www.eclipse.org/downloads/packages/release/2020-03/r/eclipse-ide-cc-developers-includes-incubating-components">release's page</a>.</p>
+</div>
+<p>We will assume that our build directory is <code>/build/eclipse</code>. All necessary
+tools, directories and prerequisite will be place there. Thus, go to this
+directory first:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>/build/eclipse
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/build/eclipse
+</span></code></pre></div>
+<p>Also create a directory for storing downloaded Maven packages:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>/build/eclipse/repository
+</span></code></pre></div>
+<p>Download and extract Maven:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>wget<span class="w"> </span>https://dlcdn.apache.org/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$<span class="w"> </span>tar<span class="w"> </span>-xf<span class="w"> </span>apache-maven-3.5.4-bin.tar.gz
+</span></code></pre></div>
+<p>Download and extract
+<a href="https://www.oracle.com/eg/java/technologies/javase/jdk11-archive-downloads.html">JDK 11</a>
+to <code>/build/eclipse/jdk-11.0.17</code>.</p>
+<p>Download and extract Eclipse 2020.03 with CDT for Linux:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>wget<span class="w"> </span>https://www.eclipse.org/downloads/download.php?file<span class="o">=</span>/technology/epp/downloads/release/2020-03/R/eclipse-cpp-2020-03-R-incubation-linux-gtk-x86_64.tar.gz
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$<span class="w"> </span>tar<span class="w"> </span>-xf<span class="w"> </span>eclipse-cpp-2020-03-R-incubation-linux-gtk-x86_64.tar.gz
+</span></code></pre></div>
+<p>Download and extract Eclipse 2020.03 with CDT for Windows:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>wget<span class="w"> </span>https://www.eclipse.org/downloads/download.php?file<span class="o">=</span>/technology/epp/downloads/release/2020-03/R/eclipse-cpp-2020-03-R-incubation-win32-x86_64.zip
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>tar<span class="w"> </span>-xf<span class="w"> </span>eclipse-cpp-2020-03-R-incubation-win32-x86_64.zip
+</span></code></pre></div>
+<p>Clone a plugin's repository:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/arc_gnu_eclipse
+</span></code></pre></div>
+<h2 id="building-the-plugin">Building the Plugin<a class="headerlink" href="#building-the-plugin" title="Permanent link">&para;</a></h2>
+<p>Use this commands:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/build/eclipse/jdk-11.0.17
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$PATH</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>$<span class="w"> </span>/build/eclipse/apache-maven-3.5.4/bin/mvn<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span>-Dmaven.repo.local<span class="o">=</span>/build/eclipse/repository<span class="w"> </span>clean<span class="w"> </span>install
+</span></code></pre></div>
+<p>After that an archive with the plugin will be saved here:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>arc_gnu_eclipse/repository/target/repository-2019.9.0-SNAPSHOT.zip
+</span></code></pre></div>
+<h2 id="installing-the-plugin">Installing the Plugin<a class="headerlink" href="#installing-the-plugin" title="Permanent link">&para;</a></h2>
+<p>You can install the plugin to Eclipse for Linux this way:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>unzip<span class="w"> </span>arc_gnu_eclipse/repository/target/repository-2019.9.0-SNAPSHOT.zip<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">      </span>-d<span class="w"> </span>eclipse-cpp-2020-03-R-incubation-linux-gtk-x86_64/dropins
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>$<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>eclipse-cpp-2020-03-R-incubation-linux-gtk-x86_64/dropins/artifacts.jar<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">      </span>eclipse-cpp-2020-03-R-incubation-linux-gtk-x86_64/dropins/content.jar
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;-Dosgi.instance.area.default=@user.home/ARC_GNU_IDE_Workspace&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>eclipse-cpp-2020-03-R-incubation-linux-gtk-x86_64/eclipse.ini
+</span></code></pre></div>
+<p>You can install the plugin to Eclipse for Windows this way:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>unzip<span class="w"> </span>arc_gnu_eclipse/repository/target/repository-2019.9.0-SNAPSHOT.zip<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">      </span>-d<span class="w"> </span>eclipse-cpp-2020-03-R-incubation-win32-x86_64/dropins
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>$<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>eclipse-cpp-2020-03-R-incubation-win32-x86_64/dropins/artifacts.jar<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">      </span>eclipse-cpp-2020-03-R-incubation-win32-x86_64/dropins/content.jar
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;-Dosgi.instance.area.default=@user.home/ARC_GNU_IDE_Workspace&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>eclipse-cpp-2020-03-R-incubation-win32-x86_64/eclipse.ini
+</span></code></pre></div>
 
 
 
@@ -1860,10 +1830,10 @@ though they have the same names.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.path", "toc.integrate", "navigation.sections", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.path", "toc.integrate", "navigation.sections", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   </body>
