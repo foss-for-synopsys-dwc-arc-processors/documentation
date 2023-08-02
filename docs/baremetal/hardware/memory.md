@@ -91,7 +91,7 @@ If you use `arcv2elfx` linker emulation, then linker searches for `memory.x` fil
 a custom memory map. It is searched in the current working directory and in directories listed via
 `-L` option.
 
-### An Example for EM Starter Kit
+### EM Starter Kit
 
 Here is an example of `memory.x` for EM11D core in EM Starter Kit v2.3:
 
@@ -138,7 +138,7 @@ main.c memory.x
 $ arc-elf32-gcc -mcpu=em4_dmips -Wl,-marcv2elfx main.c -o main.elf
 ```
 
-### An Example for HS Development Kit
+### HS Development Kit
 
 Here is an example of `memory.x` for HS Development Kit:
 
