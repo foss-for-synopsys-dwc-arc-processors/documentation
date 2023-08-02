@@ -1,4 +1,4 @@
-# Configuring Heap and Stack Size
+# Heap and Stack Size
 
 To change size of heap in baremetal applications the following option should be specified to the linker:
 `--defsym=__DEFAULT_HEAP_SIZE=${SIZE}`, where `${SIZE}` is desired heap size, in bytes. It also possible to use

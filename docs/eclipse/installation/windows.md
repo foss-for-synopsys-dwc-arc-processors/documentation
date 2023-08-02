@@ -16,4 +16,4 @@ executable is `C:\arc_gnu\eclipse\eclipse.exe`.
 By default, Eclipse IDE installer does not choose a big endian toolchain
 for installing. Select this toolchain manually on "Choose Components" stage:
 
-![Choosing big endian toolchain](big-endian.png)
+![Choosing big endian toolchain](images/big-endian.png)

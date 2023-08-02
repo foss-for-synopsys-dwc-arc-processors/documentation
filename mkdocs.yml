@@ -54,14 +54,17 @@ nav:
       - baremetal/hardware/debugging.md
     - General Topics:
       - baremetal/general/heap-and-stack.md
+      - baremetal/general/tcf.md
       - baremetal/general/specs.md
   - Linux: https://github.com/foss-for-synopsys-dwc-arc-processors/linux/wiki
   - Development platforms:
     - platforms/index.md
     - Using Boards:
-      - platforms/build-openocd.md
+      - platforms/get-openocd.md
       - platforms/use-openocd.md
-      - Resetting Boards: platforms/reset.md
+      - platforms/winusb.md
+      - platforms/digilent.md
+      - platforms/reset.md
     - Boards Documentation:
       - ARC HS Development Kit 4xD: https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-hs4xhs4xd-development-kit-1
       - ARC HS Development Kit: https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-hs-development-kit-1
@@ -75,7 +78,10 @@ nav:
     - Installation:
       - Installing on Windows: eclipse/installation/windows.md
       - Installing on Linux: eclipse/installation/linux.md
-      - Manual installation: eclipse/installation/manual.md
+      - Manual Installation: eclipse/installation/manual.md
+      - eclipse/installation/preferences.md
+    - Other:
+      - eclipse/other/building.md
   - Advanced topics:
     - advanced/optimizations.md
     - advanced/custom-instructions.md
@@ -86,6 +92,7 @@ nav:
     - advanced/secure-shield.md
     - advanced/small-data.md
     - advanced/64-bit-operations.md
+    - advanced/bit-file-fpga.md
   - Testing:
     - testing/newlib.md
     - testing/glibc.md

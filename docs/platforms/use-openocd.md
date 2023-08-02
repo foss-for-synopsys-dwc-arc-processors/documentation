@@ -4,6 +4,42 @@
 
     This section is under construction.
 
+## Configuration Files
+
+| Board       | OpenOCD configuration |
+|-------------|-----------------------|
+| EMSK 1      | `snps_em_sk_v1.cfg`   |
+| EMSK 2.0    | `snps_em_sk_v2.1.cfg` |
+| EMSK 2.1    | `snps_em_sk_v2.1.cfg` |
+| EMSK 2.2    | `snps_em_sk_v2.2.cfg` |
+| EMSK 2.3    | `snps_em_sk_v2.3.cfg` |
+| HSDK        | `snps_hsdk.cfg`       |
+| HSDK 4x/4xD | `snps_hsdk_4xd.cfg`   |
+| IoTDK       | `snps_iotdk.cfg`      |
+
+## Running OpenOCD Server
+
+OpenOCD is used for starting a GDB server for connecting to a board.
+Suppose, that EM Starter Kit 2.3 is used. If you’ve downloaded IDE bundle for
+Linux then you can run OpenOCD this way (replace `<ide>` by a path to the
+directory of IDE bundle):
+
+```shell
+$ <ide>/bin/openocd -s <ide>/share/openocd/scripts -c 'gdb_port 49101' -f board/snps_em_sk_v2.3.cfg
+```
+
+If you’ve built and installed OpenOCD manually then you can run OpenOCD this way:
+
+```shell
+$ openocd  -c 'gdb_port 49101' -f board/snps_em_sk_v2.2.cfg
+```
+
+If you’ve downloaded and installed IDE bundle for Windows then you can run OpenOCD this way:
+
+```shell
+$ openocd -s C:\arc_gnu\share\openocd\scripts -c "gdb_port 49101" -f board\snps_em_sk_v2.3.cfg
+```
+
 ## How to use OpenOCD on Linux
 
 > Connection host is a host that is connected to the debug target via USB cable
@@ -114,7 +150,6 @@ for FTDI vendor driver use:
 Run OpenOCD:
 
 See for tag Run OpenOCD at How to use OpenOCD on Linux.
-
 
 ## Advanced debug commands
 
