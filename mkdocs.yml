@@ -42,6 +42,7 @@ nav:
     - general/processors.md
     - general/toolchains.md
     - general/target-options.md
+    - general/compatibility.md
   - Simulators:
     - simulators/qemu.md
     - simulators/nsim.md

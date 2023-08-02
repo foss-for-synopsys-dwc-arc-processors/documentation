@@ -8,7 +8,7 @@ There is no a definite match between TCF templates for nSIM and `-mcpu` values f
 If you want to build a program using GNU toolchain and run it on nSIM simulator , then you have two
 ways of finding right nSIM options:
 
-1. Find proper nSIM options in a compatibility table (**link to another page**).
+1. Find proper nSIM options in [a compatibility table](../../general/compatibility.md).
 2. Use default TCF templates and additional nSIM options.
 
 There is a table with an a rough matching between `-mcpu` values and TCF templates with additional options:
