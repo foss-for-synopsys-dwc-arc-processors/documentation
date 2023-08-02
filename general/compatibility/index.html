@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../toolchains/">
+        <link rel="prev" href="../target-options/">
       
       
-        <link rel="next" href="../compatibility/">
+        <link rel="next" href="../../simulators/qemu/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>Target Specific Options - GNU Toolchain for ARC User Manual — 2023.09</title>
+        <title>Compatibility with MetaWare, nSIM and ARChitect - GNU Toolchain for ARC User Manual — 2023.09</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#target-specific-options" class="md-skip">
+        <a href="#compatibility-with-metaware-nsim-and-architect" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Target Specific Options
+              Compatibility with MetaWare, nSIM and ARChitect
             
           </span>
         </div>
@@ -445,6 +445,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../target-options/" class="md-nav__link">
+        Target Specific Options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -457,12 +471,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Target Specific Options
+          Compatibility with MetaWare, nSIM and ARChitect
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Target Specific Options
+        Compatibility with MetaWare, nSIM and ARChitect
       </a>
       
         
@@ -481,98 +495,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
+  <a href="#choosing-a-processor-family" class="md-nav__link">
+    Choosing a Processor Family
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#arcv1-and-arcv2-toolchains" class="md-nav__link">
-    ARCv1 and ARCv2 Toolchains
+  <a href="#configuration-options" class="md-nav__link">
+    Configuration Options
   </a>
-  
-    <nav class="md-nav" aria-label="ARCv1 and ARCv2 Toolchains">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#target-options" class="md-nav__link">
-    Target Options
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiplication-options-for-arc-em-hs3x-and-hs4x-families" class="md-nav__link">
-    Multiplication Options for ARC EM, HS3x and HS4x Families
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#floating-point-options-for-arc-em-hs3x-and-hs4x-families" class="md-nav__link">
-    Floating Point Options for ARC EM, HS3x and HS4x Families
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#values-of-mcpu-for-arc-hs3x-and-hs4x-families" class="md-nav__link">
-    Values of -mcpu for ARC HS3x and HS4x Families
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#values-of-mcpu-for-arc-em-family" class="md-nav__link">
-    Values of -mcpu for ARC EM Family
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#values-of-mcpu-for-arc-600-and-700-families" class="md-nav__link">
-    Values of -mcpu for ARC 600 and 700 Families
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#controlling-the-memory-model" class="md-nav__link">
-    Controlling the Memory Model
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#other-tweaking-options" class="md-nav__link">
-    Other Tweaking Options
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#arcv3-toolchain" class="md-nav__link">
-    ARCv3 Toolchain
-  </a>
-  
-    <nav class="md-nav" aria-label="ARCv3 Toolchain">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#values-of-mcpu-for-arc-hs5x-and-arc-hs6x-families" class="md-nav__link">
-    Values of -mcpu for ARC HS5x and ARC HS6x Families
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -580,20 +512,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../compatibility/" class="md-nav__link">
-        Compatibility with MetaWare, nSIM and ARChitect
-      </a>
     </li>
   
 
@@ -1819,798 +1737,151 @@
   
 
 
-<h1 id="target-specific-options">Target Specific Options<a class="headerlink" href="#target-specific-options" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>In addition GCC options common to all targets, ARC GNU toolchains supports a set of <code>-m&lt;value&gt;</code> target specific options.
-Each of them configures a particular feature. For example, <code>-mno-code-density</code> option disables generating
-code density instructions.</p>
-<p><code>-mcpu=&lt;core&gt;</code> selects a particular ISA and CPU family and enables/disables a set of other <code>-m</code> options.
-Each <code>-mcpu</code> value leads to linking with a prebuilt library which corresponds to this particular
-<code>-mcpu=&lt;value&gt;</code> and is built using this <code>-mcpu=&lt;value&gt;</code>.</p>
-<p>For example, options combination <code>-mcpu=em4 -mno-code-density</code> generates code that doesn't
-use code density instructions, however it is linked with standard library that has been built
-with just <code>-mcpu=em4</code>, which uses code density instructions. Therefore a final application still may
-use code density instructions.</p>
-<p>All available target specific options may be found in an official <a href="https://gcc.gnu.org/onlinedocs/gcc/ARC-Options.html" title="GCC manual">GCC manual</a>.</p>
-<h2 id="arcv1-and-arcv2-toolchains">ARCv1 and ARCv2 Toolchains<a class="headerlink" href="#arcv1-and-arcv2-toolchains" title="Permanent link">&para;</a></h2>
-<h3 id="target-options">Target Options<a class="headerlink" href="#target-options" title="Permanent link">&para;</a></h3>
-<p>Here is a table of target options for ARCv1 and ARCv2 CPU families
-with default values for CPU families (On, Off or N/A).</p>
+<h1 id="compatibility-with-metaware-nsim-and-architect">Compatibility with MetaWare, nSIM and ARChitect<a class="headerlink" href="#compatibility-with-metaware-nsim-and-architect" title="Permanent link">&para;</a></h1>
+<h2 id="choosing-a-processor-family">Choosing a Processor Family<a class="headerlink" href="#choosing-a-processor-family" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Options</th>
-<th>ARC HS</th>
-<th>ARC EM</th>
-<th>ARC 700</th>
-<th>ARC 600</th>
+<th>Processor Family</th>
+<th>CCAC/MDB</th>
+<th>nSIM</th>
+<th>GCC binary</th>
+<th>GCC option</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>-mbarrel-shifter</code></td>
-<td>On</td>
-<td>Off</td>
-<td>On</td>
-<td>Off</td>
+<td>ARC HS6x</td>
+<td><code>-arc64</code></td>
+<td><code>nsim_isa_family=arc64</code></td>
+<td><code>arc64-elf-gcc</code></td>
+<td><a href="../target-options/#arcv3-toolchain"><code>-mcpu=</code> values for ARC HS6x</a></td>
 </tr>
 <tr>
-<td><code>-mnorm</code></td>
-<td>On</td>
-<td>Off</td>
-<td>On</td>
-<td>Off</td>
+<td>ARC HS5x</td>
+<td><code>-av3hs</code></td>
+<td><code>nsim_isa_family=av3hs</code></td>
+<td><code>arc64-elf-gcc</code></td>
+<td><a href="../target-options/#arcv3-toolchain"><code>-mcpu=</code> values for ARC HS5x</a></td>
 </tr>
 <tr>
-<td><code>-mswap</code></td>
-<td>On</td>
-<td>Off</td>
-<td>On</td>
-<td>Off</td>
+<td>ARC HS3x/4x</td>
+<td><code>-av2hs</code></td>
+<td><code>nsim_isa_family=av2hs</code></td>
+<td><code>arc-elf32-gcc</code></td>
+<td><a href="../target-options/#values-of-mcpu-for-arc-hs3x-and-hs4x-families"><code>-mcpu=</code> values for ARC HS3x/4x</a></td>
 </tr>
 <tr>
-<td><code>-rf16</code></td>
-<td>Off</td>
-<td>Off</td>
-<td>Off</td>
-<td>Off</td>
+<td>ARC EM</td>
+<td><code>-av2em</code></td>
+<td><code>nsim_isa_family=av2em</code></td>
+<td><code>arc-elf32-gcc</code></td>
+<td><a href="../target-options/#values-of--mcpu-for-arc-em-family"><code>-mcpu=</code> values for ARC EM</a></td>
 </tr>
 <tr>
-<td><code>-mfpu=&lt;...&gt;</code></td>
-<td>Off</td>
-<td>Off</td>
-<td>—</td>
-<td>—</td>
+<td>ARC700</td>
+<td><code>-a7</code></td>
+<td><code>nsim_isa_family=a700</code></td>
+<td><code>arc-elf32-gcc</code></td>
+<td><a href="../target-options/#values-of--mcpu-for-arc-600-and-700-families"><code>-mcpu=</code> values for ARC700</a></td>
 </tr>
 <tr>
-<td><code>-mmpy-option=&lt;...&gt;</code></td>
-<td>Off</td>
-<td>Off</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>-mcode-density</code></td>
-<td>On</td>
-<td>Off</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>-mdiv-rem</code></td>
-<td>Off</td>
-<td>Off</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>-matomic</code></td>
-<td>On</td>
-<td>—</td>
-<td>Off</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>-mll64</code></td>
-<td>Off</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>-mspfp</code></td>
-<td>—</td>
-<td>Off</td>
-<td>Off</td>
-<td>Off</td>
-</tr>
-<tr>
-<td><code>-mdpfp</code></td>
-<td>—</td>
-<td>Off</td>
-<td>Off</td>
-<td>Off</td>
-</tr>
-<tr>
-<td><code>-msimd</code></td>
-<td>—</td>
-<td>Off</td>
-<td>Off</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>-mmargonaut</code></td>
-<td>—</td>
-<td>—</td>
-<td>Off</td>
-<td>Off</td>
-</tr>
-<tr>
-<td><code>-mea</code></td>
-<td>—</td>
-<td>—</td>
-<td>Off</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>-mmul64</code></td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>Off</td>
-</tr>
-<tr>
-<td><code>-mmul32x16</code></td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>Off</td>
-</tr>
-<tr>
-<td><code>-munaligned-access</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>ARC600</td>
+<td><code>-a6</code></td>
+<td><code>nsim_isa_family={a600,a601}</code></td>
+<td><code>arc-elf32-gcc</code></td>
+<td><a href="../target-options/#values-of--mcpu-for-arc-600-and-700-families"><code>-mcpu=</code> values for ARC600</a></td>
 </tr>
 </tbody>
 </table>
-<p>You can find a short description for all target options using <code>--target-help</code> option. For example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ arc-elf32-gcc --target-help
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>...
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  -mbranch-index              Enable use of BI/BIH instructions when available.
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  -mcase-vector-pcrel         Use pc-relative switch case tables - this enables case table shortening.
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  -mcmem                      Enable use of NPS400 xld/xst extension.
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  -mcode-density              Enable code density instructions for ARCv2.
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  -mcode-density-frame        Enable ENTER_S and LEAVE_S opcodes for ARCv2.
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  -mcompact-casesi            Enable compact casesi pattern.  Uses of this option are diagnosed.
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  -mcpu=CPU                   Compile code for ARC variant CPU.
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  -mcrc                       Enable variable polynomial CRC extension.  Uses of this option are diagnosed.
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  -mdiv-rem                   Enable DIV-REM instructions for ARCv2.
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  -mdpfp                      FPX: Generate Double Precision FPX (compact) instructions.
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  -mdpfp-compact              FPX: Generate Double Precision FPX (compact) instructions.
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>...
-</span></code></pre></div>
-<p>You can find what target options are enabled or disabled by a particular <code>-mcpu=&lt;...&gt;</code> using
-<code>-Q</code> options. For example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ arc-elf32-gcc -Q --target-help -mcpu=archs
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>...
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  -mbranch-index                        [disabled]
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  -mcase-vector-pcrel                   [disabled]
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  -mcmem                                [disabled]
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  -mcode-density                        [enabled]
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  -mcode-density-frame                  [disabled]
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  -mcompact-casesi                      [disabled]
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  -mcpu=CPU                             archs
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  -mcrc                                 [disabled]
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  -mdiv-rem                             [enabled]
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>  -mdpfp                                [disabled]
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>  -mdpfp-compact                        [disabled]
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>...
-</span></code></pre></div>
-<p>Also, there are several configuration files in GCC's source tree that describe
-target options for all targets. All of them may be found in <code>gcc/config/arc</code>
-directory:</p>
-<ul>
-<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/gcc/blob/arc64/gcc/config/arc/arc-options.def"><code>arc-options.def</code></a>,
-<a href="https://github.com/foss-for-synopsys-dwc-arc-processors/gcc/blob/arc64/gcc/config/arc/arc-opts.h"><code>arc-opts.h</code></a>,
-<a href="https://github.com/foss-for-synopsys-dwc-arc-processors/gcc/blob/arc64/gcc/config/arc/arc.opt"><code>arc.opt</code></a> - 
-definitions and descriptions for all target options.</li>
-<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/gcc/blob/arc64/gcc/config/arc/arc-arches.def"><code>arc-arches.def</code></a> -
-definitions of CPU families with all available and default target options.</li>
-<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/gcc/blob/arc64/gcc/config/arc/arc-cpus.def"><code>arc-cpus.def</code></a> -
-definitions of particular <code>-mcpu=&lt;core&gt;</code> targets.</li>
-</ul>
-<h3 id="multiplication-options-for-arc-em-hs3x-and-hs4x-families">Multiplication Options for ARC EM, HS3x and HS4x Families<a class="headerlink" href="#multiplication-options-for-arc-em-hs3x-and-hs4x-families" title="Permanent link">&para;</a></h3>
-<p>Here is a table which matches <code>-mmpy-option=</code> values to corresponding features for ARC EM and ARC HS as they defined in ARChitect.</p>
+<h2 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: right;"><code>-mmpy-option=</code></th>
-<th>Aliases</th>
-<th>ARChitect option for ARC HS</th>
-<th>ARChitect option for ARC EM</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;">0</td>
-<td><code>none</code></td>
-<td><code>-mpy_option=none</code></td>
-<td><code>-mpy_option=none</code></td>
-</tr>
-<tr>
-<td style="text-align: right;">1</td>
-<td><code>w</code></td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td style="text-align: right;">2</td>
-<td><code>wlh1</code>, <code>mpy</code></td>
-<td><code>-mpy_option=mpy</code></td>
-<td><code>-mpy_option=wlh1</code></td>
-</tr>
-<tr>
-<td style="text-align: right;">3</td>
-<td><code>wlh2</code></td>
-<td>—</td>
-<td><code>-mpy_option=wlh2</code></td>
-</tr>
-<tr>
-<td style="text-align: right;">4</td>
-<td><code>wlh3</code></td>
-<td>—</td>
-<td><code>-mpy_option=wlh3</code></td>
-</tr>
-<tr>
-<td style="text-align: right;">5</td>
-<td><code>wlh4</code></td>
-<td>—</td>
-<td><code>-mpy_option=wlh4</code></td>
-</tr>
-<tr>
-<td style="text-align: right;">6</td>
-<td><code>wlh5</code></td>
-<td>—</td>
-<td><code>-mpy_option=wlh5</code></td>
-</tr>
-<tr>
-<td style="text-align: right;">7</td>
-<td><code>plus_dmpy</code></td>
-<td><code>-mpy_option=plus_dmpy</code></td>
-<td>—</td>
-</tr>
-<tr>
-<td style="text-align: right;">8</td>
-<td><code>plus_macd</code></td>
-<td><code>-mpy_option=plus_macd</code></td>
-<td>—</td>
-</tr>
-<tr>
-<td style="text-align: right;">9</td>
-<td><code>plus_qmacw</code></td>
-<td><code>-mpy_option=plus_qmacw</code></td>
-<td>—</td>
-</tr>
-</tbody>
-</table>
-<h3 id="floating-point-options-for-arc-em-hs3x-and-hs4x-families">Floating Point Options for ARC EM, HS3x and HS4x Families<a class="headerlink" href="#floating-point-options-for-arc-em-hs3x-and-hs4x-families" title="Permanent link">&para;</a></h3>
-<p>Here is a table which matches <code>-mfpu=</code> values to corresponding features for ARC EM and ARC HS as they defined in ARChitect.</p>
-<table>
-<thead>
-<tr>
-<th><code>-mfpu=</code></th>
-<th>Families</th>
-<th><code>-has_fpu</code></th>
-<th><code>-fpu_dp_option</code></th>
-<th><code>-fpu_div_option</code></th>
-<th><code>-fpu_fma_option</code></th>
-<th><code>-fpu_dp_assist</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>fpus</code></td>
-<td>EM, HS</td>
-<td>On</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>fpus_div</code></td>
-<td>EM, HS</td>
-<td>On</td>
-<td>—</td>
-<td>On</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>fpus_fma</code></td>
-<td>EM, HS</td>
-<td>On</td>
-<td>—</td>
-<td>—</td>
-<td>On</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>fpus_all</code></td>
-<td>EM, HS</td>
-<td>On</td>
-<td>—</td>
-<td>On</td>
-<td>On</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>fpud</code></td>
-<td>HS</td>
-<td>On</td>
-<td>On</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>fpud_div</code></td>
-<td>HS</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>fpud_fma</code></td>
-<td>HS</td>
-<td>On</td>
-<td>On</td>
-<td>—</td>
-<td>On</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>fpud_all</code></td>
-<td>HS</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>fpuda</code></td>
-<td>EM</td>
-<td>On</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>On</td>
-</tr>
-<tr>
-<td><code>fpuda_div</code></td>
-<td>EM</td>
-<td>On</td>
-<td>—</td>
-<td>On</td>
-<td>—</td>
-<td>On</td>
-</tr>
-<tr>
-<td><code>fpuda_fma</code></td>
-<td>EM</td>
-<td>On</td>
-<td>—</td>
-<td>—</td>
-<td>On</td>
-<td>On</td>
-</tr>
-<tr>
-<td><code>fpuda_all</code></td>
-<td>EM</td>
-<td>On</td>
-<td>—</td>
-<td>On</td>
-<td>On</td>
-<td>On</td>
-</tr>
-</tbody>
-</table>
-<h3 id="values-of-mcpu-for-arc-hs3x-and-hs4x-families">Values of <code>-mcpu</code> for ARC HS3x and HS4x Families<a class="headerlink" href="#values-of-mcpu-for-arc-hs3x-and-hs4x-families" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th><code>-mcpu=</code></th>
-<th><code>-mdiv-rem</code></th>
-<th><code>-matomic</code></th>
-<th><code>-mll64</code></th>
-<th><code>-mmpy-option=</code></th>
-<th><code>-mfpu=</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>hs</code></td>
-<td></td>
-<td>Y</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>hs34</code></td>
-<td></td>
-<td>Y</td>
-<td></td>
-<td><code>mpy</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>archs</code></td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td><code>mpy</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>hs38</code></td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td><code>plus_qmacw</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>hs4x</code></td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td><code>plus_qmacw</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>hs4xd</code></td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td><code>plus_qmacw</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>hs38_linux</code></td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td><code>plus_qmacw</code></td>
-<td><code>fpud_all</code></td>
-</tr>
-</tbody>
-</table>
-<p>The above <code>-mcpu</code> values correspond to specific ARC EM Processor templates presented in the ARChitect tool.</p>
-<ul>
-<li><code>-mcpu=hs</code> corresponds to a basic ARC HS with only atomic instructions enabled. It corresponds to
-the following ARC HS templates in ARChitect: <code>hs34_base</code>, <code>hs36_base</code> and <code>hs38_base</code>.</li>
-<li><code>-mcpu=hs34</code> is like <code>hs</code> but with with additional support for standard hardware multiplier.
-It corresponds to the following ARC HS templates in ARChitect: <code>hs34</code>, <code>hs36</code> and <code>hs38</code>.</li>
-<li><code>-mcpu=archs</code> is a generic configuration, which corresponds to the default configuration in
-older GNU toolchain versions.</li>
-<li><code>-mcpu=hs38</code> is a full-featured ARC HS. It corresponds to the following ARC HS template in ARChitect: <code>hs38_full</code>.</li>
-<li><code>-mcpu=hs4x</code> and <code>-mcpu=hs4xd</code> have the same option set as <code>-mcpu=hs38</code>, but compiler will optimize
-instruction scheduling for specified processors.</li>
-<li><code>-mcpu=hs38_linux</code> is a full-featured ARC HS with additional support of double-precision FPU.</li>
-</ul>
-<h3 id="values-of-mcpu-for-arc-em-family">Values of <code>-mcpu</code> for ARC EM Family<a class="headerlink" href="#values-of-mcpu-for-arc-em-family" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th><code>-mcpu</code></th>
-<th><code>-mcode-density</code></th>
-<th><code>-mnorm</code></th>
-<th><code>-mswap</code></th>
-<th><code>-mbarrel-shifter</code></th>
-<th><code>-mdiv-rem</code></th>
-<th><code>-mmpy-option=</code></th>
-<th><code>-mfpu=</code></th>
-<th><code>-mrf16</code></th>
-<th><code>-mspfp</code></th>
-<th><code>-mdpfp</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>em</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>em_mini</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>Y</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>em4</code></td>
-<td>Y</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>arcem</code></td>
-<td>Y</td>
-<td></td>
-<td></td>
-<td>Y</td>
-<td></td>
-<td><code>wlh1</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>em4_dmips</code></td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td><code>wlh1</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>em4_fpus</code></td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td><code>wlh1</code></td>
-<td><code>fpus</code></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>em4_fpuda</code></td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td><code>wlh1</code></td>
-<td><code>fpuda</code></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>quarkse_em</code></td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td><code>wlh2</code></td>
-<td><code>quark</code></td>
-<td></td>
-<td>Y</td>
-<td>Y</td>
-</tr>
-</tbody>
-</table>
-<p>The above <code>-mcpu</code> values correspond to specific ARC EM Processor templates presented in the ARChitect tool.
-It should be noted however that some ARC features are not currently supported in the GNU toolchain, for
-example DSP instruction support.</p>
-<ul>
-<li><code>-mcpu=em</code> doesn't correspond to any specific template, it simply defines the base ARC EM configuration without any optional instructions.</li>
-<li><code>-mcpu=em_mini</code> is same as <code>em</code>, but uses reduced register file with only 16 core registers.</li>
-<li><code>-mcpu=em4</code> is a base ARC EM core configuration with <code>-mcode-density</code> option. It corresponds to
-the following ARC EM templates in ARChitect: <code>em4_mini</code>, <code>em4_sensor</code>, <code>em4_ecc</code>, <code>em6_mini</code>, <code>em5d_mini</code>,
-<code>em5d_mini_v3</code>, <code>em5d_nrg</code>, <code>em7d_nrg</code>, <code>em9d_mini</code>. Note that those mini templates have a reduced core register
-file, but <code>-mcpu=em4</code> doesn't enable this feature.</li>
-<li><code>-mcpu=arcem</code> doesn't correspond to any specific template, it is a legacy flag preserved for compatibility with
-older GNU toolchain versions, where <code>-mcpu</code> used to select only a CPU family, while optional features were enabled
-or disabled by individual <code>-m&lt;something&gt;</code> options.</li>
-<li><code>-mcpu=em4_dmips</code> is a full-featured ARC EM configuration for integer operations. It corresponds to the following
-ARC EM templates in ARChitect: <code>em4_dmips</code>, <code>em4_rtos</code>, <code>em6_dmips</code>, <code>em4_dmips_v3</code>, <code>em4_parity</code>, <code>em6_dmips_v3</code>,
-<code>em6_gp</code>, <code>em5d_voice_audio</code>, <code>em5d_nrg_v3</code>, <code>em7d_nrg_v3</code>, <code>em7d_voice_audio</code>, <code>em9d_nrg</code>, <code>em9d_voice_audio</code>,
-<code>em11d_nrg</code> and <code>em11d_voice_audio</code>.</li>
-<li><code>-mcpu=em4_fpus</code> is like <code>em4_dmips</code> but with additional support for single-precision floating point unit.
-It corresponds to the following ARC EM templates in ARChitect: <code>em4_dmips_fpusp</code>, <code>em4_dmips_fpusp_v3</code>, <code>em5d_nrg_fpusp</code>
-and <code>em9d_nrg_fpusp</code>.</li>
-<li><code>-mcpu=em4_fpuda</code> is like <code>em4_fpus</code> but with additional support for double-precision assist instructions.
-It corresponds to the following ARC EM templates in ARChitect: <code>em4_dmips_fpuspdp</code> and <code>em4_dmips_fpuspdp_v3</code>.</li>
-<li><code>-mcpu=quarkse_em</code> is a configuration for ARC processor in Intel Quark SE chip. It enables additional floating
-point instructions which cannot be enable using a particular target option.</li>
-</ul>
-<h3 id="values-of-mcpu-for-arc-600-and-700-families">Values of <code>-mcpu</code> for ARC 600 and 700 Families<a class="headerlink" href="#values-of-mcpu-for-arc-600-and-700-families" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th><code>-mcpu=</code></th>
-<th><code>-mnorm</code></th>
-<th><code>-mswap</code></th>
-<th><code>-mbarrel-shifter</code></th>
-<th>Multiplier</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>arc700</code></td>
-<td>Y</td>
-<td>Y</td>
-<td>Y</td>
-<td><code>-mmpy</code></td>
-</tr>
-<tr>
-<td><code>arc600</code></td>
-<td></td>
-<td></td>
-<td>Y</td>
-<td></td>
-</tr>
-<tr>
-<td><code>arc600_norm</code></td>
-<td>Y</td>
-<td></td>
-<td>Y</td>
-<td></td>
-</tr>
-<tr>
-<td><code>arc600_mul64</code></td>
-<td>Y</td>
-<td></td>
-<td>Y</td>
-<td><code>-mmul64</code></td>
-</tr>
-<tr>
-<td><code>arc600_mul32x16</code></td>
-<td>Y</td>
-<td></td>
-<td>Y</td>
-<td><code>-mmul32x16</code></td>
-</tr>
-<tr>
-<td><code>arc601</code></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>arc601_norm</code></td>
-<td>Y</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>arc601_mul64</code></td>
-<td>Y</td>
-<td></td>
-<td></td>
-<td><code>-mmul64</code></td>
-</tr>
-<tr>
-<td><code>arc601_mul32x16</code></td>
-<td>Y</td>
-<td></td>
-<td></td>
-<td><code>-mmul32x16</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="controlling-the-memory-model">Controlling the Memory Model<a class="headerlink" href="#controlling-the-memory-model" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th><code>-mcmodel</code></th>
-<th>Memory size for Data/Code</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>small</code></td>
-<td>1MB region</td>
-</tr>
-<tr>
-<td><code>medium</code></td>
-<td>4GB region (used by <code>-fpic</code>)</td>
-</tr>
-<tr>
-<td><code>large</code></td>
-<td>Full memory (used by <code>-fPIC</code>)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="other-tweaking-options">Other Tweaking Options<a class="headerlink" href="#other-tweaking-options" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Option</th>
 <th>Description</th>
+<th>ARChitect</th>
+<th>CCAC/MDB</th>
+<th>nSIM</th>
+<th>GCC</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>-mfpmov</code></td>
-<td>Reduces the pressure on GPRs by using FPRs for inline memory operations.</td>
+<td>Shift options</td>
+<td><code>-shift_option=3 -bitfield_option</code></td>
+<td><code>-Xsa -Xbs</code></td>
+<td><code>nsim_isa_shift_option=3</code></td>
+<td><code>-mbarrel-shifter</code></td>
 </tr>
 <tr>
-<td><code>-mbrcc</code></td>
-<td>Generate BRcc instructions early on.</td>
+<td>Bitscan options</td>
+<td><code>-bitscan_option</code></td>
+<td><code>-Xnorm</code></td>
+<td><code>nsim_isa_bitscan_option=1</code></td>
+<td><code>-mnorm</code></td>
 </tr>
 <tr>
-<td><code>-mbbit</code></td>
-<td>Likewise but for BBITx instructions.</td>
+<td>Swap options</td>
+<td><code>-swap_option</code></td>
+<td><code>-Xswap</code></td>
+<td><code>nsim_isa_swap_option=1</code></td>
+<td><code>-mswap</code></td>
 </tr>
-</tbody>
-</table>
-<h2 id="arcv3-toolchain">ARCv3 Toolchain<a class="headerlink" href="#arcv3-toolchain" title="Permanent link">&para;</a></h2>
-<h3 id="values-of-mcpu-for-arc-hs5x-and-arc-hs6x-families">Values of <code>-mcpu</code> for ARC HS5x and ARC HS6x Families<a class="headerlink" href="#values-of-mcpu-for-arc-hs5x-and-arc-hs6x-families" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
 <tr>
-<th><code>-mcpu=</code></th>
-<th><code>-msimd</code></th>
-<th><code>-m128</code></th>
-<th><code>-mll64</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>hs5x</code></td>
-<td>Y</td>
+<td>16 register file</td>
+<td><code>-rgf_num_regs=16</code></td>
 <td>N/A</td>
+<td><code>nsim_isa_rgf_num_regs=16</code></td>
+<td><code>-rf16</code></td>
+</tr>
+<tr>
+<td>Code density options</td>
+<td><code>-code_density_option</code></td>
+<td><code>-Xcd</code></td>
+<td><code>nsim_isa_code_density_option=2</code></td>
+<td><code>-mcode-density</code></td>
+</tr>
+<tr>
+<td>DIV/REM options</td>
+<td><code>-div_rem_option={1,2}</code></td>
+<td><code>-Xdiv_rem</code></td>
+<td><code>nsim_isa_div_rem_option={1,2}</code></td>
+<td><code>-mdiv-rem</code></td>
+</tr>
+<tr>
+<td>Atomic options</td>
+<td><code>-atomic_option</code></td>
+<td><code>-Xatomic</code></td>
+<td><code>nsim_isa_atomic_option=1</code></td>
+<td><code>-matomic</code></td>
+</tr>
+<tr>
+<td>64-bit load and store</td>
+<td><code>-ll64_option</code></td>
+<td><code>-Xll64</code></td>
+<td><code>nsim_isa_ll64_option=64</code></td>
+<td><code>-mll64</code></td>
+</tr>
+<tr>
+<td>Unaligned access</td>
+<td>N/A</td>
+<td><code>-Xunaligned</code></td>
+<td><code>nsim_isa_unaligned_option=1</code></td>
+<td><code>-munaligned-access</code></td>
+</tr>
+<tr>
+<td>ARC 600 32x16 multiplication</td>
 <td></td>
+<td><code>-Xmul32x16</code></td>
+<td><code>nsim_isa_mul32x16=1</code></td>
+<td><code>-mmul32x16</code></td>
 </tr>
 <tr>
-<td><code>hs58</code></td>
-<td>Y</td>
-<td>N/A</td>
-<td>Y</td>
-</tr>
-<tr>
-<td><code>hs6x</code></td>
-<td>Y</td>
+<td>ARC 600 32x32 multiplication</td>
 <td></td>
-<td>N/A</td>
-</tr>
-<tr>
-<td><code>hs68</code></td>
-<td>Y</td>
-<td>Y</td>
-<td>N/A</td>
+<td></td>
+<td><code>nsim_isa_mult32d=1</code></td>
+<td><code>-mmul64</code></td>
 </tr>
 </tbody>
 </table>
