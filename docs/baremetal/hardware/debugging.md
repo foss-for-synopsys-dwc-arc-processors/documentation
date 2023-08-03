@@ -1,4 +1,4 @@
-# Building Applications and Debugging on Development Platforms
+# Building and Debugging on Various Boards
 
 ## Preface
 
