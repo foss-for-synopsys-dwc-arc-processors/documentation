@@ -9,13 +9,17 @@
       
       
       
+        <link rel="prev" href="../debugging/">
+      
+      
+        <link rel="next" href="../axs-ashling/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>Axs - GNU Toolchain for ARC User Manual — 2023.09</title>
+        <title>Building and Debugging on AXS with OpenOCD - GNU Toolchain for ARC User Manual — 2023.09</title>
       
     
     
@@ -62,6 +66,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#building-and-debugging-on-axs-with-openocd" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -90,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Axs
+              Building and Debugging on AXS with OpenOCD
             
           </span>
         </div>
@@ -196,6 +205,8 @@
         
   
   
+    
+  
 
 
   
@@ -207,7 +218,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../simulators/nsim/" class="md-tabs__link">
+      <a href="../../simulators/nsim/" class="md-tabs__link md-tabs__link--active">
         Baremetal
       </a>
     </li>
@@ -537,14 +548,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
         
@@ -561,7 +574,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Baremetal
@@ -642,18 +655,24 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
       
       
+        
+          
+        
+          
         
           
         
@@ -666,7 +685,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3_2">
           <span class="md-nav__icon md-icon"></span>
           Hardware
@@ -694,7 +713,138 @@
   
     <li class="md-nav__item">
       <a href="../debugging/" class="md-nav__link">
-        Building Applications and Debugging on Development Platforms
+        Building and Debugging on Various Boards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Building and Debugging on AXS with OpenOCD
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Building and Debugging on AXS with OpenOCD
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preface" class="md-nav__link">
+    Preface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-an-application" class="md-nav__link">
+    Building an Application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#board-configuration" class="md-nav__link">
+    Board Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-openocd" class="md-nav__link">
+    Running OpenOCD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-gdb" class="md-nav__link">
+    Running GDB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-topics" class="md-nav__link">
+    Advanced topics
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced topics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-standalone-digilent-hs-debug-cable" class="md-nav__link">
+    Using Standalone Digilent HS Debug Cable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-openocd-with-only-one-core-in-the-jtag-chain" class="md-nav__link">
+    Using OpenOCD with Only One Core in the JTAG Chain
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../axs-ashling/" class="md-nav__link">
+        Building and Debugging on AXS with Ashling Opella-XD
       </a>
     </li>
   
@@ -1676,9 +1826,339 @@
   
 
 
-  <h1>Axs</h1>
-
-
+<h1 id="building-and-debugging-on-axs-with-openocd">Building and Debugging on AXS with OpenOCD<a class="headerlink" href="#building-and-debugging-on-axs-with-openocd" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Please refer to board's documentation for detailed information about how
+to setup the board for initial operation:</p>
+<ul>
+<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-axs101-software-development-platform-1">AXS 101 Software Development Platform</a></li>
+<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-axs103-software-development-platform-1">AXS 103 Software Development Platform</a></li>
+</ul>
+<p>Also, consider reading these materials regarding memory maps and OpenOCD:</p>
+<ul>
+<li>Follow <a href="../memory/">Memory Maps and Linker Scripts</a> guide for details
+about <code>memory.x</code> files and where they may be obtained.</li>
+<li>Follow a <a href="../../../platforms/get-openocd/">corresponding manual</a> to obtain
+and configure OpenOCD.  </li>
+</ul>
+</div>
+<h2 id="preface">Preface<a class="headerlink" href="#preface" title="Permanent link">&para;</a></h2>
+<p>AXS SDP consists of a mainboard and one of the CPU cards:</p>
+<ul>
+<li>AXS101 uses AXC001 CPU card;</li>
+<li>AXS102 uses AXC002 CPU card;</li>
+<li>AXS103 uses AXC003 CPU card.</li>
+</ul>
+<p>For AXS103 currently two firmware releaseses are supported:</p>
+<ul>
+<li>Release 1.2: contains firmware for ARC HS36 CPU and ARC dualcore HS38 CPU</li>
+<li>Release 1.3: contains firmware for ARC HS47D CPU and ARC dualcore HS48 CPU</li>
+</ul>
+<h2 id="building-an-application">Building an Application<a class="headerlink" href="#building-an-application" title="Permanent link">&para;</a></h2>
+<p>A <a href="../memory/">memory map</a> appropriate to the selected board should be used
+to link applications. The <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain">toolchain repository</a>
+includes memory maps for all ARC SDP systems. They can be found in the tree.
+Memory map files in that directory have <code>.x</code> extension and file to be used
+should be renamed to <code>memory.x</code>, because <code>arcv2elfx</code> linker emulation does not
+support ability to override that file name.</p>
+<p>Here is an example of building an application for AXS103/HS36:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>cp<span class="w"> </span>-a<span class="w"> </span>toolchain/extras/dev_systems/axs103.x<span class="w"> </span>memory.x
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>$<span class="w"> </span>arc-elf32-gcc<span class="w"> </span>-Wl,-marcv2elfx<span class="w"> </span>--specs<span class="o">=</span>nosys.specs<span class="w"> </span>-O2<span class="w"> </span>-g<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">                </span>-mcpu<span class="o">=</span>hs38_linux<span class="w"> </span>test.c<span class="w"> </span>-o<span class="w"> </span>test.elf
+</span></code></pre></div>
+<p>Here is a table compiler flags for particular boards and targets:</p>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th>GCC flags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AXS 101 EM6</td>
+<td><code>-mcpu=em4_dmips -mmpy-option=3</code></td>
+</tr>
+<tr>
+<td>AXS 101 ARC 770</td>
+<td><code>-mcpu=arc700</code></td>
+</tr>
+<tr>
+<td>AXS 101 AS221</td>
+<td><code>-mcpu=arc600_mul32x16</code></td>
+</tr>
+<tr>
+<td>AXS 102 HS34</td>
+<td><code>-mcpu=hs -mdiv-rem -mmpy-option=9 -mll64 -mfpu=fpud_all</code></td>
+</tr>
+<tr>
+<td>AXS 102 HS36</td>
+<td><code>-mcpu=hs -mdiv-rem -mmpy-option=9 -mll64 -mfpu=fpud_all</code></td>
+</tr>
+<tr>
+<td>AXS 103 HS36</td>
+<td><code>-mcpu=hs38_linux</code></td>
+</tr>
+<tr>
+<td>AXS 103 HS38</td>
+<td><code>-mcpu=hs38_linux</code></td>
+</tr>
+<tr>
+<td>AXS 103 HS47</td>
+<td><code>-mcpu=hs4x_rel31</code></td>
+</tr>
+<tr>
+<td>AXS 103 HS48</td>
+<td><code>-mcpu=hs4x_rel31</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="board-configuration">Board Configuration<a class="headerlink" href="#board-configuration" title="Permanent link">&para;</a></h2>
+<p>Firstly, it is required to set jumpers and switches on the mainboard:</p>
+<ul>
+<li><code>PROG_M0</code> (<code>JP1508</code>), <code>PROG_M1</code> (<code>JP1401</code>) and <code>BS_EN</code> (<code>JP1507</code>) jumpers
+  should be removed (it is their default position);</li>
+<li><code>PROG_SRC</code> (<code>JP1403</code>) jumper should be removed (default);</li>
+<li>
+<p><code>DEBUG_SRC</code> (<code>JP1402</code>) jumper should be placed (default);
+ <code>SW2501</code>, <code>SW2502</code>, <code>SW2503</code> and <code>SW2401</code> should be set to their default
+  positions according to the AXC00x CPU Card User Guides depending on what
+  CPU card is being used. Following changes should be applied then:</p>
+<ul>
+<li><code>SW2401.10</code> switch should be set to <code>1</code> (moved to the left), this will
+  configure bootloader to setup clocks, memory maps and initialize DDR
+  SDRAM and then halt a CPU.</li>
+<li>For the core you are going to debug choose <code>Boot mode</code> type <code>Autonomously</code>,
+  this is done by moving top two switches of the respective switch block to
+  the position <code>1</code>. Alternatively, if you leave default boot mode
+  <code>By CPU Start Button</code> you need to press <code>Start</code> button for this CPU,
+  before trying to connect to it with the OpenOCD.</li>
+</ul>
+</li>
+</ul>
+<p>Configuration of the JTAG chain on the CPU card must match the configuration
+in the OpenOCD. By default OpenOCD is configured to expect complete JTAG
+chain that includes all of the CPU cores available on the card.</p>
+<ul>
+<li>For the AXC001 card jumpers <code>TSEL0</code> and <code>TSEL1</code> should be set.</li>
+<li>For the AXC002 card jumpers <code>JP1200</code> and <code>JP1201</code> should be set.</li>
+<li>For the AXC003 card it is not possible to modify JTAG chain directly.</li>
+</ul>
+<p>Reset board configuration after changing jumpers or switch position, for this
+press <code>Board RST</code> button <code>SW2410</code> near the power switch. Two seven-segment
+displays should show a number respective to the core that is selected to start
+autonomously. Dot should appear on the first display as well, to notify that
+bootloader was executed in bypass mode. To sum it up, for the AXS101
+following numbers should appear:</p>
+<ul>
+<li>1.0 for the AS221 core 1</li>
+<li>2.0 for the AS221 core 2</li>
+<li>3.0 for the EM6</li>
+<li>4.0 for the ARC 770D.</li>
+</ul>
+<p>For the AXS102 following numbers should appear:</p>
+<ul>
+<li>1.0 for the HS34</li>
+<li>2.0 for the HS36.</li>
+</ul>
+<p>For the AXS103 firmware ver 1.2 following numbers should appear:</p>
+<ul>
+<li>1.0 for the HS36</li>
+<li>2.0 for the HS34</li>
+<li>3.0 for the HS38 (core 0)</li>
+<li>4.0 for the HS38 (core 1)</li>
+</ul>
+<p>For the AXS103 firmware ver 1.3 following numbers should appear:</p>
+<ul>
+<li>1.0 for the HS47D</li>
+<li>3.0 for the HS48 (core 0)</li>
+<li>4.0 for the HS48 (core 1)</li>
+</ul>
+<h2 id="running-openocd">Running OpenOCD<a class="headerlink" href="#running-openocd" title="Permanent link">&para;</a></h2>
+<p>There is a table of commands for running OpenOCD for AXS targets.
+Note, that AXS103 SDP supports different core configurations, so while in AXS101 and
+AXS102 there is a chain of several cores, which can operate independently,
+in AXS103 one of the particular configurations is chosen at startup and it is
+not possible to modify chain via jumpers. As a result, different OpenOCD
+configuration files should be used depending on whether AXS103 is configured
+to implement HS36 or to implement HS38.</p>
+<table>
+<thead>
+<tr>
+<th>AXS target</th>
+<th>Command line</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AXS101</td>
+<td><code>openocd -f board/snps_axs101.cfg</code></td>
+</tr>
+<tr>
+<td>AXS102</td>
+<td><code>openocd -f board/snps_axs102.cfg</code></td>
+</tr>
+<tr>
+<td>AXS103 SH36</td>
+<td><code>openocd -f board/snps_axs103_hs36.cfg</code></td>
+</tr>
+<tr>
+<td>AXS103 HS38x2</td>
+<td><code>openocd -f board/snps_axs103_hs38.cfg</code></td>
+</tr>
+<tr>
+<td>AXS103 HS47D</td>
+<td><code>openocd -f board/snps_axs103_hs47D.cfg</code></td>
+</tr>
+<tr>
+<td>AXS103 HS48x2</td>
+<td><code>openocd -f board/snps_axs103_hs48.cfg</code></td>
+</tr>
+</tbody>
+</table>
+<p>OpenOCD will open a GDB server connection for each CPU core on target
+(4 for AXS101, 2 for AXS102, 1 or 2 for AXS103). GDBserver for the first
+core listens on the TCP port 3333, second on port 3334 and so on. Note that
+OpenOCD discovers cores in the reverse order to core position in the JTAG
+chain.</p>
+<p>For AXS101 ports are:</p>
+<ul>
+<li>3333 - ARC 770D</li>
+<li>3334 - ARC EM</li>
+<li>3335 - AS221 core 2</li>
+<li>3336 - AS221 core 1.</li>
+</ul>
+<p>For AXS102 ports are:</p>
+<ul>
+<li>3333 - ARC HS36</li>
+<li>3334 - ARC HS34.</li>
+</ul>
+<p>For AXS103 HS38x2 or HS48x2 ports are:</p>
+<ul>
+<li>3333 - ARC HS38 or HS48 core 1</li>
+<li>3334 - ARC HS38 or HS48 core 0.</li>
+</ul>
+<p>For AXS103 HS47D ports are:</p>
+<ul>
+<li>3333 - ARC HS47D</li>
+</ul>
+<h2 id="running-gdb">Running GDB<a class="headerlink" href="#running-gdb" title="Permanent link">&para;</a></h2>
+<p>Run GDB:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>arc-elf32-gdb<span class="w"> </span>./application.to.debug
+</span></code></pre></div>
+<p>Connect to the target GDB server:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>(gdb) target remote &lt;gdbserver-host&gt;:&lt;port-number&gt;
+</span></code></pre></div>
+<p>where <code>&lt;gdbserver-host&gt;</code> is a hostname/IP-address of the host that runs
+OpenOCD (can be omitted if it is a localhost), and <code>&lt;port-number&gt;</code> is a
+number of port of the core you want to debug (see previous section).</p>
+<p>In most cases it is needed to load application into the target:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>(gdb) load
+</span></code></pre></div>
+<p>After that application is ready for debugging.</p>
+<p>To debug several cores on the AXC00x card simultaneously, it is needed to
+start additional GDBs and connect to the required TCP ports. Cores are
+controlled independently from each other.</p>
+<h2 id="advanced-topics">Advanced topics<a class="headerlink" href="#advanced-topics" title="Permanent link">&para;</a></h2>
+<h3 id="using-standalone-digilent-hs-debug-cable">Using Standalone Digilent HS Debug Cable<a class="headerlink" href="#using-standalone-digilent-hs-debug-cable" title="Permanent link">&para;</a></h3>
+<p>It is possible to use standalone Digilent HS1 or HS2 debug cable instead
+of the FT2232 chip embedded into the AXS10x mainboard. Follow AXS10x mainboard
+manual to learn how to connect Digilent cable to mainboard. In the nutshell:</p>
+<ul>
+<li>Connect cable to the <code>DEBUG1</code> 6-pin connector right under the CPU card.
+  TMS pin is on the left (closer to the <code>JP1501</code> and <code>JP1502</code> jumpers), VDD pin
+  is on the right, closer to the HDMI connector.</li>
+<li>Disconnect JP1402 jumper.</li>
+</ul>
+<p>Then modify board configuration file used (<code>board/snps_axs101.cfg</code>,
+<code>board/snps_axs102.cfg</code>, etc): replace <code>source</code> of <code>snps_sdp.cfg</code> with <code>source</code>
+of <code>digilent-hs1.cfg</code> or <code>digilent-hs2.cfg</code> file, depending on what is being used.</p>
+<p>Then restart OpenOCD.</p>
+<h3 id="using-openocd-with-only-one-core-in-the-jtag-chain">Using OpenOCD with Only One Core in the JTAG Chain<a class="headerlink" href="#using-openocd-with-only-one-core-in-the-jtag-chain" title="Permanent link">&para;</a></h3>
+<p>In AXS101 and AXS102 it is possible to reduce JTAG chain on the CPU
+card to a single core.</p>
+<p>Change positions of <code>TSEL0</code>/<code>TSEL1</code> (on AXC001) or <code>JP1200</code>/<code>JP1201</code>
+(on AXC002) to reduce JTAG chain to a particular core. Follow AXC00x CPU
+Card User Guide for details.</p>
+<p>Then modify OpenOCD command line to notify it that some core is not in
+the JTAG chain, for example:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>openocd<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;set HAS_HS34 0&#39;</span><span class="w"> </span>-f<span class="w"> </span>board/snps_axs102.cfg
+</span></code></pre></div>
+<p>In this case OpenOCD is notified that HS34 is not in the JTAG chain of the
+AXC002 card. Important notes:</p>
+<ul>
+<li>Option <code>-c 'set HAS_XXX 0'</code> must precede option <code>-f</code>, because they are
+  executed in the order they appear.</li>
+<li>By default all such variables are set 1, so it is required to disable each
+  core one-by-one. For example, for AXS101 it is required to set two variables.</li>
+<li>Alternative solution is to modify <code>target/snps_axc001.cfg</code> or
+  <code>target/snps_axc002.cfg</code> files to suit exact configuration, in this case
+   there will be no need to set variables each time, when starting OpenOCD.</li>
+</ul>
+<p>Those variables are used in the <code>target/snps_axc001.cfg</code> file: <code>HAS_EM6</code>,
+<code>HAS_770</code> and <code>HAS_AS221</code> (it is not possible to configure AXC001 to contain
+only single ARC 600 core in the JTAG chain). Those variables are used in
+the <code>target/snps_axc002.cfg</code> file: <code>HAS_HS34</code> and <code>HAS_HS36</code>.</p>
+<p>When JTAG chain is modified, TCP port number for OpenOCD is modified
+accordingly. If only one core is in the chain, than it is assigned 3333
+TCP port number. In case of AS221 TCP port 3333 is assigned to core 2,
+while port 3334 is assigned to core 1.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>OpenOCD prints "JTAG scan chain interrogation failed: all ones", then there
+is a lot of messages "Warn : target is still running!".</p>
+</div>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p>An invalid JTAG adapter configuration is used: SDP USB data-port is used
+with configuration for standalone Digilent-HS cable, or vice versa. To
+resolve problem fix file <code>board/snps_axs10{1,2}.cfg</code> or
+<code>board/snps_axs103_hs36.cfg</code> depending on what board is being used.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>OpenOCD prints "JTAG scan chain interrogation failed: all zeros".</p>
+</div>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p>It is likely that position of JP1402 jumper does not match the debug
+interface you are trying to use. Remove jumper if you are using external
+debug cable, or place jumper if you are using embedded FT2232 chip.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>OpenOCD prints that is has found "UNEXPECTED" device in the JTAG chain.</p>
+</div>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p>This means that OpenOCD configuration of JTAG chain does not match settings
+of jumpers on your CPU card.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>I am loading application into target memory, however memory is still all zeros.</p>
+</div>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p>This might happen if you are using AXC001 CPU card and bootloader has not
+been executed. Either run bootloader for the selected core or configure
+core to start in autonomous mode and reset board after that - so bootloader
+will execute.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>OpenOCD prints "target is still running!" after a CTRL+C has been done on
+the GDB client side.</p>
+</div>
+<div class="admonition answer">
+<p class="admonition-title">Answer</p>
+<p>There is an issue with EM6 core in AXS101 - after OpenOCD writes <code>DEBUG.FH</code>
+bit to do a force halt of the core, JTAG TAP of this core still occasionally
+returns a status that core is running, even though it has been halted. To
+avoid problem do not try to break execution with Ctrl+C when using EM6 on AXS101.</p>
+</div>
 
 
 
