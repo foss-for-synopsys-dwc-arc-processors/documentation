@@ -13,10 +13,12 @@ theme:
     primary: deep purple
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.path
     - toc.integrate
     - navigation.sections
     - navigation.indexes
+    - navigation.top
 plugins:
   - table-reader
   - search
