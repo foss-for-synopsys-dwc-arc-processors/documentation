@@ -154,7 +154,7 @@ directory. Copy OpenOCD installation to Window host.
     linkage will fail.
 
 Follow [README.macOS](https://github.com/openocd-org/openocd/blob/master/README.macOS)
-guide and then [README]([README.macOS](https://github.com/openocd-org/openocd/blob/master/README))
+guide and then [README](https://github.com/openocd-org/openocd/blob/master/README)
 to install OpenOCD for macOS. Additionally, you have to install `libftdi`
 (for Homebrew) or `libftdi1` (for MacPorts) package. Here is a building process
 for Apple M1 targets:
