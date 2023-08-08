@@ -15,7 +15,7 @@ The easiest way to obtain OpenOCD is to download Eclipse IDE bundle from
 * For Linux download and extract Eclipse IDE bundle anywhere. OpenOCD resides in
   `bin` subdirectory.
 
-## Building OpenOCD for Linux
+## Building for Linux
 
 Install prerequisites for Ubuntu 20.04:
 
@@ -84,7 +84,7 @@ cable to the host computer:
 $ sudo udevadm control --reload-rules
 ```
 
-## Building OpenOCD for Windows
+## Building for Windows
 
 It is possible to use OpenOCD on Windows with FTDI-based debug cables using a
 `ftdi` interface and `libusb` driver (further down called `ftdi`/`libusb`). Note,
@@ -145,6 +145,28 @@ $ make install
 If your application uses libusb and is being linked dynamically (this is by
 default), copy `/tools/libusb-mingw/bin/libusb-1.0.dll` to the OpenOCD bin
 directory. Copy OpenOCD installation to Window host.
+
+## Building for macOS
+
+!!! warning
+
+    Ensure that your `PATH` does not contain GNU binutils binaries, otherwise
+    linkage will fail.
+
+Follow [README.macOS](https://github.com/openocd-org/openocd/blob/master/README.macOS)
+guide and then [README]([README.macOS](https://github.com/openocd-org/openocd/blob/master/README))
+to install OpenOCD for macOS. Additionally, you have to install `libftdi`
+(for Homebrew) or `libftdi1` (for MacPorts) package. Here is a building process
+for Apple M1 targets:
+
+```shell
+$ git clone -b arc-2021.09 https://github.com/foss-for-synopsys-dwc-arc-processors/openocd
+$ cd openocd
+$ ./bootstrap
+$ CCACHE=none ./configure --enable-ftdi --disable-werror --disable-doxygen-html --prefix=/opt/openocd
+$ make
+$ make install
+```
 
 ## Running internal testsuite
 

@@ -132,7 +132,7 @@ $ C:\arc_gnu\bin\openocd -s C:\arc_gnu\share\openocd\scripts -f board\snps_em_sk
 
 ## Running on macOS
 
-Run ioreg application to ensure that FTDI device is there:
+Run `ioreg` application to ensure that FTDI device is there:
 
 ```shell
 $ ioreg -p IOUSB -l -w 0
@@ -145,6 +145,13 @@ Digilent USB Device@14100000  <class AppleUSBDevice, id 0x1000015f7, registered,
 {
     ...
 }
+```
+
+OpenOCD may be used on macOS the same way it's used on Linux. However,
+consider using `sudo` to get access to USB devices:
+
+```shell
+$ sudo openocd -f board/snps_em_sk_v2.2.cfg
 ```
 
 Note that exact output could differ from host to host.
