@@ -19,7 +19,7 @@
     
     
       
-        <title>Using OpenOCD - GNU Toolchain for ARC User Manual — 2023.09</title>
+        <title>Using OpenOCD - GNU Toolchain for ARC User Manual</title>
       
     
     
@@ -83,7 +83,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="GNU Toolchain for ARC User Manual — 2023.09" class="md-header__button md-logo" aria-label="GNU Toolchain for ARC User Manual — 2023.09" data-md-component="logo">
+    <a href="../.." title="GNU Toolchain for ARC User Manual" class="md-header__button md-logo" aria-label="GNU Toolchain for ARC User Manual" data-md-component="logo">
       
   <img src="../../assets/logo.png" alt="logo">
 
@@ -95,7 +95,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            GNU Toolchain for ARC User Manual — 2023.09
+            GNU Toolchain for ARC User Manual
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -340,12 +340,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="GNU Toolchain for ARC User Manual — 2023.09" class="md-nav__button md-logo" aria-label="GNU Toolchain for ARC User Manual — 2023.09" data-md-component="logo">
+    <a href="../.." title="GNU Toolchain for ARC User Manual" class="md-nav__button md-logo" aria-label="GNU Toolchain for ARC User Manual" data-md-component="logo">
       
   <img src="../../assets/logo.png" alt="logo">
 
     </a>
-    GNU Toolchain for ARC User Manual — 2023.09
+    GNU Toolchain for ARC User Manual
   </label>
   
     <div class="md-nav__source">
@@ -1006,36 +1006,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration-files" class="md-nav__link">
-    Configuration Files
+  <a href="#preface" class="md-nav__link">
+    Preface
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-openocd-server" class="md-nav__link">
-    Running OpenOCD Server
+  <a href="#running-on-linux" class="md-nav__link">
+    Running on Linux
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-openocd-on-linux" class="md-nav__link">
-    How to use OpenOCD on Linux
+  <a href="#running-on-windows" class="md-nav__link">
+    Running on Windows
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-openocd-on-windows" class="md-nav__link">
-    How to use OpenOCD on Windows
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-use-openocd-on-macos" class="md-nav__link">
-    How to use OpenOCD on macOS
+  <a href="#running-on-macos" class="md-nav__link">
+    Running on macOS
   </a>
   
 </li>
@@ -1043,6 +1036,13 @@
         <li class="md-nav__item">
   <a href="#advanced-debug-commands" class="md-nav__link">
     Advanced debug commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurations-files" class="md-nav__link">
+    Configurations Files
   </a>
   
 </li>
@@ -1286,6 +1286,8 @@
         
           
         
+          
+        
       
       
         
@@ -1429,15 +1431,85 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
-          Other
+          Getting Started
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eclipse/getting-started/emsk/" class="md-nav__link">
+        EM Starter Kit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eclipse/getting-started/nsim/" class="md-nav__link">
+        nSIM
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+          Other
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_4">
           <span class="md-nav__icon md-icon"></span>
           Other
         </label>
@@ -1802,11 +1874,133 @@
 
 
 <h1 id="using-openocd">Using OpenOCD<a class="headerlink" href="#using-openocd" title="Permanent link">&para;</a></h1>
+<h2 id="preface">Preface<a class="headerlink" href="#preface" title="Permanent link">&para;</a></h2>
+<p>OpenOCD is used for connecting to a board and running a GDB server for
+debugging.</p>
+<p>Connection host is a host that is connected to the debug target via USB cable
+and runs OpenOCD. Debug host is a host that runs GDB, which connects to the
+OpenOCD with TCP connection. Typically it is the same host.</p>
+<p>Note, that all Synopsys boards a have built-in debug cable. It means that
+a separate Digilent HS cable is not required for connecting to the board,
+but only a simple USB cable.</p>
+<h2 id="running-on-linux">Running on Linux<a class="headerlink" href="#running-on-linux" title="Permanent link">&para;</a></h2>
+<p>Run <code>lsusb</code> to ensure that FTDI device is connected to the host. Here is an
+example for EM Starter Kit 2.2:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ lsusb
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Bus 001 Device 002: ID 0403:6010 Future Technology Devices International, Ltd FT2232C/D/H Dual UART/FIFO IC
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+</span></code></pre></div>
+<p>If you built and installed OpenOCD manually, then you can run it this way:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ openocd -f board/snps_em_sk_v2.2.cfg
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Open On-Chip Debugger 0.9.0-dev (2023-08-08-15:19)
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Licensed under GNU GPL v2
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>For bug reports, read
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    http://openocd.sourceforge.net/doc/doxygen/bugs.html
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>adapter speed: 5000 kHz
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Info : clock speed 5000 kHz
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>Info : JTAG tap: arc-em.cpu tap/device found: 0x200044b1 (mfg: 0x258, part: 0x0004, ver: 0x2)
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>Info : JTAG tap: arc-em.cpu tap/device found: 0x200044b1 (mfg: 0x258, part: 0x0004, ver: 0x2)
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>target state: halted
+</span></code></pre></div>
+<p>If you downloaded IDE bundle with OpenOCD for Linux, then you have to set
+a path to OpenOCD scripts. You can do it this way (replace <code>&lt;ide&gt;</code> by a path to
+the directory of IDE bundle):</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>&lt;ide&gt;/bin/openocd<span class="w"> </span>-s<span class="w"> </span>&lt;ide&gt;/share/openocd/scripts<span class="w"> </span>-f<span class="w"> </span>board/snps_em_sk_v2.2.cfg
+</span></code></pre></div>
+<p>You can find all available configuration files in <code>&lt;openocd&gt;/scripts/board</code>
+directory (where <code>&lt;openocd&gt;</code> stands for OpenOCD installation directory):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ ls /tools/openocd/share/openocd/scripts/board/snps_* -1
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>/tools/openocd/share/openocd/scripts/board/snps_axs101.cfg
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>/tools/openocd/share/openocd/scripts/board/snps_axs102.cfg
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>/tools/openocd/share/openocd/scripts/board/snps_axs103_hs36.cfg
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>/tools/openocd/share/openocd/scripts/board/snps_axs103_hs38.cfg
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>/tools/openocd/share/openocd/scripts/board/snps_axs103_hs47D.cfg
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>/tools/openocd/share/openocd/scripts/board/snps_axs103_hs48.cfg
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>/tools/openocd/share/openocd/scripts/board/snps_em_sk.cfg
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>/tools/openocd/share/openocd/scripts/board/snps_em_sk_v1.cfg
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>/tools/openocd/share/openocd/scripts/board/snps_em_sk_v2.1.cfg
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>/tools/openocd/share/openocd/scripts/board/snps_em_sk_v2.2.cfg
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>/tools/openocd/share/openocd/scripts/board/snps_em_sk_v2.2_cjtag.cfg
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>/tools/openocd/share/openocd/scripts/board/snps_em_sk_v2.3.cfg
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>/tools/openocd/share/openocd/scripts/board/snps_em_sk_v2.3_cjtag.cfg
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>/tools/openocd/share/openocd/scripts/board/snps_hsdk.cfg
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>/tools/openocd/share/openocd/scripts/board/snps_iotdk.cfg
+</span></code></pre></div>
+<p>Refer to <a href="#configurations-files">the corresponding section</a> for details.</p>
+<p>Start a debugger on debug host:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>arc-elf32-gdb<span class="w"> </span>application.elf
+</span></code></pre></div>
+<p>Connect to OpenOCD server:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>(gdb) target remote &lt;connection host ip address&gt;:3333
+</span></code></pre></div>
+<p>If OpenOCD and GDB are running on the same host:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>(gdb) target remote :3333
+</span></code></pre></div>
+<p>Load image to be debugged (<code>application.elf</code>) into the target memory:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>(gdb) load
+</span></code></pre></div>
+<p>Set breakpoints at functions main and exit:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>(gdb) break main
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>(gdb) break exit
+</span></code></pre></div>
+<p>Start the execution on target of the image to debug, to reach function main:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>(gdb) continue
+</span></code></pre></div>
+<p>Resume execution to reach function exit:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>(gdb) continue
+</span></code></pre></div>
+<h2 id="running-on-windows">Running on Windows<a class="headerlink" href="#running-on-windows" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This section is under construction.</p>
+<p>If you are going to use OpenOCD on Windows, firstly follow
+<a href="../winusb/">Installing WinUSB on Windows</a> guide to install WinUSB driver.</p>
 </div>
-<h2 id="configuration-files">Configuration Files<a class="headerlink" href="#configuration-files" title="Permanent link">&para;</a></h2>
+<p>OpenOCD may be used on Windows the same way it's used on Linux. However,
+you have  For example, if you downloaded and installed IDE bundle for Windows,
+then you can run OpenOCD this way:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$ C:\arc_gnu\bin\openocd -s C:\arc_gnu\share\openocd\scripts -f board\snps_em_sk_v2.2.cfg
+</span></code></pre></div>
+<h2 id="running-on-macos">Running on macOS<a class="headerlink" href="#running-on-macos" title="Permanent link">&para;</a></h2>
+<p>Run ioreg application to ensure that FTDI device is there:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>ioreg<span class="w"> </span>-p<span class="w"> </span>IOUSB<span class="w"> </span>-l<span class="w"> </span>-w<span class="w"> </span><span class="m">0</span>
+</span></code></pre></div>
+<p>There should be output like this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Digilent USB Device@14100000  &lt;class AppleUSBDevice, id 0x1000015f7, registered, matched, active, busy 0 (5 ms), retain 21&gt;
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>{
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    ...
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>}
+</span></code></pre></div>
+<p>Note that exact output could differ from host to host.</p>
+<p>If you're using a USB adapter and have a driver kext matched to it,
+you will need to unload it prior to running OpenOCD. E.g. with Apple
+driver (OS X 10.9 or later) for FTDI run:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>kextunload<span class="w"> </span>-b<span class="w"> </span>com.apple.driver.AppleUSBFTDI
+</span></code></pre></div>
+<p>For FTDI vendor driver use:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo<span class="w"> </span>kextunload<span class="w"> </span>FTDIUSBSerialDriver.kext
+</span></code></pre></div>
+<h2 id="advanced-debug-commands">Advanced debug commands<a class="headerlink" href="#advanced-debug-commands" title="Permanent link">&para;</a></h2>
+<p>With the GDB <code>monitor</code> command, you have an access to the core without
+any interference from GDB. With other words, GDB has no notion of
+changes in core state when using the so called <code>monitor</code> commands (but it is
+very powerful). In GDB, connect to the OpenOCD target and type following
+command to get a list of available monitor commands:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>(gdb) monitor help
+</span></code></pre></div>
+<p>To get a list of some ARC-specific commands, run:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>(gdb) monitor help arc
+</span></code></pre></div>
+<p>Those are actually internal OpenOCD commands which are also available in
+configuration scripts and can be passed in OpeOCD command line with <code>-c ...</code>
+options. Those command allow to enabled some extra features of OpenOCD
+(disabled by default for one or another reason) or perform some low-level
+actions bypassing GDB or even OpenOCD. For example it is possible to write/read
+core and aux registers. However some command for register access will be
+removed in future, when ARC OpenOCD will fully support flexible register
+configurations.</p>
+<h2 id="configurations-files">Configurations Files<a class="headerlink" href="#configurations-files" title="Permanent link">&para;</a></h2>
+<p>Here is a table of configuration files for OpenOCD 0.9:</p>
 <table>
 <thead>
 <tr>
@@ -1816,158 +2010,67 @@
 </thead>
 <tbody>
 <tr>
-<td>EMSK 1</td>
-<td><code>snps_em_sk_v1.cfg</code></td>
-</tr>
-<tr>
-<td>EMSK 2.0</td>
-<td><code>snps_em_sk_v2.1.cfg</code></td>
-</tr>
-<tr>
-<td>EMSK 2.1</td>
-<td><code>snps_em_sk_v2.1.cfg</code></td>
-</tr>
-<tr>
-<td>EMSK 2.2</td>
-<td><code>snps_em_sk_v2.2.cfg</code></td>
-</tr>
-<tr>
-<td>EMSK 2.3</td>
-<td><code>snps_em_sk_v2.3.cfg</code></td>
-</tr>
-<tr>
-<td>HSDK</td>
-<td><code>snps_hsdk.cfg</code></td>
-</tr>
-<tr>
-<td>HSDK 4x/4xD</td>
+<td>HS Development Kit 4x/4xD</td>
 <td><code>snps_hsdk_4xd.cfg</code></td>
 </tr>
 <tr>
-<td>IoTDK</td>
+<td>HS Development Kit</td>
+<td><code>snps_hsdk.cfg</code></td>
+</tr>
+<tr>
+<td>IoT Development Kit</td>
 <td><code>snps_iotdk.cfg</code></td>
+</tr>
+<tr>
+<td>EM Software Development Platform</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>EM Starter Kit 2.3</td>
+<td><code>snps_em_sk_v2.3.cfg</code></td>
+</tr>
+<tr>
+<td>EM Starter Kit 2.2</td>
+<td><code>snps_em_sk_v2.2.cfg</code></td>
+</tr>
+<tr>
+<td>EM Starter Kit 2.1</td>
+<td><code>snps_em_sk_v2.1.cfg</code></td>
+</tr>
+<tr>
+<td>EM Starter Kit 2.0</td>
+<td><code>snps_em_sk_v2.1.cfg</code></td>
+</tr>
+<tr>
+<td>EM Starter Kit 1</td>
+<td><code>snps_em_sk_v1.cfg</code></td>
+</tr>
+<tr>
+<td>AXS Software Development Platform 101</td>
+<td><code>snps_axs101.cfg</code></td>
+</tr>
+<tr>
+<td>AXS Software Development Platform 102</td>
+<td><code>snps_axs102.cfg</code></td>
+</tr>
+<tr>
+<td>AXS Software Development Platform 103 with HS36</td>
+<td><code>snps_axs103_hs36.cfg</code></td>
+</tr>
+<tr>
+<td>AXS Software Development Platform 103 with HS38</td>
+<td><code>snps_axs103_hs38.cfg</code></td>
+</tr>
+<tr>
+<td>AXS Software Development Platform 103 with HS47D</td>
+<td><code>snps_axs103_hs47D.cfg</code></td>
+</tr>
+<tr>
+<td>AXS Software Development Platform 103 with HS48</td>
+<td><code>snps_axs103_hs48.cfg</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="running-openocd-server">Running OpenOCD Server<a class="headerlink" href="#running-openocd-server" title="Permanent link">&para;</a></h2>
-<p>OpenOCD is used for starting a GDB server for connecting to a board.
-Suppose, that EM Starter Kit 2.3 is used. If you’ve downloaded IDE bundle for
-Linux then you can run OpenOCD this way (replace <code>&lt;ide&gt;</code> by a path to the
-directory of IDE bundle):</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>&lt;ide&gt;/bin/openocd<span class="w"> </span>-s<span class="w"> </span>&lt;ide&gt;/share/openocd/scripts<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;gdb_port 49101&#39;</span><span class="w"> </span>-f<span class="w"> </span>board/snps_em_sk_v2.3.cfg
-</span></code></pre></div>
-<p>If you’ve built and installed OpenOCD manually then you can run OpenOCD this way:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>openocd<span class="w">  </span>-c<span class="w"> </span><span class="s1">&#39;gdb_port 49101&#39;</span><span class="w"> </span>-f<span class="w"> </span>board/snps_em_sk_v2.2.cfg
-</span></code></pre></div>
-<p>If you’ve downloaded and installed IDE bundle for Windows then you can run OpenOCD this way:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>openocd<span class="w"> </span>-s<span class="w"> </span>C:<span class="se">\a</span>rc_gnu<span class="se">\s</span>hare<span class="se">\o</span>penocd<span class="se">\s</span>cripts<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;gdb_port 49101&quot;</span><span class="w"> </span>-f<span class="w"> </span>board<span class="se">\s</span>nps_em_sk_v2.3.cfg
-</span></code></pre></div>
-<h2 id="how-to-use-openocd-on-linux">How to use OpenOCD on Linux<a class="headerlink" href="#how-to-use-openocd-on-linux" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>Connection host is a host that is connected to the debug target via USB cable
-and runs OpenOCD. Debug host is a hsot that runs GDB, which connects to the
-OpenOCD with TCP connection. Ehily typically it is the same host, they
-actually can be different host and it is important to distinguish them.</p>
-</blockquote>
-<p>Connect debug target to the connection host. AXS10x products and EM Starter Kit
-have built-in debug cable, the don't require a separate Digilent HS cable. HS
-is required only for other debug targets like ML-509 board, etc.</p>
-<p>Run lsusb application to ensure that FTDI device is there:</p>
-<div class="language-text highlight"><pre><span></span><code>$ lsusb
-</code></pre></div>
-<p>In case of HS1, EM Starter Kit and AXS10x there should line like this:</p>
-<div class="language-text highlight"><pre><span></span><code>Bus 001 Device 002: ID 0403:6010 Future Technology Devices International, Ltd FT2232C Dual USB-UART/FIFO IC
-</code></pre></div>
-<p>In case if HS2 there should be line like this:</p>
-<div class="language-text highlight"><pre><span></span><code>Bus 001 Device 003: ID 0403:6014 Future Technology Devices International, Ltd FT232H Single HS USB-UART/FIFO IC
-</code></pre></div>
-<p>Note that exact lines could differ from host to host.</p>
-<p>Run OpenOCD:</p>
-<div class="language-text highlight"><pre><span></span><code>$ openocd -f &lt;openocd.cfg&gt;
-</code></pre></div>
-<p>Valid openocd.cfg files are installed into
-<code>/usr/local/share/openocd/scripts/board/</code>:</p>
-<ul>
-<li>snps_em_sk_v2.3.cfg - ARC EM Starter Kit verison 2.3</li>
-<li>snps_axs101.cfg - ARC AXS101 Software Development platform</li>
-<li>snps_axs103_hs36.cfg - ARC AXS103 in configuration with ARC HS36 core</li>
-<li>snps_hsdk.cfg - ARC HSDK</li>
-</ul>
-<p>On the debug host (PC with GDB) start an ELF32 GDB debugger:</p>
-<div class="language-text highlight"><pre><span></span><code>$ arc-elf32-gdb ./&lt;elf_app_to_debug&gt;
-</code></pre></div>
-<p>Make the connection between arc-elf32-gdb and OpenOCD:</p>
-<div class="language-text highlight"><pre><span></span><code>(gdb) target remote &lt;connection host ip address&gt;:3333
-</code></pre></div>
-<p>Load image to be debugged (./<app_to_debug>.elf) into the target memory:</p>
-<div class="language-text highlight"><pre><span></span><code>(gdb) load
-</code></pre></div>
-<p>Set breakpoints at functions main and exit:</p>
-<div class="language-text highlight"><pre><span></span><code>(gdb) break main
-(gdb) break exit
-</code></pre></div>
-<p>Start the execution on target of the image to debug, to reach function main:</p>
-<p>(gdb) continue</p>
-<p>Resume execution to reach function exit:</p>
-<p>(gdb) continue</p>
-<h2 id="how-to-use-openocd-on-windows">How to use OpenOCD on Windows<a class="headerlink" href="#how-to-use-openocd-on-windows" title="Permanent link">&para;</a></h2>
-<p>WinUSB driver should be used to allow OpenOCD to connect to debug cable and
-that driver would replace FTDI proprietary drivers for Digilent cables or EM
-Starter Kit with it.  Refer to <a href="https://github.com/libusb/libusb/wiki/Windows#How_to_use_libusb_on_Windows">this
-page</a>
-or <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/arc_gnu_eclipse/wiki/How-to-Use-OpenOCD-on-Windows">this
-page</a>
-for details. In a nutshell, download <a href="http://zadig.akeo.ie/">Zadig</a>, run it and
-use it to install WinUSB driver for FTDI device. If FTDI device is not shown by
-Zadig, then tick "List all devices" in "Options". Note that antivirus might
-complain about driver files created by Zadig. After installing the driver
-everything is the same as on Linux: run OpenOCD, connect to it with GDB, etc.</p>
-<h2 id="how-to-use-openocd-on-macos">How to use OpenOCD on macOS<a class="headerlink" href="#how-to-use-openocd-on-macos" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>Connection host is a host that is connected to the debug target via USB cable
-and runs OpenOCD. Debug host is a hsot that runs GDB, which connects to the
-OpenOCD with TCP connection. Ehily typically it is the same host, they
-actually can be different host and it is important to distinguish them.</p>
-</blockquote>
-<p>Connect debug target to the connection host. AXS10x products and EM Starter Kit
-have built-in debug cable, the don't require a separate Digilent HS cable. HS
-is required only for other debug targets like ML-509 board, etc.</p>
-<p>Run ioreg application to ensure that FTDI device is there:</p>
-<div class="language-text highlight"><pre><span></span><code>$ ioreg -p IOUSB -l -w 0
-</code></pre></div>
-<p>There should be output like this:
-    Digilent USB Device@14100000  <class AppleUSBDevice, id 0x1000015f7, registered, matched, active, busy 0 (5 ms), retain 21>
-    {
-      ...
-    }</p>
-<p>Note that exact output could differ from host to host.</p>
-<p>If you're using a USB adapter and have a driver kext matched to it,
-you will need to unload it prior to running OpenOCD. E.g. with Apple
-driver (OS X 10.9 or later) for FTDI run:
-  sudo kextunload -b com.apple.driver.AppleUSBFTDI
-for FTDI vendor driver use:
-  sudo kextunload FTDIUSBSerialDriver.kext</p>
-<p>Run OpenOCD:</p>
-<p>See for tag Run OpenOCD at How to use OpenOCD on Linux.</p>
-<h2 id="advanced-debug-commands">Advanced debug commands<a class="headerlink" href="#advanced-debug-commands" title="Permanent link">&para;</a></h2>
-<p>With the GDB "monitor" command, you have "direct" access to the core without
-any interference from GDB anymore! With other words, GDB has no notion of
-changes in core state when using the so called  monitor commands (but it is
-very powerful). In GDB, connect to the OpenOCD target and type following
-command to get a list of available monitor commands:</p>
-<div class="language-text highlight"><pre><span></span><code>(gdb) monitor help
-</code></pre></div>
-<p>To get a list of some ARC-specific commands, run:</p>
-<div class="language-text highlight"><pre><span></span><code>(gdb) monitor help arc
-</code></pre></div>
-<p>Those are actually internal OpenOCD commands which are also available in
-configuration scripts and can be passed in OpeOCD command line with <code>-c ...</code>
-options. Those command allow to enabled some extra features of OpenOCD
-(disabled by default for one or another reason) or perform some low-level
-actions bypassing GDB or even OpenOCD. For example it is possible to write/read
-core and aux registers. However some command for register access will be
-removed in future, when ARC OpenOCD will fully support flexible register
-configurations.</p>
 
 
 

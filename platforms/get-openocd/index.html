@@ -19,7 +19,7 @@
     
     
       
-        <title>Getting OpenOCD - GNU Toolchain for ARC User Manual — 2023.09</title>
+        <title>Getting OpenOCD - GNU Toolchain for ARC User Manual</title>
       
     
     
@@ -83,7 +83,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="GNU Toolchain for ARC User Manual — 2023.09" class="md-header__button md-logo" aria-label="GNU Toolchain for ARC User Manual — 2023.09" data-md-component="logo">
+    <a href="../.." title="GNU Toolchain for ARC User Manual" class="md-header__button md-logo" aria-label="GNU Toolchain for ARC User Manual" data-md-component="logo">
       
   <img src="../../assets/logo.png" alt="logo">
 
@@ -95,7 +95,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            GNU Toolchain for ARC User Manual — 2023.09
+            GNU Toolchain for ARC User Manual
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -340,12 +340,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="GNU Toolchain for ARC User Manual — 2023.09" class="md-nav__button md-logo" aria-label="GNU Toolchain for ARC User Manual — 2023.09" data-md-component="logo">
+    <a href="../.." title="GNU Toolchain for ARC User Manual" class="md-nav__button md-logo" aria-label="GNU Toolchain for ARC User Manual" data-md-component="logo">
       
   <img src="../../assets/logo.png" alt="logo">
 
     </a>
-    GNU Toolchain for ARC User Manual — 2023.09
+    GNU Toolchain for ARC User Manual
   </label>
   
     <div class="md-nav__source">
@@ -992,8 +992,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#important-notes" class="md-nav__link">
-    Important Notes
+  <a href="#downloading-a-prebuilt-openocd" class="md-nav__link">
+    Downloading a Prebuilt OpenOCD
   </a>
   
 </li>
@@ -1272,6 +1272,8 @@
         
           
         
+          
+        
       
       
         
@@ -1415,15 +1417,85 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
-          Other
+          Getting Started
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eclipse/getting-started/emsk/" class="md-nav__link">
+        EM Starter Kit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eclipse/getting-started/nsim/" class="md-nav__link">
+        nSIM
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+          Other
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_4">
           <span class="md-nav__icon md-icon"></span>
           Other
         </label>
@@ -1790,33 +1862,34 @@
 <h1 id="getting-openocd">Getting OpenOCD<a class="headerlink" href="#getting-openocd" title="Permanent link">&para;</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This section is under construction.</p>
+<p>If you are going to use OpenOCD on Windows, then also follow
+<a href="../winusb/">Installing WinUSB on Windows</a> guide to install WinUSB driver.</p>
 </div>
-<h2 id="important-notes">Important Notes<a class="headerlink" href="#important-notes" title="Permanent link">&para;</a></h2>
-<ol>
-<li>This document uses term "Digilent HS" to refer to both HS1 and HS2 cables.
-   Statements, which are applicable only to the selected cable, mention it explicitly.
-   Digilent HS3 hasn't been tested with OpenOCD for ARC.</li>
-<li>There is NO Flash support in ARC OpenOCD.</li>
-</ol>
+<h2 id="downloading-a-prebuilt-openocd">Downloading a Prebuilt OpenOCD<a class="headerlink" href="#downloading-a-prebuilt-openocd" title="Permanent link">&para;</a></h2>
+<p>The easiest way to obtain OpenOCD is to download Eclipse IDE bundle from
+<a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases">the releases page</a>:</p>
+<ul>
+<li>For Windows download and install Eclipse IDE bundle with toolchains and OpenOCD.
+  OpenOCD itself resides in the default installation directory <code>C:\arc_gnu\bin</code>.</li>
+<li>For Linux download and extract Eclipse IDE bundle anywhere. OpenOCD resides in
+  <code>bin</code> subdirectory.</li>
+</ul>
 <h2 id="building-openocd-for-linux">Building OpenOCD for Linux<a class="headerlink" href="#building-openocd-for-linux" title="Permanent link">&para;</a></h2>
-<p>Install prerequisites for Ubuntu:</p>
+<p>Install prerequisites for Ubuntu 20.04:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libtool<span class="w"> </span>git-core<span class="w"> </span>build-essential<span class="w"> </span>autoconf<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">                       </span>automake<span class="w"> </span>texinfo<span class="w"> </span>libusb-1.0-0<span class="w"> </span>libusb-1.0-0-dev<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">                       </span>pkg-config
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">      </span>automake<span class="w"> </span>texinfo<span class="w"> </span>libusb-1.0-0<span class="w"> </span>libusb-1.0-0-dev<span class="w"> </span>pkg-config
 </span></code></pre></div>
 <p>Install prerequisites for RHEL/CentOS 7:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>libtool<span class="w"> </span>gcc<span class="w"> </span>autoconf<span class="w"> </span>automake<span class="w"> </span>texinfo<span class="w"> </span>libusb1<span class="w"> </span>libusb1-devel<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">                   </span>git<span class="w"> </span>make<span class="w"> </span>which
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>libtool<span class="w"> </span>gcc<span class="w"> </span>autoconf<span class="w"> </span>automake<span class="w"> </span>texinfo<span class="w"> </span>libusb1<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">      </span>libusb1-devel<span class="w"> </span>git<span class="w"> </span>make<span class="w"> </span>which
 </span></code></pre></div>
 <p>Download OpenOCD sources and checkout the latest release:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>arc-2021.09<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/openocd
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">cd</span><span class="w"> </span>openocd
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>arc-2021.09<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/openocd
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>openocd
 </span></code></pre></div>
 <p>Configure OpenOCD (use your own <code>--prefix</code> path):</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>./bootstrap
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$<span class="w"> </span>./configure<span class="w"> </span>--enable-ftdi<span class="w"> </span>--disable-werror<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">              </span>--disable-doxygen-html<span class="w"> </span>--prefix<span class="o">=</span>/tools/openocd
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$<span class="w"> </span>./configure<span class="w"> </span>--enable-ftdi<span class="w"> </span>--disable-werror<span class="w"> </span>--disable-doxygen-html<span class="w"> </span>--prefix<span class="o">=</span>/tools/openocd
 </span></code></pre></div>
 <p>Also, you can pass <code>--enable-verbose</code> and <code>--enable-verbose-jtag-io</code> options for development activities.</p>
 <p>Build and install:</p>
@@ -1824,77 +1897,72 @@
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$<span class="w"> </span>make<span class="w"> </span>install
 </span></code></pre></div>
 <p>Configure your environment (use your own installation path):</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/tools/openocd/bin:<span class="nv">$PATH</span>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/tools/openocd/bin:<span class="nv">$PATH</span>
 </span></code></pre></div>
 <p>Finally you need to configure udev rules in such way that OpenOCD would be able
 to claim your JTAG debug cable. In common case for ARC this is an FTDI-based
-device. If you already have libftdi package installed on your system, then
-required rules are already provided to udev. Otherwise create file
+device. If you already have <code>libftdi</code> package installed on your system, then
+required rules are already provided to <code>udev</code>. Otherwise create file
 <code>/etc/udev/rules.d/99-ftdi.rules</code> with the following contents:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a># allow users to claim the device
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a># Digilent HS1 and similiar products
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;0403&quot;, ATTRS{idProduct}==&quot;6010&quot;, MODE=&quot;0664&quot;, GROUP=&quot;plugdev&quot;
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a># Digilent HS2
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;0403&quot;, ATTRS{idProduct}==&quot;6014&quot;, MODE=&quot;0664&quot;, GROUP=&quot;plugdev&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a># Digilent HS1 and similiar products
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;0403&quot;, ATTRS{idProduct}==&quot;6010&quot;, MODE=&quot;0664&quot;, GROUP=&quot;plugdev&quot;
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a># Digilent HS2
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;0403&quot;, ATTRS{idProduct}==&quot;6014&quot;, MODE=&quot;0664&quot;, GROUP=&quot;plugdev&quot;
 </span></code></pre></div>
 <p>You also can use file <code>contrib/99-openocd.udev</code> supplied with OpenOCD sources,
 however this file doesn't work with Digilent HS2, though on the other hand it
 mentions many other FTDI-based devices.</p>
-<p>Then either reboot your system or reload udev configuration and reconnect debug
+<p>Then either reboot your system or reload <code>udev</code> configuration and reconnect debug
 cable to the host computer:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>udevadm<span class="w"> </span>control<span class="w"> </span>--reload-rules
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># Disconnect JTAG cable from host, then connect again.</span>
 </span></code></pre></div>
 <h2 id="building-openocd-for-windows">Building OpenOCD for Windows<a class="headerlink" href="#building-openocd-for-windows" title="Permanent link">&para;</a></h2>
 <p>It is possible to use OpenOCD on Windows with FTDI-based debug cables using a
-<code>ftdi</code> interface and libusb driver (further down called ftdi/libusb). Note,
-however that this requires replacing the original FTDI proprietary drivers with
+<code>ftdi</code> interface and <code>libusb</code> driver (further down called <code>ftdi</code>/<code>libusb</code>). Note,
+however that this requires <a href="../winusb/">replacing the original FTDI proprietary drivers</a> with
 open source ones. This will render Digilent cable unusable by Digilent tools,
 like Adept.</p>
-<p>Install the same prerequisites like for Linux build (except for libusb-dev) and
-MinGW on your system:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libtool<span class="w"> </span>git-core<span class="w"> </span>build-essential<span class="w"> </span>autoconf<span class="w"> </span>automake<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">                       </span>texinfo<span class="w"> </span>pkg-config
-</span></code></pre></div>
-<p>Install MinGW cross-compiler to your system:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>gcc-mingw-w64
+<p>Install the same prerequisites like for Linux build (except for <code>libusb-dev</code>) and
+MinGW cross-compiler:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libtool<span class="w"> </span>git-core<span class="w"> </span>build-essential<span class="w"> </span>autoconf<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">      </span>automake<span class="w"> </span>texinfo<span class="w"> </span>pkg-config<span class="w"> </span>wget<span class="w"> </span>gcc-mingw-w64
 </span></code></pre></div>
 <p>Download <a href="http://libusb.info">libusb sources</a> sources. Configure and build them
-with MinGW compiler. It is recommended to build only static libusb, so that
-OpenOCD will not need this library's dll file to be copied around:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>tar<span class="w"> </span>xaf<span class="w"> </span>libusb-1.0.20.tar.bz2
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>libusb-1.0.20
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>$<span class="w"> </span>./configure<span class="w"> </span>--host<span class="o">=</span>i686-w64-mingw32<span class="w"> </span>--build<span class="o">=</span>x86_64-linux-gnu<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span>--prefix<span class="o">=</span>&lt;/libusbx/install/path&gt;<span class="w"> </span>--disable-shared<span class="w"> </span>--enable-static
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>$<span class="w"> </span>make
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>$<span class="w"> </span>make<span class="w"> </span>install
+with MinGW compiler. It is recommended to build only static <code>libusb</code>, so that
+OpenOCD will not need this library's <code>.dll</code> file to be copied around:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>wget<span class="w"> </span>https://github.com/libusb/libusb/releases/download/v1.0.26/libusb-1.0.26.tar.bz2
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>$<span class="w"> </span>tar<span class="w"> </span>-xaf<span class="w"> </span>libusb-1.0.26.tar.bz2
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>libusb-1.0.26
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>$<span class="w"> </span>./configure<span class="w"> </span>--host<span class="o">=</span>i686-w64-mingw32<span class="w"> </span>--build<span class="o">=</span>x86_64-linux-gnu<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">      </span>--prefix<span class="o">=</span>/tools/libusb-mingw<span class="w"> </span>--disable-shared<span class="w"> </span>--enable-static
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>$<span class="w"> </span>make
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>$<span class="w"> </span>make<span class="w"> </span>install
 </span></code></pre></div>
 <p>Download OpenOCD sources:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/openocd
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>openocd
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>$<span class="w"> </span>./bootstrap
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>arc-2021.09<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/openocd
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>openocd
 </span></code></pre></div>
 <p>Configure OpenOCD. Consult <code>configure --help</code> and generic OpenOCD documentation
-for details. This command line is recommended for ARC with libusb/ftdi:</p>
-<div class="language-text highlight"><pre><span></span><code>$ PKG_CONFIG_PATH=&lt;/libusb/install/path&gt;/lib/pkgconfig ./configure \
-  --enable-ftdi --host=i686-w64-mingw32 --build=x86_64-linux-gnu \
-  --disable-werror --prefix=&lt;openocd/install/path&gt;
-</code></pre></div>
-<p>Note that it is required to set PKG_CONFIG_PATH, otherwise configure script
-will detect host libusb installation, instead of the one cross-compiled for
+for details. This command line is recommended for ARC with <code>libusb</code>/<code>ftdi</code>:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span>./bootstrap
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>$<span class="w"> </span><span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span>/tools/libusb-mingw/lib/pkgconfig<span class="w"> </span>./configure<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">      </span>--enable-ftdi<span class="w"> </span>--host<span class="o">=</span>i686-w64-mingw32<span class="w"> </span>--build<span class="o">=</span>x86_64-linux-gnu<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">      </span>--disable-werror<span class="w"> </span>--prefix<span class="o">=</span>/tools/openocd-mingw
+</span></code></pre></div>
+<p>Note that it is required to set <code>PKG_CONFIG_PATH</code>, otherwise configure script
+will detect host's <code>libusb</code> installation, instead of the one cross-compiled for
 Windows.</p>
 <p>Build and install:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>make
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>$<span class="w"> </span>make<span class="w"> </span>install
 </span></code></pre></div>
 <p>If your application uses libusb and is being linked dynamically (this is by
-default), copy </libusbx/install/path>/bin/libusb-1.0.dll to the OpenOCD bin
+default), copy <code>/tools/libusb-mingw/bin/libusb-1.0.dll</code> to the OpenOCD bin
 directory. Copy OpenOCD installation to Window host.</p>
 <h2 id="running-internal-testsuite">Running internal testsuite<a class="headerlink" href="#running-internal-testsuite" title="Permanent link">&para;</a></h2>
-<p>There is a set of internal test for ARC and OpenOCD (consisting of just a
-single test at the moment of this writing, though...). This testsuite aim is to
+<p>There is a set of internal test for ARC and OpenOCD. This testsuite aim is to
 catch some issues with OpenOCD, JTAG or hardware. To run test suite: source
-<code>tcl/test/arc.cfg</code> then run arc_test_run_all procedure, or run tests
+<code>tcl/test/arc.cfg</code> then run <code>arc_test_run_all</code> procedure, or run tests
 individually.</p>
 
 
