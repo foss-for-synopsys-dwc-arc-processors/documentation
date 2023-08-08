@@ -37,26 +37,26 @@ $ tree
 
 ### Installing "TM Terminal"
 
-Install "TM Terminal" plugin through "Help" -> "Install New Software..." menu.
-Choose "--All Available Sites--" in "Work with" field. Wait until a list of
-available plugins is updated and select "General Purpose Tools" -> "TM Terminal"
-plugin. Press "Next" button and proceed with the installation process.
+Install **TM Terminal** plugin through **Help** → **Install New Software...** menu.
+Choose **--All Available Sites--** in **Work with** field. Wait until a list of
+available plugins is updated and select **General Purpose Tools** → **TM Terminal**
+plugin. Press **Next** button and proceed with the installation process.
 
 ### Installing ARC GNU Plugin
 
-Open "Help" -> "Install New Software..." -> Add -> Archive menu and
+Open **Help** → **Install New Software...** → **Add** → **Archive** menu
 and select the downloaded plugin's archive (e.g., `arc_gnu_2023.03_ide_plugins.zip`).
-Then choose "ARC GNU Tools Support", press "Next" button and proceed with
+Then choose **ARC GNU Tools Support**, press **Next** button and proceed with
 the installation process:
 
 ![Choose Eclipse plugin](images/eclipse_plugin.png){ width="700" }
 
-Press "Install anyway" when "Security Warning" is shown:
+Press **Install anyway** when **Security Warning** is shown:
 
 ![Security Warning](images/warning.png){ width="700" }
 
 You can find information about the installed plugins in
-"Help" -> "About Eclipse IDE" -> "Installation Details" window.
+**Help** → **About Eclipse IDE** → **Installation Details** window.
 
 ## Updating the Existing Plugin
 

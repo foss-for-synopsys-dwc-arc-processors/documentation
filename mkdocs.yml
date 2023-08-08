@@ -87,6 +87,7 @@ nav:
       - eclipse/installation/preferences.md
     - Getting Started:
       - EM Starter Kit: eclipse/getting-started/emsk.md
+      - HS Development Kit: eclipse/getting-started/hsdk.md
       - nSIM: eclipse/getting-started/nsim.md
     - Other:
       - eclipse/other/building.md
