@@ -85,6 +85,9 @@ nav:
       - Installing on Linux: eclipse/installation/linux.md
       - Manual Installation: eclipse/installation/manual.md
       - eclipse/installation/preferences.md
+    - Getting Started:
+      - EM Starter Kit: eclipse/getting-started/emsk.md
+      - nSIM: eclipse/getting-started/nsim.md
     - Other:
       - eclipse/other/building.md
   - Advanced topics:
