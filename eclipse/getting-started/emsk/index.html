@@ -12,7 +12,7 @@
         <link rel="prev" href="../../installation/preferences/">
       
       
-        <link rel="next" href="../nsim/">
+        <link rel="next" href="../hsdk/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
@@ -1357,6 +1357,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
@@ -1386,10 +1388,83 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          EM Starter Kit
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         EM Starter Kit
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-the-project" class="md-nav__link">
+    Creating the Project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-project" class="md-nav__link">
+    Building the Project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-debug-configuration" class="md-nav__link">
+    Creating a Debug Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-a-serial-terminal" class="md-nav__link">
+    Configuring a Serial Terminal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-the-project" class="md-nav__link">
+    Debugging the Project
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hsdk/" class="md-nav__link">
+        HS Development Kit
+      </a>
     </li>
   
 
@@ -1808,6 +1883,47 @@
 
 
 <h1 id="getting-started-with-em-starter-kit">Getting Started with EM Starter Kit<a class="headerlink" href="#getting-started-with-em-starter-kit" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Consider reading these guides firstly:</p>
+<ul>
+<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-em-starter-kit-1">Configuring EM Starter Kit</a></li>
+<li><a href="../../../platforms/winusb/">Installing WinUSB driver on Windows</a></li>
+</ul>
+</div>
+<h2 id="creating-the-project">Creating the Project<a class="headerlink" href="#creating-the-project" title="Permanent link">&para;</a></h2>
+<p>Select <strong>File</strong> → <strong>New</strong> → <strong>Project..</strong> and choose <strong>C Project</strong>.
+A list of ARC projects will appear. Choose any ARC EM Starter Kit
+"Hello World" project from the **ARC EM Starter Kit Projects" group.
+Suppose, EM11D project is chosen.</p>
+<p><img alt="ARC EM Starter Kit Projects" src="../images/emsk-projects.png" width="700" /></p>
+<p>After creating the project, a simple "Hello, World!" program will be created:</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world!</span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="building-the-project">Building the Project<a class="headerlink" href="#building-the-project" title="Permanent link">&para;</a></h2>
+<p>Do right click on a project in <strong>Project Explorer</strong> ans choose <strong>Build Project</strong>.
+The project will be built with this output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>make all 
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&#39;Building file: ../src/emsk_em11d_hello.c&#39;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>&#39;Invoking: ARC GNU C Compiler&#39;
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>C:\arc_gnu\bin\arc-elf32-gcc.exe -mcpu=em4_fpuda -O0 -g3 -Wall -c -fmessage-length=0 -gdwarf-2 -Wa,-adhlns=&quot;src/emsk_em11d_hello.o.lst&quot; -MMD -MP -MF&quot;src/emsk_em11d_hello.d&quot; -MT&quot;src/emsk_em11d_hello.o&quot; -o &quot;src/emsk_em11d_hello.o&quot; &quot;../src/emsk_em11d_hello.c&quot;
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>&#39;Finished building: ../src/emsk_em11d_hello.c&#39;
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>&#39; &#39;
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>&#39;Building target: emsk_em11d_hello.elf&#39;
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>&#39;Invoking: ARC GNU C Linker&#39;
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>C:\arc_gnu\bin\arc-elf32-gcc.exe -mcpu=em4_fpuda --specs=emsk_em11d.specs -Wl,-Map,emsk_em11d_hello.map -o &quot;emsk_em11d_hello.elf&quot;  ./src/emsk_em11d_hello.o 
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>&#39;Finished building target: emsk_em11d_hello.elf&#39;
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>&#39; &#39;
+</span></code></pre></div>
+<h2 id="creating-a-debug-configuration">Creating a Debug Configuration<a class="headerlink" href="#creating-a-debug-configuration" title="Permanent link">&para;</a></h2>
+<h2 id="configuring-a-serial-terminal">Configuring a Serial Terminal<a class="headerlink" href="#configuring-a-serial-terminal" title="Permanent link">&para;</a></h2>
+<h2 id="debugging-the-project">Debugging the Project<a class="headerlink" href="#debugging-the-project" title="Permanent link">&para;</a></h2>
 
 
 

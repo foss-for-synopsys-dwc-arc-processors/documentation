@@ -9,24 +9,24 @@
       
       
       
-        <link rel="prev" href="../gcc/">
+        <link rel="prev" href="../emsk/">
       
       
-        <link rel="next" href="../../faq/">
+        <link rel="next" href="../nsim/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>Running QEMU Tests - GNU Toolchain for ARC User Manual</title>
+        <title>HS Development Kit - GNU Toolchain for ARC User Manual</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -42,7 +42,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#running-qemu-tests" class="md-skip">
+        <a href="#getting-started-with-hs-development-kit" class="md-skip">
           Skip to content
         </a>
       
@@ -83,9 +83,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="GNU Toolchain for ARC User Manual" class="md-header__button md-logo" aria-label="GNU Toolchain for ARC User Manual" data-md-component="logo">
+    <a href="../../.." title="GNU Toolchain for ARC User Manual" class="md-header__button md-logo" aria-label="GNU Toolchain for ARC User Manual" data-md-component="logo">
       
-  <img src="../../assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Running QEMU Tests
+              HS Development Kit
             
           </span>
         </div>
@@ -175,7 +175,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         Home
       </a>
     </li>
@@ -191,7 +191,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../simulators/qemu/" class="md-tabs__link">
+      <a href="../../../simulators/qemu/" class="md-tabs__link">
         Simulators
       </a>
     </li>
@@ -212,7 +212,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../baremetal/simulators/nsim/" class="md-tabs__link">
+      <a href="../../../baremetal/simulators/nsim/" class="md-tabs__link">
         Baremetal
       </a>
     </li>
@@ -242,40 +242,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../platforms/" class="md-tabs__link">
+      <a href="../../../platforms/" class="md-tabs__link">
         Development platforms
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../eclipse/" class="md-tabs__link">
-        Eclipse IDE
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../advanced/optimizations/" class="md-tabs__link">
-        Advanced topics
       </a>
     </li>
   
@@ -292,7 +260,39 @@
   
   
     <li class="md-tabs__item">
-      <a href="../newlib/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Eclipse IDE
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../advanced/optimizations/" class="md-tabs__link">
+        Advanced topics
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../testing/newlib/" class="md-tabs__link">
         Testing
       </a>
     </li>
@@ -305,7 +305,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../faq/" class="md-tabs__link">
+    <a href="../../../faq/" class="md-tabs__link">
       FAQ
     </a>
   </li>
@@ -340,9 +340,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="GNU Toolchain for ARC User Manual" class="md-nav__button md-logo" aria-label="GNU Toolchain for ARC User Manual" data-md-component="logo">
+    <a href="../../.." title="GNU Toolchain for ARC User Manual" class="md-nav__button md-logo" aria-label="GNU Toolchain for ARC User Manual" data-md-component="logo">
       
-  <img src="../../assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     GNU Toolchain for ARC User Manual
@@ -396,7 +396,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../..">Home</a>
+          <a href="../../..">Home</a>
           
             <label for="__nav_1">
               <span class="md-nav__icon md-icon"></span>
@@ -419,7 +419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/processors/" class="md-nav__link">
+      <a href="../../../general/processors/" class="md-nav__link">
         Synopsys ARC Processors
       </a>
     </li>
@@ -433,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/toolchains/" class="md-nav__link">
+      <a href="../../../general/toolchains/" class="md-nav__link">
         Toolchains for ARC Processors
       </a>
     </li>
@@ -447,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/target-options/" class="md-nav__link">
+      <a href="../../../general/target-options/" class="md-nav__link">
         Target Specific Options
       </a>
     </li>
@@ -461,7 +461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/compatibility/" class="md-nav__link">
+      <a href="../../../general/compatibility/" class="md-nav__link">
         Compatibility with MetaWare, nSIM and ARChitect
       </a>
     </li>
@@ -516,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../simulators/qemu/" class="md-nav__link">
+      <a href="../../../simulators/qemu/" class="md-nav__link">
         QEMU
       </a>
     </li>
@@ -530,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../simulators/nsim/" class="md-nav__link">
+      <a href="../../../simulators/nsim/" class="md-nav__link">
         nSIM
       </a>
     </li>
@@ -622,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../baremetal/simulators/nsim/" class="md-nav__link">
+      <a href="../../../baremetal/simulators/nsim/" class="md-nav__link">
         Building Applications and Debugging on nSIM
       </a>
     </li>
@@ -636,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../baremetal/simulators/qemu/" class="md-nav__link">
+      <a href="../../../baremetal/simulators/qemu/" class="md-nav__link">
         Building Applications and Debugging on QEMU
       </a>
     </li>
@@ -696,7 +696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../baremetal/hardware/memory/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/memory/" class="md-nav__link">
         Memory Maps and Linker Scripts
       </a>
     </li>
@@ -710,7 +710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../baremetal/hardware/debugging/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/debugging/" class="md-nav__link">
         Building and Debugging on Various Boards
       </a>
     </li>
@@ -724,7 +724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../baremetal/hardware/axs-openocd/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/axs-openocd/" class="md-nav__link">
         Building and Debugging on AXS with OpenOCD
       </a>
     </li>
@@ -738,7 +738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../baremetal/hardware/axs-ashling/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/axs-ashling/" class="md-nav__link">
         Building and Debugging on AXS with Ashling Opella-XD
       </a>
     </li>
@@ -796,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../baremetal/general/heap-and-stack/" class="md-nav__link">
+      <a href="../../../baremetal/general/heap-and-stack/" class="md-nav__link">
         Heap and Stack Size
       </a>
     </li>
@@ -810,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../baremetal/general/tcf/" class="md-nav__link">
+      <a href="../../../baremetal/general/tcf/" class="md-nav__link">
         Using TCF
       </a>
     </li>
@@ -824,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../baremetal/general/specs/" class="md-nav__link">
+      <a href="../../../baremetal/general/specs/" class="md-nav__link">
         Specs Files
       </a>
     </li>
@@ -890,7 +890,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../platforms/">Development platforms</a>
+          <a href="../../../platforms/">Development platforms</a>
           
             <label for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
@@ -954,7 +954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platforms/get-openocd/" class="md-nav__link">
+      <a href="../../../platforms/get-openocd/" class="md-nav__link">
         Getting OpenOCD
       </a>
     </li>
@@ -968,7 +968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platforms/use-openocd/" class="md-nav__link">
+      <a href="../../../platforms/use-openocd/" class="md-nav__link">
         Using OpenOCD
       </a>
     </li>
@@ -982,7 +982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platforms/winusb/" class="md-nav__link">
+      <a href="../../../platforms/winusb/" class="md-nav__link">
         Installing WinUSB on Windows
       </a>
     </li>
@@ -996,7 +996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platforms/digilent/" class="md-nav__link">
+      <a href="../../../platforms/digilent/" class="md-nav__link">
         Installing Digilent Adept
       </a>
     </li>
@@ -1010,7 +1010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platforms/reset/" class="md-nav__link">
+      <a href="../../../platforms/reset/" class="md-nav__link">
         Resetting Boards
       </a>
     </li>
@@ -1187,14 +1187,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
       
       
         
@@ -1213,7 +1215,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../eclipse/">Eclipse IDE</a>
+          <a href="../../">Eclipse IDE</a>
           
             <label for="__nav_6">
               <span class="md-nav__icon md-icon"></span>
@@ -1221,7 +1223,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Eclipse IDE
@@ -1275,7 +1277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eclipse/installation/windows/" class="md-nav__link">
+      <a href="../../installation/windows/" class="md-nav__link">
         Installing on Windows
       </a>
     </li>
@@ -1289,7 +1291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eclipse/installation/linux/" class="md-nav__link">
+      <a href="../../installation/linux/" class="md-nav__link">
         Installing on Linux
       </a>
     </li>
@@ -1303,7 +1305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eclipse/installation/manual/" class="md-nav__link">
+      <a href="../../installation/manual/" class="md-nav__link">
         Manual Installation
       </a>
     </li>
@@ -1317,7 +1319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eclipse/installation/preferences/" class="md-nav__link">
+      <a href="../../installation/preferences/" class="md-nav__link">
         Plugin Preferences
       </a>
     </li>
@@ -1336,16 +1338,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" checked>
       
       
         
@@ -1362,7 +1366,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_6_3">
           <span class="md-nav__icon md-icon"></span>
           Getting Started
@@ -1375,7 +1379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eclipse/getting-started/emsk/" class="md-nav__link">
+      <a href="../emsk/" class="md-nav__link">
         EM Starter Kit
       </a>
     </li>
@@ -1387,11 +1391,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../eclipse/getting-started/hsdk/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         HS Development Kit
       </a>
+      
     </li>
   
 
@@ -1403,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eclipse/getting-started/nsim/" class="md-nav__link">
+      <a href="../nsim/" class="md-nav__link">
         nSIM
       </a>
     </li>
@@ -1457,7 +1471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../eclipse/other/building/" class="md-nav__link">
+      <a href="../../other/building/" class="md-nav__link">
         Building the Eclipse Plugin
       </a>
     </li>
@@ -1535,7 +1549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/optimizations/" class="md-nav__link">
+      <a href="../../../advanced/optimizations/" class="md-nav__link">
         Optimization Options
       </a>
     </li>
@@ -1549,7 +1563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/custom-instructions/" class="md-nav__link">
+      <a href="../../../advanced/custom-instructions/" class="md-nav__link">
         Custom instructions
       </a>
     </li>
@@ -1563,7 +1577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/apex-header/" class="md-nav__link">
+      <a href="../../../advanced/apex-header/" class="md-nav__link">
         Migrating APEX Header
       </a>
     </li>
@@ -1577,7 +1591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/intrinsics/" class="md-nav__link">
+      <a href="../../../advanced/intrinsics/" class="md-nav__link">
         Intrinsics
       </a>
     </li>
@@ -1591,7 +1605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/sanitizers/" class="md-nav__link">
+      <a href="../../../advanced/sanitizers/" class="md-nav__link">
         Sanitizers
       </a>
     </li>
@@ -1605,7 +1619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/jli/" class="md-nav__link">
+      <a href="../../../advanced/jli/" class="md-nav__link">
         JLI Instructions
       </a>
     </li>
@@ -1619,7 +1633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/secure-shield/" class="md-nav__link">
+      <a href="../../../advanced/secure-shield/" class="md-nav__link">
         SecureShield Programming
       </a>
     </li>
@@ -1633,7 +1647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/small-data/" class="md-nav__link">
+      <a href="../../../advanced/small-data/" class="md-nav__link">
         Small Data Sections
       </a>
     </li>
@@ -1647,7 +1661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/64-bit-operations/" class="md-nav__link">
+      <a href="../../../advanced/64-bit-operations/" class="md-nav__link">
         Impact of 64-bit Integral Operation on GCC Toolchain
       </a>
     </li>
@@ -1661,7 +1675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/bit-file-fpga/" class="md-nav__link">
+      <a href="../../../advanced/bit-file-fpga/" class="md-nav__link">
         Writing Bit-file into FPGA with Digilent HS Cable
       </a>
     </li>
@@ -1681,16 +1695,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
       
       
         
@@ -1709,7 +1721,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           Testing
@@ -1722,7 +1734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../newlib/" class="md-nav__link">
+      <a href="../../../testing/newlib/" class="md-nav__link">
         Running Newlib Tests
       </a>
     </li>
@@ -1736,7 +1748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../glibc/" class="md-nav__link">
+      <a href="../../../testing/glibc/" class="md-nav__link">
         Running Glibc Tests
       </a>
     </li>
@@ -1750,7 +1762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gcc/" class="md-nav__link">
+      <a href="../../../testing/gcc/" class="md-nav__link">
         Running GCC Tests
       </a>
     </li>
@@ -1762,21 +1774,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../testing/qemu/" class="md-nav__link">
         Running QEMU Tests
       </a>
-      
     </li>
   
 
@@ -1796,7 +1798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/" class="md-nav__link">
+      <a href="../../../faq/" class="md-nav__link">
         FAQ
       </a>
     </li>
@@ -1821,15 +1823,7 @@
   
 
 
-<h1 id="running-qemu-tests">Running QEMU Tests<a class="headerlink" href="#running-qemu-tests" title="Permanent link">&para;</a></h1>
-<p>TCG is the internal language that powers QEMU. There are some assembly tests that validate the
-basic function of several instructions in QEMU.</p>
-<p>Firstly, make sure that QEMU if configured with <code>--cross-cc-arc=arc-elf32-gcc</code> and <code>--cross-cc-arc64=arc64-elf-gcc</code> options.
-Then after building QEMU use these commands to run TCG tests:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>make<span class="w"> </span>clean-tcg
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>make<span class="w"> </span>build-tcg
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>make<span class="w"> </span>check-tcg
-</span></code></pre></div>
+<h1 id="getting-started-with-hs-development-kit">Getting Started with HS Development Kit<a class="headerlink" href="#getting-started-with-hs-development-kit" title="Permanent link">&para;</a></h1>
 
 
 
@@ -1876,10 +1870,10 @@ Then after building QEMU use these commands to run TCG tests:</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate", "navigation.sections", "navigation.indexes", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate", "navigation.sections", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   </body>
