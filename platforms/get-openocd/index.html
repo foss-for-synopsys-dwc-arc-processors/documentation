@@ -999,15 +999,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#building-openocd-for-linux" class="md-nav__link">
-    Building OpenOCD for Linux
+  <a href="#building-for-linux" class="md-nav__link">
+    Building for Linux
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#building-openocd-for-windows" class="md-nav__link">
-    Building OpenOCD for Windows
+  <a href="#building-for-windows" class="md-nav__link">
+    Building for Windows
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-for-macos" class="md-nav__link">
+    Building for macOS
   </a>
   
 </li>
@@ -1874,7 +1881,7 @@
 <li>For Linux download and extract Eclipse IDE bundle anywhere. OpenOCD resides in
   <code>bin</code> subdirectory.</li>
 </ul>
-<h2 id="building-openocd-for-linux">Building OpenOCD for Linux<a class="headerlink" href="#building-openocd-for-linux" title="Permanent link">&para;</a></h2>
+<h2 id="building-for-linux">Building for Linux<a class="headerlink" href="#building-for-linux" title="Permanent link">&para;</a></h2>
 <p>Install prerequisites for Ubuntu 20.04:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libtool<span class="w"> </span>git-core<span class="w"> </span>build-essential<span class="w"> </span>autoconf<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">      </span>automake<span class="w"> </span>texinfo<span class="w"> </span>libusb-1.0-0<span class="w"> </span>libusb-1.0-0-dev<span class="w"> </span>pkg-config
@@ -1916,7 +1923,7 @@ mentions many other FTDI-based devices.</p>
 cable to the host computer:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>udevadm<span class="w"> </span>control<span class="w"> </span>--reload-rules
 </span></code></pre></div>
-<h2 id="building-openocd-for-windows">Building OpenOCD for Windows<a class="headerlink" href="#building-openocd-for-windows" title="Permanent link">&para;</a></h2>
+<h2 id="building-for-windows">Building for Windows<a class="headerlink" href="#building-for-windows" title="Permanent link">&para;</a></h2>
 <p>It is possible to use OpenOCD on Windows with FTDI-based debug cables using a
 <code>ftdi</code> interface and <code>libusb</code> driver (further down called <code>ftdi</code>/<code>libusb</code>). Note,
 however that this requires <a href="../winusb/">replacing the original FTDI proprietary drivers</a> with
@@ -1959,6 +1966,24 @@ Windows.</p>
 <p>If your application uses libusb and is being linked dynamically (this is by
 default), copy <code>/tools/libusb-mingw/bin/libusb-1.0.dll</code> to the OpenOCD bin
 directory. Copy OpenOCD installation to Window host.</p>
+<h2 id="building-for-macos">Building for macOS<a class="headerlink" href="#building-for-macos" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ensure that your <code>PATH</code> does not contain GNU binutils binaries, otherwise
+linkage will fail.</p>
+</div>
+<p>Follow <a href="https://github.com/openocd-org/openocd/blob/master/README.macOS">README.macOS</a>
+guide and then <a href="[README.macOS](https://github.com/openocd-org/openocd/blob/master/README)">README</a>
+to install OpenOCD for macOS. Additionally, you have to install <code>libftdi</code>
+(for Homebrew) or <code>libftdi1</code> (for MacPorts) package. Here is a building process
+for Apple M1 targets:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>arc-2021.09<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/openocd
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>openocd
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>$<span class="w"> </span>./bootstrap
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>$<span class="w"> </span><span class="nv">CCACHE</span><span class="o">=</span>none<span class="w"> </span>./configure<span class="w"> </span>--enable-ftdi<span class="w"> </span>--disable-werror<span class="w"> </span>--disable-doxygen-html<span class="w"> </span>--prefix<span class="o">=</span>/opt/openocd
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>$<span class="w"> </span>make
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>$<span class="w"> </span>make<span class="w"> </span>install
+</span></code></pre></div>
 <h2 id="running-internal-testsuite">Running internal testsuite<a class="headerlink" href="#running-internal-testsuite" title="Permanent link">&para;</a></h2>
 <p>There is a set of internal test for ARC and OpenOCD. This testsuite aim is to
 catch some issues with OpenOCD, JTAG or hardware. To run test suite: source

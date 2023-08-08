@@ -1962,7 +1962,7 @@ then you can run OpenOCD this way:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$ C:\arc_gnu\bin\openocd -s C:\arc_gnu\share\openocd\scripts -f board\snps_em_sk_v2.2.cfg
 </span></code></pre></div>
 <h2 id="running-on-macos">Running on macOS<a class="headerlink" href="#running-on-macos" title="Permanent link">&para;</a></h2>
-<p>Run ioreg application to ensure that FTDI device is there:</p>
+<p>Run <code>ioreg</code> application to ensure that FTDI device is there:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>ioreg<span class="w"> </span>-p<span class="w"> </span>IOUSB<span class="w"> </span>-l<span class="w"> </span>-w<span class="w"> </span><span class="m">0</span>
 </span></code></pre></div>
 <p>There should be output like this:</p>
@@ -1971,14 +1971,18 @@ then you can run OpenOCD this way:</p>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    ...
 </span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>}
 </span></code></pre></div>
+<p>OpenOCD may be used on macOS the same way it's used on Linux. However,
+consider using <code>sudo</code> to get access to USB devices:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>openocd<span class="w"> </span>-f<span class="w"> </span>board/snps_em_sk_v2.2.cfg
+</span></code></pre></div>
 <p>Note that exact output could differ from host to host.</p>
 <p>If you're using a USB adapter and have a driver kext matched to it,
 you will need to unload it prior to running OpenOCD. E.g. with Apple
 driver (OS X 10.9 or later) for FTDI run:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>kextunload<span class="w"> </span>-b<span class="w"> </span>com.apple.driver.AppleUSBFTDI
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>kextunload<span class="w"> </span>-b<span class="w"> </span>com.apple.driver.AppleUSBFTDI
 </span></code></pre></div>
 <p>For FTDI vendor driver use:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo<span class="w"> </span>kextunload<span class="w"> </span>FTDIUSBSerialDriver.kext
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo<span class="w"> </span>kextunload<span class="w"> </span>FTDIUSBSerialDriver.kext
 </span></code></pre></div>
 <h2 id="advanced-debug-commands">Advanced debug commands<a class="headerlink" href="#advanced-debug-commands" title="Permanent link">&para;</a></h2>
 <p>With the GDB <code>monitor</code> command, you have an access to the core without
@@ -1986,10 +1990,10 @@ any interference from GDB. With other words, GDB has no notion of
 changes in core state when using the so called <code>monitor</code> commands (but it is
 very powerful). In GDB, connect to the OpenOCD target and type following
 command to get a list of available monitor commands:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>(gdb) monitor help
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>(gdb) monitor help
 </span></code></pre></div>
 <p>To get a list of some ARC-specific commands, run:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>(gdb) monitor help arc
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>(gdb) monitor help arc
 </span></code></pre></div>
 <p>Those are actually internal OpenOCD commands which are also available in
 configuration scripts and can be passed in OpeOCD command line with <code>-c ...</code>
