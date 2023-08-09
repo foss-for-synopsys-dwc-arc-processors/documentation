@@ -25,8 +25,7 @@ be replaced with WinUSB.
 ![Zadig with selected device](images/zadig_selected.png)
 
 For HS Development Kit, IoT Development Kit, EM SDP and AXS10x SDP,
-the only thing that differs is that instead of
-**Digilent Adept USB Device (Interface 0)** you should select
+the only thing that differs is that you should select
 **Digilent Adept USB Device (Interface 1)**.
 
 Note that antivirus might complain about drivers files created by Zadig.
