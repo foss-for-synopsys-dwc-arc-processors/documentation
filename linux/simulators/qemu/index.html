@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../../simulators/qemu/">
+        <link rel="prev" href="../vdk/">
       
       
-        <link rel="next" href="../debugging/">
+        <link rel="next" href="../../../platforms/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>Memory Maps and Linker Scripts - GNU Toolchain for ARC User Manual</title>
+        <title>Running Linux on QEMU - GNU Toolchain for ARC User Manual</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#memory-maps-and-linker-scripts" class="md-skip">
+        <a href="#running-linux-on-qemu" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Memory Maps and Linker Scripts
+              Running Linux on QEMU
             
           </span>
         </div>
@@ -201,8 +201,6 @@
         
   
   
-    
-  
 
 
   
@@ -214,7 +212,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../simulators/nsim/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../baremetal/simulators/nsim/" class="md-tabs__link">
         Baremetal
       </a>
     </li>
@@ -226,6 +224,8 @@
         
   
   
+    
+  
 
 
   
@@ -237,7 +237,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../linux/building/buildroot/" class="md-tabs__link">
+      <a href="../../building/buildroot/" class="md-tabs__link md-tabs__link--active">
         Linux
       </a>
     </li>
@@ -561,16 +561,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
         
@@ -587,7 +585,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Baremetal
@@ -635,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../simulators/nsim/" class="md-nav__link">
+      <a href="../../../baremetal/simulators/nsim/" class="md-nav__link">
         Building Applications and Debugging on nSIM
       </a>
     </li>
@@ -649,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../simulators/qemu/" class="md-nav__link">
+      <a href="../../../baremetal/simulators/qemu/" class="md-nav__link">
         Building Applications and Debugging on QEMU
       </a>
     </li>
@@ -668,18 +666,16 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
       
       
         
@@ -698,7 +694,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_2">
           <span class="md-nav__icon md-icon"></span>
           Hardware
@@ -709,86 +705,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Memory Maps and Linker Scripts
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../baremetal/hardware/memory/" class="md-nav__link">
         Memory Maps and Linker Scripts
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#linker-scripts-and-linker-emulation" class="md-nav__link">
-    Linker Scripts and Linker Emulation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-arcv2elfx-linker-emulation" class="md-nav__link">
-    Using arcv2elfx linker emulation
-  </a>
-  
-    <nav class="md-nav" aria-label="Using arcv2elfx linker emulation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#em-starter-kit" class="md-nav__link">
-    EM Starter Kit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hs-development-kit" class="md-nav__link">
-    HS Development Kit
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#memory-maps-for-hardware-platforms" class="md-nav__link">
-    Memory Maps for Hardware Platforms
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -800,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../debugging/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/debugging/" class="md-nav__link">
         Building and Debugging on Various Boards
       </a>
     </li>
@@ -814,7 +735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../axs-openocd/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/axs-openocd/" class="md-nav__link">
         Building and Debugging on AXS with OpenOCD
       </a>
     </li>
@@ -828,7 +749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../axs-ashling/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/axs-ashling/" class="md-nav__link">
         Building and Debugging on AXS with Ashling Opella-XD
       </a>
     </li>
@@ -886,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/heap-and-stack/" class="md-nav__link">
+      <a href="../../../baremetal/general/heap-and-stack/" class="md-nav__link">
         Heap and Stack Size
       </a>
     </li>
@@ -900,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/tcf/" class="md-nav__link">
+      <a href="../../../baremetal/general/tcf/" class="md-nav__link">
         Using TCF
       </a>
     </li>
@@ -914,7 +835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/specs/" class="md-nav__link">
+      <a href="../../../baremetal/general/specs/" class="md-nav__link">
         Specs Files
       </a>
     </li>
@@ -941,14 +862,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
         
@@ -963,7 +886,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Linux
@@ -1013,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/building/buildroot/" class="md-nav__link">
+      <a href="../../building/buildroot/" class="md-nav__link">
         Building Linux kernel with Filesystem Using Buildroot
       </a>
     </li>
@@ -1027,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/building/separate/" class="md-nav__link">
+      <a href="../../building/separate/" class="md-nav__link">
         Building Linux kernel and Filesystem Separately
       </a>
     </li>
@@ -1041,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/building/configure/" class="md-nav__link">
+      <a href="../../building/configure/" class="md-nav__link">
         Configuring Buildroot and Linux Kernel
       </a>
     </li>
@@ -1060,16 +983,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
       
       
         
@@ -1088,7 +1013,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4_2">
           <span class="md-nav__icon md-icon"></span>
           Running on Simulators
@@ -1101,7 +1026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/simulators/nsim/" class="md-nav__link">
+      <a href="../nsim/" class="md-nav__link">
         Building Linux for a Simulation and Running on nSIM
       </a>
     </li>
@@ -1115,7 +1040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/simulators/metaware/" class="md-nav__link">
+      <a href="../metaware/" class="md-nav__link">
         Running Linux on nSIM Using MetaWare Debugger
       </a>
     </li>
@@ -1129,7 +1054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/simulators/vdk/" class="md-nav__link">
+      <a href="../vdk/" class="md-nav__link">
         Running Linux on VDK
       </a>
     </li>
@@ -1141,11 +1066,121 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../linux/simulators/qemu/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Running Linux on QEMU
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Running Linux on QEMU
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preface" class="md-nav__link">
+    Preface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-for-arc-hs-3x4x" class="md-nav__link">
+    Running for ARC HS 3x/4x
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-for-arc-hs-5x" class="md-nav__link">
+    Running for ARC HS 5x
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-for-arc-hs-6x" class="md-nav__link">
+    Running for ARC HS 6x
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking-in-qemu-using-a-user-level-network-interface" class="md-nav__link">
+    Networking in QEMU Using a User Level Network Interface
+  </a>
+  
+    <nav class="md-nav" aria-label="Networking in QEMU Using a User Level Network Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuring-network" class="md-nav__link">
+    Configuring Network
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-ssh" class="md-nav__link">
+    Using SSH
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking-in-qemu-using-tuntap-network-interface" class="md-nav__link">
+    Networking in QEMU Using TUN/TAP Network Interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mounting-an-external-filesystem-image" class="md-nav__link">
+    Mounting an External Filesystem Image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mounting-a-shared-folder" class="md-nav__link">
+    Mounting a Shared Folder
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2097,153 +2132,151 @@
   
 
 
-<h1 id="memory-maps-and-linker-scripts">Memory Maps and Linker Scripts<a class="headerlink" href="#memory-maps-and-linker-scripts" title="Permanent link">&para;</a></h1>
-<h2 id="linker-scripts-and-linker-emulation">Linker Scripts and Linker Emulation<a class="headerlink" href="#linker-scripts-and-linker-emulation" title="Permanent link">&para;</a></h2>
-<p>Linker script is a special file which specifies where to put different sections of ELF file
-and defines particular symbols which may be referenced by an application. Linker emulation is
-basically way to select one of the predetermined linker scripts of the GNU linker.
-A linker script for a default linker emulation for ARCv2 may be observed this way:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ arc-elf32-ld --verbose
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>GNU ld (ARCompact/ARCv2 ISA elf32 toolchain - build 1360) 2.40.50.20230314
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  Supported emulations:
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   arcelf
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>   arclinux
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   arclinux_nps
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>   arcv2elf
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>   arcv2elfx
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>using internal linker script:
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>==================================================
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>/* Default linker script, for normal executables */
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>OUTPUT_FORMAT(&quot;elf32-littlearc&quot;, &quot;elf32-bigarc&quot;,
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>              &quot;elf32-littlearc&quot;)
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>OUTPUT_ARCH(arc)
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>ENTRY(__start)
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>...
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>SECTIONS
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>{
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>  /* Read-only sections, merged into text segment: */
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>  PROVIDE (__executable_start = SEGMENT_START(&quot;text-segment&quot;, 0x100)); . = SEGMENT_START(&quot;text-segment&quot;, 0x100);
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>  .interp         : { *(.interp) }
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>  .hash           : { *(.hash) }
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>  .dynsym         : { *(.dynsym) }
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>  .dynstr         : { *(.dynstr) }
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>  .gnu.version    : { *(.gnu.version) }
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>  .gnu.version_d  : { *(.gnu.version_d) }
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>  .gnu.version_r  : { *(.gnu.version_r) }
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>  .rel.init       : { *(.rel.init) }
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>  .rela.init      : { *(.rela.init) }
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>...
+<h1 id="running-linux-on-qemu">Running Linux on QEMU<a class="headerlink" href="#running-linux-on-qemu" title="Permanent link">&para;</a></h1>
+<h2 id="preface">Preface<a class="headerlink" href="#preface" title="Permanent link">&para;</a></h2>
+<p>It's possible to run on QEMU the same Linux images as for nSIM/HAPS. A process of building of Linux
+images is completely same.</p>
+<h2 id="running-for-arc-hs-3x4x">Running for ARC HS 3x/4x<a class="headerlink" href="#running-for-arc-hs-3x4x" title="Permanent link">&para;</a></h2>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>qemu-system-arc<span class="w"> </span>-M<span class="w"> </span>virt<span class="w"> </span>-cpu<span class="w"> </span>archs<span class="w"> </span>-display<span class="w"> </span>none<span class="w"> </span>-nographic<span class="w"> </span>-monitor<span class="w"> </span>none<span class="w"> </span>-m<span class="w"> </span>2G<span class="w"> </span>-kernel<span class="w"> </span>vmlinux
 </span></code></pre></div>
-<p>Linux user-space applications are loaded by the dynamic linker in their own virtual memory address space,
-where they do not collide with other applications. On the other side, baremetal applications are loaded into
-target's memory by debugger, bootloader or they are already in the ROM mapped to a specific location.</p>
-<p>If linker uses an invalid memory map for a particular platform, then some parts of the application will be loaded
-to the memory incorrectly. For example, it may be accidentally written to peripherals' region and cause an error.</p>
-<p>That default linker emulation places all loadable ELF sections in a row after each other starting at address <code>0x0</code>.
-This is usually enough for an application prototyping, however real systems often have much more complex memory maps
-with CCM regions, peripherals' region, etc.</p>
-<p>Default linker emulation also puts interrupt vector table (<code>.ivt</code> section) between code and data sections and doesn't
-align <code>.ivt</code> properly (<code>.ivt</code> must be 1KiB-aligned for ARC processors). Here is an example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ arc-elf32-gcc -mcpu=em4_dmips main.c -o main.elf
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$ arc-elf32-objdump -h main.elf
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>main.elf:     file format elf32-littlearc
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Sections:
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Idx Name          Size      VMA       LMA       File off  Algn
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  0 .init         00000022  00000100  00000100  00000100  2**0
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>                  CONTENTS, ALLOC, LOAD, READONLY, CODE
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  1 .text         00003c28  00000124  00000124  00000124  2**2
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>                  CONTENTS, ALLOC, LOAD, READONLY, CODE
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>  2 .fini         00000016  00003d4c  00003d4c  00003d4c  2**0
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>                  CONTENTS, ALLOC, LOAD, READONLY, CODE
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>  3 .rodata       00000014  00003d64  00003d64  00003d64  2**2
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>                  CONTENTS, ALLOC, LOAD, READONLY, DATA
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>  4 .ivt          00000054  00003d78  00003d78  00003d78  2**0
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>                  CONTENTS, ALLOC, LOAD, READONLY, DATA
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>  5 .data         00000530  00005dcc  00005dcc  00003dcc  2**2
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>                  CONTENTS, ALLOC, LOAD, DATA
+<h2 id="running-for-arc-hs-5x">Running for ARC HS 5x<a class="headerlink" href="#running-for-arc-hs-5x" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Linux kernels for ARCv3 are loaded differently in comparison to kernels for ARCv1 and ARCv2.
+Kernels for ARCv3 are always loaded from a physical address <code>0x0</code> instead of <code>0x80000000</code>.
+A custom <code>loader</code> image is generated to distinguish it from a default <code>vmlinux</code> (<code>vmlinux</code> uses <code>0x80000000</code>
+as a starting address in physical and virtual spaces). Thus, it's necessary to run QEMU with
+<code>-M virt,ram_start=0</code> parameter.</p>
+</div>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>qemu-system-arc<span class="w"> </span>-M<span class="w"> </span>virt,ram_start<span class="o">=</span><span class="m">0</span><span class="w"> </span>-cpu<span class="w"> </span>hs5x<span class="w"> </span>-m<span class="w"> </span>2G<span class="w"> </span>-display<span class="w"> </span>none<span class="w"> </span>-nographic<span class="w"> </span>-monitor<span class="w"> </span>none<span class="w"> </span>-kernel<span class="w"> </span>loader
 </span></code></pre></div>
-<p>Therefore the default linker emulation is not applicable for applications which handle interrupts.
-It can be used safely only with applications which don't handle interrupts and only on simulations
-which simulate whole address space, like following templates: <code>em6_dmips</code>, <code>em6_gp</code>, <code>em6_mini</code>,
-<code>em7d_nrg</code>, <code>em7d_voice_audio</code>, <code>em11d_nrg</code>, <code>em11d_voice_audio</code>, <code>hs36_base</code>, <code>hs36</code>, <code>hs38_base</code>,
-<code>hs38</code>, <code>hs38_full</code>, <code>hs38_slc_full</code>.</p>
-<h2 id="using-arcv2elfx-linker-emulation">Using <code>arcv2elfx</code> linker emulation<a class="headerlink" href="#using-arcv2elfx-linker-emulation" title="Permanent link">&para;</a></h2>
-<p>If you use <code>arcv2elfx</code> linker emulation, then linker searches for <code>memory.x</code> file with definition of
-a custom memory map. It is searched in the current working directory and in directories listed via
-<code>-L</code> option.</p>
-<h3 id="em-starter-kit">EM Starter Kit<a class="headerlink" href="#em-starter-kit" title="Permanent link">&para;</a></h3>
-<p>Here is an example of <code>memory.x</code> for EM11D core in EM Starter Kit v2.3:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>MEMORY
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    ICCM : ORIGIN = 0x00000000, LENGTH = 64K
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    DRAM : ORIGIN = 0x10000000, LENGTH = 128M
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    DCCM : ORIGIN = 0x80000000, LENGTH = 64K
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>}
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>REGION_ALIAS(&quot;startup&quot;, ICCM)
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>REGION_ALIAS(&quot;text&quot;, ICCM)
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>REGION_ALIAS(&quot;data&quot;, DRAM)
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>REGION_ALIAS(&quot;sdata&quot;, DRAM)
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>PROVIDE (__stack_top = (0x17FFFFFF &amp; -4) );
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>PROVIDE (__end_heap = (0x17FFFFFF) );
+<h2 id="running-for-arc-hs-6x">Running for ARC HS 6x<a class="headerlink" href="#running-for-arc-hs-6x" title="Permanent link">&para;</a></h2>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>qemu-system-arc64<span class="w"> </span>-M<span class="w"> </span>virt,ram_start<span class="o">=</span><span class="m">0</span><span class="w"> </span>-cpu<span class="w"> </span>hs6x<span class="w"> </span>-m<span class="w"> </span>2G<span class="w"> </span>-display<span class="w"> </span>none<span class="w"> </span>-nographic<span class="w"> </span>-monitor<span class="w"> </span>none<span class="w"> </span>-kernel<span class="w"> </span>loader
 </span></code></pre></div>
-<p><code>MEMORY</code> section specifies platform's memory regions: base addresses and lengths.
-You can use arbitrary names for these regions.
-<code>REGION_ALIAS</code> commands translate platform's regions to standard region names
-expected by the linker emulation. There are 4 such standard regions:</p>
-<ul>
-<li><code>startup</code> - interrupt vector table and initialization code. By default it's mapped to <code>0x0</code> address and if you map <code>startup</code> to a different one, then you also need to pass this address to the linker using <code>--defsym=ivtbase_addr=&lt;...&gt;</code> option or to GCC itself using <code>-Wl,--defsym=ivtbase_addr=&lt;...&gt;</code> option.</li>
-<li><code>text</code> - other code sections.</li>
-<li><code>data</code> - data sections.</li>
-<li><code>sdata</code> - small data sections.</li>
-</ul>
-<p>Also, the example provides these symbols (both of them may be omitted and default values will be used):</p>
-<ul>
-<li><code>__stack_top</code> points to the top of the stack. It must be 4-byte aligned In the example it points to the end
-  of DRAM regions, because stack grows downward.</li>
-<li><code>__end_heap</code> points to the end of the heap. Heap starts at the end of data sections
-  and grows upward to <code>__end_heap</code>.</li>
-</ul>
-<p>You can compile your application against that <code>memory.x</code> file by passing <code>-marcv2elfx</code> to the linker or
-<code>-Wl,-marcv2elfx</code> to GCC itself:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ ls
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>main.c memory.x
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>$ arc-elf32-gcc -mcpu=em4_dmips -Wl,-marcv2elfx main.c -o main.elf
+<h2 id="networking-in-qemu-using-a-user-level-network-interface">Networking in QEMU Using a User Level Network Interface<a class="headerlink" href="#networking-in-qemu-using-a-user-level-network-interface" title="Permanent link">&para;</a></h2>
+<h3 id="configuring-network">Configuring Network<a class="headerlink" href="#configuring-network" title="Permanent link">&para;</a></h3>
+<p>Firstly, it's necessary to enable <code>BR2_SYSTEM_DHCP</code> option in Buildroot configuration.
+Just use <code>BR2_SYSTEM_DHCP=eth0</code> in your configuration file or use this option in a
+configuration menu:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>System configuration -&gt; Network interface to configure through DHCP -&gt; eth0
 </span></code></pre></div>
-<h3 id="hs-development-kit">HS Development Kit<a class="headerlink" href="#hs-development-kit" title="Permanent link">&para;</a></h3>
-<p>Here is an example of <code>memory.x</code> for HS Development Kit:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>MEMORY
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>{
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    DRAM : ORIGIN = 0x90000000, LENGTH = 0x50000000
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>}
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>REGION_ALIAS(&quot;startup&quot;, DRAM)
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>REGION_ALIAS(&quot;text&quot;, DRAM)
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>REGION_ALIAS(&quot;data&quot;, DRAM)
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>REGION_ALIAS(&quot;sdata&quot;, DRAM)
+<p>You can connect a QEMU machine to a network using a user level network interface by passing
+these additional options:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>-netdev user,id=net0 -device virtio-net-device,netdev=net0 -device virtio-rng-pci 
 </span></code></pre></div>
-<p><code>startup</code> is mapped to <code>0x90000000</code>. It means that you have to pass <code>-Wl,--defsym=ivtbase_addr=&lt;...&gt;</code> option too.
-You can compile your application against that <code>memory.x</code> this way:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ ls
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>main.c memory.x
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>$ arc-elf32-gcc -mcpu=archs -Wl,-marcv2elfx -Wl,--defsym=ivtbase_addr=0x90000000 main.c -o main.elf
+<p>You can enable port forwarding for a set of ports. Here is an example for
+forwarding ports for FTP and SSH:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>-netdev user,id=net0,hostfwd=tcp::2021-:21,hostfwd=tcp::2022-:22 -device virtio-net-device,netdev=net0 -device virtio-rng-pci 
 </span></code></pre></div>
-<h2 id="memory-maps-for-hardware-platforms">Memory Maps for Hardware Platforms<a class="headerlink" href="#memory-maps-for-hardware-platforms" title="Permanent link">&para;</a></h2>
-<p>You can find valid memory mappings for particular hardware platforms in documentation.
-Here is a list of resources with memory maps for Synopsys' development platforms:</p>
-<ul>
-<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home">ARC Development Systems Forum Wiki</a> contains documentation for all Synopsys' development platforms. User guides contain descriptions of memory mappings.</li>
-<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/newlib/tree/arc64">Newlib</a> repository for ARC contains predefined
-  memory maps for some of development platforms  in <code>libgloss/arc</code> directory.</li>
-<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain">toolchain</a> repository also contains predefined
-  memory maps for some of development platforms in <code>extras/dev_systems</code> directory.</li>
-</ul>
+<p>Here is a full command line for running QEMU with support of networking and forwarding of ports for FTP and SSH:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>qemu-system-arc -M virt -cpu archs -m 2G -display none -nographic -monitor none -kernel vmlinux -device virtio-rng-pci \
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>                -netdev user,id=net0,hostfwd=tcp::2021-:21,hostfwd=tcp::2022-:22 -device virtio-net-device,netdev=net0
+</span></code></pre></div>
+<p>In boot log output you will see these lines:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Starting network: udhcpc: started, v1.35.0
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>udhcpc: broadcasting discover
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>udhcpc: broadcasting select for 10.0.2.15, server 10.0.2.2
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>udhcpc: lease of 10.0.2.15 obtained from 10.0.2.2, lease time 86400
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>deleting routers
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>adding dns 10.0.2.3
+</span></code></pre></div>
+<p>Use <code>ifconfig</code> or <code>ping</code> utility to ensure that an Ethernet interface is initialized successfully:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a># ifconfig
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>eth0      Link encap:Ethernet  HWaddr 52:54:00:12:34:56
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>          inet addr:10.0.2.15  Bcast:10.0.2.255  Mask:255.255.255.0
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>          RX packets:2 errors:0 dropped:0 overruns:0 frame:0
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>          TX packets:2 errors:0 dropped:0 overruns:0 carrier:0
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>          collisions:0 txqueuelen:1000
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>          RX bytes:1180 (1.1 KiB)  TX bytes:689 (689.0 B)
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>lo        Link encap:Local Loopback
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>          inet addr:127.0.0.1  Mask:255.0.0.0
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>          collisions:0 txqueuelen:1000
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a># ping 8.8.8.8
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>PING 8.8.8.8 (8.8.8.8): 56 data bytes
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>64 bytes from 8.8.8.8: seq=0 ttl=255 time=15.418 ms
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>64 bytes from 8.8.8.8: seq=1 ttl=255 time=0.701 ms
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>64 bytes from 8.8.8.8: seq=2 ttl=255 time=0.558 ms
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>64 bytes from 8.8.8.8: seq=3 ttl=255 time=1.122 ms
+</span></code></pre></div>
+<p>If you don't configure Buildroot with <code>BR2_SYSTEM_DHCP=eth0</code> option, then
+you will to initialize an network device manually after Linux is booted:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a># ifconfig eth0 up
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a># udhcpc
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>udhcpc: started, v1.35.0
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>udhcpc: broadcasting discover
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>udhcpc: broadcasting select for 10.0.2.15, server 10.0.2.2
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>udhcpc: lease of 10.0.2.15 obtained from 10.0.2.2, lease time 86400
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>deleting routers
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>adding dns 10.0.2.3
+</span></code></pre></div>
+<h3 id="using-ssh">Using SSH<a class="headerlink" href="#using-ssh" title="Permanent link">&para;</a></h3>
+<p>You can connect to the Linux kernel through SSH using a custom port 2022
+(it is forwarded to 22 port inside of QEMU machine). To add SSH server to the
+Linux image use <code>BR2_PACKAGE_OPENSSH=y</code> and <code>BR2_PACKAGE_HAVEGED=y</code> options for Buildroot:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Target packages -&gt; Networking applications -&gt; [*] openssh
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>                -&gt; Miscellaneous -&gt; [*] haveged
+</span></code></pre></div>
+<p>Run Linux and create a user <code>user</code> and crate a home directory for the user:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>adduser<span class="w"> </span>user
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/home/user
+</span></code></pre></div>
+<p>Here is an example for connecting to the Linux using SSH:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$ ssh -p 2022 user@127.0.0.1
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>user@127.0.0.1&#39;s password:
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>$ pwd
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>/home/user
+</span></code></pre></div>
+<h2 id="networking-in-qemu-using-tuntap-network-interface">Networking in QEMU Using TUN/TAP Network Interface<a class="headerlink" href="#networking-in-qemu-using-tuntap-network-interface" title="Permanent link">&para;</a></h2>
+<p>TUN/TAP network interface allows interacting of the target with your host in both directions.
+For example, you can mount host’s NFS directories inside of the target.</p>
+<p>Configure TUN/TAP interface on host’s side (choose your own IP address instead of <code>10.42.0.1</code>):</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sudo<span class="w"> </span>ip<span class="w"> </span>tuntap<span class="w"> </span>add<span class="w"> </span>tap1<span class="w"> </span>mode<span class="w"> </span>tap
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>sudo<span class="w"> </span>ip<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="m">10</span>.42.0.1/24<span class="w"> </span>dev<span class="w"> </span>tap1
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>tap1<span class="w"> </span>up
+</span></code></pre></div>
+<p>Run QEMU</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>qemu-system-arc -M virt -cpu archs -m 2G -display none -nographic -monitor none -kernel vmlinux \
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>                -netdev tap,id=net0,ifname=tap1,script=no,downscript=no -device virtio-net-device,netdev=net0
+</span></code></pre></div>
+<p>Configure a network interface on target's side:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>ifconfig<span class="w"> </span>eth0<span class="w"> </span><span class="m">10</span>.42.0.100
+</span></code></pre></div>
+<p>After that you can connect to any Linux service without port forwarding. Here is an example of connecting
+to the Linux using SSH with TUN/TAP interface configured:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>ssh<span class="w"> </span>user@10.42.0.100
+</span></code></pre></div>
+<h2 id="mounting-an-external-filesystem-image">Mounting an External Filesystem Image<a class="headerlink" href="#mounting-an-external-filesystem-image" title="Permanent link">&para;</a></h2>
+<p>It's possible to run Linux with an external filesystem image. Firstly,
+turn off linking an initial RAM filesystem into Linux kernel (<code>BR2_TARGET_ROOTFS_INITRAMFS=n</code>)
+and add an option for building Ext2 filesystem image (<code>BR2_TARGET_ROOTFS_EXT2=y</code>) in Buildroot:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Filesystem images -&gt; [*] ext2/3/4 root filesystem
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>                  -&gt; [ ] initial RAM filesystem linked into linux kernel
+</span></code></pre></div>
+<p>Run the Linux kernel and initialize and external storage:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>qemu-system-arc -M virt -cpu archs -m 2G -display none -nographic -monitor none -kernel vmlinux \
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>                -append &quot;root=/dev/vda ro&quot; -drive file=images/rootfs.ext2,format=raw,id=hd0 \
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>                -device virtio-blk-device,drive=hd0
+</span></code></pre></div>
+<h2 id="mounting-a-shared-folder">Mounting a Shared Folder<a class="headerlink" href="#mounting-a-shared-folder" title="Permanent link">&para;</a></h2>
+<p>If you need shared folder access, add the following arguments to QEMU's command line:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>-drive format=vvfat,id=hd0,file=fat:rw:/path/to/directory -device virtio-blk-device,drive=hd0
+</span></code></pre></div>
+<p>And the on target's side:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>mount<span class="w"> </span>/dev/vda1
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>mount<span class="w"> </span>/dev/vda1<span class="w"> </span>/mnt
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>touch<span class="w"> </span>/mnt/test.txt
+</span></code></pre></div>
+<p>Target will see contents on your directory as if it's a FAT partition on some drive without symbolic links, special attributes, etc.
+Target may do changes to the contents of this folder (with read/write permissions above).
+Host <em>must not</em> do any changes to the folder while target is using this shared folder,
+otherwise things will go seriously wrong (QEMU creates FAT table on start and then it's target which manipulates it but not host).</p>
 
 
 

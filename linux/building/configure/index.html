@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../../simulators/qemu/">
+        <link rel="prev" href="../separate/">
       
       
-        <link rel="next" href="../debugging/">
+        <link rel="next" href="../../simulators/nsim/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>Memory Maps and Linker Scripts - GNU Toolchain for ARC User Manual</title>
+        <title>Configuring Buildroot and Linux Kernel - GNU Toolchain for ARC User Manual</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#memory-maps-and-linker-scripts" class="md-skip">
+        <a href="#configuring-buildroot-and-linux-kernel" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Memory Maps and Linker Scripts
+              Configuring Buildroot and Linux Kernel
             
           </span>
         </div>
@@ -201,8 +201,6 @@
         
   
   
-    
-  
 
 
   
@@ -214,7 +212,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../simulators/nsim/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../baremetal/simulators/nsim/" class="md-tabs__link">
         Baremetal
       </a>
     </li>
@@ -226,6 +224,8 @@
         
   
   
+    
+  
 
 
   
@@ -237,7 +237,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../linux/building/buildroot/" class="md-tabs__link">
+      <a href="../buildroot/" class="md-tabs__link md-tabs__link--active">
         Linux
       </a>
     </li>
@@ -561,16 +561,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
         
@@ -587,7 +585,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Baremetal
@@ -635,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../simulators/nsim/" class="md-nav__link">
+      <a href="../../../baremetal/simulators/nsim/" class="md-nav__link">
         Building Applications and Debugging on nSIM
       </a>
     </li>
@@ -649,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../simulators/qemu/" class="md-nav__link">
+      <a href="../../../baremetal/simulators/qemu/" class="md-nav__link">
         Building Applications and Debugging on QEMU
       </a>
     </li>
@@ -668,18 +666,16 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
       
       
         
@@ -698,7 +694,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_2">
           <span class="md-nav__icon md-icon"></span>
           Hardware
@@ -709,86 +705,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Memory Maps and Linker Scripts
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../baremetal/hardware/memory/" class="md-nav__link">
         Memory Maps and Linker Scripts
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#linker-scripts-and-linker-emulation" class="md-nav__link">
-    Linker Scripts and Linker Emulation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-arcv2elfx-linker-emulation" class="md-nav__link">
-    Using arcv2elfx linker emulation
-  </a>
-  
-    <nav class="md-nav" aria-label="Using arcv2elfx linker emulation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#em-starter-kit" class="md-nav__link">
-    EM Starter Kit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hs-development-kit" class="md-nav__link">
-    HS Development Kit
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#memory-maps-for-hardware-platforms" class="md-nav__link">
-    Memory Maps for Hardware Platforms
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -800,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../debugging/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/debugging/" class="md-nav__link">
         Building and Debugging on Various Boards
       </a>
     </li>
@@ -814,7 +735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../axs-openocd/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/axs-openocd/" class="md-nav__link">
         Building and Debugging on AXS with OpenOCD
       </a>
     </li>
@@ -828,7 +749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../axs-ashling/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/axs-ashling/" class="md-nav__link">
         Building and Debugging on AXS with Ashling Opella-XD
       </a>
     </li>
@@ -886,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/heap-and-stack/" class="md-nav__link">
+      <a href="../../../baremetal/general/heap-and-stack/" class="md-nav__link">
         Heap and Stack Size
       </a>
     </li>
@@ -900,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/tcf/" class="md-nav__link">
+      <a href="../../../baremetal/general/tcf/" class="md-nav__link">
         Using TCF
       </a>
     </li>
@@ -914,7 +835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/specs/" class="md-nav__link">
+      <a href="../../../baremetal/general/specs/" class="md-nav__link">
         Specs Files
       </a>
     </li>
@@ -941,14 +862,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
         
@@ -963,7 +886,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Linux
@@ -974,16 +897,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
       
       
         
@@ -1000,7 +925,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4_1">
           <span class="md-nav__icon md-icon"></span>
           Building
@@ -1013,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/building/buildroot/" class="md-nav__link">
+      <a href="../buildroot/" class="md-nav__link">
         Building Linux kernel with Filesystem Using Buildroot
       </a>
     </li>
@@ -1027,7 +952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/building/separate/" class="md-nav__link">
+      <a href="../separate/" class="md-nav__link">
         Building Linux kernel and Filesystem Separately
       </a>
     </li>
@@ -1039,11 +964,115 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../linux/building/configure/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Configuring Buildroot and Linux Kernel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Configuring Buildroot and Linux Kernel
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preface" class="md-nav__link">
+    Preface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-in-a-separate-directory" class="md-nav__link">
+    Building in a Separate Directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selection-a-big-endian-configuration" class="md-nav__link">
+    Selection a Big Endian Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-a-linux-kernel-version" class="md-nav__link">
+    Selecting a Linux Kernel Version
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-a-linux-kernel-configuration-file" class="md-nav__link">
+    Selecting a Linux Kernel Configuration File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-a-prebuilt-toolchain" class="md-nav__link">
+    Selecting a Prebuilt Toolchain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-a-preinstalled-toolchain" class="md-nav__link">
+    Selecting a Preinstalled Toolchain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-custom-configuration-file" class="md-nav__link">
+    Creating a Custom Configuration File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-custom-configuration-files" class="md-nav__link">
+    Using Custom Configuration Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-overlays" class="md-nav__link">
+    Using Overlays
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1101,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/simulators/nsim/" class="md-nav__link">
+      <a href="../../simulators/nsim/" class="md-nav__link">
         Building Linux for a Simulation and Running on nSIM
       </a>
     </li>
@@ -1115,7 +1144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/simulators/metaware/" class="md-nav__link">
+      <a href="../../simulators/metaware/" class="md-nav__link">
         Running Linux on nSIM Using MetaWare Debugger
       </a>
     </li>
@@ -1129,7 +1158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/simulators/vdk/" class="md-nav__link">
+      <a href="../../simulators/vdk/" class="md-nav__link">
         Running Linux on VDK
       </a>
     </li>
@@ -1143,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/simulators/qemu/" class="md-nav__link">
+      <a href="../../simulators/qemu/" class="md-nav__link">
         Running Linux on QEMU
       </a>
     </li>
@@ -2097,153 +2126,141 @@
   
 
 
-<h1 id="memory-maps-and-linker-scripts">Memory Maps and Linker Scripts<a class="headerlink" href="#memory-maps-and-linker-scripts" title="Permanent link">&para;</a></h1>
-<h2 id="linker-scripts-and-linker-emulation">Linker Scripts and Linker Emulation<a class="headerlink" href="#linker-scripts-and-linker-emulation" title="Permanent link">&para;</a></h2>
-<p>Linker script is a special file which specifies where to put different sections of ELF file
-and defines particular symbols which may be referenced by an application. Linker emulation is
-basically way to select one of the predetermined linker scripts of the GNU linker.
-A linker script for a default linker emulation for ARCv2 may be observed this way:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ arc-elf32-ld --verbose
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>GNU ld (ARCompact/ARCv2 ISA elf32 toolchain - build 1360) 2.40.50.20230314
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  Supported emulations:
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   arcelf
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>   arclinux
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   arclinux_nps
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>   arcv2elf
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>   arcv2elfx
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>using internal linker script:
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>==================================================
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>/* Default linker script, for normal executables */
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>OUTPUT_FORMAT(&quot;elf32-littlearc&quot;, &quot;elf32-bigarc&quot;,
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>              &quot;elf32-littlearc&quot;)
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>OUTPUT_ARCH(arc)
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>ENTRY(__start)
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>...
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>SECTIONS
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>{
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>  /* Read-only sections, merged into text segment: */
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>  PROVIDE (__executable_start = SEGMENT_START(&quot;text-segment&quot;, 0x100)); . = SEGMENT_START(&quot;text-segment&quot;, 0x100);
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>  .interp         : { *(.interp) }
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>  .hash           : { *(.hash) }
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>  .dynsym         : { *(.dynsym) }
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>  .dynstr         : { *(.dynstr) }
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>  .gnu.version    : { *(.gnu.version) }
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>  .gnu.version_d  : { *(.gnu.version_d) }
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>  .gnu.version_r  : { *(.gnu.version_r) }
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>  .rel.init       : { *(.rel.init) }
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>  .rela.init      : { *(.rela.init) }
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>...
+<h1 id="configuring-buildroot-and-linux-kernel">Configuring Buildroot and Linux Kernel<a class="headerlink" href="#configuring-buildroot-and-linux-kernel" title="Permanent link">&para;</a></h1>
+<h2 id="preface">Preface<a class="headerlink" href="#preface" title="Permanent link">&para;</a></h2>
+<p>This guide contains a bunch of recipes which may be useful while building Linux kernel
+for Synopsys ARC processors. Consider reading <a href="https://buildroot.org/downloads/manual/manual.html">the Buildroot user manual</a> for details.</p>
+<h2 id="building-in-a-separate-directory">Building in a Separate Directory<a class="headerlink" href="#building-in-a-separate-directory" title="Permanent link">&para;</a></h2>
+<p>It's a good practice to build Linux images out of the main source tree:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://git.busybox.net/buildroot
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mkdir<span class="w"> </span>buildroot/build
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>buildroot/build
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>make<span class="w"> </span>-C<span class="w"> </span>..<span class="w"> </span><span class="nv">O</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="w"> </span>snps_archs38_haps_defconfig
 </span></code></pre></div>
-<p>Linux user-space applications are loaded by the dynamic linker in their own virtual memory address space,
-where they do not collide with other applications. On the other side, baremetal applications are loaded into
-target's memory by debugger, bootloader or they are already in the ROM mapped to a specific location.</p>
-<p>If linker uses an invalid memory map for a particular platform, then some parts of the application will be loaded
-to the memory incorrectly. For example, it may be accidentally written to peripherals' region and cause an error.</p>
-<p>That default linker emulation places all loadable ELF sections in a row after each other starting at address <code>0x0</code>.
-This is usually enough for an application prototyping, however real systems often have much more complex memory maps
-with CCM regions, peripherals' region, etc.</p>
-<p>Default linker emulation also puts interrupt vector table (<code>.ivt</code> section) between code and data sections and doesn't
-align <code>.ivt</code> properly (<code>.ivt</code> must be 1KiB-aligned for ARC processors). Here is an example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ arc-elf32-gcc -mcpu=em4_dmips main.c -o main.elf
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$ arc-elf32-objdump -h main.elf
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>main.elf:     file format elf32-littlearc
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Sections:
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Idx Name          Size      VMA       LMA       File off  Algn
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  0 .init         00000022  00000100  00000100  00000100  2**0
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>                  CONTENTS, ALLOC, LOAD, READONLY, CODE
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  1 .text         00003c28  00000124  00000124  00000124  2**2
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>                  CONTENTS, ALLOC, LOAD, READONLY, CODE
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>  2 .fini         00000016  00003d4c  00003d4c  00003d4c  2**0
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>                  CONTENTS, ALLOC, LOAD, READONLY, CODE
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>  3 .rodata       00000014  00003d64  00003d64  00003d64  2**2
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>                  CONTENTS, ALLOC, LOAD, READONLY, DATA
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>  4 .ivt          00000054  00003d78  00003d78  00003d78  2**0
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>                  CONTENTS, ALLOC, LOAD, READONLY, DATA
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>  5 .data         00000530  00005dcc  00005dcc  00003dcc  2**2
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>                  CONTENTS, ALLOC, LOAD, DATA
+<p>Option <code>-C ..</code> points to Buildroot source tree and <code>O=$(pwd)</code> passes an output directory's path to <code>make</code>.
+Note that if you use relative paths in Buildroot configuration options, then they are relative to Buildroot's
+source tree, but not to build directory.</p>
+<h2 id="selection-a-big-endian-configuration">Selection a Big Endian Configuration<a class="headerlink" href="#selection-a-big-endian-configuration" title="Permanent link">&para;</a></h2>
+<p>Select this option in a configuration menu:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Target options -&gt; Target Architecture -&gt; (X) ARC (big endian)
 </span></code></pre></div>
-<p>Therefore the default linker emulation is not applicable for applications which handle interrupts.
-It can be used safely only with applications which don't handle interrupts and only on simulations
-which simulate whole address space, like following templates: <code>em6_dmips</code>, <code>em6_gp</code>, <code>em6_mini</code>,
-<code>em7d_nrg</code>, <code>em7d_voice_audio</code>, <code>em11d_nrg</code>, <code>em11d_voice_audio</code>, <code>hs36_base</code>, <code>hs36</code>, <code>hs38_base</code>,
-<code>hs38</code>, <code>hs38_full</code>, <code>hs38_slc_full</code>.</p>
-<h2 id="using-arcv2elfx-linker-emulation">Using <code>arcv2elfx</code> linker emulation<a class="headerlink" href="#using-arcv2elfx-linker-emulation" title="Permanent link">&para;</a></h2>
-<p>If you use <code>arcv2elfx</code> linker emulation, then linker searches for <code>memory.x</code> file with definition of
-a custom memory map. It is searched in the current working directory and in directories listed via
-<code>-L</code> option.</p>
-<h3 id="em-starter-kit">EM Starter Kit<a class="headerlink" href="#em-starter-kit" title="Permanent link">&para;</a></h3>
-<p>Here is an example of <code>memory.x</code> for EM11D core in EM Starter Kit v2.3:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>MEMORY
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    ICCM : ORIGIN = 0x00000000, LENGTH = 64K
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    DRAM : ORIGIN = 0x10000000, LENGTH = 128M
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    DCCM : ORIGIN = 0x80000000, LENGTH = 64K
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>}
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>REGION_ALIAS(&quot;startup&quot;, ICCM)
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>REGION_ALIAS(&quot;text&quot;, ICCM)
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>REGION_ALIAS(&quot;data&quot;, DRAM)
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>REGION_ALIAS(&quot;sdata&quot;, DRAM)
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>PROVIDE (__stack_top = (0x17FFFFFF &amp; -4) );
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>PROVIDE (__end_heap = (0x17FFFFFF) );
+<h2 id="selecting-a-linux-kernel-version">Selecting a Linux Kernel Version<a class="headerlink" href="#selecting-a-linux-kernel-version" title="Permanent link">&para;</a></h2>
+<p>By default, Buildroot selects the latest available version of the upstream Linux kernel. However, if you
+want to use a development branch with the latest patches and support of ARCv3 processor families, then
+consider using <code>arc64</code> branch of the development repository:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Kernel -&gt; Kernel version -&gt; Custom Git repository
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>       -&gt; URL of custom repository -&gt; https://github.com/foss-for-synopsys-dwc-arc-processors/linux
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>       -&gt; Custom repository version -&gt; arc64
 </span></code></pre></div>
-<p><code>MEMORY</code> section specifies platform's memory regions: base addresses and lengths.
-You can use arbitrary names for these regions.
-<code>REGION_ALIAS</code> commands translate platform's regions to standard region names
-expected by the linker emulation. There are 4 such standard regions:</p>
-<ul>
-<li><code>startup</code> - interrupt vector table and initialization code. By default it's mapped to <code>0x0</code> address and if you map <code>startup</code> to a different one, then you also need to pass this address to the linker using <code>--defsym=ivtbase_addr=&lt;...&gt;</code> option or to GCC itself using <code>-Wl,--defsym=ivtbase_addr=&lt;...&gt;</code> option.</li>
-<li><code>text</code> - other code sections.</li>
-<li><code>data</code> - data sections.</li>
-<li><code>sdata</code> - small data sections.</li>
-</ul>
-<p>Also, the example provides these symbols (both of them may be omitted and default values will be used):</p>
-<ul>
-<li><code>__stack_top</code> points to the top of the stack. It must be 4-byte aligned In the example it points to the end
-  of DRAM regions, because stack grows downward.</li>
-<li><code>__end_heap</code> points to the end of the heap. Heap starts at the end of data sections
-  and grows upward to <code>__end_heap</code>.</li>
-</ul>
-<p>You can compile your application against that <code>memory.x</code> file by passing <code>-marcv2elfx</code> to the linker or
-<code>-Wl,-marcv2elfx</code> to GCC itself:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ ls
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>main.c memory.x
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>$ arc-elf32-gcc -mcpu=em4_dmips -Wl,-marcv2elfx main.c -o main.elf
+<h2 id="selecting-a-linux-kernel-configuration-file">Selecting a Linux Kernel Configuration File<a class="headerlink" href="#selecting-a-linux-kernel-configuration-file" title="Permanent link">&para;</a></h2>
+<p>You can select a Linux kernel configuration file in Buildroot configuration menu. For example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Kernel -&gt; Defconfig name -&gt; haps_hs
 </span></code></pre></div>
-<h3 id="hs-development-kit">HS Development Kit<a class="headerlink" href="#hs-development-kit" title="Permanent link">&para;</a></h3>
-<p>Here is an example of <code>memory.x</code> for HS Development Kit:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>MEMORY
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>{
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    DRAM : ORIGIN = 0x90000000, LENGTH = 0x50000000
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>}
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>REGION_ALIAS(&quot;startup&quot;, DRAM)
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>REGION_ALIAS(&quot;text&quot;, DRAM)
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>REGION_ALIAS(&quot;data&quot;, DRAM)
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>REGION_ALIAS(&quot;sdata&quot;, DRAM)
+<p>You can find a complete list of all Linux kernel configuration files in <code>arch/arc/configs</code> directory
+of Linux kernel source tree:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$ ls -1 &lt;path-to-kernel-source-tree&gt;/arch/arc/configs
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>axs101_defconfig
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>axs103_defconfig
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>axs103_smp_defconfig
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>haps_hs_defconfig
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>haps_hs_smp_defconfig
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>hsdk_defconfig
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>nsim_700_defconfig
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>nsimosci_defconfig
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>nsimosci_hs_defconfig
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>nsimosci_hs_smp_defconfig
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>tb10x_defconfig
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>vdk_hs38_defconfig
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>vdk_hs38_smp_defconfig
 </span></code></pre></div>
-<p><code>startup</code> is mapped to <code>0x90000000</code>. It means that you have to pass <code>-Wl,--defsym=ivtbase_addr=&lt;...&gt;</code> option too.
-You can compile your application against that <code>memory.x</code> this way:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ ls
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>main.c memory.x
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>$ arc-elf32-gcc -mcpu=archs -Wl,-marcv2elfx -Wl,--defsym=ivtbase_addr=0x90000000 main.c -o main.elf
+<h2 id="selecting-a-prebuilt-toolchain">Selecting a Prebuilt Toolchain<a class="headerlink" href="#selecting-a-prebuilt-toolchain" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Each release of a toolchain may demand a specific set of options which must be selected/deselected manually.
+It happens, because when a custom toolchain is selected, Buildroot cannot detect toolchain's features automatically.
+Follow Buildroot's error messages for details.</p>
+</div>
+<p>By default, Buildroot builds a Linux toolchain for ARC from scratch and may use relatively old sources for tools like
+GCC, Binutils, etc. If you want to use the latest available toolchain for ARC processors, then consider using
+prebuilt components from <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases">official releases page</a>.</p>
+<p>In addition to the default values, select/deselect these options for the toolchain for ARC HS3x/4x with glibc library
+(2023.03 release):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Toolchain -&gt; Toolchain type -&gt; (X) External toolchain
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>          -&gt; (X) Custom toolchain
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>          -&gt; Toolchain origin -&gt; (X) Toolchain to be downloaded and installed
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>          -&gt; Toolchain URL -&gt; https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.03-release/arc_gnu_2023.03_prebuilt_glibc_le_archs_linux_install.tar.gz
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>          -&gt; External toolchain gcc version -&gt; (X) 12.x
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>          -&gt; External toolchain kernel headers series -&gt; (X) 5.16.x
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>          -&gt; External toolchain C library -&gt; (X) glibc
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>          -&gt; [ ] Toolchain has RPC support?
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>          -&gt; [X] Toolchain has C++ support?
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>          -&gt; [X] Toolchain has Fortran support?
 </span></code></pre></div>
-<h2 id="memory-maps-for-hardware-platforms">Memory Maps for Hardware Platforms<a class="headerlink" href="#memory-maps-for-hardware-platforms" title="Permanent link">&para;</a></h2>
-<p>You can find valid memory mappings for particular hardware platforms in documentation.
-Here is a list of resources with memory maps for Synopsys' development platforms:</p>
-<ul>
-<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home">ARC Development Systems Forum Wiki</a> contains documentation for all Synopsys' development platforms. User guides contain descriptions of memory mappings.</li>
-<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/newlib/tree/arc64">Newlib</a> repository for ARC contains predefined
-  memory maps for some of development platforms  in <code>libgloss/arc</code> directory.</li>
-<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain">toolchain</a> repository also contains predefined
-  memory maps for some of development platforms in <code>extras/dev_systems</code> directory.</li>
-</ul>
+<p>Additional options for the toolchain for ARC HS3x/4x with uClibc library (2023.03 release):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Toolchain -&gt; Toolchain type -&gt; (X) External toolchain
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>          -&gt; (X) Custom toolchain
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>          -&gt; Toolchain origin -&gt; (X) Toolchain to be downloaded and installed
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>          -&gt; Toolchain URL -&gt; https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.03-release/arc_gnu_2023.03_prebuilt_uclibc_le_archs_linux_install.tar.gz
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>          -&gt; External toolchain gcc version -&gt; (X) 12.x
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>          -&gt; External toolchain kernel headers series -&gt; (X) 5.16.x
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>          -&gt; External toolchain C library -&gt; (X) uClibc/uClibc-ng
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>          -&gt; [X] Toolchain has locale support?
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>          -&gt; [ ] Toolchain has RPC support?
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>          -&gt; [X] Toolchain has C++ support?
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>          -&gt; [X] Toolchain has Fortran support?
+</span></code></pre></div>
+<h2 id="selecting-a-preinstalled-toolchain">Selecting a Preinstalled Toolchain<a class="headerlink" href="#selecting-a-preinstalled-toolchain" title="Permanent link">&para;</a></h2>
+<p>A procedure is the same as for selecting a prebuilt toolchain except these ones:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Toolchain -&gt; Toolchain origin -&gt; (X) Pre-installed toolchain
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>          -&gt; Toolchain path -&gt; /tools/toolchains/arc-linux-gnu
+</span></code></pre></div>
+<h2 id="creating-a-custom-configuration-file">Creating a Custom Configuration File<a class="headerlink" href="#creating-a-custom-configuration-file" title="Permanent link">&para;</a></h2>
+<p>You can use <code>make savedefconfig</code> to save a current configuration to a configuration file.
+It reduces all configuration options to a minimum set of options.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>make<span class="w"> </span>savedefconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>my_defconfig
+</span></code></pre></div>
+<p>Configuration file <code>my_defconfig</code> is saved in Buildroot's source tree. Here is an example of
+a configuration file which selects a preinstalled toolchain:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">BR2_arcle</span><span class="o">=</span>y
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">BR2_archs38</span><span class="o">=</span>y
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc-2023.03/arc-linux-gnu&quot;</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC</span><span class="o">=</span>y
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1"># BR2_TOOLCHAIN_EXTERNAL_INET_RPC is not set</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_FORTRAN</span><span class="o">=</span>y
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="nv">BR2_TARGET_GENERIC_HOSTNAME</span><span class="o">=</span><span class="s2">&quot;zebu_hs&quot;</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="nv">BR2_TARGET_GENERIC_ISSUE</span><span class="o">=</span><span class="s2">&quot;Welcome to the HAPS Development Platform&quot;</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_VERSION</span><span class="o">=</span>y
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_VERSION_VALUE</span><span class="o">=</span><span class="s2">&quot;5.16&quot;</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;haps_hs_smp&quot;</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="nv">BR2_LINUX_KERNEL_VMLINUX</span><span class="o">=</span>y
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
+</span></code></pre></div>
+<h2 id="using-custom-configuration-files">Using Custom Configuration Files<a class="headerlink" href="#using-custom-configuration-files" title="Permanent link">&para;</a></h2>
+<p>You can place a custom configuration file in <code>config</code> directory in Buildroot's source tree.
+It allows you to use custom configuration files as usual:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>make my_defconfig
+</span></code></pre></div>
+<p>You can use <code>defconfig</code> command and <code>DEFCONFIG</code> environment variable to pass a path to the configuration file:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Using an absolute path</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>$<span class="w"> </span>make<span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>/home/user/buildroot/my_defconfig
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Using a relative path (it&#39;s always relative to Buildroot&#39;s source tree)</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>$<span class="w"> </span>make<span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>my_defconfig
+</span></code></pre></div>
+<h2 id="using-overlays">Using Overlays<a class="headerlink" href="#using-overlays" title="Permanent link">&para;</a></h2>
+<p>If you want to place addition files and directories in <code>rootfs</code>, then you can
+use <code>BR2_ROOTFS_OVERLAY=&lt;path&gt;</code> parameter: it contains a path to the a directory
+with files and directories which will be placed in the final filesystem image.</p>
+<p>You can select it in a configuration menu:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>System configuration -&gt; Root filesystem overlay directories -&gt; overlay
+</span></code></pre></div>
+<p>Also you can achieve the same result by placing all necessary files and directories in <code>output/target</code>
+(or just <code>target</code> if you build in a separate directory) directory and rebuilding images using <code>make</code>.</p>
 
 
 

@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../../simulators/qemu/">
+        <link rel="prev" href="../nsim/">
       
       
-        <link rel="next" href="../debugging/">
+        <link rel="next" href="../vdk/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>Memory Maps and Linker Scripts - GNU Toolchain for ARC User Manual</title>
+        <title>Running Linux on nSIM Using MetaWare Debugger - GNU Toolchain for ARC User Manual</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#memory-maps-and-linker-scripts" class="md-skip">
+        <a href="#running-linux-on-nsim-using-metaware-debugger" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Memory Maps and Linker Scripts
+              Running Linux on nSIM Using MetaWare Debugger
             
           </span>
         </div>
@@ -201,8 +201,6 @@
         
   
   
-    
-  
 
 
   
@@ -214,7 +212,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../simulators/nsim/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../baremetal/simulators/nsim/" class="md-tabs__link">
         Baremetal
       </a>
     </li>
@@ -226,6 +224,8 @@
         
   
   
+    
+  
 
 
   
@@ -237,7 +237,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../linux/building/buildroot/" class="md-tabs__link">
+      <a href="../../building/buildroot/" class="md-tabs__link md-tabs__link--active">
         Linux
       </a>
     </li>
@@ -561,16 +561,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
         
@@ -587,7 +585,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Baremetal
@@ -635,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../simulators/nsim/" class="md-nav__link">
+      <a href="../../../baremetal/simulators/nsim/" class="md-nav__link">
         Building Applications and Debugging on nSIM
       </a>
     </li>
@@ -649,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../simulators/qemu/" class="md-nav__link">
+      <a href="../../../baremetal/simulators/qemu/" class="md-nav__link">
         Building Applications and Debugging on QEMU
       </a>
     </li>
@@ -668,18 +666,16 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
       
       
         
@@ -698,7 +694,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_2">
           <span class="md-nav__icon md-icon"></span>
           Hardware
@@ -709,86 +705,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Memory Maps and Linker Scripts
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../baremetal/hardware/memory/" class="md-nav__link">
         Memory Maps and Linker Scripts
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#linker-scripts-and-linker-emulation" class="md-nav__link">
-    Linker Scripts and Linker Emulation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-arcv2elfx-linker-emulation" class="md-nav__link">
-    Using arcv2elfx linker emulation
-  </a>
-  
-    <nav class="md-nav" aria-label="Using arcv2elfx linker emulation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#em-starter-kit" class="md-nav__link">
-    EM Starter Kit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hs-development-kit" class="md-nav__link">
-    HS Development Kit
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#memory-maps-for-hardware-platforms" class="md-nav__link">
-    Memory Maps for Hardware Platforms
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -800,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../debugging/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/debugging/" class="md-nav__link">
         Building and Debugging on Various Boards
       </a>
     </li>
@@ -814,7 +735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../axs-openocd/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/axs-openocd/" class="md-nav__link">
         Building and Debugging on AXS with OpenOCD
       </a>
     </li>
@@ -828,7 +749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../axs-ashling/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/axs-ashling/" class="md-nav__link">
         Building and Debugging on AXS with Ashling Opella-XD
       </a>
     </li>
@@ -886,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/heap-and-stack/" class="md-nav__link">
+      <a href="../../../baremetal/general/heap-and-stack/" class="md-nav__link">
         Heap and Stack Size
       </a>
     </li>
@@ -900,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/tcf/" class="md-nav__link">
+      <a href="../../../baremetal/general/tcf/" class="md-nav__link">
         Using TCF
       </a>
     </li>
@@ -914,7 +835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../general/specs/" class="md-nav__link">
+      <a href="../../../baremetal/general/specs/" class="md-nav__link">
         Specs Files
       </a>
     </li>
@@ -941,14 +862,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
         
@@ -963,7 +886,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Linux
@@ -1013,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/building/buildroot/" class="md-nav__link">
+      <a href="../../building/buildroot/" class="md-nav__link">
         Building Linux kernel with Filesystem Using Buildroot
       </a>
     </li>
@@ -1027,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/building/separate/" class="md-nav__link">
+      <a href="../../building/separate/" class="md-nav__link">
         Building Linux kernel and Filesystem Separately
       </a>
     </li>
@@ -1041,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/building/configure/" class="md-nav__link">
+      <a href="../../building/configure/" class="md-nav__link">
         Configuring Buildroot and Linux Kernel
       </a>
     </li>
@@ -1060,16 +983,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
       
       
         
@@ -1088,7 +1013,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4_2">
           <span class="md-nav__icon md-icon"></span>
           Running on Simulators
@@ -1101,7 +1026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/simulators/nsim/" class="md-nav__link">
+      <a href="../nsim/" class="md-nav__link">
         Building Linux for a Simulation and Running on nSIM
       </a>
     </li>
@@ -1113,11 +1038,73 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../linux/simulators/metaware/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Running Linux on nSIM Using MetaWare Debugger
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Running Linux on nSIM Using MetaWare Debugger
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preface" class="md-nav__link">
+    Preface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-single-core-arc-hs38-linux-kernel" class="md-nav__link">
+    Running Single-Core ARC HS38 Linux Kernel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-multi-core-arc-hs38-linux-kernel" class="md-nav__link">
+    Running Multi-Core ARC HS38 Linux Kernel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-arc770-linux-kernel" class="md-nav__link">
+    Running ARC770 Linux Kernel
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1129,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/simulators/vdk/" class="md-nav__link">
+      <a href="../vdk/" class="md-nav__link">
         Running Linux on VDK
       </a>
     </li>
@@ -1143,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/simulators/qemu/" class="md-nav__link">
+      <a href="../qemu/" class="md-nav__link">
         Running Linux on QEMU
       </a>
     </li>
@@ -2097,153 +2084,71 @@
   
 
 
-<h1 id="memory-maps-and-linker-scripts">Memory Maps and Linker Scripts<a class="headerlink" href="#memory-maps-and-linker-scripts" title="Permanent link">&para;</a></h1>
-<h2 id="linker-scripts-and-linker-emulation">Linker Scripts and Linker Emulation<a class="headerlink" href="#linker-scripts-and-linker-emulation" title="Permanent link">&para;</a></h2>
-<p>Linker script is a special file which specifies where to put different sections of ELF file
-and defines particular symbols which may be referenced by an application. Linker emulation is
-basically way to select one of the predetermined linker scripts of the GNU linker.
-A linker script for a default linker emulation for ARCv2 may be observed this way:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ arc-elf32-ld --verbose
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>GNU ld (ARCompact/ARCv2 ISA elf32 toolchain - build 1360) 2.40.50.20230314
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  Supported emulations:
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   arcelf
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>   arclinux
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   arclinux_nps
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>   arcv2elf
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>   arcv2elfx
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>using internal linker script:
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>==================================================
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>/* Default linker script, for normal executables */
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>OUTPUT_FORMAT(&quot;elf32-littlearc&quot;, &quot;elf32-bigarc&quot;,
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>              &quot;elf32-littlearc&quot;)
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>OUTPUT_ARCH(arc)
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>ENTRY(__start)
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>...
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>SECTIONS
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>{
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>  /* Read-only sections, merged into text segment: */
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>  PROVIDE (__executable_start = SEGMENT_START(&quot;text-segment&quot;, 0x100)); . = SEGMENT_START(&quot;text-segment&quot;, 0x100);
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>  .interp         : { *(.interp) }
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>  .hash           : { *(.hash) }
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>  .dynsym         : { *(.dynsym) }
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>  .dynstr         : { *(.dynstr) }
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>  .gnu.version    : { *(.gnu.version) }
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>  .gnu.version_d  : { *(.gnu.version_d) }
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>  .gnu.version_r  : { *(.gnu.version_r) }
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>  .rel.init       : { *(.rel.init) }
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>  .rela.init      : { *(.rela.init) }
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>...
+<h1 id="running-linux-on-nsim-using-metaware-debugger">Running Linux on nSIM Using MetaWare Debugger<a class="headerlink" href="#running-linux-on-nsim-using-metaware-debugger" title="Permanent link">&para;</a></h1>
+<h2 id="preface">Preface<a class="headerlink" href="#preface" title="Permanent link">&para;</a></h2>
+<p>It's possible to run a Linux kernel on nSIM simulator using MetaWare debugger. It's just another way of
+running the kernel using nSIM. However, it allows to run not only UP configuration, but SMP configurations too.</p>
+<h2 id="running-single-core-arc-hs38-linux-kernel">Running Single-Core ARC HS38 Linux Kernel<a class="headerlink" href="#running-single-core-arc-hs38-linux-kernel" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The kernel must be built with <code>haps_hs_defconfig</code> Linux configuration.</p>
+</div>
+<p>Passing all configurations manually:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mdb -nsim -av2hs -prop=cpunum=0 -mmuv4 -Xrtc -Xatomic -Xtimer0 -Xtimer1 -Xmpyd -Xqmpyh -Xdiv_rem \
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    -toggle=deadbeef=1 -prop=nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=24 -prop=mmu_pagesize=8192 \
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    -prop=mmu_super_pagesize=2097152 -prop=mmu_stlb_entries=16 -prop=mmu_ntlb_ways=4 -prop=mmu_ntlb_sets=128 \
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    -icache=16384,64,2,o -dcache=16384,64,4,o -prop=nsim_isa_aps_feature=1 -prop=nsim_isa_num_actionpoints=4 \
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    -prop=nsim_isa_ll64_option=1 -prop=nsim_isa_rtc_option=1 -prop=nsim_isa_core=3 -noprofile -run -cl vmlinux
 </span></code></pre></div>
-<p>Linux user-space applications are loaded by the dynamic linker in their own virtual memory address space,
-where they do not collide with other applications. On the other side, baremetal applications are loaded into
-target's memory by debugger, bootloader or they are already in the ROM mapped to a specific location.</p>
-<p>If linker uses an invalid memory map for a particular platform, then some parts of the application will be loaded
-to the memory incorrectly. For example, it may be accidentally written to peripherals' region and cause an error.</p>
-<p>That default linker emulation places all loadable ELF sections in a row after each other starting at address <code>0x0</code>.
-This is usually enough for an application prototyping, however real systems often have much more complex memory maps
-with CCM regions, peripherals' region, etc.</p>
-<p>Default linker emulation also puts interrupt vector table (<code>.ivt</code> section) between code and data sections and doesn't
-align <code>.ivt</code> properly (<code>.ivt</code> must be 1KiB-aligned for ARC processors). Here is an example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ arc-elf32-gcc -mcpu=em4_dmips main.c -o main.elf
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$ arc-elf32-objdump -h main.elf
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>main.elf:     file format elf32-littlearc
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Sections:
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Idx Name          Size      VMA       LMA       File off  Algn
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  0 .init         00000022  00000100  00000100  00000100  2**0
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>                  CONTENTS, ALLOC, LOAD, READONLY, CODE
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  1 .text         00003c28  00000124  00000124  00000124  2**2
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>                  CONTENTS, ALLOC, LOAD, READONLY, CODE
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>  2 .fini         00000016  00003d4c  00003d4c  00003d4c  2**0
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>                  CONTENTS, ALLOC, LOAD, READONLY, CODE
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>  3 .rodata       00000014  00003d64  00003d64  00003d64  2**2
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>                  CONTENTS, ALLOC, LOAD, READONLY, DATA
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>  4 .ivt          00000054  00003d78  00003d78  00003d78  2**0
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>                  CONTENTS, ALLOC, LOAD, READONLY, DATA
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>  5 .data         00000530  00005dcc  00005dcc  00003dcc  2**2
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>                  CONTENTS, ALLOC, LOAD, DATA
+<p>Using a predefined TCF template:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mdb -tcf $NSIM_HOME/etc/tcf/templates/hs38_full.tcf \
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    -prop=nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=24 \
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    -prop=nsim_isa_rtc_option=1 -nsim -noprofile -run -cl vmlinux
 </span></code></pre></div>
-<p>Therefore the default linker emulation is not applicable for applications which handle interrupts.
-It can be used safely only with applications which don't handle interrupts and only on simulations
-which simulate whole address space, like following templates: <code>em6_dmips</code>, <code>em6_gp</code>, <code>em6_mini</code>,
-<code>em7d_nrg</code>, <code>em7d_voice_audio</code>, <code>em11d_nrg</code>, <code>em11d_voice_audio</code>, <code>hs36_base</code>, <code>hs36</code>, <code>hs38_base</code>,
-<code>hs38</code>, <code>hs38_full</code>, <code>hs38_slc_full</code>.</p>
-<h2 id="using-arcv2elfx-linker-emulation">Using <code>arcv2elfx</code> linker emulation<a class="headerlink" href="#using-arcv2elfx-linker-emulation" title="Permanent link">&para;</a></h2>
-<p>If you use <code>arcv2elfx</code> linker emulation, then linker searches for <code>memory.x</code> file with definition of
-a custom memory map. It is searched in the current working directory and in directories listed via
-<code>-L</code> option.</p>
-<h3 id="em-starter-kit">EM Starter Kit<a class="headerlink" href="#em-starter-kit" title="Permanent link">&para;</a></h3>
-<p>Here is an example of <code>memory.x</code> for EM11D core in EM Starter Kit v2.3:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>MEMORY
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    ICCM : ORIGIN = 0x00000000, LENGTH = 64K
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    DRAM : ORIGIN = 0x10000000, LENGTH = 128M
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    DCCM : ORIGIN = 0x80000000, LENGTH = 64K
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>}
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>REGION_ALIAS(&quot;startup&quot;, ICCM)
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>REGION_ALIAS(&quot;text&quot;, ICCM)
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>REGION_ALIAS(&quot;data&quot;, DRAM)
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>REGION_ALIAS(&quot;sdata&quot;, DRAM)
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>PROVIDE (__stack_top = (0x17FFFFFF &amp; -4) );
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>PROVIDE (__end_heap = (0x17FFFFFF) );
+<h2 id="running-multi-core-arc-hs38-linux-kernel">Running Multi-Core ARC HS38 Linux Kernel<a class="headerlink" href="#running-multi-core-arc-hs38-linux-kernel" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The kernel must be built with <code>haps_hs_smp_defconfig</code> Linux configuration.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>nsim_connect_*</code> properties are not supported in older nSIM (prior K-2015.06).
+Please check the nSIM documentation to replace them with deprecated <code>nsim_mcip_*</code> properties.</p>
+</div>
+<p>Running 2 cores using a predefined TCF template:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>export NSIM_MULTICORE=1
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>mdb -pset=1 -psetname=core0 -prop=ident=0x00000050 -cmpd=soc \
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    -tcf $NSIM_HOME/etc/tcf/templates/hs38_full.tcf \
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    -prop=nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=0,use_connect=1 \
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    -prop=nsim_connect=2 -prop=nsim_connect_idu=1 -prop=nsim_connect_gfrc=1 \
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    -prop=nsim_connect_ici=1 -prop=isa_counters=1 -prop=nsim_isa_pct_counters=8 \
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    -prop=nsim_isa_pct_interrupt=1 -prop=nsim_isa_pct_interrupt=1 \
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    -noprofile vmlinux
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>mdb -tcf $NSIM_HOME/etc/tcf/templates/hs38_full.tcf \
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    -pset=2 -psetname=core1 -prop=ident=0x00000150 -cmpd=soc \
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    -prop=nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=0,use_connect=1 \
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    -prop=nsim_connect=2 -prop=nsim_connect_idu=1 -prop=nsim_connect_gfrc=1 \
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    -prop=nsim_connect_ici=1 -prop=isa_counters=1 -prop=nsim_isa_pct_counters=8 \
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    -prop=nsim_isa_pct_interrupt=1 -prop=nsim_isa_pct_interrupt=1 \
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    -noprofile vmlinux
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>mdb -multifiles=core0,core1 -cmpd=soc -run -cl
 </span></code></pre></div>
-<p><code>MEMORY</code> section specifies platform's memory regions: base addresses and lengths.
-You can use arbitrary names for these regions.
-<code>REGION_ALIAS</code> commands translate platform's regions to standard region names
-expected by the linker emulation. There are 4 such standard regions:</p>
-<ul>
-<li><code>startup</code> - interrupt vector table and initialization code. By default it's mapped to <code>0x0</code> address and if you map <code>startup</code> to a different one, then you also need to pass this address to the linker using <code>--defsym=ivtbase_addr=&lt;...&gt;</code> option or to GCC itself using <code>-Wl,--defsym=ivtbase_addr=&lt;...&gt;</code> option.</li>
-<li><code>text</code> - other code sections.</li>
-<li><code>data</code> - data sections.</li>
-<li><code>sdata</code> - small data sections.</li>
-</ul>
-<p>Also, the example provides these symbols (both of them may be omitted and default values will be used):</p>
-<ul>
-<li><code>__stack_top</code> points to the top of the stack. It must be 4-byte aligned In the example it points to the end
-  of DRAM regions, because stack grows downward.</li>
-<li><code>__end_heap</code> points to the end of the heap. Heap starts at the end of data sections
-  and grows upward to <code>__end_heap</code>.</li>
-</ul>
-<p>You can compile your application against that <code>memory.x</code> file by passing <code>-marcv2elfx</code> to the linker or
-<code>-Wl,-marcv2elfx</code> to GCC itself:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ ls
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>main.c memory.x
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>$ arc-elf32-gcc -mcpu=em4_dmips -Wl,-marcv2elfx main.c -o main.elf
+<p>Running 4 cores using a predefined TCF template:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">NSIM_MULTICORE</span><span class="o">=</span><span class="m">1</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nv">VMLINUX</span><span class="o">=</span><span class="s2">&quot;vmlinux&quot;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nv">COMMON</span><span class="o">=</span><span class="s2">&quot;-tcf </span><span class="nv">$NSIM_HOME</span><span class="s2">/etc/tcf/templates/hs38_full.tcf -prop=nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=0,use_connect=1 -prop=nsim_connect=2 -prop=nsim_connect_idu=1 -prop=nsim_connect_gfrc=1 -prop=nsim_connect_ici=1 -prop=isa_counters=1 -prop=nsim_isa_pct_counters=8 -prop=nsim_isa_pct_interrupt=1 -prop=nsim_isa_pct_interrupt=1 -noprofile&quot;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">1</span><span class="w"> </span>-psetname<span class="o">=</span>core0<span class="w"> </span>-prop<span class="o">=</span><span class="nv">ident</span><span class="o">=</span>0x00000050<span class="w"> </span>-cmpd<span class="o">=</span>soc<span class="w"> </span><span class="nv">$COMMON</span><span class="w"> </span><span class="nv">$VMLINUX</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">2</span><span class="w"> </span>-psetname<span class="o">=</span>core1<span class="w"> </span>-prop<span class="o">=</span><span class="nv">ident</span><span class="o">=</span>0x00000150<span class="w"> </span>-cmpd<span class="o">=</span>soc<span class="w"> </span><span class="nv">$COMMON</span><span class="w"> </span><span class="nv">$VMLINUX</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">3</span><span class="w"> </span>-psetname<span class="o">=</span>core2<span class="w"> </span>-prop<span class="o">=</span><span class="nv">ident</span><span class="o">=</span>0x00000250<span class="w"> </span>-cmpd<span class="o">=</span>soc<span class="w"> </span><span class="nv">$COMMON</span><span class="w"> </span><span class="nv">$VMLINUX</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">4</span><span class="w"> </span>-psetname<span class="o">=</span>core3<span class="w"> </span>-prop<span class="o">=</span><span class="nv">ident</span><span class="o">=</span>0x00000350<span class="w"> </span>-cmpd<span class="o">=</span>soc<span class="w"> </span><span class="nv">$COMMON</span><span class="w"> </span><span class="nv">$VMLINUX</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>mdb<span class="w"> </span>-multifiles<span class="o">=</span>core0,core1,core2,core3<span class="w"> </span>-cmpd<span class="o">=</span>soc<span class="w"> </span>-run<span class="w"> </span>-cl
 </span></code></pre></div>
-<h3 id="hs-development-kit">HS Development Kit<a class="headerlink" href="#hs-development-kit" title="Permanent link">&para;</a></h3>
-<p>Here is an example of <code>memory.x</code> for HS Development Kit:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>MEMORY
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>{
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    DRAM : ORIGIN = 0x90000000, LENGTH = 0x50000000
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>}
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>REGION_ALIAS(&quot;startup&quot;, DRAM)
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>REGION_ALIAS(&quot;text&quot;, DRAM)
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>REGION_ALIAS(&quot;data&quot;, DRAM)
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>REGION_ALIAS(&quot;sdata&quot;, DRAM)
+<h2 id="running-arc770-linux-kernel">Running ARC770 Linux Kernel<a class="headerlink" href="#running-arc770-linux-kernel" title="Permanent link">&para;</a></h2>
+<p>Passing all configurations manually:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mdb -a7 -nsim -Xlib -prop=nsim_mmu=3 -Xtimer0 -Xtimer1 -icache=16384,64,2,o -dcache=32768,64,4,o \
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    -prop=cpunum=0 -prop=nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=24 -prop=nsim_sc_mem_range_end=0xc0fbffff \
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    -prop=nsim_isa_atomic_option=1 -prop=nsim_isa_num_actionpoints=8 -prop=nsim_isa_aps_feature=1 -noprofile -OK -run -cl vmlinux
 </span></code></pre></div>
-<p><code>startup</code> is mapped to <code>0x90000000</code>. It means that you have to pass <code>-Wl,--defsym=ivtbase_addr=&lt;...&gt;</code> option too.
-You can compile your application against that <code>memory.x</code> this way:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ ls
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>main.c memory.x
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>$ arc-elf32-gcc -mcpu=archs -Wl,-marcv2elfx -Wl,--defsym=ivtbase_addr=0x90000000 main.c -o main.elf
-</span></code></pre></div>
-<h2 id="memory-maps-for-hardware-platforms">Memory Maps for Hardware Platforms<a class="headerlink" href="#memory-maps-for-hardware-platforms" title="Permanent link">&para;</a></h2>
-<p>You can find valid memory mappings for particular hardware platforms in documentation.
-Here is a list of resources with memory maps for Synopsys' development platforms:</p>
-<ul>
-<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home">ARC Development Systems Forum Wiki</a> contains documentation for all Synopsys' development platforms. User guides contain descriptions of memory mappings.</li>
-<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/newlib/tree/arc64">Newlib</a> repository for ARC contains predefined
-  memory maps for some of development platforms  in <code>libgloss/arc</code> directory.</li>
-<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain">toolchain</a> repository also contains predefined
-  memory maps for some of development platforms in <code>extras/dev_systems</code> directory.</li>
-</ul>
 
 
 
