@@ -103,8 +103,7 @@ nav:
     - advanced/64-bit-operations.md
     - advanced/bit-file-fpga.md
   - Testing:
-    - testing/newlib.md
+    - testing/dejagnu.md
     - testing/glibc.md
-    - testing/gcc.md
     - testing/qemu.md
   - FAQ: faq.md
