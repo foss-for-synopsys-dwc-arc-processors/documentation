@@ -61,7 +61,16 @@ nav:
       - baremetal/general/heap-and-stack.md
       - baremetal/general/tcf.md
       - baremetal/general/specs.md
-  - Linux: https://github.com/foss-for-synopsys-dwc-arc-processors/linux/wiki
+  - Linux:
+    - Building:
+      - linux/building/buildroot.md
+      - linux/building/separate.md
+      - linux/building/configure.md
+    - Running on Simulators:
+      - linux/simulators/nsim.md
+      - linux/simulators/metaware.md
+      - linux/simulators/vdk.md
+      - linux/simulators/qemu.md
   - Development platforms:
     - platforms/index.md
     - Using Boards:
