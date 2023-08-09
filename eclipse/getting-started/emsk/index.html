@@ -1878,7 +1878,7 @@
 <h2 id="creating-the-project">Creating the Project<a class="headerlink" href="#creating-the-project" title="Permanent link">&para;</a></h2>
 <p>Select <strong>File</strong> → <strong>New</strong> → <strong>Project..</strong> and choose <strong>C Project</strong>.
 A list of ARC projects will appear. Choose any ARC EM Starter Kit
-"Hello World" project from the **ARC EM Starter Kit Projects" group.
+"Hello World" project from the <strong>ARC EM Starter Kit Projects</strong> group.
 Suppose, EM11D project is chosen.</p>
 <p><img alt="ARC EM Starter Kit Projects" src="../images/emsk-projects.png" width="700" /></p>
 <p>After creating the project, a simple "Hello, World!" program will be created:</p>
@@ -1906,8 +1906,33 @@ The project will be built with this output:</p>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>&#39; &#39;
 </span></code></pre></div>
 <h2 id="creating-a-debug-configuration">Creating a Debug Configuration<a class="headerlink" href="#creating-a-debug-configuration" title="Permanent link">&para;</a></h2>
+<p>Do right click on projects's name in <strong>Project Explorer</strong> and choose
+<strong>Debug As</strong> → <strong>Debug Configurations...</strong>. Then do right click on
+<strong>ARC C/C++ application</strong> and choose <strong>New Configuration</strong>. Here is a main window of
+the debug configuration:</p>
+<p><img alt="Debug Configuration - Main" src="../images/emsk-debug-conf-main.png" width="700" /></p>
+<p>Ensure that a correct project and binary are selected. Navigate to <strong>Main</strong> tab
+and <strong>Gdbserver Settings</strong> inner tab:</p>
+<p><img alt="Debug Configuration - GDB" src="../images/emsk-debug-conf-gdb.png" width="700" /></p>
+<p>Choose <strong>JTAG via OpenOCD</strong> as ARC GDB Server and <strong>EM Starter Kit v2.2</strong> as
+a development system (use a corresponding one for your case). Then click on
+<strong>Apply</strong>.</p>
 <h2 id="configuring-a-serial-terminal">Configuring a Serial Terminal<a class="headerlink" href="#configuring-a-serial-terminal" title="Permanent link">&para;</a></h2>
+<p>Navigate to <strong>Terminal</strong> inner tab of <strong>Main</strong> tab and select a COM port for
+the board. Eclipse automatically detects all available COM ports. In my case
+it's <code>COM7</code>.</p>
+<p><img alt="Debug Configuration - Terminal" src="../images/emsk-debug-conf-terminal.png" width="700" /></p>
+<p>On Windows you can find the exact number in <strong>Device Manager</strong> (it corresponds
+to <strong>USB Serial Port</strong> device):</p>
+<p><img alt="Debug Configuration - Port" src="../images/emsk-debug-conf-port.png" width="700" /></p>
+<p>On Linux a serial device for EM Starter Kit is usually <code>/dev/ttyUSB1</code>.</p>
 <h2 id="debugging-the-project">Debugging the Project<a class="headerlink" href="#debugging-the-project" title="Permanent link">&para;</a></h2>
+<p>Open the debug configuration in <strong>Debug Configurations</strong> windows and click
+on <strong>Debug</strong> button. The <strong>Debug</strong> perspective will be opened:</p>
+<p><img alt="Debug - Perspective" src="../images/emsk-debug-perspective.png" /></p>
+<p>Use <strong>Step Over</strong> button to step over <code>printf</code> function and select <strong>Terminal</strong>
+in the bottom of the window. "Hello world!" string will be printed:</p>
+<p><img alt="Debug - Output" src="../images/emsk-debug-output.png" /></p>
 
 
 
