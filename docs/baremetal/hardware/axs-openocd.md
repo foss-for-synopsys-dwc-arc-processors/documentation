@@ -1,4 +1,4 @@
-# Building and Debugging on AXS with OpenOCD
+# AXS with OpenOCD
 
 !!! info
 

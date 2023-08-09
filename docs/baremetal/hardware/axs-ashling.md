@@ -1,4 +1,4 @@
-# Building and Debugging on AXS with Ashling Opella-XD
+# AXS with Ashling Opella-XD
 
 ## Preface
 

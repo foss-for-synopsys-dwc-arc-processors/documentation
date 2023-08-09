@@ -53,8 +53,10 @@ nav:
       - baremetal/simulators/nsim.md
       - baremetal/simulators/qemu.md
     - Hardware:
+      - baremetal/hardware/general.md
       - baremetal/hardware/memory.md
-      - baremetal/hardware/debugging.md
+      - baremetal/hardware/hsdk.md
+      - baremetal/hardware/emsk.md
       - baremetal/hardware/axs-openocd.md
       - baremetal/hardware/axs-ashling.md
     - General Topics:
@@ -71,6 +73,9 @@ nav:
       - linux/simulators/metaware.md
       - linux/simulators/vdk.md
       - linux/simulators/qemu.md
+    - Running on HS Development Kit:
+      - Building and running Linux: linux/hsdk/build.md
+      - Building U-Boot: linux/hsdk/uboot.md
   - Development platforms:
     - platforms/index.md
     - Using Boards:
