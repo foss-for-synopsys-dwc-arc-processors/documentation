@@ -12,14 +12,14 @@
         <link rel="prev" href="../memory/">
       
       
-        <link rel="next" href="../axs-openocd/">
+        <link rel="next" href="../emsk/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>Building and Debugging on Various Boards - GNU Toolchain for ARC User Manual</title>
+        <title>HS Development Kit - GNU Toolchain for ARC User Manual</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#building-and-debugging-on-various-boards" class="md-skip">
+        <a href="#hs-development-kit" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Building and Debugging on Various Boards
+              HS Development Kit
             
           </span>
         </div>
@@ -691,6 +691,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -704,6 +708,20 @@
           Hardware
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general/" class="md-nav__link">
+        General Topics
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -735,12 +753,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Building and Debugging on Various Boards
+          HS Development Kit
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Building and Debugging on Various Boards
+        HS Development Kit
       </a>
       
         
@@ -759,8 +777,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#preface" class="md-nav__link">
-    Preface
+  <a href="#building-an-application" class="md-nav__link">
+    Building an Application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-an-application" class="md-nav__link">
+    Running an Application
   </a>
   
 </li>
@@ -768,88 +793,6 @@
         <li class="md-nav__item">
   <a href="#connecting-using-uart" class="md-nav__link">
     Connecting Using UART
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#em-starter-kit" class="md-nav__link">
-    EM Starter Kit
-  </a>
-  
-    <nav class="md-nav" aria-label="EM Starter Kit">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#building-an-application" class="md-nav__link">
-    Building an Application
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#running-an-application" class="md-nav__link">
-    Running an Application
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#connecting-using-uart_1" class="md-nav__link">
-    Connecting Using UART
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hs-development-kit" class="md-nav__link">
-    HS Development Kit
-  </a>
-  
-    <nav class="md-nav" aria-label="HS Development Kit">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#building-an-applications" class="md-nav__link">
-    Building an Applications
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#running-an-application_1" class="md-nav__link">
-    Running an Application
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#connecting-using-uart_2" class="md-nav__link">
-    Connecting Using UART
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#development-platforms-table" class="md-nav__link">
-    Development Platforms Table
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-openocd-server" class="md-nav__link">
-    Running OpenOCD Server
   </a>
   
 </li>
@@ -869,8 +812,22 @@
   
   
     <li class="md-nav__item">
+      <a href="../emsk/" class="md-nav__link">
+        EM Starter Kit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../axs-openocd/" class="md-nav__link">
-        Building and Debugging on AXS with OpenOCD
+        AXS with OpenOCD
       </a>
     </li>
   
@@ -884,7 +841,7 @@
   
     <li class="md-nav__item">
       <a href="../axs-ashling/" class="md-nav__link">
-        Building and Debugging on AXS with Ashling Opella-XD
+        AXS with Ashling Opella-XD
       </a>
     </li>
   
@@ -1006,6 +963,8 @@
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
       
       
+        
+          
         
           
         
@@ -1200,6 +1159,76 @@
     <li class="md-nav__item">
       <a href="../../../linux/simulators/qemu/" class="md-nav__link">
         Running Linux on QEMU
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          Running on HS Development Kit
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Running on HS Development Kit
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/hsdk/build/" class="md-nav__link">
+        Building and running Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/hsdk/uboot/" class="md-nav__link">
+        Building U-Boot
       </a>
     </li>
   
@@ -2152,33 +2181,17 @@
   
 
 
-<h1 id="building-and-debugging-on-various-boards">Building and Debugging on Various Boards<a class="headerlink" href="#building-and-debugging-on-various-boards" title="Permanent link">&para;</a></h1>
-<h2 id="preface">Preface<a class="headerlink" href="#preface" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Refer to <a href="#development-platforms-table">Development Platforms Table</a> section
-  for options for all available configurations of the board.</li>
-<li>Follow <a href="../memory/">Memory Maps and Linker Scripts</a> guide for details
-  about <code>memory.x</code> files and where they may be obtained.</li>
-<li>Follow a <a href="../../../platforms/get-openocd/">corresponding manual</a> to obtain
-  and configure OpenOCD.</li>
-</ul>
-<h2 id="connecting-using-uart">Connecting Using UART<a class="headerlink" href="#connecting-using-uart" title="Permanent link">&para;</a></h2>
-<p>Connecting a board to the host computer allows you using a serial port terminal for interacting with the board.
-You can use any software to connect to the serial port terminal:</p>
-<ul>
-<li>On Windows you can use HyperTerminal or Putty.</li>
-<li>On Linux you can use <code>minicom</code>, <code>gtkterm</code>, <code>cutecom</code>, etc.</li>
-</ul>
-<p>You can find detailed instructions for particular boards in corresponding sections.</p>
-<h2 id="em-starter-kit">EM Starter Kit<a class="headerlink" href="#em-starter-kit" title="Permanent link">&para;</a></h2>
+<h1 id="hs-development-kit">HS Development Kit<a class="headerlink" href="#hs-development-kit" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Please refer to <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-em-starter-kit-1">board's documentation</a>
-for detailed information about how to setup the board for initial operation.</p>
+<p>Please refer to board's documentation for detailed information about how to setup the board for initial operation:</p>
+<ul>
+<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-hs-development-kit-1">ARC HS Development Kit</a></li>
+<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-hs4xhs4xd-development-kit-1">ARC HS4x/HS4xD Development Kit</a></li>
+</ul>
 </div>
-<h3 id="building-an-application">Building an Application<a class="headerlink" href="#building-an-application" title="Permanent link">&para;</a></h3>
-<p>Suppose, that EMSK 2.2 is used and EM7D core is selected.
-Consider a simple application <code>main.c</code>:</p>
+<h2 id="building-an-application">Building an Application<a class="headerlink" href="#building-an-application" title="Permanent link">&para;</a></h2>
+<p>Consider a simple application <code>main.c</code>:</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
@@ -2188,180 +2201,76 @@ Consider a simple application <code>main.c</code>:</p>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>Build an application with support of UART:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>cp<span class="w"> </span>&lt;path-to-toolchain&gt;/arc-*/lib/emsk2.2_em9d.x<span class="w"> </span>memory.x
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$<span class="w"> </span>arc-elf32-gcc<span class="w"> </span>-mcpu<span class="o">=</span>em4_dmips<span class="w"> </span>-specs<span class="o">=</span>emsk.specs<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main.elf
-</span></code></pre></div>
-<p>Build without support of UART:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>cp<span class="w"> </span>&lt;path-to-toolchain&gt;/arc-*/lib/emsk2.2_em9d.x<span class="w"> </span>memory.x
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$<span class="w"> </span>arc-elf32-gcc<span class="w"> </span>-mcpu<span class="o">=</span>em4_dmips<span class="w"> </span>-specs<span class="o">=</span>nosys.specs<span class="w"> </span>-Wl,-marcv2elfx<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main.elf
-</span></code></pre></div>
-<h3 id="running-an-application">Running an Application<a class="headerlink" href="#running-an-application" title="Permanent link">&para;</a></h3>
-<p>Follow <a href="#running-openocd-server">Running OpenOCD Server</a> section and start OpenOCD
-with 49101 port and <code>snps_em_sk_v2.2.cfg</code> configuration file. Here is
-a possible output:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Open On-Chip Debugger 0.9.0-dev (2023-05-21-06:23)
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Licensed under GNU GPL v2
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>For bug reports, read
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    http://openocd.sourceforge.net/doc/doxygen/bugs.html
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>adapter speed: 5000 kHz
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Info : clock speed 5000 kHz
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Info : JTAG tap: arc-em.cpu tap/device found: 0x200044b1 (mfg: 0x258, part: 0x0004, ver: 0x2)
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>Info : JTAG tap: arc-em.cpu tap/device found: 0x200044b1 (mfg: 0x258, part: 0x0004, ver: 0x2)
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>target state: halted
-</span></code></pre></div>
-<p>Then connect to the server using GDB:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$ arc-elf32-gdb -quiet main.elf
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a># Connect. Replace 49101 with port of your choice if you changed it when starting OpenOCD
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>(gdb) target remote :49101
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a># Increase timeout, because OpenOCD sometimes can be slow
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>(gdb) set remotetimeout 15
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a># Load application into target
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>(gdb) load
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a># Go to start of main function
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>(gdb) tbreak main
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>(gdb) continue
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a># Resume with usual GDB commands
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>(gdb) step
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>(gdb) next
-</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
-</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a># Go to end of the application
-</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>(gdb) tbreak exit
-</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>(gdb) continue
-</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
-</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a># For example, check exit code of application
-</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>(gdb) info reg r0
-</span></code></pre></div>
-<h3 id="connecting-using-uart_1">Connecting Using UART<a class="headerlink" href="#connecting-using-uart_1" title="Permanent link">&para;</a></h3>
-<p>If you are going to use input/output, then you need to configure these
-parameters of a serial terminal to interact with the serial port:</p>
-<ul>
-<li>baud-rate 115200</li>
-<li>8 data bits</li>
-<li>1 stop Bit</li>
-</ul>
-<p>For <code>minicom</code> use this command:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>minicom<span class="w"> </span>-8<span class="w"> </span>-b<span class="w"> </span><span class="m">115200</span><span class="w"> </span>-D<span class="w"> </span>/dev/ttyUSB1
-</span></code></pre></div>
-<p>After resetting the EMSK 2.2 you will see this output of the bootloader:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>***********************************
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>**       Synopsys, Inc.          **
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>**     ARC EM Starter kit        **
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>**                               **
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>** Comprehensive software stacks **
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>**   available from embARC.org   **
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>**                               **
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>***********************************
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>Firmware   Jan 11 2016, v2.2
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>Bootloader Dec 29 2015, v1.1
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>ARC EM11D, core configuration #3 
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>ARC IDENTITY = 0x42
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>RF_BUILD = 0xc902
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>TIMER_BUILD = 0x10304
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>ICCM_BUILD = 0x804
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>DCCM_BUILD = 0x10804
-</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>I_CACHE_BUILD = 0x135104
-</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>D_CACHE_BUILD = 0x215104
-</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
-</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>SelfTest PASSED
-</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>
-</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>Info: No boot image found
-</span></code></pre></div>
-<h2 id="hs-development-kit">HS Development Kit<a class="headerlink" href="#hs-development-kit" title="Permanent link">&para;</a></h2>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Please refer to board's documentation for detailed information about how to setup the board for initial operation:</p>
-<ul>
-<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-hs-development-kit-1">ARC HS Development Kit</a></li>
-<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-hs4xhs4xd-development-kit-1">ARC HS4x/HS4xD Development Kit</a></li>
-</ul>
-</div>
-<h3 id="building-an-applications">Building an Applications<a class="headerlink" href="#building-an-applications" title="Permanent link">&para;</a></h3>
-<p>Consider a simple application <code>main.c</code>:</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">{</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">}</span>
-</span></code></pre></div>
-<p>Build an application with support of UART:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>cp<span class="w"> </span>&lt;path-to-toolchain&gt;/arc-*/lib/hsdk.x<span class="w"> </span>memory.x
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>$<span class="w"> </span>arc-elf32-gcc<span class="w"> </span>-mcpu<span class="o">=</span>hs38_linux<span class="w"> </span>-specs<span class="o">=</span>hsdk.specs<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main.elf
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cp<span class="w"> </span>&lt;path-to-toolchain&gt;/arc-*/lib/hsdk.x<span class="w"> </span>memory.x
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>arc-elf32-gcc<span class="w"> </span>-mcpu<span class="o">=</span>hs38_linux<span class="w"> </span>-specs<span class="o">=</span>hsdk.specs<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main.elf
 </span></code></pre></div>
 <p>Build without support of UART, but if you are going to use interrupts (it allows
 to catch memory errors):</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>cp<span class="w"> </span>&lt;path-to-toolchain&gt;/arc-*/lib/hsdk.x<span class="w"> </span>memory.x
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>$<span class="w"> </span>arc-elf32-gcc<span class="w"> </span>-mcpu<span class="o">=</span>hs38_linux<span class="w"> </span>-specs<span class="o">=</span>nosys.specs<span class="w"> </span>-Wl,-marcv2elfx<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">                </span>-Wl,--defsym<span class="o">=</span><span class="nv">ivtbase_addr</span><span class="o">=</span>0x90000000<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main.elf
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cp<span class="w"> </span>&lt;path-to-toolchain&gt;/arc-*/lib/hsdk.x<span class="w"> </span>memory.x
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>arc-elf32-gcc<span class="w"> </span>-mcpu<span class="o">=</span>hs38_linux<span class="w"> </span>-specs<span class="o">=</span>nosys.specs<span class="w"> </span>-Wl,-marcv2elfx<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">              </span>-Wl,--defsym<span class="o">=</span><span class="nv">ivtbase_addr</span><span class="o">=</span>0x90000000<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main.elf
 </span></code></pre></div>
 <p>A simple build if you are not going to use UART and interrupts:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>arc-elf32-gcc<span class="w"> </span>-mcpu<span class="o">=</span>hs38_linux<span class="w"> </span>-specs<span class="o">=</span>nosys.specs<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main.elf
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>arc-elf32-gcc<span class="w"> </span>-mcpu<span class="o">=</span>hs38_linux<span class="w"> </span>-specs<span class="o">=</span>nosys.specs<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main.elf
 </span></code></pre></div>
-<h3 id="running-an-application_1">Running an Application<a class="headerlink" href="#running-an-application_1" title="Permanent link">&para;</a></h3>
-<p>Follow <a href="#running-openocd-server">Running OpenOCD Server</a> section and start OpenOCD
+<h2 id="running-an-application">Running an Application<a class="headerlink" href="#running-an-application" title="Permanent link">&para;</a></h2>
+<p>Follow <a href="../../../platforms/use-openocd/">Using OpenOCD</a> guide and start OpenOCD
 with 49101 port and <code>snps_hsdk.cfg</code> (for HSDK) of <code>snps_hsdk_4xd.cfg</code>
 (for HSDK 4xD) configuration file. Here is a possible output for HSDK 4xD:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Open On-Chip Debugger 0.12.0+dev-gffa52f0e0 (2023-08-02-10:41)
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Licensed under GNU GPL v2
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>For bug reports, read
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    http://openocd.org/doc/doxygen/bugs.html
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>Info : target has l2 cache enabled is enabled
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>Info : target has l2 cache enabled is enabled
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>Info : target has l2 cache enabled is enabled
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>Info : target has l2 cache enabled is enabled
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>32768
-</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>Info : Listening on port 6666 for tcl connections
-</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>Info : Listening on port 4444 for telnet connections
-</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>Info : ftdi: if you experience problems at higher adapter clocks, try the command &quot;ftdi tdo_sample_edge falling&quot;
-</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>Info : clock speed 10000 kHz
-</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>Info : JTAG tap: arc-em.cpu4 tap/device found: 0x100c54b1 (mfg: 0x258 (ARC International), part: 0x00c5, ver: 0x1)
-</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>Info : JTAG tap: arc-em.cpu3 tap/device found: 0x100854b1 (mfg: 0x258 (ARC International), part: 0x0085, ver: 0x1)
-</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>Info : JTAG tap: arc-em.cpu2 tap/device found: 0x100454b1 (mfg: 0x258 (ARC International), part: 0x0045, ver: 0x1)
-</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>Info : JTAG tap: arc-em.cpu1 tap/device found: 0x100054b1 (mfg: 0x258 (ARC International), part: 0x0005, ver: 0x1)
-</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>Info : starting gdb server for arc-em.cpu4 on 49101
-</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>Info : Listening on port 49101 for gdb connections
-</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>Info : starting gdb server for arc-em.cpu3 on 49102
-</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>Info : Listening on port 49102 for gdb connections
-</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>Info : starting gdb server for arc-em.cpu2 on 49103
-</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>Info : Listening on port 49103 for gdb connections
-</span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>Info : starting gdb server for arc-em.cpu1 on 49104
-</span><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>Info : Listening on port 49104 for gdb connections
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Open On-Chip Debugger 0.12.0+dev-gffa52f0e0 (2023-08-02-10:41)
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Licensed under GNU GPL v2
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>For bug reports, read
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    http://openocd.org/doc/doxygen/bugs.html
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Info : target has l2 cache enabled is enabled
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>Info : target has l2 cache enabled is enabled
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>Info : target has l2 cache enabled is enabled
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>Info : target has l2 cache enabled is enabled
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>32768
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>Info : Listening on port 6666 for tcl connections
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>Info : Listening on port 4444 for telnet connections
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>Info : ftdi: if you experience problems at higher adapter clocks, try the command &quot;ftdi tdo_sample_edge falling&quot;
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>Info : clock speed 10000 kHz
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>Info : JTAG tap: arc-em.cpu4 tap/device found: 0x100c54b1 (mfg: 0x258 (ARC International), part: 0x00c5, ver: 0x1)
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>Info : JTAG tap: arc-em.cpu3 tap/device found: 0x100854b1 (mfg: 0x258 (ARC International), part: 0x0085, ver: 0x1)
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>Info : JTAG tap: arc-em.cpu2 tap/device found: 0x100454b1 (mfg: 0x258 (ARC International), part: 0x0045, ver: 0x1)
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>Info : JTAG tap: arc-em.cpu1 tap/device found: 0x100054b1 (mfg: 0x258 (ARC International), part: 0x0005, ver: 0x1)
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>Info : starting gdb server for arc-em.cpu4 on 49101
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>Info : Listening on port 49101 for gdb connections
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>Info : starting gdb server for arc-em.cpu3 on 49102
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>Info : Listening on port 49102 for gdb connections
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>Info : starting gdb server for arc-em.cpu2 on 49103
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>Info : Listening on port 49103 for gdb connections
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>Info : starting gdb server for arc-em.cpu1 on 49104
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>Info : Listening on port 49104 for gdb connections
 </span></code></pre></div>
 <p>Then connect to the server using GDB (49104 port is used below in
 GDB session, because cores are numbered in reverse order and 49104 port
 corresponds to the first core):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$ arc-elf32-gdb -quiet main.elf
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>(gdb) target remote :49104
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a># Increase timeout, because OpenOCD sometimes can be slow
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>(gdb) set remotetimeout 15
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a># Load application into target
-</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>(gdb) load
-</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
-</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a># Go to start of main function
-</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>(gdb) tbreak main
-</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>(gdb) continue
-</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
-</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a># Resume with usual GDB commands
-</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>(gdb) step
-</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>(gdb) next
-</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>
-</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a># Go to end of the application
-</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>(gdb) tbreak exit
-</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>(gdb) continue
-</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>
-</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a># For example, check exit code of application
-</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>(gdb) info reg r0
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ arc-elf32-gdb -quiet main.elf
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>(gdb) target remote :49104
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a># Increase timeout, because OpenOCD sometimes can be slow
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>(gdb) set remotetimeout 15
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a># Load application into target
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>(gdb) load
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a># Go to start of main function
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>(gdb) tbreak main
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>(gdb) continue
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a># Resume with usual GDB commands
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>(gdb) step
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>(gdb) next
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a># Go to end of the application
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>(gdb) tbreak exit
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>(gdb) continue
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a># For example, check exit code of application
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>(gdb) info reg r0
 </span></code></pre></div>
-<h3 id="connecting-using-uart_2">Connecting Using UART<a class="headerlink" href="#connecting-using-uart_2" title="Permanent link">&para;</a></h3>
+<h2 id="connecting-using-uart">Connecting Using UART<a class="headerlink" href="#connecting-using-uart" title="Permanent link">&para;</a></h2>
 <p>If you are going to use input/output, then you need to configure these
 parameters of a serial terminal to interact with the serial port:</p>
 <ul>
@@ -2371,204 +2280,40 @@ parameters of a serial terminal to interact with the serial port:</p>
 <li>No HW/SW flow control</li>
 </ul>
 <p>For <code>minicom</code> use this command:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>minicom<span class="w"> </span>-8<span class="w"> </span>-b<span class="w"> </span><span class="m">115200</span><span class="w"> </span>-D<span class="w"> </span>/dev/ttyUSB0<span class="w"> </span>-s
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>minicom<span class="w"> </span>-8<span class="w"> </span>-b<span class="w"> </span><span class="m">115200</span><span class="w"> </span>-D<span class="w"> </span>/dev/ttyUSB0<span class="w"> </span>-s
 </span></code></pre></div>
 <p>Then choose <code>Serial port setup</code>, press <code>F</code> to disable <code>Hardware Flow Control</code>, press <code>Enter</code> key
 and then choose <code>Exit</code> to close the configuration menu.</p>
 <p>After resetting HSDK you will see this output of the bootloader:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>********************************
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>**       Synopsys, Inc.       **
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>**   ARC HS Development Kit   **
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>********************************
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>** IC revision: Rev 2.0
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>** Bootloader verbosity: Normal
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>** Starting HS Core 1
-</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>** HS Core running @ 500 MHz
-</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>fptr = 8** HS Core fetching application from SPI flash
-</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>** HS Core starting application
-</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>&lt;debug_uart&gt; 
-</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
-</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>U-Boot 2020.01 (Apr 26 2020 - 22:30:20 +0300)
-</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
-</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>CPU:   ARC HS v4.0 at 500 MHz
-</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>Model: snps,hsdk-4xd
-</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>Board: Synopsys ARC HS4x/HS4xD Development Kit
-</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>DRAM:  1 GiB
-</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>Relocation Offset is: 3ef8a000
-</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>MMC:   mmc0@f000a000: 0
-</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>Loading Environment from FAT... MMC: no card present
-</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>In:    serial0@f0005000
-</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>Out:   serial0@f0005000
-</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>Err:   serial0@f0005000
-</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>Clock values are saved to environment
-</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>Net:   
-</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>Warning: ethernet@f0008000 (eth0) using random MAC address - c2:26:b0:99:98:4a
-</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>eth0: ethernet@f0008000
-</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a>hsdk-4xd# 
-</span></code></pre></div>
-<h2 id="development-platforms-table">Development Platforms Table<a class="headerlink" href="#development-platforms-table" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Board</th>
-<th>Core</th>
-<th><code>-specs=</code></th>
-<th>Memory map</th>
-<th>OpenOCD config</th>
-<th>GCC options</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>EMSK 1</td>
-<td>EM4</td>
-<td><code>emsk.specs</code></td>
-<td><code>emsk1_em4.x</code></td>
-<td><code>snps_em_sk_v1.cfg</code></td>
-<td><code>-mcpu=em4_dmips -mmpy-option=wlh5</code></td>
-</tr>
-<tr>
-<td>EMSK 1</td>
-<td>EM6</td>
-<td><code>emsk.specs</code></td>
-<td><code>emsk1_em6.x</code></td>
-<td><code>snps_em_sk_v1.cfg</code></td>
-<td><code>-mcpu=em4_dmips -mmpy-option=wlh5</code></td>
-</tr>
-<tr>
-<td>EMSK 2.0</td>
-<td>EM5D</td>
-<td><code>emsk.specs</code></td>
-<td><code>emsk2.1_em5d.x</code></td>
-<td><code>snps_em_sk_v2.1.cfg</code></td>
-<td><code>-mcpu=em4 -mswap -mnorm -mmpy-option=wlh3 -mbarrel-shifter</code></td>
-</tr>
-<tr>
-<td>EMSK 2.0</td>
-<td>EM7D</td>
-<td><code>emsk.specs</code></td>
-<td><code>emsk2.1_em7d.x</code></td>
-<td><code>snps_em_sk_v2.1.cfg</code></td>
-<td><code>-mcpu=em4 -mswap -mnorm -mmpy-option=wlh3 -mbarrel-shifter</code></td>
-</tr>
-<tr>
-<td>EMSK 2.0</td>
-<td>EM7DFPU</td>
-<td><code>emsk.specs</code></td>
-<td><code>emsk2.1_em7d.x</code></td>
-<td><code>snps_em_sk_v2.1.cfg</code></td>
-<td><code>-mcpu=em4 -mswap -mnorm -mmpy-option=wlh3 -mbarrel-shifter -mfpu=fpuda_all</code></td>
-</tr>
-<tr>
-<td>EMSK 2.1</td>
-<td>EM5D</td>
-<td><code>emsk.specs</code></td>
-<td><code>emsk2.1_em5d.x</code></td>
-<td><code>snps_em_sk_v2.1.cfg</code></td>
-<td><code>-mcpu=em4_dmips -mmpy-option=wlh3</code></td>
-</tr>
-<tr>
-<td>EMSK 2.1</td>
-<td>EM7D</td>
-<td><code>emsk.specs</code></td>
-<td><code>emsk2.1_em7d.x</code></td>
-<td><code>snps_em_sk_v2.1.cfg</code></td>
-<td><code>-mcpu=em4_dmips -mmpy-option=wlh3</code></td>
-</tr>
-<tr>
-<td>EMSK 2.1</td>
-<td>EM7DFPU</td>
-<td><code>emsk.specs</code></td>
-<td><code>emsk2.1_em7d.x</code></td>
-<td><code>snps_em_sk_v2.1.cfg</code></td>
-<td><code>-mcpu=em4_fpuda -mmpy-option=wlh3</code></td>
-</tr>
-<tr>
-<td>EMSK 2.2</td>
-<td>EM7D</td>
-<td><code>emsk.specs</code></td>
-<td><code>emsk2.2_em9d.x</code></td>
-<td><code>snps_em_sk_v2.2.cfg</code></td>
-<td><code>-mcpu=em4_dmips</code></td>
-</tr>
-<tr>
-<td>EMSK 2.2</td>
-<td>EM9D</td>
-<td><code>emsk.specs</code></td>
-<td><code>emsk2.2_em9d.x</code></td>
-<td><code>snps_em_sk_v2.2.cfg</code></td>
-<td><code>-mcpu=em4_fpus -mfpu=fpus_all</code></td>
-</tr>
-<tr>
-<td>EMSK 2.2</td>
-<td>EM11D</td>
-<td><code>emsk.specs</code></td>
-<td><code>emsk2.2_em11d.x</code></td>
-<td><code>snps_em_sk_v2.2.cfg</code></td>
-<td><code>-mcpu=em4_fpuda -mfpu=fpuda_all</code></td>
-</tr>
-<tr>
-<td>EMSK 2.3</td>
-<td>EM7D</td>
-<td><code>emsk.specs</code></td>
-<td><code>emsk2.2_em9d.x</code></td>
-<td><code>snps_em_sk_v2.3.cfg</code></td>
-<td><code>-mcpu=em4_dmips</code></td>
-</tr>
-<tr>
-<td>EMSK 2.3</td>
-<td>EM9D</td>
-<td><code>emsk.specs</code></td>
-<td><code>emsk2.2_em9d.x</code></td>
-<td><code>snps_em_sk_v2.3.cfg</code></td>
-<td><code>-mcpu=em4_fpus -mfpu=fpus_all</code></td>
-</tr>
-<tr>
-<td>EMSK 2.3</td>
-<td>EM11D</td>
-<td><code>emsk.specs</code></td>
-<td><code>emsk2.2_em11d.x</code></td>
-<td><code>snps_em_sk_v2.3.cfg</code></td>
-<td><code>-mcpu=em4_fpuda -mfpu=fpuda_all</code></td>
-</tr>
-<tr>
-<td>HSDK</td>
-<td>HS3x</td>
-<td><code>hsdk.specs</code></td>
-<td><code>hsdk.x</code></td>
-<td><code>snps_hsdk.cfg</code></td>
-<td><code>-mcpu=hs38_linux</code></td>
-</tr>
-<tr>
-<td>HSDK 4x/4xD</td>
-<td>HS4x/HS4xD</td>
-<td><code>hsdk.specs</code></td>
-<td><code>hsdk.x</code></td>
-<td><code>snps_hsdk_4xd.cfg</code></td>
-<td><code>-mcpu=hs38_linux</code></td>
-</tr>
-<tr>
-<td>IoTDK</td>
-<td>???</td>
-<td><code>iotdk.specs</code></td>
-<td><code>iotdk.x</code></td>
-<td><code>snps_iotdk.cfg</code></td>
-<td><code>-mcpu=em4_dmips</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="running-openocd-server">Running OpenOCD Server<a class="headerlink" href="#running-openocd-server" title="Permanent link">&para;</a></h2>
-<p>OpenOCD is used for starting a GDB server for connecting to a board.
-Suppose, that EM Starter Kit 2.3 is used. If you’ve downloaded IDE bundle for
-Linux then you can run OpenOCD this way (replace <code>&lt;ide&gt;</code> by a path to the
-directory of IDE bundle):</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>&lt;ide&gt;/bin/openocd<span class="w"> </span>-s<span class="w"> </span>&lt;ide&gt;/share/openocd/scripts<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;gdb_port 49101&#39;</span><span class="w"> </span>-f<span class="w"> </span>board/snps_em_sk_v2.3.cfg
-</span></code></pre></div>
-<p>If you’ve built and installed OpenOCD manually then you can run OpenOCD this way:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>openocd<span class="w">  </span>-c<span class="w"> </span><span class="s1">&#39;gdb_port 49101&#39;</span><span class="w"> </span>-f<span class="w"> </span>board/snps_em_sk_v2.2.cfg
-</span></code></pre></div>
-<p>If you’ve downloaded and installed IDE bundle for Windows then you can run OpenOCD this way:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>openocd<span class="w"> </span>-s<span class="w"> </span>C:<span class="se">\a</span>rc_gnu<span class="se">\s</span>hare<span class="se">\o</span>penocd<span class="se">\s</span>cripts<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;gdb_port 49101&quot;</span><span class="w"> </span>-f<span class="w"> </span>board<span class="se">\s</span>nps_em_sk_v2.3.cfg
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>********************************
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>**       Synopsys, Inc.       **
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>**   ARC HS Development Kit   **
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>********************************
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>** IC revision: Rev 2.0
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>** Bootloader verbosity: Normal
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>** Starting HS Core 1
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>** HS Core running @ 500 MHz
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>fptr = 8** HS Core fetching application from SPI flash
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>** HS Core starting application
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>&lt;debug_uart&gt; 
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>U-Boot 2020.01 (Apr 26 2020 - 22:30:20 +0300)
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>CPU:   ARC HS v4.0 at 500 MHz
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>Model: snps,hsdk-4xd
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>Board: Synopsys ARC HS4x/HS4xD Development Kit
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>DRAM:  1 GiB
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>Relocation Offset is: 3ef8a000
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>MMC:   mmc0@f000a000: 0
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>Loading Environment from FAT... MMC: no card present
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>In:    serial0@f0005000
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>Out:   serial0@f0005000
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>Err:   serial0@f0005000
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>Clock values are saved to environment
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>Net:   
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>Warning: ethernet@f0008000 (eth0) using random MAC address - c2:26:b0:99:98:4a
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>eth0: ethernet@f0008000
+</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>hsdk-4xd# 
 </span></code></pre></div>
 
 

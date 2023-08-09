@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../../hardware/axs-ashling/">
+        <link rel="prev" href="../../simulators/qemu/">
       
       
-        <link rel="next" href="../tcf/">
+        <link rel="next" href="../uboot/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>Heap and Stack Size - GNU Toolchain for ARC User Manual</title>
+        <title>Building and running Linux - GNU Toolchain for ARC User Manual</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#heap-and-stack-size" class="md-skip">
+        <a href="#building-and-running-arc-linux-for-hs-development-kit" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Heap and Stack Size
+              Building and running Linux
             
           </span>
         </div>
@@ -201,8 +201,6 @@
         
   
   
-    
-  
 
 
   
@@ -214,7 +212,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../simulators/nsim/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../baremetal/simulators/nsim/" class="md-tabs__link">
         Baremetal
       </a>
     </li>
@@ -226,6 +224,8 @@
         
   
   
+    
+  
 
 
   
@@ -237,7 +237,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../linux/building/buildroot/" class="md-tabs__link">
+      <a href="../../building/buildroot/" class="md-tabs__link md-tabs__link--active">
         Linux
       </a>
     </li>
@@ -561,16 +561,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
         
@@ -587,7 +585,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Baremetal
@@ -635,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../simulators/nsim/" class="md-nav__link">
+      <a href="../../../baremetal/simulators/nsim/" class="md-nav__link">
         Building Applications and Debugging on nSIM
       </a>
     </li>
@@ -649,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../simulators/qemu/" class="md-nav__link">
+      <a href="../../../baremetal/simulators/qemu/" class="md-nav__link">
         Building Applications and Debugging on QEMU
       </a>
     </li>
@@ -713,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hardware/general/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/general/" class="md-nav__link">
         General Topics
       </a>
     </li>
@@ -727,7 +725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hardware/memory/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/memory/" class="md-nav__link">
         Memory Maps and Linker Scripts
       </a>
     </li>
@@ -741,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hardware/hsdk/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/hsdk/" class="md-nav__link">
         HS Development Kit
       </a>
     </li>
@@ -755,7 +753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hardware/emsk/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/emsk/" class="md-nav__link">
         EM Starter Kit
       </a>
     </li>
@@ -769,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hardware/axs-openocd/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/axs-openocd/" class="md-nav__link">
         AXS with OpenOCD
       </a>
     </li>
@@ -783,7 +781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hardware/axs-ashling/" class="md-nav__link">
+      <a href="../../../baremetal/hardware/axs-ashling/" class="md-nav__link">
         AXS with Ashling Opella-XD
       </a>
     </li>
@@ -802,18 +800,16 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
       
       
         
@@ -830,7 +826,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_3">
           <span class="md-nav__icon md-icon"></span>
           General Topics
@@ -841,21 +837,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../baremetal/general/heap-and-stack/" class="md-nav__link">
         Heap and Stack Size
       </a>
-      
     </li>
   
 
@@ -867,7 +853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tcf/" class="md-nav__link">
+      <a href="../../../baremetal/general/tcf/" class="md-nav__link">
         Using TCF
       </a>
     </li>
@@ -881,7 +867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../specs/" class="md-nav__link">
+      <a href="../../../baremetal/general/specs/" class="md-nav__link">
         Specs Files
       </a>
     </li>
@@ -908,14 +894,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
         
@@ -932,7 +920,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Linux
@@ -982,7 +970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/building/buildroot/" class="md-nav__link">
+      <a href="../../building/buildroot/" class="md-nav__link">
         Building Linux kernel with Filesystem Using Buildroot
       </a>
     </li>
@@ -996,7 +984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/building/separate/" class="md-nav__link">
+      <a href="../../building/separate/" class="md-nav__link">
         Building Linux kernel and Filesystem Separately
       </a>
     </li>
@@ -1010,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/building/configure/" class="md-nav__link">
+      <a href="../../building/configure/" class="md-nav__link">
         Configuring Buildroot and Linux Kernel
       </a>
     </li>
@@ -1070,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/simulators/nsim/" class="md-nav__link">
+      <a href="../../simulators/nsim/" class="md-nav__link">
         Building Linux for a Simulation and Running on nSIM
       </a>
     </li>
@@ -1084,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/simulators/metaware/" class="md-nav__link">
+      <a href="../../simulators/metaware/" class="md-nav__link">
         Running Linux on nSIM Using MetaWare Debugger
       </a>
     </li>
@@ -1098,7 +1086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/simulators/vdk/" class="md-nav__link">
+      <a href="../../simulators/vdk/" class="md-nav__link">
         Running Linux on VDK
       </a>
     </li>
@@ -1112,7 +1100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/simulators/qemu/" class="md-nav__link">
+      <a href="../../simulators/qemu/" class="md-nav__link">
         Running Linux on QEMU
       </a>
     </li>
@@ -1131,16 +1119,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
       
       
         
@@ -1155,7 +1145,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4_3">
           <span class="md-nav__icon md-icon"></span>
           Running on HS Development Kit
@@ -1166,11 +1156,121 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../linux/hsdk/build/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Building and running Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Building and running Linux
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-the-board" class="md-nav__link">
+    Preparing the Board
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-a-serial-port-terminal" class="md-nav__link">
+    Connecting to a Serial Port Terminal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-buildroot-for-building-images" class="md-nav__link">
+    Preparing Buildroot for Building Images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-linux-kernel-and-booting-using-u-boot" class="md-nav__link">
+    Building the Linux Kernel and Booting Using U-Boot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-linux-kernel-and-booting-using-a-debugger" class="md-nav__link">
+    Building the Linux Kernel and Booting Using a Debugger
+  </a>
+  
+    <nav class="md-nav" aria-label="Building the Linux Kernel and Booting Using a Debugger">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-the-kernel" class="md-nav__link">
+    Building the Kernel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loading-using-mdb-and-ashling-opella-xd-jtag-probe" class="md-nav__link">
+    Loading Using MDB and Ashling Opella-XD JTAG probe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loading-using-mdb-and-digilent-hs1hs2-probe" class="md-nav__link">
+    Loading Using MDB and Digilent HS1/HS2 probe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loading-using-openocd-and-digilent-hs1hs2-probe" class="md-nav__link">
+    Loading Using OpenOCD and Digilent HS1/HS2 probe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-linux-after-loading-the-kernel" class="md-nav__link">
+    Working with Linux After Loading the Kernel
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1182,7 +1282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/hsdk/uboot/" class="md-nav__link">
+      <a href="../uboot/" class="md-nav__link">
         Building U-Boot
       </a>
     </li>
@@ -2136,20 +2236,136 @@
   
 
 
-<h1 id="heap-and-stack-size">Heap and Stack Size<a class="headerlink" href="#heap-and-stack-size" title="Permanent link">&para;</a></h1>
-<p>To change size of heap in baremetal applications the following option should be specified to the linker:
-<code>--defsym=__DEFAULT_HEAP_SIZE=${SIZE}</code>, where <code>${SIZE}</code> is desired heap size, in bytes. It also possible to use
-size suffixes, like <code>k</code> and <code>m</code> to specify size in kilobytes and megabytes respectively. For stack size respective
-option is <code>--defsym=__DEFAULT_STACK_SIZE=${STACK_SIZE}</code>. Note that those are linker commands - they are valid only
-when passed to <code>ld</code> application, if <code>gcc</code> driver is used for linking, then those options should be prefixed with
-<code>-Wl</code>. For example:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>arc-elf32-gcc<span class="w"> </span>-Wl,--defsym<span class="o">=</span><span class="nv">__DEFAULT_HEAP_SIZE</span><span class="o">=</span>256m<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>-Wl,--defsym<span class="o">=</span><span class="nv">__DEFAULT_STACK_SIZE</span><span class="o">=</span>1024m<span class="w"> </span>--specs<span class="o">=</span>nosys.specs<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>hello.o<span class="w"> </span>-o<span class="w"> </span>hello.bin
+<h1 id="building-and-running-arc-linux-for-hs-development-kit">Building and Running ARC Linux for HS Development Kit<a class="headerlink" href="#building-and-running-arc-linux-for-hs-development-kit" title="Permanent link">&para;</a></h1>
+<h2 id="preparing-the-board">Preparing the Board<a class="headerlink" href="#preparing-the-board" title="Permanent link">&para;</a></h2>
+<p>The ARC HSDK development system is based on a custom designed Synopsys ARC SoC containing the ARC HS38x4 (quad core) processor. Please refer to board's documentation for detailed information about how to setup the board for initial operation:</p>
+<ul>
+<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-hs-development-kit-1">ARC HS Development Kit</a></li>
+<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-hs4xhs4xd-development-kit-1">ARC HS4x/HS4xD Development Kit</a></li>
+</ul>
+<p>In short, preparation of HSDK board consists of following steps:</p>
+<ol>
+<li>Insert a prepared micro-SD card in the micro-SD card slot of the HSDK board (read further about how to prepare a micro-SD card).</li>
+<li>DIP-switch <code>BIM</code> should be in <code>1:off</code>, <code>2:on</code> state while both <code>BMC</code> and <code>BCS</code> should be in <code>1:on</code>, <code>2:on</code> state.</li>
+<li>Connect HSDK board to host PC using micro-USB &lt;-&gt; USB cable and insert a power adapter.</li>
+</ol>
+<p>The image below shows a correct board setup:</p>
+<p><img alt="HSDK" src="../images/board.jpg" /></p>
+<h2 id="connecting-to-a-serial-port-terminal">Connecting to a Serial Port Terminal<a class="headerlink" href="#connecting-to-a-serial-port-terminal" title="Permanent link">&para;</a></h2>
+<p>Follow <a href="../../../baremetal/hardware/hsdk/#connecting-using-uart">Connecting Using UART</a>
+guide to connect to HS Development Kit board.</p>
+<h2 id="preparing-buildroot-for-building-images">Preparing Buildroot for Building Images<a class="headerlink" href="#preparing-buildroot-for-building-images" title="Permanent link">&para;</a></h2>
+<p>Clone Buildroot from an upstream repository:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://git.busybox.net/buildroot
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cd buildroot
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>git checkout 2023.05.1
 </span></code></pre></div>
-<p>Those options are valid only when default linker script is used. If custom linker script is used, then effective
-way to change stack/heap size depends on properties of that linker script - it might be the same, or it might be
-different.</p>
+<h2 id="building-the-linux-kernel-and-booting-using-u-boot">Building the Linux Kernel and Booting Using U-Boot<a class="headerlink" href="#building-the-linux-kernel-and-booting-using-u-boot" title="Permanent link">&para;</a></h2>
+<p>Configure Buildroot to use a default configuration for ARC HSDK and start building:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>make<span class="w"> </span>snps_archs38_hsdk_defconfig
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>make<span class="w"> </span>-j<span class="w"> </span><span class="m">1</span>
+</span></code></pre></div>
+<p>A multithreaded building is turned on by default and it may lead to U-Boot
+building fail. That is why <code>-j 1</code> option is used - it forces <code>make</code> to build
+everything in a single thread.</p>
+<p>Building takes some time but usually less than an hour on modern machines.
+Note that build will produce following files in <code>output/images</code> folder:</p>
+<ul>
+<li><code>sdcard.img</code> - binary image to be deployed on a micro-SD card, containing everything required to boot into user shell</li>
+<li><code>rootfs.cpio</code>, rootfs.tar - these 2 files contain minimalistic rootfs, for example "rootfs.cpio" could be re-used when manually building Linux kernel for ARC boards.</li>
+<li><code>u-boot.bin</code> - this is a binary image of U-Boot bootloader, it is meant to be programmed in the ARC HSDK SPI flash and then autostart on power-on.</li>
+<li><code>uImage</code> - this is Linux kernel prepared for loading by U-Boot bootloader. When <code>u-boot.bin</code> is programmed in HSDK' SPI flash and autostarts on power-on it will attempt to find uImage on the first partition of the SD-card.</li>
+</ul>
+<p>Then you can write <code>sdcard.img</code> to micro-SD card:</p>
+<ul>
+<li>On Linux hosts, use <code>dd</code> command as follows: <code>sudo dd if=sdcard.img of=/dev/mmcblk0 bs=1M</code>. Ensure that the SD card is not mounted,
+  otherwise the result is undefined.</li>
+<li>On Windows hosts, use <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> utility.</li>
+</ul>
+<h2 id="building-the-linux-kernel-and-booting-using-a-debugger">Building the Linux Kernel and Booting Using a Debugger<a class="headerlink" href="#building-the-linux-kernel-and-booting-using-a-debugger" title="Permanent link">&para;</a></h2>
+<h3 id="building-the-kernel">Building the Kernel<a class="headerlink" href="#building-the-kernel" title="Permanent link">&para;</a></h3>
+<p>If you want to use a debugger for loading and running your Linux kernel then you need to modify
+the default configuration first. Configure Buildroot to use a default configuration for ARC HSDK and
+go to the configuration menu:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>make<span class="w"> </span>snps_archs38_hsdk_defconfig
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>make<span class="w"> </span>menuconfig
+</span></code></pre></div>
+<p>Choose this option (corresponds to <code>BR2_LINUX_KERNEL_UIMAGE=n</code> and <code>BR2_LINUX_KERNEL_VMLINUX=y</code>):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Kernel -&gt; Kernel binary format -&gt; vmlinux
+</span></code></pre></div>
+<p>Completely delete content for this option (<code>BR2_ROOTFS_POST_IMAGE_SCRIPT=""</code>):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>System configuration -&gt; Custom scripts to run after creating filesystem images
+</span></code></pre></div>
+<p>Then build the Linux kernel:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>make
+</span></code></pre></div>
+<h3 id="loading-using-mdb-and-ashling-opella-xd-jtag-probe">Loading Using MDB and Ashling Opella-XD JTAG probe<a class="headerlink" href="#loading-using-mdb-and-ashling-opella-xd-jtag-probe" title="Permanent link">&para;</a></h3>
+<p>Make sure that JTAG-probe is attached to the board. Then use these commands for MetaWare Debugger:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">1</span><span class="w"> </span>-psetname<span class="o">=</span>core0<span class="w"> </span>-DLL<span class="o">=</span>opxdarc.so<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_frequency</span><span class="o">=</span>12MHz<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_optimise</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>-memxfersize<span class="o">=</span>0x8000<span class="w"> </span>output/images/vmlinux
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">2</span><span class="w"> </span>-psetname<span class="o">=</span>core1<span class="w"> </span>-DLL<span class="o">=</span>opxdarc.so<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_frequency</span><span class="o">=</span>12MHz<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_optimise</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>output/images/vmlinux
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>mdb<span class="w"> </span>-multifiles<span class="o">=</span>core0,core1<span class="w"> </span>-run<span class="w"> </span>-cl
+</span></code></pre></div>
+<h3 id="loading-using-mdb-and-digilent-hs1hs2-probe">Loading Using MDB and Digilent HS1/HS2 probe<a class="headerlink" href="#loading-using-mdb-and-digilent-hs1hs2-probe" title="Permanent link">&para;</a></h3>
+<p>Make sure that USB cable is attached to the board and <a href="https://digilent.com/shop/software/digilent-adept/download">Digilent Adept runtime and utilitied</a> are installed. Then use these commands for MetaWare Debugger:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">1</span><span class="w"> </span>-psetname<span class="o">=</span>core0<span class="w"> </span>-digilent<span class="w"> </span>output/images/vmlinux
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">2</span><span class="w"> </span>-psetname<span class="o">=</span>core1<span class="w"> </span>-digilent<span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>output/images/vmlinux
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">3</span><span class="w"> </span>-psetname<span class="o">=</span>core2<span class="w"> </span>-digilent<span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>output/images/vmlinux
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">4</span><span class="w"> </span>-psetname<span class="o">=</span>core3<span class="w"> </span>-digilent<span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>output/images/vmlinux
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>mdb<span class="w"> </span>-multifiles<span class="o">=</span>core0,core1,core2,core3<span class="w"> </span>-OK
+</span></code></pre></div>
+<h3 id="loading-using-openocd-and-digilent-hs1hs2-probe">Loading Using OpenOCD and Digilent HS1/HS2 probe<a class="headerlink" href="#loading-using-openocd-and-digilent-hs1hs2-probe" title="Permanent link">&para;</a></h3>
+<p>It's possible to use OpenOCD and Digilent HS1/HS2 probe for loading and debugging the Linux kernel on HSDK. You can find detailed instructions in <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/wiki/AXS-SDP-and-OpenOCD">AXS SDP and OpenOCD</a> article (the same procedures are applicable for HSDK). There is a short guide for HSDK below.</p>
+<p>If you've downloaded IDE bundle for Linux then you can run OpenOCD this way (replace <code>&lt;ide&gt;</code> by a path to the directory of IDE bundle):</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&lt;ide&gt;/bin/openocd<span class="w"> </span>-s<span class="w"> </span>&lt;ide&gt;/share/openocd/scripts<span class="w"> </span>-f<span class="w"> </span>board/snps_hsdk.cfg
+</span></code></pre></div>
+<p>If you've built and installed OpenOCD manually then you can run OpenOCD this way:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>openocd<span class="w"> </span>-f<span class="w"> </span>board/snps_hsdk.cfg
+</span></code></pre></div>
+<p>Then GDB servers for all 4 cores are started: 3333 — for 4th core, 3336 — for 1st core. You can debug Linux in a single core mode by connecting to the 1st core (which is on 3336 port):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$ arc-elf32-gdb output/images/vmlinux
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>(gdb) target remote :3336
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Remote debugging using :3336
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>0xbff8a400 in ?? ()
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>(gdb) load
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>Loading section .vector, size 0x2000 lma 0x90000000
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>Loading section .init.ramfs, size 0x370d7c lma 0x90002000
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>Loading section .init.data, size 0x59c4 lma 0x90372d80
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>...
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>Start address 0x9037e000, load size 12871904
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>Transfer rate: 354 KB/sec, 15019 bytes/write.
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>(gdb) c
+</span></code></pre></div>
+<p>To run debug cores it is necessary to run GDB for each core separately
+(cores 2-4 must be initialized first):</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Load and run core #2</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>arc-elf32-gdb<span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;target remote :3335&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;load&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="w"> </span>output/images/vmlinux
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Load and run core #3</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>arc-elf32-gdb<span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;target remote :3334&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;load&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="w"> </span>output/images/vmlinux
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="c1"># Load and run core #4</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>arc-elf32-gdb<span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;target remote :3333&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;load&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="w"> </span>output/images/vmlinux
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="c1"># Load and run core #1 (main one)</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>arc-elf32-gdb<span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;target remote :3336&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;load&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="w"> </span>output/images/vmlinux
+</span></code></pre></div>
+<h2 id="working-with-linux-after-loading-the-kernel">Working with Linux After Loading the Kernel<a class="headerlink" href="#working-with-linux-after-loading-the-kernel" title="Permanent link">&para;</a></h2>
+<p>Enter <code>root</code> as login and proceed with an empty password.</p>
+<p>Note if you see following while booting:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>udhcpc<span class="w"> </span><span class="o">(</span>v1.23.2<span class="o">)</span><span class="w"> </span>started
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Sending<span class="w"> </span>discover...
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Sending<span class="w"> </span>discover...
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>Sending<span class="w"> </span>discover...
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>No<span class="w"> </span>lease,<span class="w"> </span>failing
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>...
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>stmmaceth<span class="w"> </span>e0018000.ethernet<span class="w"> </span>eth0:<span class="w"> </span>Link<span class="w"> </span>is<span class="w"> </span>Up<span class="w"> </span>-<span class="w"> </span>100Mbps/Full<span class="w"> </span>-<span class="w"> </span>flow<span class="w"> </span>control<span class="w"> </span>rx/tx
+</span></code></pre></div>
+<p>That means Ethernet PHY became alive a bit too late. And that means that it's
+required to execute DHCP discovery once again from console:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>udhcpc
+</span></code></pre></div>
 
 
 
