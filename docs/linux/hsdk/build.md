@@ -24,7 +24,7 @@ guide to connect to HS Development Kit board.
 
 ## Preparing Buildroot for Building Images
 
-Clone Buildroot from an upstream repository:
+Clone Buildroot from the upstream repository:
 
 ```text
 git clone https://git.busybox.net/buildroot
@@ -114,21 +114,15 @@ mdb -multifiles=core0,core1,core2,core3 -OK
 
 ### Loading Using OpenOCD and Digilent HS1/HS2 probe
 
-It's possible to use OpenOCD and Digilent HS1/HS2 probe for loading and debugging the Linux kernel on HSDK. You can find detailed instructions in [AXS SDP and OpenOCD](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/wiki/AXS-SDP-and-OpenOCD) article (the same procedures are applicable for HSDK). There is a short guide for HSDK below.
+It's possible to use OpenOCD and Digilent HS1/HS2 probe for loading and debugging
+the Linux kernel on HSDK. You can find detailed instructions in
+[Using OpenOCD](../../platforms/use-openocd.md) guide. You need to start OpenOCD
+with `snps_hsdk.cfg` (for HSDK) of `snps_hsdk_4xd.cfg` (for HSDK 4xD) configuration
+file.
 
-If you've downloaded IDE bundle for Linux then you can run OpenOCD this way (replace `<ide>` by a path to the directory of IDE bundle):
-
-```shell
-<ide>/bin/openocd -s <ide>/share/openocd/scripts -f board/snps_hsdk.cfg
-```
-
-If you've built and installed OpenOCD manually then you can run OpenOCD this way:
-
-```shell
-openocd -f board/snps_hsdk.cfg
-```
-
-Then GDB servers for all 4 cores are started: 3333 — for 4th core, 3336 — for 1st core. You can debug Linux in a single core mode by connecting to the 1st core (which is on 3336 port):
+Then GDB servers for all 4 cores are started: 3333 — for the 4th core, 3336 — for
+the 1st core. You can debug Linux in a single core mode by connecting to
+the 1st core (which is on 3336 port):
 
 ```text
 $ arc-elf32-gdb output/images/vmlinux
@@ -145,7 +139,7 @@ Transfer rate: 354 KB/sec, 15019 bytes/write.
 (gdb) c
 ```
 
-To run debug cores it is necessary to run GDB for each core separately
+To debug all cores it is necessary to run GDB for each core separately
 (cores 2-4 must be initialized first):
 
 ```shell
