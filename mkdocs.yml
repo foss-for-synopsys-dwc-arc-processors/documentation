@@ -68,7 +68,7 @@ nav:
       - linux/building/buildroot.md
       - linux/building/separate.md
       - linux/building/configure.md
-    - Running on Simulators:
+    - Running on simulators:
       - linux/simulators/nsim.md
       - linux/simulators/metaware.md
       - linux/simulators/vdk.md
@@ -79,6 +79,10 @@ nav:
     - Running on AXS SDP:
       - Building and running Linux: linux/axs/build.md
       - Flashing U-Boot: linux/axs/uboot.md
+    - eBPF subsystem:
+      - linux/ebpf/cross.md
+      - linux/ebpf/build.md
+      - linux/ebpf/clang.md
   - Development platforms:
     - platforms/index.md
     - Using Boards:
