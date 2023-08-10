@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../../axs/uboot/">
+        <link rel="prev" href="../uboot-build/">
       
       
-        <link rel="next" href="../build/">
+        <link rel="next" href="../../axs/build/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>Cross-compiling eBPF Programs - GNU Toolchain for ARC User Manual</title>
+        <title>U-Boot command reference - GNU Toolchain for ARC User Manual</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cross-compiling-ebpf-programs" class="md-skip">
+        <a href="#u-boot-command-reference-for-hsdk" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cross-compiling eBPF Programs
+              U-Boot command reference
             
           </span>
         </div>
@@ -1121,16 +1121,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
       
       
         
@@ -1147,7 +1149,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4_3">
           <span class="md-nav__icon md-icon"></span>
           Running on HS Development Kit
@@ -1160,7 +1162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hsdk/build/" class="md-nav__link">
+      <a href="../build/" class="md-nav__link">
         Building and running Linux
       </a>
     </li>
@@ -1174,7 +1176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hsdk/uboot-build/" class="md-nav__link">
+      <a href="../uboot-build/" class="md-nav__link">
         Building U-Boot
       </a>
     </li>
@@ -1186,11 +1188,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../hsdk/uboot-commands/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         U-Boot command reference
       </a>
+      
     </li>
   
 
@@ -1277,18 +1289,16 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
       
       
         
@@ -1305,7 +1315,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_5">
           <span class="md-nav__icon md-icon"></span>
           eBPF subsystem
@@ -1316,114 +1326,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Cross-compiling eBPF Programs
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../ebpf/cross/" class="md-nav__link">
         Cross-compiling eBPF Programs
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#preface" class="md-nav__link">
-    Preface
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#building-ebpf-programs-natively-eg-x86-host-and-target" class="md-nav__link">
-    Building eBPF Programs Natively (e.g. x86 host and target)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#building-ebpf-programs-and-their-dependencies-for-arc" class="md-nav__link">
-    Building eBPF Programs and Their Dependencies for ARC
-  </a>
-  
-    <nav class="md-nav" aria-label="Building eBPF Programs and Their Dependencies for ARC">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#building-zlib" class="md-nav__link">
-    Building zlib
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#building-libelf" class="md-nav__link">
-    Building libelf
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#building-libbpf" class="md-nav__link">
-    Building libbpf
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#generating-vmlinuxh-from-your-vmlinux-image" class="md-nav__link">
-    Generating vmlinux.h from your vmlinux image
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#overview-of-toolssysroot" class="md-nav__link">
-    Overview of /tools/sysroot
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#building-ebpf-program" class="md-nav__link">
-    Building eBPF Program
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1435,7 +1342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../build/" class="md-nav__link">
+      <a href="../../ebpf/build/" class="md-nav__link">
         Building Linux Image for Working with eBPF in QEMU
       </a>
     </li>
@@ -1449,7 +1356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clang/" class="md-nav__link">
+      <a href="../../ebpf/clang/" class="md-nav__link">
         Building Clang with eBPF Target for ARC HS Hosts
       </a>
     </li>
@@ -2405,83 +2312,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#preface" class="md-nav__link">
-    Preface
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#building-ebpf-programs-natively-eg-x86-host-and-target" class="md-nav__link">
-    Building eBPF Programs Natively (e.g. x86 host and target)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#building-ebpf-programs-and-their-dependencies-for-arc" class="md-nav__link">
-    Building eBPF Programs and Their Dependencies for ARC
-  </a>
-  
-    <nav class="md-nav" aria-label="Building eBPF Programs and Their Dependencies for ARC">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#building-zlib" class="md-nav__link">
-    Building zlib
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#building-libelf" class="md-nav__link">
-    Building libelf
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#building-libbpf" class="md-nav__link">
-    Building libbpf
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#generating-vmlinuxh-from-your-vmlinux-image" class="md-nav__link">
-    Generating vmlinux.h from your vmlinux image
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#overview-of-toolssysroot" class="md-nav__link">
-    Overview of /tools/sysroot
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#building-ebpf-program" class="md-nav__link">
-    Building eBPF Program
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2498,228 +2328,11 @@
   
 
 
-<h1 id="cross-compiling-ebpf-programs">Cross-compiling eBPF Programs<a class="headerlink" href="#cross-compiling-ebpf-programs" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>You can use <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/arc-bpf-testbench">the testbench</a>
-that automates all the above steps for building eBPF programs for ARC.</p>
+<h1 id="u-boot-command-reference-for-hsdk">U-Boot Command Reference for HSDK<a class="headerlink" href="#u-boot-command-reference-for-hsdk" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page is under construction!</p>
 </div>
-<h2 id="preface">Preface<a class="headerlink" href="#preface" title="Permanent link">&para;</a></h2>
-<p>There are several ways of building eBPF applications for Linux. The main and
-most straightforward way consists of these steps:</p>
-<ol>
-<li>Build the eBPF part using Clang (it's a regular Object in ELF format).</li>
-<li>Generate a special C file named "skeleton" which contains an entire blob
-   for the eBPF part and the functions for loading it using <code>libbpf</code>.</li>
-<li>Write a C program which uses these functions for opening the eBPF
-   application, loading it into the kernel and attaching it to events.</li>
-<li>Build your C program using GCC toolchain and run on your target.</li>
-</ol>
-<h2 id="building-ebpf-programs-natively-eg-x86-host-and-target">Building eBPF Programs Natively (e.g. x86 host and target)<a class="headerlink" href="#building-ebpf-programs-natively-eg-x86-host-and-target" title="Permanent link">&para;</a></h2>
-<p>Consider the <code>minimal</code> program from <code>libbpf-bootstrap</code>
-<a href="https://github.com/libbpf/libbpf-bootstrap">repository</a>. It consists of
-<a href="https://github.com/libbpf/libbpf-bootstrap/tree/master/examples/c">2 file</a>:
-<code>minimal.c</code> and <code>minimal.bpf.c</code>. Ensure that <code>libbpf</code> and the
-corresponding development files are installed (e.g., for Fedora you need to
-install <code>libbpf</code> and <code>libbpf-devel</code> packages). Also, a recent version of
-<code>bpftool</code> utility must be installed. Then you can build the program using
-these commands (replace <code>-D__TARGET_ARCH_x86</code> by an appropriate one for your
-platform):</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clang<span class="w"> </span>-g<span class="w">                  </span><span class="se">\</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">      </span>-O2<span class="w">                 </span><span class="se">\</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">      </span>-Wall<span class="w">               </span><span class="se">\</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span>-target<span class="w"> </span>bpf<span class="w">         </span><span class="se">\</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span>-D__TARGET_ARCH_x86<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">      </span>-c<span class="w"> </span>minimal.bpf.c<span class="w">    </span><span class="se">\</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span>-o<span class="w"> </span>minimal.bpf.o
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>bpftool<span class="w"> </span>gen<span class="w"> </span>skeleton<span class="w"> </span>minimal.bpf.o<span class="w"> </span>&gt;<span class="w"> </span>minimal.skel.h
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>gcc<span class="w"> </span>minimal.c<span class="w"> </span>-lbpf<span class="w">       </span><span class="se">\</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">              </span>-lelf<span class="w">       </span><span class="se">\</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">              </span>-lz<span class="w">         </span><span class="se">\</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">              </span>-o<span class="w"> </span>minimal
-</span></code></pre></div>
-<p>Then you can run this program with <code>root</code> privileges:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># The 2 commands below are a one-time setup. Run them with root privileges.
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>mount -t debugfs debugfs /sys/kernel/debug
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>sysctl net.core.bpf_jit_enable=1           # Keep 0, if you don&#39;t want JIT.
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>$ sudo ./minimal 
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>[sudo] password for user: 
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>libbpf: loading object &#39;minimal_bpf&#39; from buffer
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>libbpf: elf: section(3) tp/syscalls/sys_enter_write, size 104, link 0, flags 6, type=1
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>libbpf: sec &#39;tp/syscalls/sys_enter_write&#39;: found program &#39;handle_tp&#39; at insn offset 0 (0 bytes), code size 13 insns (104 bytes)
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>libbpf: elf: section(4) .reltp/syscalls/sys_enter_write, size 32, link 22, flags 40, type=9
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>libbpf: elf: section(5) license, size 13, link 0, flags 3, type=1
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>libbpf: license of minimal_bpf is Dual BSD/GPL
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>libbpf: elf: section(6) .bss, size 4, link 0, flags 3, type=8
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>libbpf: elf: section(7) .rodata, size 28, link 0, flags 2, type=1
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>libbpf: elf: section(13) .BTF, size 609, link 0, flags 0, type=1
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>libbpf: elf: section(15) .BTF.ext, size 160, link 0, flags 0, type=1
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>libbpf: elf: section(22) .symtab, size 336, link 1, flags 0, type=2
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>libbpf: looking for externs among 14 symbols...
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>libbpf: collected 0 externs total
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>libbpf: map &#39;minimal_.bss&#39; (global data): at sec_idx 6, offset 0, flags 400.
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>libbpf: map 0 is &quot;minimal_.bss&quot;
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>libbpf: map &#39;minimal_.rodata&#39; (global data): at sec_idx 7, offset 0, flags 480.
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>libbpf: map 1 is &quot;minimal_.rodata&quot;
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>libbpf: sec &#39;.reltp/syscalls/sys_enter_write&#39;: collecting relocation for section(3) &#39;tp/syscalls/sys_enter_write&#39;
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>libbpf: sec &#39;.reltp/syscalls/sys_enter_write&#39;: relo #0: insn #2 against &#39;my_pid&#39;
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>libbpf: prog &#39;handle_tp&#39;: found data map 0 (minimal_.bss, sec 6, off 0) for insn 2
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>libbpf: sec &#39;.reltp/syscalls/sys_enter_write&#39;: relo #1: insn #6 against &#39;.rodata&#39;
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>libbpf: prog &#39;handle_tp&#39;: found data map 1 (minimal_.rodata, sec 7, off 0) for insn 6
-</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>libbpf: map &#39;minimal_.bss&#39;: created successfully, fd=4
-</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>libbpf: map &#39;minimal_.rodata&#39;: created successfully, fd=5
-</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>Successfully started! Please run `sudo cat /sys/kernel/debug/tracing/trace_pipe` to see output of the BPF programs.
-</span></code></pre></div>
-<p>Some examples from <code>libbpf-bootstrap</code> use <code>vmlinux.h</code> - it's a header file
-with the definitions of all the data structures for that particular kernel. The
-easiest way to obtain it on the host system is by using <code>bpftool</code>, if the
-kernel was built with <code>CONFIG_DEBUG_INFO_BTF=y</code>:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>bpftool<span class="w"> </span>--debug<span class="w"> </span>btf<span class="w"> </span>dump<span class="w"> </span>file<span class="w"> </span>/sys/kernel/btf/vmlinux<span class="w"> </span>format<span class="w"> </span>c<span class="w"> </span>&gt;<span class="w"> </span>vmlinux.h
-</span></code></pre></div>
-<p>Else, you can generate <code>vmlinux.h</code> from any <code>vmlinux</code> image with BTF
-information:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>bpftool<span class="w"> </span>--debug<span class="w"> </span>btf<span class="w"> </span>dump<span class="w"> </span>file<span class="w"> </span>path/to/your/vmlinux<span class="w"> </span>format<span class="w"> </span>c<span class="w"> </span>&gt;<span class="w"> </span>vmlinux.h
-</span></code></pre></div>
-<h2 id="building-ebpf-programs-and-their-dependencies-for-arc">Building eBPF Programs and Their Dependencies for ARC<a class="headerlink" href="#building-ebpf-programs-and-their-dependencies-for-arc" title="Permanent link">&para;</a></h2>
-<p>Suppose that the root directory of the toolchain for ARC HS 4x is
-<code>/tools/arc-linux-gnu</code>. <code>/tools/arc-linux-gnu/bin</code> must be in <code>PATH</code>
-variable. <code>bpftool</code> must be available too.</p>
-<p>Create a directory for ARC's libraries and includes:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mkdir<span class="w"> </span>/tools/sysroot
-</span></code></pre></div>
-<p>Export common variables:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-Og -g3 -fPIC&quot;</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CXXFLAGS</span><span class="o">=</span><span class="s2">&quot;-Og -g3 -fPIC&quot;</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">CPPFLAGS</span><span class="o">=</span><span class="s2">&quot;-I/tools/sysroot/include&quot;</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">&quot;-L/tools/sysroot/lib&quot;</span>
-</span></code></pre></div>
-<p>We are going to use the latest releases of libraries at the moment of writing
-of this manual instead of development branches.</p>
-<h3 id="building-zlib">Building zlib<a class="headerlink" href="#building-zlib" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>v1.2.13<span class="w"> </span>https://github.com/madler/zlib
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">cd</span><span class="w"> </span>zlib
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>./configure<span class="w"> </span><span class="nv">CHOST</span><span class="o">=</span><span class="s2">&quot;arc-linux-gnu&quot;</span><span class="w"> </span>--static<span class="w"> </span>--prefix<span class="o">=</span><span class="s2">&quot;/tools/sysroot&quot;</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>make<span class="w"> </span>install
-</span></code></pre></div>
-<h3 id="building-libelf">Building libelf<a class="headerlink" href="#building-libelf" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>elfutils-0.189<span class="w"> </span>https://sourceware.org/git/elfutils.git
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">cd</span><span class="w"> </span>elfutils
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>autoreconf<span class="w"> </span>-i<span class="w"> </span>-f
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>./configure<span class="w"> </span>--host<span class="o">=</span>arc-linux-gnu<span class="w">          </span><span class="se">\</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">            </span>--target<span class="o">=</span>arc-linux-gnu<span class="w">        </span><span class="se">\</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">            </span>--disable-dependency-tracking<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">            </span>--disable-nls<span class="w">                 </span><span class="se">\</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">            </span>--program-prefix<span class="o">=</span><span class="s2">&quot;eu-&quot;</span><span class="w">        </span><span class="se">\</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">            </span>--disable-libdebuginfod<span class="w">       </span><span class="se">\</span>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">            </span>--disable-debuginfod<span class="w">          </span><span class="se">\</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">            </span>--without-bzlib<span class="w">               </span><span class="se">\</span>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">            </span>--without-lzma<span class="w">                </span><span class="se">\</span>
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">            </span>--without-zstd<span class="w">                </span><span class="se">\</span>
-</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">            </span>--prefix<span class="o">=</span><span class="s2">&quot;/tools/sysroot&quot;</span><span class="w">     </span><span class="se">\</span>
-</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">            </span>--enable-maintainer-mode
-</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>
-</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>make<span class="w"> </span>-C<span class="w"> </span>libelf<span class="w"> </span>install-includeHEADERS<span class="w"> </span>install-libLIBRARIES
-</span></code></pre></div>
-<h3 id="building-libbpf">Building libbpf<a class="headerlink" href="#building-libbpf" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>v1.1.0<span class="w"> </span>https://github.com/libbpf/libbpf
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">cd</span><span class="w"> </span>libbpf/src
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>make<span class="w"> </span><span class="nv">BUILD_STATIC_ONLY</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="w">          </span><span class="se">\</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">     </span><span class="nv">PREFIX</span><span class="o">=</span><span class="s2">&quot;/&quot;</span><span class="w">                     </span><span class="se">\</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">     </span><span class="nv">DESTDIR</span><span class="o">=</span><span class="s2">&quot;/tools/sysroot&quot;</span><span class="w">       </span><span class="se">\</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">     </span><span class="nv">CROSS_COMPILE</span><span class="o">=</span><span class="s2">&quot;arc-linux-gnu-&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">     </span>install<span class="w"> </span>install_uapi_headers
-</span></code></pre></div>
-<h3 id="generating-vmlinuxh-from-your-vmlinux-image">Generating <code>vmlinux.h</code> from your <code>vmlinux</code> image<a class="headerlink" href="#generating-vmlinuxh-from-your-vmlinux-image" title="Permanent link">&para;</a></h3>
-<p>Make sure that you have a recent version of bpftool (≥7).</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>bpftool<span class="w"> </span>--debug<span class="w"> </span>btf<span class="w"> </span>dump<span class="w"> </span>file<span class="w"> </span>path/to/your/vmlinux<span class="w"> </span>format<span class="w"> </span>c<span class="w"> </span>&gt;<span class="w"> </span>/tools/sysroot/include/vmlinux.h
-</span></code></pre></div>
-<h3 id="overview-of-toolssysroot">Overview of <code>/tools/sysroot</code><a class="headerlink" href="#overview-of-toolssysroot" title="Permanent link">&para;</a></h3>
-<p>After building and installing all libraries <code>/tools/sysroot</code> should look like this:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$ tree -L 3 /tools/sysroot
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>/tools/sysroot
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>|-- include
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>|   |-- bpf
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>|   |   |-- bpf_core_read.h
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>|   |   |-- bpf_endian.h
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>|   |   |-- bpf.h
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>|   |   |-- bpf_helper_defs.h
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>|   |   |-- bpf_helpers.h
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>|   |   |-- bpf_tracing.h
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>|   |   |-- btf.h
-</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>|   |   |-- libbpf_common.h
-</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>|   |   |-- libbpf.h
-</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>|   |   |-- libbpf_legacy.h
-</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>|   |   |-- libbpf_version.h
-</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>|   |   |-- skel_internal.h
-</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>|   |   `-- usdt.bpf.h
-</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>|   |-- gelf.h
-</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>|   |-- libelf.h
-</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>|   |-- linux
-</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>|   |   |-- bpf.h
-</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>|   |   |-- bpf_common.h
-</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>|   |   `-- btf.h
-</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>|   |-- nlist.h
-</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>|   |-- zconf.h
-</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>|   `-- zlib.h
-</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>|-- lib
-</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>|   |-- libbpf.a
-</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>|   |-- libelf.a
-</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>|   |-- libz.a
-</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>|   `-- pkgconfig
-</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>|       |-- libbpf.pc
-</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>|       `-- zlib.pc
-</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>`-- share
-</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>    `-- man
-</span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>        `-- man3
-</span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>
-</span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a>9 directories, 26 files
-</span></code></pre></div>
-<h3 id="building-ebpf-program">Building eBPF Program<a class="headerlink" href="#building-ebpf-program" title="Permanent link">&para;</a></h3>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># The paths where the native ARC tools and the cross ARC toolchain are installed</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">readonly</span><span class="w"> </span><span class="nv">NATIVE_SYSROOT</span><span class="o">=</span>/tools/sysroot
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nb">readonly</span><span class="w"> </span><span class="nv">TOOLCHAIN_SYSROOT</span><span class="o">=</span>/tools/arc-linux-gnu/sysroot
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="c1"># Clang uses host&#39;s Linux headers if we don&#39;t pass toolchain&#39;s includes.</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="c1"># Also, the -XClang arguments below are optional.</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>clang<span class="w"> </span>-g<span class="w">                                 </span><span class="se">\</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">      </span>-O2<span class="w">                                </span><span class="se">\</span>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">      </span>-Wall<span class="w">                              </span><span class="se">\</span>
-</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">      </span>-target<span class="w"> </span>bpf<span class="w">                        </span><span class="se">\</span>
-</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">      </span>-D__TARGET_ARCH_arc<span class="w">                </span><span class="se">\</span>
-</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">      </span>-I<span class="si">${</span><span class="nv">NATIVE_SYSROOT</span><span class="si">}</span>/usr/include<span class="w">    </span><span class="se">\</span>
-</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">      </span>-I<span class="si">${</span><span class="nv">TOOLCHAIN_SYSROOT</span><span class="si">}</span>/usr/include<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">      </span>-Xclang<span class="w"> </span>-target-feature<span class="w">            </span><span class="se">\</span>
-</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">      </span>-Xclang<span class="w"> </span>+alu32<span class="w">                     </span><span class="se">\</span>
-</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">      </span>-c<span class="w"> </span>minimal.bpf.c<span class="w">                   </span><span class="se">\</span>
-</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">      </span>-o<span class="w"> </span>minimal.bpf.o
-</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>
-</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="c1"># bpftool must be a recent version (≥7)</span>
-</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>bpftool<span class="w"> </span>gen<span class="w"> </span>skeleton<span class="w"> </span>minimal.bpf.o<span class="w"> </span>&gt;<span class="w"> </span>minimal.skel.h
-</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>
-</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="c1"># shared library build (-latomic is listed for future reference)</span>
-</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>arc-linux-gcc<span class="w"> </span>minimal.c<span class="w">                       </span><span class="se">\</span>
-</span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="w">              </span>-I<span class="si">${</span><span class="nv">NATIVE_SYSROOT</span><span class="si">}</span>/usr/include<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="w">              </span>-L<span class="si">${</span><span class="nv">NATIVE_SYSROOT</span><span class="si">}</span>/usr/lib<span class="w">     </span><span class="se">\</span>
-</span><span id="__span-11-26"><a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a><span class="w">              </span>-lbpf<span class="w">                           </span><span class="se">\</span>
-</span><span id="__span-11-27"><a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a><span class="w">              </span>-lelf<span class="w">                           </span><span class="se">\</span>
-</span><span id="__span-11-28"><a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="w">              </span>-lz<span class="w">                             </span><span class="se">\</span>
-</span><span id="__span-11-29"><a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a><span class="w">              </span>-latomic<span class="w">                        </span><span class="se">\</span>
-</span><span id="__span-11-30"><a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a><span class="w">              </span>-o<span class="w"> </span>minimal
-</span><span id="__span-11-31"><a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>
-</span><span id="__span-11-32"><a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a><span class="c1"># static build (-latomic is listed for future reference)</span>
-</span><span id="__span-11-33"><a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a>arc-linux-gcc<span class="w"> </span>minimal.c<span class="w">                          </span><span class="se">\</span>
-</span><span id="__span-11-34"><a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a><span class="w">              </span>-I<span class="si">${</span><span class="nv">SYSROOT</span><span class="si">}</span>/usr/include<span class="w">           </span><span class="se">\</span>
-</span><span id="__span-11-35"><a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a><span class="w">              </span><span class="si">${</span><span class="nv">NATIVE_SYSROOT</span><span class="si">}</span>/usr/lib/libbpf.a<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-11-36"><a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a><span class="w">              </span><span class="si">${</span><span class="nv">NATIVE_SYSROOT</span><span class="si">}</span>/usr/lib/libelf.a<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-11-37"><a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a><span class="w">              </span><span class="si">${</span><span class="nv">NATIVE_SYSROOT</span><span class="si">}</span>/usr/lib/libz.a<span class="w">   </span><span class="se">\</span>
-</span><span id="__span-11-38"><a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a><span class="w">              </span>-latomic<span class="w">                           </span><span class="se">\</span>
-</span><span id="__span-11-39"><a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a><span class="w">              </span>-o<span class="w"> </span>minimal
-</span></code></pre></div>
 
 
 

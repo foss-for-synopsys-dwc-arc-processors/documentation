@@ -1136,6 +1136,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -1170,8 +1172,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/hsdk/uboot/" class="md-nav__link">
+      <a href="../../../linux/hsdk/uboot-build/" class="md-nav__link">
         Building U-Boot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/hsdk/uboot-commands/" class="md-nav__link">
+        U-Boot command reference
       </a>
     </li>
   
@@ -2428,7 +2444,7 @@
 <p>Select <strong>File</strong> → <strong>New</strong> → <strong>Project..</strong> and choose <strong>C Project</strong>.
 A list of ARC projects will appear. Choose any <strong>ARC HS Development Kit Empty Project</strong>
 from the <strong>ARC EM Starter Kit Projects</strong> group:</p>
-<p><img alt="HS Development Kit Projects" src="../images/hsdk-projects.png" width="700" /></p>
+<p><img alt="HS Development Kit Projects" src="../images/hsdk-projects.png" /></p>
 <p>An empty project will be created. Add a new C source file with name <code>main.c</code>
 in <code>src</code> directory in <strong>Project Explorer</strong>:</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
@@ -2456,10 +2472,10 @@ The project will be built with this output:</p>
 <strong>Debug As</strong> → <strong>Debug Configurations...</strong>. Then do right click on
 <strong>ARC C/C++ application</strong> and choose <strong>New Configuration</strong>. Here is a main window of
 the debug configuration:</p>
-<p><img alt="Debug Configuration - Main" src="../images/hsdk-debug-conf-main.png" width="700" /></p>
+<p><img alt="Debug Configuration - Main" src="../images/hsdk-debug-conf-main.png" /></p>
 <p>Ensure that a correct project and binary are selected. Navigate to <strong>Main</strong> tab
 and <strong>Gdbserver Settings</strong> inner tab:</p>
-<p><img alt="Debug Configuration - GDB" src="../images/hsdk-debug-conf-gdb.png" width="700" /></p>
+<p><img alt="Debug Configuration - GDB" src="../images/hsdk-debug-conf-gdb.png" /></p>
 <p>Choose <strong>JTAG via OpenOCD</strong> as ARC GDB Server and <strong>HS Development Kit</strong> as
 a development system (use a corresponding one for your case). Also,
 choose <strong>HS38 #1</strong> target core. Then click on <strong>Apply</strong>.</p>

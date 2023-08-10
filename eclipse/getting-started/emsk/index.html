@@ -1136,6 +1136,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -1170,8 +1172,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linux/hsdk/uboot/" class="md-nav__link">
+      <a href="../../../linux/hsdk/uboot-build/" class="md-nav__link">
         Building U-Boot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/hsdk/uboot-commands/" class="md-nav__link">
+        U-Boot command reference
       </a>
     </li>
   
@@ -2428,7 +2444,7 @@
 A list of ARC projects will appear. Choose any ARC EM Starter Kit
 "Hello World" project from the <strong>ARC EM Starter Kit Projects</strong> group.
 Suppose, EM11D project is chosen.</p>
-<p><img alt="ARC EM Starter Kit Projects" src="../images/emsk-projects.png" width="700" /></p>
+<p><img alt="ARC EM Starter Kit Projects" src="../images/emsk-projects.png" /></p>
 <p>After creating the project, a simple "Hello, World!" program will be created:</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -2458,10 +2474,10 @@ The project will be built with this output:</p>
 <strong>Debug As</strong> → <strong>Debug Configurations...</strong>. Then do right click on
 <strong>ARC C/C++ application</strong> and choose <strong>New Configuration</strong>. Here is a main window of
 the debug configuration:</p>
-<p><img alt="Debug Configuration - Main" src="../images/emsk-debug-conf-main.png" width="700" /></p>
+<p><img alt="Debug Configuration - Main" src="../images/emsk-debug-conf-main.png" /></p>
 <p>Ensure that a correct project and binary are selected. Navigate to <strong>Main</strong> tab
 and <strong>Gdbserver Settings</strong> inner tab:</p>
-<p><img alt="Debug Configuration - GDB" src="../images/emsk-debug-conf-gdb.png" width="700" /></p>
+<p><img alt="Debug Configuration - GDB" src="../images/emsk-debug-conf-gdb.png" /></p>
 <p>Choose <strong>JTAG via OpenOCD</strong> as ARC GDB Server and <strong>EM Starter Kit v2.2</strong> as
 a development system (use a corresponding one for your case). Then click on
 <strong>Apply</strong>.</p>
@@ -2469,10 +2485,10 @@ a development system (use a corresponding one for your case). Then click on
 <p>Navigate to <strong>Terminal</strong> inner tab of <strong>Main</strong> tab and select a COM port for
 the board. Eclipse automatically detects all available COM ports. In my case
 it's <code>COM7</code>.</p>
-<p><img alt="Debug Configuration - Terminal" src="../images/emsk-debug-conf-terminal.png" width="700" /></p>
+<p><img alt="Debug Configuration - Terminal" src="../images/emsk-debug-conf-terminal.png" /></p>
 <p>On Windows you can find the exact number in <strong>Device Manager</strong> (it corresponds
 to <strong>USB Serial Port</strong> device):</p>
-<p><img alt="Debug Configuration - Port" src="../images/emsk-debug-conf-port.png" width="700" /></p>
+<p><img alt="Debug Configuration - Port" src="../images/emsk-debug-conf-port.png" /></p>
 <p>On Linux a serial device for EM Starter Kit is usually <code>/dev/ttyUSB1</code>.</p>
 <h2 id="debugging-the-project">Debugging the Project<a class="headerlink" href="#debugging-the-project" title="Permanent link">&para;</a></h2>
 <p>Open the debug configuration in <strong>Debug Configurations</strong> windows and click

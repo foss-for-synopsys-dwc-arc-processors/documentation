@@ -1136,6 +1136,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -1170,8 +1172,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../linux/hsdk/uboot/" class="md-nav__link">
+      <a href="../../linux/hsdk/uboot-build/" class="md-nav__link">
         Building U-Boot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/hsdk/uboot-commands/" class="md-nav__link">
+        U-Boot command reference
       </a>
     </li>
   
@@ -2256,7 +2272,7 @@
       
         <li class="md-nav__item">
   <a href="#standalone-testing" class="md-nav__link">
-    Standalone testing
+    Standalone Testing
   </a>
   
 </li>
@@ -2442,7 +2458,7 @@
       
         <li class="md-nav__item">
   <a href="#standalone-testing" class="md-nav__link">
-    Standalone testing
+    Standalone Testing
   </a>
   
 </li>
@@ -2575,11 +2591,7 @@
 
 
 <h1 id="running-glibc-tests">Running Glibc Tests<a class="headerlink" href="#running-glibc-tests" title="Permanent link">&para;</a></h1>
-<p>Currently our toolchain Makefiles don't support automated testing,
-but this may change in the near future. Look
-<a href="https://github.com/foss-for-synopsys-dwc-arc-processors/arc-gnu-toolchain#testing-gccc-binutils-and-newlib">here</a>
-for possible support.</p>
-<h2 id="standalone-testing">Standalone testing<a class="headerlink" href="#standalone-testing" title="Permanent link">&para;</a></h2>
+<h2 id="standalone-testing">Standalone Testing<a class="headerlink" href="#standalone-testing" title="Permanent link">&para;</a></h2>
 <p>It might be useful to perform tests without having to build the entire toolchain.</p>
 <p>To perform the tests, it is necessary to build glibc like:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">TOOLCHAIN_SRC</span><span class="o">=</span>/absolute/path/to/parent<span class="w">                  </span><span class="c1"># Path to parent of ARC sources (at least glibc, toolchain and arc-gnu-toolchain)</span>
