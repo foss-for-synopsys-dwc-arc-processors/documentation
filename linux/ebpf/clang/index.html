@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../../../baremetal/general/specs/">
+        <link rel="prev" href="../build/">
       
       
-        <link rel="next" href="../separate/">
+        <link rel="next" href="../../../platforms/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>Building Linux kernel with Filesystem Using Buildroot - GNU Toolchain for ARC User Manual</title>
+        <title>Building Clang with eBPF Target for ARC HS Hosts - GNU Toolchain for ARC User Manual</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#building-linux-kernel-with-filesystem-using-buildroot" class="md-skip">
+        <a href="#building-clang-with-ebpf-target-for-arc-hs-hosts" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Building Linux kernel with Filesystem Using Buildroot
+              Building Clang with eBPF Target for ARC HS Hosts
             
           </span>
         </div>
@@ -237,7 +237,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../building/buildroot/" class="md-tabs__link md-tabs__link--active">
         Linux
       </a>
     </li>
@@ -935,18 +935,16 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
       
       
         
@@ -963,7 +961,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_1">
           <span class="md-nav__icon md-icon"></span>
           Building
@@ -974,80 +972,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Building Linux kernel with Filesystem Using Buildroot
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../building/buildroot/" class="md-nav__link">
         Building Linux kernel with Filesystem Using Buildroot
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#getting-buildroot" class="md-nav__link">
-    Getting Buildroot
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-predefined-configurations" class="md-nav__link">
-    Using Predefined Configurations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuring-root-filesystem" class="md-nav__link">
-    Configuring Root Filesystem
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuring-linux-kernel" class="md-nav__link">
-    Configuring Linux Kernel
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#building-linux" class="md-nav__link">
-    Building Linux
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1059,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../separate/" class="md-nav__link">
+      <a href="../../building/separate/" class="md-nav__link">
         Building Linux kernel and Filesystem Separately
       </a>
     </li>
@@ -1073,7 +1002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../configure/" class="md-nav__link">
+      <a href="../../building/configure/" class="md-nav__link">
         Configuring Buildroot and Linux Kernel
       </a>
     </li>
@@ -1334,16 +1263,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
       
       
         
@@ -1360,7 +1291,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4_5">
           <span class="md-nav__icon md-icon"></span>
           eBPF subsystem
@@ -1373,7 +1304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ebpf/cross/" class="md-nav__link">
+      <a href="../cross/" class="md-nav__link">
         Cross-compiling eBPF Programs
       </a>
     </li>
@@ -1387,7 +1318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ebpf/build/" class="md-nav__link">
+      <a href="../build/" class="md-nav__link">
         Building Linux Image for Working with eBPF in QEMU
       </a>
     </li>
@@ -1399,11 +1330,87 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../ebpf/clang/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Building Clang with eBPF Target for ARC HS Hosts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Building Clang with eBPF Target for ARC HS Hosts
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preface" class="md-nav__link">
+    Preface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-for-centos-7" class="md-nav__link">
+    Notes for CentOS 7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-for-ubuntu-1804" class="md-nav__link">
+    Notes for Ubuntu 18.04
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-clang-toolchain-for-host" class="md-nav__link">
+    Building Clang Toolchain for Host
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-native-clang-toolchain-for-arc" class="md-nav__link">
+    Building Native Clang Toolchain for ARC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2355,87 +2362,122 @@
   
 
 
-<h1 id="building-linux-kernel-with-filesystem-using-buildroot">Building Linux kernel with Filesystem Using Buildroot<a class="headerlink" href="#building-linux-kernel-with-filesystem-using-buildroot" title="Permanent link">&para;</a></h1>
-<h2 id="getting-buildroot">Getting Buildroot<a class="headerlink" href="#getting-buildroot" title="Permanent link">&para;</a></h2>
-<p>Stable Buildroot releases are published every three months. Tarballs are available for each stable release
-(<a href="http://buildroot.org/downloads/">http://buildroot.org/downloads/</a>). However, you can clone an upstream Git repository:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://git.busybox.net/buildroot
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>buildroot
+<h1 id="building-clang-with-ebpf-target-for-arc-hs-hosts">Building Clang with eBPF Target for ARC HS Hosts<a class="headerlink" href="#building-clang-with-ebpf-target-for-arc-hs-hosts" title="Permanent link">&para;</a></h1>
+<h2 id="preface">Preface<a class="headerlink" href="#preface" title="Permanent link">&para;</a></h2>
+<p>If you want to build eBPF programs right on the target, then
+you need to properly build Clang for ARC. There is no need for
+all possible targets, so we are going to build Clang with
+support of eBPF target only.</p>
+<h2 id="notes-for-centos-7">Notes for CentOS 7<a class="headerlink" href="#notes-for-centos-7" title="Permanent link">&para;</a></h2>
+<p>It's necessary to install the latest available development tools for CentOS 7
+to make it possible to build <code>clang</code>. Use <code>centos-release-scl</code> repository
+to install the latest tools and enable them:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>centos-release-scl
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>devtoolset-9
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>scl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>devtoolset-9<span class="w"> </span>bash
 </span></code></pre></div>
-<p>Upstream Buildroot does not support ARCv3 families. If you are going to build Linux for ARCv3 then
-consider using a separate Synopsys repository with patches for support of ARC HS5x and ARC HS6x:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>buildroot
+<p>Also <code>llvm</code> build system requires new CMake. Install <code>cmake3</code> packages
+and use it instead of <code>cmake</code>:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>cmake3
 </span></code></pre></div>
-<h2 id="using-predefined-configurations">Using Predefined Configurations<a class="headerlink" href="#using-predefined-configurations" title="Permanent link">&para;</a></h2>
-<p>Buildroot uses configuration files (<code>defconfig</code>s) for configuring a root filesystem,
-a toolchain, a Linux kernel, etc. Buildroot comes with a number of existing predefined
-configurations which may be found in <code>config</code> directory. Use <code>make list-defconfigs</code> command
-to list all available configurations:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ make list-defconfigs | grep snps
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  snps_arc32_defconfig                - Build for snps_arc32
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  snps_arc64_defconfig                - Build for snps_arc64
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  snps_arc700_axs101_defconfig        - Build for snps_arc700_axs101
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  snps_archs38_axs103_defconfig       - Build for snps_archs38_axs103
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  snps_archs38_haps_defconfig         - Build for snps_archs38_haps
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  snps_archs38_hsdk_defconfig         - Build for snps_archs38_hsdk
-</span></code></pre></div>
-<p>Here is a short description of each configuration:</p>
+<h2 id="notes-for-ubuntu-1804">Notes for Ubuntu 18.04<a class="headerlink" href="#notes-for-ubuntu-1804" title="Permanent link">&para;</a></h2>
+<p><code>llvm</code> build system requires new CMake. To install it on Ubuntu 18.04
+you can use <code>cmake</code> package provided by CMake's team:</p>
 <ul>
-<li><code>snps_arc32_defconfig</code> - A configuration for ARC HS5x on HAPS, nSIM or QEMU (available only in <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot">a separate repository</a>).</li>
-<li><code>snps_arc64_defconfig</code> - A configuration for ARC HS6x on HAPS, nSIM or QEMU (available only in <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot">a separate repository</a>).</li>
-<li><code>snps_arc700_axs101_defconfig</code> - A configuration for ARC 700 on AXS101 development board.</li>
-<li><code>snps_archs38_axs103_defconfig</code> - A configuration for ARC HS38 on AXS103 development board.</li>
-<li><code>snps_archs38_haps_defconfig</code> - A configuration for ARC HS3x/4x in ZeBU, HAPS, nSIM or QEMU.</li>
-<li><code>snps_archs38_hsdk_defconfig</code> - A configuration for ARC HS3x/4x on HSDK and HSDK 4xD development boards.
-This configuration builds images for running Linux using U-Boot.</li>
+<li><a href="https://apt.kitware.com">https://apt.kitware.com</a></li>
 </ul>
-<h2 id="configuring-root-filesystem">Configuring Root Filesystem<a class="headerlink" href="#configuring-root-filesystem" title="Permanent link">&para;</a></h2>
-<p>You can select a predefined configuration this way:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>make<span class="w"> </span>snps_archs38_haps_defconfig
+<h2 id="building-clang-toolchain-for-host">Building Clang Toolchain for Host<a class="headerlink" href="#building-clang-toolchain-for-host" title="Permanent link">&para;</a></h2>
+<p>Prepare sources:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/llvm/llvm-project.git
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>mkdir<span class="w"> </span>llvm-project/build
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">cd</span><span class="w"> </span>llvm-project/build
 </span></code></pre></div>
-<p>You can manually tune filesystem's configuration this way:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>make<span class="w"> </span>menuconfig
+<p>Prepare build system using CMake:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cmake<span class="w"> </span>-DCMAKE_INSTALL_PREFIX<span class="o">=</span>/tools/clang-bpf<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">      </span>-DLLVM_ENABLE_PROJECTS<span class="o">=</span>clang<span class="w">            </span><span class="se">\</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">      </span>-DLLVM_TARGETS_TO_BUILD<span class="o">=</span>BPF<span class="w">             </span><span class="se">\</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span>-DLLVM_INCLUDE_BENCHMARKS<span class="o">=</span>OFF<span class="w">           </span><span class="se">\</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span>-DLLVM_ENABLE_PIC<span class="o">=</span>ON<span class="w">                    </span><span class="se">\</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">      </span>-DLLVM_ENABLE_WARNINGS<span class="o">=</span>OFF<span class="w">              </span><span class="se">\</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">      </span>-DLLVM_ENABLE_ZLIB<span class="o">=</span>OFF<span class="w">                  </span><span class="se">\</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">      </span>-DLLVM_INCLUDE_EXAMPLES<span class="o">=</span>OFF<span class="w">             </span><span class="se">\</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">      </span>-DLLVM_INCLUDE_TESTS<span class="o">=</span>OFF<span class="w">                </span><span class="se">\</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">      </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release<span class="w">              </span><span class="se">\</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">      </span>-G<span class="w"> </span><span class="s2">&quot;Unix Makefiles&quot;</span><span class="w">                     </span><span class="se">\</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span>../llvm
 </span></code></pre></div>
-<p>The final configuration file is saved in <code>.config</code> file.</p>
-<h2 id="configuring-linux-kernel">Configuring Linux Kernel<a class="headerlink" href="#configuring-linux-kernel" title="Permanent link">&para;</a></h2>
-<p>Also, you can configure kernel's options this way:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>make<span class="w"> </span>linux-menuconfig
+<p>Build and install to <code>/tools/clang-bpf</code>:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>make<span class="w"> </span>-j<span class="w"> </span><span class="k">$(</span>nproc<span class="k">)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>make<span class="w"> </span>install
 </span></code></pre></div>
-<h2 id="building-linux">Building Linux<a class="headerlink" href="#building-linux" title="Permanent link">&para;</a></h2>
-<p>Buildroot with default configurations, which are mentioned above, builds Linux images
-in this sequence:</p>
-<ol>
-<li>Download sources for a toolchain and build it.</li>
-<li>Download sources for packages, build them using the toolchain and put them
-in a filesystem image (<code>rootfs</code>).</li>
-<li>Download sources for a Linux kernel and build it using the toolchain.</li>
-<li>Link the Linux kernel against <code>rootfs</code> (<code>vmlinux</code>) or save it separately from <code>rootfs</code> (<code>bzImage</code> or <code>uImage</code>).
-Whether <code>rootfs</code> is linked against  Linux kernel or not depends on a particular configuration. For example,
-<code>snps_archs38_hsdk_defconfig</code> configuration doesn't link <code>rootfs</code> against Linux kernel.</li>
-</ol>
-<p>You can build images using <code>make</code>:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>make
+<h2 id="building-native-clang-toolchain-for-arc">Building Native Clang Toolchain for ARC<a class="headerlink" href="#building-native-clang-toolchain-for-arc" title="Permanent link">&para;</a></h2>
+<p>Prepare sources:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/llvm/llvm-project.git
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>mkdir<span class="w"> </span>llvm-project/build
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">cd</span><span class="w"> </span>llvm-project/build
 </span></code></pre></div>
-<p>By default, Buildroot builds everything in <code>output</code> directory. Images are placed in
-<code>output/images</code> directory. For <code>snps_archs38_haps_defconfig</code> configuration you will find
-a couple of filesystem images (<code>rootfs.cpio</code> and <code>rootfs.tar</code>) and <code>vmlinux</code> - a kernel
-with the filesystem included:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$ ls output/images
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>rootfs.cpio  rootfs.tar  vmlinux
+<p>Clang's build system (CMake) uses a toolchain file for configuring cross-compiler.
+Suppose that the toolchain for ARC HS 4x is placed in <code>/tools/arc-linux-gnu</code>
+(the directory which contains <code>bin</code>). Save this configuration to <code>~/arc.cmake</code>:</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">SET</span><span class="p">(</span><span class="s">CMAKE_SYSTEM_NAME</span><span class="w"> </span><span class="s">Linux</span><span class="p">)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">SET</span><span class="p">(</span><span class="s">CMAKE_HOST_SYSTEM_PROCESSOR</span><span class="w"> </span><span class="s">arc</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">SET</span><span class="p">(</span><span class="s">CMAKE_HOST_SYSTEM_PROCESSOR</span><span class="w"> </span><span class="s">Linux</span><span class="p">)</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nb">SET</span><span class="p">(</span><span class="s">CMAKE_HOST_SYSTEM_PROCESSOR</span><span class="w"> </span><span class="s">gnu</span><span class="p">)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nb">SET</span><span class="p">(</span><span class="s">CMAKE_SYSTEM_VERSION</span><span class="w"> </span><span class="s">1</span><span class="p">)</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nb">SET</span><span class="p">(</span><span class="s">CMAKE_C_COMPILER</span><span class="w"> </span><span class="s">/tools/arc-linux-gnu/bin/arc-linux-gnu-gcc</span><span class="p">)</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nb">SET</span><span class="p">(</span><span class="s">CMAKE_CXX_COMPILER</span><span class="w"> </span><span class="s">/tools/arc-linux-gnu/bin/arc-linux-gnu-g++</span><span class="p">)</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nb">SET</span><span class="p">(</span><span class="s">CMAKE_FIND_ROOT_PATH</span><span class="w"> </span><span class="s">/tools/arc-linux-gnu/sysroot</span><span class="p">)</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c"># Search for programs in the build host directories</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="nb">SET</span><span class="p">(</span><span class="s">CMAKE_FIND_ROOT_PATH_MODE_PROGRAM</span><span class="w"> </span><span class="s">NEVER</span><span class="p">)</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="c"># ... for libraries and headers in the target directories</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="nb">SET</span><span class="p">(</span><span class="s">CMAKE_FIND_ROOT_PATH_MODE_LIBRARY</span><span class="w"> </span><span class="s">ONLY</span><span class="p">)</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="nb">SET</span><span class="p">(</span><span class="s">CMAKE_FIND_ROOT_PATH_MODE_INCLUDE</span><span class="w"> </span><span class="s">ONLY</span><span class="p">)</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="nb">SET</span><span class="p">(</span><span class="s">HAVE_POSIX_REGEX</span><span class="w"> </span><span class="s">0</span><span class="p">)</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="nb">SET</span><span class="p">(</span><span class="s">HAVE_STEADY_CLOCK</span><span class="w"> </span><span class="s">0</span><span class="p">)</span>
 </span></code></pre></div>
-<p>For example, for <code>snps_archs38_hsdk_defconfig</code> configuration you will find much more
-images (consider reading a guide about building Linux for HSDK for more details):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$ ls -1 output/images
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>boot.vfat
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>rootfs.ext2
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>rootfs.ext4
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>sdcard.img
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>u-boot
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>u-boot.bin
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>uImage
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>uboot-env.bin
+<p>Prepare build system using CMake:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cmake<span class="w"> </span>-DCMAKE_TOOLCHAIN_FILE<span class="o">=</span>~/arc.cmake<span class="w">          </span><span class="se">\</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">      </span>-DCMAKE_INSTALL_PREFIX<span class="o">=</span>/tools/clang-bpf-arc<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">      </span>-DLLVM_ENABLE_PROJECTS<span class="o">=</span>clang<span class="w">                </span><span class="se">\</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">      </span>-DLLVM_TARGETS_TO_BUILD<span class="o">=</span>BPF<span class="w">                 </span><span class="se">\</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">      </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>MinSizeRel<span class="w">               </span><span class="se">\</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">      </span>-DLLVM_INCLUDE_BENCHMARKS<span class="o">=</span>OFF<span class="w">               </span><span class="se">\</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">      </span>-DLLVM_ENABLE_PIC<span class="o">=</span>ON<span class="w">                        </span><span class="se">\</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">      </span>-DBUILD_SHARED_LIBS<span class="o">=</span>ON<span class="w">                      </span><span class="se">\</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">      </span>-DLLVM_ENABLE_WARNINGS<span class="o">=</span>OFF<span class="w">                  </span><span class="se">\</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">      </span>-DLLVM_ENABLE_ZLIB<span class="o">=</span>OFF<span class="w">                      </span><span class="se">\</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">      </span>-DLLVM_INCLUDE_EXAMPLES<span class="o">=</span>OFF<span class="w">                 </span><span class="se">\</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">      </span>-DLLVM_INCLUDE_TESTS<span class="o">=</span>OFF<span class="w">                    </span><span class="se">\</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">      </span>-DCMAKE_EXE_LINKER_FLAGS<span class="o">=</span><span class="s2">&quot;-latomic&quot;</span><span class="w">         </span><span class="se">\</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">      </span>-DCMAKE_MODULE_LINKER_FLAGS<span class="o">=</span><span class="s2">&quot;-latomic&quot;</span><span class="w">      </span><span class="se">\</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">      </span>-DCMAKE_SHARED_LINKER_FLAGS<span class="o">=</span><span class="s2">&quot;-latomic&quot;</span><span class="w">      </span><span class="se">\</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">      </span>-G<span class="w"> </span><span class="s2">&quot;Unix Makefiles&quot;</span><span class="w">                         </span><span class="se">\</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">      </span>../llvm
 </span></code></pre></div>
+<p>Explanation for some options:</p>
+<ul>
+<li><code>-DCMAKE_BUILD_TYPE=MinSizeRel</code> - Turn on optimizations for size.</li>
+<li><code>-DLLVM_INCLUDE_BENCHMARKS=OFF</code> - Turn off benchmarks to avoid fails while building.</li>
+<li><code>-DBUILD_SHARED_LIBS=ON</code> - Don't build Clang as one large blob (more than 100 MB) because
+  linker cannot resolve relocations for such large binaries.</li>
+<li><code>-DCMAKE_***_LINKER_FLAGS="-latomic"</code> - Somehow <code>-latomic</code> is not passed to the linker while
+  building. Thus we need to pass it manually.</li>
+</ul>
+<p>Build and install to <code>/tools/clang-bpf-arc</code>:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>make<span class="w"> </span>-j<span class="w"> </span><span class="k">$(</span>nproc<span class="k">)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>make<span class="w"> </span>install
+</span></code></pre></div>
+<p>Then you can copy this directory to your target (e.g., to the overlay for Buildroot).</p>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://clang.llvm.org/get_started.html">https://clang.llvm.org/get_started.html</a></li>
+<li><a href="https://llvm.org/docs/CMake.html#frequently-used-cmake-variables">https://llvm.org/docs/CMake.html#frequently-used-cmake-variables</a></li>
+<li><a href="https://gitlab.kitware.com/cmake/community/-/wikis/doc/cmake/CrossCompiling">https://gitlab.kitware.com/cmake/community/-/wikis/doc/cmake/CrossCompiling</a></li>
+<li><a href="https://cmake.org/cmake/help/latest/manual/cmake-toolchains.7.html">https://cmake.org/cmake/help/latest/manual/cmake-toolchains.7.html</a></li>
+</ul>
 
 
 

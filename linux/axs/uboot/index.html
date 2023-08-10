@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../../../baremetal/general/specs/">
+        <link rel="prev" href="../build/">
       
       
-        <link rel="next" href="../separate/">
+        <link rel="next" href="../../ebpf/cross/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>Building Linux kernel with Filesystem Using Buildroot - GNU Toolchain for ARC User Manual</title>
+        <title>Flashing U-Boot - GNU Toolchain for ARC User Manual</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#building-linux-kernel-with-filesystem-using-buildroot" class="md-skip">
+        <a href="#flashing-uboot-in-arc-axs10x-software-development-platforms-sdp" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Building Linux kernel with Filesystem Using Buildroot
+              Flashing U-Boot
             
           </span>
         </div>
@@ -237,7 +237,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../building/buildroot/" class="md-tabs__link md-tabs__link--active">
         Linux
       </a>
     </li>
@@ -935,18 +935,16 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
       
       
         
@@ -963,7 +961,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_1">
           <span class="md-nav__icon md-icon"></span>
           Building
@@ -974,80 +972,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Building Linux kernel with Filesystem Using Buildroot
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../building/buildroot/" class="md-nav__link">
         Building Linux kernel with Filesystem Using Buildroot
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#getting-buildroot" class="md-nav__link">
-    Getting Buildroot
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-predefined-configurations" class="md-nav__link">
-    Using Predefined Configurations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuring-root-filesystem" class="md-nav__link">
-    Configuring Root Filesystem
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuring-linux-kernel" class="md-nav__link">
-    Configuring Linux Kernel
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#building-linux" class="md-nav__link">
-    Building Linux
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1059,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../separate/" class="md-nav__link">
+      <a href="../../building/separate/" class="md-nav__link">
         Building Linux kernel and Filesystem Separately
       </a>
     </li>
@@ -1073,7 +1002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../configure/" class="md-nav__link">
+      <a href="../../building/configure/" class="md-nav__link">
         Configuring Buildroot and Linux Kernel
       </a>
     </li>
@@ -1264,16 +1193,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
       
       
         
@@ -1288,7 +1219,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4_4">
           <span class="md-nav__icon md-icon"></span>
           Running on AXS SDP
@@ -1301,7 +1232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../axs/build/" class="md-nav__link">
+      <a href="../build/" class="md-nav__link">
         Building and running Linux
       </a>
     </li>
@@ -1313,11 +1244,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../axs/uboot/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Flashing U-Boot
       </a>
+      
     </li>
   
 
@@ -2355,87 +2296,45 @@
   
 
 
-<h1 id="building-linux-kernel-with-filesystem-using-buildroot">Building Linux kernel with Filesystem Using Buildroot<a class="headerlink" href="#building-linux-kernel-with-filesystem-using-buildroot" title="Permanent link">&para;</a></h1>
-<h2 id="getting-buildroot">Getting Buildroot<a class="headerlink" href="#getting-buildroot" title="Permanent link">&para;</a></h2>
-<p>Stable Buildroot releases are published every three months. Tarballs are available for each stable release
-(<a href="http://buildroot.org/downloads/">http://buildroot.org/downloads/</a>). However, you can clone an upstream Git repository:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://git.busybox.net/buildroot
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>buildroot
-</span></code></pre></div>
-<p>Upstream Buildroot does not support ARCv3 families. If you are going to build Linux for ARCv3 then
-consider using a separate Synopsys repository with patches for support of ARC HS5x and ARC HS6x:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>buildroot
-</span></code></pre></div>
-<h2 id="using-predefined-configurations">Using Predefined Configurations<a class="headerlink" href="#using-predefined-configurations" title="Permanent link">&para;</a></h2>
-<p>Buildroot uses configuration files (<code>defconfig</code>s) for configuring a root filesystem,
-a toolchain, a Linux kernel, etc. Buildroot comes with a number of existing predefined
-configurations which may be found in <code>config</code> directory. Use <code>make list-defconfigs</code> command
-to list all available configurations:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ make list-defconfigs | grep snps
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  snps_arc32_defconfig                - Build for snps_arc32
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  snps_arc64_defconfig                - Build for snps_arc64
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  snps_arc700_axs101_defconfig        - Build for snps_arc700_axs101
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  snps_archs38_axs103_defconfig       - Build for snps_archs38_axs103
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  snps_archs38_haps_defconfig         - Build for snps_archs38_haps
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  snps_archs38_hsdk_defconfig         - Build for snps_archs38_hsdk
-</span></code></pre></div>
-<p>Here is a short description of each configuration:</p>
+<h1 id="flashing-uboot-in-arc-axs10x-software-development-platforms-sdp">Flashing U‐Boot in ARC AXS10x Software Development Platforms (SDP)<a class="headerlink" href="#flashing-uboot-in-arc-axs10x-software-development-platforms-sdp" title="Permanent link">&para;</a></h1>
+<p>ARC AXS10x Software Development Platforms (SDP) have built-in SPI-flash storage
+which may be used to host auto-started applications such as bootloaders, etc.</p>
+<p>U-Boot is a good fit for such application. Very early boot SDP's pre-bootloader
+application is able to find images in that SPI-flash, load them in specified
+memory location and then execute it.</p>
+<p>It's also possible to have separate images to be loaded and executed for
+different CPU cores. This allows us to have U-Boot images for both ARC 770D
+and ARC HS38 at once each starting when appropriate CPU tile is mounted on
+the base-board.</p>
+<p>Below are command for preparing [if needed - for ARCv2 CPUs] and flashing
+U-Boot in SPI flash.</p>
 <ul>
-<li><code>snps_arc32_defconfig</code> - A configuration for ARC HS5x on HAPS, nSIM or QEMU (available only in <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot">a separate repository</a>).</li>
-<li><code>snps_arc64_defconfig</code> - A configuration for ARC HS6x on HAPS, nSIM or QEMU (available only in <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot">a separate repository</a>).</li>
-<li><code>snps_arc700_axs101_defconfig</code> - A configuration for ARC 700 on AXS101 development board.</li>
-<li><code>snps_archs38_axs103_defconfig</code> - A configuration for ARC HS38 on AXS103 development board.</li>
-<li><code>snps_archs38_haps_defconfig</code> - A configuration for ARC HS3x/4x in ZeBU, HAPS, nSIM or QEMU.</li>
-<li><code>snps_archs38_hsdk_defconfig</code> - A configuration for ARC HS3x/4x on HSDK and HSDK 4xD development boards.
-This configuration builds images for running Linux using U-Boot.</li>
+<li>
+<p>For ARC 770D</p>
+<ul>
+<li>Build U-Boot binary image: <code>make axs101_defconfig &amp;&amp; make u-boot.bin</code></li>
+<li>Flash image: <code>axs_comm -c 0434 -a 00000000 -p 81000000 -f u-boot.bin</code></li>
 </ul>
-<h2 id="configuring-root-filesystem">Configuring Root Filesystem<a class="headerlink" href="#configuring-root-filesystem" title="Permanent link">&para;</a></h2>
-<p>You can select a predefined configuration this way:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>make<span class="w"> </span>snps_archs38_haps_defconfig
-</span></code></pre></div>
-<p>You can manually tune filesystem's configuration this way:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>make<span class="w"> </span>menuconfig
-</span></code></pre></div>
-<p>The final configuration file is saved in <code>.config</code> file.</p>
-<h2 id="configuring-linux-kernel">Configuring Linux Kernel<a class="headerlink" href="#configuring-linux-kernel" title="Permanent link">&para;</a></h2>
-<p>Also, you can configure kernel's options this way:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>make<span class="w"> </span>linux-menuconfig
-</span></code></pre></div>
-<h2 id="building-linux">Building Linux<a class="headerlink" href="#building-linux" title="Permanent link">&para;</a></h2>
-<p>Buildroot with default configurations, which are mentioned above, builds Linux images
-in this sequence:</p>
-<ol>
-<li>Download sources for a toolchain and build it.</li>
-<li>Download sources for packages, build them using the toolchain and put them
-in a filesystem image (<code>rootfs</code>).</li>
-<li>Download sources for a Linux kernel and build it using the toolchain.</li>
-<li>Link the Linux kernel against <code>rootfs</code> (<code>vmlinux</code>) or save it separately from <code>rootfs</code> (<code>bzImage</code> or <code>uImage</code>).
-Whether <code>rootfs</code> is linked against  Linux kernel or not depends on a particular configuration. For example,
-<code>snps_archs38_hsdk_defconfig</code> configuration doesn't link <code>rootfs</code> against Linux kernel.</li>
-</ol>
-<p>You can build images using <code>make</code>:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>make
-</span></code></pre></div>
-<p>By default, Buildroot builds everything in <code>output</code> directory. Images are placed in
-<code>output/images</code> directory. For <code>snps_archs38_haps_defconfig</code> configuration you will find
-a couple of filesystem images (<code>rootfs.cpio</code> and <code>rootfs.tar</code>) and <code>vmlinux</code> - a kernel
-with the filesystem included:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$ ls output/images
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>rootfs.cpio  rootfs.tar  vmlinux
-</span></code></pre></div>
-<p>For example, for <code>snps_archs38_hsdk_defconfig</code> configuration you will find much more
-images (consider reading a guide about building Linux for HSDK for more details):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$ ls -1 output/images
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>boot.vfat
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>rootfs.ext2
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>rootfs.ext4
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>sdcard.img
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>u-boot
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>u-boot.bin
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>uImage
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>uboot-env.bin
-</span></code></pre></div>
+</li>
+<li>
+<p>For ARC HS38</p>
+<ul>
+<li>Build U-Boot binary image: <code>make axs103_defconfig &amp;&amp; make u-boot.bin</code></li>
+<li>Add jump location just before the image: <code>printf "\x00\x00\x00\x81" | cat - u-boot.bin &gt; u-boot-offset.bin</code></li>
+<li>Flash image</li>
+</ul>
+</li>
+</ul>
+<p>For ARC HS38 version 2.0 <code>arc_id</code> is <code>0x51</code>, for version 2.1 <code>arc_id</code> is <code>0x52</code>,
+for version 3.0 <code>arc_id</code> is <code>0x53</code>. You can use the same u-boot image for both
+versions but you need to pass different values to <code>axs_comm</code> <code>-c</code> option:</p>
+<ul>
+<li>ARC HS38 2.0: <code>axs_comm -c 0051 -a 00080000 -p 80FFFFFC -f u-boot-offset.bin</code></li>
+<li>ARC HS38 2.1: <code>axs_comm -c 0052 -a 00100000 -p 80FFFFFC -f u-boot-offset.bin</code></li>
+<li>ARC HS38 3.0: <code>axs_comm -c 0053 -a 00180000 -p 80FFFFFC -f u-boot-offset.bin</code></li>
+</ul>
+<p>Note for ARC HS38 3rd pin in dip-switch <code>SW2501</code> must be in <code>off</code> position
+(which is closer to CPU tile). Otherwise image from SPI-flash won't be read.</p>
 
 
 
