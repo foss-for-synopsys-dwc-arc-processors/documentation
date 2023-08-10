@@ -1,30 +1,64 @@
 # Building U-Boot for HS Development Kit
 
-## Building U-Boot
+!!! warning
+
+    This article is under construction!
+
+!!! info
+
+    * Follow [How to Get The Toolchain](../../general/toolchains.md#how-to-get-the-toolchain)
+      guide to get the latest ARC GNU toolchain. Linux toolchain for ARC HS3x/4x (with uClibc or glibc)
+      is required.
+    * Refer to the original [U-Boot README for HSDK](https://github.com/Screenly/u-boot/blob/master/board/synopsys/hsdk/README)
+      for details.
+
+## Prerequisites
 
 First of all U-Boot sources are fetch using next commands:
 
 ```shell
-wget ftp://ftp.denx.de/pub/u-boot/u-boot-2019.04.tar.bz2
-tar -xf u-boot-2019.04.tar.bz2
-cd u-boot-2019.04/
+wget https://ftp.denx.de/pub/u-boot/u-boot-2023.07.tar.bz2
+tar -xf u-boot-2023.07.tar.bz2
+cd u-boot-2023.07
 ```
 
-To build U-Boot binaries arc-toolchain is required. You can use toolchain built by Buildroot, in this case add path **<path_to_buildroot>/output/host/bin** to $PATH environment variable. It is also possible to use prebuilt toolchain which is available here [arc-toolchain](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2018.09-release/arc_gnu_2018.09_prebuilt_uclibc_le_archs_linux_install.tar.gz). In this unpack downloaded archive in some place and add path **<path_to_archive>/arc_gnu_2018.09_prebuilt_uclibc_le_archs_linux_install/bin/** to $PATH environment variable.
+## Building and Writing U-Boot to SPI FLash
 
-Configure U-Boot before building:
+Build the U-Boot image for HS Development Kit:
+
+```shell
+export CROSS_COMPILE=arc-linux-
+
+# Configure for HS Development Kit
+make hsdk_defconfig
+
+# Configure for HS Development Kit 4xD
+make hsdk_4xd_defconfig
+
+make bsp-generate
+```
+
+Run the U-Boot image on the board using `mdb`:
+
+```shell
+mdb -digilent -prop=dig_speed=10000000 -cl -run u-boot
+```
+
+Once U-Boot boots into command prompt just issue the following command:
+
+```shell
+run upgrade
+```
+
+## Building and Loading U-Boot using JTAG
+
+Build the U-Boot image:
 
 ```shell
 export CROSS_COMPILE=arc-linux-
 make hsdk_defconfig
+make mdbtrick
 ```
-
-Now depending on use-case 2 different commands should be used.
-
-* for programming in on-board SPI flash: `make`
-* for loading U-Boot with debugger via JTAG: `make mdbtrick`
-
-## Loading U-Boot with debugger via JTAG
 
 Ashling Opella-XD
 
