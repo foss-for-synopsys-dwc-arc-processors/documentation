@@ -170,6 +170,64 @@ For FTDI vendor driver use:
 sudo kextunload FTDIUSBSerialDriver.kext
 ```
 
+## Debugging Multi-core Targets
+
+OpenOCD starts a distinct GDB server for each core of multi-core target. Here is
+an example for HS Development Kit 4xD:
+
+```text
+$ openocd -f board/snps_hsdk_4xd.cfg
+Open On-Chip Debugger 0.12.0+dev-gffa52f0e0 (2023-08-02-10:41)
+Licensed under GNU GPL v2
+For bug reports, read
+    http://openocd.org/doc/doxygen/bugs.html
+Info : target has l2 cache enabled is enabled
+Info : target has l2 cache enabled is enabled
+Info : target has l2 cache enabled is enabled
+Info : target has l2 cache enabled is enabled
+32768
+Info : Listening on port 6666 for tcl connections
+Info : Listening on port 4444 for telnet connections
+Info : ftdi: if you experience problems at higher adapter clocks, try the command "ftdi tdo_sample_edge falling"
+Info : clock speed 10000 kHz
+Info : JTAG tap: arc-em.cpu4 tap/device found: 0x100c54b1 (mfg: 0x258 (ARC International), part: 0x00c5, ver: 0x1)
+Info : JTAG tap: arc-em.cpu3 tap/device found: 0x100854b1 (mfg: 0x258 (ARC International), part: 0x0085, ver: 0x1)
+Info : JTAG tap: arc-em.cpu2 tap/device found: 0x100454b1 (mfg: 0x258 (ARC International), part: 0x0045, ver: 0x1)
+Info : JTAG tap: arc-em.cpu1 tap/device found: 0x100054b1 (mfg: 0x258 (ARC International), part: 0x0005, ver: 0x1)
+Info : starting gdb server for arc-em.cpu4 on 3333
+Info : Listening on port 3333 for gdb connections
+Info : starting gdb server for arc-em.cpu3 on 3334
+Info : Listening on port 3334 for gdb connections
+Info : starting gdb server for arc-em.cpu2 on 3335
+Info : Listening on port 3335 for gdb connections
+Info : starting gdb server for arc-em.cpu1 on 3336
+Info : Listening on port 3336 for gdb connections
+```
+
+All cores are numbered in reverse order:
+
+* Port 3333 corresponds to Core 4.
+* Port 3334 corresponds to Core 3.
+* Port 3335 corresponds to Core 2.
+* Port 3336 corresponds to Core 1.
+
+If you want to debug the Linux kernel or other application with support of SMP
+then consider running separated GDB servers starting from the last core:
+
+```shell
+# Load and run core #1
+arc-elf32-gdb -ex "target remote :3335" -ex "load" -ex "c" vmlinux
+
+# Load and run core #2
+arc-elf32-gdb -ex "target remote :3334" -ex "load" -ex "c" vmlinux
+
+# Load and run core #3
+arc-elf32-gdb -ex "target remote :3333" -ex "load" -ex "c" vmlinux
+
+# Load and run core #0 (main one)
+arc-elf32-gdb -ex "target remote :3336" -ex "load" -ex "c" vmlinux
+```
+
 ## Advanced debug commands
 
 With the GDB `monitor` command, you have an access to the core without
