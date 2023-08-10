@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../dejagnu/">
+        <link rel="prev" href="../use-openocd/">
       
       
-        <link rel="next" href="../qemu/">
+        <link rel="next" href="../winusb/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>Running Glibc Tests - GNU Toolchain for ARC User Manual</title>
+        <title>Using MetaWare Debugger - GNU Toolchain for ARC User Manual</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#running-glibc-tests" class="md-skip">
+        <a href="#using-metaware-debugger" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Running Glibc Tests
+              Using MetaWare Debugger
             
           </span>
         </div>
@@ -247,13 +247,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../platforms/" class="md-tabs__link">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         Development platforms
       </a>
     </li>
@@ -295,15 +297,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../dejagnu/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../testing/dejagnu/" class="md-tabs__link">
         Testing
       </a>
     </li>
@@ -1369,14 +1369,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
       
       
         
@@ -1393,7 +1395,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../platforms/">Development platforms</a>
+          <a href="../">Development platforms</a>
           
             <label for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
@@ -1401,7 +1403,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Development platforms
@@ -1414,16 +1416,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
       
       
         
@@ -1446,7 +1450,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5_2">
           <span class="md-nav__icon md-icon"></span>
           Using Boards
@@ -1459,7 +1463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platforms/get-openocd/" class="md-nav__link">
+      <a href="../get-openocd/" class="md-nav__link">
         Getting OpenOCD
       </a>
     </li>
@@ -1473,7 +1477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platforms/use-openocd/" class="md-nav__link">
+      <a href="../use-openocd/" class="md-nav__link">
         Using OpenOCD
       </a>
     </li>
@@ -1485,11 +1489,80 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../platforms/mdb/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Using MetaWare Debugger
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Using MetaWare Debugger
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-in-a-single-core-mode" class="md-nav__link">
+    Debugging in a Single-core Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-in-a-dual-core-smp-mode" class="md-nav__link">
+    Debugging in a Dual-core SMP Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-in-a-quad-core-smp-mode" class="md-nav__link">
+    Debugging in a Quad-core SMP Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-the-particular-device" class="md-nav__link">
+    Connecting to the Particular Device
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1501,7 +1574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platforms/winusb/" class="md-nav__link">
+      <a href="../winusb/" class="md-nav__link">
         Installing WinUSB on Windows
       </a>
     </li>
@@ -1515,7 +1588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platforms/digilent/" class="md-nav__link">
+      <a href="../digilent/" class="md-nav__link">
         Installing Digilent Adept
       </a>
     </li>
@@ -1529,7 +1602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../platforms/reset/" class="md-nav__link">
+      <a href="../reset/" class="md-nav__link">
         Resetting Boards
       </a>
     </li>
@@ -2200,16 +2273,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
       
       
         
@@ -2226,7 +2297,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           Testing
@@ -2239,7 +2310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dejagnu/" class="md-nav__link">
+      <a href="../../testing/dejagnu/" class="md-nav__link">
         Running DejaGNU Tests
       </a>
     </li>
@@ -2251,161 +2322,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Running Glibc Tests
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../testing/glibc/" class="md-nav__link">
         Running Glibc Tests
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#standalone-testing" class="md-nav__link">
-    Standalone Testing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user-mode-testing" class="md-nav__link">
-    User mode testing
-  </a>
-  
-    <nav class="md-nav" aria-label="User mode testing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#setting-up" class="md-nav__link">
-    Setting up
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#running-the-tests" class="md-nav__link">
-    Running the tests
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#full-system" class="md-nav__link">
-    Full system
-  </a>
-  
-    <nav class="md-nav" aria-label="Full system">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linux-image" class="md-nav__link">
-    Linux image
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nfs" class="md-nav__link">
-    NFS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#running-the-instance" class="md-nav__link">
-    Running the instance
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#setting-up-the-tests" class="md-nav__link">
-    Setting up the tests
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#running-the-tests_1" class="md-nav__link">
-    Running the tests
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debugging-in-full-system" class="md-nav__link">
-    Debugging in full system
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#general-debugging-tips" class="md-nav__link">
-    General debugging tips
-  </a>
-  
-    <nav class="md-nav" aria-label="General debugging tips">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#single-test" class="md-nav__link">
-    Single test
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#single-group-of-tests" class="md-nav__link">
-    Single group of tests
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2417,7 +2338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../qemu/" class="md-nav__link">
+      <a href="../../testing/qemu/" class="md-nav__link">
         Running QEMU Tests
       </a>
     </li>
@@ -2473,118 +2394,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#standalone-testing" class="md-nav__link">
-    Standalone Testing
+  <a href="#debugging-in-a-single-core-mode" class="md-nav__link">
+    Debugging in a Single-core Mode
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#user-mode-testing" class="md-nav__link">
-    User mode testing
+  <a href="#debugging-in-a-dual-core-smp-mode" class="md-nav__link">
+    Debugging in a Dual-core SMP Mode
   </a>
-  
-    <nav class="md-nav" aria-label="User mode testing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#setting-up" class="md-nav__link">
-    Setting up
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#running-the-tests" class="md-nav__link">
-    Running the tests
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#full-system" class="md-nav__link">
-    Full system
+  <a href="#debugging-in-a-quad-core-smp-mode" class="md-nav__link">
+    Debugging in a Quad-core SMP Mode
   </a>
-  
-    <nav class="md-nav" aria-label="Full system">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linux-image" class="md-nav__link">
-    Linux image
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nfs" class="md-nav__link">
-    NFS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#running-the-instance" class="md-nav__link">
-    Running the instance
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#setting-up-the-tests" class="md-nav__link">
-    Setting up the tests
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#running-the-tests_1" class="md-nav__link">
-    Running the tests
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debugging-in-full-system" class="md-nav__link">
-    Debugging in full system
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#general-debugging-tips" class="md-nav__link">
-    General debugging tips
-  </a>
-  
-    <nav class="md-nav" aria-label="General debugging tips">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#single-test" class="md-nav__link">
-    Single test
+  <a href="#connecting-to-the-particular-device" class="md-nav__link">
+    Connecting to the Particular Device
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#single-group-of-tests" class="md-nav__link">
-    Single group of tests
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    Notes
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2606,146 +2446,88 @@
   
 
 
-<h1 id="running-glibc-tests">Running Glibc Tests<a class="headerlink" href="#running-glibc-tests" title="Permanent link">&para;</a></h1>
-<h2 id="standalone-testing">Standalone Testing<a class="headerlink" href="#standalone-testing" title="Permanent link">&para;</a></h2>
-<p>It might be useful to perform tests without having to build the entire toolchain.</p>
-<p>To perform the tests, it is necessary to build glibc like:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">TOOLCHAIN_SRC</span><span class="o">=</span>/absolute/path/to/parent<span class="w">                  </span><span class="c1"># Path to parent of ARC sources (at least glibc, toolchain and arc-gnu-toolchain)</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">GLIBC_PARENT</span><span class="o">=</span>/new/empty/directory<span class="p">;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$GLIBC_PARENT</span><span class="w">     </span><span class="c1"># We might need to network share this directory, so create a new one</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/glibc<span class="p">;</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>glibc<span class="p">;</span><span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>arc64<span class="w">                                   </span><span class="c1"># Setup the glibc source we want to test</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../<span class="p">;</span><span class="w"> </span>mkdir<span class="w"> </span>glibc_build
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>$<span class="w"> </span>../glibc/configure<span class="w"> </span>--host<span class="o">=</span>arc64-linux-gnu<span class="w"> </span>--prefix<span class="o">=</span>/usr<span class="w">             </span><span class="se">\</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>--disable-werror<span class="w"> </span>--enable-shared<span class="w"> </span>--enable-obsolete-rpc<span class="w">                </span><span class="se">\</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>--with-headers<span class="o">=</span><span class="nv">$TOOLCHAIN_SRC</span>/arc-gnu-toolchain/linux-headers/include<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>--disable-multilib<span class="w"> </span>--libdir<span class="o">=</span>/usr/lib<span class="w"> </span><span class="nv">libc_cv_slibdir</span><span class="o">=</span>/lib<span class="w">             </span><span class="se">\</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nv">libc_cv_rtlddir</span><span class="o">=</span>/lib<span class="w"> </span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-O2 -g3&quot;</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>$<span class="w"> </span>make<span class="w"> </span>-j<span class="w"> </span>&lt;NMB_CORES&gt;<span class="w">                                            </span><span class="c1"># set NMB_CORES to whatever amount of cores you want </span>
+<h1 id="using-metaware-debugger">Using MetaWare Debugger<a class="headerlink" href="#using-metaware-debugger" title="Permanent link">&para;</a></h1>
+<p>MetaWare Debugger may be used for debugging applications on various development
+platforms via JTAG. Both Ashling Opella-XD probe and a simple USB cable for
+connecting to Digilent chip may be used.</p>
+<p>Commands listed below start a GUI version of MetaWare Debugger. Use <code>-cl</code>
+option to run it in a command line mode.</p>
+<h2 id="debugging-in-a-single-core-mode">Debugging in a Single-core Mode<a class="headerlink" href="#debugging-in-a-single-core-mode" title="Permanent link">&para;</a></h2>
+<p>For Ashling Opella-XD:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mdb<span class="w"> </span>-DLL<span class="o">=</span>opxdarc.so<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_frequency</span><span class="o">=</span>12MHz<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_optimise</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>-nooptions<span class="w"> </span>-OK<span class="w"> </span>-memxfersize<span class="o">=</span>0x8000<span class="w"> </span>vmlinux
 </span></code></pre></div>
-<p>There are two ways to run the GLIBC tests for ARC. We can use QEMU
-<a href="https://www.qemu.org/docs/master/user/main.html">usermode</a> or full system emulation.</p>
-<h2 id="user-mode-testing">User mode testing<a class="headerlink" href="#user-mode-testing" title="Permanent link">&para;</a></h2>
-<p>If you are running a linux host, usermode provides faster but possibly less accurate
-testing, since it uses the host kernel instead of a fully simulated one.</p>
-<h3 id="setting-up">Setting up<a class="headerlink" href="#setting-up" title="Permanent link">&para;</a></h3>
-<p>There are a few ways to set this up but the most direct one is to setup <a href="https://www.kernel.org/doc/html/latest/admin-guide/binfmt-misc.html">binfmt</a>.
-Fortunately, QEMU provides a script that sets up binfmt so the launched executables are interpreted by a shell script at <code>/usr/local/qemu-arc64</code>. An example of which is:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>sudo<span class="w"> </span><span class="nv">$QEMU_SOURCE</span>/scripts/qemu-binfmt-conf.sh
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$<span class="w"> </span>sudo<span class="w"> </span>cat<span class="w"> </span>&gt;<span class="w"> </span>/usr/local/bin/qemu-arc64<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="s">#!/bin/bash</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s">${QEMU_BINPATH}/qemu-arc64 -R 4G -L ${TOOLCHAIN_INST}/sysroot -cpu hs6x $@</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="s">EOF</span>
+<p>For Digilent:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mdb<span class="w"> </span>-digilent<span class="w"> </span>vmlinux
 </span></code></pre></div>
-<p>Afterwards, launching an ARC executable will run this script and consequently, QEMU.</p>
-<h3 id="running-the-tests">Running the tests<a class="headerlink" href="#running-the-tests" title="Permanent link">&para;</a></h3>
-<p>Running the actual tests is simple.
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$GLIBC_PARENT</span>/glibc-build
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$<span class="w"> </span>make<span class="w"> </span>tests
-</span></code></pre></div></p>
-<p>The results are then stored in <code>*test-result</code> files.
-See some debugging tips at the end of this wiki entry</p>
-<h2 id="full-system">Full system<a class="headerlink" href="#full-system" title="Permanent link">&para;</a></h2>
-<p>To run the more accurate but `heavier` full system tests, there are a few intermediary steps required.</p>
-<h3 id="linux-image">Linux image<a class="headerlink" href="#linux-image" title="Permanent link">&para;</a></h3>
-<p>We will need to generate local ssh keys (<code>ssh-keygen -t ed25519</code>)
-Then, configure a linux image.
-The configurations required are:</p>
-<ol>
-<li>eth0 configured via dhcp</li>
-<li>gdbserver, ssh and ftpd</li>
-<li>User/Network namespace support</li>
-<li>An overlay file system such that the generated public key is recognized (present inside '~/.ssh/authorized_keys')</li>
-</ol>
-<h3 id="nfs">NFS<a class="headerlink" href="#nfs" title="Permanent link">&para;</a></h3>
-<p>Second, we need to be able to share our build and source directories with the qemu instance that will be running the aforementioned Linux image.</p>
-<p>There are many ways to do this, but the one contemplated here is NFS. Install and enable it for your respective platform and set up $GLIBC_PARENT as a shared directory.</p>
-<h3 id="running-the-instance">Running the instance<a class="headerlink" href="#running-the-instance" title="Permanent link">&para;</a></h3>
-<p>In a separate terminal, we run the QEMU instance that must stay alive for the entirety of the testing.</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>qemu-system-arc64<span class="w"> </span>-M<span class="w"> </span>virt<span class="w"> </span>-cpu<span class="w"> </span>hs6x<span class="w"> </span>-nographic<span class="w"> </span>-no-reboot<span class="w"> </span>-global<span class="w"> </span>cpu.freq_hz<span class="o">=</span><span class="m">50000000</span><span class="w"> </span>-netdev<span class="w"> </span>user,id<span class="o">=</span>net0,hostfwd<span class="o">=</span>tcp::2221-:21,hostfwd<span class="o">=</span>tcp::2222-:22,hostfwd<span class="o">=</span>tcp::2223-:23,hostfwd<span class="o">=</span>tcp::6175-:6175<span class="w"> </span>-device<span class="w"> </span>virtio-net-device,netdev<span class="o">=</span>net0<span class="w"> </span>-kernel<span class="w"> </span><span class="nv">$PATH_TO_LOADER</span>/glicready_loader
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Linux<span class="w"> </span>version<span class="w"> </span><span class="m">5</span>.16.0-711640-g19e84a74062a<span class="w"> </span><span class="o">(</span>YOUR_USER@YOUR_MACHINE<span class="o">)</span><span class="w"> </span><span class="o">(</span>arc64-linux-gnu-gcc<span class="w"> </span><span class="o">(</span>ARCv3<span class="w"> </span>ARC64<span class="w"> </span>GNU/Linux<span class="w"> </span>f2bc3b4c762<span class="o">)</span><span class="w"> </span><span class="m">12</span>.2.1<span class="w"> </span><span class="m">20220829</span>,<span class="w"> </span>GNU<span class="w"> </span>ld<span class="w"> </span><span class="o">(</span>GNU<span class="w"> </span>Binutils<span class="o">)</span><span class="w"> </span><span class="m">2</span>.40.50.20230314<span class="o">)</span><span class="w"> </span><span class="c1">#11 PREEMPT Tue May 9 10:32:00 WEST 2054</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Memory<span class="w"> </span>@<span class="w"> </span><span class="m">80000000</span><span class="w"> </span><span class="o">[</span>1024M<span class="o">]</span><span class="w"> </span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Memory<span class="w"> </span>@<span class="w"> </span><span class="m">100000000</span><span class="w"> </span><span class="o">[</span>1024M<span class="o">]</span><span class="w"> </span>Not<span class="w"> </span>used
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>OF:<span class="w"> </span>fdt:<span class="w"> </span>Machine<span class="w"> </span>model:<span class="w"> </span>snps,zebu_hs
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>earlycon:<span class="w"> </span>uart8250<span class="w"> </span>at<span class="w"> </span>MMIO32<span class="w"> </span>0x00000000f0000000<span class="w"> </span><span class="o">(</span>options<span class="w"> </span><span class="s1">&#39;115200n8&#39;</span><span class="o">)</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>printk:<span class="w"> </span>bootconsole<span class="w"> </span><span class="o">[</span>uart8250<span class="o">]</span><span class="w"> </span>enabled
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>...
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>Welcome<span class="w"> </span>to<span class="w"> </span>Buildroot
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>buildroot<span class="w"> </span>login:<span class="w"> </span>root
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1"># # Mount the network folders</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1"># export SHARED_DIR=/same/absolute/path/as/for/GLIBC_PARENT</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1"># mkdir -p $SHARED_DIR</span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c1"># mount -t nfs -o nolock 10.0.2.2:$SHARED_DIR $SHARED_DIR</span>
+<h2 id="debugging-in-a-dual-core-smp-mode">Debugging in a Dual-core SMP Mode<a class="headerlink" href="#debugging-in-a-dual-core-smp-mode" title="Permanent link">&para;</a></h2>
+<p>For Ashling Opella-XD:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">1</span><span class="w"> </span>-psetname<span class="o">=</span>core0<span class="w"> </span>-DLL<span class="o">=</span>opxdarc.so<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_frequency</span><span class="o">=</span>12MHz<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_optimise</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>-memxfersize<span class="o">=</span>0x8000<span class="w"> </span>vmlinux
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">2</span><span class="w"> </span>-psetname<span class="o">=</span>core1<span class="w"> </span>-DLL<span class="o">=</span>opxdarc.so<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_frequency</span><span class="o">=</span>12MHz<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_optimise</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>vmlinux
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>mdb<span class="w"> </span>-multifiles<span class="o">=</span>core0,core1<span class="w"> </span>-OK
 </span></code></pre></div>
-<p>We can test the connection with:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>-p<span class="w"> </span><span class="m">2222</span><span class="w"> </span>root@127.0.0.1
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>The<span class="w"> </span>authenticity<span class="w"> </span>of<span class="w"> </span>host<span class="w"> </span><span class="s1">&#39;[127.0.0.1]:2222 ([127.0.0.1]:2222)&#39;</span><span class="w"> </span>cant<span class="w"> </span>be<span class="w"> </span>established.
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>ED25519<span class="w"> </span>key<span class="w"> </span>fingerprint<span class="w"> </span>is<span class="w"> </span>SHA256:jbqautMkwc2FSBo4c89RKpTDjaSDlmQ3dGk+TrWOCjo.
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>This<span class="w"> </span>key<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>known<span class="w"> </span>by<span class="w"> </span>any<span class="w"> </span>other<span class="w"> </span>names.
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Are<span class="w"> </span>you<span class="w"> </span>sure<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span><span class="k">continue</span><span class="w"> </span>connecting<span class="w"> </span><span class="o">(</span>yes/no/<span class="o">[</span>fingerprint<span class="o">])</span>?<span class="w"> </span>yes
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>Warning:<span class="w"> </span>Permanently<span class="w"> </span>added<span class="w"> </span><span class="s1">&#39;[127.0.0.1]:2222&#39;</span><span class="w"> </span><span class="o">(</span>ED25519<span class="o">)</span><span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>known<span class="w"> </span>hosts.
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># exit</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>Connection<span class="w"> </span>to<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>closed.
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>$
+<p>For Digilent:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">1</span><span class="w"> </span>-psetname<span class="o">=</span>core0<span class="w"> </span>-digilent<span class="w"> </span>vmlinux
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">2</span><span class="w"> </span>-psetname<span class="o">=</span>core1<span class="w"> </span>-digilent<span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>vmlinux
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>mdb<span class="w"> </span>-multifiles<span class="o">=</span>core0,core1<span class="w"> </span>-OK
 </span></code></pre></div>
-<h3 id="setting-up-the-tests">Setting up the tests<a class="headerlink" href="#setting-up-the-tests" title="Permanent link">&para;</a></h3>
-<p>For the tests to automatically run without entering the password for each one,
-we must setup an ssh host with the keys shared with the linux image</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>cat<span class="w"> </span>~/.ssh/config
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>...
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>HOST<span class="w"> </span>arcglibc
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span>HostName<span class="w"> </span><span class="m">127</span>.0.0.1
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span>User<span class="w"> </span>root
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span>Port<span class="w"> </span><span class="m">2222</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span>IdentityFile<span class="w"> </span>~/.ssh/id_ed25519
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span>HostKeyAlgorithms<span class="w"> </span>ssh-ed25519
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>...
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>$
+<h2 id="debugging-in-a-quad-core-smp-mode">Debugging in a Quad-core SMP Mode<a class="headerlink" href="#debugging-in-a-quad-core-smp-mode" title="Permanent link">&para;</a></h2>
+<p>For Ashling Opella-XD:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">1</span><span class="w"> </span>-psetname<span class="o">=</span>core0<span class="w"> </span>-DLL<span class="o">=</span>opxdarc.so<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_frequency</span><span class="o">=</span>12MHz<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_optimise</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>-memxfersize<span class="o">=</span>0x8000<span class="w"> </span>vmlinux
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">2</span><span class="w"> </span>-psetname<span class="o">=</span>core1<span class="w"> </span>-DLL<span class="o">=</span>opxdarc.so<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_frequency</span><span class="o">=</span>12MHz<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_optimise</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>vmlinux
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">3</span><span class="w"> </span>-psetname<span class="o">=</span>core2<span class="w"> </span>-DLL<span class="o">=</span>opxdarc.so<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_frequency</span><span class="o">=</span>12MHz<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_optimise</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>vmlinux
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">4</span><span class="w"> </span>-psetname<span class="o">=</span>core3<span class="w"> </span>-DLL<span class="o">=</span>opxdarc.so<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_frequency</span><span class="o">=</span>12MHz<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_optimise</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>vmlinux
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>mdb<span class="w"> </span>-multifiles<span class="o">=</span>core0,core1,core2,core3<span class="w"> </span>-OK
 </span></code></pre></div>
-<h3 id="running-the-tests_1">Running the tests<a class="headerlink" href="#running-the-tests_1" title="Permanent link">&para;</a></h3>
-<p>With the QEMU instance running, now we can run the actual tests.</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$GLIBC_PARENT</span>/glibc-build
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span>make<span class="w"> </span>test-wrapper<span class="o">=</span><span class="s2">&quot;/absolute/path/to/shared/glibc/scripts/cross-test-ssh.sh --timeoutfactor 30 arcglibc&quot;</span><span class="w"> </span>tests
+<p>For Digilent:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">1</span><span class="w"> </span>-psetname<span class="o">=</span>core0<span class="w"> </span>-digilent<span class="w"> </span>vmlinux
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">2</span><span class="w"> </span>-psetname<span class="o">=</span>core1<span class="w"> </span>-digilent<span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>vmlinux
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">3</span><span class="w"> </span>-psetname<span class="o">=</span>core2<span class="w"> </span>-digilent<span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>vmlinux
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">4</span><span class="w"> </span>-psetname<span class="o">=</span>core3<span class="w"> </span>-digilent<span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>vmlinux
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>mdb<span class="w"> </span>-multifiles<span class="o">=</span>core0,core1,core2,core3<span class="w"> </span>-OK
 </span></code></pre></div>
-<p>The results are then stored in <code>*test-result</code> files.</p>
-<h3 id="debugging-in-full-system">Debugging in full system<a class="headerlink" href="#debugging-in-full-system" title="Permanent link">&para;</a></h3>
-<p>In full system it is not a good idea to use QEMUs' gdbstub unless we want to debug the whole kernel.
-As such we must use the gdbserver packaged in with the linux image:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># gdbserver 127.0.0.1:6175 $SHARED_DIR/glibc-build/math/test-float-tgamma</span>
+<h2 id="connecting-to-the-particular-device">Connecting to the Particular Device<a class="headerlink" href="#connecting-to-the-particular-device" title="Permanent link">&para;</a></h2>
+<p>You can choose a particular device connected to the host. It's possible when
+it's connected through Digilent chip.</p>
+<p>Firstly, obtain a name of the device you want to connect to using <code>djtgcfg</code>
+utility from <a href="../digilent/">Digilent Adept utilities</a>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$ djtgcfg enum
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Found 1 device(s)
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Device: HSDK-4xD
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    Device Transport Type: 00020001 (USB)
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    Product Name:          DesignWare ARC SDP
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    User Name:             HSDK-4xD
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    Serial Number:         251642000213
 </span></code></pre></div>
-<p>And then we simply connect GDB</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>arc64-elf-gdb<span class="w"> </span><span class="nv">$GLIBC_PARENT</span>/glibc-build/math/test-float-tgamma
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>target<span class="w"> </span>remote:6175
+<p>Set <code>DEVICE</code> variable and use it for debugging a quad-core HS Development Kit
+target:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">DEVICE</span><span class="o">=</span>HSDK-4xD
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>mdb64<span class="w"> </span>-pset<span class="o">=</span><span class="m">1</span><span class="w"> </span>-cl<span class="w"> </span>-psetname<span class="o">=</span>core0<span class="w"> </span>-digilent<span class="w"> </span>-prop<span class="o">=</span><span class="nv">dig_device</span><span class="o">=</span><span class="nv">$DEVICE</span><span class="w"> </span>vmlinux
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>mdb64<span class="w"> </span>-pset<span class="o">=</span><span class="m">2</span><span class="w"> </span>-cl<span class="w"> </span>-psetname<span class="o">=</span>core1<span class="w"> </span>-digilent<span class="w"> </span>-prop<span class="o">=</span><span class="nv">dig_device</span><span class="o">=</span><span class="nv">$DEVICE</span><span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>vmlinux
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>mdb64<span class="w"> </span>-pset<span class="o">=</span><span class="m">3</span><span class="w"> </span>-cl<span class="w"> </span>-psetname<span class="o">=</span>core2<span class="w"> </span>-digilent<span class="w"> </span>-prop<span class="o">=</span><span class="nv">dig_device</span><span class="o">=</span><span class="nv">$DEVICE</span><span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>vmlinux
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>mdb64<span class="w"> </span>-pset<span class="o">=</span><span class="m">4</span><span class="w"> </span>-cl<span class="w"> </span>-psetname<span class="o">=</span>core3<span class="w"> </span>-digilent<span class="w"> </span>-prop<span class="o">=</span><span class="nv">dig_device</span><span class="o">=</span><span class="nv">$DEVICE</span><span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>vmlinux
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>mdb64<span class="w"> </span>-cl<span class="w"> </span>-prop<span class="o">=</span><span class="nv">dig_device</span><span class="o">=</span><span class="nv">$DEVICE</span><span class="w"> </span>-multifiles<span class="o">=</span>core0,core1,core2,core3<span class="w"> </span>-OK
 </span></code></pre></div>
-<p>If there is any problem running the image, <code>Ctrl+A X</code> can be used to kill QEMU
-After an instance has run, we might get the following error which will crash
-the tests. It is best to run the <code>ssh-keygen</code> command below after stopping QEMU to prevent it.</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>ssh<span class="w"> </span>-p<span class="w"> </span><span class="m">2222</span><span class="w"> </span>root@127.0.0.1
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<span class="w">                        </span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>@<span class="w">    </span>WARNING:<span class="w"> </span>REMOTE<span class="w"> </span>HOST<span class="w"> </span>IDENTIFICATION<span class="w"> </span>HAS<span class="w"> </span>CHANGED!<span class="w">     </span>@
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>IT<span class="w"> </span>IS<span class="w"> </span>POSSIBLE<span class="w"> </span>THAT<span class="w"> </span>SOMEONE<span class="w"> </span>IS<span class="w"> </span>DOING<span class="w"> </span>SOMETHING<span class="w"> </span>NASTY!
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>Someone<span class="w"> </span>could<span class="w"> </span>be<span class="w"> </span>eavesdropping<span class="w"> </span>on<span class="w"> </span>you<span class="w"> </span>right<span class="w"> </span>now<span class="w"> </span><span class="o">(</span>man-in-the-middle<span class="w"> </span>attack<span class="o">)</span>!
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>It<span class="w"> </span>is<span class="w"> </span>also<span class="w"> </span>possible<span class="w"> </span>that<span class="w"> </span>a<span class="w"> </span>host<span class="w"> </span>key<span class="w"> </span>has<span class="w"> </span>just<span class="w"> </span>been<span class="w"> </span>changed.
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>The<span class="w"> </span>fingerprint<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>ED25519<span class="w"> </span>key<span class="w"> </span>sent<span class="w"> </span>by<span class="w"> </span>the<span class="w"> </span>remote<span class="w"> </span>host<span class="w"> </span>is
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>SHA256:jbqautMkwc2FSBo4c89RKpTDjaSDlmQ3dGk+TrWOCjo.
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>Please<span class="w"> </span>contact<span class="w"> </span>your<span class="w"> </span>system<span class="w"> </span>administrator.
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>Add<span class="w"> </span>correct<span class="w"> </span>host<span class="w"> </span>key<span class="w"> </span><span class="k">in</span><span class="w"> </span>/home/YOUR_USER/.ssh/known_hosts<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>rid<span class="w"> </span>of<span class="w"> </span>this<span class="w"> </span>message.
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>Offending<span class="w"> </span>ED25519<span class="w"> </span>key<span class="w"> </span><span class="k">in</span><span class="w"> </span>/home/YOUR_USER/.ssh/known_hosts:16
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>Host<span class="w"> </span>key<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="o">[</span><span class="m">127</span>.0.0.1<span class="o">]</span>:2222<span class="w"> </span>has<span class="w"> </span>changed<span class="w"> </span>and<span class="w"> </span>you<span class="w"> </span>have<span class="w"> </span>requested<span class="w"> </span>strict<span class="w"> </span>checking.
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>Host<span class="w"> </span>key<span class="w"> </span>verification<span class="w"> </span>failed.
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>$<span class="w"> </span>ssh-keygen<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;/home/YOUR_USER/.ssh/known_hosts&quot;</span><span class="w"> </span>-R<span class="w"> </span><span class="s2">&quot;[127.0.0.1]:2222&quot;</span>
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="c1"># Host [127.0.0.1]:2222 found: line 160</span>
-</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>/home/YOUR_USER/.ssh/known_hosts<span class="w"> </span>updated.
-</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>Original<span class="w"> </span>contents<span class="w"> </span>retained<span class="w"> </span>as<span class="w"> </span>/home/YOUR_USER/.ssh/known_hosts.old
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>JTAG frequency should be at least 2 times lower than ARC core frequency.
+  For 50MHz FPGA <code>-jtag_frequency=12MHz</code> is proven to work, while higher values
+  may trigger problems like inconsistent memory values on elf load etc.</li>
+<li><code>-memxfersize=0x8000</code> instructs debugger to send 32k blocks to Opella-XD.
+  This significantly increases speed of elf download to target via JTAG.</li>
+<li><code>-prop=jtag_optimise=1</code> turns off checking of the JTAG status registers by
+  Opella-XD between successive JTAG read and write operations. This significantly
+  increases speed of elf download to target via JTAG.</li>
+<li><code>-prop=download=2</code> is required to let MDB know that this core will re-use
+  elf loaded for other core</li>
+<li>
+<p>To escape specification of full path to <code>opxdarc.so</code> create a symlink to the
+  <code>.so</code> in <code>MW_HOME/MetaWare/arc/bin</code> like this:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">cd</span><span class="w"> </span>__path_to_opellaxdforarc_installation__
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$PWD</span>/opxdarc.so<span class="w"> </span><span class="nv">$MW_HOME</span>/MetaWare/arc/bin/opxdarc.so
 </span></code></pre></div>
-<p>See more debugging tips below</p>
-<h2 id="general-debugging-tips">General debugging tips<a class="headerlink" href="#general-debugging-tips" title="Permanent link">&para;</a></h2>
-<h3 id="single-test">Single test<a class="headerlink" href="#single-test" title="Permanent link">&para;</a></h3>
-<p>You can run a single test by replacing 'tests' with the test <subgroup>/<name>, i.e. 'test t=math/test-double-trunc'</p>
-<h3 id="single-group-of-tests">Single group of tests<a class="headerlink" href="#single-group-of-tests" title="Permanent link">&para;</a></h3>
-<p>You can run a single group of tests by adding 'subdirs=<subgroup>'' after 'tests', i.e.  'tests subdirs=math'</p>
+</li>
+</ul>
 
 
 
