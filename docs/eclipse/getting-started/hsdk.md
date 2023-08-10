@@ -14,7 +14,7 @@ Select **File** → **New** → **Project..** and choose **C Project**.
 A list of ARC projects will appear. Choose any **ARC HS Development Kit Empty Project**
 from the **ARC EM Starter Kit Projects** group:
 
-![HS Development Kit Projects](./images/hsdk-projects.png){ width="700" }
+![HS Development Kit Projects](./images/hsdk-projects.png)
 
 An empty project will be created. Add a new C source file with name `main.c`
 in `src` directory in **Project Explorer**:
@@ -52,12 +52,12 @@ Do right click on projects's name in **Project Explorer** and choose
 **ARC C/C++ application** and choose **New Configuration**. Here is a main window of
 the debug configuration:
 
-![Debug Configuration - Main](./images/hsdk-debug-conf-main.png){ width="700" }
+![Debug Configuration - Main](./images/hsdk-debug-conf-main.png)
 
 Ensure that a correct project and binary are selected. Navigate to **Main** tab
 and **Gdbserver Settings** inner tab:
 
-![Debug Configuration - GDB](./images/hsdk-debug-conf-gdb.png){ width="700" }
+![Debug Configuration - GDB](./images/hsdk-debug-conf-gdb.png)
 
 Choose **JTAG via OpenOCD** as ARC GDB Server and **HS Development Kit** as
 a development system (use a corresponding one for your case). Also,

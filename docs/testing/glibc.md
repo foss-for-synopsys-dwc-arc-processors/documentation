@@ -1,11 +1,6 @@
 # Running Glibc Tests
 
-Currently our toolchain Makefiles don't support automated testing,
-but this may change in the near future. Look
-[here](https://github.com/foss-for-synopsys-dwc-arc-processors/arc-gnu-toolchain#testing-gccc-binutils-and-newlib)
-for possible support.
-
-## Standalone testing
+## Standalone Testing
 
 It might be useful to perform tests without having to build the entire toolchain.
 

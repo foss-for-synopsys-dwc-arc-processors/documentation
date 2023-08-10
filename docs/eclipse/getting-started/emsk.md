@@ -14,7 +14,7 @@ A list of ARC projects will appear. Choose any ARC EM Starter Kit
 "Hello World" project from the **ARC EM Starter Kit Projects** group.
 Suppose, EM11D project is chosen.
 
-![ARC EM Starter Kit Projects](./images/emsk-projects.png){ width="700" }
+![ARC EM Starter Kit Projects](./images/emsk-projects.png)
 
 After creating the project, a simple "Hello, World!" program will be created:
 
@@ -54,12 +54,12 @@ Do right click on projects's name in **Project Explorer** and choose
 **ARC C/C++ application** and choose **New Configuration**. Here is a main window of
 the debug configuration:
 
-![Debug Configuration - Main](./images/emsk-debug-conf-main.png){ width="700" }
+![Debug Configuration - Main](./images/emsk-debug-conf-main.png)
 
 Ensure that a correct project and binary are selected. Navigate to **Main** tab
 and **Gdbserver Settings** inner tab:
 
-![Debug Configuration - GDB](./images/emsk-debug-conf-gdb.png){ width="700" }
+![Debug Configuration - GDB](./images/emsk-debug-conf-gdb.png)
 
 Choose **JTAG via OpenOCD** as ARC GDB Server and **EM Starter Kit v2.2** as
 a development system (use a corresponding one for your case). Then click on
@@ -71,12 +71,12 @@ Navigate to **Terminal** inner tab of **Main** tab and select a COM port for
 the board. Eclipse automatically detects all available COM ports. In my case
 it's `COM7`.
 
-![Debug Configuration - Terminal](./images/emsk-debug-conf-terminal.png){ width="700" }
+![Debug Configuration - Terminal](./images/emsk-debug-conf-terminal.png)
 
 On Windows you can find the exact number in **Device Manager** (it corresponds
 to **USB Serial Port** device):
 
-![Debug Configuration - Port](./images/emsk-debug-conf-port.png){ width="700" }
+![Debug Configuration - Port](./images/emsk-debug-conf-port.png)
 
 On Linux a serial device for EM Starter Kit is usually `/dev/ttyUSB1`.
 

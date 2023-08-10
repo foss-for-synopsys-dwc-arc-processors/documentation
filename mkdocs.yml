@@ -75,7 +75,8 @@ nav:
       - linux/simulators/qemu.md
     - Running on HS Development Kit:
       - Building and running Linux: linux/hsdk/build.md
-      - Building U-Boot: linux/hsdk/uboot.md
+      - Building U-Boot: linux/hsdk/uboot-build.md
+      - U-Boot command reference: linux/hsdk/uboot-commands.md
     - Running on AXS SDP:
       - Building and running Linux: linux/axs/build.md
       - Flashing U-Boot: linux/axs/uboot.md
