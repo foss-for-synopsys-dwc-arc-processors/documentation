@@ -89,6 +89,7 @@ nav:
     - Using Boards:
       - platforms/get-openocd.md
       - platforms/use-openocd.md
+      - platforms/mdb.md
       - platforms/winusb.md
       - platforms/digilent.md
       - platforms/reset.md
