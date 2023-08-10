@@ -347,9 +347,7 @@
   
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="GNU Toolchain for ARC User Manual" class="md-nav__button md-logo" aria-label="GNU Toolchain for ARC User Manual" data-md-component="logo">
       
@@ -2575,6 +2573,298 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-linux-host" class="md-nav__link">
+    Preparing Linux Host
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparing Linux Host">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes-for-centos-7" class="md-nav__link">
+    Notes for CentOS 7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-tools-and-libraries" class="md-nav__link">
+    Preparing Tools and Libraries
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparing Tools and Libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-and-installing-elfutils" class="md-nav__link">
+    Building and Installing elfutils
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-and-installing-pahole" class="md-nav__link">
+    Building and Installing pahole
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-and-installing-bpftool" class="md-nav__link">
+    Building and Installing bpftool
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-building-environment" class="md-nav__link">
+    Preparing Building Environment
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparing Building Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cloning-arc-ebpf-testbench" class="md-nav__link">
+    Cloning ARC eBPF Testbench
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparing-buildroot" class="md-nav__link">
+    Preparing Buildroot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparing-linux-sources" class="md-nav__link">
+    Preparing Linux Sources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-ssh-keys-for-users-authentication" class="md-nav__link">
+    Installing SSH Keys for User's Authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-ssh-keys-for-hosts-authentication-host-keys" class="md-nav__link">
+    Install SSH Keys for Host's Authentication (Host Keys)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-images" class="md-nav__link">
+    Building Images
+  </a>
+  
+    <nav class="md-nav" aria-label="Building Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-rootfscpio" class="md-nav__link">
+    Building rootfs.cpio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-vmlinux" class="md-nav__link">
+    Building vmlinux
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workarounds-for-well-known-pitfalls" class="md-nav__link">
+    Workarounds for Well Known Pitfalls
+  </a>
+  
+    <nav class="md-nav" aria-label="Workarounds for Well Known Pitfalls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#errors-while-building-kernels-ebpf-files" class="md-nav__link">
+    Errors While Building Kernel's eBPF Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workaround-for-complex-float-error" class="md-nav__link">
+    Workaround for complex float error
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-linux-image-using-qemu" class="md-nav__link">
+    Running Linux Image Using QEMU
+  </a>
+  
+    <nav class="md-nav" aria-label="Running Linux Image Using QEMU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-linux-using-user-level-network-interface" class="md-nav__link">
+    Running Linux Using User Level Network Interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-linux-using-tuntap-network-interface" class="md-nav__link">
+    Running Linux Using TUN/TAP Network Interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-linux" class="md-nav__link">
+    Configuring Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-kernels-basic-ebpf-tests" class="md-nav__link">
+    Running Kernel's Basic eBPF Tests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-and-running-ebpf-programs" class="md-nav__link">
+    Building and Running eBPF Programs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-nfs-for-building-ebpf-programs-right-on-the-target" class="md-nav__link">
+    Using NFS for Building eBPF Programs Right on the Target
+  </a>
+  
+    <nav class="md-nav" aria-label="Using NFS for Building eBPF Programs Right on the Target">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuring-nfs-in-centos-7-or-fedora" class="md-nav__link">
+    Configuring NFS in CentOS 7 or Fedora
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-nfs-in-ubuntu-1804" class="md-nav__link">
+    Configuring NFS in Ubuntu 18.04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-etcexports" class="md-nav__link">
+    Configuring /etc/exports
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mounting-nfs-directory-inside-the-guest" class="md-nav__link">
+    Mounting NFS Directory Inside the Guest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparing-tools" class="md-nav__link">
+    Preparing Tools
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-a-ebpf-application" class="md-nav__link">
+    Building a eBPF Application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           
             <div class="md-content" data-md-component="content">
@@ -3098,7 +3388,7 @@ testbench) and copy headers to the sysroot:</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "toc.integrate", "navigation.sections", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.sections", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
