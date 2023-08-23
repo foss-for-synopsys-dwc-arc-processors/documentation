@@ -3,7 +3,7 @@
 ## Running Applications
 
 * [Building Baremetal Applications and Debugging on QEMU](../baremetal/simulators/qemu.md)
-* [Building Linux and Running on QEMU](https://github.com/foss-for-synopsys-dwc-arc-processors/linux/wiki/Running-Linux-on-QEMU)
+* [Building Linux and Running on QEMU](../linux/simulators/qemu.md)
 
 ## Building QEMU
 
@@ -126,7 +126,7 @@ excp_info(uint32_t address, const char *name) "[IRQ] at 0x08, Exception=%s"
 Firstly, build QEMU with the `--enable-trace-backends=simple` configure parameter. Then
 Create a file with the events you want to trace. For example, here is such file with name `events.trc`:
 
-```
+```text
 mmu_command
 excp_info
 ```
@@ -139,6 +139,6 @@ $ qemu-system-arc --trace events=events.trc ...
 
 Pretty-print the binary trace file (override `<pid>` with QEMU process id for you session):
 
-```
+```text
 $ <QEMU-source-tree-path>/scripts/simpletrace.py <QEMU-source-tree-path>/target/arc/trace-events trace-<pid>
 ```

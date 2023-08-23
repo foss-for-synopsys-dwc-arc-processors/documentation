@@ -1,15 +1,20 @@
 # Building Applications and Debugging on QEMU
 
+!!! info
+
+    Refer to the main [QEMU](../../simulators/qemu.md) article for information
+    on installing QEMU.
+
 ## Building and Debugging Applications
 
 QEMU supports running and debugging applications for ARC HS3x/HS4x, HS5x and HS6x families. Here is a
 table of tools and options for a particular family:
 
-| CPU family | Toolchain | `-mcpu=` | QEMU binary | ARC-specific QEMU options |
-| --- | --- | --- | --- | --- |
-| ARC HS3x/HS4x | `arc-elf32-gcc` | `-mcpu=archs` | `qemu-system-arc` | `-M arc-sim -cpu archs` |
-| ARC HS5x | `arc64-elf-gcc` | `-mcpu=hs5x` | `qemu-system-arc` | `-M arc-sim -cpu hs5x` |
-| ARC HS6x | `arc64-elf-gcc` | `-mcpu=hs6x` | `qemu-system-arc64` | `-M arc-sim -cpu hs6x` |
+| CPU family    | Toolchain       | `-mcpu=`      | QEMU binary         | ARC-specific QEMU options |
+|---------------|-----------------|---------------|---------------------|---------------------------|
+| ARC HS3x/HS4x | `arc-elf32-gcc` | `-mcpu=archs` | `qemu-system-arc`   | `-M arc-sim -cpu archs`   |
+| ARC HS5x      | `arc64-elf-gcc` | `-mcpu=hs5x`  | `qemu-system-arc`   | `-M arc-sim -cpu hs5x`    |
+| ARC HS6x      | `arc64-elf-gcc` | `-mcpu=hs6x`  | `qemu-system-arc64` | `-M arc-sim -cpu hs6x`    |
 
 Suppose that `main.c` contains an application to be debugged on QEMU for ARC HS3x/4x:
 
@@ -22,13 +27,13 @@ int main()
 
 Then build it (we use `-specs=nosys.specs` if input/output operations are not needed):
 
-```bash
+```shell
 arc-elf32-gcc -mcpu=archs -specs=nosys.specs -g main.c -o main.elf
 ```
 
 Start a GDB server in port 1234 (this is the default port, so we could use the alias `-s` instead of `-gdb tcp::1234`):
 
-```bash
+```shell
 qemu-system-arc -M arc-sim -cpu archs -monitor none -display none -nographic -no-reboot \
                 -gdb tcp::1234 -S -kernel main.elf
 ```
@@ -67,7 +72,7 @@ Breakpoint 1, main () at main.c:3
 If known ports are busy then you can connect to the GDB server using a socket.
 Expose GDB server through socket instead of port
 
-```bash
+```shell
 qemu-system-arc -M arc-sim -cpu archs -monitor none -display none -nographic -no-reboot \
                 -chardev socket,path=/tmp/gdb-socket,server=on,wait=off,id=gdb0 \
                 -gdb chardev:gdb0 -S -kernel main.elf
@@ -140,7 +145,7 @@ int _write (int handle, const char *buf, unsigned int count)
 
 It's a slightly modified `_write` from `libqemu.a` for [Newlib](https://github.com/foss-for-synopsys-dwc-arc-processors/newlib/blob/arc-2022.09/libgloss/arc/qemu-write.c). Save it as `write.c` file and compile it along with `main.c`:
 
-```bash
+```shell
 # For ARC HS3x/HS4x
 ccac -av2hs -Hhostlib= main.c write.c -o main.elf
 
@@ -153,7 +158,7 @@ ccac -arc64 -Hhostlib= main.c write.c -o main.elf
 
 Run it using QEMU:
 
-```bash
+```shell
 # For ARC HS3x/HS4x
 qemu-system-arc -M arc-sim -cpu archs -monitor none -display none -nographic \
                 -no-reboot -serial stdio -kernel main.elf

@@ -1,5 +1,10 @@
 # Running Linux on QEMU
 
+!!! info
+
+    Refer to the main [QEMU](../../simulators/qemu.md) article for information
+    on installing QEMU.
+
 ## Preface
 
 It's possible to run on QEMU the same Linux images as for nSIM/HAPS. A process of building of Linux
