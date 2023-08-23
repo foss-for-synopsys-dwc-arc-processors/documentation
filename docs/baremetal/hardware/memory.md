@@ -7,7 +7,7 @@ and defines particular symbols which may be referenced by an application. Linker
 basically way to select one of the predetermined linker scripts of the GNU linker.
 A linker script for a default linker emulation for ARCv2 may be observed this way:
 
-```
+```text
 $ arc-elf32-ld --verbose
 GNU ld (ARCompact/ARCv2 ISA elf32 toolchain - build 1360) 2.40.50.20230314
   Supported emulations:
@@ -57,7 +57,7 @@ with CCM regions, peripherals' region, etc.
 Default linker emulation also puts interrupt vector table (`.ivt` section) between code and data sections and doesn't
 align `.ivt` properly (`.ivt` must be 1KiB-aligned for ARC processors). Here is an example:
 
-```
+```text
 $ arc-elf32-gcc -mcpu=em4_dmips main.c -o main.elf
 $ arc-elf32-objdump -h main.elf
 
@@ -91,25 +91,25 @@ If you use `arcv2elfx` linker emulation, then linker searches for `memory.x` fil
 a custom memory map. It is searched in the current working directory and in directories listed via
 `-L` option.
 
-### EM Starter Kit
+### EM Software Development Platform
 
-Here is an example of `memory.x` for EM11D core in EM Starter Kit v2.3:
+Here is an example of `memory.x` for EM Software Development Platform:
 
-```
+```text
 MEMORY
 {
-    ICCM : ORIGIN = 0x00000000, LENGTH = 64K
-    DRAM : ORIGIN = 0x10000000, LENGTH = 128M
-    DCCM : ORIGIN = 0x80000000, LENGTH = 64K
+    ICCM0 : ORIGIN = 0x10000000, LENGTH = 128K
+    PSRAM : ORIGIN = 0x40000000, LENGTH =  16M
+    DCCM0 : ORIGIN = 0x80000000, LENGTH = 128K
 }
 
-REGION_ALIAS("startup", ICCM)
-REGION_ALIAS("text", ICCM)
-REGION_ALIAS("data", DRAM)
-REGION_ALIAS("sdata", DRAM)
+REGION_ALIAS("startup", ICCM0)
+REGION_ALIAS("text", ICCM0)
+REGION_ALIAS("data", DCCM0)
+REGION_ALIAS("sdata", DCCM0)
 
-PROVIDE (__stack_top = (0x17FFFFFF & -4) );
-PROVIDE (__end_heap = (0x17FFFFFF) );
+PROVIDE (__stack_top = (0x8001ffff & -4));
+PROVIDE (__end_heap =  (0x8001ffff));
 ```
 
 `MEMORY` section specifies platform's memory regions: base addresses and lengths.
@@ -117,7 +117,9 @@ You can use arbitrary names for these regions.
 `REGION_ALIAS` commands translate platform's regions to standard region names
 expected by the linker emulation. There are 4 such standard regions:
 
-* `startup` - interrupt vector table and initialization code. By default it's mapped to `0x0` address and if you map `startup` to a different one, then you also need to pass this address to the linker using `--defsym=ivtbase_addr=<...>` option or to GCC itself using `-Wl,--defsym=ivtbase_addr=<...>` option.
+* `startup` - interrupt vector table and initialization code. By default it's mapped to `0x0`
+  address and if you map `startup` to a different one, then you also need to pass this address
+  to the linker using `--defsym=ivtbase_addr=<...>` option or to GCC itself using `-Wl,--defsym=ivtbase_addr=<...>` option.
 * `text` - other code sections.
 * `data` - data sections.
 * `sdata` - small data sections.
@@ -129,20 +131,23 @@ Also, the example provides these symbols (both of them may be omitted and defaul
 * `__end_heap` points to the end of the heap. Heap starts at the end of data sections
   and grows upward to `__end_heap`.
 
+`startup` is mapped to `0x10000000`. It means that you have to pass `-Wl,--defsym=ivtbase_addr=<...>` option too.
 You can compile your application against that `memory.x` file by passing `-marcv2elfx` to the linker or
 `-Wl,-marcv2elfx` to GCC itself:
 
-```
+```text
 $ ls
 main.c memory.x
-$ arc-elf32-gcc -mcpu=em4_dmips -Wl,-marcv2elfx main.c -o main.elf
+$ arc-elf32-gcc -mcpu=em4_fpuda -mmpy-option=6 -mfpu=fpuda_all \
+                -Wl,-marcv2elfx -Wl,--defsym=ivtbase_addr=0x10000000 \
+                main.c -o main.elf
 ```
 
 ### HS Development Kit
 
 Here is an example of `memory.x` for HS Development Kit:
 
-```
+```text
 MEMORY
 {
     DRAM : ORIGIN = 0x90000000, LENGTH = 0x50000000
@@ -157,10 +162,11 @@ REGION_ALIAS("sdata", DRAM)
 `startup` is mapped to `0x90000000`. It means that you have to pass `-Wl,--defsym=ivtbase_addr=<...>` option too.
 You can compile your application against that `memory.x` this way:
 
-```
+```text
 $ ls
 main.c memory.x
-$ arc-elf32-gcc -mcpu=archs -Wl,-marcv2elfx -Wl,--defsym=ivtbase_addr=0x90000000 main.c -o main.elf
+$ arc-elf32-gcc -mcpu=archs -Wl,-marcv2elfx -Wl,--defsym=ivtbase_addr=0x90000000 \
+                main.c -o main.elf
 ```
 
 ## Memory Maps for Hardware Platforms
@@ -168,7 +174,8 @@ $ arc-elf32-gcc -mcpu=archs -Wl,-marcv2elfx -Wl,--defsym=ivtbase_addr=0x90000000
 You can find valid memory mappings for particular hardware platforms in documentation.
 Here is a list of resources with memory maps for Synopsys' development platforms:
 
-* [ARC Development Systems Forum Wiki](https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home) contains documentation for all Synopsys' development platforms. User guides contain descriptions of memory mappings.
+* [Development platforms](../../platforms/index.md) section contains documentation for
+  all Synopsys' development platforms. User guides contain descriptions of memory mappings.
 * [Newlib](https://github.com/foss-for-synopsys-dwc-arc-processors/newlib/tree/arc64) repository for ARC contains predefined
   memory maps for some of development platforms  in `libgloss/arc` directory.
 * [toolchain](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain) repository also contains predefined
