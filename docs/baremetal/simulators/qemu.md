@@ -35,7 +35,7 @@ qemu-system-arc -M arc-sim -cpu archs -monitor none -display none -nographic -no
 
 Debug the application:
 
-```
+```text
 $ arc-elf32-gdb -quiet main.elf
 Reading symbols from main.elf...
 (gdb) target remote :1234
@@ -74,7 +74,7 @@ qemu-system-arc -M arc-sim -cpu archs -monitor none -display none -nographic -no
 ```
 
 Connect to the GDB server
-```
+```text
 $ arc-elf32-gdb -quiet main.elf
 Reading symbols from main.elf...
 (gdb) target remote /tmp/gdb-socket
@@ -100,7 +100,7 @@ int main()
 You need to use `-specs=qemu.specs` to use input/output features and pass `-serial stdio` to link
 a virtual character device with host's `stdio`:
 
-```
+```text
 $ arc-elf32-gcc -mcpu=archs -specs=qemu.specs main.c -o main.elf
 $ qemu-system-arc -M arc-sim -cpu archs -monitor none -display none -nographic \
                   -no-reboot -serial stdio -kernel main.elf
@@ -113,14 +113,14 @@ However, if `-semihosting` option is passed to QEMU, then it uses the same input
 as nSIM with `-on nsim_emt` option. It allows to use the same binary for running both
 on QEMU and nSIM:
 
-```
+```text
 $ arc-elf32-gcc -mcpu=archs -specs=nsim.specs main.c -o main.elf
 $ qemu-system-arc -M arc-sim -cpu archs -monitor none -display none -nographic \
                   -no-reboot -serial stdio -semihosting -kernel main.elf
 Hello, World!
 ```
 
-## Building and Running "Hello, World!" Using MetaWare Development Toolkit
+## Building "Hello, World!" Using MetaWare Development Toolkit and Running on QEMU
 
 MetaWare’s standard runtime library does not support input/output interfaces of QEMU for ARC. But it is possible
 to implement your own basic `hostlink` library for MetaWare to meet QEMU's requirements. You have to implement at least
