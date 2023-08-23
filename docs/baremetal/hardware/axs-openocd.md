@@ -252,56 +252,34 @@ while port 3334 is assigned to core 1.
 
 ## Troubleshooting
 
-!!! question
+### OpenOCD prints "JTAG scan chain interrogation failed: all ones", then there is a lot of messages "Warn : target is still running!"
 
-    OpenOCD prints "JTAG scan chain interrogation failed: all ones", then there
-    is a lot of messages "Warn : target is still running!".
+An invalid JTAG adapter configuration is used: SDP USB data-port is used
+with configuration for standalone Digilent-HS cable, or vice versa. To
+resolve problem fix file `board/snps_axs10{1,2}.cfg` or
+`board/snps_axs103_hs36.cfg` depending on what board is being used.
 
-!!! answer
+### OpenOCD prints "JTAG scan chain interrogation failed: all zeros"
 
-    An invalid JTAG adapter configuration is used: SDP USB data-port is used
-    with configuration for standalone Digilent-HS cable, or vice versa. To
-    resolve problem fix file `board/snps_axs10{1,2}.cfg` or
-    `board/snps_axs103_hs36.cfg` depending on what board is being used.
+It is likely that position of JP1402 jumper does not match the debug
+interface you are trying to use. Remove jumper if you are using external
+debug cable, or place jumper if you are using embedded FT2232 chip.
 
-!!! question
+### OpenOCD prints that is has found "UNEXPECTED" device in the JTAG chain.
 
-    OpenOCD prints "JTAG scan chain interrogation failed: all zeros".
+This means that OpenOCD configuration of JTAG chain does not match settings
+of jumpers on your CPU card.
 
-!!! answer
+### I am loading application into target memory, however memory is still all zeros.
 
-    It is likely that position of JP1402 jumper does not match the debug
-    interface you are trying to use. Remove jumper if you are using external
-    debug cable, or place jumper if you are using embedded FT2232 chip.
+This might happen if you are using AXC001 CPU card and bootloader has not
+been executed. Either run bootloader for the selected core or configure
+core to start in autonomous mode and reset board after that - so bootloader
+will execute.
 
-!!! question
+### OpenOCD prints "target is still running!" after a CTRL+C has been done on the GDB client side.
 
-    OpenOCD prints that is has found "UNEXPECTED" device in the JTAG chain.
-
-!!! answer
-
-    This means that OpenOCD configuration of JTAG chain does not match settings
-    of jumpers on your CPU card.
-
-!!! question
-
-    I am loading application into target memory, however memory is still all zeros.
-
-!!! answer
-
-    This might happen if you are using AXC001 CPU card and bootloader has not
-    been executed. Either run bootloader for the selected core or configure
-    core to start in autonomous mode and reset board after that - so bootloader
-    will execute.
-
-!!! question
-
-    OpenOCD prints "target is still running!" after a CTRL+C has been done on
-    the GDB client side.
-
-!!! answer
-
-    There is an issue with EM6 core in AXS101 - after OpenOCD writes `DEBUG.FH`
-    bit to do a force halt of the core, JTAG TAP of this core still occasionally
-    returns a status that core is running, even though it has been halted. To
-    avoid problem do not try to break execution with Ctrl+C when using EM6 on AXS101.
+There is an issue with EM6 core in AXS101 - after OpenOCD writes `DEBUG.FH`
+bit to do a force halt of the core, JTAG TAP of this core still occasionally
+returns a status that core is running, even though it has been halted. To
+avoid problem do not try to break execution with Ctrl+C when using EM6 on AXS101.
