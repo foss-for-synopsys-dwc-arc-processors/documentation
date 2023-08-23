@@ -7,11 +7,18 @@ GNU toolchains for ARC processors consist of GCC, Binutils and GDB. [Newlib](htt
 | ISA    | Driver/Triplet |
 |--------|----------------|
 | ARCv1  | `arc-elf32-gcc`|
-| ARCv2  | `arc-elf32-gcc`|
+| ARCv2  | `arc32-elf-gcc`|
 | ARCv3  | `arc64-elf-gcc`|
 
 Note that binaries for both ARCv1 and ARCv2 may be built using a single `arc-elf32-gcc` driver. It means
 that there is a single toolchain for two ISAs.
+
+Prebuilt toolchains for ARCv3 families on
+[the release page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases)
+are configured with `arc64-elf-` prefix only and work both with HS5x and HS6x
+families. However, you can configure the toolchain for HS5x with `arc32-elf-` prefix using
+[Crosstool-NG](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain#crosstool-ng-configuration-manual-tuning)
+configuration menu.
 
 ## Toolchains for Linux Targets
 
