@@ -7,6 +7,9 @@ connecting to Digilent chip may be used.
 Commands listed below start a GUI version of MetaWare Debugger. Use `-cl`
 option to run it in a command line mode.
 
+Consider installing [Digilent Adept runtime and utilities](./digilent.md) if
+you are going to debug development boards using MetaWare debugger.
+
 ## Debugging in a Single-core Mode
 
 For Ashling Opella-XD:
