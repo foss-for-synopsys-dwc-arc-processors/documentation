@@ -7,8 +7,10 @@
 
 !!! info
 
-    Please refer to [board's documentation](https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-em-starter-kit-1)
-    for detailed information about how to setup the board for initial operation.
+    * Please refer to [board's documentation](../../platforms/board-emsk.md)
+      for detailed information about how to setup the board for initial operation.
+    * Refer [Getting OpenOCD](../../platforms/get-openocd.md) and [Using OpenOCD](../../platforms/use-openocd.md)
+      for details about installing and using OpenOCD.
 
 ## Building an Application
 
@@ -25,17 +27,36 @@ int main()
 }
 ```
 
+Create a [custom memory map](./memory.md) file with name `memory.x`
+(memory maps for all EM Starter Kit version may be found in [toolchain's repository](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/tree/arc-releases/extras/dev_systems)):
+
+```text
+MEMORY
+{
+    ICCM : ORIGIN = 0x00000000, LENGTH = 256K
+    DRAM : ORIGIN = 0x10000000, LENGTH = 128M
+    DCCM : ORIGIN = 0x80000000, LENGTH = 128K
+}
+
+REGION_ALIAS("startup", ICCM)
+REGION_ALIAS("text", ICCM)
+REGION_ALIAS("data", DRAM)
+REGION_ALIAS("sdata", DRAM)
+
+PROVIDE (__stack_top = (0x17FFFFFF & -4) );
+PROVIDE (__end_heap = (0x17FFFFFF) );
+```
+
+
 Build an application with support of UART:
 
 ```shell
-cp <path-to-toolchain>/arc-*/lib/emsk2.2_em9d.x memory.x
-arc-elf32-gcc -mcpu=em4_dmips -specs=emsk.specs main.c -o main.elf
+arc-elf32-gcc -mcpu=em4_dmips -specs=emsk.specs -Wl,-marcv2elfx main.c -o main.elf
 ```
 
-Build without support of UART:
+Or build without support of UART:
 
 ```shell
-cp <path-to-toolchain>/arc-*/lib/emsk2.2_em9d.x memory.x
 arc-elf32-gcc -mcpu=em4_dmips -specs=nosys.specs -Wl,-marcv2elfx main.c -o main.elf
 ```
 
@@ -46,6 +67,7 @@ with 49101 port and `snps_em_sk_v2.2.cfg` configuration file. Here is
 a possible output:
 
 ```text
+$ openocd -f board/snps_em_sk_v2.2.cfg
 Open On-Chip Debugger 0.9.0-dev (2023-05-21-06:23)
 Licensed under GNU GPL v2
 For bug reports, read

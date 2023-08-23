@@ -120,7 +120,7 @@ arc_em_init_regs
 Start OpenOCD using `emsdp.cfg` configuration file:
 
 ```text
-$ openocd -f ./openocd.cfg
+$ openocd -f ./emsdp.cfg
 Open On-Chip Debugger 0.12.0+dev-gffa52f0e0 (2023-08-02-10:41)
 Licensed under GNU GPL v2
 For bug reports, read

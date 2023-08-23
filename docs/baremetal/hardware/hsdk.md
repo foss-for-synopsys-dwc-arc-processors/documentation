@@ -2,10 +2,15 @@
 
 !!! info
 
-    Please refer to board's documentation for detailed information about how to setup the board for initial operation:
+    Please refer to board's documentation for detailed information about how to
+    setup the board for initial operation:
 
-    * [ARC HS Development Kit](https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-hs-development-kit-1)
-    * [ARC HS4x/HS4xD Development Kit](https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-hs4xhs4xd-development-kit-1)
+    * [ARC HS Development Kit](../../platforms/board-hsdk.md)
+    * [ARC HS4x/HS4xD Development Kit](../../platforms/board-hsdk-4xd.md)
+
+    Also refer [Getting OpenOCD](../../platforms/get-openocd.md) and 
+    [Using OpenOCD](../../platforms/use-openocd.md) for details about installing
+    and using OpenOCD.
 
 ## Building an Application
 
@@ -21,23 +26,38 @@ int main()
 }
 ```
 
+Create a [custom memory map](./memory.md) file with name `memory.x`:
+
+```text
+MEMORY
+{
+    DRAM : ORIGIN = 0x90000000, LENGTH = 0x50000000
+}
+
+REGION_ALIAS("startup", DRAM)
+REGION_ALIAS("text", DRAM)
+REGION_ALIAS("data", DRAM)
+REGION_ALIAS("sdata", DRAM)
+```
+
 Build an application with support of UART:
 
 ```shell
-cp <path-to-toolchain>/arc-*/lib/hsdk.x memory.x
-arc-elf32-gcc -mcpu=hs38_linux -specs=hsdk.specs main.c -o main.elf
+arc-elf32-gcc -mcpu=hs38_linux -specs=hsdk.specs -Wl,-marcv2elfx \
+              -Wl,--defsym=ivtbase_addr=0x90000000 \
+              main.c -o main.elf
 ```
 
-Build without support of UART, but if you are going to use interrupts (it allows
+Or build without support of UART, but if you are going to use interrupts (it allows
 to catch memory errors):
 
 ```shell
-cp <path-to-toolchain>/arc-*/lib/hsdk.x memory.x
 arc-elf32-gcc -mcpu=hs38_linux -specs=nosys.specs -Wl,-marcv2elfx \
-              -Wl,--defsym=ivtbase_addr=0x90000000 main.c -o main.elf
+              -Wl,--defsym=ivtbase_addr=0x90000000 \
+              main.c -o main.elf
 ```
 
-A simple build if you are not going to use UART and interrupts:
+Here is a simple command line if you are not going to use UART and interrupts:
 
 ```shell
 arc-elf32-gcc -mcpu=hs38_linux -specs=nosys.specs main.c -o main.elf
@@ -50,6 +70,7 @@ with 49101 port and `snps_hsdk.cfg` (for HSDK) of `snps_hsdk_4xd.cfg`
 (for HSDK 4xD) configuration file. Here is a possible output for HSDK 4xD:
 
 ```text
+$ openocd -f board/snps_hsdk_4xd.cfg
 Open On-Chip Debugger 0.12.0+dev-gffa52f0e0 (2023-08-02-10:41)
 Licensed under GNU GPL v2
 For bug reports, read
