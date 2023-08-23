@@ -59,8 +59,8 @@ nav:
       - baremetal/hardware/hsdk.md
       - baremetal/hardware/emsdp.md
       - baremetal/hardware/emsk.md
-      # - baremetal/hardware/axs-openocd.md
-      # - baremetal/hardware/axs-ashling.md
+      - baremetal/hardware/axs-openocd.md
+      - baremetal/hardware/axs-ashling.md
     - General Topics:
       - baremetal/general/heap-and-stack.md
       - baremetal/general/tcf.md
@@ -79,9 +79,9 @@ nav:
       - Building and running Linux: linux/hsdk/build.md
       - Building U-Boot: linux/hsdk/uboot-build.md
       - U-Boot command reference: linux/hsdk/uboot-commands.md
-    # - Running on AXS SDP:
-    #   - Building and running Linux: linux/axs/build.md
-    #   - Flashing U-Boot: linux/axs/uboot.md
+    - Running on AXS SDP:
+      - Building and running Linux: linux/axs/build.md
+      - Flashing U-Boot: linux/axs/uboot.md
     - eBPF subsystem:
       - linux/ebpf/cross.md
       - linux/ebpf/build.md

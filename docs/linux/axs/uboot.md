@@ -1,4 +1,9 @@
-# Flashing U‐Boot in ARC AXS10x Software Development Platforms (SDP)
+# 🕥 Flashing U‐Boot in ARC AXS10x Software Development Platforms (SDP)
+
+!!! warning
+
+    AXS board is no longer supported. There is no guarantee that this guide will
+    be applicable for the latest tools.
 
 ARC AXS10x Software Development Platforms (SDP) have built-in SPI-flash storage
 which may be used to host auto-started applications such as bootloaders, etc.

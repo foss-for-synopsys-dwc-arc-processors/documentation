@@ -1,10 +1,15 @@
-# Building and Running ARC Linux for AXS103 Software Development Platform
+# 🕥 Building and Running ARC Linux for AXS103 Software Development Platform
+
+!!! warning
+
+    AXS board is no longer supported. There is no guarantee that this guide will
+    be applicable for the latest tools.
 
 ## Preparing the Board
 
 The AXS103 development system consists of an ARC SDP mainboard and a new AXC003
 card with an FPGA containing the ARC HS38x2 (dual core). Please refer to
-[board's documentation](https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-axs103-software-development-platform-1)
+[board's documentation](../../platforms/board-axs103.md)
 for detailed information about how to setup the board for initial operation.
 
 ## Connecting to a Serial Port Terminal

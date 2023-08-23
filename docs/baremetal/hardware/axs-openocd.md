@@ -1,12 +1,17 @@
-# AXS with OpenOCD
+# 🕥 AXS with OpenOCD
+
+!!! warning
+
+    AXS board is no longer supported. There is no guarantee that this guide will
+    be applicable for the latest tools.
 
 !!! info
 
     Please refer to board's documentation for detailed information about how
     to setup the board for initial operation:
 
-    * [AXS 101 Software Development Platform](https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-axs101-software-development-platform-1)
-    * [AXS 103 Software Development Platform](https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-axs103-software-development-platform-1)
+    * [AXS 101 Software Development Platform](../../platforms/board-axs101.md)
+    * [AXS 103 Software Development Platform](../../platforms/board-axs103.md)
 
     Also, consider reading these materials regarding memory maps and OpenOCD:
 

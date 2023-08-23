@@ -1,4 +1,9 @@
-# AXS with Ashling Opella-XD
+# 🕥 AXS with Ashling Opella-XD
+
+!!! warning
+
+    AXS board is no longer supported. There is no guarantee that this guide will
+    be applicable for the latest tools.
 
 ## Preface
 
