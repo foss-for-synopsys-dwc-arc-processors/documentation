@@ -57,8 +57,12 @@ Configure QEMU inside of the build directory (use your own `--prefix` value for 
 ```
 ../configure --target-list=arc-softmmu,arc64-softmmu,arc-linux-user,arc64-linux-user \
              --prefix=/tools/qemu --enable-debug --enable-debug-tcg --enable-trace-backends=simple \
-             --disable-plugins --skip-meson --disable-werror --disable-pie
+             --disable-plugins --skip-meson --disable-pie
 ```
+
+If you face an error then consider using `--disable-werror` configure option to
+try to eliminate it. Also, consider reporting a bug on
+[toolchain's GitHub page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/issues/new).
 
 What options are responsible for what:
 
@@ -92,7 +96,7 @@ export PATH="${QEMU_HOME}/bin:$PATH"
 
 To enable logging, it is necessary to provide the enabled log levels with the `-d` flag. Some of the more relevant ones are:
 
-```shell
+```text
 in_asm          show target assembly code for each compiled TB
 nochain         do not chain compiled TBs so that "exec" and "cpu" show complete traces
 exec            show trace before each executed TB (lots of logs)
@@ -102,6 +106,7 @@ int             show interrupts/exceptions in short format
 mmu             log MMU-related activities
 unimp           log unimplemented functionality
 ```
+
 To get a complete listing, run `qemu-system-arc -d help`. Use `-D <logfile>` to dump the logs into a file instead of
 standard output.
 
