@@ -1,1 +1,5 @@
-# Welcome to GNU Toolchain for ARC User Manual
+# Welcome to embARC Documentation Site
+
+!!! warning
+
+    This section is under construction.
