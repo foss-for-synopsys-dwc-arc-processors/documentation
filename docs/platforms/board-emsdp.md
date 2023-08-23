@@ -59,6 +59,39 @@ Key Features
 * 12V Power Supply
 * 12V fan
 
+## How to Manually Flash a Firmware
+
+You can flash a firmware of ARC CPU manually using [Digilent Adept utilities](./digilent.md).
+Firstly, ensure that EM SDP in connected to the host:
+
+```text
+$ djtgcfg enum
+Found 1 device(s)
+
+Device: JtagSmt1
+    Device Transport Type: 00020001 (USB)
+    Product Name:          Digilent JTAG-SMT1
+    User Name:             JtagSmt1
+    Serial Number:         210203826102
+```
+
+Device name for EM SDP is `JtagSmt1`. Then get a firmware from EM SDP bundle
+(for example, `emsdp_em11d_dfss.bit` for EM11D), init the board using
+`init` command and program board's FPGA:
+
+```text
+$ djtgcfg -d JtagSmt1 init
+Initializing scan chain...
+Found Device ID: 43651093
+
+Found 1 device(s):
+    Device 0: XC7K325T
+
+$ djtgcfg -d JtagSmt1 prog -i 0 -f emsdp_em11d_dfss.bit
+Programming device. Do not touch your board. This may take a few minutes...
+Programming succeeded.
+```
+
 ## Useful Links
 
 * [ARC EM Software Development Platform - User Guide](files/ARC_EM_SDP_User_Guide.pdf)
