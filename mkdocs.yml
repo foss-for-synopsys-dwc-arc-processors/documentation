@@ -19,6 +19,7 @@ theme:
     - navigation.sections
     - navigation.indexes
     - navigation.top
+    - content.code.copy
 plugins:
   - table-reader
   - search
@@ -56,6 +57,7 @@ nav:
       - baremetal/hardware/general.md
       - baremetal/hardware/memory.md
       - baremetal/hardware/hsdk.md
+      - baremetal/hardware/emsdp.md
       - baremetal/hardware/emsk.md
       - baremetal/hardware/axs-openocd.md
       - baremetal/hardware/axs-ashling.md
