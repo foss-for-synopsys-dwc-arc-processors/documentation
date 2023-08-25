@@ -513,8 +513,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-options" class="md-nav__link">
-    Configuration Options
+  <a href="#general-configuration-options" class="md-nav__link">
+    General Configuration Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiplication-options-for-arc-hs3x4x" class="md-nav__link">
+    Multiplication Options for ARC HS3x/4x
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiplication-options-for-arc-em" class="md-nav__link">
+    Multiplication Options for ARC EM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiplication-options-for-arc-700" class="md-nav__link">
+    Multiplication Options for ARC 700
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiplication-options-for-arc-600" class="md-nav__link">
+    Multiplication Options for ARC 600
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fpu-options-for-arc-hs3x4x" class="md-nav__link">
+    FPU options for ARC HS3x/4x
   </a>
   
 </li>
@@ -2394,8 +2429,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-options" class="md-nav__link">
-    Configuration Options
+  <a href="#general-configuration-options" class="md-nav__link">
+    General Configuration Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiplication-options-for-arc-hs3x4x" class="md-nav__link">
+    Multiplication Options for ARC HS3x/4x
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiplication-options-for-arc-em" class="md-nav__link">
+    Multiplication Options for ARC EM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiplication-options-for-arc-700" class="md-nav__link">
+    Multiplication Options for ARC 700
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiplication-options-for-arc-600" class="md-nav__link">
+    Multiplication Options for ARC 600
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fpu-options-for-arc-hs3x4x" class="md-nav__link">
+    FPU options for ARC HS3x/4x
   </a>
   
 </li>
@@ -2475,7 +2545,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h2>
+<h2 id="general-configuration-options">General Configuration Options<a class="headerlink" href="#general-configuration-options" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -2545,24 +2615,257 @@
 </tr>
 <tr>
 <td>Unaligned access</td>
-<td>N/A</td>
+<td><code>-unaligned_option</code></td>
 <td><code>-Xunaligned</code></td>
 <td><code>nsim_isa_unaligned_option=1</code></td>
 <td><code>-munaligned-access</code></td>
 </tr>
 <tr>
-<td>ARC 600 32x16 multiplication</td>
-<td></td>
+<td>XY memory</td>
+<td>XY memory option</td>
+<td><code>-Xxy</code></td>
+<td><code>nsim_isa_xy=1</code></td>
+<td><code>-mxy</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="multiplication-options-for-arc-hs3x4x">Multiplication Options for ARC HS3x/4x<a class="headerlink" href="#multiplication-options-for-arc-hs3x4x" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>GCC</th>
+<th>CCAC/MDB</th>
+<th>nSIM</th>
+<th>ARChitect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-mmpy-option=0</code></td>
+<td><code>-Xmpy_option=0</code></td>
+<td><code>nsim_isa_mpy_option=0</code></td>
+<td><code>-mpy_option=none</code></td>
+</tr>
+<tr>
+<td><code>-mmpy-option={2,wlh1,mpy}</code></td>
+<td><code>-Xmpy_option={2-6,mpy}</code></td>
+<td><code>nsim_isa_mpy_option={2-6}</code></td>
+<td><code>-mpy_option=mpy</code></td>
+</tr>
+<tr>
+<td><code>-mmpy-option={7,plus_dmpy}</code></td>
+<td><code>-Xmpy_option={7,mac}</code></td>
+<td><code>nsim_isa_mpy_option=7</code></td>
+<td><code>-mpy_option=plus_dmpy</code></td>
+</tr>
+<tr>
+<td><code>-mmpy-option={8,plus_macd}</code></td>
+<td><code>-Xmpy_option={8,mpyd}</code></td>
+<td><code>nsim_isa_mpy_option=8</code></td>
+<td><code>-mpy_option=plus_macd</code></td>
+</tr>
+<tr>
+<td><code>-mmpy-option={9,plus_qmacw}</code></td>
+<td><code>-Xmpy_option={9,qmpyh}</code></td>
+<td><code>nsim_isa_mpy_option=9</code></td>
+<td><code>-mpy_option=plus_qmacw</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="multiplication-options-for-arc-em">Multiplication Options for ARC EM<a class="headerlink" href="#multiplication-options-for-arc-em" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>GCC</th>
+<th>CCAC/MDB</th>
+<th>nSIM</th>
+<th>ARChitect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-mmpy-option=0</code></td>
+<td><code>-Xmpy_option=0</code></td>
+<td><code>nsim_isa_mpy_option=0</code></td>
+<td><code>-mpy_option=none</code></td>
+</tr>
+<tr>
+<td><code>-mmpy-option={2,wlh1,mpy}</code></td>
+<td><code>-Xmpy_option={2,wlh1}</code></td>
+<td><code>nsim_isa_mpy_option=2</code></td>
+<td><code>-mpy_option=wlh1</code></td>
+</tr>
+<tr>
+<td><code>-mmpy-option={3,wlh2}</code></td>
+<td><code>-Xmpy_option={3,wlh2}</code></td>
+<td><code>nsim_isa_mpy_option=3</code></td>
+<td><code>-mpy_option=wlh2</code></td>
+</tr>
+<tr>
+<td><code>-mmpy-option={4,wlh3}</code></td>
+<td><code>-Xmpy_option={4,wlh3}</code></td>
+<td><code>nsim_isa_mpy_option=4</code></td>
+<td><code>-mpy_option=wlh3</code></td>
+</tr>
+<tr>
+<td><code>-mmpy-option={5,wlh4}</code></td>
+<td><code>-Xmpy_option={5,wlh4}</code></td>
+<td><code>nsim_isa_mpy_option=5</code></td>
+<td><code>-mpy_option=wlh4</code></td>
+</tr>
+<tr>
+<td><code>-mmpy-option={6,wlh5}</code></td>
+<td><code>-Xmpy_option={6,wlh5}</code></td>
+<td><code>nsim_isa_mpy_option=6</code></td>
+<td><code>-mpy_option=wlh5</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="multiplication-options-for-arc-700">Multiplication Options for ARC 700<a class="headerlink" href="#multiplication-options-for-arc-700" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>CCAC/MDB</th>
+<th>nSIM</th>
+<th>GCC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Extended Arithmetic</td>
+<td><code>-Xea</code></td>
+<td><code>nsim_isa_sat=1</code></td>
+<td><code>-mea</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="multiplication-options-for-arc-600">Multiplication Options for ARC 600<a class="headerlink" href="#multiplication-options-for-arc-600" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>CCAC/MDB</th>
+<th>nSIM</th>
+<th>GCC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>32x16 multiplication</td>
 <td><code>-Xmul32x16</code></td>
 <td><code>nsim_isa_mul32x16=1</code></td>
 <td><code>-mmul32x16</code></td>
 </tr>
 <tr>
-<td>ARC 600 32x32 multiplication</td>
-<td></td>
-<td></td>
+<td>32x32 multiplication</td>
+<td><code>-Xmult32d</code></td>
 <td><code>nsim_isa_mult32d=1</code></td>
 <td><code>-mmul64</code></td>
+</tr>
+<tr>
+<td>Extended Arithmetic</td>
+<td><code>-Xea</code></td>
+<td><code>nsim_isa_sat=1</code></td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fpu-options-for-arc-hs3x4x">FPU options for ARC HS3x/4x<a class="headerlink" href="#fpu-options-for-arc-hs3x4x" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>GCC</th>
+<th>Families</th>
+<th>ARChitect</th>
+<th>nSIM</th>
+<th>CCAC/MDB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-mfpu=fpus</code></td>
+<td>EM, HS</td>
+<td><code>-has_fpu</code></td>
+<td><code>nsim_isa_fpus_option=1</code></td>
+<td><code>-Xfpus</code></td>
+</tr>
+<tr>
+<td><code>-mfpu=fpus_div</code></td>
+<td>EM, HS</td>
+<td><code>-has_fpu -fpu_div_option</code></td>
+<td><code>nsim_isa_fpus_option=1 nsim_isa_fpus_div_option=1</code></td>
+<td><code>-Xfpus -Xfpus_div</code></td>
+</tr>
+<tr>
+<td><code>-mfpu=fpus_fma</code></td>
+<td>EM, HS</td>
+<td><code>-has_fpu -fpu_fma_option</code></td>
+<td><code>nsim_isa_fpus_option=1 nsim_isa_fpu_mac_option=1</code></td>
+<td><code>-Xfpus -Xfpu_mac</code></td>
+</tr>
+<tr>
+<td><code>-mfpu=fpus_all</code></td>
+<td>EM, HS</td>
+<td><code>-has_fpu -fpu_div_option -fpu_fma_option</code></td>
+<td><code>nsim_isa_fpus_option=1 nsim_isa_fpus_div_option=1 nsim_isa_fpu_mac_option=1</code></td>
+<td><code>-Xfpus -Xfpus_div -Xfpu_mac</code></td>
+</tr>
+<tr>
+<td><code>-mfpu=fpud</code></td>
+<td>HS</td>
+<td><code>-has_fpu -fpu_dp_option</code></td>
+<td><code>nsim_isa_fpud_option=1</code></td>
+<td><code>-Xfpud</code></td>
+</tr>
+<tr>
+<td><code>-mfpu=fpud_div</code></td>
+<td>HS</td>
+<td><code>-has_fpu -fpu_div_option -fpu_dp_option</code></td>
+<td><code>nsim_isa_fpud_option=1 nsim_isa_fpud_div_option=1</code></td>
+<td><code>-Xfpud -Xfpud_div</code></td>
+</tr>
+<tr>
+<td><code>-mfpu=fpud_fma</code></td>
+<td>HS</td>
+<td><code>-has_fpu -fpu_fma_option -fpu_dp_option</code></td>
+<td><code>nsim_isa_fpud_option=1 nsim_isa_fpu_mac_option=1</code></td>
+<td><code>-Xfpud -Xfpu_mac</code></td>
+</tr>
+<tr>
+<td><code>-mfpu=fpud_all</code></td>
+<td>HS</td>
+<td><code>-has_fpu -fpu_div_option -fpu_fma_option -fpu_dp_option</code></td>
+<td><code>nsim_isa_fpud_option=1 nsim_isa_fpud_div_option=1 nsim_isa_fpu_mac_option=1</code></td>
+<td><code>-Xfpud -Xfpud_div -Xfpu_mac</code></td>
+</tr>
+<tr>
+<td><code>-mfpu=fpuda</code></td>
+<td>EM</td>
+<td><code>-fpu_dp_assist</code></td>
+<td><code>nsim_isa_fpuda_option=1</code></td>
+<td><code>-Xfpuda</code></td>
+</tr>
+<tr>
+<td><code>-mfpu=fpuda_div</code></td>
+<td>EM</td>
+<td><code>-fpu_dp_assist -fpu_div_option</code></td>
+<td><code>nsim_isa_fpuda_option=1 nsim_isa_fpud_div_option=1</code></td>
+<td><code>-Xfpuda -Xfpus_div</code></td>
+</tr>
+<tr>
+<td><code>-mfpu=fpuda_fma</code></td>
+<td>EM</td>
+<td><code>-fpu_dp_assist -fpu_fma_option</code></td>
+<td><code>nsim_isa_fpuda_option=1 nsim_isa_fpu_mac_option=1</code></td>
+<td><code>-Xfpuda -Xfpu_mac</code></td>
+</tr>
+<tr>
+<td><code>-mfpu=fpuda_all</code></td>
+<td>EM</td>
+<td><code>-fpu_dp_assist -fpu_div_option -fpu_fma_option</code></td>
+<td><code>nsim_isa_fpuda_option=1 nsim_isa_fpud_div_option=1 nsim_isa_fpu_mac_option=1</code></td>
+<td><code>-Xfpuda -Xfpus_div -Xfpu_mac</code></td>
 </tr>
 </tbody>
 </table>
