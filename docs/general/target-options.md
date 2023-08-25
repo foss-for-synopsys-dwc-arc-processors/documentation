@@ -104,7 +104,6 @@ Here is a table which matches `-mmpy-option=` values to corresponding features f
 | `-mmpy-option=` | Aliases       | ARChitect option for ARC HS | ARChitect option for ARC EM |
 |----------------:|---------------|-----------------------------|-----------------------------|
 |               0 | `none`        | `-mpy_option=none`          | `-mpy_option=none`          |
-|               1 | `w`           | —                           | —                           |
 |               2 | `wlh1`, `mpy` | `-mpy_option=mpy`           | `-mpy_option=wlh1`          |
 |               3 | `wlh2`        | —                           | `-mpy_option=wlh2`          |
 |               4 | `wlh3`        | —                           | `-mpy_option=wlh3`          |
