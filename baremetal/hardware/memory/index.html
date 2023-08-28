@@ -778,6 +778,33 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#example-for-em-software-development-platform" class="md-nav__link">
+    Example for EM Software Development Platform
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-for-hs-development-kit" class="md-nav__link">
+    Example for HS Development Kit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-maps-for-development-platforms" class="md-nav__link">
+    Memory Maps for Development Platforms
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Maps for Development Platforms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#em-software-development-platform" class="md-nav__link">
     EM Software Development Platform
   </a>
@@ -791,14 +818,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#iot-development-kit" class="md-nav__link">
+    IoT Development Kit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#em-starter-kit" class="md-nav__link">
+    EM Starter Kit
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#memory-maps-for-hardware-platforms" class="md-nav__link">
-    Memory Maps for Hardware Platforms
+  <a href="#useful-links" class="md-nav__link">
+    Useful Links
   </a>
   
 </li>
@@ -2431,6 +2472,33 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#example-for-em-software-development-platform" class="md-nav__link">
+    Example for EM Software Development Platform
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-for-hs-development-kit" class="md-nav__link">
+    Example for HS Development Kit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-maps-for-development-platforms" class="md-nav__link">
+    Memory Maps for Development Platforms
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Maps for Development Platforms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#em-software-development-platform" class="md-nav__link">
     EM Software Development Platform
   </a>
@@ -2444,14 +2512,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#iot-development-kit" class="md-nav__link">
+    IoT Development Kit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#em-starter-kit" class="md-nav__link">
+    EM Starter Kit
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#memory-maps-for-hardware-platforms" class="md-nav__link">
-    Memory Maps for Hardware Platforms
+  <a href="#useful-links" class="md-nav__link">
+    Useful Links
   </a>
   
 </li>
@@ -2553,7 +2635,7 @@ which simulate whole address space, like following templates: <code>em6_dmips</c
 <p>If you use <code>arcv2elfx</code> linker emulation, then linker searches for <code>memory.x</code> file with definition of
 a custom memory map. It is searched in the current working directory and in directories listed via
 <code>-L</code> option.</p>
-<h3 id="em-software-development-platform">EM Software Development Platform<a class="headerlink" href="#em-software-development-platform" title="Permanent link">&para;</a></h3>
+<h3 id="example-for-em-software-development-platform">Example for EM Software Development Platform<a class="headerlink" href="#example-for-em-software-development-platform" title="Permanent link">&para;</a></h3>
 <p>Here is an example of <code>memory.x</code> for EM Software Development Platform:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>MEMORY
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{
@@ -2598,7 +2680,7 @@ You can compile your application against that <code>memory.x</code> file by pass
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>                -Wl,-marcv2elfx -Wl,--defsym=ivtbase_addr=0x10000000 \
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>                main.c -o main.elf
 </span></code></pre></div>
-<h3 id="hs-development-kit">HS Development Kit<a class="headerlink" href="#hs-development-kit" title="Permanent link">&para;</a></h3>
+<h3 id="example-for-hs-development-kit">Example for HS Development Kit<a class="headerlink" href="#example-for-hs-development-kit" title="Permanent link">&para;</a></h3>
 <p>Here is an example of <code>memory.x</code> for HS Development Kit:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>MEMORY
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>{
@@ -2617,7 +2699,166 @@ You can compile your application against that <code>memory.x</code> this way:</p
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>$ arc-elf32-gcc -mcpu=archs -Wl,-marcv2elfx -Wl,--defsym=ivtbase_addr=0x90000000 \
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>                main.c -o main.elf
 </span></code></pre></div>
-<h2 id="memory-maps-for-hardware-platforms">Memory Maps for Hardware Platforms<a class="headerlink" href="#memory-maps-for-hardware-platforms" title="Permanent link">&para;</a></h2>
+<h2 id="memory-maps-for-development-platforms">Memory Maps for Development Platforms<a class="headerlink" href="#memory-maps-for-development-platforms" title="Permanent link">&para;</a></h2>
+<h3 id="em-software-development-platform">EM Software Development Platform<a class="headerlink" href="#em-software-development-platform" title="Permanent link">&para;</a></h3>
+<p><code>memory.x</code> file for EM Software Development Platform v1.2:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>MEMORY
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>{
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    ICCM0 : ORIGIN = 0x10000000, LENGTH = 128K
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    PSRAM : ORIGIN = 0x40000000, LENGTH =  16M
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    DCCM  : ORIGIN = 0x80000000, LENGTH = 128K
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>}
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>REGION_ALIAS(&quot;startup&quot;, ICCM0)
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>REGION_ALIAS(&quot;text&quot;, ICCM0)
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>REGION_ALIAS(&quot;data&quot;, DCCM)
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>REGION_ALIAS(&quot;sdata&quot;, DCCM)
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>PROVIDE (__stack_top = (0x8001ffff &amp; -4));
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>PROVIDE (__end_heap =  (0x8001ffff));
+</span></code></pre></div>
+<p><code>memory.x</code> file for EM Software Development Platform v1.0 and v1.1:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>MEMORY
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>{
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    PSRAM : ORIGIN = 0x10000000, LENGTH =  16M
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    ICCM0 : ORIGIN = 0x60000000, LENGTH = 128K
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    DCCM  : ORIGIN = 0x80000000, LENGTH = 128K
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>}
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>REGION_ALIAS(&quot;startup&quot;, ICCM0)
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>REGION_ALIAS(&quot;text&quot;, ICCM0)
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>REGION_ALIAS(&quot;data&quot;, DCCM)
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>REGION_ALIAS(&quot;sdata&quot;, DCCM)
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>PROVIDE (__stack_top = (0x8001ffff &amp; -4));
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>PROVIDE (__end_heap =  (0x8001ffff));
+</span></code></pre></div>
+<h3 id="hs-development-kit">HS Development Kit<a class="headerlink" href="#hs-development-kit" title="Permanent link">&para;</a></h3>
+<p>Memory map for HS Development Kit and HS Development Kit 4xD depends on a board
+itself and on a chosen configuration of CPUs. Consider using this <code>memory.x</code> file
+that fits for all configurations (refer to <a href="../../../platforms/board-hsdk/">HSDK user guide</a>
+or <a href="../../../platforms/board-hsdk-4xd/">HSDK 4xD user guide</a> for details about board's memory map):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>MEMORY
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>{
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    DRAM : ORIGIN = 0x90000000, LENGTH = 0x50000000
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>}
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>REGION_ALIAS(&quot;startup&quot;, DRAM)
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>REGION_ALIAS(&quot;text&quot;, DRAM)
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>REGION_ALIAS(&quot;data&quot;, DRAM)
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>REGION_ALIAS(&quot;sdata&quot;, DRAM)
+</span></code></pre></div>
+<h3 id="iot-development-kit">IoT Development Kit<a class="headerlink" href="#iot-development-kit" title="Permanent link">&para;</a></h3>
+<p><code>memory.x</code> file for IoT Development Kit:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>MEMORY
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>{
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    ICCM : ORIGIN = 0x20000000, LENGTH = 256K
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    DCCM : ORIGIN = 0x80000000, LENGTH = 128K
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>}
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>REGION_ALIAS(&quot;startup&quot;, ICCM)
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>REGION_ALIAS(&quot;text&quot;, ICCM)
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>REGION_ALIAS(&quot;data&quot;, DCCM)
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>REGION_ALIAS(&quot;sdata&quot;, DCCM)
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>PROVIDE (__stack_top = (0x8001ffff &amp; -4));
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>PROVIDE (__end_heap =  (0x8001ffff));
+</span></code></pre></div>
+<h3 id="em-starter-kit">EM Starter Kit<a class="headerlink" href="#em-starter-kit" title="Permanent link">&para;</a></h3>
+<p><code>memory.x</code> file for EM Starter Kit v2.2 and v2.3 with EM11D core:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>MEMORY
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>{
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    ICCM : ORIGIN = 0x00000000, LENGTH =  64K
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    DRAM : ORIGIN = 0x10000000, LENGTH = 128M
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    DCCM : ORIGIN = 0x80000000, LENGTH =  64K
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>}
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>REGION_ALIAS(&quot;startup&quot;, ICCM)
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>REGION_ALIAS(&quot;text&quot;, ICCM)
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>REGION_ALIAS(&quot;data&quot;, DRAM)
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>REGION_ALIAS(&quot;sdata&quot;, DRAM)
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>PROVIDE (__stack_top = (0x17FFFFFF &amp; -4));
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>PROVIDE (__end_heap = (0x17FFFFFF));
+</span></code></pre></div>
+<p><code>memory.x</code> file for EM Starter Kit v2.2 and v2.3 with EM7D and EM9D cores:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>MEMORY
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>{
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    ICCM : ORIGIN = 0x00000000, LENGTH = 256K
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    DRAM : ORIGIN = 0x10000000, LENGTH = 128M
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    DCCM : ORIGIN = 0x80000000, LENGTH = 128K
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>}
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>REGION_ALIAS(&quot;startup&quot;, ICCM)
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>REGION_ALIAS(&quot;text&quot;, ICCM)
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>REGION_ALIAS(&quot;data&quot;, DRAM)
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>REGION_ALIAS(&quot;sdata&quot;, DRAM)
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>PROVIDE (__stack_top = (0x17FFFFFF &amp; -4));
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>PROVIDE (__end_heap = (0x17FFFFFF));
+</span></code></pre></div>
+<p><code>memory.x</code> file for EM Starter Kit v2.1 with EM7D core:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>MEMORY
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>{
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    ICCM : ORIGIN = 0x00000000, LENGTH =  32K
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    DRAM : ORIGIN = 0x10000000, LENGTH = 128M
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    DCCM : ORIGIN = 0x80000000, LENGTH =  32K
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>}
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>REGION_ALIAS(&quot;startup&quot;, ICCM)
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>REGION_ALIAS(&quot;text&quot;, ICCM)
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>REGION_ALIAS(&quot;data&quot;, DRAM)
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>REGION_ALIAS(&quot;sdata&quot;, DRAM)
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>PROVIDE (__stack_top = (0x17FFFFFF &amp; -4));
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>PROVIDE (__end_heap = (0x17FFFFFF));
+</span></code></pre></div>
+<p><code>memory.x</code> file for EM Starter Kit v2.1 with EM5D core:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>MEMORY
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>{
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    ICCM : ORIGIN = 0x00000000, LENGTH = 128K
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    DCCM : ORIGIN = 0x80000000, LENGTH = 256K
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>}
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>REGION_ALIAS(&quot;startup&quot;, ICCM)
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>REGION_ALIAS(&quot;text&quot;, ICCM)
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>REGION_ALIAS(&quot;data&quot;, DCCM)
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>REGION_ALIAS(&quot;sdata&quot;, DCCM)
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>PROVIDE (__stack_top = (0x8003FFFF &amp; -4));
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>PROVIDE (__end_heap = (0x8003FFFF));
+</span></code></pre></div>
+<p><code>memory.x</code> file for EM Starter Kit v1 with EM6GP core:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>MEMORY
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>{
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    ICCM : ORIGIN = 0x00000000, LENGTH =  32K
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    DRAM : ORIGIN = 0x10000000, LENGTH = 128M
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>}
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>REGION_ALIAS(&quot;startup&quot;, ICCM)
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>REGION_ALIAS(&quot;text&quot;, ICCM)
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>REGION_ALIAS(&quot;data&quot;, DRAM)
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>REGION_ALIAS(&quot;sdata&quot;, DRAM)
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>PROVIDE (__stack_top = (0x17FFFFFF &amp; -4));
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>PROVIDE (__end_heap = (0x17FFFFFF));
+</span></code></pre></div>
+<p><code>memory.x</code> file for EM Starter Kit v1 with EM4 core:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>MEMORY
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>{
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    ICCM : ORIGIN = 0x00000000, LENGTH = 128K
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    DCCM : ORIGIN = 0x80000000, LENGTH =  64K
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>}
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>REGION_ALIAS(&quot;startup&quot;, ICCM)
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>REGION_ALIAS(&quot;text&quot;, ICCM)
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>REGION_ALIAS(&quot;data&quot;, DCCM)
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>REGION_ALIAS(&quot;sdata&quot;, DCCM)
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>PROVIDE (__stack_top = (0x8000FFFF &amp; -4));
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>PROVIDE (__end_heap = (0x8000FFFF));
+</span></code></pre></div>
+<h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permanent link">&para;</a></h2>
 <p>You can find valid memory mappings for particular hardware platforms in documentation.
 Here is a list of resources with memory maps for Synopsys' development platforms:</p>
 <ul>
