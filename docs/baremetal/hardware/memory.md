@@ -91,7 +91,7 @@ If you use `arcv2elfx` linker emulation, then linker searches for `memory.x` fil
 a custom memory map. It is searched in the current working directory and in directories listed via
 `-L` option.
 
-### EM Software Development Platform
+### Example for EM Software Development Platform
 
 Here is an example of `memory.x` for EM Software Development Platform:
 
@@ -143,7 +143,7 @@ $ arc-elf32-gcc -mcpu=em4_fpuda -mmpy-option=6 -mfpu=fpuda_all \
                 main.c -o main.elf
 ```
 
-### HS Development Kit
+### Example for HS Development Kit
 
 Here is an example of `memory.x` for HS Development Kit:
 
@@ -169,7 +169,201 @@ $ arc-elf32-gcc -mcpu=archs -Wl,-marcv2elfx -Wl,--defsym=ivtbase_addr=0x90000000
                 main.c -o main.elf
 ```
 
-## Memory Maps for Hardware Platforms
+## Memory Maps for Development Platforms
+
+### EM Software Development Platform
+
+`memory.x` file for EM Software Development Platform v1.2:
+
+```text
+MEMORY
+{
+    ICCM0 : ORIGIN = 0x10000000, LENGTH = 128K
+    PSRAM : ORIGIN = 0x40000000, LENGTH =  16M
+    DCCM  : ORIGIN = 0x80000000, LENGTH = 128K
+}
+
+REGION_ALIAS("startup", ICCM0)
+REGION_ALIAS("text", ICCM0)
+REGION_ALIAS("data", DCCM)
+REGION_ALIAS("sdata", DCCM)
+
+PROVIDE (__stack_top = (0x8001ffff & -4));
+PROVIDE (__end_heap =  (0x8001ffff));
+```
+
+`memory.x` file for EM Software Development Platform v1.0 and v1.1:
+
+```text
+MEMORY
+{
+    PSRAM : ORIGIN = 0x10000000, LENGTH =  16M
+    ICCM0 : ORIGIN = 0x60000000, LENGTH = 128K
+    DCCM  : ORIGIN = 0x80000000, LENGTH = 128K
+}
+
+REGION_ALIAS("startup", ICCM0)
+REGION_ALIAS("text", ICCM0)
+REGION_ALIAS("data", DCCM)
+REGION_ALIAS("sdata", DCCM)
+
+PROVIDE (__stack_top = (0x8001ffff & -4));
+PROVIDE (__end_heap =  (0x8001ffff));
+```
+
+### HS Development Kit
+
+Memory map for HS Development Kit and HS Development Kit 4xD depends on a board
+itself and on a chosen configuration of CPUs. Consider using this `memory.x` file
+that fits for all configurations (refer to [HSDK user guide](../../platforms/board-hsdk.md)
+or [HSDK 4xD user guide](../../platforms/board-hsdk-4xd.md) for details about board's memory map):
+
+```text
+MEMORY
+{
+    DRAM : ORIGIN = 0x90000000, LENGTH = 0x50000000
+}
+
+REGION_ALIAS("startup", DRAM)
+REGION_ALIAS("text", DRAM)
+REGION_ALIAS("data", DRAM)
+REGION_ALIAS("sdata", DRAM)
+```
+
+### IoT Development Kit
+
+`memory.x` file for IoT Development Kit:
+
+```text
+MEMORY
+{
+    ICCM : ORIGIN = 0x20000000, LENGTH = 256K
+    DCCM : ORIGIN = 0x80000000, LENGTH = 128K
+}
+
+REGION_ALIAS("startup", ICCM)
+REGION_ALIAS("text", ICCM)
+REGION_ALIAS("data", DCCM)
+REGION_ALIAS("sdata", DCCM)
+
+PROVIDE (__stack_top = (0x8001ffff & -4));
+PROVIDE (__end_heap =  (0x8001ffff));
+```
+
+### EM Starter Kit
+
+`memory.x` file for EM Starter Kit v2.2 and v2.3 with EM11D core:
+
+```text
+MEMORY
+{
+    ICCM : ORIGIN = 0x00000000, LENGTH =  64K
+    DRAM : ORIGIN = 0x10000000, LENGTH = 128M
+    DCCM : ORIGIN = 0x80000000, LENGTH =  64K
+}
+
+REGION_ALIAS("startup", ICCM)
+REGION_ALIAS("text", ICCM)
+REGION_ALIAS("data", DRAM)
+REGION_ALIAS("sdata", DRAM)
+
+PROVIDE (__stack_top = (0x17FFFFFF & -4));
+PROVIDE (__end_heap = (0x17FFFFFF));
+```
+
+`memory.x` file for EM Starter Kit v2.2 and v2.3 with EM7D and EM9D cores:
+
+```text
+MEMORY
+{
+    ICCM : ORIGIN = 0x00000000, LENGTH = 256K
+    DRAM : ORIGIN = 0x10000000, LENGTH = 128M
+    DCCM : ORIGIN = 0x80000000, LENGTH = 128K
+}
+
+REGION_ALIAS("startup", ICCM)
+REGION_ALIAS("text", ICCM)
+REGION_ALIAS("data", DRAM)
+REGION_ALIAS("sdata", DRAM)
+
+PROVIDE (__stack_top = (0x17FFFFFF & -4));
+PROVIDE (__end_heap = (0x17FFFFFF));
+```
+
+`memory.x` file for EM Starter Kit v2.1 with EM7D core:
+
+```text
+MEMORY
+{
+    ICCM : ORIGIN = 0x00000000, LENGTH =  32K
+    DRAM : ORIGIN = 0x10000000, LENGTH = 128M
+    DCCM : ORIGIN = 0x80000000, LENGTH =  32K
+}
+
+REGION_ALIAS("startup", ICCM)
+REGION_ALIAS("text", ICCM)
+REGION_ALIAS("data", DRAM)
+REGION_ALIAS("sdata", DRAM)
+
+PROVIDE (__stack_top = (0x17FFFFFF & -4));
+PROVIDE (__end_heap = (0x17FFFFFF));
+```
+
+`memory.x` file for EM Starter Kit v2.1 with EM5D core:
+
+```text
+MEMORY
+{
+    ICCM : ORIGIN = 0x00000000, LENGTH = 128K
+    DCCM : ORIGIN = 0x80000000, LENGTH = 256K
+}
+
+REGION_ALIAS("startup", ICCM)
+REGION_ALIAS("text", ICCM)
+REGION_ALIAS("data", DCCM)
+REGION_ALIAS("sdata", DCCM)
+
+PROVIDE (__stack_top = (0x8003FFFF & -4));
+PROVIDE (__end_heap = (0x8003FFFF));
+```
+
+`memory.x` file for EM Starter Kit v1 with EM6GP core:
+
+```text
+MEMORY
+{
+    ICCM : ORIGIN = 0x00000000, LENGTH =  32K
+    DRAM : ORIGIN = 0x10000000, LENGTH = 128M
+}
+
+REGION_ALIAS("startup", ICCM)
+REGION_ALIAS("text", ICCM)
+REGION_ALIAS("data", DRAM)
+REGION_ALIAS("sdata", DRAM)
+
+PROVIDE (__stack_top = (0x17FFFFFF & -4));
+PROVIDE (__end_heap = (0x17FFFFFF));
+```
+
+`memory.x` file for EM Starter Kit v1 with EM4 core:
+
+```text
+MEMORY
+{
+    ICCM : ORIGIN = 0x00000000, LENGTH = 128K
+    DCCM : ORIGIN = 0x80000000, LENGTH =  64K
+}
+
+REGION_ALIAS("startup", ICCM)
+REGION_ALIAS("text", ICCM)
+REGION_ALIAS("data", DCCM)
+REGION_ALIAS("sdata", DCCM)
+
+PROVIDE (__stack_top = (0x8000FFFF & -4));
+PROVIDE (__end_heap = (0x8000FFFF));
+```
+
+## Useful Links
 
 You can find valid memory mappings for particular hardware platforms in documentation.
 Here is a list of resources with memory maps for Synopsys' development platforms:
