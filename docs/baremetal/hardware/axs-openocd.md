@@ -15,7 +15,7 @@
 
     Also, consider reading these materials regarding memory maps and OpenOCD:
 
-    * Follow [Memory Maps and Linker Scripts](./memory.md) guide for details
+    * Follow [Memory Maps and Linker Scripts](../general/memory.md) guide for details
     about `memory.x` files and where they may be obtained.
     * Follow a [corresponding manual](../../platforms/get-openocd.md) to obtain
     and configure OpenOCD.  
@@ -35,7 +35,7 @@ For AXS103 currently two firmware releaseses are supported:
 
 ## Building an Application
 
-A [memory map](./memory.md) appropriate to the selected board should be used
+A [memory map](../general/memory.md) appropriate to the selected board should be used
 to link applications. The [toolchain repository](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain)
 includes memory maps for all ARC SDP systems. They can be found in the tree.
 Memory map files in that directory have `.x` extension and file to be used

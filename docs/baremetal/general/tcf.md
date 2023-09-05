@@ -72,7 +72,7 @@ TCF as a baseline and then modify if needed.
 
 !!! info
 
-    Please refer [Memory Maps and Linker Scripts](../hardware/memory.md) page
+    Please refer [Memory Maps and Linker Scripts](./memory.md) page
     for more details.
 
 TCF does not contain a linker script for GNU linker in the strict meaning of

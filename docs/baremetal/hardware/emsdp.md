@@ -47,7 +47,7 @@ arc-elf32-gcc -mcpu=em4_fpuda -mmpy-option=6 -mfpu=fpuda_all \
               -specs=emsdp1.1.specs main.c -o main.elf
 ```
 
-`-specs=emsdp1.1.specs` sets a proper [memory map](./memory.md) and links the
+`-specs=emsdp1.1.specs` sets a proper [memory map](../general/memory.md) and links the
 application with additional startup code and UART library for input/output
 operations.
 

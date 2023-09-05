@@ -32,7 +32,7 @@ Build the application:
 arc-elf32-gcc -mcpu=hs38_linux -specs=hsdk.specs main.c -o main.elf
 ```
 
-`-specs=hsdk.specs` sets a proper [memory map](./memory.md) and links the
+`-specs=hsdk.specs` sets a proper [memory map](../general/memory.md) and links the
 application with additional startup code and UART library for input/output
 operations.
 

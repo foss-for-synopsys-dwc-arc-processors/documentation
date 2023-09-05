@@ -55,7 +55,7 @@ Build the application:
 arc-elf32-gcc -mcpu=em4_dmips -specs=emsk2.2_em7d.specs main.c -o main.elf
 ```
 
-`-specs=emsk2.2_em7d.specs` sets a proper [memory map](./memory.md) and links the
+`-specs=emsk2.2_em7d.specs` sets a proper [memory map](../general/memory.md) and links the
 application with additional startup code and UART library for input/output
 operations.
 
