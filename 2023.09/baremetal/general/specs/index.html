@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../tcf/">
+        <link rel="prev" href="../memory/">
       
       
-        <link rel="next" href="../../../linux/building/buildroot/">
+        <link rel="next" href="../heap-and-stack/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
@@ -693,51 +693,19 @@
         
           
         
-          
-        
-          
-        
       
       
         <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-          Hardware
+          Development platforms
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_2">
           <span class="md-nav__icon md-icon"></span>
-          Hardware
+          Development platforms
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../hardware/general/" class="md-nav__link">
-        General Topics
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../hardware/memory/" class="md-nav__link">
-        Linker Scripts and Memory Maps
-      </a>
-    </li>
-  
-
-            
           
             
               
@@ -841,6 +809,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -854,6 +824,82 @@
           General Topics
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
+        Linker Scripts and Memory Maps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Specs Files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Specs Files
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-specs-files" class="md-nav__link">
+    List of Specs Files
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
           
             
               
@@ -878,30 +924,6 @@
       <a href="../tcf/" class="md-nav__link">
         Using TCF
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Specs Files
-      </a>
-      
     </li>
   
 
@@ -2348,6 +2370,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-specs-files" class="md-nav__link">
+    List of Specs Files
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2365,10 +2409,39 @@
 
 
 <h1 id="specs-files">Specs Files<a class="headerlink" href="#specs-files" title="Permanent link">&para;</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This article is under construction!</p>
-</div>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>There is a set of files called <em>specs files</em> with <code>.specs</code> extension. They are
+shipped with Newlib library in the baremetal toolchain. A specs file for a
+particular platform (for example, a simulator or a development board) is
+responsible for linking the application with specific startup code and
+additional libraries.</p>
+<p>For example, a specs file for HS Development Kit is called <code>hsdk.specs</code> and
+it does this when it's used:</p>
+<ol>
+<li>Link an application with a custom linker script that represents HSDK's
+   <a href="../memory/">memory map</a>.</li>
+<li>Link an application with a custom startup code.</li>
+<li>Link an application with UART library for input/output operations.</li>
+</ol>
+<p>You can use specs file using <code>-specs=</code> option:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>arc-elf32-gcc<span class="w"> </span>-mcpu<span class="o">=</span>archs<span class="w"> </span>-specs<span class="o">=</span>hsdk.specs<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main.elf
+</span></code></pre></div>
+<h2 id="list-of-specs-files">List of Specs Files<a class="headerlink" href="#list-of-specs-files" title="Permanent link">&para;</a></h2>
+<p>There is a list of general specs files:</p>
+<ul>
+<li><code>nosys.specs</code> - link stubs for system calls.</li>
+<li><code>nsim.specs</code> - link with GNU hostlink library for nSIM simulator (with <code>-on nsim_emt</code>) or QEMU (<code>-semihosting</code>).</li>
+<li><code>hl.specs</code> - link with MetaWare hostlink library for nSIM simulator (default hostlink mode).</li>
+<li><code>qemu.specs</code> - link with hostlink library for QEMU simulator (without <code>-semihosting</code>).</li>
+<li><code>nano.specs</code> - use Newlib nano instead of default Newlib implementation. May be used
+  in conjunction with other specs file. For example: <code>-specs=nano.specs -specs=nsim.specs</code>. </li>
+</ul>
+<p>Also, there are specs files for various development platforms:</p>
+<ul>
+<li><a href="../../hardware/hsdk/">HS Development Kit</a></li>
+<li><a href="../../hardware/emsdp/">EM Software Development Platform</a></li>
+<li><a href="../../hardware/emsk/">EM Starter Kit</a></li>
+</ul>
 
 
 

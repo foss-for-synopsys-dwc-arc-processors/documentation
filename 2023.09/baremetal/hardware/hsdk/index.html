@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../memory/">
+        <link rel="prev" href="../../simulators/qemu/">
       
       
         <link rel="next" href="../emsdp/">
@@ -695,51 +695,19 @@
         
           
         
-          
-        
-          
-        
       
       
         <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-          Hardware
+          Development platforms
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3_2">
           <span class="md-nav__icon md-icon"></span>
-          Hardware
+          Development platforms
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../general/" class="md-nav__link">
-        General Topics
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../memory/" class="md-nav__link">
-        Linker Scripts and Memory Maps
-      </a>
-    </li>
-  
-
-            
           
             
               
@@ -896,6 +864,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -909,6 +879,34 @@
           General Topics
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/memory/" class="md-nav__link">
+        Linker Scripts and Memory Maps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general/specs/" class="md-nav__link">
+        Specs Files
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -932,20 +930,6 @@
     <li class="md-nav__item">
       <a href="../../general/tcf/" class="md-nav__link">
         Using TCF
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../general/specs/" class="md-nav__link">
-        Specs Files
       </a>
     </li>
   
@@ -2464,7 +2448,7 @@ and using OpenOCD.</p>
 <p>Build the application:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>arc-elf32-gcc<span class="w"> </span>-mcpu<span class="o">=</span>hs38_linux<span class="w"> </span>-specs<span class="o">=</span>hsdk.specs<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main.elf
 </span></code></pre></div>
-<p><code>-specs=hsdk.specs</code> sets a proper <a href="../memory/">memory map</a> and links the
+<p><code>-specs=hsdk.specs</code> sets a proper <a href="../../general/memory/">memory map</a> and links the
 application with additional startup code and UART library for input/output
 operations.</p>
 <h2 id="running-an-application">Running an Application<a class="headerlink" href="#running-an-application" title="Permanent link">&para;</a></h2>
