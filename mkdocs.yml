@@ -24,6 +24,9 @@ plugins:
   - table-reader
   - search
   - autorefs
+extra:
+  version:
+    provider: mike
 markdown_extensions:
   - admonition
   - footnotes
@@ -53,18 +56,17 @@ nav:
     - Simulators:
       - baremetal/simulators/nsim.md
       - baremetal/simulators/qemu.md
-    - Hardware:
-      - baremetal/hardware/general.md
-      - baremetal/hardware/memory.md
+    - Development platforms:
       - baremetal/hardware/hsdk.md
       - baremetal/hardware/emsdp.md
       - baremetal/hardware/emsk.md
       - baremetal/hardware/axs-openocd.md
       - baremetal/hardware/axs-ashling.md
     - General Topics:
+      - baremetal/general/memory.md
+      - baremetal/general/specs.md
       - baremetal/general/heap-and-stack.md
       - baremetal/general/tcf.md
-      - baremetal/general/specs.md
   - Linux:
     - Building:
       - linux/building/buildroot.md
