@@ -23,53 +23,46 @@ target options for GCC:
 | EM5D      | `-mcpu=em4_fpuda -mmpy-option=6 -mfpu=fpuda_all`                  |
 | EM4       | `-mcpu=em4_fpuda -mno-div-rem -mmpy-option=3 -mfpu=fpuda_all`     |
 
-In this guide we use EM11D core as an example.
+In this guide we use EM11D core as an example. Also, the version of the EM SDP
+firmware is considered to be 1.0 or 1.1.
 
 ## Building an Application
 
 Consider a simple application with name `main.c`:
 
 ```c
+#include <stdio.h>
+
 int main()
 {
-    int a = 1;
-    int b = 2;
-    int c = a + b;
-    return c;
+    printf("Hello, World!\n");
+    return 0;
 }
 ```
 
-Create a [custom memory map](./memory.md) file with name `memory.x`:
+Build the application:
 
-```text
-MEMORY
-{
-    ICCM0 : ORIGIN = 0x10000000, LENGTH = 128K
-    PSRAM : ORIGIN = 0x40000000, LENGTH =  16M
-    DCCM0 : ORIGIN = 0x80000000, LENGTH = 128K
-}
-
-REGION_ALIAS("startup", ICCM0)
-REGION_ALIAS("text", ICCM0)
-REGION_ALIAS("data", DCCM0)
-REGION_ALIAS("sdata", DCCM0)
+```shell
+arc-elf32-gcc -mcpu=em4_fpuda -mmpy-option=6 -mfpu=fpuda_all \
+              -specs=emsdp1.1.specs main.c -o main.elf
 ```
 
-Build the application with support of UART:
+`-specs=emsdp1.1.specs` sets a proper [memory map](./memory.md) and links the
+application with additional startup code and UART library for input/output
+operations.
 
-```text
-arc-elf32-gcc -mcpu=em4_fpuda -mmpy-option=6 -mfpu=fpuda_all -specs=emsdp.specs \
-              -Wl,-marcv2elfx -Wl,--defsym=ivtbase_addr=0x10000000 \
-              main.c -o main.elf
-```
+Here is a list of all available `specs` files:
 
-Or build the application without support of UART:
+| Specs file           | EM SDP firmware | Description                               |
+|----------------------|-----------------|-------------------------------------------|
+| `emsdp1.1.specs`     | 1.0, 1.1        | Code and data are placed in ICCM and DCCM |
+| `emsdp1.1_ram.specs` | 1.0, 1.1        | Code and data are placed in RAM           |
+| `emsdp1.2.specs`[^1] | 1.2             | Code and data are placed in ICCM and DCCM |
+| `emsdp1.2_ram.specs` | 1.2             | Code and data are placed in RAM           |
 
-```text
-arc-elf32-gcc -mcpu=em4_fpuda -mmpy-option=6 -mfpu=fpuda_all -specs=nosys.specs \
-              -Wl,-marcv2elfx -Wl,--defsym=ivtbase_addr=0x10000000 \
-              main.c -o main.elf
-```
+[^1]:
+    The memory map for EM SDP 1.2 firmware differs from the memory map for
+    EM SDP 1.0 and 1.1. That is why there are different specs files.
 
 ## Running an Application
 

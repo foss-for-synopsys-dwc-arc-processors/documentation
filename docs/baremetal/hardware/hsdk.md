@@ -14,54 +14,27 @@
 
 ## Building an Application
 
-Consider a simple application `main.c`:
+Consider a simple application with name `main.c`:
 
 ```c
+#include <stdio.h>
+
 int main()
 {
-    int a = 1;
-    int b = 2;
-    int c = a + b;
-    return c;
+    printf("Hello, World!\n");
+    return 0;
 }
 ```
 
-Create a [custom memory map](./memory.md) file with name `memory.x`:
-
-```text
-MEMORY
-{
-    DRAM : ORIGIN = 0x90000000, LENGTH = 0x50000000
-}
-
-REGION_ALIAS("startup", DRAM)
-REGION_ALIAS("text", DRAM)
-REGION_ALIAS("data", DRAM)
-REGION_ALIAS("sdata", DRAM)
-```
-
-Build an application with support of UART:
+Build the application:
 
 ```shell
-arc-elf32-gcc -mcpu=hs38_linux -specs=hsdk.specs -Wl,-marcv2elfx \
-              -Wl,--defsym=ivtbase_addr=0x90000000 \
-              main.c -o main.elf
+arc-elf32-gcc -mcpu=hs38_linux -specs=hsdk.specs main.c -o main.elf
 ```
 
-Or build without support of UART, but if you are going to use interrupts (it allows
-to catch memory errors):
-
-```shell
-arc-elf32-gcc -mcpu=hs38_linux -specs=nosys.specs -Wl,-marcv2elfx \
-              -Wl,--defsym=ivtbase_addr=0x90000000 \
-              main.c -o main.elf
-```
-
-Here is a simple command line if you are not going to use UART and interrupts:
-
-```shell
-arc-elf32-gcc -mcpu=hs38_linux -specs=nosys.specs main.c -o main.elf
-```
+`-specs=hsdk.specs` sets a proper [memory map](./memory.md) and links the
+application with additional startup code and UART library for input/output
+operations.
 
 ## Running an Application
 

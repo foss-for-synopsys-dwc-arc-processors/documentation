@@ -12,53 +12,69 @@
     * Refer [Getting OpenOCD](../../platforms/get-openocd.md) and [Using OpenOCD](../../platforms/use-openocd.md)
       for details about installing and using OpenOCD.
 
+## Preface
+
+EM Starter Kit board is shipped with with FPGA chip. There is a number of firmwares
+available for writing to it. Also, you can select one of the cores presented in the firmware.
+Here is a list of those firmwares and cores and corresponding target options for GCC:
+
+| Firmware | Core    | GCC targets options                                                          |
+|----------|---------|------------------------------------------------------------------------------|
+| 2.2, 2.3 | EM11D   | `-mcpu=em4_fpuda -mfpu=fpuda_all`                                            |
+| 2.2, 2.3 | EM9D    | `-mcpu=em4_fpus -mfpu=fpus_all`                                              |
+| 2.2, 2.3 | EM7D    | `-mcpu=em4_dmips`                                                            |
+| 2.1      | EM7DFPU | `-mcpu=em4_fpuda -mmpy-option=wlh3`                                          |
+| 2.1      | EM7D    | `-mcpu=em4_dmips -mmpy-option=wlh3`                                          |
+| 2.1      | EM5D    | `-mcpu=em4_dmips -mmpy-option=wlh3`                                          |
+| 2.0      | EM7DFPU | `-mcpu=em4 -mswap -mnorm -mmpy-option=wlh3 -mbarrel-shifter -mfpu=fpuda_all` |
+| 2.0      | EM7D    | `-mcpu=em4 -mswap -mnorm -mmpy-option=wlh3 -mbarrel-shifter`                 |
+| 2.0      | EM5D    | `-mcpu=em4 -mswap -mnorm -mmpy-option=wlh3 -mbarrel-shifter`                 |
+| 1.0      | EM6     | `-mcpu=em4_dmips -mmpy-option=wlh5`                                          |
+| 1.0      | EM4     | `-mcpu=em4_dmips -mmpy-option=wlh5`                                          |
+
+In this guide we use EM7D core as an example. Also, the version of the EMSK
+firmware is considered to be 2.2 or 2.3.
+
 ## Building an Application
 
-Suppose, that EMSK 2.2 is used and EM7D core is selected.
-Consider a simple application `main.c`:
+Consider a simple application with name `main.c`:
 
 ```c
+#include <stdio.h>
+
 int main()
 {
-    int a = 1;
-    int b = 2;
-    int c = a + b;
-    return c;
+    printf("Hello, World!\n");
+    return 0;
 }
 ```
 
-Create a [custom memory map](./memory.md) file with name `memory.x`
-(memory maps for all EM Starter Kit version may be found in [toolchain's repository](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/tree/arc-releases/extras/dev_systems)):
-
-```text
-MEMORY
-{
-    ICCM : ORIGIN = 0x00000000, LENGTH = 256K
-    DRAM : ORIGIN = 0x10000000, LENGTH = 128M
-    DCCM : ORIGIN = 0x80000000, LENGTH = 128K
-}
-
-REGION_ALIAS("startup", ICCM)
-REGION_ALIAS("text", ICCM)
-REGION_ALIAS("data", DRAM)
-REGION_ALIAS("sdata", DRAM)
-
-PROVIDE (__stack_top = (0x17FFFFFF & -4) );
-PROVIDE (__end_heap = (0x17FFFFFF) );
-```
-
-
-Build an application with support of UART:
+Build the application:
 
 ```shell
-arc-elf32-gcc -mcpu=em4_dmips -specs=emsk.specs -Wl,-marcv2elfx main.c -o main.elf
+arc-elf32-gcc -mcpu=em4_dmips -specs=emsk2.2_em7d.specs main.c -o main.elf
 ```
 
-Or build without support of UART:
+`-specs=emsk2.2_em7d.specs` sets a proper [memory map](./memory.md) and links the
+application with additional startup code and UART library for input/output
+operations.
 
-```shell
-arc-elf32-gcc -mcpu=em4_dmips -specs=nosys.specs -Wl,-marcv2elfx main.c -o main.elf
-```
+Here is a list of all available `specs` files:
+
+| Specs file                | Firmware | Core  | Description                               |
+|---------------------------|----------|-------|-------------------------------------------|
+| `emsk2.2_em11d.specs`     | 2.2, 2.3 | EM11D | Code and data are placed in ICCM and DCCM |
+| `emsk2.2_em11d_ram.specs` | 2.2, 2.3 | EM11D | Code and data are placed in RAM           |
+| `emsk2.2_em9d.specs`      | 2.2, 2.3 | EM9D  | Code and data are placed in ICCM and DCCM |
+| `emsk2.2_em9d_ram.specs`  | 2.2, 2.3 | EM9D  | Code and data are placed in RAM           |
+| `emsk2.2_em7d.specs`      | 2.2, 2.3 | EM7D  | Code and data are placed in ICCM and DCCM |
+| `emsk2.2_em7d_ram.specs`  | 2.2, 2.3 | EM7D  | Code and data are placed in RAM           |
+| `emsk2.1_em7d.specs`      | 2.1      | EM7D  | Code and data are placed in ICCM and DCCM |
+| `emsk2.1_em7d_ram.specs`  | 2.1      | EM7D  | Code and data are placed in RAM           |
+| `emsk2.1_em5d.specs`      | 2.1      | EM5D  | Code and data are placed in ICCM and DCCM |
+| `emsk1_em6.specs`         | 1.0      | EM6   | Code and data are placed in ICCM and DCCM |
+| `emsk1_em6_ram.specs`     | 1.0      | EM6   | Code and data are placed in RAM           |
+| `emsk1_em4.specs`         | 1.0      | EM4   | Code and data are placed in ICCM and DCCM |
 
 ## Running an Application
 
