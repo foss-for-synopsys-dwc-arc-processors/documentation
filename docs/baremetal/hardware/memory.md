@@ -1,11 +1,11 @@
-# Memory Maps and Linker Scripts
+# Linker Scripts and Memory Maps
 
-## Linker Scripts and Linker Emulation
+## Linker Scripts
 
 Linker script is a special file which specifies where to put different sections of ELF file
 and defines particular symbols which may be referenced by an application. Linker emulation is
 basically way to select one of the predetermined linker scripts of the GNU linker.
-A linker script for a default linker emulation for ARCv2 may be observed this way:
+A default linker script may be observed this way:
 
 ```text
 $ arc-elf32-ld --verbose
@@ -55,7 +55,7 @@ This is usually enough for an application prototyping, however real systems ofte
 with CCM regions, peripherals' region, etc.
 
 Default linker emulation also puts interrupt vector table (`.ivt` section) between code and data sections and doesn't
-align `.ivt` properly (`.ivt` must be 1KiB-aligned for ARC processors). Here is an example:
+align `.ivt` properly (`.ivt` must be 1KB-aligned for ARC processors). Here is an example:
 
 ```text
 $ arc-elf32-gcc -mcpu=em4_dmips main.c -o main.elf
@@ -80,94 +80,54 @@ Idx Name          Size      VMA       LMA       File off  Algn
 ```
 
 Therefore the default linker emulation is not applicable for applications which handle interrupts.
-It can be used safely only with applications which don't handle interrupts and only on simulations
-which simulate whole address space, like following templates: `em6_dmips`, `em6_gp`, `em6_mini`,
-`em7d_nrg`, `em7d_voice_audio`, `em11d_nrg`, `em11d_voice_audio`, `hs36_base`, `hs36`, `hs38_base`,
-`hs38`, `hs38_full`, `hs38_slc_full`.
+It can be used safely only with applications that don't handle interrupts and that
+may be safely loaded in the beginning of the address space.
 
-## Using `arcv2elfx` linker emulation
+## Using Memory Maps
 
-If you use `arcv2elfx` linker emulation, then linker searches for `memory.x` file with definition of
-a custom memory map. It is searched in the current working directory and in directories listed via
-`-L` option.
+There is a linker script exists that allows to rearrange section easily. That
+linker script may be chose by passing `-Wl,-marcv2elfx` to GCC or by passing
+`-marcv2elfx` to linker itself. Then linker searches for `memory.x` file with
+definition of memory map. It is searched in the current working directory and
+in directories listed via `-L` option.
 
-### Example for EM Software Development Platform
-
-Here is an example of `memory.x` for EM Software Development Platform:
+Here is an example of `memory.x` for EM Software Development Platform 1.1:
 
 ```text
 MEMORY
 {
-    ICCM0 : ORIGIN = 0x10000000, LENGTH = 128K
-    PSRAM : ORIGIN = 0x40000000, LENGTH =  16M
-    DCCM0 : ORIGIN = 0x80000000, LENGTH = 128K
+    PSRAM : ORIGIN = 0x10000000, LENGTH =  16M
+    ICCM0 : ORIGIN = 0x60000000, LENGTH = 128K
+    DCCM  : ORIGIN = 0x80000000, LENGTH = 128K
 }
 
 REGION_ALIAS("startup", ICCM0)
 REGION_ALIAS("text", ICCM0)
-REGION_ALIAS("data", DCCM0)
-REGION_ALIAS("sdata", DCCM0)
-
-PROVIDE (__stack_top = (0x8001ffff & -4));
-PROVIDE (__end_heap =  (0x8001ffff));
+REGION_ALIAS("data", DCCM)
+REGION_ALIAS("sdata", DCCM)
 ```
 
 `MEMORY` section specifies platform's memory regions: base addresses and lengths.
-You can use arbitrary names for these regions.
-`REGION_ALIAS` commands translate platform's regions to standard region names
-expected by the linker emulation. There are 4 such standard regions:
+You can use arbitrary names for these regions. `REGION_ALIAS` command translates
+platform's regions to standard region names expected by the linker emulation.
+There are 4 such standard regions:
 
-* `startup` - interrupt vector table and initialization code. By default it's mapped to `0x0`
-  address and if you map `startup` to a different one, then you also need to pass this address
-  to the linker using `--defsym=ivtbase_addr=<...>` option or to GCC itself using `-Wl,--defsym=ivtbase_addr=<...>` option.
+* `startup` - interrupt vector table[^1] and initialization code.
 * `text` - other code sections.
 * `data` - data sections.
 * `sdata` - small data sections.
 
-Also, the example provides these symbols (both of them may be omitted and default values will be used):
+You can compile a program and link it with `memory.x` file for EM SDP 1.1 this way:
 
-* `__stack_top` points to the top of the stack. It must be 4-byte aligned In the example it points to the end
-  of DRAM regions, because stack grows downward.
-* `__end_heap` points to the end of the heap. Heap starts at the end of data sections
-  and grows upward to `__end_heap`.
-
-`startup` is mapped to `0x10000000`. It means that you have to pass `-Wl,--defsym=ivtbase_addr=<...>` option too.
-You can compile your application against that `memory.x` file by passing `-marcv2elfx` to the linker or
-`-Wl,-marcv2elfx` to GCC itself:
-
-```text
-$ ls
-main.c memory.x
-$ arc-elf32-gcc -mcpu=em4_fpuda -mmpy-option=6 -mfpu=fpuda_all \
-                -Wl,-marcv2elfx -Wl,--defsym=ivtbase_addr=0x10000000 \
-                main.c -o main.elf
+```shell
+arc-elf32-gcc -mcpu=em4_fpuda -Wl,-marcv2elfx main.c -o main.elf
 ```
 
-### Example for HS Development Kit
-
-Here is an example of `memory.x` for HS Development Kit:
-
-```text
-MEMORY
-{
-    DRAM : ORIGIN = 0x90000000, LENGTH = 0x50000000
-}
-
-REGION_ALIAS("startup", DRAM)
-REGION_ALIAS("text", DRAM)
-REGION_ALIAS("data", DRAM)
-REGION_ALIAS("sdata", DRAM)
-```
-
-`startup` is mapped to `0x90000000`. It means that you have to pass `-Wl,--defsym=ivtbase_addr=<...>` option too.
-You can compile your application against that `memory.x` this way:
-
-```text
-$ ls
-main.c memory.x
-$ arc-elf32-gcc -mcpu=archs -Wl,-marcv2elfx -Wl,--defsym=ivtbase_addr=0x90000000 \
-                main.c -o main.elf
-```
+[^1]:
+    Prior to ARC GNU toolchain 2023.09 interrupt vector table is placed in `0x0`
+    address by default. If `startup` region is mapped to a different address,
+    then you need to set IVT address manually by passing `-Wl,--defsym=ivtbase_addr=<startup-address>`
+    to GCC or by passing `--defsym=ivtbase_addr=<startup-address>` to the linker.
 
 ## Memory Maps for Development Platforms
 
@@ -187,9 +147,6 @@ REGION_ALIAS("startup", ICCM0)
 REGION_ALIAS("text", ICCM0)
 REGION_ALIAS("data", DCCM)
 REGION_ALIAS("sdata", DCCM)
-
-PROVIDE (__stack_top = (0x8001ffff & -4));
-PROVIDE (__end_heap =  (0x8001ffff));
 ```
 
 `memory.x` file for EM Software Development Platform v1.0 and v1.1:
@@ -206,9 +163,6 @@ REGION_ALIAS("startup", ICCM0)
 REGION_ALIAS("text", ICCM0)
 REGION_ALIAS("data", DCCM)
 REGION_ALIAS("sdata", DCCM)
-
-PROVIDE (__stack_top = (0x8001ffff & -4));
-PROVIDE (__end_heap =  (0x8001ffff));
 ```
 
 ### HS Development Kit
@@ -245,9 +199,6 @@ REGION_ALIAS("startup", ICCM)
 REGION_ALIAS("text", ICCM)
 REGION_ALIAS("data", DCCM)
 REGION_ALIAS("sdata", DCCM)
-
-PROVIDE (__stack_top = (0x8001ffff & -4));
-PROVIDE (__end_heap =  (0x8001ffff));
 ```
 
 ### EM Starter Kit
@@ -266,9 +217,6 @@ REGION_ALIAS("startup", ICCM)
 REGION_ALIAS("text", ICCM)
 REGION_ALIAS("data", DRAM)
 REGION_ALIAS("sdata", DRAM)
-
-PROVIDE (__stack_top = (0x17FFFFFF & -4));
-PROVIDE (__end_heap = (0x17FFFFFF));
 ```
 
 `memory.x` file for EM Starter Kit v2.2 and v2.3 with EM7D and EM9D cores:
@@ -285,9 +233,6 @@ REGION_ALIAS("startup", ICCM)
 REGION_ALIAS("text", ICCM)
 REGION_ALIAS("data", DRAM)
 REGION_ALIAS("sdata", DRAM)
-
-PROVIDE (__stack_top = (0x17FFFFFF & -4));
-PROVIDE (__end_heap = (0x17FFFFFF));
 ```
 
 `memory.x` file for EM Starter Kit v2.1 with EM7D core:
@@ -304,9 +249,6 @@ REGION_ALIAS("startup", ICCM)
 REGION_ALIAS("text", ICCM)
 REGION_ALIAS("data", DRAM)
 REGION_ALIAS("sdata", DRAM)
-
-PROVIDE (__stack_top = (0x17FFFFFF & -4));
-PROVIDE (__end_heap = (0x17FFFFFF));
 ```
 
 `memory.x` file for EM Starter Kit v2.1 with EM5D core:
@@ -322,9 +264,6 @@ REGION_ALIAS("startup", ICCM)
 REGION_ALIAS("text", ICCM)
 REGION_ALIAS("data", DCCM)
 REGION_ALIAS("sdata", DCCM)
-
-PROVIDE (__stack_top = (0x8003FFFF & -4));
-PROVIDE (__end_heap = (0x8003FFFF));
 ```
 
 `memory.x` file for EM Starter Kit v1 with EM6GP core:
@@ -340,9 +279,6 @@ REGION_ALIAS("startup", ICCM)
 REGION_ALIAS("text", ICCM)
 REGION_ALIAS("data", DRAM)
 REGION_ALIAS("sdata", DRAM)
-
-PROVIDE (__stack_top = (0x17FFFFFF & -4));
-PROVIDE (__end_heap = (0x17FFFFFF));
 ```
 
 `memory.x` file for EM Starter Kit v1 with EM4 core:
@@ -358,9 +294,6 @@ REGION_ALIAS("startup", ICCM)
 REGION_ALIAS("text", ICCM)
 REGION_ALIAS("data", DCCM)
 REGION_ALIAS("sdata", DCCM)
-
-PROVIDE (__stack_top = (0x8000FFFF & -4));
-PROVIDE (__end_heap = (0x8000FFFF));
 ```
 
 ## Useful Links
