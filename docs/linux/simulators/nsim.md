@@ -22,7 +22,7 @@ Clone a repository and create a build directory:
 git clone https://git.busybox.net/buildroot
 
 # ... or use a custom repository for support of ARCv3 targets
-https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
+git clone  https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
 
 # Create a build directory
 mkdir buildroot/build
