@@ -122,9 +122,9 @@ Resume execution to reach function exit:
     If you are going to use OpenOCD on Windows, firstly follow
     [Installing WinUSB on Windows](./winusb.md) guide to install WinUSB driver.
 
-OpenOCD may be used on Windows the same way it's used on Linux. However,
-you have  For example, if you downloaded and installed IDE bundle for Windows,
-then you can run OpenOCD this way:
+OpenOCD may be used on Windows the same way it's used on Linux.
+If you downloaded and installed IDE bundle for Windows, then you can run
+OpenOCD this way:
 
 ```text
 $ C:\arc_gnu\bin\openocd -s C:\arc_gnu\share\openocd\scripts -f board\snps_em_sk_v2.2.cfg

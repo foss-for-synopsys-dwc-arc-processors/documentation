@@ -38,6 +38,11 @@ operations.
 
 ## Running an Application
 
+!!! warning
+
+    If `snps_hsdk_4xd.cfg` configuration file us not available in your
+    installation, then consider using `snps_hsdk.cfg`.
+
 Follow [Using OpenOCD](../../platforms/use-openocd.md) guide and start OpenOCD
 with 49101 port and `snps_hsdk.cfg` (for HSDK) of `snps_hsdk_4xd.cfg`
 (for HSDK 4xD) configuration file. Here is a possible output for HSDK 4xD:
