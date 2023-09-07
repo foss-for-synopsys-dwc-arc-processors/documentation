@@ -1700,6 +1700,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#connecting-to-the-serial-terminal" class="md-nav__link">
+    Connecting to the Serial Terminal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#useful-links" class="md-nav__link">
     Useful Links
   </a>
@@ -2391,6 +2398,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#connecting-to-the-serial-terminal" class="md-nav__link">
+    Connecting to the Serial Terminal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#useful-links" class="md-nav__link">
     Useful Links
   </a>
@@ -2452,6 +2466,49 @@ power adapter is included in the package.</p>
 <li>8 Mbyte for application software available in on-board flash</li>
 <li>SD-card for additional application software and data storage</li>
 </ul>
+<h2 id="connecting-to-the-serial-terminal">Connecting to the Serial Terminal<a class="headerlink" href="#connecting-to-the-serial-terminal" title="Permanent link">&para;</a></h2>
+<p>Connecting to the board using USB data port allows to connect to the serial
+terminal over UART. You need to configure these parameters of a serial
+terminal to interact with the serial port:</p>
+<ul>
+<li>baud-rate 115200</li>
+<li>8 data bits</li>
+<li>1 stop Bit</li>
+</ul>
+<p>On Windows <a href="https://www.putty.org/">Putty</a> or any similar software may be used for connecting
+to the serial terminal. You can find the port number in <strong>Device Manager</strong> in
+<strong>Ports (COM &amp; LPT)</strong> section: <strong>USB Serial Port (COMx)</strong> where <strong>COMx</strong> is
+a value for <strong>Serial line</strong> field in Putty's. Other parameters may be set
+<strong>Connection → Serial</strong> menu.</p>
+<p>On Linux <code>minicom</code> or other similar utilities may be used. Here is an example
+of command line for <code>minicom</code>:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>minicom<span class="w"> </span>-8<span class="w"> </span>-b<span class="w"> </span><span class="m">115200</span><span class="w"> </span>-D<span class="w"> </span>/dev/ttyUSB1
+</span></code></pre></div>
+<p>After resetting the EMSK 2.2 you will see this output of the bootloader:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>***********************************
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>**       Synopsys, Inc.          **
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>**     ARC EM Starter kit        **
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>**                               **
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>** Comprehensive software stacks **
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>**   available from embARC.org   **
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>**                               **
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>***********************************
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>Firmware   Jan 11 2016, v2.2
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>Bootloader Dec 29 2015, v1.1
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>ARC EM11D, core configuration #3 
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>ARC IDENTITY = 0x42
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>RF_BUILD = 0xc902
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>TIMER_BUILD = 0x10304
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>ICCM_BUILD = 0x804
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>DCCM_BUILD = 0x10804
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>I_CACHE_BUILD = 0x135104
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>D_CACHE_BUILD = 0x215104
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>SelfTest PASSED
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>Info: No boot image found
+</span></code></pre></div>
 <h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../files/ARC_EM_Starter_Kit_User_Guide.pdf">ARC EM Starter Kit - User Guide</a></li>

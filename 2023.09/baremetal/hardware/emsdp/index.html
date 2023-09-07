@@ -784,8 +784,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connecting-using-uart" class="md-nav__link">
-    Connecting Using UART
+  <a href="#connecting-to-the-serial-terminal" class="md-nav__link">
+    Connecting to the Serial Terminal
   </a>
   
 </li>
@@ -2412,8 +2412,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connecting-using-uart" class="md-nav__link">
-    Connecting Using UART
+  <a href="#connecting-to-the-serial-terminal" class="md-nav__link">
+    Connecting to the Serial Terminal
   </a>
   
 </li>
@@ -2620,33 +2620,9 @@ because it's not included in OpenOCD distribution yet:</p>
 </span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a># For example, check exit code of application
 </span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>(gdb) info reg r0
 </span></code></pre></div>
-<h2 id="connecting-using-uart">Connecting Using UART<a class="headerlink" href="#connecting-using-uart" title="Permanent link">&para;</a></h2>
-<p>If you are going to use input/output, then you need to configure these
-parameters of a serial terminal to interact with the serial port:</p>
-<ul>
-<li>baud-rate 115200</li>
-<li>8 data bits</li>
-<li>1 stop Bit</li>
-</ul>
-<p>For <code>minicom</code> use this command:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>minicom<span class="w"> </span>-8<span class="w"> </span>-b<span class="w"> </span><span class="m">115200</span><span class="w"> </span>-D<span class="w"> </span>/dev/ttyUSB1
-</span></code></pre></div>
-<p>After resetting the EM SDP you will see this output of the bootloader:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>U-Boot 2020.04 (Sep 09 2022 - 08:54:58 +0200)
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>CPU:   ARC EM11D v5.6 at 40 MHz
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Subsys:ARC Data Fusion IP Subsystem
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Model: snps,emsdp
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>Board: ARC EM Software Development Platform v1.2
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>DRAM:  16 MiB
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>PSRAM initialized.
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>MMC:   mmc0@f0010000: 0
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>Loading Environment from FAT... MMC: no card present
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>In:    serial0@f0004000
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>Out:   serial0@f0004000
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>Err:   serial0@f0004000
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>emsdp#
-</span></code></pre></div>
+<h2 id="connecting-to-the-serial-terminal">Connecting to the Serial Terminal<a class="headerlink" href="#connecting-to-the-serial-terminal" title="Permanent link">&para;</a></h2>
+<p>Follow <a href="../../../platforms/board-emsdp/#connecting-to-the-serial-terminal">the corresponding guide</a>
+for ARC EM Software Development Platform.</p>
 <div class="footnote">
 <hr />
 <ol>

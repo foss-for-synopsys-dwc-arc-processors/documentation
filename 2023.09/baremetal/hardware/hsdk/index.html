@@ -763,8 +763,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connecting-using-uart" class="md-nav__link">
-    Connecting Using UART
+  <a href="#connecting-to-the-serial-terminal" class="md-nav__link">
+    Connecting to the Serial Terminal
   </a>
   
 </li>
@@ -2398,8 +2398,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connecting-using-uart" class="md-nav__link">
-    Connecting Using UART
+  <a href="#connecting-to-the-serial-terminal" class="md-nav__link">
+    Connecting to the Serial Terminal
   </a>
   
 </li>
@@ -2428,8 +2428,8 @@
 <p>Please refer to board's documentation for detailed information about how to
 setup the board for initial operation:</p>
 <ul>
+<li><a href="../../../platforms/board-hsdk-4xd/">ARC HS Development Kit 4xD</a></li>
 <li><a href="../../../platforms/board-hsdk/">ARC HS Development Kit</a></li>
-<li><a href="../../../platforms/board-hsdk-4xd/">ARC HS4x/HS4xD Development Kit</a></li>
 </ul>
 <p>Also refer <a href="../../../platforms/get-openocd/">Getting OpenOCD</a> and 
 <a href="../../../platforms/use-openocd/">Using OpenOCD</a> for details about installing
@@ -2514,51 +2514,9 @@ corresponds to the first core):</p>
 </span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a># For example, check exit code of application
 </span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>(gdb) info reg r0
 </span></code></pre></div>
-<h2 id="connecting-using-uart">Connecting Using UART<a class="headerlink" href="#connecting-using-uart" title="Permanent link">&para;</a></h2>
-<p>If you are going to use input/output, then you need to configure these
-parameters of a serial terminal to interact with the serial port:</p>
-<ul>
-<li>baud-rate 115200</li>
-<li>8 data bits</li>
-<li>1 stop Bit</li>
-<li>No HW/SW flow control</li>
-</ul>
-<p>For <code>minicom</code> use this command:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>minicom<span class="w"> </span>-8<span class="w"> </span>-b<span class="w"> </span><span class="m">115200</span><span class="w"> </span>-D<span class="w"> </span>/dev/ttyUSB0<span class="w"> </span>-s
-</span></code></pre></div>
-<p>Then choose <code>Serial port setup</code>, press <code>F</code> to disable <code>Hardware Flow Control</code>, press <code>Enter</code> key
-and then choose <code>Exit</code> to close the configuration menu.</p>
-<p>After resetting HSDK you will see this output of the bootloader:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>********************************
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>**       Synopsys, Inc.       **
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>**   ARC HS Development Kit   **
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>********************************
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>** IC revision: Rev 2.0
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>** Bootloader verbosity: Normal
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>** Starting HS Core 1
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>** HS Core running @ 500 MHz
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>fptr = 8** HS Core fetching application from SPI flash
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>** HS Core starting application
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>&lt;debug_uart&gt; 
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>U-Boot 2020.01 (Apr 26 2020 - 22:30:20 +0300)
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>CPU:   ARC HS v4.0 at 500 MHz
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>Model: snps,hsdk-4xd
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>Board: Synopsys ARC HS4x/HS4xD Development Kit
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>DRAM:  1 GiB
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>Relocation Offset is: 3ef8a000
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>MMC:   mmc0@f000a000: 0
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>Loading Environment from FAT... MMC: no card present
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>In:    serial0@f0005000
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>Out:   serial0@f0005000
-</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>Err:   serial0@f0005000
-</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>Clock values are saved to environment
-</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>Net:   
-</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>Warning: ethernet@f0008000 (eth0) using random MAC address - c2:26:b0:99:98:4a
-</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>eth0: ethernet@f0008000
-</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>hsdk-4xd# 
-</span></code></pre></div>
+<h2 id="connecting-to-the-serial-terminal">Connecting to the Serial Terminal<a class="headerlink" href="#connecting-to-the-serial-terminal" title="Permanent link">&para;</a></h2>
+<p>Follow <a href="../../../platforms/board-hsdk-4xd/#connecting-to-the-serial-terminal">the corresponding guide</a>
+for ARC HS Development Kit.</p>
 
 
 

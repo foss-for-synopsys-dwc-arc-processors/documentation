@@ -798,8 +798,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connecting-using-uart" class="md-nav__link">
-    Connecting Using UART
+  <a href="#connecting-to-the-serial-terminal" class="md-nav__link">
+    Connecting to the Serial Terminal
   </a>
   
 </li>
@@ -2412,8 +2412,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connecting-using-uart" class="md-nav__link">
-    Connecting Using UART
+  <a href="#connecting-to-the-serial-terminal" class="md-nav__link">
+    Connecting to the Serial Terminal
   </a>
   
 </li>
@@ -2666,42 +2666,9 @@ a possible output:</p>
 </span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a># For example, check exit code of application
 </span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>(gdb) info reg r0
 </span></code></pre></div>
-<h2 id="connecting-using-uart">Connecting Using UART<a class="headerlink" href="#connecting-using-uart" title="Permanent link">&para;</a></h2>
-<p>If you are going to use input/output, then you need to configure these
-parameters of a serial terminal to interact with the serial port:</p>
-<ul>
-<li>baud-rate 115200</li>
-<li>8 data bits</li>
-<li>1 stop Bit</li>
-</ul>
-<p>For <code>minicom</code> use this command:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>minicom<span class="w"> </span>-8<span class="w"> </span>-b<span class="w"> </span><span class="m">115200</span><span class="w"> </span>-D<span class="w"> </span>/dev/ttyUSB1
-</span></code></pre></div>
-<p>After resetting the EMSK 2.2 you will see this output of the bootloader:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>***********************************
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>**       Synopsys, Inc.          **
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>**     ARC EM Starter kit        **
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>**                               **
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>** Comprehensive software stacks **
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>**   available from embARC.org   **
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>**                               **
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>***********************************
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>Firmware   Jan 11 2016, v2.2
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>Bootloader Dec 29 2015, v1.1
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>ARC EM11D, core configuration #3 
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>ARC IDENTITY = 0x42
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>RF_BUILD = 0xc902
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>TIMER_BUILD = 0x10304
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>ICCM_BUILD = 0x804
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>DCCM_BUILD = 0x10804
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>I_CACHE_BUILD = 0x135104
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>D_CACHE_BUILD = 0x215104
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>SelfTest PASSED
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>Info: No boot image found
-</span></code></pre></div>
+<h2 id="connecting-to-the-serial-terminal">Connecting to the Serial Terminal<a class="headerlink" href="#connecting-to-the-serial-terminal" title="Permanent link">&para;</a></h2>
+<p>Follow <a href="../../../platforms/board-emsk/#connecting-to-the-serial-terminal">the corresponding guide</a>
+for ARC EM Starter Kit.</p>
 
 
 
