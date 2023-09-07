@@ -14,6 +14,10 @@ embedded systems. embARC OSP source code includes bare metal and FreeRTOS device
 drivers and example applications. Code development is made easy using the
 MetaWare Development Toolkit, MetaWare Lite tools or the ARC GNU Tool Chain.
 
+## Connecting to the Serial Terminal
+
+Follow the guide for [ARC HS Development Kit 4xD](./board-hsdk-4xd.md).
+
 ## Useful Links
 
 * [ARC HS Development Platform v1.0 - User Guide](files/ARC_HSDK_User_Guide.pdf)

@@ -13,6 +13,67 @@ HS4x/HS4xD Development Kit includes pre-built SMP Linux image (plus the U-Boot
 bootloader). Code development is made easy using the MetaWare Development
 Toolkit, MetaWare Lite tools or the ARC GNU Tool Chain.
 
+## Connecting to the Serial Terminal
+
+Connecting to the board using USB data port allows to connect to the serial
+terminal over UART. You need to configure these parameters of a serial
+terminal to interact with the serial port:
+
+* baud-rate 115200
+* 8 data bits
+* 1 stop Bit
+* No HW/SW flow control
+
+On Windows [Putty](https://www.putty.org/) or any similar software may be used for connecting
+to the serial terminal. You can find the port number in **Device Manager** in
+**Ports (COM & LPT)** section: **USB Serial Port (COMx)** where **COMx** is
+a value for **Serial line** field in Putty's. Other parameters may be set
+**Connection → Serial** menu.
+
+On Linux `minicom` or other similar utilities may be used. Here is an example
+of command line for `minicom`:
+
+```shell
+minicom -8 -b 115200 -D /dev/ttyUSB0 -s
+```
+
+Then choose `Serial port setup`, press `F` to disable `Hardware Flow Control`, press `Enter` key
+and then choose `Exit` to close the configuration menu.
+
+After resetting HSDK you will see this output of the bootloader:
+
+```text
+********************************
+**       Synopsys, Inc.       **
+**   ARC HS Development Kit   **
+********************************
+** IC revision: Rev 2.0
+** Bootloader verbosity: Normal
+** Starting HS Core 1
+** HS Core running @ 500 MHz
+fptr = 8** HS Core fetching application from SPI flash
+** HS Core starting application
+<debug_uart> 
+
+U-Boot 2020.01 (Apr 26 2020 - 22:30:20 +0300)
+
+CPU:   ARC HS v4.0 at 500 MHz
+Model: snps,hsdk-4xd
+Board: Synopsys ARC HS4x/HS4xD Development Kit
+DRAM:  1 GiB
+Relocation Offset is: 3ef8a000
+MMC:   mmc0@f000a000: 0
+Loading Environment from FAT... MMC: no card present
+In:    serial0@f0005000
+Out:   serial0@f0005000
+Err:   serial0@f0005000
+Clock values are saved to environment
+Net:   
+Warning: ethernet@f0008000 (eth0) using random MAC address - c2:26:b0:99:98:4a
+eth0: ethernet@f0008000
+hsdk-4xd# 
+```
+
 ## Useful Links
 
 * [ARC HS Development Platform 4xD v1.0 - User Guide](files/ARC_HSDK_4xD_User_Guide.pdf)

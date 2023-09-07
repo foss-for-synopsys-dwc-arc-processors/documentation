@@ -33,6 +33,57 @@ ARC EM Starter Kit includes the following features:
 * 8 Mbyte for application software available in on-board flash
 * SD-card for additional application software and data storage
 
+## Connecting to the Serial Terminal
+
+Connecting to the board using USB data port allows to connect to the serial
+terminal over UART. You need to configure these parameters of a serial
+terminal to interact with the serial port:
+
+* baud-rate 115200
+* 8 data bits
+* 1 stop Bit
+
+On Windows [Putty](https://www.putty.org/) or any similar software may be used for connecting
+to the serial terminal. You can find the port number in **Device Manager** in
+**Ports (COM & LPT)** section: **USB Serial Port (COMx)** where **COMx** is
+a value for **Serial line** field in Putty's. Other parameters may be set
+**Connection → Serial** menu.
+
+On Linux `minicom` or other similar utilities may be used. Here is an example
+of command line for `minicom`:
+
+```shell
+minicom -8 -b 115200 -D /dev/ttyUSB1
+```
+
+After resetting the EMSK 2.2 you will see this output of the bootloader:
+
+```text
+***********************************
+**       Synopsys, Inc.          **
+**     ARC EM Starter kit        **
+**                               **
+** Comprehensive software stacks **
+**   available from embARC.org   **
+**                               **
+***********************************
+Firmware   Jan 11 2016, v2.2
+Bootloader Dec 29 2015, v1.1
+ARC EM11D, core configuration #3 
+
+ARC IDENTITY = 0x42
+RF_BUILD = 0xc902
+TIMER_BUILD = 0x10304
+ICCM_BUILD = 0x804
+DCCM_BUILD = 0x10804
+I_CACHE_BUILD = 0x135104
+D_CACHE_BUILD = 0x215104
+
+SelfTest PASSED
+
+Info: No boot image found
+```
+
 ## Useful Links
 
 * [ARC EM Starter Kit - User Guide](files/ARC_EM_Starter_Kit_User_Guide.pdf)

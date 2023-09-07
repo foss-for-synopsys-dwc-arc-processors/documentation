@@ -5,8 +5,8 @@
     Please refer to board's documentation for detailed information about how to
     setup the board for initial operation:
 
+    * [ARC HS Development Kit 4xD](../../platforms/board-hsdk-4xd.md)
     * [ARC HS Development Kit](../../platforms/board-hsdk.md)
-    * [ARC HS4x/HS4xD Development Kit](../../platforms/board-hsdk-4xd.md)
 
     Also refer [Getting OpenOCD](../../platforms/get-openocd.md) and 
     [Using OpenOCD](../../platforms/use-openocd.md) for details about installing
@@ -106,55 +106,7 @@ $ arc-elf32-gdb -quiet main.elf
 (gdb) info reg r0
 ```
 
-## Connecting Using UART
+## Connecting to the Serial Terminal
 
-If you are going to use input/output, then you need to configure these
-parameters of a serial terminal to interact with the serial port:
-
-* baud-rate 115200
-* 8 data bits
-* 1 stop Bit
-* No HW/SW flow control
-
-For `minicom` use this command:
-
-```shell
-minicom -8 -b 115200 -D /dev/ttyUSB0 -s
-```
-
-Then choose `Serial port setup`, press `F` to disable `Hardware Flow Control`, press `Enter` key
-and then choose `Exit` to close the configuration menu.
-
-After resetting HSDK you will see this output of the bootloader:
-
-```text
-********************************
-**       Synopsys, Inc.       **
-**   ARC HS Development Kit   **
-********************************
-** IC revision: Rev 2.0
-** Bootloader verbosity: Normal
-** Starting HS Core 1
-** HS Core running @ 500 MHz
-fptr = 8** HS Core fetching application from SPI flash
-** HS Core starting application
-<debug_uart> 
-
-U-Boot 2020.01 (Apr 26 2020 - 22:30:20 +0300)
-
-CPU:   ARC HS v4.0 at 500 MHz
-Model: snps,hsdk-4xd
-Board: Synopsys ARC HS4x/HS4xD Development Kit
-DRAM:  1 GiB
-Relocation Offset is: 3ef8a000
-MMC:   mmc0@f000a000: 0
-Loading Environment from FAT... MMC: no card present
-In:    serial0@f0005000
-Out:   serial0@f0005000
-Err:   serial0@f0005000
-Clock values are saved to environment
-Net:   
-Warning: ethernet@f0008000 (eth0) using random MAC address - c2:26:b0:99:98:4a
-eth0: ethernet@f0008000
-hsdk-4xd# 
-```
+Follow [the corresponding guide](../../platforms/board-hsdk-4xd.md#connecting-to-the-serial-terminal)
+for ARC HS Development Kit.

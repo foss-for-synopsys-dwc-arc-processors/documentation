@@ -59,6 +59,48 @@ Key Features
 * 12V Power Supply
 * 12V fan
 
+## Connecting to the Serial Terminal
+
+Connecting to the board using USB data port allows to connect to the serial
+terminal over UART. You need to configure these parameters of a serial
+terminal to interact with the serial port:
+
+* baud-rate 115200
+* 8 data bits
+* 1 stop Bit
+
+On Windows [Putty](https://www.putty.org/) or any similar software may be used for connecting
+to the serial terminal. You can find the port number in **Device Manager** in
+**Ports (COM & LPT)** section: **USB Serial Port (COMx)** where **COMx** is
+a value for **Serial line** field in Putty's. Other parameters may be set
+**Connection → Serial** menu.
+
+On Linux `minicom` or other similar utilities may be used. Here is an example
+of command line for `minicom`:
+
+```shell
+minicom -8 -b 115200 -D /dev/ttyUSB1
+```
+
+After resetting the EM SDP you will see this output of the bootloader:
+
+```text
+U-Boot 2020.04 (Sep 09 2022 - 08:54:58 +0200)
+
+CPU:   ARC EM11D v5.6 at 40 MHz
+Subsys:ARC Data Fusion IP Subsystem
+Model: snps,emsdp
+Board: ARC EM Software Development Platform v1.2
+DRAM:  16 MiB
+PSRAM initialized.
+MMC:   mmc0@f0010000: 0
+Loading Environment from FAT... MMC: no card present
+In:    serial0@f0004000
+Out:   serial0@f0004000
+Err:   serial0@f0004000
+emsdp#
+```
+
 ## How to Manually Flash a Firmware
 
 You can flash a firmware of ARC CPU manually using [Digilent Adept utilities](./digilent.md).

@@ -155,36 +155,7 @@ $ arc-elf32-gdb -quiet main.elf
 (gdb) info reg r0
 ```
 
-## Connecting Using UART
+## Connecting to the Serial Terminal
 
-If you are going to use input/output, then you need to configure these
-parameters of a serial terminal to interact with the serial port:
-
-* baud-rate 115200
-* 8 data bits
-* 1 stop Bit
-
-For `minicom` use this command:
-
-```shell
-minicom -8 -b 115200 -D /dev/ttyUSB1
-```
-
-After resetting the EM SDP you will see this output of the bootloader:
-
-```text
-U-Boot 2020.04 (Sep 09 2022 - 08:54:58 +0200)
-
-CPU:   ARC EM11D v5.6 at 40 MHz
-Subsys:ARC Data Fusion IP Subsystem
-Model: snps,emsdp
-Board: ARC EM Software Development Platform v1.2
-DRAM:  16 MiB
-PSRAM initialized.
-MMC:   mmc0@f0010000: 0
-Loading Environment from FAT... MMC: no card present
-In:    serial0@f0004000
-Out:   serial0@f0004000
-Err:   serial0@f0004000
-emsdp#
-```
+Follow [the corresponding guide](../../platforms/board-emsdp.md#connecting-to-the-serial-terminal)
+for ARC EM Software Development Platform.

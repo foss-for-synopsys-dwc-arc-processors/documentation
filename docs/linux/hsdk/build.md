@@ -4,8 +4,8 @@
 
 The ARC HSDK development system is based on a custom designed Synopsys ARC SoC containing the ARC HS38x4 (quad core) processor. Please refer to board's documentation for detailed information about how to setup the board for initial operation:
 
-* [ARC HS Development Kit](https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-hs-development-kit-1)
-* [ARC HS4x/HS4xD Development Kit](https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-hs4xhs4xd-development-kit-1)
+* [ARC HS Development Kit 4xD](../../platforms/board-hsdk-4xd.md)
+* [ARC HS Development Kit](../../platforms/board-hsdk.md)
 
 In short, preparation of HSDK board consists of following steps:
 
@@ -17,10 +17,10 @@ The image below shows a correct board setup:
 
 ![HSDK](images/board.jpg)
 
-## Connecting to a Serial Port Terminal
+## Connecting to the Serial Terminal
 
-Follow [Connecting Using UART](../../baremetal/hardware/hsdk.md#connecting-using-uart)
-guide to connect to HS Development Kit board.
+Follow [the corresponding guide](../../platforms/board-hsdk-4xd.md#connecting-to-the-serial-terminal)
+for ARC HS Development Kit.
 
 ## Preparing Buildroot for Building Images
 

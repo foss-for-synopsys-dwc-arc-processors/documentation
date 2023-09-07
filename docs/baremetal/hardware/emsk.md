@@ -125,45 +125,7 @@ $ arc-elf32-gdb -quiet main.elf
 (gdb) info reg r0
 ```
 
-## Connecting Using UART
+## Connecting to the Serial Terminal
 
-If you are going to use input/output, then you need to configure these
-parameters of a serial terminal to interact with the serial port:
-
-* baud-rate 115200
-* 8 data bits
-* 1 stop Bit
-
-For `minicom` use this command:
-
-```shell
-minicom -8 -b 115200 -D /dev/ttyUSB1
-```
-
-After resetting the EMSK 2.2 you will see this output of the bootloader:
-
-```text
-***********************************
-**       Synopsys, Inc.          **
-**     ARC EM Starter kit        **
-**                               **
-** Comprehensive software stacks **
-**   available from embARC.org   **
-**                               **
-***********************************
-Firmware   Jan 11 2016, v2.2
-Bootloader Dec 29 2015, v1.1
-ARC EM11D, core configuration #3 
-
-ARC IDENTITY = 0x42
-RF_BUILD = 0xc902
-TIMER_BUILD = 0x10304
-ICCM_BUILD = 0x804
-DCCM_BUILD = 0x10804
-I_CACHE_BUILD = 0x135104
-D_CACHE_BUILD = 0x215104
-
-SelfTest PASSED
-
-Info: No boot image found
-```
+Follow [the corresponding guide](../../platforms/board-emsk.md#connecting-to-the-serial-terminal)
+for ARC EM Starter Kit.
