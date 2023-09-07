@@ -11,7 +11,7 @@
 ## Creating the Project
 
 Select **File** → **New** → **Project..** and choose **C Project**.
-A list of ARC projects will appear. Choose any **ARC HS Development Kit Empty Project**
+A list of ARC projects will appear. Choose any **ARC HS Development Kit Hello World Project**
 from the **ARC EM Starter Kit Projects** group:
 
 ![HS Development Kit Projects](./images/hsdk-projects.png)
@@ -33,16 +33,16 @@ The project will be built with this output:
 
 ```text
 make all 
-'Building file: ../src/main.c'
-'Invoking: ARC GNU C Compiler'
-C:\arc_gnu\bin\arc-elf32-gcc.exe -mcpu=hs38_linux -matomic -mll64 -mdiv-rem -mswap -mnorm -mmpy-option=9 -mbarrel-shifter -mfpu=fpud_all --param l1-cache-size=65536 --param l1-cache-line-size=64 -include  C:\Users\ykolerov\ARC_GNU_IDE_Workspace\hsdk_hello\Debug\core_config.h -O0 -g3 -Wall -c -fmessage-length=0 -gdwarf-2 -Wa,-adhlns="src/main.o.lst" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building target: hsdk_hello.elf'
-'Invoking: ARC GNU C Linker'
-C:\arc_gnu\bin\arc-elf32-gcc.exe -mcpu=hs38_linux -matomic -mll64 -mdiv-rem -mswap -mnorm -mmpy-option=9 -mbarrel-shifter -mfpu=fpud_all --param l1-cache-size=65536 --param l1-cache-line-size=64 -Wl,-marcv2elfx -L  C:\Users\ykolerov\ARC_GNU_IDE_Workspace\hsdk_hello\Debug --specs=nosys.specs -Wl,--defsym=ivtbase_addr=0x0 -Wl,-Map,hsdk_hello.map -o "hsdk_hello.elf"  ./src/main.o 
-'Finished building target: hsdk_hello.elf'
-' '
+Building file: ../src/main.c
+Invoking: ARC GNU C Compiler
+arc-elf32-gcc -mcpu=hs38_linux -matomic -mll64 -mdiv-rem -mswap -mnorm -mmpy-option=9 -mbarrel-shifter -mfpu=fpud_all --param l1-cache-size=65536 --param l1-cache-line-size=64 -include  /home/ykolerov/runtime-EclipseApplication/hsdk_hello/Debug/core_config.h -O0 -g3 -Wall -c -fmessage-length=0 -gdwarf-2 -Wa,-adhlns="src/main.o.lst" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: hsdk_hello.elf
+Invoking: ARC GNU C Linker
+arc-elf32-gcc -mcpu=hs38_linux -matomic -mll64 -mdiv-rem -mswap -mnorm -mmpy-option=9 -mbarrel-shifter -mfpu=fpud_all --param l1-cache-size=65536 --param l1-cache-line-size=64 -specs=hsdk.specs -Wl,-Map,hsdk_hello.map -o "hsdk_hello.elf" ./src/main.o 
+/home/ykolerov/workspace/newlib-memory-map/arc-gnu-toolchain/arc-elf32/lib/gcc/arc-elf32/13.1.1/../../../../arc-elf32/bin/ld: warning: hsdk_hello.elf has a LOAD segment with RWX permissions
+Finished building target: hsdk_hello.elf
 ```
 
 ## Creating a Debug Configuration
@@ -65,9 +65,18 @@ choose **HS38 #1** target core. Then click on **Apply**.
 
 ## Configuring a Serial Terminal
 
-Input/output functions for HS Development Kit are not supported by the toolchain yet.
-Navigate to **Terminal** inner tab of **Main** tab and unselect **Launch Terminal**
-checkbox.
+Navigate to **Terminal** inner tab of **Main** tab and select a COM port for
+the board. Eclipse automatically detects all available COM ports. In my case
+it's `COM7`.
+
+![Debug Configuration - Terminal](./images/hsdk-debug-conf-terminal.png)
+
+On Windows you can find the exact number in **Device Manager** (it corresponds
+to **USB Serial Port** device):
+
+![Debug Configuration - Port](./images/emsk-debug-conf-port.png)
+
+On Linux a serial device for HS Development Kit is usually `/dev/ttyUSB0`.
 
 ## Debugging the Project
 
@@ -75,3 +84,8 @@ Open the debug configuration in **Debug Configurations** windows and click
 on **Debug** button. The **Debug** perspective will be opened:
 
 ![Debug - Perspective](./images/hsdk-debug-perspective.png)
+
+Use **Step Over** button to step over `printf` function and select **Terminal**
+in the bottom of the window. "Hello world!" string will be printed:
+
+![Debug - Output](./images/hsdk-debug-output.png)
