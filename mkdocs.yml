@@ -65,6 +65,7 @@ nav:
     - General Topics:
       - baremetal/general/memory.md
       - baremetal/general/specs.md
+      - baremetal/general/interrupts.md
       - baremetal/general/heap-and-stack.md
       - baremetal/general/tcf.md
   - Linux:
