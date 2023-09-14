@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../../hardware/axs-ashling/">
+        <link rel="prev" href="../specs/">
       
       
-        <link rel="next" href="../specs/">
+        <link rel="next" href="../heap-and-stack/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>Linker Scripts and Memory Maps - embARC Documentation Site</title>
+        <title>Writing Interrupt Handlers - embARC Documentation Site</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#linker-scripts-and-memory-maps" class="md-skip">
+        <a href="#writing-interrupt-handlers" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Linker Scripts and Memory Maps
+              Writing Interrupt Handlers
             
           </span>
         </div>
@@ -831,107 +831,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Linker Scripts and Memory Maps
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
         Linker Scripts and Memory Maps
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#linker-scripts" class="md-nav__link">
-    Linker Scripts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-memory-maps" class="md-nav__link">
-    Using Memory Maps
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#memory-maps-for-development-platforms" class="md-nav__link">
-    Memory Maps for Development Platforms
-  </a>
-  
-    <nav class="md-nav" aria-label="Memory Maps for Development Platforms">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#em-software-development-platform" class="md-nav__link">
-    EM Software Development Platform
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hs-development-kit" class="md-nav__link">
-    HS Development Kit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#iot-development-kit" class="md-nav__link">
-    IoT Development Kit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#em-starter-kit" class="md-nav__link">
-    EM Starter Kit
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#useful-links" class="md-nav__link">
-    Useful Links
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -955,11 +859,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../interrupts/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Writing Interrupt Handlers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Writing Interrupt Handlers
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2441,63 +2393,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#linker-scripts" class="md-nav__link">
-    Linker Scripts
+  <a href="#overview" class="md-nav__link">
+    Overview
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-memory-maps" class="md-nav__link">
-    Using Memory Maps
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#memory-maps-for-development-platforms" class="md-nav__link">
-    Memory Maps for Development Platforms
-  </a>
-  
-    <nav class="md-nav" aria-label="Memory Maps for Development Platforms">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#em-software-development-platform" class="md-nav__link">
-    EM Software Development Platform
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hs-development-kit" class="md-nav__link">
-    HS Development Kit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#iot-development-kit" class="md-nav__link">
-    IoT Development Kit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#em-starter-kit" class="md-nav__link">
-    EM Starter Kit
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#useful-links" class="md-nav__link">
-    Useful Links
+  <a href="#example" class="md-nav__link">
+    Example
   </a>
   
 </li>
@@ -2520,265 +2424,126 @@
   
 
 
-<h1 id="linker-scripts-and-memory-maps">Linker Scripts and Memory Maps<a class="headerlink" href="#linker-scripts-and-memory-maps" title="Permanent link">&para;</a></h1>
-<h2 id="linker-scripts">Linker Scripts<a class="headerlink" href="#linker-scripts" title="Permanent link">&para;</a></h2>
-<p>Linker script is a special file which specifies where to put different sections of ELF file
-and defines particular symbols which may be referenced by an application. Linker emulation is
-basically way to select one of the predetermined linker scripts of the GNU linker.
-A default linker script may be observed this way:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ arc-elf32-ld --verbose
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>GNU ld (ARCompact/ARCv2 ISA elf32 toolchain - build 1360) 2.40.50.20230314
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  Supported emulations:
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   arcelf
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>   arclinux
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   arclinux_nps
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>   arcv2elf
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>   arcv2elfx
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>using internal linker script:
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>==================================================
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>/* Default linker script, for normal executables */
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>OUTPUT_FORMAT(&quot;elf32-littlearc&quot;, &quot;elf32-bigarc&quot;,
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>              &quot;elf32-littlearc&quot;)
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>OUTPUT_ARCH(arc)
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>ENTRY(__start)
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>...
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>SECTIONS
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>{
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>  /* Read-only sections, merged into text segment: */
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>  PROVIDE (__executable_start = SEGMENT_START(&quot;text-segment&quot;, 0x100)); . = SEGMENT_START(&quot;text-segment&quot;, 0x100);
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>  .interp         : { *(.interp) }
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>  .hash           : { *(.hash) }
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>  .dynsym         : { *(.dynsym) }
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>  .dynstr         : { *(.dynstr) }
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>  .gnu.version    : { *(.gnu.version) }
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>  .gnu.version_d  : { *(.gnu.version_d) }
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>  .gnu.version_r  : { *(.gnu.version_r) }
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>  .rel.init       : { *(.rel.init) }
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>  .rela.init      : { *(.rela.init) }
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>...
-</span></code></pre></div>
-<p>Linux user-space applications are loaded by the dynamic linker in their own virtual memory address space,
-where they do not collide with other applications. On the other side, baremetal applications are loaded into
-target's memory by debugger, bootloader or they are already in the ROM mapped to a specific location.</p>
-<p>If linker uses an invalid memory map for a particular platform, then some parts of the application will be loaded
-to the memory incorrectly. For example, it may be accidentally written to peripherals' region and cause an error.</p>
-<p>That default linker emulation places all loadable ELF sections in a row after each other starting at address <code>0x0</code>.
-This is usually enough for an application prototyping, however real systems often have much more complex memory maps
-with CCM regions, peripherals' region, etc.</p>
-<p>Default linker emulation also puts interrupt vector table (<code>.ivt</code> section) between code and data sections and doesn't
-align <code>.ivt</code> properly (<code>.ivt</code> must be 1KB-aligned for ARC processors). Here is an example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ arc-elf32-gcc -mcpu=em4_dmips main.c -o main.elf
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$ arc-elf32-objdump -h main.elf
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>main.elf:     file format elf32-littlearc
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Sections:
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Idx Name          Size      VMA       LMA       File off  Algn
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  0 .init         00000022  00000100  00000100  00000100  2**0
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>                  CONTENTS, ALLOC, LOAD, READONLY, CODE
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  1 .text         00003c28  00000124  00000124  00000124  2**2
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>                  CONTENTS, ALLOC, LOAD, READONLY, CODE
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>  2 .fini         00000016  00003d4c  00003d4c  00003d4c  2**0
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>                  CONTENTS, ALLOC, LOAD, READONLY, CODE
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>  3 .rodata       00000014  00003d64  00003d64  00003d64  2**2
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>                  CONTENTS, ALLOC, LOAD, READONLY, DATA
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>  4 .ivt          00000054  00003d78  00003d78  00003d78  2**0
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>                  CONTENTS, ALLOC, LOAD, READONLY, DATA
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>  5 .data         00000530  00005dcc  00005dcc  00003dcc  2**2
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>                  CONTENTS, ALLOC, LOAD, DATA
-</span></code></pre></div>
-<p>Therefore the default linker emulation is not applicable for applications which handle interrupts.
-It can be used safely only with applications that don't handle interrupts and that
-may be safely loaded in the beginning of the address space.</p>
-<h2 id="using-memory-maps">Using Memory Maps<a class="headerlink" href="#using-memory-maps" title="Permanent link">&para;</a></h2>
-<p>There is a linker script exists that allows to rearrange section easily. That
-linker script may be chose by passing <code>-Wl,-marcv2elfx</code> to GCC or by passing
-<code>-marcv2elfx</code> to linker itself. Then linker searches for <code>memory.x</code> file with
-definition of memory map. It is searched in the current working directory and
-in directories listed via <code>-L</code> option.</p>
-<p>Here is an example of <code>memory.x</code> for EM Software Development Platform 1.1:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>MEMORY
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    PSRAM : ORIGIN = 0x10000000, LENGTH =  16M
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    ICCM0 : ORIGIN = 0x60000000, LENGTH = 128K
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    DCCM  : ORIGIN = 0x80000000, LENGTH = 128K
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>}
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>REGION_ALIAS(&quot;startup&quot;, ICCM0)
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>REGION_ALIAS(&quot;text&quot;, ICCM0)
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>REGION_ALIAS(&quot;data&quot;, DCCM)
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>REGION_ALIAS(&quot;sdata&quot;, DCCM)
-</span></code></pre></div>
-<p><code>MEMORY</code> section specifies platform's memory regions: base addresses and lengths.
-You can use arbitrary names for these regions. <code>REGION_ALIAS</code> command translates
-platform's regions to standard region names expected by the linker emulation.
-There are 4 such standard regions:</p>
-<ul>
-<li><code>startup</code> - interrupt vector table<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> and initialization code.</li>
-<li><code>text</code> - other code sections.</li>
-<li><code>data</code> - data sections.</li>
-<li><code>sdata</code> - small data sections.</li>
-</ul>
-<p>You can compile a program and link it with <code>memory.x</code> file for EM SDP 1.1 this way:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>arc-elf32-gcc<span class="w"> </span>-mcpu<span class="o">=</span>em4_fpuda<span class="w"> </span>-Wl,-marcv2elfx<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main.elf
-</span></code></pre></div>
-<h2 id="memory-maps-for-development-platforms">Memory Maps for Development Platforms<a class="headerlink" href="#memory-maps-for-development-platforms" title="Permanent link">&para;</a></h2>
-<h3 id="em-software-development-platform">EM Software Development Platform<a class="headerlink" href="#em-software-development-platform" title="Permanent link">&para;</a></h3>
-<p><code>memory.x</code> file for EM Software Development Platform v1.2:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>MEMORY
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>{
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    ICCM0 : ORIGIN = 0x10000000, LENGTH = 128K
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    PSRAM : ORIGIN = 0x40000000, LENGTH =  16M
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    DCCM  : ORIGIN = 0x80000000, LENGTH = 128K
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>}
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>REGION_ALIAS(&quot;startup&quot;, ICCM0)
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>REGION_ALIAS(&quot;text&quot;, ICCM0)
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>REGION_ALIAS(&quot;data&quot;, DCCM)
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>REGION_ALIAS(&quot;sdata&quot;, DCCM)
-</span></code></pre></div>
-<p><code>memory.x</code> file for EM Software Development Platform v1.0 and v1.1:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>MEMORY
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>{
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    PSRAM : ORIGIN = 0x10000000, LENGTH =  16M
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    ICCM0 : ORIGIN = 0x60000000, LENGTH = 128K
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    DCCM  : ORIGIN = 0x80000000, LENGTH = 128K
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>}
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>REGION_ALIAS(&quot;startup&quot;, ICCM0)
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>REGION_ALIAS(&quot;text&quot;, ICCM0)
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>REGION_ALIAS(&quot;data&quot;, DCCM)
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>REGION_ALIAS(&quot;sdata&quot;, DCCM)
-</span></code></pre></div>
-<h3 id="hs-development-kit">HS Development Kit<a class="headerlink" href="#hs-development-kit" title="Permanent link">&para;</a></h3>
-<p>Memory map for HS Development Kit and HS Development Kit 4xD depends on a board
-itself and on a chosen configuration of CPUs. Consider using this <code>memory.x</code> file
-that fits for all configurations (refer to <a href="../../../platforms/board-hsdk/">HSDK user guide</a>
-or <a href="../../../platforms/board-hsdk-4xd/">HSDK 4xD user guide</a> for details about board's memory map):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>MEMORY
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>{
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    DRAM : ORIGIN = 0x90000000, LENGTH = 0x50000000
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>}
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>REGION_ALIAS(&quot;startup&quot;, DRAM)
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>REGION_ALIAS(&quot;text&quot;, DRAM)
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>REGION_ALIAS(&quot;data&quot;, DRAM)
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>REGION_ALIAS(&quot;sdata&quot;, DRAM)
-</span></code></pre></div>
-<h3 id="iot-development-kit">IoT Development Kit<a class="headerlink" href="#iot-development-kit" title="Permanent link">&para;</a></h3>
-<p><code>memory.x</code> file for IoT Development Kit:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>MEMORY
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>{
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    ICCM : ORIGIN = 0x20000000, LENGTH = 256K
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    DCCM : ORIGIN = 0x80000000, LENGTH = 128K
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>}
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>REGION_ALIAS(&quot;startup&quot;, ICCM)
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>REGION_ALIAS(&quot;text&quot;, ICCM)
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>REGION_ALIAS(&quot;data&quot;, DCCM)
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>REGION_ALIAS(&quot;sdata&quot;, DCCM)
-</span></code></pre></div>
-<h3 id="em-starter-kit">EM Starter Kit<a class="headerlink" href="#em-starter-kit" title="Permanent link">&para;</a></h3>
-<p><code>memory.x</code> file for EM Starter Kit v2.2 and v2.3 with EM11D core:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>MEMORY
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>{
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    ICCM : ORIGIN = 0x00000000, LENGTH =  64K
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    DRAM : ORIGIN = 0x10000000, LENGTH = 128M
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    DCCM : ORIGIN = 0x80000000, LENGTH =  64K
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>}
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>REGION_ALIAS(&quot;startup&quot;, ICCM)
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>REGION_ALIAS(&quot;text&quot;, ICCM)
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>REGION_ALIAS(&quot;data&quot;, DRAM)
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>REGION_ALIAS(&quot;sdata&quot;, DRAM)
-</span></code></pre></div>
-<p><code>memory.x</code> file for EM Starter Kit v2.2 and v2.3 with EM7D and EM9D cores:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>MEMORY
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>{
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    ICCM : ORIGIN = 0x00000000, LENGTH = 256K
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    DRAM : ORIGIN = 0x10000000, LENGTH = 128M
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    DCCM : ORIGIN = 0x80000000, LENGTH = 128K
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>}
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>REGION_ALIAS(&quot;startup&quot;, ICCM)
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>REGION_ALIAS(&quot;text&quot;, ICCM)
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>REGION_ALIAS(&quot;data&quot;, DRAM)
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>REGION_ALIAS(&quot;sdata&quot;, DRAM)
-</span></code></pre></div>
-<p><code>memory.x</code> file for EM Starter Kit v2.1 with EM7D core:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>MEMORY
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>{
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    ICCM : ORIGIN = 0x00000000, LENGTH =  32K
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    DRAM : ORIGIN = 0x10000000, LENGTH = 128M
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    DCCM : ORIGIN = 0x80000000, LENGTH =  32K
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>}
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>REGION_ALIAS(&quot;startup&quot;, ICCM)
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>REGION_ALIAS(&quot;text&quot;, ICCM)
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>REGION_ALIAS(&quot;data&quot;, DRAM)
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>REGION_ALIAS(&quot;sdata&quot;, DRAM)
-</span></code></pre></div>
-<p><code>memory.x</code> file for EM Starter Kit v2.1 with EM5D core:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>MEMORY
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>{
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    ICCM : ORIGIN = 0x00000000, LENGTH = 128K
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    DCCM : ORIGIN = 0x80000000, LENGTH = 256K
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>}
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>REGION_ALIAS(&quot;startup&quot;, ICCM)
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>REGION_ALIAS(&quot;text&quot;, ICCM)
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>REGION_ALIAS(&quot;data&quot;, DCCM)
-</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>REGION_ALIAS(&quot;sdata&quot;, DCCM)
-</span></code></pre></div>
-<p><code>memory.x</code> file for EM Starter Kit v1 with EM6GP core:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>MEMORY
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>{
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    ICCM : ORIGIN = 0x00000000, LENGTH =  32K
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    DRAM : ORIGIN = 0x10000000, LENGTH = 128M
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>}
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>REGION_ALIAS(&quot;startup&quot;, ICCM)
-</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>REGION_ALIAS(&quot;text&quot;, ICCM)
-</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>REGION_ALIAS(&quot;data&quot;, DRAM)
-</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>REGION_ALIAS(&quot;sdata&quot;, DRAM)
-</span></code></pre></div>
-<p><code>memory.x</code> file for EM Starter Kit v1 with EM4 core:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>MEMORY
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>{
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    ICCM : ORIGIN = 0x00000000, LENGTH = 128K
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    DCCM : ORIGIN = 0x80000000, LENGTH =  64K
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>}
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>REGION_ALIAS(&quot;startup&quot;, ICCM)
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>REGION_ALIAS(&quot;text&quot;, ICCM)
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>REGION_ALIAS(&quot;data&quot;, DCCM)
-</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>REGION_ALIAS(&quot;sdata&quot;, DCCM)
-</span></code></pre></div>
-<h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permanent link">&para;</a></h2>
-<p>You can find valid memory mappings for particular hardware platforms in documentation.
-Here is a list of resources with memory maps for Synopsys' development platforms:</p>
-<ul>
-<li><a href="../../../platforms/">Development platforms</a> section contains documentation for
-  all Synopsys' development platforms. User guides contain descriptions of memory mappings.</li>
-<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/newlib/tree/arc64">Newlib</a> repository for ARC contains predefined
-  memory maps for some of development platforms  in <code>libgloss/arc</code> directory.</li>
-<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain">toolchain</a> repository also contains predefined
-  memory maps for some of development platforms in <code>extras/dev_systems</code> directory.</li>
-</ul>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p>Prior to ARC GNU toolchain 2023.09 interrupt vector table is placed in <code>0x0</code>
-address by default. If <code>startup</code> region is mapped to a different address,
-then you need to set IVT address manually by passing <code>-Wl,--defsym=ivtbase_addr=&lt;startup-address&gt;</code>
-to GCC or by passing <code>--defsym=ivtbase_addr=&lt;startup-address&gt;</code> to the linker.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
+<h1 id="writing-interrupt-handlers">Writing Interrupt Handlers<a class="headerlink" href="#writing-interrupt-handlers" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Refer <a href="https://gcc.gnu.org/onlinedocs/gcc/ARC-Function-Attributes.html">the official GCC documentation page</a>
+about ARC function attributes for details.</p>
 </div>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>You can use <code>interrupt</code> GCC function attribute to declare a function as an
+interrupt handler. Here is an example of declaring and defining a regular
+interrupt handler for ARCv2 families:</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/* Declaration */</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="n">__attribute__</span><span class="w"> </span><span class="p">((</span><span class="n">interrupt</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;ilink&quot;</span><span class="p">)));</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cm">/* Definition */</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="cm">/* Declaration with a definition */</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">__attribute__</span><span class="w"> </span><span class="p">((</span><span class="n">interrupt</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;ilink&quot;</span><span class="p">)))</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>A parameter for <code>interrupt</code> attribute stands for a type of an interrupt:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type of an interrupt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ilink</code></td>
+<td>A regular ARCv2 interrupt</td>
+</tr>
+<tr>
+<td><code>firq</code></td>
+<td>A fast ARCv2 interrupt</td>
+</tr>
+<tr>
+<td><code>ilink1</code>, <code>ilink2</code></td>
+<td>ARC600/ARC700 interrupts</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<p>The <code>interrupt</code> attribute only puts valid entry and exit code around a function
+for an interrupt or exception handler. Also, it's necessary to do extra steps:</p>
+<ul>
+<li>Provide an interrupt vector table (IVT) with an array of pointers to handlers.
+  By default, it's provided only for ARCv2 targets in Newlib.</li>
+<li>Provide a valid value for <code>INT_VECTOR_BASE</code> auxiliary registers. It must
+  contain a 1KB aligned address of IVT.</li>
+</ul>
+<p>Here is a simple implementation of a handler for <code>EV_DivZero</code> exception for
+ARCv2. It prints a message and then exits:</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdbool.h&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="cp">#define AUX_STATUS32_BCR 0x0A</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="cp">#define AUX_STATUS32_DZ_OFFSET 13</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="cm">/*</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="cm"> * A helper for setting DZ flag - it enables EV_DivZero exceptions.</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="cm"> */</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="kt">void</span><span class="w"> </span><span class="nf">set_ev_divzero</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">on</span><span class="p">)</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">{</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">status32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">__builtin_arc_lr</span><span class="p">(</span><span class="n">AUX_STATUS32_BCR</span><span class="p">);</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">bit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">on</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">AUX_STATUS32_DZ_OFFSET</span><span class="p">;</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="n">status32</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="n">bit</span><span class="p">;</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="n">__builtin_arc_flag</span><span class="p">(</span><span class="n">status32</span><span class="p">);</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="p">}</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="cm">/*</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="cm"> * Define an exception handler for EV_DivZero exception.</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="cm"> * Note that it terminates the applications since EV_DivZero</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="cm"> * returns to the same place in main function and the</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="cm"> * exception is raised again.</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="cm"> */</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="n">__attribute__</span><span class="w"> </span><span class="p">((</span><span class="n">interrupt</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;ilink&quot;</span><span class="p">)))</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">EV_DivZero</span><span class="p">()</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="p">{</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Divizion by zero is catched!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">        </span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="p">}</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="p">{</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">        </span><span class="cm">/* Enable EV_DivZero exceptions */</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">        </span><span class="n">set_ev_divzero</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">        </span><span class="cm">/* Provoke EV_DivZero exception */</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Save it as <code>main.c</code> file and compile the application for ARC HS3x/4x families
+using GNU toolchain:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>arc-elf32-gcc<span class="w"> </span>-Wl,-marcv2elf<span class="w"> </span>-specs<span class="o">=</span>hl.specs<span class="w"> </span>-mcpu<span class="o">=</span>hs38<span class="w"> </span>-O0<span class="w"> </span>-g<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main.elf
+</span></code></pre></div>
+<p>Meaning of the options:</p>
+<ul>
+<li><code>-Wl,-marcv2elf</code> - <a href="../memory/">a linker emulation</a> which puts the IVT
+  at <code>0x0</code>, this it's properly aligned.</li>
+<li><code>-specs=hl.specs</code> - adds support of hostlink for nSIM simulator. It allows
+  to use functions like <code>printf</code>.</li>
+<li><code>-mcpu=hs38 -O0</code> - enable using <code>div</code> instructions and ensure that it's not
+  reduces since our application is too simple.</li>
+</ul>
+<p>Run the application using nSIM (<code>-p nsim_isa_intvbase_preset=0x0</code> is used to
+ensure that <code>INT_VECTOR_BASE</code> is set to <code>0x0</code> by default):</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>nsimdrv<span class="w"> </span>-tcf<span class="w"> </span><span class="nv">$NSIM_HOME</span>/etc/tcf/templates/hs48_full.tcf<span class="w"> </span>-p<span class="w"> </span><span class="nv">nsim_isa_intvbase_preset</span><span class="o">=</span>0x0<span class="w"> </span>main.elf
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Divizion<span class="w"> </span>by<span class="w"> </span>zero<span class="w"> </span>is<span class="w"> </span>catched!
+</span></code></pre></div>
 
 
 
