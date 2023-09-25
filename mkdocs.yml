@@ -70,23 +70,24 @@ nav:
       - baremetal/general/heap-and-stack.md
       - baremetal/general/tcf.md
   - Linux:
-    - Building:
+    - linux/index.md
+    - Building Linux:
       - linux/building/buildroot.md
       - linux/building/separate.md
       - linux/building/configure.md
-    - Running on simulators:
+    - Running Linux on simulators:
       - linux/simulators/nsim.md
       - linux/simulators/metaware.md
       - linux/simulators/vdk.md
       - linux/simulators/qemu.md
-    - Running on HS Development Kit:
+    - Running Linux on HS Development Kit:
       - Building and running Linux: linux/hsdk/build.md
       - Building U-Boot: linux/hsdk/uboot-build.md
       - U-Boot command reference: linux/hsdk/uboot-commands.md
-    - Running on AXS SDP:
+    - Running Linux on AXS SDP:
       - Building and running Linux: linux/axs/build.md
       - Flashing U-Boot: linux/axs/uboot.md
-    - eBPF subsystem:
+    - Linux eBPF subsystem:
       - linux/ebpf/cross.md
       - linux/ebpf/build.md
       - linux/ebpf/clang.md
