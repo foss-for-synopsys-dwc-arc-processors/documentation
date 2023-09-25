@@ -140,6 +140,10 @@ nav:
     - Caffe Models for EV6x: ml/caffe-models.md
     - OpenCV for EV6x: ml/opencv.md
     - GSL for EV6x: ml/gsl.md
+  - IoT:
+    - iot/index.md
+    - embARC OSP: iot/embarc-osp.md
+    - embARC BSP: iot/embarc-bsp.md
   - Advanced:
     - Development:
       - advanced/optimizations.md
