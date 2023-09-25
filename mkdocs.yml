@@ -133,6 +133,13 @@ nav:
       - audio/codec-g722.md
       - audio/codec-g726.md
       - audio/codec-ldac.md
+  - Machine Learning:
+    - ml/index.md
+    - embARC MLI: ml/mli.md
+    - Caffe Framework for EV6x: ml/caffe-framework.md
+    - Caffe Models for EV6x: ml/caffe-models.md
+    - OpenCV for EV6x: ml/opencv.md
+    - GSL for EV6x: ml/gsl.md
   - Advanced:
     - Development:
       - advanced/optimizations.md
