@@ -49,6 +49,7 @@ nav:
     - general/toolchains.md
     - general/target-options.md
     - general/compatibility.md
+    - faq.md
   - Simulators:
     - simulators/qemu.md
     - simulators/nsim.md
@@ -89,7 +90,7 @@ nav:
       - linux/ebpf/cross.md
       - linux/ebpf/build.md
       - linux/ebpf/clang.md
-  - Development platforms:
+  - Boards:
     - platforms/index.md
     - Using Boards:
       - platforms/get-openocd.md
@@ -119,19 +120,32 @@ nav:
       - nSIM: eclipse/getting-started/nsim.md
     - Other:
       - eclipse/other/building.md
-  - Advanced topics:
-    - advanced/optimizations.md
-    - advanced/custom-instructions.md
-    - advanced/apex-header.md
-    - advanced/intrinsics.md
-    - advanced/sanitizers.md
-    - advanced/jli.md
-    - advanced/secure-shield.md
-    - advanced/small-data.md
-    - advanced/64-bit-operations.md
-    - advanced/bit-file-fpga.md
-  - Testing:
-    - testing/dejagnu.md
-    - testing/glibc.md
-    - testing/qemu.md
-  - FAQ: faq.md
+  - Audio:
+    - audio/index.md
+    - General:
+      - audio/overview.md
+      - audio/getting-started.md
+    - Codecs:
+      - audio/codecs.md
+      - audio/codec-bt-cvsd.md
+      - audio/codec-gsm-fr.md
+      - audio/codec-g711.md
+      - audio/codec-g722.md
+      - audio/codec-g726.md
+      - audio/codec-ldac.md
+  - Advanced:
+    - Development:
+      - advanced/optimizations.md
+      - advanced/custom-instructions.md
+      - advanced/apex-header.md
+      - advanced/intrinsics.md
+      - advanced/sanitizers.md
+      - advanced/jli.md
+      - advanced/secure-shield.md
+      - advanced/small-data.md
+      - advanced/64-bit-operations.md
+      - advanced/bit-file-fpga.md
+    - Testing:
+      - testing/dejagnu.md
+      - testing/glibc.md
+      - testing/qemu.md
