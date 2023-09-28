@@ -35,6 +35,16 @@ ARC EM Starter Kit includes the following features:
 
 ## Connecting to the Serial Terminal
 
+!!! warning
+
+    On Linux machines it may be necessary for a user to be in `dialout`
+    group to successfully connect to a serial terminal. In case of
+    "Permission denied" error try to add a user to the group:
+
+    ```shell
+    sudo usermod -aG dialout username
+    ```
+
 Connecting to the board using USB data port allows to connect to the serial
 terminal over UART. You need to configure these parameters of a serial
 terminal to interact with the serial port:
