@@ -29,24 +29,24 @@ mkdir buildroot/build
 cd buildroot/build
 ```
 
-In this guide we suppose that a toolchain is preinstalled in `/tools/toolchains` (2023.03 release). Also,
+In this guide we suppose that a toolchain is preinstalled in `/tools/toolchains` (2023.09 release). Also,
 only a limited set of all available toolchains is considered. All releases may be downloaded
 from [the official releases page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases).
 Here is a table of toolchains, which are used in this guide:
 
 | ARC processors family | Standard library | Toolchain's installation path           | Version                            |
 |-----------------------|------------------|-----------------------------------------|------------------------------------|
-| ARC HS 6x             | glibc            | `/tools/toolchains/arc64-linux-gnu`     | [2023.03][arc64_glibc_toolchain]   |
-| ARC HS 5x             | uClibc-ng        | `/tools/toolchains/arc32-linux-uclibc`  | [2023.03][arc32_uclibc_toolchain]  |
-| ARC HS 3x/4x          | glibc            | `/tools/toolchains/arc-linux-gnu`       | [2023.03][archs_glibc_toolchain]   |
-| ARC HS 3x/4x          | uClibc-ng        | `/tools/toolchains/arc-linux-uclibc`    | [2023.03][archs_uclibc_toolchain]  |
-| ARC 700               | uClibc-ng        | `/tools/toolchains/arc700-linux-uclibc` | [2023.03][arc700_uclibc_toolchain] |
+| ARC HS 6x             | glibc            | `/tools/toolchains/arc64-linux-gnu`     | [2023.09][arc64_glibc_toolchain]   |
+| ARC HS 5x             | uClibc-ng        | `/tools/toolchains/arc32-linux-uclibc`  | [2023.09][arc32_uclibc_toolchain]  |
+| ARC HS 3x/4x          | glibc            | `/tools/toolchains/arc-linux-gnu`       | [2023.09][archs_glibc_toolchain]   |
+| ARC HS 3x/4x          | uClibc-ng        | `/tools/toolchains/arc-linux-uclibc`    | [2023.09][archs_uclibc_toolchain]  |
+| ARC 700               | uClibc-ng        | `/tools/toolchains/arc700-linux-uclibc` | [2023.09][arc700_uclibc_toolchain] |
 
-[arc64_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.03-release/arc_gnu_2023.03_prebuilt_arc64_glibc_linux_install.tar.gz
-[arc32_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.03-release/arc_gnu_2023.03_prebuilt_arc32_uclibc_linux_install.tar.gz
-[archs_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.03-release/arc_gnu_2023.03_prebuilt_glibc_le_archs_linux_install.tar.gz
-[archs_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.03-release/arc_gnu_2023.03_prebuilt_uclibc_le_archs_linux_install.tar.gz
-[arc700_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.03-release/arc_gnu_2023.03_prebuilt_uclibc_le_arc700_linux_install.tar.gz
+[arc64_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-release/arc_gnu_2023.09_prebuilt_arc64_glibc_linux_install.tar.gz
+[arc32_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-release/arc_gnu_2023.09_prebuilt_arc32_uclibc_linux_install.tar.gz
+[archs_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-release/arc_gnu_2023.09_prebuilt_glibc_le_archs_linux_install.tar.gz
+[archs_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-release/arc_gnu_2023.09_prebuilt_uclibc_le_archs_linux_install.tar.gz
+[arc700_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-release/arc_gnu_2023.09_prebuilt_uclibc_le_arc700_linux_install.tar.gz
 
 ## ARC HS 3x/4x with glibc
 
@@ -60,9 +60,10 @@ BR2_archs38=y
 BR2_TOOLCHAIN_EXTERNAL=y
 BR2_TOOLCHAIN_EXTERNAL_CUSTOM=y
 BR2_TOOLCHAIN_EXTERNAL_PATH="/tools/toolchains/arc-linux-gnu"
+BR2_TOOLCHAIN_EXTERNAL_GCC_13=y
 BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16=y
 BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC=y
-# BR2_TOOLCHAIN_EXTERNAL_INET_RPC is not set
+BR2_TOOLCHAIN_EXTERNAL_INET_RPC=n
 BR2_TOOLCHAIN_EXTERNAL_CXX=y
 BR2_TOOLCHAIN_EXTERNAL_FORTRAN=y
 BR2_LINUX_KERNEL=y
@@ -191,7 +192,8 @@ BR2_archs38=y
 BR2_TOOLCHAIN_EXTERNAL=y
 BR2_TOOLCHAIN_EXTERNAL_CUSTOM=y
 BR2_TOOLCHAIN_EXTERNAL_PATH="/tools/toolchains/arc-linux-uclibc"
-BR2_TOOLCHAIN_EXTERNAL_LOCALE=y
+BR2_TOOLCHAIN_EXTERNAL_GCC_13=y
+BR2_TOOLCHAIN_EXTERNAL_WCHAR=y
 BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
 BR2_TOOLCHAIN_EXTERNAL_CXX=y
 BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16=y
@@ -218,11 +220,11 @@ BR2_arc770d=y
 BR2_TOOLCHAIN_EXTERNAL=y
 BR2_TOOLCHAIN_EXTERNAL_CUSTOM=y
 BR2_TOOLCHAIN_EXTERNAL_PATH="/tools/toolchains/arc700-linux-uclibc"
-BR2_TOOLCHAIN_EXTERNAL_LOCALE=y
+BR2_TOOLCHAIN_EXTERNAL_GCC_13=y
+BR2_TOOLCHAIN_EXTERNAL_WCHAR=y
 BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
 BR2_TOOLCHAIN_EXTERNAL_CXX=y
 BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16=y
-BR2_GCC_VERSION_12_X=y
 BR2_LINUX_KERNEL=y
 BR2_LINUX_KERNEL_CUSTOM_GIT=y
 BR2_LINUX_KERNEL_CUSTOM_REPO_URL="https://github.com/foss-for-synopsys-dwc-arc-processors/linux"
@@ -320,11 +322,11 @@ BR2_TOOLCHAIN_EXTERNAL=y
 BR2_TOOLCHAIN_EXTERNAL_CUSTOM=y
 BR2_TOOLCHAIN_EXTERNAL_PATH="/tools/toolchains/arc32-linux-uclibc"
 BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16=y
-BR2_TOOLCHAIN_EXTERNAL_LOCALE=y
+BR2_TOOLCHAIN_EXTERNAL_GCC_13=y
+BR2_TOOLCHAIN_EXTERNAL_WCHAR=y
 BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
 BR2_TOOLCHAIN_EXTERNAL_CXX=y
 BR2_TOOLCHAIN_EXTERNAL_INET_RPC=n
-BR2_TOOLCHAIN_EXTERNAL_GCC_12=y
 BR2_TARGET_ROOTFS_INITRAMFS=y
 ```
 
@@ -418,6 +420,7 @@ BR2_LINUX_KERNEL_IMAGE_TARGET_CUSTOM=y
 BR2_LINUX_KERNEL_IMAGE_TARGET_NAME="loader"
 BR2_TOOLCHAIN_EXTERNAL=y
 BR2_TOOLCHAIN_EXTERNAL_CUSTOM=y
+BR2_TOOLCHAIN_EXTERNAL_GCC_13=y
 BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC=y
 BR2_TOOLCHAIN_EXTERNAL_PATH="/tools/toolchains/arc64-linux-gnu"
 BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16=y
@@ -425,7 +428,6 @@ BR2_TOOLCHAIN_EXTERNAL_LOCALE=y
 BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
 BR2_TOOLCHAIN_EXTERNAL_CXX=y
 BR2_TOOLCHAIN_EXTERNAL_INET_RPC=n
-BR2_TOOLCHAIN_EXTERNAL_GCC_12=y
 BR2_TARGET_ROOTFS_INITRAMFS=y
 ```
 
