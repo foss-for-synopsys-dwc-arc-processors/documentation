@@ -100,8 +100,8 @@ Then connect to the server using GDB:
 ```text
 $ arc-elf32-gdb -quiet main.elf
 
-# Connect. Replace 49101 with port of your choice if you changed it when starting OpenOCD
-(gdb) target remote :49101
+# Connect. Replace 3333 with port of your choice if you changed it when starting OpenOCD
+(gdb) target remote :3333
 
 # Increase timeout, because OpenOCD sometimes can be slow
 (gdb) set remotetimeout 15

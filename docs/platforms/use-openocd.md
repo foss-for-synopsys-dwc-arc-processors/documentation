@@ -255,6 +255,14 @@ core and aux registers. However some command for register access will be
 removed in future, when ARC OpenOCD will fully support flexible register
 configurations.
 
+## Using Another GDB Port
+
+You can use an OpenOCD command to change the GDB port this way:
+
+```text
+openocd -c "gdb_port 12345" ...
+```
+
 ## Configurations Files
 
 Here is a table of configuration files for OpenOCD 0.9:
@@ -264,7 +272,7 @@ Here is a table of configuration files for OpenOCD 0.9:
 | HS Development Kit 4x/4xD                        | `snps_hsdk_4xd.cfg`     |
 | HS Development Kit                               | `snps_hsdk.cfg`         |
 | IoT Development Kit                              | `snps_iotdk.cfg`        |
-| EM Software Development Platform                 | ❌                       |
+| EM Software Development Platform                 | [EM SDP Documentation](./board-emsdp.md#openocd-configuration-file)                       |
 | EM Starter Kit 2.3                               | `snps_em_sk_v2.3.cfg`   |
 | EM Starter Kit 2.2                               | `snps_em_sk_v2.2.cfg`   |
 | EM Starter Kit 2.1                               | `snps_em_sk_v2.1.cfg`   |

@@ -36,6 +36,39 @@ following features:
     * JTAG
     * Power Management IC
 
+## Connecting to the Serial Terminal
+
+!!! warning
+
+    On Linux machines it may be necessary for a user to be in `dialout`
+    group to successfully connect to a serial terminal. In case of
+    "Permission denied" error try to add a user to the group:
+
+    ```shell
+    sudo usermod -aG dialout username
+    ```
+
+Connecting to the board using USB data port allows to connect to the serial
+terminal over UART. You need to configure these parameters of a serial
+terminal to interact with the serial port:
+
+* baud-rate 115200
+* 8 data bits
+* 1 stop Bit
+
+On Windows [Putty](https://www.putty.org/) or any similar software may be used for connecting
+to the serial terminal. You can find the port number in **Device Manager** in
+**Ports (COM & LPT)** section: **USB Serial Port (COMx)** where **COMx** is
+a value for **Serial line** field in Putty's. Other parameters may be set
+**Connection → Serial** menu.
+
+On Linux `minicom` or other similar utilities may be used. Here is an example
+of command line for `minicom`:
+
+```shell
+minicom -8 -b 115200 -D /dev/ttyUSB0
+```
+
 ## Useful Links
 
 * [ARC IoT Development Kit - User Guide](files/ARC_IoTDK_User_Guide.pdf)

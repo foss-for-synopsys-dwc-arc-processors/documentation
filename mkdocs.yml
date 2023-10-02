@@ -60,6 +60,7 @@ nav:
     - Development platforms:
       - baremetal/hardware/hsdk.md
       - baremetal/hardware/emsdp.md
+      - baremetal/hardware/iotdk.md
       - baremetal/hardware/emsk.md
       - baremetal/hardware/axs-openocd.md
       - baremetal/hardware/axs-ashling.md

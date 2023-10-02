@@ -44,8 +44,8 @@ operations.
     installation, then consider using `snps_hsdk.cfg`.
 
 Follow [Using OpenOCD](../../platforms/use-openocd.md) guide and start OpenOCD
-with 49101 port and `snps_hsdk.cfg` (for HSDK) of `snps_hsdk_4xd.cfg`
-(for HSDK 4xD) configuration file. Here is a possible output for HSDK 4xD:
+with `snps_hsdk.cfg` (for HSDK) or `snps_hsdk_4xd.cfg` (for HSDK 4xD)
+configuration file. Here is a possible output for HSDK 4xD:
 
 ```text
 $ openocd -f board/snps_hsdk_4xd.cfg
@@ -66,23 +66,23 @@ Info : JTAG tap: arc-em.cpu4 tap/device found: 0x100c54b1 (mfg: 0x258 (ARC Inter
 Info : JTAG tap: arc-em.cpu3 tap/device found: 0x100854b1 (mfg: 0x258 (ARC International), part: 0x0085, ver: 0x1)
 Info : JTAG tap: arc-em.cpu2 tap/device found: 0x100454b1 (mfg: 0x258 (ARC International), part: 0x0045, ver: 0x1)
 Info : JTAG tap: arc-em.cpu1 tap/device found: 0x100054b1 (mfg: 0x258 (ARC International), part: 0x0005, ver: 0x1)
-Info : starting gdb server for arc-em.cpu4 on 49101
-Info : Listening on port 49101 for gdb connections
-Info : starting gdb server for arc-em.cpu3 on 49102
-Info : Listening on port 49102 for gdb connections
-Info : starting gdb server for arc-em.cpu2 on 49103
-Info : Listening on port 49103 for gdb connections
-Info : starting gdb server for arc-em.cpu1 on 49104
-Info : Listening on port 49104 for gdb connections
+Info : starting gdb server for arc-em.cpu4 on 3333
+Info : Listening on port 3333 for gdb connections
+Info : starting gdb server for arc-em.cpu3 on 3334
+Info : Listening on port 3334 for gdb connections
+Info : starting gdb server for arc-em.cpu2 on 3335
+Info : Listening on port 3335 for gdb connections
+Info : starting gdb server for arc-em.cpu1 on 3336
+Info : Listening on port 3336 for gdb connections
 ```
 
-Then connect to the server using GDB (49104 port is used below in
-GDB session, because cores are numbered in reverse order and 49104 port
+Then connect to the server using GDB (3336 port is used below in
+GDB session, because cores are numbered in reverse order and 3336 port
 corresponds to the first core):
 
 ```text
 $ arc-elf32-gdb -quiet main.elf
-(gdb) target remote :49104
+(gdb) target remote :3336
 
 # Increase timeout, because OpenOCD sometimes can be slow
 (gdb) set remotetimeout 15
