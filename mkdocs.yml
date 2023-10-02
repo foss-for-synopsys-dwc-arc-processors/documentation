@@ -75,6 +75,7 @@ nav:
       - linux/building/buildroot.md
       - linux/building/separate.md
       - linux/building/configure.md
+      - linux/building/toolchain.md
     - Running Linux on simulators:
       - linux/simulators/nsim.md
       - linux/simulators/metaware.md
