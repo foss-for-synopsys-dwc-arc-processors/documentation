@@ -1150,16 +1150,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#options-for-202309-release" class="md-nav__link">
-    Options for 2023.09 release
+  <a href="#options-for-different-toolchain-releases" class="md-nav__link">
+    Options for Different Toolchain Releases
+  </a>
+  
+    <nav class="md-nav" aria-label="Options for Different Toolchain Releases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release-202309-for-hs6x-family-glibc-based" class="md-nav__link">
+    Release 2023.09 for HS6x Family (glibc-based)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#options-for-202303-release" class="md-nav__link">
-    Options for 2023.03 release
+        
+          <li class="md-nav__item">
+  <a href="#release-202309-for-hs5x-family-uclibc-based" class="md-nav__link">
+    Release 2023.09 for HS5x Family (uClibc-based)
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-202309-for-hs3x4x-families-glibc-based" class="md-nav__link">
+    Release 2023.09 for HS3x/4x Families (glibc-based)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-202309-for-hs3x4x-families-uclibc-based" class="md-nav__link">
+    Release 2023.09 for HS3x/4x Families (uClibc-based)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-202309-for-arc700-family-uclibc-based" class="md-nav__link">
+    Release 2023.09 for ARC700 Family (uClibc-based)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3012,16 +3046,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#options-for-202309-release" class="md-nav__link">
-    Options for 2023.09 release
+  <a href="#options-for-different-toolchain-releases" class="md-nav__link">
+    Options for Different Toolchain Releases
+  </a>
+  
+    <nav class="md-nav" aria-label="Options for Different Toolchain Releases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release-202309-for-hs6x-family-glibc-based" class="md-nav__link">
+    Release 2023.09 for HS6x Family (glibc-based)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#options-for-202303-release" class="md-nav__link">
-    Options for 2023.03 release
+        
+          <li class="md-nav__item">
+  <a href="#release-202309-for-hs5x-family-uclibc-based" class="md-nav__link">
+    Release 2023.09 for HS5x Family (uClibc-based)
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-202309-for-hs3x4x-families-glibc-based" class="md-nav__link">
+    Release 2023.09 for HS3x/4x Families (glibc-based)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-202309-for-hs3x4x-families-uclibc-based" class="md-nav__link">
+    Release 2023.09 for HS3x/4x Families (uClibc-based)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-202309-for-arc700-family-uclibc-based" class="md-nav__link">
+    Release 2023.09 for ARC700 Family (uClibc-based)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3128,13 +3196,14 @@ configuration line must be added.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="options-for-202309-release">Options for 2023.09 release<a class="headerlink" href="#options-for-202309-release" title="Permanent link">&para;</a></h2>
+<h2 id="options-for-different-toolchain-releases">Options for Different Toolchain Releases<a class="headerlink" href="#options-for-different-toolchain-releases" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>RPC support must be explicitly disabled since Buildroot configurator
 may enable it by default.</p>
 </div>
-<p>Additional options for glibc-based toolchain:</p>
+<h3 id="release-202309-for-hs6x-family-glibc-based">Release 2023.09 for HS6x Family (glibc-based)<a class="headerlink" href="#release-202309-for-hs6x-family-glibc-based" title="Permanent link">&para;</a></h3>
+<p>Additional options for the toolchain:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Toolchain -&gt; External toolchain gcc version -&gt; 13.x
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>             External toolchain kernel headers series -&gt; 5.16.x
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>             External toolchain C library -&gt; glibc
@@ -3152,7 +3221,8 @@ may enable it by default.</p>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>BR2_TOOLCHAIN_EXTERNAL_CXX=y
 </span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>BR2_TOOLCHAIN_EXTERNAL_FORTRAN=y
 </span></code></pre></div>
-<p>Additional options for uClibc-based toolchain:</p>
+<h3 id="release-202309-for-hs5x-family-uclibc-based">Release 2023.09 for HS5x Family (uClibc-based)<a class="headerlink" href="#release-202309-for-hs5x-family-uclibc-based" title="Permanent link">&para;</a></h3>
+<p>Additional options for the toolchain:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Toolchain -&gt; External toolchain gcc version -&gt; 13.x
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>             External toolchain kernel headers series -&gt; 5.16.x
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>             External toolchain C library -&gt; uClibc/uClibc-ng
@@ -3160,7 +3230,6 @@ may enable it by default.</p>
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>             [*] Toolchain has SSP support?
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>             [ ] Toolchain has RPC support?
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>             [*] Toolchain has C++ support?
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>             [*] Toolchain has Fortran support?
 </span></code></pre></div>
 <p>Configuration file lines:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>BR2_TOOLCHAIN_EXTERNAL_GCC_13=y
@@ -3170,47 +3239,65 @@ may enable it by default.</p>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>BR2_TOOLCHAIN_EXTERNAL_INET_RPC=n
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>BR2_TOOLCHAIN_EXTERNAL_CXX=y
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>BR2_TOOLCHAIN_EXTERNAL_FORTRAN=y
 </span></code></pre></div>
-<h2 id="options-for-202303-release">Options for 2023.03 release<a class="headerlink" href="#options-for-202303-release" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>RPC support must be explicitly disabled since Buildroot configurator
-may enable it by default.</p>
-</div>
-<p>Additional options for glibc-based toolchain:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Toolchain -&gt; External toolchain gcc version -&gt; 12.x
+<h3 id="release-202309-for-hs3x4x-families-glibc-based">Release 2023.09 for HS3x/4x Families (glibc-based)<a class="headerlink" href="#release-202309-for-hs3x4x-families-glibc-based" title="Permanent link">&para;</a></h3>
+<p>Additional options for the toolchain:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Toolchain -&gt; External toolchain gcc version -&gt; 13.x
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>             External toolchain kernel headers series -&gt; 5.16.x
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>             External toolchain C library -&gt; glibc
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>             [*] Toolchain has SSP support?
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>             [ ] Toolchain has RPC support?
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>             [*] Toolchain has C++ support?
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>             [*] Toolchain has Fortran support?
 </span></code></pre></div>
 <p>Configuration file lines:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>BR2_TOOLCHAIN_EXTERNAL_GCC_12=y
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>BR2_TOOLCHAIN_EXTERNAL_GCC_13=y
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16=y
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC=y
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>BR2_TOOLCHAIN_EXTERNAL_INET_RPC=n
 </span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>BR2_TOOLCHAIN_EXTERNAL_CXX=y
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>BR2_TOOLCHAIN_EXTERNAL_FORTRAN=y
 </span></code></pre></div>
+<h3 id="release-202309-for-hs3x4x-families-uclibc-based">Release 2023.09 for HS3x/4x Families (uClibc-based)<a class="headerlink" href="#release-202309-for-hs3x4x-families-uclibc-based" title="Permanent link">&para;</a></h3>
 <p>Additional options for uClibc-based toolchain:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Toolchain -&gt; External toolchain gcc version -&gt; 12.x
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Toolchain -&gt; External toolchain gcc version -&gt; 13.x
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>             External toolchain kernel headers series -&gt; 5.16.x
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>             External toolchain C library -&gt; uClibc/uClibc-ng
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>             [*] Toolchain has locale support?
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>             [*] Toolchain has WCHAR support?
 </span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>             [*] Toolchain has SSP support?
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>             [ ] Toolchain has RPC support?
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>             [*] Toolchain has C++ support?
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>             [*] Toolchain has Fortran support?
 </span></code></pre></div>
 <p>Configuration file lines:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>BR2_TOOLCHAIN_EXTERNAL_GCC_12=y
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>BR2_TOOLCHAIN_EXTERNAL_GCC_13=y
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16=y
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>BR2_TOOLCHAIN_EXTERNAL_CUSTOM_UCLIBC=y
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>BR2_TOOLCHAIN_EXTERNAL_LOCALE=y
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>BR2_TOOLCHAIN_EXTERNAL_WCHAR=y
 </span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
 </span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>BR2_TOOLCHAIN_EXTERNAL_INET_RPC=n
 </span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>BR2_TOOLCHAIN_EXTERNAL_CXX=y
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>BR2_TOOLCHAIN_EXTERNAL_FORTRAN=y
+</span></code></pre></div>
+<h3 id="release-202309-for-arc700-family-uclibc-based">Release 2023.09 for ARC700 Family (uClibc-based)<a class="headerlink" href="#release-202309-for-arc700-family-uclibc-based" title="Permanent link">&para;</a></h3>
+<p>Additional options for uClibc-based toolchain:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Toolchain -&gt; External toolchain gcc version -&gt; 13.x
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>             External toolchain kernel headers series -&gt; 5.16.x
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>             External toolchain C library -&gt; uClibc/uClibc-ng
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>             [*] Toolchain has WCHAR support?
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>             [*] Toolchain has SSP support?
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>             [ ] Toolchain has RPC support?
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>             [*] Toolchain has C++ support?
+</span></code></pre></div>
+<p>Configuration file lines:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>BR2_TOOLCHAIN_EXTERNAL_GCC_13=y
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16=y
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>BR2_TOOLCHAIN_EXTERNAL_CUSTOM_UCLIBC=y
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>BR2_TOOLCHAIN_EXTERNAL_WCHAR=y
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>BR2_TOOLCHAIN_EXTERNAL_INET_RPC=n
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>BR2_TOOLCHAIN_EXTERNAL_CXX=y
 </span></code></pre></div>
 
 
