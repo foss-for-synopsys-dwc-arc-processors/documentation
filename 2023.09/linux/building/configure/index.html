@@ -12,7 +12,7 @@
         <link rel="prev" href="../separate/">
       
       
-        <link rel="next" href="../../simulators/nsim/">
+        <link rel="next" href="../toolchain/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
@@ -1022,6 +1022,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -1111,6 +1113,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configuration-files" class="md-nav__link">
+    Configuration Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#building-in-a-separate-directory" class="md-nav__link">
     Building in a Separate Directory
   </a>
@@ -1139,34 +1148,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#selecting-a-prebuilt-toolchain" class="md-nav__link">
-    Selecting a Prebuilt Toolchain
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#selecting-a-preinstalled-toolchain" class="md-nav__link">
-    Selecting a Preinstalled Toolchain
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creating-a-custom-configuration-file" class="md-nav__link">
-    Creating a Custom Configuration File
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-custom-configuration-files" class="md-nav__link">
-    Using Custom Configuration Files
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#using-overlays" class="md-nav__link">
     Using Overlays
   </a>
@@ -1177,6 +1158,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toolchain/" class="md-nav__link">
+        Using External Toolchains
+      </a>
     </li>
   
 
@@ -3015,6 +3010,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configuration-files" class="md-nav__link">
+    Configuration Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#building-in-a-separate-directory" class="md-nav__link">
     Building in a Separate Directory
   </a>
@@ -3038,34 +3040,6 @@
         <li class="md-nav__item">
   <a href="#selecting-a-linux-kernel-configuration-file" class="md-nav__link">
     Selecting a Linux Kernel Configuration File
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#selecting-a-prebuilt-toolchain" class="md-nav__link">
-    Selecting a Prebuilt Toolchain
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#selecting-a-preinstalled-toolchain" class="md-nav__link">
-    Selecting a Preinstalled Toolchain
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creating-a-custom-configuration-file" class="md-nav__link">
-    Creating a Custom Configuration File
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-custom-configuration-files" class="md-nav__link">
-    Using Custom Configuration Files
   </a>
   
 </li>
@@ -3099,134 +3073,107 @@
 <h2 id="preface">Preface<a class="headerlink" href="#preface" title="Permanent link">&para;</a></h2>
 <p>This guide contains a bunch of recipes which may be useful while building Linux kernel
 for Synopsys ARC processors. Consider reading <a href="https://buildroot.org/downloads/manual/manual.html">the Buildroot user manual</a> for details.</p>
+<h2 id="configuration-files">Configuration Files<a class="headerlink" href="#configuration-files" title="Permanent link">&para;</a></h2>
+<p>Configuration menu allows to manually tune options for a particular build.
+Initialize Buildroot with a predefined configuration file and enter the menu:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>make snps_archs38_haps_defconfig
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>make menuconfig
+</span></code></pre></div>
+<p>After you finishes your configuration session a configuration file is saved
+as <code>.config</code>.</p>
+<p>You can use <code>make savedefconfig</code> to save a current configuration to a separate
+configuration file. It reduces all configuration options to a minimum set of options.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>make<span class="w"> </span>savedefconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>my_defconfig
+</span></code></pre></div>
+<p>Configuration file <code>my_defconfig</code> is saved in Buildroot's source tree. Here is an example of
+a configuration file which selects a preinstalled toolchain:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">BR2_arcle</span><span class="o">=</span>y
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">BR2_archs38</span><span class="o">=</span>y
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc-2023.03/arc-linux-gnu&quot;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC</span><span class="o">=</span>y
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># BR2_TOOLCHAIN_EXTERNAL_INET_RPC is not set</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_FORTRAN</span><span class="o">=</span>y
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="nv">BR2_TARGET_GENERIC_HOSTNAME</span><span class="o">=</span><span class="s2">&quot;zebu_hs&quot;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="nv">BR2_TARGET_GENERIC_ISSUE</span><span class="o">=</span><span class="s2">&quot;Welcome to the HAPS Development Platform&quot;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_VERSION</span><span class="o">=</span>y
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_VERSION_VALUE</span><span class="o">=</span><span class="s2">&quot;5.16&quot;</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;haps_hs_smp&quot;</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="nv">BR2_LINUX_KERNEL_VMLINUX</span><span class="o">=</span>y
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
+</span></code></pre></div>
+<p>You can place a custom configuration file in <code>config</code> directory in Buildroot's source tree.
+It allows you to use custom configuration files as usual:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>make my_defconfig
+</span></code></pre></div>
+<p>You can use <code>defconfig</code> command and <code>DEFCONFIG</code> environment variable to pass a
+path to the configuration file:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Using an absolute path</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$<span class="w"> </span>make<span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>/home/user/buildroot/my_defconfig
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Using a relative path (it&#39;s always relative to Buildroot&#39;s source tree)</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>$<span class="w"> </span>make<span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>my_defconfig
+</span></code></pre></div>
 <h2 id="building-in-a-separate-directory">Building in a Separate Directory<a class="headerlink" href="#building-in-a-separate-directory" title="Permanent link">&para;</a></h2>
 <p>It's a good practice to build Linux images out of the main source tree:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://git.busybox.net/buildroot
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mkdir<span class="w"> </span>buildroot/build
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>buildroot/build
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>make<span class="w"> </span>-C<span class="w"> </span>..<span class="w"> </span><span class="nv">O</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="w"> </span>snps_archs38_haps_defconfig
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://git.busybox.net/buildroot
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>mkdir<span class="w"> </span>buildroot/build
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">cd</span><span class="w"> </span>buildroot/build
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>make<span class="w"> </span>-C<span class="w"> </span>..<span class="w"> </span><span class="nv">O</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="w"> </span>snps_archs38_haps_defconfig
 </span></code></pre></div>
 <p>Option <code>-C ..</code> points to Buildroot source tree and <code>O=$(pwd)</code> passes an output directory's path to <code>make</code>.
 Note that if you use relative paths in Buildroot configuration options, then they are relative to Buildroot's
 source tree, but not to build directory.</p>
 <h2 id="selection-a-big-endian-configuration">Selection a Big Endian Configuration<a class="headerlink" href="#selection-a-big-endian-configuration" title="Permanent link">&para;</a></h2>
 <p>Select this option in a configuration menu:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Target options -&gt; Target Architecture -&gt; (X) ARC (big endian)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Target options -&gt; Target Architecture -&gt; (X) ARC (big endian)
 </span></code></pre></div>
+<p>This option corresponds to <code>BR2_arceb=y</code> configuration line.</p>
 <h2 id="selecting-a-linux-kernel-version">Selecting a Linux Kernel Version<a class="headerlink" href="#selecting-a-linux-kernel-version" title="Permanent link">&para;</a></h2>
 <p>By default, Buildroot selects the latest available version of the upstream Linux kernel. However, if you
 want to use a development branch with the latest patches and support of ARCv3 processor families, then
 consider using <code>arc64</code> branch of the development repository:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Kernel -&gt; Kernel version -&gt; Custom Git repository
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>       -&gt; URL of custom repository -&gt; https://github.com/foss-for-synopsys-dwc-arc-processors/linux
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>       -&gt; Custom repository version -&gt; arc64
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Kernel -&gt; Kernel version -&gt; Custom Git repository
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>       -&gt; URL of custom repository -&gt; https://github.com/foss-for-synopsys-dwc-arc-processors/linux
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>       -&gt; Custom repository version -&gt; arc64
+</span></code></pre></div>
+<p>This set of options corresponds to these configuration lines:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>BR2_LINUX_KERNEL_CUSTOM_GIT=y
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>BR2_LINUX_KERNEL_CUSTOM_REPO_URL=&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux&quot;
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION=&quot;arc64&quot;
 </span></code></pre></div>
 <h2 id="selecting-a-linux-kernel-configuration-file">Selecting a Linux Kernel Configuration File<a class="headerlink" href="#selecting-a-linux-kernel-configuration-file" title="Permanent link">&para;</a></h2>
 <p>You can select a Linux kernel configuration file in Buildroot configuration menu. For example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Kernel -&gt; Defconfig name -&gt; haps_hs
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Kernel -&gt; Defconfig name -&gt; haps_hs
 </span></code></pre></div>
+<p>This option corresponds to <code>BR2_LINUX_KERNEL_DEFCONFIG="haps_hs"</code> configuration line.</p>
 <p>You can find a complete list of all Linux kernel configuration files in <code>arch/arc/configs</code> directory
 of Linux kernel source tree:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$ ls -1 &lt;path-to-kernel-source-tree&gt;/arch/arc/configs
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>axs101_defconfig
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>axs103_defconfig
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>axs103_smp_defconfig
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>haps_hs_defconfig
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>haps_hs_smp_defconfig
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>hsdk_defconfig
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>nsim_700_defconfig
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>nsimosci_defconfig
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>nsimosci_hs_defconfig
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>nsimosci_hs_smp_defconfig
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>tb10x_defconfig
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>vdk_hs38_defconfig
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>vdk_hs38_smp_defconfig
-</span></code></pre></div>
-<h2 id="selecting-a-prebuilt-toolchain">Selecting a Prebuilt Toolchain<a class="headerlink" href="#selecting-a-prebuilt-toolchain" title="Permanent link">&para;</a></h2>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Each release of a toolchain may demand a specific set of options which must be selected/deselected manually.
-It happens, because when a custom toolchain is selected, Buildroot cannot detect toolchain's features automatically.
-Follow Buildroot's error messages for details.</p>
-</div>
-<p>By default, Buildroot builds a Linux toolchain for ARC from scratch and may use relatively old sources for tools like
-GCC, Binutils, etc. If you want to use the latest available toolchain for ARC processors, then consider using
-prebuilt components from <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases">official releases page</a>.</p>
-<p>In addition to the default values, select/deselect these options for the toolchain for ARC HS3x/4x with glibc library
-(2023.03 release):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Toolchain -&gt; Toolchain type -&gt; (X) External toolchain
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>          -&gt; (X) Custom toolchain
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>          -&gt; Toolchain origin -&gt; (X) Toolchain to be downloaded and installed
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>          -&gt; Toolchain URL -&gt; https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.03-release/arc_gnu_2023.03_prebuilt_glibc_le_archs_linux_install.tar.gz
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>          -&gt; External toolchain gcc version -&gt; (X) 12.x
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>          -&gt; External toolchain kernel headers series -&gt; (X) 5.16.x
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>          -&gt; External toolchain C library -&gt; (X) glibc
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>          -&gt; [ ] Toolchain has RPC support?
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>          -&gt; [X] Toolchain has C++ support?
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>          -&gt; [X] Toolchain has Fortran support?
-</span></code></pre></div>
-<p>Additional options for the toolchain for ARC HS3x/4x with uClibc library (2023.03 release):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Toolchain -&gt; Toolchain type -&gt; (X) External toolchain
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>          -&gt; (X) Custom toolchain
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>          -&gt; Toolchain origin -&gt; (X) Toolchain to be downloaded and installed
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>          -&gt; Toolchain URL -&gt; https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.03-release/arc_gnu_2023.03_prebuilt_uclibc_le_archs_linux_install.tar.gz
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>          -&gt; External toolchain gcc version -&gt; (X) 12.x
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>          -&gt; External toolchain kernel headers series -&gt; (X) 5.16.x
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>          -&gt; External toolchain C library -&gt; (X) uClibc/uClibc-ng
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>          -&gt; [X] Toolchain has locale support?
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>          -&gt; [ ] Toolchain has RPC support?
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>          -&gt; [X] Toolchain has C++ support?
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>          -&gt; [X] Toolchain has Fortran support?
-</span></code></pre></div>
-<h2 id="selecting-a-preinstalled-toolchain">Selecting a Preinstalled Toolchain<a class="headerlink" href="#selecting-a-preinstalled-toolchain" title="Permanent link">&para;</a></h2>
-<p>A procedure is the same as for selecting a prebuilt toolchain except these ones:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Toolchain -&gt; Toolchain origin -&gt; (X) Pre-installed toolchain
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>          -&gt; Toolchain path -&gt; /tools/toolchains/arc-linux-gnu
-</span></code></pre></div>
-<h2 id="creating-a-custom-configuration-file">Creating a Custom Configuration File<a class="headerlink" href="#creating-a-custom-configuration-file" title="Permanent link">&para;</a></h2>
-<p>You can use <code>make savedefconfig</code> to save a current configuration to a configuration file.
-It reduces all configuration options to a minimum set of options.</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>make<span class="w"> </span>savedefconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>my_defconfig
-</span></code></pre></div>
-<p>Configuration file <code>my_defconfig</code> is saved in Buildroot's source tree. Here is an example of
-a configuration file which selects a preinstalled toolchain:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">BR2_arcle</span><span class="o">=</span>y
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">BR2_archs38</span><span class="o">=</span>y
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc-2023.03/arc-linux-gnu&quot;</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC</span><span class="o">=</span>y
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1"># BR2_TOOLCHAIN_EXTERNAL_INET_RPC is not set</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_FORTRAN</span><span class="o">=</span>y
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="nv">BR2_TARGET_GENERIC_HOSTNAME</span><span class="o">=</span><span class="s2">&quot;zebu_hs&quot;</span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="nv">BR2_TARGET_GENERIC_ISSUE</span><span class="o">=</span><span class="s2">&quot;Welcome to the HAPS Development Platform&quot;</span>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_VERSION</span><span class="o">=</span>y
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_VERSION_VALUE</span><span class="o">=</span><span class="s2">&quot;5.16&quot;</span>
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;haps_hs_smp&quot;</span>
-</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="nv">BR2_LINUX_KERNEL_VMLINUX</span><span class="o">=</span>y
-</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
-</span></code></pre></div>
-<h2 id="using-custom-configuration-files">Using Custom Configuration Files<a class="headerlink" href="#using-custom-configuration-files" title="Permanent link">&para;</a></h2>
-<p>You can place a custom configuration file in <code>config</code> directory in Buildroot's source tree.
-It allows you to use custom configuration files as usual:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>make my_defconfig
-</span></code></pre></div>
-<p>You can use <code>defconfig</code> command and <code>DEFCONFIG</code> environment variable to pass a path to the configuration file:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Using an absolute path</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>$<span class="w"> </span>make<span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>/home/user/buildroot/my_defconfig
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Using a relative path (it&#39;s always relative to Buildroot&#39;s source tree)</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>$<span class="w"> </span>make<span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>my_defconfig
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$ ls -1 &lt;path-to-kernel-source-tree&gt;/arch/arc/configs
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>axs101_defconfig
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>axs103_defconfig
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>axs103_smp_defconfig
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>haps_hs_defconfig
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>haps_hs_smp_defconfig
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>hsdk_defconfig
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>nsim_700_defconfig
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>nsimosci_defconfig
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>nsimosci_hs_defconfig
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>nsimosci_hs_smp_defconfig
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>tb10x_defconfig
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>vdk_hs38_defconfig
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>vdk_hs38_smp_defconfig
 </span></code></pre></div>
 <h2 id="using-overlays">Using Overlays<a class="headerlink" href="#using-overlays" title="Permanent link">&para;</a></h2>
 <p>If you want to place addition files and directories in <code>rootfs</code>, then you can
 use <code>BR2_ROOTFS_OVERLAY=&lt;path&gt;</code> parameter: it contains a path to the a directory
 with files and directories which will be placed in the final filesystem image.</p>
 <p>You can select it in a configuration menu:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>System configuration -&gt; Root filesystem overlay directories -&gt; overlay
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>System configuration -&gt; Root filesystem overlay directories -&gt; overlay
 </span></code></pre></div>
 <p>Also you can achieve the same result by placing all necessary files and directories in <code>output/target</code>
 (or just <code>target</code> if you build in a separate directory) directory and rebuilding images using <code>make</code>.</p>

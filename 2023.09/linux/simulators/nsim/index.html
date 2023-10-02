@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../../building/configure/">
+        <link rel="prev" href="../../building/toolchain/">
       
       
         <link rel="next" href="../metaware/">
@@ -1020,6 +1020,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -1070,6 +1072,20 @@
     <li class="md-nav__item">
       <a href="../../building/configure/" class="md-nav__link">
         Configuring Buildroot and Linux Kernel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building/toolchain/" class="md-nav__link">
+        Using External Toolchains
       </a>
     </li>
   
@@ -3233,14 +3249,15 @@ a single core (UP) configuration. Here is a corresponding configuration file for
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_WCHAR</span><span class="o">=</span>y
 </span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HAS_SSP</span><span class="o">=</span>y
 </span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_GIT</span><span class="o">=</span>y
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_URL</span><span class="o">=</span><span class="s2">&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux&quot;</span>
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION</span><span class="o">=</span><span class="s2">&quot;arc64&quot;</span>
-</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;haps_hs&quot;</span>
-</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="nv">BR2_LINUX_KERNEL_VMLINUX</span><span class="o">=</span>y
-</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_FORTRAN</span><span class="o">=</span>y
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_GIT</span><span class="o">=</span>y
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_URL</span><span class="o">=</span><span class="s2">&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux&quot;</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION</span><span class="o">=</span><span class="s2">&quot;arc64&quot;</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;haps_hs&quot;</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="nv">BR2_LINUX_KERNEL_VMLINUX</span><span class="o">=</span>y
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
 </span></code></pre></div>
 <p>A process of building and running of the Linux kernel for ARC HS38 based on uClibc-ng
 is the same as for <a href="#arc-hs-3x4x-with-glibc">glibc version</a>.</p>
@@ -3256,14 +3273,15 @@ a single core (UP) configuration. Here is a corresponding configuration file for
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_WCHAR</span><span class="o">=</span>y
 </span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HAS_SSP</span><span class="o">=</span>y
 </span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_GIT</span><span class="o">=</span>y
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_URL</span><span class="o">=</span><span class="s2">&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux&quot;</span>
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION</span><span class="o">=</span><span class="s2">&quot;arc64&quot;</span>
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;nsim_700&quot;</span>
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="nv">BR2_LINUX_KERNEL_VMLINUX</span><span class="o">=</span>y
-</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_FORTRAN</span><span class="o">=</span>y
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_GIT</span><span class="o">=</span>y
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_URL</span><span class="o">=</span><span class="s2">&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux&quot;</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION</span><span class="o">=</span><span class="s2">&quot;arc64&quot;</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;nsim_700&quot;</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="nv">BR2_LINUX_KERNEL_VMLINUX</span><span class="o">=</span>y
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
 </span></code></pre></div>
 <p>Build a Linux image:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>make<span class="w"> </span>-C<span class="w"> </span>..<span class="w"> </span><span class="nv">O</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>build/defconfig
@@ -3340,7 +3358,8 @@ a single core (UP) configuration. Here is a corresponding configuration file for
 </span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HAS_SSP</span><span class="o">=</span>y
 </span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
 </span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_INET_RPC</span><span class="o">=</span>n
-</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
+</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_FORTRAN</span><span class="o">=</span>y
+</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
 </span></code></pre></div>
 <p>Build a Linux image:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>make<span class="w"> </span>-C<span class="w"> </span>..<span class="w"> </span><span class="nv">O</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>build/defconfig
@@ -3422,7 +3441,8 @@ a single core (UP) configuration. Here is a corresponding configuration file for
 </span><span id="__span-21-21"><a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HAS_SSP</span><span class="o">=</span>y
 </span><span id="__span-21-22"><a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
 </span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_INET_RPC</span><span class="o">=</span>n
-</span><span id="__span-21-24"><a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
+</span><span id="__span-21-24"><a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_FORTRAN</span><span class="o">=</span>y
+</span><span id="__span-21-25"><a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
 </span></code></pre></div>
 <p>Before running the image using nSIM create a corresponding configuration file <code>hs6x.props</code>
 (use <code>nsim_fast=1</code> option if you have nSIM Pro license):</p>
