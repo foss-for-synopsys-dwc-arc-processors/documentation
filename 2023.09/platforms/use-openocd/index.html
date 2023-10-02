@@ -727,6 +727,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -763,6 +765,20 @@
     <li class="md-nav__item">
       <a href="../../baremetal/hardware/emsdp/" class="md-nav__link">
         EM Software Development Platform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../baremetal/hardware/iotdk/" class="md-nav__link">
+        IoT Development Kit
       </a>
     </li>
   
@@ -1632,6 +1648,13 @@
         <li class="md-nav__item">
   <a href="#advanced-debug-commands" class="md-nav__link">
     Advanced debug commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-another-gdb-port" class="md-nav__link">
+    Using Another GDB Port
   </a>
   
 </li>
@@ -3045,6 +3068,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-another-gdb-port" class="md-nav__link">
+    Using Another GDB Port
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configurations-files" class="md-nav__link">
     Configurations Files
   </a>
@@ -3250,6 +3280,10 @@ actions bypassing GDB or even OpenOCD. For example it is possible to write/read
 core and aux registers. However some command for register access will be
 removed in future, when ARC OpenOCD will fully support flexible register
 configurations.</p>
+<h2 id="using-another-gdb-port">Using Another GDB Port<a class="headerlink" href="#using-another-gdb-port" title="Permanent link">&para;</a></h2>
+<p>You can use an OpenOCD command to change the GDB port this way:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>openocd -c &quot;gdb_port 12345&quot; ...
+</span></code></pre></div>
 <h2 id="configurations-files">Configurations Files<a class="headerlink" href="#configurations-files" title="Permanent link">&para;</a></h2>
 <p>Here is a table of configuration files for OpenOCD 0.9:</p>
 <table>
@@ -3274,7 +3308,7 @@ configurations.</p>
 </tr>
 <tr>
 <td>EM Software Development Platform</td>
-<td>❌</td>
+<td><a href="../board-emsdp/#openocd-configuration-file">EM SDP Documentation</a></td>
 </tr>
 <tr>
 <td>EM Starter Kit 2.3</td>

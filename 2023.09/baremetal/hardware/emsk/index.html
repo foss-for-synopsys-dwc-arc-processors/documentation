@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../emsdp/">
+        <link rel="prev" href="../iotdk/">
       
       
         <link rel="next" href="../axs-openocd/">
@@ -731,6 +731,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -767,6 +769,20 @@
     <li class="md-nav__item">
       <a href="../emsdp/" class="md-nav__link">
         EM Software Development Platform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iotdk/" class="md-nav__link">
+        IoT Development Kit
       </a>
     </li>
   
@@ -3233,8 +3249,8 @@ a possible output:</p>
 <p>Then connect to the server using GDB:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ arc-elf32-gdb -quiet main.elf
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a># Connect. Replace 49101 with port of your choice if you changed it when starting OpenOCD
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>(gdb) target remote :49101
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a># Connect. Replace 3333 with port of your choice if you changed it when starting OpenOCD
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>(gdb) target remote :3333
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a># Increase timeout, because OpenOCD sometimes can be slow
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>(gdb) set remotetimeout 15

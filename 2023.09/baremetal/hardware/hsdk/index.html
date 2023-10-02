@@ -731,6 +731,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -822,6 +824,20 @@
     <li class="md-nav__item">
       <a href="../emsdp/" class="md-nav__link">
         EM Software Development Platform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iotdk/" class="md-nav__link">
+        IoT Development Kit
       </a>
     </li>
   
@@ -3049,8 +3065,8 @@ operations.</p>
 installation, then consider using <code>snps_hsdk.cfg</code>.</p>
 </div>
 <p>Follow <a href="../../../platforms/use-openocd/">Using OpenOCD</a> guide and start OpenOCD
-with 49101 port and <code>snps_hsdk.cfg</code> (for HSDK) of <code>snps_hsdk_4xd.cfg</code>
-(for HSDK 4xD) configuration file. Here is a possible output for HSDK 4xD:</p>
+with <code>snps_hsdk.cfg</code> (for HSDK) or <code>snps_hsdk_4xd.cfg</code> (for HSDK 4xD)
+configuration file. Here is a possible output for HSDK 4xD:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ openocd -f board/snps_hsdk_4xd.cfg
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Open On-Chip Debugger 0.12.0+dev-gffa52f0e0 (2023-08-02-10:41)
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Licensed under GNU GPL v2
@@ -3069,20 +3085,20 @@ with 49101 port and <code>snps_hsdk.cfg</code> (for HSDK) of <code>snps_hsdk_4xd
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>Info : JTAG tap: arc-em.cpu3 tap/device found: 0x100854b1 (mfg: 0x258 (ARC International), part: 0x0085, ver: 0x1)
 </span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>Info : JTAG tap: arc-em.cpu2 tap/device found: 0x100454b1 (mfg: 0x258 (ARC International), part: 0x0045, ver: 0x1)
 </span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>Info : JTAG tap: arc-em.cpu1 tap/device found: 0x100054b1 (mfg: 0x258 (ARC International), part: 0x0005, ver: 0x1)
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>Info : starting gdb server for arc-em.cpu4 on 49101
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>Info : Listening on port 49101 for gdb connections
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>Info : starting gdb server for arc-em.cpu3 on 49102
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>Info : Listening on port 49102 for gdb connections
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>Info : starting gdb server for arc-em.cpu2 on 49103
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>Info : Listening on port 49103 for gdb connections
-</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>Info : starting gdb server for arc-em.cpu1 on 49104
-</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>Info : Listening on port 49104 for gdb connections
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>Info : starting gdb server for arc-em.cpu4 on 3333
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>Info : Listening on port 3333 for gdb connections
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>Info : starting gdb server for arc-em.cpu3 on 3334
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>Info : Listening on port 3334 for gdb connections
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>Info : starting gdb server for arc-em.cpu2 on 3335
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>Info : Listening on port 3335 for gdb connections
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>Info : starting gdb server for arc-em.cpu1 on 3336
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>Info : Listening on port 3336 for gdb connections
 </span></code></pre></div>
-<p>Then connect to the server using GDB (49104 port is used below in
-GDB session, because cores are numbered in reverse order and 49104 port
+<p>Then connect to the server using GDB (3336 port is used below in
+GDB session, because cores are numbered in reverse order and 3336 port
 corresponds to the first core):</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ arc-elf32-gdb -quiet main.elf
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>(gdb) target remote :49104
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>(gdb) target remote :3336
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a># Increase timeout, because OpenOCD sometimes can be slow
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>(gdb) set remotetimeout 15
