@@ -27,7 +27,6 @@ source .venv/bin/activate
 | `mkdocs build` | Build the documentation. Generated pages are stored in `site` subdirectory. |
 | `mkdocs serve` | Start HTTP-server for the documentation and serve it on <http://127.0.0.1:8000>. |
 
-
 ## Deploying the Documentation
 
 [Mike](https://github.com/jimporter/mike) utility is used for deploying the
