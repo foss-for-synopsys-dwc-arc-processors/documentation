@@ -157,5 +157,3 @@ Due to the accumulator caveats, consider the following implementation matrix for
 | `ADD`/`MPYD` | N | N | N | N | N | N | Y | N |
 | `MAC`        | N | N | N | N | N | N | N | N |
 | `MACD`       | N | N | N | N | N | N | N | Y |
-
-Refer [Target Specific Options](../general/target-options.md) for details.

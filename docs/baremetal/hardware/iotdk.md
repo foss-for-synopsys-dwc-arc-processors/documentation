@@ -43,7 +43,16 @@ with `snps_iotdk.cfg` configuration file. Here is an example:
 
 ```text
 $ openocd -f board/snps_iotdk.cfg
-...
+Open On-Chip Debugger 0.9.0-dev-g8ee31a5 (2023-09-27-21:15)
+Licensed under GNU GPL v2
+For bug reports, read
+        http://openocd.sourceforge.net/doc/doxygen/bugs.html
+adapter speed: 8000 kHz
+Info : clock speed 8000 kHz
+Info : JTAG tap: arc-em.cpu tap/device found: 0x200444b1 (mfg: 0x258, part: 0x0044, ver: 0x2)
+Info : JTAG tap: arc-em.cpu tap/device found: 0x200444b1 (mfg: 0x258, part: 0x0044, ver: 0x2)
+target state: halted
+target state: halted
 ```
 
 Then connect to the server using GDB:

@@ -6,7 +6,7 @@
 
 !!! info
 
-    * Follow [How to Get The Toolchain](../../general/toolchains.md#how-to-get-the-toolchain)
+    * Follow [How to Get The Toolchain](../../toolchain/index.md#how-to-get-the-toolchain)
       guide to get the latest ARC GNU toolchain. Linux toolchain for ARC HS3x/4x (with uClibc or glibc)
       is required.
     * Refer to the original [U-Boot README for HSDK](https://github.com/Screenly/u-boot/blob/master/board/synopsys/hsdk/README)

@@ -97,41 +97,6 @@ definitions of CPU families with all available and default target options.
 * [`arc-cpus.def`](https://github.com/foss-for-synopsys-dwc-arc-processors/gcc/blob/arc64/gcc/config/arc/arc-cpus.def) -
 definitions of particular `-mcpu=<core>` targets.
 
-### Multiplication Options for ARC EM, HS3x and HS4x Families
-
-Here is a table which matches `-mmpy-option=` values to corresponding features for ARC EM and ARC HS as they defined in ARChitect.
-
-| `-mmpy-option=` | Aliases       | ARChitect option for ARC HS | ARChitect option for ARC EM |
-|----------------:|---------------|-----------------------------|-----------------------------|
-|               0 | `none`        | `-mpy_option=none`          | `-mpy_option=none`          |
-|               2 | `wlh1`, `mpy` | `-mpy_option=mpy`           | `-mpy_option=wlh1`          |
-|               3 | `wlh2`        | —                           | `-mpy_option=wlh2`          |
-|               4 | `wlh3`        | —                           | `-mpy_option=wlh3`          |
-|               5 | `wlh4`        | —                           | `-mpy_option=wlh4`          |
-|               6 | `wlh5`        | —                           | `-mpy_option=wlh5`          |
-|               7 | `plus_dmpy`   | `-mpy_option=plus_dmpy`     | —                           |
-|               8 | `plus_macd`   | `-mpy_option=plus_macd`     | —                           |
-|               9 | `plus_qmacw`  | `-mpy_option=plus_qmacw`    | —                           |
-
-### Floating Point Options for ARC EM, HS3x and HS4x Families
-
-Here is a table which matches `-mfpu=` values to corresponding features for ARC EM and ARC HS as they defined in ARChitect.
-
-| `-mfpu=`    | Families | `-has_fpu` | `-fpu_dp_option` | `-fpu_div_option` | `-fpu_fma_option` | `-fpu_dp_assist` |
-|-------------|----------|------------|------------------|-------------------|-------------------|------------------|
-| `fpus`      | EM, HS   | On         | —                | —                 | —                 | —                |
-| `fpus_div`  | EM, HS   | On         | —                | On                | —                 | —                |
-| `fpus_fma`  | EM, HS   | On         | —                | —                 | On                | —                |
-| `fpus_all`  | EM, HS   | On         | —                | On                | On                | —                |
-| `fpud`      | HS       | On         | On               | —                 | —                 | —                |
-| `fpud_div`  | HS       | On         | On               | On                | —                 | —                |
-| `fpud_fma`  | HS       | On         | On               | —                 | On                | —                |
-| `fpud_all`  | HS       | On         | On               | On                | On                | —                |
-| `fpuda`     | EM       | On         | —                | —                 | —                 | On               |
-| `fpuda_div` | EM       | On         | —                | On                | —                 | On               |
-| `fpuda_fma` | EM       | On         | —                | —                 | On                | On               |
-| `fpuda_all` | EM       | On         | —                | On                | On                | On               |
-
 ### Values of `-mcpu` for ARC HS3x and HS4x Families
 
 | `-mcpu=`     | `-mdiv-rem` | `-matomic` | `-mll64` | `-mmpy-option=` | `-mfpu=`   |

@@ -134,11 +134,26 @@ excp_info
 Run the virtual machine to produce a trace file:
 
 ```shell
-$ qemu-system-arc --trace events=events.trc ...
+qemu-system-arc --trace events=events.trc ...
 ```
 
 Pretty-print the binary trace file (override `<pid>` with QEMU process id for you session):
 
 ```text
-$ <QEMU-source-tree-path>/scripts/simpletrace.py <QEMU-source-tree-path>/target/arc/trace-events trace-<pid>
+<QEMU-source-tree-path>/scripts/simpletrace.py <QEMU-source-tree-path>/target/arc/trace-events trace-<pid>
+```
+
+## Running Tests
+
+TCG is the internal language that powers QEMU. There are some assembly tests
+that validate the basic function of several instructions in QEMU.
+
+Firstly, make sure that QEMU if configured with `--cross-cc-arc=arc-elf32-gcc`
+and `--cross-cc-arc64=arc64-elf-gcc` options. Then after building QEMU use these
+commands to run TCG tests:
+
+```shell
+make clean-tcg
+make build-tcg
+make check-tcg
 ```

@@ -13,4 +13,6 @@ Here is a list of other useful resources regarding Free and Open Source Software
 (FOSS) for DesignWare ARC Processors:
 
 * [Release page of GNU toolchain](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases)
-* [The old embARC web page](https://embarc.org)
+* [The old GNU toolchain documentation](https://foss-for-synopsys-dwc-arc-processors.github.io/toolchain/)
+* [The old embARC web page (second)](https://embarc.org)
+* [THe old embARC web page (first)](https://foss-for-synopsys-dwc-arc-processors.github.io/)

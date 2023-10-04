@@ -7,6 +7,7 @@ theme:
   highlightjs: true
   locale: en
   logo: assets/logo.png
+  favicon: assets/favicon.ico
   icon:
     repo: fontawesome/brands/github
   palette:
@@ -15,6 +16,8 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.path
+    # Use this option to integrate the local table of content
+    # in the side bar:
     # - toc.integrate
     - navigation.sections
     - navigation.indexes
@@ -45,11 +48,28 @@ markdown_extensions:
 nav:
   - Home:
     - index.md
-    - general/processors.md
-    - general/toolchains.md
-    - general/target-options.md
-    - general/compatibility.md
-    - faq.md
+    - home/processors.md
+    - home/faq.md
+  - Toolchain:
+    - toolchain/index.md
+    - General Topics:
+      - toolchain/target-options.md
+      - toolchain/mpy-options.md
+      - toolchain/fpu-options.md
+      - toolchain/compatibility.md
+    - Advanced:
+      - toolchain/advanced/optimizations.md
+      - toolchain/advanced/custom-instructions.md
+      - toolchain/advanced/apex-header.md
+      - toolchain/advanced/intrinsics.md
+      - toolchain/advanced/sanitizers.md
+      - toolchain/advanced/jli.md
+      - toolchain/advanced/secure-shield.md
+      - toolchain/advanced/small-data.md
+      - toolchain/advanced/64-bit-operations.md
+    - Testing:
+      - toolchain/testing/dejagnu.md
+      - toolchain/testing/glibc.md
   - Simulators:
     - simulators/qemu.md
     - simulators/nsim.md
@@ -102,6 +122,7 @@ nav:
       - platforms/winusb.md
       - platforms/digilent.md
       - platforms/reset.md
+      - platforms/bit-file-fpga.md
     - Boards Documentation:
       - platforms/board-hsdk-4xd.md
       - platforms/board-hsdk.md
@@ -147,19 +168,3 @@ nav:
     - iot/index.md
     - embARC OSP: iot/embarc-osp.md
     - embARC BSP: iot/embarc-bsp.md
-  - Advanced:
-    - Development:
-      - advanced/optimizations.md
-      - advanced/custom-instructions.md
-      - advanced/apex-header.md
-      - advanced/intrinsics.md
-      - advanced/sanitizers.md
-      - advanced/jli.md
-      - advanced/secure-shield.md
-      - advanced/small-data.md
-      - advanced/64-bit-operations.md
-      - advanced/bit-file-fpga.md
-    - Testing:
-      - testing/dejagnu.md
-      - testing/glibc.md
-      - testing/qemu.md
