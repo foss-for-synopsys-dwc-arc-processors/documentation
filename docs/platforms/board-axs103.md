@@ -19,6 +19,10 @@ for a subset of the peripherals and example applications. Code development
 is made easy using the MetaWare Development Toolkit, MetaWare Lite tools
 or the ARC GNU Tool Chain.
 
+## Block Diagram
+
+![ARC AXS103 block diagram](./images/board-axs103-blocks.jpg)
+
 ## Useful Links
 
 * [AXS103 Main Board User Guide](files/ARC_AXS103_Mainboard_User_Guide.pdf)

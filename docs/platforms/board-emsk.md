@@ -33,6 +33,10 @@ ARC EM Starter Kit includes the following features:
 * 8 Mbyte for application software available in on-board flash
 * SD-card for additional application software and data storage
 
+## Block Diagram
+
+![ARC EMSK block diagram](./images/board-emsk-blocks.jpg)
+
 ## Connecting to the Serial Terminal
 
 !!! warning

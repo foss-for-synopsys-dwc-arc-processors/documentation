@@ -13,6 +13,10 @@ HS4x/HS4xD Development Kit includes pre-built SMP Linux image (plus the U-Boot
 bootloader). Code development is made easy using the MetaWare Development
 Toolkit, MetaWare Lite tools or the ARC GNU Tool Chain.
 
+## Block Diagram
+
+![ARC HSDK 4x/4xD block diagram](./images/board-hsdk-4xd-blocks.jpg)
+
 ## Connecting to the Serial Terminal
 
 !!! warning

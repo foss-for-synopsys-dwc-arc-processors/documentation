@@ -59,6 +59,10 @@ Key Features
 * 12V Power Supply
 * 12V fan
 
+## Block Diagram
+
+![ARC EM SDP block diagram](./images/board-emsdp-blocks.jpg)
+
 ## Connecting to the Serial Terminal
 
 !!! warning

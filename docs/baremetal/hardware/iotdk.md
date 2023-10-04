@@ -2,10 +2,8 @@
 
 !!! info
 
-    Please refer to board's documentation for detailed information about how to
-    setup the board for initial operation:
-
-    * [ARC IoT Development Kit](../../platforms/board-iot.md)
+    Please refer to [board's documentation](../../platforms/board-iot.md) for detailed information about how to
+    setup the board for initial operation.
 
     Also refer [Getting OpenOCD](../../platforms/get-openocd.md) and 
     [Using OpenOCD](../../platforms/use-openocd.md) for details about installing

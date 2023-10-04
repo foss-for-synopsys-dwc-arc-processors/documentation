@@ -22,6 +22,10 @@ development is made easy using the ARC MetaWare Development Toolkit, including
 the free MetaWare Lite tools. For Linux development, the ARC GNU tools can
 be used to develop software on the ARC 770D processor.
 
+## Block Diagram
+
+![ARC AXS101 block diagram](./images/board-axs101-blocks.jpg)
+
 ## Useful Links
 
 * [AXS101 Main Board User Guide](files/ARC_AXS101_Mainboard_User_Guide.pdf)

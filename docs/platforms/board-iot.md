@@ -36,6 +36,10 @@ following features:
     * JTAG
     * Power Management IC
 
+## Block Diagram
+
+![ARC IoT DK block diagram](./images/board-iot-blocks.jpg)
+
 ## Connecting to the Serial Terminal
 
 !!! warning

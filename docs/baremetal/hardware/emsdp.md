@@ -2,10 +2,11 @@
 
 !!! info
 
-    * Please refer to [board's documentation](../../platforms/board-emsdp.md)
-      for detailed information about how to setup the board for initial operation.
-    * Refer [Getting OpenOCD](../../platforms/get-openocd.md) and [Using OpenOCD](../../platforms/use-openocd.md)
-      for details about installing and using OpenOCD.
+    Please refer to [board's documentation](../../platforms/board-emsdp.md)
+    for detailed information about how to setup the board for initial operation.
+    
+    Refer [Getting OpenOCD](../../platforms/get-openocd.md) and [Using OpenOCD](../../platforms/use-openocd.md)
+    for details about installing and using OpenOCD.
 
 ## Preface
 
