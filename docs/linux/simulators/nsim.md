@@ -42,11 +42,11 @@ Here is a table of toolchains, which are used in this guide:
 | ARC HS 3x/4x          | uClibc-ng        | `/tools/toolchains/arc-linux-uclibc`    | [2023.09][archs_uclibc_toolchain]  |
 | ARC 700               | uClibc-ng        | `/tools/toolchains/arc700-linux-uclibc` | [2023.09][arc700_uclibc_toolchain] |
 
-[arc64_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-release/arc_gnu_2023.09_prebuilt_arc64_glibc_linux_install.tar.gz
-[arc32_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-release/arc_gnu_2023.09_prebuilt_arc32_uclibc_linux_install.tar.gz
-[archs_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-release/arc_gnu_2023.09_prebuilt_glibc_le_archs_linux_install.tar.gz
-[archs_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-release/arc_gnu_2023.09_prebuilt_uclibc_le_archs_linux_install.tar.gz
-[arc700_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-release/arc_gnu_2023.09_prebuilt_uclibc_le_arc700_linux_install.tar.gz
+[arc64_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-rc1/arc_gnu_2023.09-rc1_prebuilt_arc64_glibc_linux_install.tar.bz2
+[arc32_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-rc1/arc_gnu_2023.09-rc1_prebuilt_arc32_uclibc_linux_install.tar.bz2
+[archs_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-rc1/arc_gnu_2023.09-rc1_prebuilt_glibc_le_archs_linux_install.tar.bz2
+[archs_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-rc1/arc_gnu_2023.09-rc1_prebuilt_uclibc_le_archs_linux_install.tar.bz2
+[arc700_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-rc1/arc_gnu_2023.09-rc1_prebuilt_uclibc_le_arc700_linux_install.tar.bz2
 
 ## ARC HS 3x/4x with glibc
 
