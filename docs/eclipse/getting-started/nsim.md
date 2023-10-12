@@ -83,3 +83,24 @@ Use **Step Over** button to step over `printf` function. You can observe
 output in **Console** tab:
 
 ![Debug - Output](./images/nsim-debug-output.png)
+
+## Using Big Endian Configuration
+
+If you use the big endian toolchain and want to debug the application using
+nSIM then you need to create a corresponding TCF file manually since there are
+no TCF files for big endian targets.
+
+For example, if you want to use `hs48_full.tcf` TCF file then duplicate it
+with name `hs48_full_big.tcf`, find this string in it:
+
+```text
+nsim_isa_big_endian=0
+```
+
+and change it to this line:
+
+```text
+nsim_isa_big_endian=1
+```
+
+Now you can use this TCF file for running big endian applications on nSIM.

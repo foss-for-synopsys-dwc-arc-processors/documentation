@@ -139,10 +139,13 @@ nav:
       - Manual Installation: eclipse/installation/manual.md
       - eclipse/installation/preferences.md
     - Getting Started:
-      - EM Starter Kit: eclipse/getting-started/emsk.md
       - HS Development Kit: eclipse/getting-started/hsdk.md
+      - EM Starter Kit: eclipse/getting-started/emsk.md
       - nSIM: eclipse/getting-started/nsim.md
     - Other:
+      - eclipse/other/build-settings.md
+      - eclipse/other/custom-gdb-server.md
+      - eclipse/other/running-gdb-server.md
       - eclipse/other/building.md
   - Audio:
     - audio/index.md
