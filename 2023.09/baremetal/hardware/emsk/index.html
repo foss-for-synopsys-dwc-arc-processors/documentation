@@ -1197,8 +1197,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-an-application" class="md-nav__link">
-    Running an Application
+  <a href="#running-an-application-using-openocd" class="md-nav__link">
+    Running an Application Using OpenOCD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-an-application-using-ashling-opella-xd" class="md-nav__link">
+    Running an Application Using Ashling Opella-XD
   </a>
   
 </li>
@@ -3105,8 +3112,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-an-application" class="md-nav__link">
-    Running an Application
+  <a href="#running-an-application-using-openocd" class="md-nav__link">
+    Running an Application Using OpenOCD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-an-application-using-ashling-opella-xd" class="md-nav__link">
+    Running an Application Using Ashling Opella-XD
   </a>
   
 </li>
@@ -3322,7 +3336,7 @@ operations.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="running-an-application">Running an Application<a class="headerlink" href="#running-an-application" title="Permanent link">&para;</a></h2>
+<h2 id="running-an-application-using-openocd">Running an Application Using OpenOCD<a class="headerlink" href="#running-an-application-using-openocd" title="Permanent link">&para;</a></h2>
 <p>Follow <a href="../../../platforms/use-openocd/">Using OpenOCD</a> guide and start OpenOCD
 with 49101 port and <code>snps_em_sk_v2.2.cfg</code> configuration file. Here is
 a possible output:</p>
@@ -3363,6 +3377,55 @@ a possible output:</p>
 </span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
 </span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a># For example, check exit code of application
 </span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>(gdb) info reg r0
+</span></code></pre></div>
+<h2 id="running-an-application-using-ashling-opella-xd">Running an Application Using Ashling Opella-XD<a class="headerlink" href="#running-an-application-using-ashling-opella-xd" title="Permanent link">&para;</a></h2>
+<p>Change directory to installation directory of Ashling Opella-XDand run the
+server (use your own path which is applicable for you machine):</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;path-to-Ashling-directory&gt;
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$<span class="w"> </span>./ash-arc-gdb-server<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">          </span>--device<span class="w"> </span>arc-em<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">          </span>--arc-reg-file<span class="w"> </span>regs/opella-arcem-tdesc.xml<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">          </span>--jtag-frequency<span class="w"> </span>5MHz
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>Ashling<span class="w"> </span>GDB<span class="w"> </span>Server<span class="w"> </span><span class="k">for</span><span class="w"> </span>ARC<span class="w"> </span><span class="o">(</span>ash-arc-gdb-server<span class="o">)</span>.
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>v1.3.1,<span class="w"> </span><span class="m">29</span>-Nov-2019,<span class="w"> </span><span class="o">(</span>c<span class="o">)</span>Ashling<span class="w"> </span>Microsystems<span class="w"> </span>Ltd<span class="w"> </span><span class="m">2019</span>.
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>Initializing<span class="w"> </span>connection<span class="w"> </span>...
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>It<span class="w"> </span>is<span class="w"> </span>an<span class="w"> </span>ARC-v2<span class="w"> </span>core!
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>IDENTITY:<span class="w">  </span><span class="m">00000042</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>MEMSUBSYS:<span class="w"> </span><span class="m">12047402</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>Connected<span class="w"> </span>to<span class="w"> </span>target<span class="w"> </span>device<span class="w"> </span>configured<span class="w"> </span>as:<span class="w"> </span>ARC-EM
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="o">(</span>currently<span class="w"> </span><span class="k">in</span><span class="w"> </span>Little<span class="w"> </span>Endian<span class="w"> </span>mode<span class="o">)</span>.
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>Connected<span class="w"> </span>to<span class="w"> </span>target<span class="w"> </span>via<span class="w"> </span>Opella-XD
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="o">(</span>diskware:<span class="w"> </span>v1.4.3,<span class="w"> </span><span class="m">26</span>-Jul-2019,<span class="w"> </span>firmware:<span class="w"> </span>v1.4.6-B,<span class="w"> </span><span class="m">05</span>-Dec-2019<span class="o">)</span><span class="w"> </span>at<span class="w"> </span>5MHz.
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>Waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>debugger<span class="w"> </span>connection<span class="w"> </span>on<span class="w"> </span>port<span class="w"> </span><span class="m">2331</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>core<span class="w"> </span><span class="m">1</span>.
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>Press<span class="w"> </span><span class="s1">&#39;Q&#39;</span><span class="w"> </span>to<span class="w"> </span>Quit.
+</span></code></pre></div>
+<p>Then connect to the server using GDB:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ arc-elf32-gdb -quiet main.elf
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a># Connect to the GDB server
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>(gdb) target remote :2331
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a># Load a target description file
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>(gdb) set tdesc filename &lt;path-to-Ashling-directory&gt;/regs/opella-arcem-tdesc.xml
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a># Load application into target
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>(gdb) load
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a># Go to start of main function
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>(gdb) tbreak main
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>(gdb) continue
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a># Resume with usual GDB commands
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>(gdb) step
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>(gdb) next
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a># Go to end of the application
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>(gdb) tbreak exit
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>(gdb) continue
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a># For example, check exit code of application
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>(gdb) info reg r0
 </span></code></pre></div>
 <h2 id="connecting-to-the-serial-terminal">Connecting to the Serial Terminal<a class="headerlink" href="#connecting-to-the-serial-terminal" title="Permanent link">&para;</a></h2>
 <p>Follow <a href="../../../platforms/board-emsk/#connecting-to-the-serial-terminal">the corresponding guide</a>
