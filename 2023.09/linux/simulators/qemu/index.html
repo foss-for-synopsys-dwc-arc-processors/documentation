@@ -1667,6 +1667,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mounting-nfs-folder" class="md-nav__link">
+    Mounting NFS Folder
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3214,6 +3221,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mounting-nfs-folder" class="md-nav__link">
+    Mounting NFS Folder
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3382,6 +3396,60 @@ and add an option for building Ext2 filesystem image (<code>BR2_TARGET_ROOTFS_EX
 Target may do changes to the contents of this folder (with read/write permissions above).
 Host <em>must not</em> do any changes to the folder while target is using this shared folder,
 otherwise things will go seriously wrong (QEMU creates FAT table on start and then it's target which manipulates it but not host).</p>
+<h2 id="mounting-nfs-folder">Mounting NFS Folder<a class="headerlink" href="#mounting-nfs-folder" title="Permanent link">&para;</a></h2>
+<p>Install and configure NFS on CentOS or Fedora:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># For CentOS 7</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>nfs-utils
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="c1"># For Fedora</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>nfs-utils
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="c1"># Enable services and add rules for firewall:</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>rpcbind<span class="w"> </span>nfs-server
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>sudo<span class="w"> </span>firewall-cmd<span class="w"> </span>--add-service<span class="o">=</span>nfs<span class="w"> </span>--permanent
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>sudo<span class="w"> </span>firewall-cmd<span class="w"> </span>--reload
+</span></code></pre></div>
+<p>Install and configure NFS on Ubuntu:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nfs-kernel-server
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>nfs-server
+</span></code></pre></div>
+<p>Then you need to configure NFS directory for sharing. For example,
+it's <code>/nfs</code> directory and the current user owns it. Add this line to
+<code>/etc/exports</code> (you can find <code>anonuid</code> and <code>anongid</code> for your user using <code>id -u</code>
+and <code>id -g</code> respectively):</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>/nfs<span class="w"> </span>*<span class="o">(</span>rw,all_squash,anonuid<span class="o">=</span><span class="m">1000</span>,anongid<span class="o">=</span><span class="m">1000</span>,no_subtree_check,insecure<span class="o">)</span>
+</span></code></pre></div>
+<p>Update the table of exported NFS file systems:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>sudo<span class="w"> </span>exportfs<span class="w"> </span>-rv
+</span></code></pre></div>
+<p>Then enable NFS in you Buildroot configuration using configuration
+menu (it corresponds to <code>BR2_PACKAGE_NFS_UTILS=y</code>):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>Target packages -&gt; Filesystem and flash utilities -&gt; [*] nfs-utils
+</span></code></pre></div>
+<p>Run the Linux image with network interface enabled (use your own path
+for <code>vmlinux</code> images for HS3x/4x targets or <code>loader</code> image for HS5x/6x targets):</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>qemu-system-arc<span class="w"> </span>-M<span class="w"> </span>virt<span class="w"> </span>-cpu<span class="w"> </span>archs<span class="w"> </span>-m<span class="w"> </span>2G<span class="w"> </span>-display<span class="w"> </span>none<span class="w"> </span>-nographic<span class="w"> </span>-monitor<span class="w"> </span>none<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">                </span>-kernel<span class="w"> </span>images/vmlinux<span class="w"> </span>-device<span class="w"> </span>virtio-rng-pci<span class="w"> </span>-netdev<span class="w"> </span>user,id<span class="o">=</span>net0<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">                </span>-device<span class="w"> </span>virtio-net-device,netdev<span class="o">=</span>net0
+</span></code></pre></div>
+<p>Create a directory for mounting the shared folder in guest system:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>mkdir<span class="w"> </span>/nfs
+</span></code></pre></div>
+<p>Configure the network interface in guest system:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a># udhcpc
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>udhcpc: started, v1.36.1
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>udhcpc: broadcasting discover
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>udhcpc: broadcasting select for 10.0.2.15, server 10.0.2.2
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>udhcpc: lease of 10.0.2.15 obtained from 10.0.2.2, lease time 86400
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>deleting routers
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>adding dns 10.0.2.3
+</span></code></pre></div>
+<p>Mount the shared folder:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a># mount -t nfs 10.0.2.2:/nfs /nfs -o nolock
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a># ls /nfs
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>arc-snps-linux-gnu-native          debug-root
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>arc-snps-linux-gnu-with-cross-gdb  main.elf
+</span></code></pre></div>
 
 
 
