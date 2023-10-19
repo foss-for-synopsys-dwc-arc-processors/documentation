@@ -221,3 +221,85 @@ Target will see contents on your directory as if it's a FAT partition on some dr
 Target may do changes to the contents of this folder (with read/write permissions above).
 Host *must not* do any changes to the folder while target is using this shared folder,
 otherwise things will go seriously wrong (QEMU creates FAT table on start and then it's target which manipulates it but not host).
+
+## Mounting NFS Folder
+
+Install and configure NFS on CentOS or Fedora:
+
+```shell
+# For CentOS 7
+sudo yum install nfs-utils
+
+# For Fedora
+sudo dnf install nfs-utils
+
+# Enable services and add rules for firewall:
+sudo systemctl enable --now rpcbind nfs-server
+sudo firewall-cmd --add-service=nfs --permanent
+sudo firewall-cmd --reload
+```
+
+Install and configure NFS on Ubuntu:
+
+```shell
+sudo apt install nfs-kernel-server
+sudo systemctl enable --now nfs-server
+```
+
+Then you need to configure NFS directory for sharing. For example,
+it's `/nfs` directory and the current user owns it. Add this line to
+`/etc/exports` (you can find `anonuid` and `anongid` for your user using `id -u`
+and `id -g` respectively):
+
+```shell
+/nfs *(rw,all_squash,anonuid=1000,anongid=1000,no_subtree_check,insecure)
+```
+
+Update the table of exported NFS file systems:
+
+```shell
+sudo exportfs -rv
+```
+
+Then enable NFS in you Buildroot configuration using configuration
+menu (it corresponds to `BR2_PACKAGE_NFS_UTILS=y`):
+
+```text
+Target packages -> Filesystem and flash utilities -> [*] nfs-utils
+```
+
+Run the Linux image with network interface enabled (use your own path
+for `vmlinux` images for HS3x/4x targets or `loader` image for HS5x/6x targets):
+
+```shell
+qemu-system-arc -M virt -cpu archs -m 2G -display none -nographic -monitor none \
+                -kernel images/vmlinux -device virtio-rng-pci -netdev user,id=net0 \
+                -device virtio-net-device,netdev=net0
+```
+
+Create a directory for mounting the shared folder in guest system:
+
+```shell
+mkdir /nfs
+```
+
+Configure the network interface in guest system:
+
+```text
+# udhcpc
+udhcpc: started, v1.36.1
+udhcpc: broadcasting discover
+udhcpc: broadcasting select for 10.0.2.15, server 10.0.2.2
+udhcpc: lease of 10.0.2.15 obtained from 10.0.2.2, lease time 86400
+deleting routers
+adding dns 10.0.2.3
+```
+
+Mount the shared folder:
+
+```text
+# mount -t nfs 10.0.2.2:/nfs /nfs -o nolock
+# ls /nfs
+arc-snps-linux-gnu-native          debug-root
+arc-snps-linux-gnu-with-cross-gdb  main.elf
+```
