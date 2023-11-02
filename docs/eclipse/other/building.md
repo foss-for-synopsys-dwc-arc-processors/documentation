@@ -60,6 +60,7 @@ Use this commands:
 ```shell
 $ export JAVA_HOME=/build/eclipse/jdk
 $ export PATH=$JAVA_HOME/bin:$PATH
+$ cd arc_gnu_eclipse
 $ /build/eclipse/apache-maven-3.5.4/bin/mvn \
     -Dmaven.repo.local=/build/eclipse/repository clean install
 ```
