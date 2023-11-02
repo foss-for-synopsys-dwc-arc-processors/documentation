@@ -1,4 +1,4 @@
-# Development Platforms
+# Baremetal Targets
 
 !!! warning
 

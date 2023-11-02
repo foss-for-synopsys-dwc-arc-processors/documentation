@@ -1,5 +1,12 @@
 # Eclipse IDE
 
+!!! warning
+
+    Note that Ashling Opella-XD is EOL (End of Life) and Eclipse IDE may not
+    support the latest versions of the probe. Refer
+    [the old documentation site](https://foss-for-synopsys-dwc-arc-processors.github.io/toolchain/)
+    for guides related to Ashling Opella-XD.
+
 The ARC GNU Eclipse IDE consists of the Eclipse IDE combined with an Eclipse
 CDT Managed Build Extension plug-in for the ARC GNU Toolchain and GDB embedded
 debugger plug-in for ARC, based on the Zylin Embedded CDT plug-in.  The ARC GNU

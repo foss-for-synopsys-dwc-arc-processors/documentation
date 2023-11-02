@@ -74,6 +74,7 @@ nav:
     - simulators/qemu.md
     - simulators/nsim.md
   - Baremetal:
+    - baremetal/index.md
     - Simulators:
       - baremetal/simulators/nsim.md
       - baremetal/simulators/qemu.md
