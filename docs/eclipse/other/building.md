@@ -25,7 +25,7 @@ $ mkdir /build/eclipse/repository
 Download and extract Maven:
 
 ```shell
-$ wget https://dlcdn.apache.org/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
+$ wget https://archive.apache.org/dist/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
 $ tar -xf apache-maven-3.5.4-bin.tar.gz
 ```
 
