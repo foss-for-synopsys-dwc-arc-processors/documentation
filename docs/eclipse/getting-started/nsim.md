@@ -18,11 +18,13 @@ from the **ARC Baremetal Application** group. Also, choose
 After creating the project, a simple "Hello, World!" program will be created:
 
 ```c
+/* Print a greeting on UART output and exit. */
+
 #include <stdio.h>
 
 int main(int argc, char *argv[])
 {
-    printf("Hello world!\n\r");
+    printf("Hello, World!\n\r");
     return 0;
 }
 ```

@@ -4,15 +4,15 @@
 
     Consider reading these guides firstly:
 
-    * [Configuring HS Development Kit](https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-hs-development-kit-1)
-    * [Configuring HS Development Kit 4xD](https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-hs4xhs4xd-development-kit-1)
+    * [Configuring HS Development Kit](../../platforms/board-hsdk.md)
+    * [Configuring HS Development Kit 4xD](../../platforms/board-hsdk-4xd.md)
     * [Installing WinUSB driver on Windows](../../platforms/winusb.md)
 
 ## Creating the Project
 
 Select **File** → **New** → **Project..** and choose **C Project**.
 A list of ARC projects will appear. Choose any **ARC HS Development Kit Hello World Project**
-from the **ARC EM Starter Kit Projects** group:
+from the **ARC HS Development Kit Projects** group:
 
 ![HS Development Kit Projects](./images/hsdk-projects.png)
 
@@ -20,8 +20,13 @@ An empty project will be created. Add a new C source file with name `main.c`
 in `src` directory in **Project Explorer**:
 
 ```c
+/* Print a greeting on UART output and exit. */
+
+#include <stdio.h>
+
 int main(int argc, char *argv[])
 {
+    printf("Hello, World!\n\r");
     return 0;
 }
 ```
@@ -76,7 +81,8 @@ to **USB Serial Port** device):
 
 ![Debug Configuration - Port](./images/emsk-debug-conf-port.png)
 
-On Linux a serial device for HS Development Kit is usually `/dev/ttyUSB0`.
+On Linux a serial device for HS Development Kit is usually `/dev/ttyUSB0`
+if there are no other serial devices connected to the host.
 
 ## Debugging the Project
 

@@ -148,59 +148,6 @@ Programming device. Do not touch your board. This may take a few minutes...
 Programming succeeded.
 ```
 
-## OpenOCD Configuration File
-
-!!! info
-
-    Also refer [Getting OpenOCD](./get-openocd.md) and 
-    [Using OpenOCD](./use-openocd.md) for details about installing
-    and using OpenOCD.
-
-There is no a configuration file for EM SDP in OpenOCD yet. You can create it
-manually and pass it to OpenOCD as a regular configuration file using `-f`
-parameter:
-
-```tcl
-# Configure JTAG cable
-# EM SDP has built-in FT2232 chip, which is similar to Digilent HS-1.
-adapter driver ftdi
-
-# Only specify FTDI serial number if it is specified via
-# "set _ZEPHYR_BOARD_SERIAL 12345" before reading this script
-if { [info exists _ZEPHYR_BOARD_SERIAL] } {
-       ftdi_serial $_ZEPHYR_BOARD_SERIAL
-}
-
-ftdi vid_pid 0x0403 0x6010
-ftdi layout_init 0x0088 0x008b
-ftdi channel 0
-
-# EM11D requires 10 MHz.
-adapter speed 10000
-
-# ARCs support only JTAG.
-transport select jtag
-
-source [find cpu/arc/em.tcl]
-
-set _CHIPNAME arc-em
-set _TARGETNAME $_CHIPNAME.cpu
-
-# EM SDP IDENTITY is 0x200444b1
-jtag newtap $_CHIPNAME cpu -irlen 4 -ircapture 0x1 -expected-id 0x200044b1
-
-set _coreid 0
-set _dbgbase [expr {0x00000000 | ($_coreid << 13)}]
-
-target create $_TARGETNAME arcv2 -chain-position $_TARGETNAME \
-  -coreid 0 -dbgbase $_dbgbase -endian little
-
-# There is no SRST, so do a software reset
-$_TARGETNAME configure -event reset-assert "arc_em_reset $_TARGETNAME"
-
-arc_em_init_regs
-```
-
 ## Useful Links
 
 * [ARC EM Software Development Platform - User Guide](files/ARC_EM_SDP_User_Guide.pdf)

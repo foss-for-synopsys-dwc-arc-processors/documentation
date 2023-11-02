@@ -80,8 +80,7 @@ Here is a list of all available `specs` files:
 ## Running an Application Using OpenOCD
 
 Follow [Using OpenOCD](../../platforms/use-openocd.md) guide and start OpenOCD
-with 49101 port and `snps_em_sk_v2.2.cfg` configuration file. Here is
-a possible output:
+with `snps_em_sk_v2.2.cfg` configuration file. Here is a possible output:
 
 ```text
 $ openocd -f board/snps_em_sk_v2.2.cfg

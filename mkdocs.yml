@@ -139,6 +139,7 @@ nav:
       - Manual Installation: eclipse/installation/manual.md
       - eclipse/installation/preferences.md
     - Getting Started:
+      - EM Software Development Platform: eclipse/getting-started/emsdp.md
       - HS Development Kit: eclipse/getting-started/hsdk.md
       - EM Starter Kit: eclipse/getting-started/emsk.md
       - nSIM: eclipse/getting-started/nsim.md

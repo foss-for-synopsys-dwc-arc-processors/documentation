@@ -67,54 +67,11 @@ Here is a list of all available `specs` files:
 
 ## Running an Application
 
-Create a configuration file for OpenOCD and name it `emsdp.cfg`. It's necessary
-because it's not included in OpenOCD distribution yet:
-
-```tcl
-# Configure JTAG cable
-# EM SDP has built-in FT2232 chip, which is similar to Digilent HS-1.
-adapter driver ftdi
-
-# Only specify FTDI serial number if it is specified via
-# "set _ZEPHYR_BOARD_SERIAL 12345" before reading this script
-if { [info exists _ZEPHYR_BOARD_SERIAL] } {
-       ftdi_serial $_ZEPHYR_BOARD_SERIAL
-}
-
-ftdi vid_pid 0x0403 0x6010
-ftdi layout_init 0x0088 0x008b
-ftdi channel 0
-
-# EM11D requires 10 MHz.
-adapter speed 10000
-
-# ARCs support only JTAG.
-transport select jtag
-
-source [find cpu/arc/em.tcl]
-
-set _CHIPNAME arc-em
-set _TARGETNAME $_CHIPNAME.cpu
-
-# EM SDP IDENTITY is 0x200444b1
-jtag newtap $_CHIPNAME cpu -irlen 4 -ircapture 0x1 -expected-id 0x200044b1
-
-set _coreid 0
-set _dbgbase [expr {0x00000000 | ($_coreid << 13)}]
-
-target create $_TARGETNAME arcv2 -chain-position $_TARGETNAME \
-  -coreid 0 -dbgbase $_dbgbase -endian little
-
-# There is no SRST, so do a software reset
-$_TARGETNAME configure -event reset-assert "arc_em_reset $_TARGETNAME"
-
-arc_em_init_regs
-```
-
-Start OpenOCD using `emsdp.cfg` configuration file:
+Follow [Using OpenOCD](../../platforms/use-openocd.md) guide and start OpenOCD
+with `snps_em_sk_v2.3.cfg` configuration file. Here is a possible output:
 
 ```text
-$ openocd -f ./emsdp.cfg
+$ openocd  -f board/snps_em_sk_v2.3.cfg
 Open On-Chip Debugger 0.12.0+dev-gffa52f0e0 (2023-08-02-10:41)
 Licensed under GNU GPL v2
 For bug reports, read

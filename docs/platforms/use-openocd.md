@@ -272,7 +272,7 @@ Here is a table of configuration files for OpenOCD 0.9:
 | HS Development Kit 4x/4xD                        | `snps_hsdk_4xd.cfg`     |
 | HS Development Kit                               | `snps_hsdk.cfg`         |
 | IoT Development Kit                              | `snps_iotdk.cfg`        |
-| EM Software Development Platform                 | [EM SDP Documentation](./board-emsdp.md#openocd-configuration-file)                       |
+| EM Software Development Platform                 | `snps_em_sk_v2.3.cfg`   |
 | EM Starter Kit 2.3                               | `snps_em_sk_v2.3.cfg`   |
 | EM Starter Kit 2.2                               | `snps_em_sk_v2.2.cfg`   |
 | EM Starter Kit 2.1                               | `snps_em_sk_v2.1.cfg`   |
