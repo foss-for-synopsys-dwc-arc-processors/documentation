@@ -2159,13 +2159,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#openocd-configuration-file" class="md-nav__link">
-    OpenOCD Configuration File
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#useful-links" class="md-nav__link">
     Useful Links
   </a>
@@ -2438,6 +2431,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
@@ -2451,6 +2446,20 @@
           Getting Started
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eclipse/getting-started/emsdp/" class="md-nav__link">
+        EM Software Development Platform
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -3147,13 +3156,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#openocd-configuration-file" class="md-nav__link">
-    OpenOCD Configuration File
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#useful-links" class="md-nav__link">
     Useful Links
   </a>
@@ -3323,55 +3325,6 @@ Firstly, ensure that EM SDP in connected to the host:</p>
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>$ djtgcfg -d JtagSmt1 prog -i 0 -f emsdp_em11d_dfss.bit
 </span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>Programming device. Do not touch your board. This may take a few minutes...
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>Programming succeeded.
-</span></code></pre></div>
-<h2 id="openocd-configuration-file">OpenOCD Configuration File<a class="headerlink" href="#openocd-configuration-file" title="Permanent link">&para;</a></h2>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Also refer <a href="../get-openocd/">Getting OpenOCD</a> and 
-<a href="../use-openocd/">Using OpenOCD</a> for details about installing
-and using OpenOCD.</p>
-</div>
-<p>There is no a configuration file for EM SDP in OpenOCD yet. You can create it
-manually and pass it to OpenOCD as a regular configuration file using <code>-f</code>
-parameter:</p>
-<div class="language-tcl highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c"># Configure JTAG cable</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c"># EM SDP has built-in FT2232 chip, which is similar to Digilent HS-1.</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nv">adapter</span><span class="w"> </span>driver<span class="w"> </span>ftdi
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c"># Only specify FTDI serial number if it is specified via</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c"># &quot;set _ZEPHYR_BOARD_SERIAL 12345&quot; before reading this script</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">if</span><span class="w"> </span><span class="k">{</span><span class="w"> </span><span class="k">[</span><span class="nb">info</span><span class="w"> </span>exists<span class="w"> </span>_ZEPHYR_BOARD_SERIAL<span class="k">]</span><span class="w"> </span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">       </span><span class="nv">ftdi_serial</span><span class="w"> </span><span class="nv">$_ZEPHYR_BOARD_SERIAL</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">}</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="nv">ftdi</span><span class="w"> </span>vid_pid<span class="w"> </span><span class="mh">0x0403</span><span class="w"> </span><span class="mh">0x6010</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="nv">ftdi</span><span class="w"> </span>layout_init<span class="w"> </span><span class="mh">0x0088</span><span class="w"> </span><span class="mh">0x008b</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="nv">ftdi</span><span class="w"> </span>channel<span class="w"> </span><span class="mi">0</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="c"># EM11D requires 10 MHz.</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="nv">adapter</span><span class="w"> </span>speed<span class="w"> </span><span class="mi">10000</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="c"># ARCs support only JTAG.</span>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="nv">transport</span><span class="w"> </span>select<span class="w"> </span>jtag
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="nb">source</span><span class="w"> </span><span class="k">[</span><span class="nv">find</span><span class="w"> </span>cpu<span class="o">/</span>arc<span class="o">/</span>em.tcl<span class="k">]</span>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="k">set</span><span class="w"> </span>_CHIPNAME<span class="w"> </span>arc-em
-</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="k">set</span><span class="w"> </span>_TARGETNAME<span class="w"> </span><span class="nv">$_CHIPNAME.cpu</span>
-</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>
-</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="c"># EM SDP IDENTITY is 0x200444b1</span>
-</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="nv">jtag</span><span class="w"> </span>newtap<span class="w"> </span><span class="nv">$_CHIPNAME</span><span class="w"> </span>cpu<span class="w"> </span><span class="o">-</span>irlen<span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">-</span>ircapture<span class="w"> </span><span class="mh">0x1</span><span class="w"> </span><span class="o">-</span>expected-id<span class="w"> </span><span class="mh">0x200044b1</span>
-</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
-</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="k">set</span><span class="w"> </span>_coreid<span class="w"> </span><span class="mi">0</span>
-</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="k">set</span><span class="w"> </span>_dbgbase<span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="k">{</span><span class="nv">0x00000000</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">(</span><span class="nv">$_coreid</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="nv">13</span><span class="k">)}]</span>
-</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>
-</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="nv">target</span><span class="w"> </span>create<span class="w"> </span><span class="nv">$_TARGETNAME</span><span class="w"> </span>arcv2<span class="w"> </span><span class="o">-</span>chain-position<span class="w"> </span><span class="nv">$_TARGETNAME</span><span class="w"> </span><span class="err">\</span>
-</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="w">  </span><span class="nv">-coreid</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">-</span>dbgbase<span class="w"> </span><span class="nv">$_dbgbase</span><span class="w"> </span><span class="o">-</span>endian<span class="w"> </span>little
-</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>
-</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="c"># There is no SRST, so do a software reset</span>
-</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="nv">$_TARGETNAME</span><span class="w"> </span><span class="nv">configure</span><span class="w"> </span><span class="o">-</span>event<span class="w"> </span>reset-assert<span class="w"> </span><span class="s2">&quot;arc_em_reset $_TARGETNAME&quot;</span>
-</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>
-</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="nv">arc_em_init_regs</span>
 </span></code></pre></div>
 <h2 id="useful-links">Useful Links<a class="headerlink" href="#useful-links" title="Permanent link">&para;</a></h2>
 <ul>

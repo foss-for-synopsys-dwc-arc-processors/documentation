@@ -2346,6 +2346,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
@@ -2359,6 +2361,20 @@
           Getting Started
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/emsdp/" class="md-nav__link">
+        EM Software Development Platform
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -3139,12 +3155,12 @@ directory first:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>/build/eclipse/repository
 </span></code></pre></div>
 <p>Download and extract Maven:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>wget<span class="w"> </span>https://dlcdn.apache.org/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>wget<span class="w"> </span>https://archive.apache.org/dist/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$<span class="w"> </span>tar<span class="w"> </span>-xf<span class="w"> </span>apache-maven-3.5.4-bin.tar.gz
 </span></code></pre></div>
 <p>Download and extract
 <a href="https://www.oracle.com/eg/java/technologies/javase/jdk11-archive-downloads.html">JDK 11</a>
-to <code>/build/eclipse/jdk-11.0.17</code>.</p>
+to <code>/build/eclipse/jdk</code>.</p>
 <p>Download and extract Eclipse 2020.03 with CDT for Linux:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>wget<span class="w"> </span>https://www.eclipse.org/downloads/download.php?file<span class="o">=</span>/technology/epp/downloads/release/2020-03/R/eclipse-cpp-2020-03-R-incubation-linux-gtk-x86_64.tar.gz
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$<span class="w"> </span>tar<span class="w"> </span>-xf<span class="w"> </span>eclipse-cpp-2020-03-R-incubation-linux-gtk-x86_64.tar.gz
@@ -3158,10 +3174,11 @@ to <code>/build/eclipse/jdk-11.0.17</code>.</p>
 </span></code></pre></div>
 <h2 id="building-the-plugin">Building the Plugin<a class="headerlink" href="#building-the-plugin" title="Permanent link">&para;</a></h2>
 <p>Use this commands:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/build/eclipse/jdk-11.0.17
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/build/eclipse/jdk
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$PATH</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>$<span class="w"> </span>/build/eclipse/apache-maven-3.5.4/bin/mvn<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span>-Dmaven.repo.local<span class="o">=</span>/build/eclipse/repository<span class="w"> </span>clean<span class="w"> </span>install
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>arc_gnu_eclipse
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>$<span class="w"> </span>/build/eclipse/apache-maven-3.5.4/bin/mvn<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span>-Dmaven.repo.local<span class="o">=</span>/build/eclipse/repository<span class="w"> </span>clean<span class="w"> </span>install
 </span></code></pre></div>
 <p>After that an archive with the plugin will be saved here:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>arc_gnu_eclipse/repository/target/repository-2019.9.0-SNAPSHOT.zip

@@ -2348,6 +2348,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
@@ -2361,6 +2363,20 @@
           Getting Started
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../emsdp/" class="md-nav__link">
+        EM Software Development Platform
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -3155,7 +3171,7 @@
 <p class="admonition-title">Info</p>
 <p>Consider reading these guides firstly:</p>
 <ul>
-<li><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/ARC-Development-Systems-Forum-Wiki-Home#arc-em-starter-kit-1">Configuring EM Starter Kit</a></li>
+<li><a href="../../../platforms/board-emsk/">Configuring EM Starter Kit</a></li>
 <li><a href="../../../platforms/winusb/">Installing WinUSB driver on Windows</a></li>
 </ul>
 </div>
@@ -3166,13 +3182,15 @@ A list of ARC projects will appear. Choose any ARC EM Starter Kit
 Suppose, EM11D project is chosen.</p>
 <p><img alt="ARC EM Starter Kit Projects" src="../images/emsk-projects.png" /></p>
 <p>After creating the project, a simple "Hello, World!" program will be created:</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/* Print a greeting on UART output and exit. */</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">{</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world!</span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">{</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, World!</span><span class="se">\n\r</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="building-the-project">Building the Project<a class="headerlink" href="#building-the-project" title="Permanent link">&para;</a></h2>
 <p>Do right click on a project in <strong>Project Explorer</strong> ans choose <strong>Build Project</strong>.
@@ -3209,7 +3227,8 @@ it's <code>COM7</code>.</p>
 <p>On Windows you can find the exact number in <strong>Device Manager</strong> (it corresponds
 to <strong>USB Serial Port</strong> device):</p>
 <p><img alt="Debug Configuration - Port" src="../images/emsk-debug-conf-port.png" /></p>
-<p>On Linux a serial device for EM Starter Kit is usually <code>/dev/ttyUSB1</code>.</p>
+<p>On Linux a serial device for EM Starter Kit is usually <code>/dev/ttyUSB1</code>
+if there are no other serial devices connected to the host.</p>
 <h2 id="debugging-the-project">Debugging the Project<a class="headerlink" href="#debugging-the-project" title="Permanent link">&para;</a></h2>
 <p>Open the debug configuration in <strong>Debug Configurations</strong> windows and click
 on <strong>Debug</strong> button. The <strong>Debug</strong> perspective will be opened:</p>
