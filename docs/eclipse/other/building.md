@@ -31,7 +31,7 @@ $ tar -xf apache-maven-3.5.4-bin.tar.gz
 
 Download and extract
 [JDK 11](https://www.oracle.com/eg/java/technologies/javase/jdk11-archive-downloads.html)
-to `/build/eclipse/jdk-11.0.17`.
+to `/build/eclipse/jdk`.
 
 Download and extract Eclipse 2020.03 with CDT for Linux:
 
@@ -58,7 +58,7 @@ $ git clone https://github.com/foss-for-synopsys-dwc-arc-processors/arc_gnu_ecli
 Use this commands:
 
 ```shell
-$ export JAVA_HOME=/build/eclipse/jdk-11.0.17
+$ export JAVA_HOME=/build/eclipse/jdk
 $ export PATH=$JAVA_HOME/bin:$PATH
 $ /build/eclipse/apache-maven-3.5.4/bin/mvn \
     -Dmaven.repo.local=/build/eclipse/repository clean install
