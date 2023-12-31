@@ -18,13 +18,13 @@ list of devices.
 If your device is not shown by Zadig, then click on **List all devices**
 in **Options**.
 
-For EM Starter Kit, select **Digilent Adept USB Device (Interface 0)**,
+For EM Starter Kit and EM SDP select **Digilent Adept USB Device (Interface 0)**,
 choose WinUSB driver and press Replace Driver. Your FTDI driver will
 be replaced with WinUSB.
 
 ![Zadig with selected device](images/zadig_selected.png)
 
-For HS Development Kit, IoT Development Kit, EM SDP and AXS10x SDP,
+For HS Development Kit, IoT Development Kit and AXS10x SDP,
 the only thing that differs is that you should select
 **Digilent Adept USB Device (Interface 1)**.
 
