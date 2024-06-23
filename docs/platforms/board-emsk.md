@@ -1,4 +1,9 @@
-# ARC EM Starter Kit
+# 🕥 ARC EM Starter Kit
+
+!!! warning
+
+    EM Starter Kit board is no longer supported. There is no guarantee that this guide will
+    be applicable for the latest tools.
 
 ![ARC EM Starter Kit](images/board-emsk.jpg)
 

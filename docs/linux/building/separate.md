@@ -6,8 +6,8 @@ Sometimes it's more convenient to build root file system and a Linux kernel sepa
 This guide covers an example when it's necessary to build those images separately
 for ARC HS38 target.
 
-Suppose, that a toolchain for ARC HS38 is preinstalled in `/tools/toolchains/arc-linux-gnu`.
-The version is [2023.03](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.03-release/arc_gnu_2023.03_prebuilt_glibc_le_archs_linux_install.tar.gz) and it's based on glibc standard library.
+Suppose, that a glibc-based toolchain for ARC HS38 is preinstalled in
+`/tools/toolchains/arc-linux-gnu`.
 
 ## Building Root Filesystem
 
@@ -38,7 +38,9 @@ Filesystem images -> [*] cpio the root filesystem # For use as an initial RAM fi
                   -> ext2/3/4 root filesystem     # For mounting from a storage
 ```
 
-Choose a preinstalled toolchain:
+Choose a preinstalled toolchain (a list of available features may differ
+depending on a version of a toolchain, in case of errors follow Buildroot's
+recommendations in error messages):
 
 ```text
 Toolchain -> Toolchain type -> (X) External toolchain

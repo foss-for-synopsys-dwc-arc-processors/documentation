@@ -156,3 +156,17 @@ System configuration -> Root filesystem overlay directories -> overlay
 
 Also you can achieve the same result by placing all necessary files and directories in `output/target`
 (or just `target` if you build in a separate directory) directory and rebuilding images using `make`.
+
+## Using Custom Sources Paths
+
+You can specify custom sources paths for various components for debugging
+purposes. The easiest way is to create `local.mk` file in a build directory.
+Here is an example:
+
+```bash
+UCLIBC_OVERRIDE_SRCDIR = /sources/uClibc
+GCC_OVERRIDE_SRCDIR = /sources/gcc
+```
+
+Refer to [Advanced usage](https://buildroot.org/downloads/manual/manual.html#_advanced_usage)
+section of Buildroot documentation for details.

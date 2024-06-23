@@ -1,6 +1,8 @@
 # Synopsys ARC Processors
 
-Synopsys ARC processors are represented by three generations of Instruction Set Architectures (ISA).
+## ARC Classic
+
+Synopsys ARC Classic processors are represented by three generations of Instruction Set Architectures (ISA).
 Each ISA consists of one or more processor families with different microarchitectures. All cores may be
 configured to support little or big endianness. All families except ARC EM and ARC 600 families may be configured to support
 running complex operation systems like Linux.
@@ -27,3 +29,15 @@ Here is a list of ARC processor families:
 5. [ARC NPX Neural Processing Unit](https://www.synopsys.com/designware-ip/processor-solutions/arc-npx-family.html) (not supported by GNU toolchain)
 
 You can find programmer's reference manuals and datasheets for each core on corresponding web pages.
+
+## ARC-V
+
+The Synopsys ARC-V processors leverage the proven microarchitecture of the
+existing ARC processor offerings, while giving customers access to the
+expanding RISC-V ecosystem. The Synopsys ARC-V portfolio, based on the
+RISC-V ISA, includes high-performance, mid-range, and ultra-low power
+families, as well as functional safety (FS) versions, to address a broad
+range of application workloads.
+
+A detailed overview of Synopsys ARC-V processors may be found on
+[ARC-V Getting Started page](https://foss-for-synopsys-dwc-arc-processors.github.io/arc-v-getting-started/overview.html).

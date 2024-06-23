@@ -1,4 +1,9 @@
-# Getting Started with EM Starter Kit
+# 🕥 Getting Started with EM Starter Kit
+
+!!! warning
+
+    EM Starter Kit board is no longer supported. There is no guarantee that this guide will
+    be applicable for the latest tools.
 
 !!! info
 

@@ -1,24 +1,5 @@
 # Frequently Asked Questions
 
-## Linker fails with error: ``undefined reference to _exit``
-
-Among other possible functions are also `_sbrk`, `_write`, `_close`, `_lseek`,
-`_read`, `_fstat`, `_isatty`.
-
-Function `_exit` is not provided by the `libc` itself, but must be provided by the `libgloss`,
-which is basically a BSP (board support package). Currently several `libgloss` implementations
-are provided for ARC:
-
-* `libnosys` - a generic implementation with stubs.
-* `libnsim` - implements nSIM and QEMU IO hostlink (GNU version).
-* `libqemu` - implements a simplified IO hostlink for QEMU.
-* `libhl` - implements nSIM IO hostlink (MetaWare version).
-* `libiotdk_uart`, `libhsdk_uart`, `libemsk_uart` - implementations for development boards.
-
-In general `libnosys` is more suitable for hardware targets that does not have hostlink support, however
-other implementations have a distinct advantage that on exit from an application and in case of many errors
-it halts the core, while `libnosys` causes it to infinite loop on one place.
-
 ## I’ve opened `hs38.tcf` and GCC options include `-mcpu=hs34`. Why `hs34` instead of `hs38`?
 
 Possible values of `-mcpu=` options are orthogonal to names of IPlib templates and respective TCF.

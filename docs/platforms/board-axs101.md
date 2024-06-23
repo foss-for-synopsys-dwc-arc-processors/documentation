@@ -1,4 +1,9 @@
-# ARC AXS101 Software Development Platform
+# 🕥 ARC AXS101 Software Development Platform
+
+!!! warning
+
+    AXS board is no longer supported. There is no guarantee that this guide will
+    be applicable for the latest tools.
 
 ![ARC AXS101 Software Development Platform](images/board-axs101.jpg)
 

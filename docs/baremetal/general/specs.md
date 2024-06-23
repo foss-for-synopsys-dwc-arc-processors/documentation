@@ -29,7 +29,6 @@ There is a list of general specs files:
 * `nosys.specs` - link stubs for system calls.
 * `nsim.specs` - link with GNU hostlink library for nSIM simulator (with `-on nsim_emt`) or QEMU (`-semihosting`).
 * `hl.specs` - link with MetaWare hostlink library for nSIM simulator (default hostlink mode).
-* `qemu.specs` - link with hostlink library for QEMU simulator (without `-semihosting`).
 * `nano.specs` - use Newlib nano instead of default Newlib implementation. May be used
   in conjunction with other specs file. For example: `-specs=nano.specs -specs=nsim.specs`. 
 

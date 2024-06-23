@@ -34,8 +34,14 @@ arc-elf32-gcc -mcpu=archs -specs=nosys.specs -g main.c -o main.elf
 Start a GDB server in port 1234 (this is the default port, so we could use the alias `-s` instead of `-gdb tcp::1234`):
 
 ```shell
-qemu-system-arc -M arc-sim -cpu archs -monitor none -display none -nographic -no-reboot \
-                -gdb tcp::1234 -S -kernel main.elf
+qemu-system-arc -M arc-sim \
+                -cpu archs \
+                -monitor none \
+                -display none \
+                -nographic \
+                -no-reboot \
+                -gdb tcp::1234 -S \
+                -kernel main.elf
 ```
 
 Debug the application:
@@ -73,9 +79,15 @@ If known ports are busy then you can connect to the GDB server using a socket.
 Expose GDB server through socket instead of port
 
 ```shell
-qemu-system-arc -M arc-sim -cpu archs -monitor none -display none -nographic -no-reboot \
+qemu-system-arc -M arc-sim \
+                -cpu archs \
+                -monitor none \
+                -display none \
+                -nographic \
+                -no-reboot \
                 -chardev socket,path=/tmp/gdb-socket,server=on,wait=off,id=gdb0 \
-                -gdb chardev:gdb0 -S -kernel main.elf
+                -gdb chardev:gdb0 -S \
+                -kernel main.elf
 ```
 
 Connect to the GDB server
@@ -102,34 +114,30 @@ int main()
 }
 ```
 
-You need to use `-specs=qemu.specs` to use input/output features and pass `-serial stdio` to link
-a virtual character device with host's `stdio`:
-
-```text
-$ arc-elf32-gcc -mcpu=archs -specs=qemu.specs main.c -o main.elf
-$ qemu-system-arc -M arc-sim -cpu archs -monitor none -display none -nographic \
-                  -no-reboot -serial stdio -kernel main.elf
-Hello, World!
-```
-
-By default, QEMU creates a character device for `arc-sim` board on hard coded `0x90000000` address.
-A program built with `-specs=qemu.specs` uses this address for all input/output operations.
-However, if `-semihosting` option is passed to QEMU, then it uses the same input/output interface
-as nSIM with `-on nsim_emt` option. It allows to use the same binary for running both
-on QEMU and nSIM:
+You need to use `-specs=nsim.specs` to use input/output features and
+pass `-semihosting` option to QEMU:
 
 ```text
 $ arc-elf32-gcc -mcpu=archs -specs=nsim.specs main.c -o main.elf
-$ qemu-system-arc -M arc-sim -cpu archs -monitor none -display none -nographic \
-                  -no-reboot -serial stdio -semihosting -kernel main.elf
+$ qemu-system-arc -M arc-sim \
+                  -cpu archs \
+                  -monitor none \
+                  -display none \
+                  -nographic \
+                  -no-reboot \
+                  -semihosting \
+                  -kernel main.elf
 Hello, World!
 ```
 
 ## Building "Hello, World!" Using MetaWare Development Toolkit and Running on QEMU
 
-MetaWare’s standard runtime library does not support input/output interfaces of QEMU for ARC. But it is possible
-to implement your own basic `hostlink` library for MetaWare to meet QEMU's requirements. You have to implement at least
-one function to add support of simple output:
+Without `-semihosting` QEMU creates a character device for `arc-sim` board on
+hard coded `0x90000000` address. MetaWare’s standard runtime library does not
+support input/output interfaces of QEMU for ARC. But it is possible to implement
+your own basic `hostlink` library for MetaWare to meet QEMU's requirements.
+You have to implement at least one function to add support of simple output
+using the character device at `0x90000000`:
 
 ```c
 int _write (int handle, const char *buf, unsigned int count)
@@ -143,7 +151,7 @@ int _write (int handle, const char *buf, unsigned int count)
 }
 ```
 
-It's a slightly modified `_write` from `libqemu.a` for [Newlib](https://github.com/foss-for-synopsys-dwc-arc-processors/newlib/blob/arc-2022.09/libgloss/arc/qemu-write.c). Save it as `write.c` file and compile it along with `main.c`:
+Save it as `write.c` file and compile it along with `main.c`:
 
 ```shell
 # For ARC HS3x/HS4x
@@ -156,18 +164,36 @@ ccac -av3hs -Hhostlib= main.c write.c -o main.elf
 ccac -arc64 -Hhostlib= main.c write.c -o main.elf
 ```
 
-Run it using QEMU:
+Run it using QEMU with `-serial stdio` option:
 
 ```shell
 # For ARC HS3x/HS4x
-qemu-system-arc -M arc-sim -cpu archs -monitor none -display none -nographic \
-                -no-reboot -serial stdio -kernel main.elf
+qemu-system-arc -M arc-sim \
+                -cpu archs \
+                -monitor none \
+                -display none \
+                -nographic \
+                -no-reboot \
+                -serial stdio \
+                -kernel main.elf
 
 # For ARC HS5x
-qemu-system-arc -M arc-sim -cpu hs5x -monitor none -display none -nographic \
-                -no-reboot -serial stdio -kernel main.elf
+qemu-system-arc -M arc-sim \
+                -cpu hs5x \
+                -monitor none \
+                -display none \
+                -nographic \
+                -no-reboot \
+                -serial stdio \
+                -kernel main.elf
 
 # For ARC HS6x
-qemu-system-arc64 -M arc-sim -cpu hs6x -monitor none -display none -nographic \
-                  -no-reboot -serial stdio -kernel main.elf
+qemu-system-arc64 -M arc-sim \
+                  -cpu hs6x \
+                  -monitor none \
+                  -display none \
+                  -nographic \
+                  -no-reboot \
+                  -serial stdio \
+                  -kernel main.elf
 ```

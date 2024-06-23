@@ -7,6 +7,6 @@
     [the old documentation site](https://foss-for-synopsys-dwc-arc-processors.github.io/toolchain/)
     for guides related to Ashling Opella-XD.
 
-!!! warning
-
-    This section is under construction.
+This section is related to running applications for ARC Classic processors on
+hardware development platforms using OpenOCD server with GDB and MetaWare
+Debugger (MDB).
