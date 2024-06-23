@@ -19,7 +19,7 @@
     
     
       
-        <title>Frequently Asked Questions - embARC Documentation Site</title>
+        <title>Frequently Asked Questions - embARC Documentation Site for ARC Classic</title>
       
     
     
@@ -87,7 +87,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="embARC Documentation Site" class="md-header__button md-logo" aria-label="embARC Documentation Site" data-md-component="logo">
+    <a href="../.." title="embARC Documentation Site for ARC Classic" class="md-header__button md-logo" aria-label="embARC Documentation Site for ARC Classic" data-md-component="logo">
       
   <img src="../../assets/logo.png" alt="logo">
 
@@ -99,7 +99,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            embARC Documentation Site
+            embARC Documentation Site for ARC Classic
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -359,12 +359,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="embARC Documentation Site" class="md-nav__button md-logo" aria-label="embARC Documentation Site" data-md-component="logo">
+    <a href="../.." title="embARC Documentation Site for ARC Classic" class="md-nav__button md-logo" aria-label="embARC Documentation Site for ARC Classic" data-md-component="logo">
       
   <img src="../../assets/logo.png" alt="logo">
 
     </a>
-    embARC Documentation Site
+    embARC Documentation Site for ARC Classic
   </label>
   
     <div class="md-nav__source">
@@ -482,13 +482,6 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#linker-fails-with-error-undefined-reference-to-_exit" class="md-nav__link">
-    Linker fails with error: undefined reference to _exit
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#ive-opened-hs38tcf-and-gcc-options-include-mcpuhs34-why-hs34-instead-of-hs38" class="md-nav__link">
@@ -2212,7 +2205,7 @@
   
     <li class="md-nav__item">
       <a href="../../platforms/board-emsk/" class="md-nav__link">
-        ARC EM Starter Kit
+        🕥 ARC EM Starter Kit
       </a>
     </li>
   
@@ -2226,7 +2219,7 @@
   
     <li class="md-nav__item">
       <a href="../../platforms/board-axs103/" class="md-nav__link">
-        ARC AXS103 Software Development Platform
+        🕥 ARC AXS103 Software Development Platform
       </a>
     </li>
   
@@ -2240,7 +2233,7 @@
   
     <li class="md-nav__item">
       <a href="../../platforms/board-axs101/" class="md-nav__link">
-        ARC AXS101 Software Development Platform
+        🕥 ARC AXS101 Software Development Platform
       </a>
     </li>
   
@@ -3131,13 +3124,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#linker-fails-with-error-undefined-reference-to-_exit" class="md-nav__link">
-    Linker fails with error: undefined reference to _exit
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#ive-opened-hs38tcf-and-gcc-options-include-mcpuhs34-why-hs34-instead-of-hs38" class="md-nav__link">
     I’ve opened hs38.tcf and GCC options include -mcpu=hs34. Why hs34 instead of hs38?
   </a>
@@ -3198,22 +3184,6 @@
 
 
 <h1 id="frequently-asked-questions">Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permanent link">&para;</a></h1>
-<h2 id="linker-fails-with-error-undefined-reference-to-_exit">Linker fails with error: <code>undefined reference to _exit</code><a class="headerlink" href="#linker-fails-with-error-undefined-reference-to-_exit" title="Permanent link">&para;</a></h2>
-<p>Among other possible functions are also <code>_sbrk</code>, <code>_write</code>, <code>_close</code>, <code>_lseek</code>,
-<code>_read</code>, <code>_fstat</code>, <code>_isatty</code>.</p>
-<p>Function <code>_exit</code> is not provided by the <code>libc</code> itself, but must be provided by the <code>libgloss</code>,
-which is basically a BSP (board support package). Currently several <code>libgloss</code> implementations
-are provided for ARC:</p>
-<ul>
-<li><code>libnosys</code> - a generic implementation with stubs.</li>
-<li><code>libnsim</code> - implements nSIM and QEMU IO hostlink (GNU version).</li>
-<li><code>libqemu</code> - implements a simplified IO hostlink for QEMU.</li>
-<li><code>libhl</code> - implements nSIM IO hostlink (MetaWare version).</li>
-<li><code>libiotdk_uart</code>, <code>libhsdk_uart</code>, <code>libemsk_uart</code> - implementations for development boards.</li>
-</ul>
-<p>In general <code>libnosys</code> is more suitable for hardware targets that does not have hostlink support, however
-other implementations have a distinct advantage that on exit from an application and in case of many errors
-it halts the core, while <code>libnosys</code> causes it to infinite loop on one place.</p>
 <h2 id="ive-opened-hs38tcf-and-gcc-options-include-mcpuhs34-why-hs34-instead-of-hs38">I’ve opened <code>hs38.tcf</code> and GCC options include <code>-mcpu=hs34</code>. Why <code>hs34</code> instead of <code>hs38</code>?<a class="headerlink" href="#ive-opened-hs38tcf-and-gcc-options-include-mcpuhs34-why-hs34-instead-of-hs38" title="Permanent link">&para;</a></h2>
 <p>Possible values of <code>-mcpu=</code> options are orthogonal to names of IPlib templates and respective TCF.
 GCC option <code>-mcpu=</code> supports both <code>hs34</code> and <code>hs38</code> values, but they are different - <code>hs38</code> enables

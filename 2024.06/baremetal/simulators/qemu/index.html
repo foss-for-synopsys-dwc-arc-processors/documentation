@@ -19,7 +19,7 @@
     
     
       
-        <title>Building Applications and Debugging on QEMU - embARC Documentation Site</title>
+        <title>Building Applications and Debugging on QEMU - embARC Documentation Site for ARC Classic</title>
       
     
     
@@ -87,7 +87,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="embARC Documentation Site" class="md-header__button md-logo" aria-label="embARC Documentation Site" data-md-component="logo">
+    <a href="../../.." title="embARC Documentation Site for ARC Classic" class="md-header__button md-logo" aria-label="embARC Documentation Site for ARC Classic" data-md-component="logo">
       
   <img src="../../../assets/logo.png" alt="logo">
 
@@ -99,7 +99,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            embARC Documentation Site
+            embARC Documentation Site for ARC Classic
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -359,12 +359,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="embARC Documentation Site" class="md-nav__button md-logo" aria-label="embARC Documentation Site" data-md-component="logo">
+    <a href="../../.." title="embARC Documentation Site for ARC Classic" class="md-nav__button md-logo" aria-label="embARC Documentation Site for ARC Classic" data-md-component="logo">
       
   <img src="../../../assets/logo.png" alt="logo">
 
     </a>
-    embARC Documentation Site
+    embARC Documentation Site for ARC Classic
   </label>
   
     <div class="md-nav__source">
@@ -2193,7 +2193,7 @@
   
     <li class="md-nav__item">
       <a href="../../../platforms/board-emsk/" class="md-nav__link">
-        ARC EM Starter Kit
+        🕥 ARC EM Starter Kit
       </a>
     </li>
   
@@ -2207,7 +2207,7 @@
   
     <li class="md-nav__item">
       <a href="../../../platforms/board-axs103/" class="md-nav__link">
-        ARC AXS103 Software Development Platform
+        🕥 ARC AXS103 Software Development Platform
       </a>
     </li>
   
@@ -2221,7 +2221,7 @@
   
     <li class="md-nav__item">
       <a href="../../../platforms/board-axs101/" class="md-nav__link">
-        ARC AXS101 Software Development Platform
+        🕥 ARC AXS101 Software Development Platform
       </a>
     </li>
   
@@ -3210,8 +3210,14 @@ table of tools and options for a particular family:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>arc-elf32-gcc<span class="w"> </span>-mcpu<span class="o">=</span>archs<span class="w"> </span>-specs<span class="o">=</span>nosys.specs<span class="w"> </span>-g<span class="w"> </span>main.c<span class="w"> </span>-o<span class="w"> </span>main.elf
 </span></code></pre></div>
 <p>Start a GDB server in port 1234 (this is the default port, so we could use the alias <code>-s</code> instead of <code>-gdb tcp::1234</code>):</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>qemu-system-arc<span class="w"> </span>-M<span class="w"> </span>arc-sim<span class="w"> </span>-cpu<span class="w"> </span>archs<span class="w"> </span>-monitor<span class="w"> </span>none<span class="w"> </span>-display<span class="w"> </span>none<span class="w"> </span>-nographic<span class="w"> </span>-no-reboot<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">                </span>-gdb<span class="w"> </span>tcp::1234<span class="w"> </span>-S<span class="w"> </span>-kernel<span class="w"> </span>main.elf
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>qemu-system-arc<span class="w"> </span>-M<span class="w"> </span>arc-sim<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">                </span>-cpu<span class="w"> </span>archs<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">                </span>-monitor<span class="w"> </span>none<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">                </span>-display<span class="w"> </span>none<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">                </span>-nographic<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">                </span>-no-reboot<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">                </span>-gdb<span class="w"> </span>tcp::1234<span class="w"> </span>-S<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">                </span>-kernel<span class="w"> </span>main.elf
 </span></code></pre></div>
 <p>Debug the application:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ arc-elf32-gdb -quiet main.elf
@@ -3242,9 +3248,15 @@ table of tools and options for a particular family:</p>
 <h2 id="using-a-socket-instead-of-port">Using a Socket Instead of Port<a class="headerlink" href="#using-a-socket-instead-of-port" title="Permanent link">&para;</a></h2>
 <p>If known ports are busy then you can connect to the GDB server using a socket.
 Expose GDB server through socket instead of port</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>qemu-system-arc<span class="w"> </span>-M<span class="w"> </span>arc-sim<span class="w"> </span>-cpu<span class="w"> </span>archs<span class="w"> </span>-monitor<span class="w"> </span>none<span class="w"> </span>-display<span class="w"> </span>none<span class="w"> </span>-nographic<span class="w"> </span>-no-reboot<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">                </span>-chardev<span class="w"> </span>socket,path<span class="o">=</span>/tmp/gdb-socket,server<span class="o">=</span>on,wait<span class="o">=</span>off,id<span class="o">=</span>gdb0<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">                </span>-gdb<span class="w"> </span>chardev:gdb0<span class="w"> </span>-S<span class="w"> </span>-kernel<span class="w"> </span>main.elf
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>qemu-system-arc<span class="w"> </span>-M<span class="w"> </span>arc-sim<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">                </span>-cpu<span class="w"> </span>archs<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">                </span>-monitor<span class="w"> </span>none<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">                </span>-display<span class="w"> </span>none<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">                </span>-nographic<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">                </span>-no-reboot<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">                </span>-chardev<span class="w"> </span>socket,path<span class="o">=</span>/tmp/gdb-socket,server<span class="o">=</span>on,wait<span class="o">=</span>off,id<span class="o">=</span>gdb0<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">                </span>-gdb<span class="w"> </span>chardev:gdb0<span class="w"> </span>-S<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">                </span>-kernel<span class="w"> </span>main.elf
 </span></code></pre></div>
 <p>Connect to the GDB server
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ arc-elf32-gdb -quiet main.elf
@@ -3264,59 +3276,76 @@ Expose GDB server through socket instead of port</p>
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>You need to use <code>-specs=qemu.specs</code> to use input/output features and pass <code>-serial stdio</code> to link
-a virtual character device with host's <code>stdio</code>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$ arc-elf32-gcc -mcpu=archs -specs=qemu.specs main.c -o main.elf
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>$ qemu-system-arc -M arc-sim -cpu archs -monitor none -display none -nographic \
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>                  -no-reboot -serial stdio -kernel main.elf
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Hello, World!
-</span></code></pre></div>
-<p>By default, QEMU creates a character device for <code>arc-sim</code> board on hard coded <code>0x90000000</code> address.
-A program built with <code>-specs=qemu.specs</code> uses this address for all input/output operations.
-However, if <code>-semihosting</code> option is passed to QEMU, then it uses the same input/output interface
-as nSIM with <code>-on nsim_emt</code> option. It allows to use the same binary for running both
-on QEMU and nSIM:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$ arc-elf32-gcc -mcpu=archs -specs=nsim.specs main.c -o main.elf
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>$ qemu-system-arc -M arc-sim -cpu archs -monitor none -display none -nographic \
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>                  -no-reboot -serial stdio -semihosting -kernel main.elf
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Hello, World!
+<p>You need to use <code>-specs=nsim.specs</code> to use input/output features and
+pass <code>-semihosting</code> option to QEMU:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$ arc-elf32-gcc -mcpu=archs -specs=nsim.specs main.c -o main.elf
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>$ qemu-system-arc -M arc-sim \
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>                  -cpu archs \
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>                  -monitor none \
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>                  -display none \
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>                  -nographic \
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>                  -no-reboot \
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>                  -semihosting \
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>                  -kernel main.elf
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>Hello, World!
 </span></code></pre></div>
 <h2 id="building-hello-world-using-metaware-development-toolkit-and-running-on-qemu">Building "Hello, World!" Using MetaWare Development Toolkit and Running on QEMU<a class="headerlink" href="#building-hello-world-using-metaware-development-toolkit-and-running-on-qemu" title="Permanent link">&para;</a></h2>
-<p>MetaWare’s standard runtime library does not support input/output interfaces of QEMU for ARC. But it is possible
-to implement your own basic <code>hostlink</code> library for MetaWare to meet QEMU's requirements. You have to implement at least
-one function to add support of simple output:</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">_write</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">)</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">{</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">count</span><span class="p">)</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">        </span><span class="o">*</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="mh">0x90000000</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">];</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">count</span><span class="p">;</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="p">}</span>
+<p>Without <code>-semihosting</code> QEMU creates a character device for <code>arc-sim</code> board on
+hard coded <code>0x90000000</code> address. MetaWare’s standard runtime library does not
+support input/output interfaces of QEMU for ARC. But it is possible to implement
+your own basic <code>hostlink</code> library for MetaWare to meet QEMU's requirements.
+You have to implement at least one function to add support of simple output
+using the character device at <code>0x90000000</code>:</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">_write</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p">{</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">count</span><span class="p">)</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">        </span><span class="o">*</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="mh">0x90000000</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">];</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">count</span><span class="p">;</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>It's a slightly modified <code>_write</code> from <code>libqemu.a</code> for <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/newlib/blob/arc-2022.09/libgloss/arc/qemu-write.c">Newlib</a>. Save it as <code>write.c</code> file and compile it along with <code>main.c</code>:</p>
+<p>Save it as <code>write.c</code> file and compile it along with <code>main.c</code>:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># For ARC HS3x/HS4x</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>ccac<span class="w"> </span>-av2hs<span class="w"> </span>-Hhostlib<span class="o">=</span><span class="w"> </span>main.c<span class="w"> </span>write.c<span class="w"> </span>-o<span class="w"> </span>main.elf
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># For ARC HS5x</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>ccac<span class="w"> </span>-av3hs<span class="w"> </span>-Hhostlib<span class="o">=</span><span class="w"> </span>main.c<span class="w"> </span>write.c<span class="w"> </span>-o<span class="w"> </span>main.elf
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># For ARC HS6x</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>ccac<span class="w"> </span>-arc64<span class="w"> </span>-Hhostlib<span class="o">=</span><span class="w"> </span>main.c<span class="w"> </span>write.c<span class="w"> </span>-o<span class="w"> </span>main.elf
+</span></code></pre></div>
+<p>Run it using QEMU with <code>-serial stdio</code> option:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># For ARC HS3x/HS4x</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>ccac<span class="w"> </span>-av2hs<span class="w"> </span>-Hhostlib<span class="o">=</span><span class="w"> </span>main.c<span class="w"> </span>write.c<span class="w"> </span>-o<span class="w"> </span>main.elf
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># For ARC HS5x</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>ccac<span class="w"> </span>-av3hs<span class="w"> </span>-Hhostlib<span class="o">=</span><span class="w"> </span>main.c<span class="w"> </span>write.c<span class="w"> </span>-o<span class="w"> </span>main.elf
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1"># For ARC HS6x</span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>ccac<span class="w"> </span>-arc64<span class="w"> </span>-Hhostlib<span class="o">=</span><span class="w"> </span>main.c<span class="w"> </span>write.c<span class="w"> </span>-o<span class="w"> </span>main.elf
-</span></code></pre></div>
-<p>Run it using QEMU:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># For ARC HS3x/HS4x</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>qemu-system-arc<span class="w"> </span>-M<span class="w"> </span>arc-sim<span class="w"> </span>-cpu<span class="w"> </span>archs<span class="w"> </span>-monitor<span class="w"> </span>none<span class="w"> </span>-display<span class="w"> </span>none<span class="w"> </span>-nographic<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">                </span>-no-reboot<span class="w"> </span>-serial<span class="w"> </span>stdio<span class="w"> </span>-kernel<span class="w"> </span>main.elf
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="c1"># For ARC HS5x</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>qemu-system-arc<span class="w"> </span>-M<span class="w"> </span>arc-sim<span class="w"> </span>-cpu<span class="w"> </span>hs5x<span class="w"> </span>-monitor<span class="w"> </span>none<span class="w"> </span>-display<span class="w"> </span>none<span class="w"> </span>-nographic<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">                </span>-no-reboot<span class="w"> </span>-serial<span class="w"> </span>stdio<span class="w"> </span>-kernel<span class="w"> </span>main.elf
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="c1"># For ARC HS6x</span>
-</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>qemu-system-arc64<span class="w"> </span>-M<span class="w"> </span>arc-sim<span class="w"> </span>-cpu<span class="w"> </span>hs6x<span class="w"> </span>-monitor<span class="w"> </span>none<span class="w"> </span>-display<span class="w"> </span>none<span class="w"> </span>-nographic<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">                  </span>-no-reboot<span class="w"> </span>-serial<span class="w"> </span>stdio<span class="w"> </span>-kernel<span class="w"> </span>main.elf
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>qemu-system-arc<span class="w"> </span>-M<span class="w"> </span>arc-sim<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">                </span>-cpu<span class="w"> </span>archs<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">                </span>-monitor<span class="w"> </span>none<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">                </span>-display<span class="w"> </span>none<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">                </span>-nographic<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">                </span>-no-reboot<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">                </span>-serial<span class="w"> </span>stdio<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">                </span>-kernel<span class="w"> </span>main.elf
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="c1"># For ARC HS5x</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>qemu-system-arc<span class="w"> </span>-M<span class="w"> </span>arc-sim<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">                </span>-cpu<span class="w"> </span>hs5x<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">                </span>-monitor<span class="w"> </span>none<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">                </span>-display<span class="w"> </span>none<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">                </span>-nographic<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">                </span>-no-reboot<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">                </span>-serial<span class="w"> </span>stdio<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">                </span>-kernel<span class="w"> </span>main.elf
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="c1"># For ARC HS6x</span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>qemu-system-arc64<span class="w"> </span>-M<span class="w"> </span>arc-sim<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">                  </span>-cpu<span class="w"> </span>hs6x<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">                  </span>-monitor<span class="w"> </span>none<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="w">                  </span>-display<span class="w"> </span>none<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="w">                  </span>-nographic<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="w">                  </span>-no-reboot<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="w">                  </span>-serial<span class="w"> </span>stdio<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="w">                  </span>-kernel<span class="w"> </span>main.elf
 </span></code></pre></div>
 
 

@@ -19,7 +19,7 @@
     
     
       
-        <title>Building Linux kernel and Filesystem Separately - embARC Documentation Site</title>
+        <title>Building Linux kernel and Filesystem Separately - embARC Documentation Site for ARC Classic</title>
       
     
     
@@ -87,7 +87,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="embARC Documentation Site" class="md-header__button md-logo" aria-label="embARC Documentation Site" data-md-component="logo">
+    <a href="../../.." title="embARC Documentation Site for ARC Classic" class="md-header__button md-logo" aria-label="embARC Documentation Site for ARC Classic" data-md-component="logo">
       
   <img src="../../../assets/logo.png" alt="logo">
 
@@ -99,7 +99,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            embARC Documentation Site
+            embARC Documentation Site for ARC Classic
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -359,12 +359,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="embARC Documentation Site" class="md-nav__button md-logo" aria-label="embARC Documentation Site" data-md-component="logo">
+    <a href="../../.." title="embARC Documentation Site for ARC Classic" class="md-nav__button md-logo" aria-label="embARC Documentation Site for ARC Classic" data-md-component="logo">
       
   <img src="../../../assets/logo.png" alt="logo">
 
     </a>
-    embARC Documentation Site
+    embARC Documentation Site for ARC Classic
   </label>
   
     <div class="md-nav__source">
@@ -2193,7 +2193,7 @@
   
     <li class="md-nav__item">
       <a href="../../../platforms/board-emsk/" class="md-nav__link">
-        ARC EM Starter Kit
+        🕥 ARC EM Starter Kit
       </a>
     </li>
   
@@ -2207,7 +2207,7 @@
   
     <li class="md-nav__item">
       <a href="../../../platforms/board-axs103/" class="md-nav__link">
-        ARC AXS103 Software Development Platform
+        🕥 ARC AXS103 Software Development Platform
       </a>
     </li>
   
@@ -2221,7 +2221,7 @@
   
     <li class="md-nav__item">
       <a href="../../../platforms/board-axs101/" class="md-nav__link">
-        ARC AXS101 Software Development Platform
+        🕥 ARC AXS101 Software Development Platform
       </a>
     </li>
   
@@ -3162,8 +3162,8 @@
 <p>Sometimes it's more convenient to build root file system and a Linux kernel separately.
 This guide covers an example when it's necessary to build those images separately
 for ARC HS38 target.</p>
-<p>Suppose, that a toolchain for ARC HS38 is preinstalled in <code>/tools/toolchains/arc-linux-gnu</code>.
-The version is <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.03-release/arc_gnu_2023.03_prebuilt_glibc_le_archs_linux_install.tar.gz">2023.03</a> and it's based on glibc standard library.</p>
+<p>Suppose, that a glibc-based toolchain for ARC HS38 is preinstalled in
+<code>/tools/toolchains/arc-linux-gnu</code>.</p>
 <h2 id="building-root-filesystem">Building Root Filesystem<a class="headerlink" href="#building-root-filesystem" title="Permanent link">&para;</a></h2>
 <p>Clone Buildroot:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Clone the latest Buildroot</span>
@@ -3183,7 +3183,9 @@ for your needs:</p>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Filesystem images -&gt; [*] cpio the root filesystem # For use as an initial RAM filesystem
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>                  -&gt; ext2/3/4 root filesystem     # For mounting from a storage
 </span></code></pre></div>
-<p>Choose a preinstalled toolchain:</p>
+<p>Choose a preinstalled toolchain (a list of available features may differ
+depending on a version of a toolchain, in case of errors follow Buildroot's
+recommendations in error messages):</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Toolchain -&gt; Toolchain type -&gt; (X) External toolchain
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>          -&gt; (X) Custom toolchain
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>          -&gt; Toolchain origin -&gt; (X) Pre-installed toolchain

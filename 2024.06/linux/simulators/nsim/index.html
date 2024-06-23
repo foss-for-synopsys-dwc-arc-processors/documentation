@@ -19,7 +19,7 @@
     
     
       
-        <title>Building Linux for a Simulation and Running on nSIM - embARC Documentation Site</title>
+        <title>Building Linux for a Simulation and Running on nSIM - embARC Documentation Site for ARC Classic</title>
       
     
     
@@ -87,7 +87,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="embARC Documentation Site" class="md-header__button md-logo" aria-label="embARC Documentation Site" data-md-component="logo">
+    <a href="../../.." title="embARC Documentation Site for ARC Classic" class="md-header__button md-logo" aria-label="embARC Documentation Site for ARC Classic" data-md-component="logo">
       
   <img src="../../../assets/logo.png" alt="logo">
 
@@ -99,7 +99,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            embARC Documentation Site
+            embARC Documentation Site for ARC Classic
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -359,12 +359,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="embARC Documentation Site" class="md-nav__button md-logo" aria-label="embARC Documentation Site" data-md-component="logo">
+    <a href="../../.." title="embARC Documentation Site for ARC Classic" class="md-nav__button md-logo" aria-label="embARC Documentation Site for ARC Classic" data-md-component="logo">
       
   <img src="../../../assets/logo.png" alt="logo">
 
     </a>
-    embARC Documentation Site
+    embARC Documentation Site for ARC Classic
   </label>
   
     <div class="md-nav__source">
@@ -2268,7 +2268,7 @@
   
     <li class="md-nav__item">
       <a href="../../../platforms/board-emsk/" class="md-nav__link">
-        ARC EM Starter Kit
+        🕥 ARC EM Starter Kit
       </a>
     </li>
   
@@ -2282,7 +2282,7 @@
   
     <li class="md-nav__item">
       <a href="../../../platforms/board-axs103/" class="md-nav__link">
-        ARC AXS103 Software Development Platform
+        🕥 ARC AXS103 Software Development Platform
       </a>
     </li>
   
@@ -2296,7 +2296,7 @@
   
     <li class="md-nav__item">
       <a href="../../../platforms/board-axs101/" class="md-nav__link">
-        ARC AXS101 Software Development Platform
+        🕥 ARC AXS101 Software Development Platform
       </a>
     </li>
   
@@ -3327,7 +3327,7 @@ instead of <code>-prop=nsim_mem-dev=&lt;...&gt;</code> property presented in the
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://git.busybox.net/buildroot
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># ... or use a custom repository for support of ARCv3 targets</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>arc-2023.09<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>arc-2024.06<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">cd</span><span class="w"> </span>buildroot
 </span></code></pre></div>
 <h2 id="building-images-without-a-preinstalled-toolchain">Building Images Without a Preinstalled Toolchain<a class="headerlink" href="#building-images-without-a-preinstalled-toolchain" title="Permanent link">&para;</a></h2>
@@ -3569,7 +3569,7 @@ to build an image.</p>
 </span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>        output/images/vmlinux
 </span></code></pre></div>
 <h2 id="building-images-with-a-preinstalled-toolchain">Building Images With a Preinstalled Toolchain<a class="headerlink" href="#building-images-with-a-preinstalled-toolchain" title="Permanent link">&para;</a></h2>
-<p>We assume that a toolchain is preinstalled in <code>/tools/toolchains</code> (2023.09 release). Also,
+<p>We assume that a toolchain is preinstalled in <code>/tools/toolchains</code>. Also,
 only a limited set of all available toolchains is considered. All releases may be downloaded
 from <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases">the official releases page</a>.
 Here is a table of toolchains, which are used in this guide:</p>
@@ -3587,31 +3587,31 @@ Here is a table of toolchains, which are used in this guide:</p>
 <td>ARC HS 6x</td>
 <td>glibc</td>
 <td><code>/tools/toolchains/arc64-linux-gnu</code></td>
-<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-rc1/arc_gnu_2023.09-rc1_prebuilt_arc64_glibc_linux_install.tar.bz2">2023.09</a></td>
+<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.06-rc1/arc_gnu_2024.06-rc1_prebuilt_arc64_glibc_linux_install.tar.bz2">2024.06</a></td>
 </tr>
 <tr>
 <td>ARC HS 5x</td>
 <td>uClibc-ng</td>
 <td><code>/tools/toolchains/arc32-linux-uclibc</code></td>
-<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-rc1/arc_gnu_2023.09-rc1_prebuilt_arc32_uclibc_linux_install.tar.bz2">2023.09</a></td>
+<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.06-rc1/arc_gnu_2024.06-rc1_prebuilt_arc32_uclibc_linux_install.tar.bz2">2024.06</a></td>
 </tr>
 <tr>
 <td>ARC HS 3x/4x</td>
 <td>glibc</td>
 <td><code>/tools/toolchains/arc-linux-gnu</code></td>
-<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-rc1/arc_gnu_2023.09-rc1_prebuilt_glibc_le_archs_linux_install.tar.bz2">2023.09</a></td>
+<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.06-rc1/arc_gnu_2024.06-rc1_prebuilt_glibc_le_archs_linux_install.tar.bz2">2024.06</a></td>
 </tr>
 <tr>
 <td>ARC HS 3x/4x</td>
 <td>uClibc-ng</td>
 <td><code>/tools/toolchains/arc-linux-uclibc</code></td>
-<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-rc1/arc_gnu_2023.09-rc1_prebuilt_uclibc_le_archs_linux_install.tar.bz2">2023.09</a></td>
+<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.06-rc1/arc_gnu_2024.06-rc1_prebuilt_uclibc_le_archs_linux_install.tar.bz2">2024.06</a></td>
 </tr>
 <tr>
 <td>ARC 700</td>
 <td>uClibc-ng</td>
 <td><code>/tools/toolchains/arc700-linux-uclibc</code></td>
-<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2023.09-rc1/arc_gnu_2023.09-rc1_prebuilt_uclibc_le_arc700_linux_install.tar.bz2">2023.09</a></td>
+<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.06-rc1/arc_gnu_2024.06-rc1_prebuilt_uclibc_le_arc700_linux_install.tar.bz2">2024.06</a></td>
 </tr>
 </tbody>
 </table>
@@ -3624,7 +3624,7 @@ a single core (UP) configuration. Save a custom configuration file in <code>defc
 </span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
 </span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
 </span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc-linux-gnu&quot;</span>
-</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_13</span><span class="o">=</span>y
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
 </span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
 </span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC</span><span class="o">=</span>y
 </span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_INET_RPC</span><span class="o">=</span>n
@@ -3651,7 +3651,7 @@ a single core (UP) configuration. Here is a corresponding configuration file for
 </span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
 </span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
 </span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc-linux-uclibc&quot;</span>
-</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_13</span><span class="o">=</span>y
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
 </span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_WCHAR</span><span class="o">=</span>y
 </span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
 </span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_UCLIBC</span><span class="o">=</span>y
@@ -3678,7 +3678,7 @@ a single core (UP) configuration. Here is a corresponding configuration file for
 </span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
 </span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc700-linux-uclibc&quot;</span>
 </span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_UCLIBC</span><span class="o">=</span>y
-</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_13</span><span class="o">=</span>y
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
 </span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_WCHAR</span><span class="o">=</span>y
 </span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HAS_SSP</span><span class="o">=</span>y
 </span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
@@ -3711,7 +3711,7 @@ a single core (UP) configuration. Here is a corresponding configuration file for
 </span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
 </span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_UCLIBC</span><span class="o">=</span>y
 </span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc32-linux-uclibc&quot;</span>
-</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_13</span><span class="o">=</span>y
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
 </span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_INET_RPC</span><span class="o">=</span>n
 </span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
 </span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_WCHAR</span><span class="o">=</span>y
@@ -3742,7 +3742,7 @@ a single core (UP) configuration. Here is a corresponding configuration file for
 </span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
 </span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC</span><span class="o">=</span>y
 </span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc64-linux-gnu&quot;</span>
-</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_13</span><span class="o">=</span>y
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
 </span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_INET_RPC</span><span class="o">=</span>n
 </span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
 </span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_WCHAR</span><span class="o">=</span>y
