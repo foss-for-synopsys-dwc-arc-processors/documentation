@@ -2,13 +2,16 @@
 
 ## Toolchains for Baremetal Targets
 
-GNU toolchains for ARC processors consist of GCC, Binutils and GDB. [Newlib](https://sourceware.org/newlib/) standard library is used for building baremetal applications. This table depicts which GCC driver should be used depending on ISA:
+GNU toolchains for baremetal ARC targets consist of GCC, Binutils, GDB and
+a standard library. [Newlib](https://sourceware.org/newlib/) standard library
+is used for building baremetal applications. This table depicts which GCC driver
+should be used depending on ISA:
 
-| ISA    | Driver/Triplet |
-|--------|----------------|
-| ARCv1  | `arc-elf32-gcc`|
-| ARCv2  | `arc32-elf-gcc`|
-| ARCv3  | `arc64-elf-gcc`|
+| ISA       | Driver/Triplet  | Families       |
+|-----------|-----------------|----------------|
+| ARCompact | `arc-elf32-gcc` | ARC600, ARC700 |
+| ARCv2     | `arc-elf32-gcc` | ARC EM, ARC HS |
+| ARCv3     | `arc64-elf-gcc` | ARC HS5x/HS6x  |
 
 Note that binaries for both ARCv1 and ARCv2 may be built using a single `arc-elf32-gcc` driver. It means
 that there is a single toolchain for two ISAs.
@@ -30,19 +33,54 @@ Linux toolchains are presented for all ARC processor families except ARC EM and 
 Two Linux standard libraries are currently supported: glibc and uClibc-ng.
 This table depicts which GCC driver should be used depending on CPU family:
 
-| Family             | Standard library | Driver/Triplet           |
-| -----------------  | ---------------- | ------------------------ |
-| ARC 700            | glibc            | `arc-linux-gnu-gcc`      |
-| ARC 700            | uClibc-ng        | `arc-linux-uclibc-gcc`   |
-| ARC HS3x/4x/4xD    | glibc            | `arc-linux-gnu-gcc`      |
-| ARC HS3x/4x/4xD    | uClibc-ng        | `arc-linux-uclibc-gcc`   |
-| ARC HS5x           | uClibc-ng        | `arc32-linux-uclibc-gcc` |
-| ARC HS6x           | glibc            | `arc64-linux-gnu-gcc`    |
+| Family      | Standard library | Driver/Triplet           |
+|-------------|------------------|--------------------------|
+| ARC 700     | glibc            | `arc-linux-gnu-gcc`      |
+| ARC 700     | uClibc-ng        | `arc-linux-uclibc-gcc`   |
+| ARC HS3x/4x | glibc            | `arc-linux-gnu-gcc`      |
+| ARC HS3x/4x | uClibc-ng        | `arc-linux-uclibc-gcc`   |
+| ARC HS5x    | uClibc-ng        | `arc32-linux-uclibc-gcc` |
+| ARC HS6x    | glibc            | `arc64-linux-gnu-gcc`    |
 
 Note, that in case of Linux toolchains, `arc-linux-*` drivers for ARC 700 and ARC HS are
 different toolchains! For example, if you want to build applications for ARC 700 Linux targets,
 then you need to use a particular toolchain for ARC 700 and the same is applicable for ARC HS,
 though they have the same names.
+
+## Native Toolchains for Linux Targets
+
+Native toolchains are toolchains that can be used on the targets Linux system
+natively. Here is a list of native toolchains which are available on
+[a release page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases):
+
+| Family      | Standard library | Driver/Triplet           |
+|-------------|------------------|--------------------------|
+| ARC HS3x/4x | glibc            | `arc-linux-gnu-gcc`      |
+| ARC HS5x    | uClibc-ng        | `arc32-linux-uclibc-gcc` |
+| ARC HS6x    | glibc            | `arc64-linux-gnu-gcc`    |
+
+## Eclipse IDE Package
+
+Eclipse IDE bundle is also available on [a release page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases).
+The bundle may contains different components depending on the host platform:
+
+| Component  | Linux | Windows |
+| --- | --- | --- |
+| Installer | ❌ | :white_check_mark: |
+| ARCompact/ARCv2 baremetal toolchain (little endian) | :white_check_mark: | :white_check_mark: |
+| ARCompact/ARCv2 baremetal toolchain (big endian) | :white_check_mark: | :white_check_mark: |
+| ARCv2 Linux uClibc toolchain (little endian) | :white_check_mark: | ❌ |
+| ARCv2 Linux uClibc toolchain (big endian) | :white_check_mark: | ❌ |
+| OpenOCD | :white_check_mark: | :white_check_mark: |
+| Eclipse IDE | :white_check_mark: | :white_check_mark: |
+
+Linux toolchains are not included in the bundle for Windows because they are not
+supported by case-insensitive file systems.
+
+Also, there is no an installer for Linux hosts - the bundle may be extracted and
+used anywhere in a file system. Add `<ide>/bin` directory to `PATH` variable
+to make all toolchain binaries available. Eclipse IDE may be launched by
+`<ide>/eclipse/eclipse` binary.
 
 ## How to Get The Toolchain
 
