@@ -64,15 +64,15 @@ natively. Here is a list of native toolchains which are available on
 Eclipse IDE bundle is also available on [a release page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases).
 The bundle may contains different components depending on the host platform:
 
-| Component  | Linux | Windows |
-| --- | --- | --- |
-| Installer | ❌ | :white_check_mark: |
-| ARCompact/ARCv2 baremetal toolchain (little endian) | :white_check_mark: | :white_check_mark: |
-| ARCompact/ARCv2 baremetal toolchain (big endian) | :white_check_mark: | :white_check_mark: |
-| ARCv2 Linux uClibc toolchain (little endian) | :white_check_mark: | ❌ |
-| ARCv2 Linux uClibc toolchain (big endian) | :white_check_mark: | ❌ |
-| OpenOCD | :white_check_mark: | :white_check_mark: |
-| Eclipse IDE | :white_check_mark: | :white_check_mark: |
+| Component                                           | Linux | Windows |
+|-----------------------------------------------------|-------|---------|
+| Installer                                           | ❌     | ✅       |
+| ARCompact/ARCv2 baremetal toolchain (little endian) | ✅     | ✅       |
+| ARCompact/ARCv2 baremetal toolchain (big endian)    | ✅     | ✅       |
+| ARCv2 Linux uClibc toolchain (little endian)        | ✅     | ❌       |
+| ARCv2 Linux uClibc toolchain (big endian)           | ✅     | ❌       |
+| OpenOCD                                             | ✅     | ✅       |
+| Eclipse IDE                                         | ✅     | ✅       |
 
 Linux toolchains are not included in the bundle for Windows because they are not
 supported by case-insensitive file systems.
