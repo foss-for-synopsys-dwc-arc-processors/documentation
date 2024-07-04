@@ -3062,6 +3062,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#native-toolchains-for-linux-targets" class="md-nav__link">
+    Native Toolchains for Linux Targets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eclipse-ide-package" class="md-nav__link">
+    Eclipse IDE Package
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-to-get-the-toolchain" class="md-nav__link">
     How to Get The Toolchain
   </a>
@@ -3088,26 +3102,33 @@
 
 <h1 id="toolchains-for-arc-processors">Toolchains for ARC Processors<a class="headerlink" href="#toolchains-for-arc-processors" title="Permanent link">&para;</a></h1>
 <h2 id="toolchains-for-baremetal-targets">Toolchains for Baremetal Targets<a class="headerlink" href="#toolchains-for-baremetal-targets" title="Permanent link">&para;</a></h2>
-<p>GNU toolchains for ARC processors consist of GCC, Binutils and GDB. <a href="https://sourceware.org/newlib/">Newlib</a> standard library is used for building baremetal applications. This table depicts which GCC driver should be used depending on ISA:</p>
+<p>GNU toolchains for baremetal ARC targets consist of GCC, Binutils, GDB and
+a standard library. <a href="https://sourceware.org/newlib/">Newlib</a> standard library
+is used for building baremetal applications. This table depicts which GCC driver
+should be used depending on ISA:</p>
 <table>
 <thead>
 <tr>
 <th>ISA</th>
 <th>Driver/Triplet</th>
+<th>Families</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>ARCv1</td>
+<td>ARCompact</td>
 <td><code>arc-elf32-gcc</code></td>
+<td>ARC600, ARC700</td>
 </tr>
 <tr>
 <td>ARCv2</td>
-<td><code>arc32-elf-gcc</code></td>
+<td><code>arc-elf32-gcc</code></td>
+<td>ARC EM, ARC HS</td>
 </tr>
 <tr>
 <td>ARCv3</td>
 <td><code>arc64-elf-gcc</code></td>
+<td>ARC HS5x/HS6x</td>
 </tr>
 </tbody>
 </table>
@@ -3146,12 +3167,12 @@ This table depicts which GCC driver should be used depending on CPU family:</p>
 <td><code>arc-linux-uclibc-gcc</code></td>
 </tr>
 <tr>
-<td>ARC HS3x/4x/4xD</td>
+<td>ARC HS3x/4x</td>
 <td>glibc</td>
 <td><code>arc-linux-gnu-gcc</code></td>
 </tr>
 <tr>
-<td>ARC HS3x/4x/4xD</td>
+<td>ARC HS3x/4x</td>
 <td>uClibc-ng</td>
 <td><code>arc-linux-uclibc-gcc</code></td>
 </tr>
@@ -3171,6 +3192,91 @@ This table depicts which GCC driver should be used depending on CPU family:</p>
 different toolchains! For example, if you want to build applications for ARC 700 Linux targets,
 then you need to use a particular toolchain for ARC 700 and the same is applicable for ARC HS,
 though they have the same names.</p>
+<h2 id="native-toolchains-for-linux-targets">Native Toolchains for Linux Targets<a class="headerlink" href="#native-toolchains-for-linux-targets" title="Permanent link">&para;</a></h2>
+<p>Native toolchains are toolchains that can be used on the targets Linux system
+natively. Here is a list of native toolchains which are available on
+<a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases">a release page</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Standard library</th>
+<th>Driver/Triplet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ARC HS3x/4x</td>
+<td>glibc</td>
+<td><code>arc-linux-gnu-gcc</code></td>
+</tr>
+<tr>
+<td>ARC HS5x</td>
+<td>uClibc-ng</td>
+<td><code>arc32-linux-uclibc-gcc</code></td>
+</tr>
+<tr>
+<td>ARC HS6x</td>
+<td>glibc</td>
+<td><code>arc64-linux-gnu-gcc</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="eclipse-ide-package">Eclipse IDE Package<a class="headerlink" href="#eclipse-ide-package" title="Permanent link">&para;</a></h2>
+<p>Eclipse IDE bundle is also available on <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases">a release page</a>.
+The bundle may contains different components depending on the host platform:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Linux</th>
+<th>Windows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Installer</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>ARCompact/ARCv2 baremetal toolchain (little endian)</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>ARCompact/ARCv2 baremetal toolchain (big endian)</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>ARCv2 Linux uClibc toolchain (little endian)</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>ARCv2 Linux uClibc toolchain (big endian)</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>OpenOCD</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Eclipse IDE</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p>Linux toolchains are not included in the bundle for Windows because they are not
+supported by case-insensitive file systems.</p>
+<p>Also, there is no an installer for Linux hosts - the bundle may be extracted and
+used anywhere in a file system. Add <code>&lt;ide&gt;/bin</code> directory to <code>PATH</code> variable
+to make all toolchain binaries available. Eclipse IDE may be launched by
+<code>&lt;ide&gt;/eclipse/eclipse</code> binary.</p>
 <h2 id="how-to-get-the-toolchain">How to Get The Toolchain<a class="headerlink" href="#how-to-get-the-toolchain" title="Permanent link">&para;</a></h2>
 <p>There are several ways of getting the toolchain:</p>
 <ol>
