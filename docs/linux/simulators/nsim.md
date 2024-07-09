@@ -339,7 +339,8 @@ nsimdrv -tcf $NSIM_HOME/etc/tcf/templates/arc770d.tcf -prop nsim_isa_number_of_i
 We assume that a toolchain is preinstalled in `/tools/toolchains`. Also,
 only a limited set of all available toolchains is considered. All releases may be downloaded
 from [the official releases page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases).
-Here is a table of toolchains, which are used in this guide:
+Here is a table of toolchains, which are used in this guide. Note that
+toolchain's installation path in this guide is a path that contains `bin` directory.
 
 | ARC processors family | Standard library | Toolchain's installation path           | Version                            |
 |-----------------------|------------------|-----------------------------------------|------------------------------------|
