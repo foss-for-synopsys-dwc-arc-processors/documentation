@@ -3184,6 +3184,13 @@ consider using a separate Synopsys repository with patches for support of ARC HS
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>buildroot
 </span></code></pre></div>
 <h2 id="using-predefined-configurations">Using Predefined Configurations<a class="headerlink" href="#using-predefined-configurations" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>By default, <code>snps_archs38_haps_defconfig</code> uses <code>haps_hs_smp</code>
+kernel configuration file. If you are going to run an image on nSIM with
+a single core then change it to <code>haps_hs</code> through <code>make menuconfig</code>
+(<code>Kernel</code> -&gt; <code>Defconfig name</code> -&gt; <code>haps_hs</code>).</p>
+</div>
 <p>Buildroot uses configuration files (<code>defconfig</code>s) for configuring a root filesystem,
 a toolchain, a Linux kernel, etc. Buildroot comes with a number of existing predefined
 configurations which may be found in <code>config</code> directory. Use <code>make list-defconfigs</code> command

@@ -3331,6 +3331,13 @@ instead of <code>-prop=nsim_mem-dev=&lt;...&gt;</code> property presented in the
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">cd</span><span class="w"> </span>buildroot
 </span></code></pre></div>
 <h2 id="building-images-without-a-preinstalled-toolchain">Building Images Without a Preinstalled Toolchain<a class="headerlink" href="#building-images-without-a-preinstalled-toolchain" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>By default, <code>snps_archs38_haps_defconfig</code> uses <code>haps_hs_smp</code>
+kernel configuration file. If you are going to run an image on nSIM with
+a single core then change it to <code>haps_hs</code> through <code>make menuconfig</code>
+(<code>Kernel</code> -&gt; <code>Defconfig name</code> -&gt; <code>haps_hs</code>).</p>
+</div>
 <p>You can configure Buildroot for HS3x/HS4x targets using these commands:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>make<span class="w"> </span>snps_archs38_haps_defconfig<span class="w"> </span><span class="c1"># nSIM and QEMU</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>make<span class="w"> </span>snps_archs38_hsdk_defconfig<span class="w"> </span><span class="c1"># HS Development Kit</span>
