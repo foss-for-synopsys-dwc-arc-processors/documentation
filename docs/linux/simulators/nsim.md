@@ -28,6 +28,13 @@ cd buildroot
 
 ## Building Images Without a Preinstalled Toolchain
 
+!!! info
+
+    By default, `snps_archs38_haps_defconfig` uses `haps_hs_smp`
+    kernel configuration file. If you are going to run an image on nSIM with
+    a single core then change it to `haps_hs` through `make menuconfig`
+    (`Kernel` -> `Defconfig name` -> `haps_hs`).
+
 You can configure Buildroot for HS3x/HS4x targets using these commands:
 
 ```shell

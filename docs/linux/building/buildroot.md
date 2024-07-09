@@ -20,6 +20,13 @@ cd buildroot
 
 ## Using Predefined Configurations
 
+!!! info
+
+    By default, `snps_archs38_haps_defconfig` uses `haps_hs_smp`
+    kernel configuration file. If you are going to run an image on nSIM with
+    a single core then change it to `haps_hs` through `make menuconfig`
+    (`Kernel` -> `Defconfig name` -> `haps_hs`).
+
 Buildroot uses configuration files (`defconfig`s) for configuring a root filesystem,
 a toolchain, a Linux kernel, etc. Buildroot comes with a number of existing predefined
 configurations which may be found in `config` directory. Use `make list-defconfigs` command
