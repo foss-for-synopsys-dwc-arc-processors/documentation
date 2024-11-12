@@ -192,13 +192,79 @@ point instructions which cannot be enable using a particular target option.
 
 ## ARCv3 Toolchain
 
-### Values of `-mcpu` for ARC HS5x and ARC HS6x Families
+### Values of `-mcpu` for ARCv3
 
-| `-mcpu=` | `-msimd` | `-m128` | `-mll64` |
-|----------|----------|---------|----------|
-| `hs5x`   | Y        | N/A     |          |
-| `hs58`   | Y        | N/A     | Y        |
-| `hs6x`   | Y        |         | N/A      |
-| `hs68`   | Y        | Y       | N/A      |
+A specific ARCv3 family is selected by `-mcpu=` option. This option may be passed
+with these values: `hs5x`, `hs58`, `hs6x` and `hs68`. `hs5x` and `hs58`
+stand for ARC HS5x targets and `-mcpu=hs6x` or `-mcpu=hs68` stand for ARC HS6x
+targets. Each `-mcpu=` value selects a corresponding prebuilt library for
+linking with an application. Here is a list of `-mcpu=` values and corresponding
+default values selected for target options:
+
+| Options              | `-mcpu=hs5x` | `-mcpu=hs58` | `-mcpu=hs6x` | `-mcpu=hs68` |
+|----------------------|--------------|--------------|--------------|--------------|
+| `-m128`              | —            | —            | Off          | On           |
+| `-mll64`             | Off          | On           | —            | —            |
+| `-matomic=...`       | `1`          | `1`          | `1`          | `1`          |
+| `-mbitscan`          | On           | On           | On           | On           |
+| `-mcode-density`     | On           | On           | On           | On           |
+| `-msimd`             | On           | On           | On           | On           |
+| `-mdiv-rem`          | On           | On           | On           | On           |
+| `-munaligned-access` | On           | On           | On           | On           |
+| `-mbbit`             | Off          | Off          | Off          | Off          |
+| `-mbrcc`             | Off          | Off          | Off          | Off          |
+| `-mfpu=...`          | `none`       | `none`       | `none`       | `none`       |
+| `-mwide`             | On           | On           | On           | On           |
+| `-mfpmov`            | Off          | Off          | Off          | Off          |
+| `-mvolatile-di`      | Off          | Off          | Off          | Off          |
+
+### General Target Options for ARCv3
+
+Here is a table of target options for ARCv3 CPU families.
+
+| Feature                                                          | GCC                  | CCAC                 | ARChitect                  | nSIM                                  |
+|------------------------------------------------------------------|----------------------|----------------------|----------------------------|---------------------------------------|
+| Enable 128-bit load and store operations (HS6x only)             | `-m128`              | `-Xm128`             | `-m128_option`             | `-p nsim_isa_m128_option=1`           |
+| Enable 64-bit load and store operations (HS5x only)              | `-mll64`             | `-Xll64`             | `-ll64_option`             | `-p nsim_isa_ll64_option=1`           |
+| Enable atomic instructions                                       | `-matomic={0,1,2,3}` | `-Xatomic={0,1,2,3}` | `-atomic_option={0,1,2,3}` | `-p nsim_isa_atomic_option={0,1,2,3}` |
+| Enable `NORM`, `NORMH`, `FFS`, `FLS`, `NORML`, `FFSL` and `FLSL` | `-mbitscan`          | —                    | —                          | —                                     |
+| Enable code-density instructions                                 | `-mcode-density`     | —                    | —                          | —                                     |
+| Enable integer SIMD instructions                                 | `-msimd`             | `-Xmpy_option=qmpyh` | —                          | `-p nsim_isa_mpy_option=9`            |
+| Enable `DIV` and `REM` instructions                              | `-mdiv-rem`          | `-Xdiv_rem=radix4`   | —                          | `-p nsim_isa_div_rem_option=2`        |
+| Enable unaligned access for packed data                          | `-munaligned-access` | `-Xunaligned`        | —                          | `-p nsim_isa_unaligned_option=1`      |
+| Generate `BBITx` instructions during combiner step               | `-mbbit`             | —                    | —                          | —                                     |
+| Generate `BRcc` instructions during combiner step                | `-mbrcc`             | —                    | —                          | —                                     |
+| Enable uncached access for volatile memories                     | `-mvolatile-di`      | —                    | —                          | —                                     |
+
+### FPU Target Options for ARCv3
+
+`-mfpu=...` option enables a set of FPU features. When `-mfpu=none` is passed then FPU
+is turned off.
+
+Here is a list of single-presicion FPU features enabled by `-mfpu=fpus`:
+
+| Feature                       | CCAC       | ARChitect        | nSIM                          |
+|-------------------------------|------------|------------------|-------------------------------|
+| Single-precision instructions | `-Xfp_sp`  | `-has_fp`        | `-p nsim_isa_has_fp=1`        |
+| Half-precision instructions   | `-Xfp_hp`  | `-fp_hp_option`  | `-p nsim_isa_fp_hp_option=1`  |
+| Division instructions         | `-Xfp_div` | `-fp_div_option` | `-p nsim_isa_fp_div_option=1` |
+| Vector instructions           | `-Xfp_vec` | `-fp_vec_option` | `-p nsim_isa_fp_vec_option=1` |
+
+Here is a list of double-presicion FPU features enabled by `-mfpu=fpud`:
+
+| Feature                       | CCAC       | ARChitect        | nSIM                          |
+|-------------------------------|------------|------------------|-------------------------------|
+| Single-precision instructions | `-Xfp_sp`  | `-has_fp`        | `-p nsim_isa_has_fp=1`        |
+| Double-precision instructions | `-Xfp_dp`  | `-fp_dp_option`  | `-p nsim_isa_fp_dp_option=1`  |
+| Half-precision instructions   | `-Xfp_hp`  | `-fp_hp_option`  | `-p nsim_isa_fp_hp_option=1`  |
+| Division instructions         | `-Xfp_div` | `-fp_div_option` | `-p nsim_isa_fp_div_option=1` |
+| Vector instructions           | `-Xfp_vec` | `-fp_vec_option` | `-p nsim_isa_fp_vec_option=1` |
+
+Other FPU options:
+
+| Feature                                                   | GCC       | CCAC        | ARChitect         | nSIM                           |
+|-----------------------------------------------------------|-----------|-------------|-------------------|--------------------------------|
+| Enable wide floating point SIMD support                   | `-mwide`  | `-Xfp_wide` | `-fp_wide_option` | `-p nsim_isa_fp_wide_option=1` |
+| Use FPRs for memory operations like `memcpy` to free GPRs | `-mfpmov` | —           | —                 | —                              |
 
 [gcc-manual]: <https://gcc.gnu.org/onlinedocs/gcc/ARC-Options.html> "GCC manual"
