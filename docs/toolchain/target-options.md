@@ -29,7 +29,7 @@ with default values for CPU families (On, Off or N/A).
 | `-mbarrel-shifter`   | On     | Off    | On      | Off     |
 | `-mnorm`             | On     | Off    | On      | Off     |
 | `-mswap`             | On     | Off    | On      | Off     |
-| `-rf16`              | Off    | Off    | Off     | Off     |
+| `-mrf16`[^1]         | Off    | Off    | Off     | Off     |
 | `-mfpu=<...>`        | Off    | Off    | —       | —       |
 | `-mmpy-option=<...>` | Off    | Off    | —       | —       |
 | `-mcode-density`     | On     | Off    | —       | —       |
@@ -44,6 +44,8 @@ with default values for CPU families (On, Off or N/A).
 | `-mmul64`            | —      | —      | —       | Off     |
 | `-mmul32x16`         | —      | —      | —       | Off     |
 | `-munaligned-access` |        |        |         |         |
+
+[^1]: Note that `-mrf16` may be used only with `-mcpu=em_mini` option.
 
 You can find a short description for all target options using `--target-help` option. For example:
 
@@ -99,6 +101,8 @@ definitions of particular `-mcpu=<core>` targets.
 
 ### Values of `-mcpu` for ARC HS3x and HS4x Families
 
+Each `-mcpu=` option selects a set of options in addition to default settings.
+
 | `-mcpu=`     | `-mdiv-rem` | `-matomic` | `-mll64` | `-mmpy-option=` | `-mfpu=`   |
 |--------------|-------------|------------|----------|-----------------|------------|
 | `hs`         |             | Y          |          |                 |            |
@@ -109,7 +113,7 @@ definitions of particular `-mcpu=<core>` targets.
 | `hs4xd`      | Y           | Y          | Y        | `plus_qmacw`    |            |
 | `hs38_linux` | Y           | Y          | Y        | `plus_qmacw`    | `fpud_all` |
 
-The above `-mcpu` values correspond to specific ARC EM Processor templates presented in the ARChitect tool.
+The above `-mcpu` values correspond to specific ARC HS processor templates presented in the ARChitect tool.
 
 * `-mcpu=hs` corresponds to a basic ARC HS with only atomic instructions enabled. It corresponds to
 the following ARC HS templates in ARChitect: `hs34_base`, `hs36_base` and `hs38_base`.
@@ -124,6 +128,8 @@ instruction scheduling for specified processors.
 
 ### Values of `-mcpu` for ARC EM Family
 
+Each `-mcpu=` option selects a set of options in addition to default settings.
+
 | `-mcpu`      | `-mcode-density` | `-mnorm` | `-mswap` | `-mbarrel-shifter` | `-mdiv-rem` | `-mmpy-option=` | `-mfpu=` | `-mrf16` | `-mspfp` | `-mdpfp` |
 |--------------|------------------|----------|----------|--------------------|-------------|-----------------|----------|----------|----------|----------|
 | `em`         |                  |          |          |                    |             |                 |          |          |          |          |
@@ -135,15 +141,15 @@ instruction scheduling for specified processors.
 | `em4_fpuda`  | Y                | Y        | Y        | Y                  | Y           | `wlh1`          | `fpuda`  |          |          |          |
 | `quarkse_em` | Y                | Y        | Y        | Y                  | Y           | `wlh2`          | `quark`  |          | Y        | Y        |
 
-The above `-mcpu` values correspond to specific ARC EM Processor templates presented in the ARChitect tool.
+The above `-mcpu` values correspond to specific ARC EM processor templates presented in the ARChitect tool.
 It should be noted however that some ARC features are not currently supported in the GNU toolchain, for
-example DSP instruction support.
+example DSP instructions.
 
 * `-mcpu=em` doesn't correspond to any specific template, it simply defines the base ARC EM configuration without any optional instructions.
 * `-mcpu=em_mini` is same as `em`, but uses reduced register file with only 16 core registers.
 * `-mcpu=em4` is a base ARC EM core configuration with `-mcode-density` option. It corresponds to
 the following ARC EM templates in ARChitect: `em4_mini`, `em4_sensor`, `em4_ecc`, `em6_mini`, `em5d_mini`,
-`em5d_mini_v3`, `em5d_nrg`, `em7d_nrg`, `em9d_mini`. Note that those mini templates have a reduced core register
+`em5d_mini_v3`, `em5d_nrg`, `em7d_nrg`, `em9d_mini`. Note that some of those mini templates have a reduced core register
 file, but `-mcpu=em4` doesn't enable this feature.
 * `-mcpu=arcem` doesn't correspond to any specific template, it is a legacy flag preserved for compatibility with
 older GNU toolchain versions, where `-mcpu` used to select only a CPU family, while optional features were enabled
@@ -161,6 +167,8 @@ It corresponds to the following ARC EM templates in ARChitect: `em4_dmips_fpuspd
 point instructions which cannot be enable using a particular target option.
 
 ### Values of `-mcpu` for ARC 600 and 700 Families
+
+Each `-mcpu=` option selects a set of options in addition to default settings.
 
 | `-mcpu=`          | `-mnorm` | `-mswap` | `-mbarrel-shifter` | Multiplier   |
 |-------------------|----------|----------|--------------------|--------------|
