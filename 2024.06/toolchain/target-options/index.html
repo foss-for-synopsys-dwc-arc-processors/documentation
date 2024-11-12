@@ -664,8 +664,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#values-of-mcpu-for-arc-hs5x-and-arc-hs6x-families" class="md-nav__link">
-    Values of -mcpu for ARC HS5x and ARC HS6x Families
+  <a href="#values-of-mcpu-for-arcv3" class="md-nav__link">
+    Values of -mcpu for ARCv3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-target-options-for-arcv3" class="md-nav__link">
+    General Target Options for ARCv3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fpu-target-options-for-arcv3" class="md-nav__link">
+    FPU Target Options for ARCv3
   </a>
   
 </li>
@@ -3236,8 +3250,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#values-of-mcpu-for-arc-hs5x-and-arc-hs6x-families" class="md-nav__link">
-    Values of -mcpu for ARC HS5x and ARC HS6x Families
+  <a href="#values-of-mcpu-for-arcv3" class="md-nav__link">
+    Values of -mcpu for ARCv3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-target-options-for-arcv3" class="md-nav__link">
+    General Target Options for ARCv3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fpu-target-options-for-arcv3" class="md-nav__link">
+    FPU Target Options for ARCv3
   </a>
   
 </li>
@@ -3824,40 +3852,324 @@ point instructions which cannot be enable using a particular target option.</li>
 </tbody>
 </table>
 <h2 id="arcv3-toolchain">ARCv3 Toolchain<a class="headerlink" href="#arcv3-toolchain" title="Permanent link">&para;</a></h2>
-<h3 id="values-of-mcpu-for-arc-hs5x-and-arc-hs6x-families">Values of <code>-mcpu</code> for ARC HS5x and ARC HS6x Families<a class="headerlink" href="#values-of-mcpu-for-arc-hs5x-and-arc-hs6x-families" title="Permanent link">&para;</a></h3>
+<h3 id="values-of-mcpu-for-arcv3">Values of <code>-mcpu</code> for ARCv3<a class="headerlink" href="#values-of-mcpu-for-arcv3" title="Permanent link">&para;</a></h3>
+<p>A specific ARCv3 family is selected by <code>-mcpu=</code> option. This option may be passed
+with these values: <code>hs5x</code>, <code>hs58</code>, <code>hs6x</code> and <code>hs68</code>. <code>hs5x</code> and <code>hs58</code>
+stand for ARC HS5x targets and <code>-mcpu=hs6x</code> or <code>-mcpu=hs68</code> stand for ARC HS6x
+targets. Each <code>-mcpu=</code> value selects a corresponding prebuilt library for
+linking with an application. Here is a list of <code>-mcpu=</code> values and corresponding
+default values selected for target options:</p>
 <table>
 <thead>
 <tr>
-<th><code>-mcpu=</code></th>
-<th><code>-msimd</code></th>
-<th><code>-m128</code></th>
-<th><code>-mll64</code></th>
+<th>Options</th>
+<th><code>-mcpu=hs5x</code></th>
+<th><code>-mcpu=hs58</code></th>
+<th><code>-mcpu=hs6x</code></th>
+<th><code>-mcpu=hs68</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>hs5x</code></td>
-<td>Y</td>
-<td>N/A</td>
-<td></td>
+<td><code>-m128</code></td>
+<td>—</td>
+<td>—</td>
+<td>Off</td>
+<td>On</td>
 </tr>
 <tr>
-<td><code>hs58</code></td>
-<td>Y</td>
-<td>N/A</td>
-<td>Y</td>
+<td><code>-mll64</code></td>
+<td>Off</td>
+<td>On</td>
+<td>—</td>
+<td>—</td>
 </tr>
 <tr>
-<td><code>hs6x</code></td>
-<td>Y</td>
-<td></td>
-<td>N/A</td>
+<td><code>-matomic=...</code></td>
+<td><code>1</code></td>
+<td><code>1</code></td>
+<td><code>1</code></td>
+<td><code>1</code></td>
 </tr>
 <tr>
-<td><code>hs68</code></td>
-<td>Y</td>
-<td>Y</td>
-<td>N/A</td>
+<td><code>-mbitscan</code></td>
+<td>On</td>
+<td>On</td>
+<td>On</td>
+<td>On</td>
+</tr>
+<tr>
+<td><code>-mcode-density</code></td>
+<td>On</td>
+<td>On</td>
+<td>On</td>
+<td>On</td>
+</tr>
+<tr>
+<td><code>-msimd</code></td>
+<td>On</td>
+<td>On</td>
+<td>On</td>
+<td>On</td>
+</tr>
+<tr>
+<td><code>-mdiv-rem</code></td>
+<td>On</td>
+<td>On</td>
+<td>On</td>
+<td>On</td>
+</tr>
+<tr>
+<td><code>-munaligned-access</code></td>
+<td>On</td>
+<td>On</td>
+<td>On</td>
+<td>On</td>
+</tr>
+<tr>
+<td><code>-mbbit</code></td>
+<td>Off</td>
+<td>Off</td>
+<td>Off</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><code>-mbrcc</code></td>
+<td>Off</td>
+<td>Off</td>
+<td>Off</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><code>-mfpu=...</code></td>
+<td><code>none</code></td>
+<td><code>none</code></td>
+<td><code>none</code></td>
+<td><code>none</code></td>
+</tr>
+<tr>
+<td><code>-mwide</code></td>
+<td>On</td>
+<td>On</td>
+<td>On</td>
+<td>On</td>
+</tr>
+<tr>
+<td><code>-mfpmov</code></td>
+<td>Off</td>
+<td>Off</td>
+<td>Off</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><code>-mvolatile-di</code></td>
+<td>Off</td>
+<td>Off</td>
+<td>Off</td>
+<td>Off</td>
+</tr>
+</tbody>
+</table>
+<h3 id="general-target-options-for-arcv3">General Target Options for ARCv3<a class="headerlink" href="#general-target-options-for-arcv3" title="Permanent link">&para;</a></h3>
+<p>Here is a table of target options for ARCv3 CPU families.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>GCC</th>
+<th>CCAC</th>
+<th>ARChitect</th>
+<th>nSIM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable 128-bit load and store operations (HS6x only)</td>
+<td><code>-m128</code></td>
+<td><code>-Xm128</code></td>
+<td><code>-m128_option</code></td>
+<td><code>-p nsim_isa_m128_option=1</code></td>
+</tr>
+<tr>
+<td>Enable 64-bit load and store operations (HS5x only)</td>
+<td><code>-mll64</code></td>
+<td><code>-Xll64</code></td>
+<td><code>-ll64_option</code></td>
+<td><code>-p nsim_isa_ll64_option=1</code></td>
+</tr>
+<tr>
+<td>Enable atomic instructions</td>
+<td><code>-matomic={0,1,2,3}</code></td>
+<td><code>-Xatomic={0,1,2,3}</code></td>
+<td><code>-atomic_option={0,1,2,3}</code></td>
+<td><code>-p nsim_isa_atomic_option={0,1,2,3}</code></td>
+</tr>
+<tr>
+<td>Enable <code>NORM</code>, <code>NORMH</code>, <code>FFS</code>, <code>FLS</code>, <code>NORML</code>, <code>FFSL</code> and <code>FLSL</code></td>
+<td><code>-mbitscan</code></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Enable code-density instructions</td>
+<td><code>-mcode-density</code></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Enable integer SIMD instructions</td>
+<td><code>-msimd</code></td>
+<td><code>-Xmpy_option=qmpyh</code></td>
+<td>—</td>
+<td><code>-p nsim_isa_mpy_option=9</code></td>
+</tr>
+<tr>
+<td>Enable <code>DIV</code> and <code>REM</code> instructions</td>
+<td><code>-mdiv-rem</code></td>
+<td><code>-Xdiv_rem=radix4</code></td>
+<td>—</td>
+<td><code>-p nsim_isa_div_rem_option=2</code></td>
+</tr>
+<tr>
+<td>Enable unaligned access for packed data</td>
+<td><code>-munaligned-access</code></td>
+<td><code>-Xunaligned</code></td>
+<td>—</td>
+<td><code>-p nsim_isa_unaligned_option=1</code></td>
+</tr>
+<tr>
+<td>Generate <code>BBITx</code> instructions during combiner step</td>
+<td><code>-mbbit</code></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Generate <code>BRcc</code> instructions during combiner step</td>
+<td><code>-mbrcc</code></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Enable uncached access for volatile memories</td>
+<td><code>-mvolatile-di</code></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fpu-target-options-for-arcv3">FPU Target Options for ARCv3<a class="headerlink" href="#fpu-target-options-for-arcv3" title="Permanent link">&para;</a></h3>
+<p><code>-mfpu=...</code> option enables a set of FPU features. When <code>-mfpu=none</code> is passed then FPU
+is turned off.</p>
+<p>Here is a list of single-presicion FPU features enabled by <code>-mfpu=fpus</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>CCAC</th>
+<th>ARChitect</th>
+<th>nSIM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single-precision instructions</td>
+<td><code>-Xfp_sp</code></td>
+<td><code>-has_fp</code></td>
+<td><code>-p nsim_isa_has_fp=1</code></td>
+</tr>
+<tr>
+<td>Half-precision instructions</td>
+<td><code>-Xfp_hp</code></td>
+<td><code>-fp_hp_option</code></td>
+<td><code>-p nsim_isa_fp_hp_option=1</code></td>
+</tr>
+<tr>
+<td>Division instructions</td>
+<td><code>-Xfp_div</code></td>
+<td><code>-fp_div_option</code></td>
+<td><code>-p nsim_isa_fp_div_option=1</code></td>
+</tr>
+<tr>
+<td>Vector instructions</td>
+<td><code>-Xfp_vec</code></td>
+<td><code>-fp_vec_option</code></td>
+<td><code>-p nsim_isa_fp_vec_option=1</code></td>
+</tr>
+</tbody>
+</table>
+<p>Here is a list of double-presicion FPU features enabled by <code>-mfpu=fpud</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>CCAC</th>
+<th>ARChitect</th>
+<th>nSIM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single-precision instructions</td>
+<td><code>-Xfp_sp</code></td>
+<td><code>-has_fp</code></td>
+<td><code>-p nsim_isa_has_fp=1</code></td>
+</tr>
+<tr>
+<td>Double-precision instructions</td>
+<td><code>-Xfp_dp</code></td>
+<td><code>-fp_dp_option</code></td>
+<td><code>-p nsim_isa_fp_dp_option=1</code></td>
+</tr>
+<tr>
+<td>Half-precision instructions</td>
+<td><code>-Xfp_hp</code></td>
+<td><code>-fp_hp_option</code></td>
+<td><code>-p nsim_isa_fp_hp_option=1</code></td>
+</tr>
+<tr>
+<td>Division instructions</td>
+<td><code>-Xfp_div</code></td>
+<td><code>-fp_div_option</code></td>
+<td><code>-p nsim_isa_fp_div_option=1</code></td>
+</tr>
+<tr>
+<td>Vector instructions</td>
+<td><code>-Xfp_vec</code></td>
+<td><code>-fp_vec_option</code></td>
+<td><code>-p nsim_isa_fp_vec_option=1</code></td>
+</tr>
+</tbody>
+</table>
+<p>Other FPU options:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>GCC</th>
+<th>CCAC</th>
+<th>ARChitect</th>
+<th>nSIM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable wide floating point SIMD support</td>
+<td><code>-mwide</code></td>
+<td><code>-Xfp_wide</code></td>
+<td><code>-fp_wide_option</code></td>
+<td><code>-p nsim_isa_fp_wide_option=1</code></td>
+</tr>
+<tr>
+<td>Use FPRs for memory operations like <code>memcpy</code> to free GPRs</td>
+<td><code>-mfpmov</code></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
 </tr>
 </tbody>
 </table>
