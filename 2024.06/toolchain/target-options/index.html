@@ -3343,7 +3343,7 @@ with default values for CPU families (On, Off or N/A).</p>
 <td>Off</td>
 </tr>
 <tr>
-<td><code>-rf16</code></td>
+<td><code>-mrf16</code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
 <td>Off</td>
 <td>Off</td>
 <td>Off</td>
@@ -3496,6 +3496,7 @@ definitions of CPU families with all available and default target options.</li>
 definitions of particular <code>-mcpu=&lt;core&gt;</code> targets.</li>
 </ul>
 <h3 id="values-of-mcpu-for-arc-hs3x-and-hs4x-families">Values of <code>-mcpu</code> for ARC HS3x and HS4x Families<a class="headerlink" href="#values-of-mcpu-for-arc-hs3x-and-hs4x-families" title="Permanent link">&para;</a></h3>
+<p>Each <code>-mcpu=</code> option selects a set of options in addition to default settings.</p>
 <table>
 <thead>
 <tr>
@@ -3566,7 +3567,7 @@ definitions of particular <code>-mcpu=&lt;core&gt;</code> targets.</li>
 </tr>
 </tbody>
 </table>
-<p>The above <code>-mcpu</code> values correspond to specific ARC EM Processor templates presented in the ARChitect tool.</p>
+<p>The above <code>-mcpu</code> values correspond to specific ARC HS processor templates presented in the ARChitect tool.</p>
 <ul>
 <li><code>-mcpu=hs</code> corresponds to a basic ARC HS with only atomic instructions enabled. It corresponds to
 the following ARC HS templates in ARChitect: <code>hs34_base</code>, <code>hs36_base</code> and <code>hs38_base</code>.</li>
@@ -3580,6 +3581,7 @@ instruction scheduling for specified processors.</li>
 <li><code>-mcpu=hs38_linux</code> is a full-featured ARC HS with additional support of double-precision FPU.</li>
 </ul>
 <h3 id="values-of-mcpu-for-arc-em-family">Values of <code>-mcpu</code> for ARC EM Family<a class="headerlink" href="#values-of-mcpu-for-arc-em-family" title="Permanent link">&para;</a></h3>
+<p>Each <code>-mcpu=</code> option selects a set of options in addition to default settings.</p>
 <table>
 <thead>
 <tr>
@@ -3703,15 +3705,15 @@ instruction scheduling for specified processors.</li>
 </tr>
 </tbody>
 </table>
-<p>The above <code>-mcpu</code> values correspond to specific ARC EM Processor templates presented in the ARChitect tool.
+<p>The above <code>-mcpu</code> values correspond to specific ARC EM processor templates presented in the ARChitect tool.
 It should be noted however that some ARC features are not currently supported in the GNU toolchain, for
-example DSP instruction support.</p>
+example DSP instructions.</p>
 <ul>
 <li><code>-mcpu=em</code> doesn't correspond to any specific template, it simply defines the base ARC EM configuration without any optional instructions.</li>
 <li><code>-mcpu=em_mini</code> is same as <code>em</code>, but uses reduced register file with only 16 core registers.</li>
 <li><code>-mcpu=em4</code> is a base ARC EM core configuration with <code>-mcode-density</code> option. It corresponds to
 the following ARC EM templates in ARChitect: <code>em4_mini</code>, <code>em4_sensor</code>, <code>em4_ecc</code>, <code>em6_mini</code>, <code>em5d_mini</code>,
-<code>em5d_mini_v3</code>, <code>em5d_nrg</code>, <code>em7d_nrg</code>, <code>em9d_mini</code>. Note that those mini templates have a reduced core register
+<code>em5d_mini_v3</code>, <code>em5d_nrg</code>, <code>em7d_nrg</code>, <code>em9d_mini</code>. Note that some of those mini templates have a reduced core register
 file, but <code>-mcpu=em4</code> doesn't enable this feature.</li>
 <li><code>-mcpu=arcem</code> doesn't correspond to any specific template, it is a legacy flag preserved for compatibility with
 older GNU toolchain versions, where <code>-mcpu</code> used to select only a CPU family, while optional features were enabled
@@ -3729,6 +3731,7 @@ It corresponds to the following ARC EM templates in ARChitect: <code>em4_dmips_f
 point instructions which cannot be enable using a particular target option.</li>
 </ul>
 <h3 id="values-of-mcpu-for-arc-600-and-700-families">Values of <code>-mcpu</code> for ARC 600 and 700 Families<a class="headerlink" href="#values-of-mcpu-for-arc-600-and-700-families" title="Permanent link">&para;</a></h3>
+<p>Each <code>-mcpu=</code> option selects a set of options in addition to default settings.</p>
 <table>
 <thead>
 <tr>
@@ -4173,6 +4176,14 @@ is turned off.</p>
 </tr>
 </tbody>
 </table>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Note that <code>-mrf16</code> may be used only with <code>-mcpu=em_mini</code> option.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

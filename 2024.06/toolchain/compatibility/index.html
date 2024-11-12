@@ -3217,14 +3217,14 @@
 <td><code>-arc64</code></td>
 <td><code>nsim_isa_family=arc64</code></td>
 <td><code>arc64-elf-gcc</code></td>
-<td><a href="../target-options/#arcv3-toolchain"><code>-mcpu=</code> values for ARC HS6x</a></td>
+<td><a href="../target-options/#values-of--mcpu-for-arcv3"><code>-mcpu=</code> values for ARC HS6x</a></td>
 </tr>
 <tr>
 <td>ARC HS5x</td>
 <td><code>-av3hs</code></td>
 <td><code>nsim_isa_family=av3hs</code></td>
 <td><code>arc64-elf-gcc</code></td>
-<td><a href="../target-options/#arcv3-toolchain"><code>-mcpu=</code> values for ARC HS5x</a></td>
+<td><a href="../target-options/#values-of--mcpu-for-arcv3"><code>-mcpu=</code> values for ARC HS5x</a></td>
 </tr>
 <tr>
 <td>ARC HS3x/4x</td>
@@ -3256,6 +3256,13 @@
 </tr>
 </tbody>
 </table>
+<p>Here is a list of recommended values for <code>-p nsim_isa_core=X</code> or <code>-coreX</code> options
+for running applications built with GCC:</p>
+<ul>
+<li>For ARC HS5x/6x targets - <code>-p nsim_isa_core=0</code> or <code>-core0</code></li>
+<li>For ARC HS3x/4x targets - <code>-p nsim_isa_core=4</code> or <code>-core4</code></li>
+<li>For ARC EM targets - <code>-p nsim_isa_core=6</code> or <code>-core6</code></li>
+</ul>
 <h2 id="general-configuration-options">General Configuration Options<a class="headerlink" href="#general-configuration-options" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -3292,9 +3299,9 @@
 <tr>
 <td>16 register file</td>
 <td><code>-rgf_num_regs=16</code></td>
-<td>N/A</td>
-<td><code>nsim_isa_rgf_num_regs=16</code></td>
 <td><code>-rf16</code></td>
+<td><code>nsim_isa_rgf_num_regs=16</code></td>
+<td><code>-mrf16</code></td>
 </tr>
 <tr>
 <td>Code density options</td>
@@ -3321,7 +3328,7 @@
 <td>64-bit load and store</td>
 <td><code>-ll64_option</code></td>
 <td><code>-Xll64</code></td>
-<td><code>nsim_isa_ll64_option=64</code></td>
+<td><code>nsim_isa_ll64_option=1</code></td>
 <td><code>-mll64</code></td>
 </tr>
 <tr>
