@@ -7,7 +7,7 @@ GCC option `-mcpu=` supports both `hs34` and `hs38` values, but they are differe
 more features, like `-mll64` which are not present in `hs34`. ARC HS IPlib template `hs38` doesn’t
 contain double-word load/store, therefore -mcpu=hs38 is not compatible with this template.
 `-mcpu=hs34`, however, is compatible and that is why TCF generator uses this value. Refer
-[Multiplication Options](../toolchain/mpy-options.md) page for a full list of possible `-mcpu`
+[Target Options](../toolchain/index.md) sections for a full list of possible `-mcpu`
 values and what IPlibrary templates they correspond to.
 
 ## There are `can’t resolve symbol` error messages when using `gdbserver` on Linux for ARC targets

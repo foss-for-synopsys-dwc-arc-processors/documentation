@@ -9,15 +9,15 @@ in **C/C++ Build** → **Settings** menu.
 **Target Processor** page allows to configure target specific options:
 
 * **Processor (-mcpu)** selects a preset of target options. Refer
-  [Target Specific Options](../../toolchain/target-options.md) guide for
+  [Target Options](../../toolchain/index.md) sections for
   information about all `-mcpu=...` values. Note that some `-mcpu=...` values
   may disable selectors for other options since they activate predefined
   values for target options.
 * **FPU** configures Floating Point Unit instructions. Refer
-  [Floating Point Unit Options](../../toolchain/fpu-options.md) for
+  [Target Options](../../toolchain/index.md) sections for
   information about all `-mfpu=...` values.
 * **Multiply instructions** configures multiplication instructions. Refer
-  [Multiplication Options](../../toolchain/mpy-options.md) for information
+  [Target Options](../../toolchain/index.md) sections for information
   about all `-mmpy-option=...` values.
 * **Use TCF** checkbox enables using a TCF file for configuring the compiler.
   The TCF file contains predefined GCC options. If **Use memory map from TCF**
@@ -29,7 +29,7 @@ in **C/C++ Build** → **Settings** menu.
     option values are consistent with CPU and you can specify there values that
     are weaker than CPU value requires. So please be careful when editing TCFs.
 
-Refer [Target Specific Options](../../toolchain/target-options.md) guide for
+Refer [Target Options](../../toolchain/index.md) sections for
 information about other target specific options available on **Target Processor**
 page.
 

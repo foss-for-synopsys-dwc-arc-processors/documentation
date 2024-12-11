@@ -7,11 +7,15 @@ a standard library. [Newlib](https://sourceware.org/newlib/) standard library
 is used for building baremetal applications. This table depicts which GCC driver
 should be used depending on ISA:
 
-| ISA       | Driver/Triplet  | Families       |
-|-----------|-----------------|----------------|
-| ARCompact | `arc-elf32-gcc` | ARC600, ARC700 |
-| ARCv2     | `arc-elf32-gcc` | ARC EM, ARC HS |
-| ARCv3     | `arc64-elf-gcc` | ARC HS5x/HS6x  |
+| ISA       | Driver/Triplet    | Driver/Triplet (alias) | Families           | Endianness |
+|-----------|-------------------|------------------------|--------------------|------------|
+| ARCv3     | `arc64-elf-gcc`   | `arc64-snps-elf-gcc`   | ARC HS6x, ARC HS5x | Little[^1] |
+| ARCv2     | `arc-elf32-gcc`   | `arc-snps-elf-gcc`     | ARC HS, ARC EM     | Little     |
+| ARCv2     | `arceb-elf32-gcc` | `arceb-snps-elf-gcc`   | ARC HS, ARC EM     | Big        |
+| ARCompact | `arc-elf32-gcc`   | `arc-snps-elf-gcc`     | ARC 700, ARC 600   | Little     |
+| ARCompact | `arceb-elf32-gcc` | `arceb-snps-elf-gcc`   | ARC 700, ARC 600   | Big        |
+
+[^1]: Big endian targets are not supported by GNU toolchain for ARCv3.
 
 Note that binaries for both ARCv1 and ARCv2 may be built using a single `arc-elf32-gcc` driver. It means
 that there is a single toolchain for two ISAs.

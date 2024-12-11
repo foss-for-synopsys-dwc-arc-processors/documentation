@@ -30,6 +30,8 @@ plugins:
 extra:
   version:
     provider: mike
+extra_css:
+  - css/extra.css
 markdown_extensions:
   - admonition
   - footnotes
@@ -52,11 +54,10 @@ nav:
     - home/faq.md
   - Toolchain:
     - toolchain/index.md
-    - General Topics:
-      - toolchain/target-options.md
-      - toolchain/mpy-options.md
-      - toolchain/fpu-options.md
-      - toolchain/compatibility.md
+    - Target Options:
+      - toolchain/options/arcv3.md
+      - toolchain/options/arcv2.md
+      - toolchain/options/arcompact.md
     - Advanced:
       - toolchain/advanced/optimizations.md
       - toolchain/advanced/custom-instructions.md
