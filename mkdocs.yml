@@ -68,6 +68,31 @@ nav:
       - toolchain/advanced/secure-shield.md
       - toolchain/advanced/small-data.md
       - toolchain/advanced/64-bit-operations.md
+    - Libraries:
+      - Audio:
+        - audio/index.md
+        - General:
+          - audio/overview.md
+          - audio/getting-started.md
+        - Codecs:
+          - audio/codecs.md
+          - audio/codec-bt-cvsd.md
+          - audio/codec-gsm-fr.md
+          - audio/codec-g711.md
+          - audio/codec-g722.md
+          - audio/codec-g726.md
+          - audio/codec-ldac.md
+      - Machine Learning:
+        - ml/index.md
+        - embARC MLI: ml/mli.md
+        - Caffe Framework for EV6x: ml/caffe-framework.md
+        - Caffe Models for EV6x: ml/caffe-models.md
+        - OpenCV for EV6x: ml/opencv.md
+        - GSL for EV6x: ml/gsl.md
+      - IoT:
+        - iot/index.md
+        - embARC OSP: iot/embarc-osp.md
+        - embARC BSP: iot/embarc-bsp.md
     - Testing:
       - toolchain/testing/dejagnu.md
       - toolchain/testing/glibc.md
@@ -150,27 +175,3 @@ nav:
       - eclipse/other/custom-gdb-server.md
       - eclipse/other/running-gdb-server.md
       - eclipse/other/building.md
-  - Audio:
-    - audio/index.md
-    - General:
-      - audio/overview.md
-      - audio/getting-started.md
-    - Codecs:
-      - audio/codecs.md
-      - audio/codec-bt-cvsd.md
-      - audio/codec-gsm-fr.md
-      - audio/codec-g711.md
-      - audio/codec-g722.md
-      - audio/codec-g726.md
-      - audio/codec-ldac.md
-  - Machine Learning:
-    - ml/index.md
-    - embARC MLI: ml/mli.md
-    - Caffe Framework for EV6x: ml/caffe-framework.md
-    - Caffe Models for EV6x: ml/caffe-models.md
-    - OpenCV for EV6x: ml/opencv.md
-    - GSL for EV6x: ml/gsl.md
-  - IoT:
-    - iot/index.md
-    - embARC OSP: iot/embarc-osp.md
-    - embARC BSP: iot/embarc-bsp.md
