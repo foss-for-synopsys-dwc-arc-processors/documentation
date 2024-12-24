@@ -3253,6 +3253,8 @@ all functionality of these tools stays in place and can be studied in detail in 
 <li>There is an issue in GCC that prevents matching <code>-march</code> configurations like <code>rv32imc</code> and <code>rv32im_zca</code>
   as compatible and interchangeable. Refer <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/issues/653">#653</a>
   for details.</li>
+<li>Using selective scheduler with a specific set of options may lead to incorrect code generation. Refer
+  <a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=118153">Bug 118153</a> for details.</li>
 </ul>
 
 
