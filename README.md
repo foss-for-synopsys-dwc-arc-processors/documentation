@@ -5,7 +5,7 @@ Markdown-based generator.
 
 `main` branch contains the latest documentation updates. After the release a
 separate branch must be created for it. Thus, `main` always contains the latest
-updates and a release branch (for example, `2023.09`) contains only a cutoff for
+updates and a release branch (for example, `2024.12`) contains only a cutoff for
 a particular release.
 
 ## Prepare Build Environment
@@ -36,27 +36,29 @@ Use `mike deploy` command to build and commit the documentation from the
 current branch to `gh-pages` branch:
 
 ```shell
-mike deploy 2023.09
+mike deploy 2024.12
 ```
 
 If you are ready to push it to the remote repository, then also use `--push`
 command:
 
 ```shell
-mike deploy --push 2023.09
+mike deploy --push 2024.12
 ```
 
 List all deployed documentation versions:
 
 ```shell
 $ mike list
+2024.12
+2024.06
 2023.09 [latest]
 ```
 
 Set the default version:
 
 ```shell
-mike set-default 2023.09
+mike set-default 2024.12
 ```
 
 ## Useful Resources
