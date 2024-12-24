@@ -72,7 +72,7 @@ $ nsimdrv -p nsim_isa_family=rv32 \
 3: three
 ```
 
-## Build and Run for Base RMX-500
+## Build and Run for Base RHX-100
 
 Build the application:
 
