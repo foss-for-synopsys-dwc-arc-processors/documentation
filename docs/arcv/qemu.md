@@ -3,14 +3,13 @@
 ## Installing QEMU
 
 It is best to use the latest official QEMU version for the following exercises. As of today,
-it's v9.2; see the release notes here: https://wiki.qemu.org/ChangeLog/9.2. The sources are on
-GitLab (https://gitlab.com/qemu-project/qemu) or in the official GitHub mirror (https://github.com/qemu/qemu).
+it's v9.2 (see [the release notes](https://wiki.qemu.org/ChangeLog/9.2)). The sources are on
+[GitLab](https://gitlab.com/qemu-project/qemu) or in [the official GitHub mirror](https://github.com/qemu/qemu).
 
 To get the latest version of QEMU on your system it might be much easier to build it from sources
 rather than trying to find a pre-built version which suits your host type and operating system.
 
-Instructions for building on Linux are on QEMU's Wiki: https://wiki.qemu.org/Hosts/Linux.
-
+Detailed instructions for building on Linux are on [QEMU's Wiki](https://wiki.qemu.org/Hosts/Linux).
 First you need to install required additional packages, which depend on the Linux distribution used on the host.
 
 For example, for Ubuntu 20.04 the following needs to be done:
