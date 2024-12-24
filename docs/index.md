@@ -9,6 +9,10 @@ various topics:
 * Development platforms for DesignWare ARC Processors
 * Linux for DesignWare ARC Processors
 
+There is a dedicated page for ARC-V targets:
+
+* [GNU Toolchain for ARC-V Targets](./arcv/index.md)
+
 Here is a list of other useful resources regarding Free and Open Source Software
 (FOSS) for DesignWare ARC Processors:
 

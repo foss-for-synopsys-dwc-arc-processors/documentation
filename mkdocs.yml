@@ -1,4 +1,4 @@
-site_name: embARC Documentation Site for ARC Classic
+site_name: embARC Documentation Site for ARC Classic and ARC-V
 repo_url: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain
 repo_name: GNU ARC Toolchain
 copyright: Copyright &copy; 2016 - 2025 Synopsys
@@ -175,3 +175,10 @@ nav:
       - eclipse/other/custom-gdb-server.md
       - eclipse/other/running-gdb-server.md
       - eclipse/other/building.md
+  - ARC-V:
+    - arcv/index.md
+    - arcv/building.md
+    - arcv/nsim.md
+    - arcv/qemu.md
+    - arcv/custom.md
+    - arcv/testing.md
