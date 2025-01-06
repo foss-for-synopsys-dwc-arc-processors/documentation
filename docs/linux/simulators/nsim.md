@@ -22,7 +22,7 @@ Clone a repository and create a build directory:
 git clone https://git.busybox.net/buildroot
 
 # ... or use a custom repository for support of ARCv3 targets
-git clone -b arc-2024.06 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
+git clone -b arc-2024.12 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
 cd buildroot
 ```
 
@@ -344,17 +344,19 @@ toolchain's installation path in this guide is a path that contains `bin` direct
 
 | ARC processors family | Standard library | Toolchain's installation path           | Version                            |
 |-----------------------|------------------|-----------------------------------------|------------------------------------|
-| ARC HS 6x             | glibc            | `/tools/toolchains/arc64-linux-gnu`     | [2024.06][arc64_glibc_toolchain]   |
-| ARC HS 5x             | uClibc-ng        | `/tools/toolchains/arc32-linux-uclibc`  | [2024.06][arc32_uclibc_toolchain]  |
-| ARC HS 3x/4x          | glibc            | `/tools/toolchains/arc-linux-gnu`       | [2024.06][archs_glibc_toolchain]   |
-| ARC HS 3x/4x          | uClibc-ng        | `/tools/toolchains/arc-linux-uclibc`    | [2024.06][archs_uclibc_toolchain]  |
-| ARC 700               | uClibc-ng        | `/tools/toolchains/arc700-linux-uclibc` | [2024.06][arc700_uclibc_toolchain] |
+| ARC HS 6x             | glibc            | `/tools/toolchains/arc64-linux-gnu`     | [2024.12][arc64_glibc_toolchain]   |
+| ARC HS 5x             | glibc            | `/tools/toolchains/arc32-linux-gnu`     | [2024.12][arc32_glibc_toolchain]   |
+| ARC HS 5x             | uClibc-ng        | `/tools/toolchains/arc32-linux-uclibc`  | [2024.12][arc32_uclibc_toolchain]  |
+| ARC HS 3x/4x          | glibc            | `/tools/toolchains/arc-linux-gnu`       | [2024.12][archs_glibc_toolchain]   |
+| ARC HS 3x/4x          | uClibc-ng        | `/tools/toolchains/arc-linux-uclibc`    | [2024.12][archs_uclibc_toolchain]  |
+| ARC 700               | uClibc-ng        | `/tools/toolchains/arc700-linux-uclibc` | [2024.12][arc700_uclibc_toolchain] |
 
-[arc64_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.06-rc1/arc_gnu_2024.06-rc1_prebuilt_arc64_glibc_linux_install.tar.bz2
-[arc32_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.06-rc1/arc_gnu_2024.06-rc1_prebuilt_arc32_uclibc_linux_install.tar.bz2
-[archs_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.06-rc1/arc_gnu_2024.06-rc1_prebuilt_glibc_le_archs_linux_install.tar.bz2
-[archs_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.06-rc1/arc_gnu_2024.06-rc1_prebuilt_uclibc_le_archs_linux_install.tar.bz2
-[arc700_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.06-rc1/arc_gnu_2024.06-rc1_prebuilt_uclibc_le_arc700_linux_install.tar.bz2
+[arc64_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.12-rc1/arc_gnu_2024.12-rc1_prebuilt_arc64_glibc_linux_install.tar.xz
+[arc32_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.12-rc1/arc_gnu_2024.12-rc1_prebuilt_arc32_glibc_linux_install.tar.xz
+[arc32_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.12-rc1/arc_gnu_2024.12-rc1_prebuilt_arc32_uclibc_linux_install.tar.xz
+[archs_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.12-rc1/arc_gnu_2024.12-rc1_prebuilt_glibc_le_archs_linux_install.tar.xz
+[archs_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.12-rc1/arc_gnu_2024.12-rc1_prebuilt_uclibc_le_archs_linux_install.tar.xz
+[arc700_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.12-rc1/arc_gnu_2024.12-rc1_prebuilt_uclibc_le_arc700_linux_install.tar.xz
 
 ### ARC HS 3x/4x with glibc
 
@@ -480,6 +482,45 @@ BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16=y
 BR2_TOOLCHAIN_EXTERNAL_WCHAR=y
 BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
 BR2_TOOLCHAIN_EXTERNAL_CXX=y
+# BR2_STRIP_strip is not set
+BR2_ROOTFS_POST_IMAGE_SCRIPT="board/synopsys/arc64/post-image.sh"
+BR2_ROOTFS_POST_SCRIPT_ARGS="$(LINUX_DIR)"
+BR2_LINUX_KERNEL=y
+BR2_LINUX_KERNEL_CUSTOM_GIT=y
+BR2_LINUX_KERNEL_CUSTOM_REPO_URL="https://github.com/foss-for-synopsys-dwc-arc-processors/linux.git"
+BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION="arc64"
+BR2_LINUX_KERNEL_DEFCONFIG="haps_hs5x"
+BR2_LINUX_KERNEL_IMAGE_TARGET_CUSTOM=y
+BR2_LINUX_KERNEL_IMAGE_TARGET_NAME="loader"
+BR2_TARGET_ROOTFS_INITRAMFS=y
+```
+
+Build a Linux image:
+
+```shell
+make defconfig DEFCONFIG=defconfig
+make
+```
+
+### ARC HS5x with glibc
+
+We use `haps_hs5x` configuration file for the Linux kernel - it corresponds to
+a single core (UP) configuration. Here is a corresponding configuration file for Buildroot:
+
+```shell
+BR2_arcle=y
+BR2_arc32=y
+BR2_TOOLCHAIN_EXTERNAL=y
+BR2_TOOLCHAIN_EXTERNAL_CUSTOM=y
+BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC=y
+BR2_TOOLCHAIN_EXTERNAL_PATH="/tools/toolchains/arc32-linux-gnu"
+BR2_TOOLCHAIN_EXTERNAL_GCC_14=y
+BR2_TOOLCHAIN_EXTERNAL_INET_RPC=n
+BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16=y
+BR2_TOOLCHAIN_EXTERNAL_WCHAR=y
+BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
+BR2_TOOLCHAIN_EXTERNAL_CXX=y
+BR2_TOOLCHAIN_EXTERNAL_FORTRAN=y
 # BR2_STRIP_strip is not set
 BR2_ROOTFS_POST_IMAGE_SCRIPT="board/synopsys/arc64/post-image.sh"
 BR2_ROOTFS_POST_SCRIPT_ARGS="$(LINUX_DIR)"

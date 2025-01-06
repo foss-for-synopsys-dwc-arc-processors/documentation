@@ -51,7 +51,7 @@ Here is a table of kernel versions for different toolchain releases:
 
 | Toolchain release | Linux headers version |
 |-------------------|-----------------------|
-| 2024.06 — 2022.09 | 5.16                  |
+| 2024.12 — 2022.09 | 5.16                  |
 | 2021.09 — 2021.03 | 5.1                   |
 | 2020.09           | 5.7                   |
 | 2020.03 — 2018.03 | 4.15                  |
@@ -62,14 +62,14 @@ Here is a table of kernel versions for different toolchain releases:
 | 2015.12 — 2015.06 | 3.18                  |
 | earlier           | 3.13                  |
 
-## Options for 2024.06 Toolchain Release
+## Options for 2024.12 Toolchain Release
 
 !!! note
 
     RPC support must be explicitly disabled since Buildroot configurator
     may enable it by default.
 
-### Release 2024.06 for HS6x Family (glibc-based)
+### Options for HS6x Family (glibc-based)
 
 Additional options for the toolchain:
 
@@ -95,7 +95,7 @@ BR2_TOOLCHAIN_EXTERNAL_CXX=y
 BR2_TOOLCHAIN_EXTERNAL_FORTRAN=y
 ```
 
-### Release 2024.06 for HS5x Family (uClibc-based)
+### Options for HS5x Family (uClibc-based)
 
 Additional options for the toolchain:
 
@@ -121,7 +121,7 @@ BR2_TOOLCHAIN_EXTERNAL_INET_RPC=n
 BR2_TOOLCHAIN_EXTERNAL_CXX=y
 ```
 
-### Release 2024.06 for HS3x/4x Families (glibc-based)
+### Options for HS3x/4x Families (glibc-based)
 
 Additional options for the toolchain:
 
@@ -147,7 +147,7 @@ BR2_TOOLCHAIN_EXTERNAL_CXX=y
 BR2_TOOLCHAIN_EXTERNAL_FORTRAN=y
 ```
 
-### Release 2024.06 for HS3x/4x Families (uClibc-based)
+### Options for HS3x/4x Families (uClibc-based)
 
 Additional options for uClibc-based toolchain:
 
@@ -175,7 +175,7 @@ BR2_TOOLCHAIN_EXTERNAL_CXX=y
 BR2_TOOLCHAIN_EXTERNAL_FORTRAN=y
 ```
 
-### Release 2024.06 for ARC700 Family (uClibc-based)
+### Options for ARC700 Family (uClibc-based)
 
 Additional options for uClibc-based toolchain:
 
@@ -193,145 +193,6 @@ Configuration file lines:
 
 ```text
 BR2_TOOLCHAIN_EXTERNAL_GCC_14=y
-BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16=y
-BR2_TOOLCHAIN_EXTERNAL_CUSTOM_UCLIBC=y
-BR2_TOOLCHAIN_EXTERNAL_WCHAR=y
-BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
-BR2_TOOLCHAIN_EXTERNAL_INET_RPC=n
-BR2_TOOLCHAIN_EXTERNAL_CXX=y
-```
-
-## Options for 2023.09 Toolchain Release
-
-!!! note
-
-    RPC support must be explicitly disabled since Buildroot configurator
-    may enable it by default.
-
-### Release 2023.09 for HS6x Family (glibc-based)
-
-Additional options for the toolchain:
-
-```text
-Toolchain -> External toolchain gcc version -> 13.x
-             External toolchain kernel headers series -> 5.16.x
-             External toolchain C library -> glibc
-             [*] Toolchain has SSP support?
-             [ ] Toolchain has RPC support?
-             [*] Toolchain has C++ support?
-             [*] Toolchain has Fortran support?
-```
-
-Configuration file lines:
-
-```text
-BR2_TOOLCHAIN_EXTERNAL_GCC_13=y
-BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16=y
-BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC=y
-BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
-BR2_TOOLCHAIN_EXTERNAL_INET_RPC=n
-BR2_TOOLCHAIN_EXTERNAL_CXX=y
-BR2_TOOLCHAIN_EXTERNAL_FORTRAN=y
-```
-
-### Release 2023.09 for HS5x Family (uClibc-based)
-
-Additional options for the toolchain:
-
-```text
-Toolchain -> External toolchain gcc version -> 13.x
-             External toolchain kernel headers series -> 5.16.x
-             External toolchain C library -> uClibc/uClibc-ng
-             [*] Toolchain has WCHAR support?
-             [*] Toolchain has SSP support?
-             [ ] Toolchain has RPC support?
-             [*] Toolchain has C++ support?
-```
-
-Configuration file lines:
-
-```text
-BR2_TOOLCHAIN_EXTERNAL_GCC_13=y
-BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16=y
-BR2_TOOLCHAIN_EXTERNAL_CUSTOM_UCLIBC=y
-BR2_TOOLCHAIN_EXTERNAL_WCHAR=y
-BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
-BR2_TOOLCHAIN_EXTERNAL_INET_RPC=n
-BR2_TOOLCHAIN_EXTERNAL_CXX=y
-```
-
-### Release 2023.09 for HS3x/4x Families (glibc-based)
-
-Additional options for the toolchain:
-
-```text
-Toolchain -> External toolchain gcc version -> 13.x
-             External toolchain kernel headers series -> 5.16.x
-             External toolchain C library -> glibc
-             [*] Toolchain has SSP support?
-             [ ] Toolchain has RPC support?
-             [*] Toolchain has C++ support?
-             [*] Toolchain has Fortran support?
-```
-
-Configuration file lines:
-
-```text
-BR2_TOOLCHAIN_EXTERNAL_GCC_13=y
-BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16=y
-BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC=y
-BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
-BR2_TOOLCHAIN_EXTERNAL_INET_RPC=n
-BR2_TOOLCHAIN_EXTERNAL_CXX=y
-BR2_TOOLCHAIN_EXTERNAL_FORTRAN=y
-```
-
-### Release 2023.09 for HS3x/4x Families (uClibc-based)
-
-Additional options for uClibc-based toolchain:
-
-```text
-Toolchain -> External toolchain gcc version -> 13.x
-             External toolchain kernel headers series -> 5.16.x
-             External toolchain C library -> uClibc/uClibc-ng
-             [*] Toolchain has WCHAR support?
-             [*] Toolchain has SSP support?
-             [ ] Toolchain has RPC support?
-             [*] Toolchain has C++ support?
-             [*] Toolchain has Fortran support?
-```
-
-Configuration file lines:
-
-```text
-BR2_TOOLCHAIN_EXTERNAL_GCC_13=y
-BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16=y
-BR2_TOOLCHAIN_EXTERNAL_CUSTOM_UCLIBC=y
-BR2_TOOLCHAIN_EXTERNAL_WCHAR=y
-BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
-BR2_TOOLCHAIN_EXTERNAL_INET_RPC=n
-BR2_TOOLCHAIN_EXTERNAL_CXX=y
-BR2_TOOLCHAIN_EXTERNAL_FORTRAN=y
-```
-
-### Release 2023.09 for ARC700 Family (uClibc-based)
-
-Additional options for uClibc-based toolchain:
-
-```text
-Toolchain -> External toolchain gcc version -> 13.x
-             External toolchain kernel headers series -> 5.16.x
-             External toolchain C library -> uClibc/uClibc-ng
-             [*] Toolchain has WCHAR support?
-             [*] Toolchain has SSP support?
-             [ ] Toolchain has RPC support?
-             [*] Toolchain has C++ support?
-```
-
-Configuration file lines:
-
-```text
-BR2_TOOLCHAIN_EXTERNAL_GCC_13=y
 BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16=y
 BR2_TOOLCHAIN_EXTERNAL_CUSTOM_UCLIBC=y
 BR2_TOOLCHAIN_EXTERNAL_WCHAR=y

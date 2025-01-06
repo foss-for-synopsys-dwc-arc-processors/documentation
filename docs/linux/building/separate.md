@@ -17,7 +17,7 @@ Clone Buildroot:
 # Clone the latest Buildroot
 git clone https://git.busybox.net/buildroot
 # ... or use a custom repository for support of ARCv3 targets
-git clone https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
+git clone -b arc-2024.12 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
 cd buildroot
 ```
 
@@ -47,7 +47,7 @@ Toolchain -> Toolchain type -> (X) External toolchain
           -> (X) Custom toolchain
           -> Toolchain origin -> (X) Pre-installed toolchain
           -> Toolchain path -> /tools/toolchains/arc-linux-gnu
-          -> External toolchain gcc version -> (X) 12.x
+          -> External toolchain gcc version -> (X) 14.x
           -> External toolchain kernel headers series -> (X) 5.16.x
           -> External toolchain C library -> (X) glibc
           -> [ ] Toolchain has RPC support?

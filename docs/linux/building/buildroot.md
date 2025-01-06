@@ -14,7 +14,7 @@ Upstream Buildroot does not support ARCv3 families. If you are going to build Li
 consider using a separate Synopsys repository with patches for support of ARC HS5x and ARC HS6x:
 
 ```shell
-git clone https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
+git clone -b arc-2024.12 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
 cd buildroot
 ```
 
