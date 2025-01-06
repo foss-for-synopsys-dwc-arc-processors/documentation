@@ -2122,6 +2122,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#arc-hs5x-with-glibc" class="md-nav__link">
+    ARC HS5x with glibc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#arc-hs6x-with-glibc" class="md-nav__link">
     ARC HS6x with glibc
   </a>
@@ -3400,6 +3407,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#arc-hs5x-with-glibc" class="md-nav__link">
+    ARC HS5x with glibc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#arc-hs6x-with-glibc" class="md-nav__link">
     ARC HS6x with glibc
   </a>
@@ -3449,7 +3463,7 @@ instead of <code>-prop=nsim_mem-dev=&lt;...&gt;</code> property presented in the
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://git.busybox.net/buildroot
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># ... or use a custom repository for support of ARCv3 targets</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>arc-2024.06<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>arc-2024.12<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">cd</span><span class="w"> </span>buildroot
 </span></code></pre></div>
 <h2 id="building-images-without-a-preinstalled-toolchain">Building Images Without a Preinstalled Toolchain<a class="headerlink" href="#building-images-without-a-preinstalled-toolchain" title="Permanent link">&para;</a></h2>
@@ -3717,31 +3731,37 @@ toolchain's installation path in this guide is a path that contains <code>bin</c
 <td>ARC HS 6x</td>
 <td>glibc</td>
 <td><code>/tools/toolchains/arc64-linux-gnu</code></td>
-<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.06-rc1/arc_gnu_2024.06-rc1_prebuilt_arc64_glibc_linux_install.tar.bz2">2024.06</a></td>
+<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.12-rc1/arc_gnu_2024.12-rc1_prebuilt_arc64_glibc_linux_install.tar.xz">2024.12</a></td>
+</tr>
+<tr>
+<td>ARC HS 5x</td>
+<td>glibc</td>
+<td><code>/tools/toolchains/arc32-linux-gnu</code></td>
+<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.12-rc1/arc_gnu_2024.12-rc1_prebuilt_arc32_glibc_linux_install.tar.xz">2024.12</a></td>
 </tr>
 <tr>
 <td>ARC HS 5x</td>
 <td>uClibc-ng</td>
 <td><code>/tools/toolchains/arc32-linux-uclibc</code></td>
-<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.06-rc1/arc_gnu_2024.06-rc1_prebuilt_arc32_uclibc_linux_install.tar.bz2">2024.06</a></td>
+<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.12-rc1/arc_gnu_2024.12-rc1_prebuilt_arc32_uclibc_linux_install.tar.xz">2024.12</a></td>
 </tr>
 <tr>
 <td>ARC HS 3x/4x</td>
 <td>glibc</td>
 <td><code>/tools/toolchains/arc-linux-gnu</code></td>
-<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.06-rc1/arc_gnu_2024.06-rc1_prebuilt_glibc_le_archs_linux_install.tar.bz2">2024.06</a></td>
+<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.12-rc1/arc_gnu_2024.12-rc1_prebuilt_glibc_le_archs_linux_install.tar.xz">2024.12</a></td>
 </tr>
 <tr>
 <td>ARC HS 3x/4x</td>
 <td>uClibc-ng</td>
 <td><code>/tools/toolchains/arc-linux-uclibc</code></td>
-<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.06-rc1/arc_gnu_2024.06-rc1_prebuilt_uclibc_le_archs_linux_install.tar.bz2">2024.06</a></td>
+<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.12-rc1/arc_gnu_2024.12-rc1_prebuilt_uclibc_le_archs_linux_install.tar.xz">2024.12</a></td>
 </tr>
 <tr>
 <td>ARC 700</td>
 <td>uClibc-ng</td>
 <td><code>/tools/toolchains/arc700-linux-uclibc</code></td>
-<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.06-rc1/arc_gnu_2024.06-rc1_prebuilt_uclibc_le_arc700_linux_install.tar.bz2">2024.06</a></td>
+<td><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.12-rc1/arc_gnu_2024.12-rc1_prebuilt_uclibc_le_arc700_linux_install.tar.xz">2024.12</a></td>
 </tr>
 </tbody>
 </table>
@@ -3863,15 +3883,15 @@ a single core (UP) configuration. Here is a corresponding configuration file for
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>make<span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>defconfig
 </span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>make
 </span></code></pre></div>
-<h3 id="arc-hs6x-with-glibc">ARC HS6x with glibc<a class="headerlink" href="#arc-hs6x-with-glibc" title="Permanent link">&para;</a></h3>
-<p>We use <code>haps_arc64</code> configuration file for the Linux kernel - it corresponds to
+<h3 id="arc-hs5x-with-glibc">ARC HS5x with glibc<a class="headerlink" href="#arc-hs5x-with-glibc" title="Permanent link">&para;</a></h3>
+<p>We use <code>haps_hs5x</code> configuration file for the Linux kernel - it corresponds to
 a single core (UP) configuration. Here is a corresponding configuration file for Buildroot:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nv">BR2_arcle</span><span class="o">=</span>y
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nv">BR2_arc64</span><span class="o">=</span>y
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nv">BR2_arc32</span><span class="o">=</span>y
 </span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
 </span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
 </span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC</span><span class="o">=</span>y
-</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc64-linux-gnu&quot;</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc32-linux-gnu&quot;</span>
 </span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
 </span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_INET_RPC</span><span class="o">=</span>n
 </span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
@@ -3886,7 +3906,7 @@ a single core (UP) configuration. Here is a corresponding configuration file for
 </span><span id="__span-26-18"><a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_GIT</span><span class="o">=</span>y
 </span><span id="__span-26-19"><a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_URL</span><span class="o">=</span><span class="s2">&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux.git&quot;</span>
 </span><span id="__span-26-20"><a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION</span><span class="o">=</span><span class="s2">&quot;arc64&quot;</span>
-</span><span id="__span-26-21"><a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;haps_arc64&quot;</span>
+</span><span id="__span-26-21"><a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;haps_hs5x&quot;</span>
 </span><span id="__span-26-22"><a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a><span class="nv">BR2_LINUX_KERNEL_IMAGE_TARGET_CUSTOM</span><span class="o">=</span>y
 </span><span id="__span-26-23"><a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a><span class="nv">BR2_LINUX_KERNEL_IMAGE_TARGET_NAME</span><span class="o">=</span><span class="s2">&quot;loader&quot;</span>
 </span><span id="__span-26-24"><a id="__codelineno-26-24" name="__codelineno-26-24" href="#__codelineno-26-24"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
@@ -3894,6 +3914,38 @@ a single core (UP) configuration. Here is a corresponding configuration file for
 <p>Build a Linux image:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>make<span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>defconfig
 </span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>make
+</span></code></pre></div>
+<h3 id="arc-hs6x-with-glibc">ARC HS6x with glibc<a class="headerlink" href="#arc-hs6x-with-glibc" title="Permanent link">&para;</a></h3>
+<p>We use <code>haps_arc64</code> configuration file for the Linux kernel - it corresponds to
+a single core (UP) configuration. Here is a corresponding configuration file for Buildroot:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nv">BR2_arcle</span><span class="o">=</span>y
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="nv">BR2_arc64</span><span class="o">=</span>y
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC</span><span class="o">=</span>y
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc64-linux-gnu&quot;</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_INET_RPC</span><span class="o">=</span>n
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_WCHAR</span><span class="o">=</span>y
+</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HAS_SSP</span><span class="o">=</span>y
+</span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
+</span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_FORTRAN</span><span class="o">=</span>y
+</span><span id="__span-28-14"><a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a><span class="c1"># BR2_STRIP_strip is not set</span>
+</span><span id="__span-28-15"><a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a><span class="nv">BR2_ROOTFS_POST_IMAGE_SCRIPT</span><span class="o">=</span><span class="s2">&quot;board/synopsys/arc64/post-image.sh&quot;</span>
+</span><span id="__span-28-16"><a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a><span class="nv">BR2_ROOTFS_POST_SCRIPT_ARGS</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>LINUX_DIR<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-28-17"><a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
+</span><span id="__span-28-18"><a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_GIT</span><span class="o">=</span>y
+</span><span id="__span-28-19"><a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_URL</span><span class="o">=</span><span class="s2">&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux.git&quot;</span>
+</span><span id="__span-28-20"><a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION</span><span class="o">=</span><span class="s2">&quot;arc64&quot;</span>
+</span><span id="__span-28-21"><a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;haps_arc64&quot;</span>
+</span><span id="__span-28-22"><a id="__codelineno-28-22" name="__codelineno-28-22" href="#__codelineno-28-22"></a><span class="nv">BR2_LINUX_KERNEL_IMAGE_TARGET_CUSTOM</span><span class="o">=</span>y
+</span><span id="__span-28-23"><a id="__codelineno-28-23" name="__codelineno-28-23" href="#__codelineno-28-23"></a><span class="nv">BR2_LINUX_KERNEL_IMAGE_TARGET_NAME</span><span class="o">=</span><span class="s2">&quot;loader&quot;</span>
+</span><span id="__span-28-24"><a id="__codelineno-28-24" name="__codelineno-28-24" href="#__codelineno-28-24"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
+</span></code></pre></div>
+<p>Build a Linux image:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>make<span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>defconfig
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>make
 </span></code></pre></div>
 
 
