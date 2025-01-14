@@ -19,7 +19,7 @@ Clone a repository and create a build directory:
 
 ```shell
 # Clone the latest Buildroot
-git clone https://git.busybox.net/buildroot
+git clone -b 2024.11.1 https://git.busybox.net/buildroot
 
 # ... or use a custom repository for support of ARCv3 targets
 git clone -b arc-2024.12 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
@@ -520,7 +520,6 @@ BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16=y
 BR2_TOOLCHAIN_EXTERNAL_WCHAR=y
 BR2_TOOLCHAIN_EXTERNAL_HAS_SSP=y
 BR2_TOOLCHAIN_EXTERNAL_CXX=y
-BR2_TOOLCHAIN_EXTERNAL_FORTRAN=y
 # BR2_STRIP_strip is not set
 BR2_ROOTFS_POST_IMAGE_SCRIPT="board/synopsys/arc64/post-image.sh"
 BR2_ROOTFS_POST_SCRIPT_ARGS="$(LINUX_DIR)"

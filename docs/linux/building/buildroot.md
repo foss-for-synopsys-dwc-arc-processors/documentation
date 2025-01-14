@@ -6,7 +6,7 @@ Stable Buildroot releases are published every three months. Tarballs are availab
 (<http://buildroot.org/downloads/>). However, you can clone an upstream Git repository:
 
 ```shell
-git clone https://git.busybox.net/buildroot
+git clone -b 2024.11.1 https://git.busybox.net/buildroot
 cd buildroot
 ```
 

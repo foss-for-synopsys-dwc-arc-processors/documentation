@@ -24,7 +24,7 @@ sudo apt install xterm libgl1-mesa-dri libsdl1.2debian
 Clone the latest Buildroot:
 
 ```shell
-git clone https://git.busybox.net/buildroot
+git clone -b 2024.11.1 https://git.busybox.net/buildroot
 cd buildroot
 ```
 

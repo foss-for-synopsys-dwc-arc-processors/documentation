@@ -72,7 +72,7 @@ $ make defconfig DEFCONFIG=my_defconfig
 It's a good practice to build Linux images out of the main source tree:
 
 ```shell
-git clone https://git.busybox.net/buildroot
+git clone -b 2024.11.1 https://git.busybox.net/buildroot
 mkdir buildroot/build
 cd buildroot/build
 make -C .. O=$(pwd) snps_archs38_haps_defconfig
