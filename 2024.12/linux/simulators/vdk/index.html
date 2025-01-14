@@ -3309,7 +3309,7 @@ Ubuntu 18.04 is used as a host system.</p>
 </span></code></pre></div>
 <h2 id="build-linux-kernel-and-filesystem-image">Build Linux Kernel and Filesystem Image<a class="headerlink" href="#build-linux-kernel-and-filesystem-image" title="Permanent link">&para;</a></h2>
 <p>Clone the latest Buildroot:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://git.busybox.net/buildroot
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span><span class="m">2024</span>.11.1<span class="w"> </span>https://git.busybox.net/buildroot
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>buildroot
 </span></code></pre></div>
 <p>Filesystem images must not be linked against Linux kernel for running on VDK. Also,

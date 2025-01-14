@@ -3308,6 +3308,12 @@
 
 
 <h1 id="getting-started-with-nsim">Getting Started with nSIM<a class="headerlink" href="#getting-started-with-nsim" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Eclipse IDE for ARCompact targets does not support selecting a value for <code>-specs=</code> option in project's configuration menu.
+By default, it's not passed to the linker and input/output capabilities are not available. Consider passing <code>-specs=nsim.specs</code>
+through <strong>ARC GNU Linker</strong> field of project's configuration dialog (<strong>C/C++ Build</strong> -&gt; <strong>Settings</strong> -&gt; <strong>Top Settings</strong> -&gt; <strong>ARC GNU Linker</strong>).</p>
+</div>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>You should have nSIM installed on your computer. You also might need to set
 environment variable <code>LM_LICENSE_FILE=&lt;your_license&gt;</code> in case if you have
