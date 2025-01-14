@@ -1,5 +1,11 @@
 # Getting Started with nSIM
 
+!!! warning
+
+    Eclipse IDE for ARCompact targets does not support selecting a value for `-specs=` option in project's configuration menu.
+    By default, it's not passed to the linker and input/output capabilities are not available. Consider passing `-specs=nsim.specs`
+    through **ARC GNU Linker** field of project's configuration dialog (**C/C++ Build** -> **Settings** -> **Top Settings** -> **ARC GNU Linker**).
+
 ## Prerequisites
 
 You should have nSIM installed on your computer. You also might need to set
