@@ -3,7 +3,7 @@
 ## Installing QEMU
 
 It is best to use the latest official QEMU version for the following exercises. As of today,
-it's v9.2 (see [the release notes](https://wiki.qemu.org/ChangeLog/9.2)). The sources are on
+it's v9.0 (see [the release notes](https://wiki.qemu.org/ChangeLog/9.0)). The sources are on
 [GitLab](https://gitlab.com/qemu-project/qemu) or in [the official GitHub mirror](https://github.com/qemu/qemu).
 
 To get the latest version of QEMU on your system it might be much easier to build it from sources
@@ -29,8 +29,8 @@ $ dnf install git glib2-devel libfdt-devel pixman-devel zlib-devel \
 After installation of prerequisites you can download sources, configure, and build in the following way:
 
 ```
-# Clone v9.2 from GitHub repository
-$ git clone --depth 1 -b stable-9.2 https://github.com/qemu/qemu.git
+# Clone v9.0 from GitHub repository
+$ git clone --depth 1 -b stable-9.0 https://github.com/qemu/qemu.git
 
 # Configure project for build selecting only RISCV32 full system emulation
 $ ./configure --target-list=riscv32-softmmu,riscv64-softmmu
