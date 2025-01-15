@@ -3322,7 +3322,7 @@
 <h1 id="running-on-qemu">Running on QEMU<a class="headerlink" href="#running-on-qemu" title="Permanent link">&para;</a></h1>
 <h2 id="installing-qemu">Installing QEMU<a class="headerlink" href="#installing-qemu" title="Permanent link">&para;</a></h2>
 <p>It is best to use the latest official QEMU version for the following exercises. As of today,
-it's v9.2 (see <a href="https://wiki.qemu.org/ChangeLog/9.2">the release notes</a>). The sources are on
+it's v9.0 (see <a href="https://wiki.qemu.org/ChangeLog/9.0">the release notes</a>). The sources are on
 <a href="https://gitlab.com/qemu-project/qemu">GitLab</a> or in <a href="https://github.com/qemu/qemu">the official GitHub mirror</a>.</p>
 <p>To get the latest version of QEMU on your system it might be much easier to build it from sources
 rather than trying to find a pre-built version which suits your host type and operating system.</p>
@@ -3337,8 +3337,8 @@ First you need to install required additional packages, which depend on the Linu
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>              bzip2 ninja-build python3 python38
 </span></code></pre></div>
 <p>After installation of prerequisites you can download sources, configure, and build in the following way:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># Clone v9.2 from GitHub repository
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$ git clone --depth 1 -b stable-9.2 https://github.com/qemu/qemu.git
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># Clone v9.0 from GitHub repository
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$ git clone --depth 1 -b stable-9.0 https://github.com/qemu/qemu.git
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a># Configure project for build selecting only RISCV32 full system emulation
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>$ ./configure --target-list=riscv32-softmmu,riscv64-softmmu
