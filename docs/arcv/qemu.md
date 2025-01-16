@@ -99,7 +99,7 @@ $ qemu-system-riscv32 \
         -semihosting \
         -nographic \
         -machine virt \
-        -cpu rv32,f=off,d=off,zce=on,zba=on,zbb=on,zbs=on \
+        -cpu rv32,f=off,zfa=off,d=off,zce=on,zba=on,zbb=on,zbs=on \
         -bios none \
         -kernel args.elf \
         -append "one two three"
@@ -136,7 +136,7 @@ $ qemu-system-riscv32 \
         -semihosting \
         -nographic \
         -machine virt \
-        -cpu rv32,f=off,d=off,zce=on,zba=on,zbb=on,zbs=on \
+        -cpu rv32,f=off,zfa=off,d=off,zce=on,zba=on,zbb=on,zbs=on \
         -bios none \
         -kernel args.elf \
         -append "one two three"
@@ -173,7 +173,7 @@ $ qemu-system-riscv32 \
         -semihosting \
         -nographic \
         -machine virt \
-        -cpu rv32,f=off,d=off,m=on,a=on,zca=on,zcb=on,zcmp=on,zba=on,zbb=on,zbs=on \
+        -cpu rv32,f=off,zfa=off,d=off,m=on,a=on,zca=on,zcb=on,zcmp=on,zba=on,zbb=on,zbs=on \
         -bios none \
         -kernel args.elf \
         -append "one two three"
@@ -211,7 +211,7 @@ $ qemu-system-riscv64 \
         -semihosting \
         -nographic \
         -machine virt \
-        -cpu rv64,f=off,d=off,m=on,a=on,zca=on,zcb=on,zba=on,zbb=on,zbs=on \
+        -cpu rv64,f=off,zfa=off,d=off,m=on,a=on,zca=on,zcb=on,zba=on,zbb=on,zbs=on \
         -bios none \
         -kernel args.elf \
         -append "one two three"
@@ -255,7 +255,7 @@ $ qemu-system-riscv32 \
         -semihosting \
         -nographic \
         -machine virt \
-        -cpu rv32,f=off,d=off,zce=on,zba=on,zbb=on,zbs=on \
+        -cpu rv32,f=off,zfa=off,d=off,zce=on,zba=on,zbb=on,zbs=on \
         -bios none \
         -kernel args.elf \
         -append "one two three" \
