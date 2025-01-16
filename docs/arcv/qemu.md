@@ -31,8 +31,9 @@ After installation of prerequisites you can download sources, configure, and bui
 ```
 # Clone v9.0 from GitHub repository
 $ git clone --depth 1 -b stable-9.0 https://github.com/qemu/qemu.git
+$ cd qemu
 
-# Configure project for build selecting only RISCV32 full system emulation
+# Configure QEMU for 32-bit and 64-bit RISC-V targets
 $ ./configure --target-list=riscv32-softmmu,riscv64-softmmu
 
 # Build QEMU
