@@ -73,6 +73,16 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", MODE="0664"
 SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6014", MODE="0664", GROUP="plugdev"
 ```
 
+In case of CentOS/AlmaLinux/Fedora distributions you need to remove `GROUP="plugdev"` and set
+`0666` rights for Digilent devices since `plugdev` group is not presented there:
+
+```text
+# Digilent HS1 and similiar products
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", MODE="0666"
+# Digilent HS2
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6014", MODE="0666"
+```
+
 You also can use file `contrib/99-openocd.udev` supplied with OpenOCD sources,
 however this file doesn't work with Digilent HS2, though on the other hand it
 mentions many other FTDI-based devices.
