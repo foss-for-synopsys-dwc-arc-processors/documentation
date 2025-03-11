@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#u-boot-command-reference-for-hsdk" class="md-skip">
+        <a href="#u-boot-command-reference-for-hsdkhsdk-4xd" class="md-skip">
           Skip to content
         </a>
       
@@ -1658,9 +1658,123 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          U-Boot command reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         U-Boot command reference
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clock-tree-manipulations" class="md-nav__link">
+    Clock Tree Manipulations
+  </a>
+  
+    <nav class="md-nav" aria-label="Clock Tree Manipulations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hsdk_clock-set" class="md-nav__link">
+    hsdk_clock set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hsdk_clock-get" class="md-nav__link">
+    hsdk_clock get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hsdk_clock-print" class="md-nav__link">
+    hsdk_clock print
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hsdk_clock-print_all" class="md-nav__link">
+    hsdk_clock print_all
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#booting-linux-from-uimage" class="md-nav__link">
+    Booting Linux from uImage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launching-baremetal-application" class="md-nav__link">
+    Launching Baremetal Application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-demo-application" class="md-nav__link">
+    Running a Demo Application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#u-boot-image-update-in-on-board-spi-flash" class="md-nav__link">
+    U-Boot Image Update in on-board SPI-flash
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#u-boot-image-recovery-in-on-board-spi-flash" class="md-nav__link">
+    U-Boot Image Recovery in on-board SPI-flash
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-help-information-about-generic-u-boot-commands" class="md-nav__link">
+    Show Help Information About Generic U-Boot Commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations" class="md-nav__link">
+    Known Limitations
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3053,6 +3167,104 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clock-tree-manipulations" class="md-nav__link">
+    Clock Tree Manipulations
+  </a>
+  
+    <nav class="md-nav" aria-label="Clock Tree Manipulations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hsdk_clock-set" class="md-nav__link">
+    hsdk_clock set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hsdk_clock-get" class="md-nav__link">
+    hsdk_clock get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hsdk_clock-print" class="md-nav__link">
+    hsdk_clock print
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hsdk_clock-print_all" class="md-nav__link">
+    hsdk_clock print_all
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#booting-linux-from-uimage" class="md-nav__link">
+    Booting Linux from uImage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launching-baremetal-application" class="md-nav__link">
+    Launching Baremetal Application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-demo-application" class="md-nav__link">
+    Running a Demo Application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#u-boot-image-update-in-on-board-spi-flash" class="md-nav__link">
+    U-Boot Image Update in on-board SPI-flash
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#u-boot-image-recovery-in-on-board-spi-flash" class="md-nav__link">
+    U-Boot Image Recovery in on-board SPI-flash
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-help-information-about-generic-u-boot-commands" class="md-nav__link">
+    Show Help Information About Generic U-Boot Commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations" class="md-nav__link">
+    Known Limitations
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3069,11 +3281,356 @@
   
 
 
-<h1 id="u-boot-command-reference-for-hsdk">U-Boot Command Reference for HSDK<a class="headerlink" href="#u-boot-command-reference-for-hsdk" title="Permanent link">&para;</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This page is under construction!</p>
-</div>
+<h1 id="u-boot-command-reference-for-hsdkhsdk-4xd">U-Boot Command Reference for HSDK/HSDK-4xD<a class="headerlink" href="#u-boot-command-reference-for-hsdkhsdk-4xd" title="Permanent link">&para;</a></h1>
+<p>The U-Boot bootloader is a powerful and flexible tool for loading an executable
+from different sources and running it on the target platform.</p>
+<p>The U-Boot implementation for the ARC HSDK/HSDK-4xD was further extended with additional
+functionality that allows users to better manage the broad configurability of
+the ARC HSDK/HSDK-4xD.</p>
+<p>This command reference provides description and basic usage information for
+newly introduced function in U-Boot for ARC HSDK/HSDK-4xD.</p>
+<h2 id="clock-tree-manipulations">Clock Tree Manipulations<a class="headerlink" href="#clock-tree-manipulations" title="Permanent link">&para;</a></h2>
+<p>The HSDK/HSDK-4xD board internally uses a number of PLLs that clock the main components
+of the ARC core as well as all data buses and peripherals. <code>hsdk_clock</code> commands
+are introduced to set and display various clock values.</p>
+<h3 id="hsdk_clock-set"><code>hsdk_clock set</code><a class="headerlink" href="#hsdk_clock-set" title="Permanent link">&para;</a></h3>
+<p>Set clock from <code>axi_freq</code>, <code>cpu_freq</code> and <code>tun_freq</code> environment variables (all
+values are in MHz):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>hsdk_clock set
+</span></code></pre></div>
+<p>Set clock from <code>axi_freq</code>, <code>cpu_freq</code> and <code>tun_freq</code> command line arguments (all
+values are in MHz):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>hsdk_clock set tun_freq 125 axi_freq 600 cpu_freq 400
+</span></code></pre></div>
+<h3 id="hsdk_clock-get"><code>hsdk_clock get</code><a class="headerlink" href="#hsdk_clock-get" title="Permanent link">&para;</a></h3>
+<p>Save clock frequencies to <code>axi_freq</code>, <code>cpu_freq</code> and <code>tun_freq</code> environment
+variables:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>hsdk_clock get
+</span></code></pre></div>
+<h3 id="hsdk_clock-print"><code>hsdk_clock print</code><a class="headerlink" href="#hsdk_clock-print" title="Permanent link">&para;</a></h3>
+<p>Show CPU, AXI, DDR and TUNNEL current clock frequencies:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>hsdk_clock print
+</span></code></pre></div>
+<p>Sample output of <code>hsdk_clock print</code> command:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>hsdk# hsdk_clock print
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>HSDK: clock &#39;cpu-clk&#39; rate 500 MHz
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>HSDK: clock &#39;tun-clk&#39; rate 50 MHz
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>HSDK: clock &#39;axi-clk&#39; rate 400 MHz
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>HSDK: clock &#39;ddr-clk&#39; rate 334 MHz
+</span></code></pre></div>
+<h3 id="hsdk_clock-print_all"><code>hsdk_clock print_all</code><a class="headerlink" href="#hsdk_clock-print_all" title="Permanent link">&para;</a></h3>
+<p>Show all currently used clock frequencies:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>hsdk_clock print_all
+</span></code></pre></div>
+<p>Typical output of <code>hsdk_clock print_all</code> command for HSDK:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>hsdk# hsdk_clock print_all
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>HSDK: clock &#39;cpu-pll&#39; rate 500 MHz
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>HSDK: clock &#39;cpu-clk&#39; rate 500 MHz
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>HSDK: clock &#39;sys-pll&#39; rate 400 MHz
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>HSDK: clock &#39;apb-clk&#39; rate 200 MHz
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>HSDK: clock &#39;axi-clk&#39; rate 400 MHz
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>HSDK: clock &#39;eth-clk&#39; rate 400 MHz
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>HSDK: clock &#39;usb-clk&#39; rate 400 MHz
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>HSDK: clock &#39;sdio-clk&#39; rate 400 MHz
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>HSDK: clock &#39;gfx-core-clk&#39; rate 400 MHz
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>HSDK: clock &#39;gfx-dma-clk&#39; rate 400 MHz
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>HSDK: clock &#39;gfx-cfg-clk&#39; rate 200 MHz
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>HSDK: clock &#39;dmac-core-clk&#39; rate 400 MHz
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>HSDK: clock &#39;dmac-cfg-clk&#39; rate 200 MHz
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>HSDK: clock &#39;sdio-ref-clk&#39; rate 100 MHz
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>HSDK: clock &#39;spi-clk&#39; rate 34 MHz
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>HSDK: clock &#39;i2c-clk&#39; rate 200 MHz
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>HSDK: clock &#39;uart-clk&#39; rate 34 MHz
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>HSDK: clock &#39;ddr-clk&#39; rate 334 MHz
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>HSDK: clock &#39;tun-pll&#39; rate 150 MHz
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>HSDK: clock &#39;tun-clk&#39; rate 50 MHz
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>HSDK: clock &#39;rom-clk&#39; rate 150 MHz
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>HSDK: clock &#39;pwm-clk&#39; rate 75 MHz
+</span></code></pre></div>
+<p>Typical output of <code>hsdk_clock print_all</code> command for HSDK-4xD:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>hsdk-4xd# hsdk_clock print_all
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>HSDK: clock &#39;cpu-pll&#39; rate 500 MHz
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>HSDK: clock &#39;cpu-clk&#39; rate 500 MHz
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>HSDK: clock &#39;sys-pll&#39; rate 800 MHz
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>HSDK: clock &#39;apb-clk&#39; rate 200 MHz
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>HSDK: clock &#39;axi-clk&#39; rate 400 MHz
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>HSDK: clock &#39;eth-clk&#39; rate 400 MHz
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>HSDK: clock &#39;usb-clk&#39; rate 400 MHz
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>HSDK: clock &#39;sdio-clk&#39; rate 400 MHz
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>HSDK: clock &#39;hdmi-sys-clk&#39; rate 400 MHz
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>HSDK: clock &#39;gfx-core-clk&#39; rate 400 MHz
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>HSDK: clock &#39;dmac-core-clk&#39; rate 400 MHz
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>HSDK: clock &#39;dmac-cfg-clk&#39; rate 200 MHz
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>HSDK: clock &#39;sdio-ref-clk&#39; rate 100 MHz
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>HSDK: clock &#39;spi-clk&#39; rate 34 MHz
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>HSDK: clock &#39;i2c-clk&#39; rate 200 MHz
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>HSDK: clock &#39;uart-clk&#39; rate 34 MHz
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>HSDK: clock &#39;ddr-clk&#39; rate 334 MHz
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>HSDK: clock &#39;hdmi-pll&#39; rate 27 MHz
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>HSDK: clock &#39;hdmi-clk&#39; rate 27 MHz
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>HSDK: clock &#39;tun-pll&#39; rate 600 MHz
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>HSDK: clock &#39;tun-clk&#39; rate 50 MHz
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>HSDK: clock &#39;rom-clk&#39; rate 150 MHz
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>HSDK: clock &#39;pwm-clk&#39; rate 75 MHz
+</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>HSDK: clock &#39;timer-clk&#39; rate 50 MHz
+</span></code></pre></div>
+<h2 id="booting-linux-from-uimage">Booting Linux from uImage<a class="headerlink" href="#booting-linux-from-uimage" title="Permanent link">&para;</a></h2>
+<p>HSDK/HSDK-4xD U-Boot contains a special implementation of the <code>bootm</code> command.
+HSDK/HSDK-4xD <code>bootm</code> command launches Linux kernel only on selected CPUs,
+based on the value of the <code>core_mask</code> environment variable. When an external
+Linux device tree blob (for example <code>hsdk.dtb</code>) is provided, bootm will also
+patch the status property of each CPU node according to the value of the
+<code>core_mask</code> environment variable.</p>
+<p>Below is an example launching Linux on 3 out of 4 cores of HSDK. Linux image (uImage)
+and Linux device tree blob (<code>hsdk.dtb</code>) are read from the first FAT partition
+of SD card. <code>core_mask</code> is implicitly set to <code>0x7</code> by the <code>hsdk_hs38x3</code> script
+command:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>fatload mmc 0:1 0x82000000 uImage
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>fatload mmc 0:1 0x81000000 hsdk.dtb
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>run hsdk_hs38x3;
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>bootm 0x82000000 - 0x81000000
+</span></code></pre></div>
+<p>The same example for HSDK-4xD but with <code>hsdk_hs48x3</code> script command:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>fatload mmc 0:1 0x82000000 uImage
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>fatload mmc 0:1 0x81000000 hsdk.dtb
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>run hsdk_hs48x3;
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>bootm 0x82000000 - 0x81000000
+</span></code></pre></div>
+<h2 id="launching-baremetal-application">Launching Baremetal Application<a class="headerlink" href="#launching-baremetal-application" title="Permanent link">&para;</a></h2>
+<p>HSDK/HSDK-4xD U-Boot contains several configuration patterns which can be used to
+setup HSDK/HSDK-4xD hardware in. Each configuration pattern contains information
+about instruction and data caches state (enabled/disabled), <code>iccm</code> and
+<code>dccm</code> mappings, <code>non_volatile_limit</code> value and CPU mask (<code>core_mask</code>
+variable) value.</p>
+<p>As of today HSDK/HSDK-4xD U-Boot contains next configuration patterns:</p>
+<table>
+<thead>
+<tr>
+<th>HSDK</th>
+<th>HSDK-4xD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hsdk_hs34</code></td>
+<td><code>hsdk_hs45d</code></td>
+</tr>
+<tr>
+<td><code>hsdk_hs36</code></td>
+<td><code>hsdk_hs47d</code></td>
+</tr>
+<tr>
+<td><code>hsdk_hs36_ccm</code></td>
+<td><code>hsdk_hs47d_ccm</code></td>
+</tr>
+<tr>
+<td><code>hsdk_hs38</code></td>
+<td><code>hsdk_hs47dx2</code></td>
+</tr>
+<tr>
+<td><code>hsdk_hs38_ccm</code></td>
+<td><code>hsdk_hs47dx3</code></td>
+</tr>
+<tr>
+<td><code>hsdk_hs38x2</code></td>
+<td><code>hsdk_hs47dx4</code></td>
+</tr>
+<tr>
+<td><code>hsdk_hs38x3</code></td>
+<td><code>hsdk_hs48</code></td>
+</tr>
+<tr>
+<td><code>hsdk_hs38x4</code></td>
+<td><code>hsdk_hs48_ccm</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>hsdk_hs48x2</code> (same as <code>hsdk_hs47dx2</code>)</td>
+</tr>
+<tr>
+<td></td>
+<td><code>hsdk_hs48x3</code> (same as <code>hsdk_hs47dx3</code>)</td>
+</tr>
+<tr>
+<td></td>
+<td><code>hsdk_hs48x4</code> (same as <code>hsdk_hs47dx4</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>To choose a configuration use <code>run</code> command with configuration pattern name
+(<code>hsdk_hs38x2</code> configuration is used here but the same procedures are
+applicable for HSDK-4xD configurations):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>run hsdk_hs38x2
+</span></code></pre></div>
+<p>To setup the HSDK/HSDK-4xD hardware use <code>hsdk_init</code> command:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>hsdk# hsdk_init 
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>CPU start mask is 0x3
+</span></code></pre></div>
+<p>To launch a baremetal application on HSDK/HSDK-4xD you need to setup entry points
+for all used CPUs, load application binary to DDR, configure hardware
+with <code>hsdk_init</code> command and run application with <code>hsdk_go</code> command:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>fatload mmc 0:1 0x90000000 app.bin
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>run hsdk_hs38x2;
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>setenv core_entry_0 0x90000000;
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>setenv core_entry_1 0x90000000;
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>hsdk_init
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>hsdk_go
+</span></code></pre></div>
+<p><code>hsdk_go</code> is command to jump each CPU chosen by CPU mask (<code>core_mask</code> variable) to
+its entry point (<code>core_entry_X</code> variable). All CPUs which aren't chosen by CPU
+mask will be halted. <code>hsdk_go</code> can be used with halt option to halt all CPUs
+before jump to entry points:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>hsdk_go halt
+</span></code></pre></div>
+<p>CPUs can be start manually with debugger.</p>
+<h2 id="running-a-demo-application">Running a Demo Application<a class="headerlink" href="#running-a-demo-application" title="Permanent link">&para;</a></h2>
+<p>You can test <code>hsdk_init</code> and <code>hsdk_go</code> commands with simple demo application:</p>
+<div class="language-gas highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="na">.global</span><span class="w"> </span><span class="no">_start</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nl">_start:</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="c1"># Invalidate i$, d$</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="no">r5</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="nf">sr</span><span class="w">  </span><span class="no">r5</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">0x10</span><span class="p">]</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="no">r5</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="nf">sr</span><span class="w">  </span><span class="no">r5</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">0x47</span><span class="p">]</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">    </span><span class="nf">lr</span><span class="w">  </span><span class="no">r2</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="no">r1</span><span class="p">,</span><span class="w"> </span><span class="mi">0x0000FF00</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">    </span><span class="nf">and</span><span class="w"> </span><span class="no">r3</span><span class="p">,</span><span class="w"> </span><span class="no">r2</span><span class="p">,</span><span class="w"> </span><span class="no">r1</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">    </span><span class="nf">asr_s</span><span class="w">   </span><span class="no">r3</span><span class="p">,</span><span class="w"> </span><span class="no">r3</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w">   </span><span class="c1"># r3 == (aux(ARC_IDENTITY) &amp; 0x0000FF00) &lt;&lt; 7</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="no">r0</span><span class="p">,</span><span class="w"> </span><span class="mi">0xD0000000</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="w">    </span><span class="nf">add_s</span><span class="w">   </span><span class="no">r0</span><span class="p">,</span><span class="w"> </span><span class="no">r0</span><span class="p">,</span><span class="w"> </span><span class="no">r3</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="no">r1</span><span class="p">,</span><span class="w"> </span><span class="mi">0x12345678</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="w">    </span><span class="c1"># Write test pattern</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="w">    </span><span class="nf">st</span><span class="w">  </span><span class="no">r1</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">r0</span><span class="p">]</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="w">    </span><span class="nf">st</span><span class="w">  </span><span class="no">r2</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">r0</span><span class="p">,</span><span class="w"> </span><span class="mi">0x4</span><span class="p">]</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="w">    </span><span class="c1"># Flush entire D$</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="w">    </span><span class="nf">mov</span><span class="w">     </span><span class="no">r5</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="w">    </span><span class="nf">sr</span><span class="w">      </span><span class="no">r5</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">0x4B</span><span class="p">]</span>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="w">    </span><span class="c1"># Wait for flush operation to complete</span>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a><span class="nl">flush_wait:</span>
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a><span class="w">    </span><span class="nf">lr</span><span class="w">      </span><span class="no">r5</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">0x48</span><span class="p">]</span>
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a><span class="w">    </span><span class="nf">bbit1</span><span class="w">   </span><span class="no">r5</span><span class="p">,</span><span class="w"> </span><span class="mi">0x8</span><span class="p">,</span><span class="w"> </span><span class="no">flush_wait</span><span class="w"> </span><span class="c1"># Check status of the data-cache flush</span>
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>
+</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a><span class="w">    </span><span class="c1"># Write test pattern bypassing caches.</span>
+</span><span id="__span-14-30"><a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a><span class="w">    </span><span class="c1"># **NEVER** use such code! It blows your whole leg off.</span>
+</span><span id="__span-14-31"><a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a><span class="w">    </span><span class="c1"># We use it only to make multicore test app as small as possible</span>
+</span><span id="__span-14-32"><a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a><span class="w">    </span><span class="nf">st.di</span><span class="w">   </span><span class="no">r1</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">r0</span><span class="p">]</span>
+</span><span id="__span-14-33"><a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a><span class="w">    </span><span class="nf">st.di</span><span class="w">   </span><span class="no">r2</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">r0</span><span class="p">,</span><span class="w"> </span><span class="mi">0x4</span><span class="p">]</span>
+</span><span id="__span-14-34"><a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a>
+</span><span id="__span-14-35"><a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a><span class="w">    </span><span class="nf">nop</span>
+</span><span id="__span-14-36"><a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a><span class="w">    </span><span class="nf">nop</span>
+</span><span id="__span-14-37"><a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a><span class="w">    </span><span class="nf">nop</span>
+</span><span id="__span-14-38"><a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a>
+</span><span id="__span-14-39"><a id="__codelineno-14-39" name="__codelineno-14-39" href="#__codelineno-14-39"></a><span class="w">    </span><span class="nf">flag</span><span class="w"> </span><span class="mi">1</span>
+</span></code></pre></div>
+<p>You can use <a href="../app.bin">a prebuilt demo application binary</a> or build it yourself with next commands:</p>
+<ul>
+<li>
+<p>With GNU toolchain:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>arc-linux-gcc -mcpu=hs -nostdlib -e _start -Wl,-Ttext=0x90000000 -o demo.elf demo.S
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>arc-linux-objcopy -O binary demo.elf demo.bin
+</span></code></pre></div>
+</li>
+<li>
+<p>With MetaWare toolchain:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>ccac -arcv2hs -Bbase=0x90000000 -g -Hnoivt -Hnolib -Hnocrt demo.S -o demo.elf
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>elf2bin demo.elf demo.bin
+</span></code></pre></div>
+</li>
+</ul>
+<p>Demo application has next functionality:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>write 0x12345678 to (0xD0000000 + CPU_ID * 128)
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>write ARC_IDENTITY to (0xD000004 + CPU_ID * 128)
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>flush d$
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>halt cpu
+</span></code></pre></div>
+<p>Before test launching please deploy the most recent <code>sdcard.img</code> to your micro
+SD-card that will be used with HSDK/HSDK-4xD and copy demo application binary to first
+SD-card partition. Check ARC HSDK/HSDK-4xD Buildroot release page page for instructions
+on how to deploy <code>sdcard.img</code> to micro SD-card.</p>
+<p>There is an example of launching demo application on <code>hsdk_hs38x4</code> configuration:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>fatload mmc 0:1 0x90000000 demo.bin
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>run hsdk_hs38x4;
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>setenv core_entry_0 0x90000000;
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>setenv core_entry_1 0x90000000;
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>setenv core_entry_2 0x90000000;
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>setenv core_entry_3 0x90000000;
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>hsdk_init
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>hsdk_go
+</span></code></pre></div>
+<p>To check demo app execution result simply read <code>0xD0000XXX</code> addresses with <code>MDB</code> or 
+restart U-Boot (by pressing <code>Reset</code> button) and read memory with next U-Boot command:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>md 0xd0000000 64
+</span></code></pre></div>
+<p>Check <code>0xd0000000</code>, <code>0xd0000080</code>, <code>0xd0000100</code> and <code>0xd0000180</code> addresses in MDB <code>Memory</code>
+palette or in <code>md u-boot</code> command output. You will see next pattern:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>d0000000: 12345678 00000054 XXXXXXXX XXXXXXXX
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>d0000080: 12345678 00000154 XXXXXXXX XXXXXXXX
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>d0000100: 12345678 00000254 XXXXXXXX XXXXXXXX
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>d0000180: 12345678 00000354 XXXXXXXX XXXXXXXX
+</span></code></pre></div>
+<h2 id="u-boot-image-update-in-on-board-spi-flash">U-Boot Image Update in on-board SPI-flash<a class="headerlink" href="#u-boot-image-update-in-on-board-spi-flash" title="Permanent link">&para;</a></h2>
+<p>It is possible to update the U-Boot image that is automatically started
+by boot-ROM with a newer image using the upgrade command provided in the
+default U-Boot environment:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>hsdk# run upgrade
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>reading u-boot.head
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>355204 bytes read in 25 ms (13.5 MiB/s)
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>SF: Detected sst26wf016 with page size 256 Bytes, erase size 4 KiB, total 2 MiB
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>SF: 393216 bytes @ 0x0 Erased: OK
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>device 0 offset 0x0, size 0x60000
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>SF: 393216 bytes @ 0x0 Written: OK
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>u-boot update: OK
+</span></code></pre></div>
+<h2 id="u-boot-image-recovery-in-on-board-spi-flash">U-Boot Image Recovery in on-board SPI-flash<a class="headerlink" href="#u-boot-image-recovery-in-on-board-spi-flash" title="Permanent link">&para;</a></h2>
+<p>If U-boot image in on-board SPI-flash is damaged it is possible to
+recover it by sideloading new U-Boot executable in DDR of HSDK/HSDK-4xD via
+JTAG with subsequent writing of binary image into SPI-flash.</p>
+<p>But before sideloading U-Boot executable to HSDK/HSDK-4xD's DDR please deploy
+the most recent <code>sdcard.img</code> to your micro SD-card that will be used with HSDK/HSDK-4xD.
+Check <a href="../build/">Building and Running ARC Linux for HS Development Kit</a> page for
+instructions on how to deploy <code>sdcard.img</code> to micro SD-card.</p>
+<p>Once micro SD-card is prepared and inserted into HSDK/HSDK-4xD make sure DIP-switches
+in the corner of the board are in their default positions:
+<code>BIM</code> in <code>1:on</code>, <code>2:on</code> state while both <code>BMC</code> and <code>BCS</code> should be in <code>1:on</code>,
+<code>2:on</code> state.</p>
+<p>Now reset the HSDK/HSDK-4xD board by pressing <code>Reset</code> button and load
+U-Boot Elf using <code>MDB</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>mdb -digilent -cl -run u-boot
+</span></code></pre></div>
+<p>Once U-Boot on HSDK/HSDK-4xD boots into command prompt just issue the following command:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>run upgrade
+</span></code></pre></div>
+<h2 id="show-help-information-about-generic-u-boot-commands">Show Help Information About Generic U-Boot Commands<a class="headerlink" href="#show-help-information-about-generic-u-boot-commands" title="Permanent link">&para;</a></h2>
+<p>The help command (short: <code>h</code> or <code>?</code>) prints online help. Without any arguments,
+it prints a list of all U-Boot commands that are available in your
+configuration of U-Boot. You can get detailed information for a specific
+command by typing its name as argument to the help command:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>hsdk# help sleep
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>sleep - delay execution for some time
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>Usage:
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>sleep N
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>    - delay execution for N seconds (N is _decimal_ and can be
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>      fractional)
+</span></code></pre></div>
+<h2 id="known-limitations">Known Limitations<a class="headerlink" href="#known-limitations" title="Permanent link">&para;</a></h2>
+<p>Every application being loaded and executed by U-Boot must invalidate all caches
+(including L1 instruction and data caches as well as SLC) as the first thing on
+start. This is required to make sure no stale entries were left from the previously
+executed U-Boot. Even though U-Boot flushes and invalidates all caches before
+passing control to another application there's still a possibility a couple of
+cache lines might contain instructions and data used right after cache flush and
+invalidation.</p>
 
 
 
