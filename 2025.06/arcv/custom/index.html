@@ -3196,61 +3196,40 @@ of available configurations this way (they are described in
 <a href="../building/#understanding-arc-v-configurations">Understanding ARC-V Configurations</a> section):</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ riscv64-snps-elf-gcc -print-multi-lib
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>.;
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>rv32e/ilp32e/rmx100;@march=rv32e@mabi=ilp32e@mtune=arc-v-rmx-100-series
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>rv32i/ilp32;@march=rv32i@mabi=ilp32
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>rv32i/ilp32/rmx100;@march=rv32i@mabi=ilp32@mtune=arc-v-rmx-100-series
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>rv32i/ilp32/rmx500;@march=rv32i@mabi=ilp32@mtune=arc-v-rmx-500-series
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>rv32i/ilp32/rhx100;@march=rv32i@mabi=ilp32@mtune=arc-v-rhx-100-series
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>rv32ia/ilp32/rmx100;@march=rv32ia@mabi=ilp32@mtune=arc-v-rmx-100-series
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>rv32ia/ilp32/rmx500;@march=rv32ia@mabi=ilp32@mtune=arc-v-rmx-500-series
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>rv32ia/ilp32/rhx100;@march=rv32ia@mabi=ilp32@mtune=arc-v-rhx-100-series
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>rv32iac_zicsr/ilp32/rmx100;@march=rv32iac_zicsr@mabi=ilp32@mtune=arc-v-rmx-100-series
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>rv32iac_zicsr/ilp32/rmx500;@march=rv32iac_zicsr@mabi=ilp32@mtune=arc-v-rmx-500-series
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>rv32imc_zicsr/ilp32/rmx100;@march=rv32imc_zicsr@mabi=ilp32@mtune=arc-v-rmx-100-series
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>rv32imc_zicsr/ilp32/rmx500;@march=rv32imc_zicsr@mabi=ilp32@mtune=arc-v-rmx-500-series
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>rv32imac_zicsr/ilp32/rmx100;@march=rv32imac_zicsr@mabi=ilp32@mtune=arc-v-rmx-100-series
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>rv32imac_zicsr/ilp32/rmx500;@march=rv32imac_zicsr@mabi=ilp32@mtune=arc-v-rmx-500-series
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>rv32imac_zicsr/ilp32/rhx100;@march=rv32imac_zicsr@mabi=ilp32@mtune=arc-v-rhx-100-series
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>rv32imafc/ilp32f/rhx100;@march=rv32imafc@mabi=ilp32f@mtune=arc-v-rhx-100-series
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>rv32imafdc/ilp32d/rhx100;@march=rv32imafdc@mabi=ilp32d@mtune=arc-v-rhx-100-series
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>rv64i/lp64/rmx100/medany;@march=rv64i@mabi=lp64@mtune=arc-v-rmx-100-series@mcmodel=medany
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>rv64ia/lp64/rmx100/medany;@march=rv64ia@mabi=lp64@mtune=arc-v-rmx-100-series@mcmodel=medany
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>rv64imac_zicsr/lp64/rmx100/medany;@march=rv64imac_zicsr@mabi=lp64@mtune=arc-v-rmx-100-series@mcmodel=medany
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>rv64imafdc/lp64d/rmx100/medany;@march=rv64imafdc@mabi=lp64d@mtune=arc-v-rmx-100-series@mcmodel=medany
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>rv32emac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zdinx_zicsr/ilp32e/rmx100;@march=rv32emac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zdinx_zicsr@mabi=ilp32e@mtune=arc-v-rmx-100-series
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr/ilp32/rmx100;@march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr@mabi=ilp32@mtune=arc-v-rmx-100-series
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr/ilp32/rmx500;@march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr@mabi=ilp32@mtune=arc-v-rmx-500-series
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>rv32im_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr/ilp32/rmx100;@march=rv32im_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr@mabi=ilp32@mtune=arc-v-rmx-100-series
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>rv32im_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr/ilp32/rmx500;@march=rv32im_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr@mabi=ilp32@mtune=arc-v-rmx-500-series
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>rv32imc_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr/ilp32/rmx100;@march=rv32imc_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr@mabi=ilp32@mtune=arc-v-rmx-100-series
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>rv32imc_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr/ilp32/rmx500;@march=rv32imc_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr@mabi=ilp32@mtune=arc-v-rmx-500-series
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr/ilp32/rmx100;@march=rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr@mabi=ilp32@mtune=arc-v-rmx-100-series
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr/ilp32/rmx500;@march=rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr@mabi=ilp32@mtune=arc-v-rmx-500-series
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zicsr/ilp32/rmx100;@march=rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zicsr@mabi=ilp32@mtune=arc-v-rmx-100-series
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zicsr/ilp32/rmx500;@march=rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zicsr@mabi=ilp32@mtune=arc-v-rmx-500-series
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zdinx_zicsr/ilp32/rmx100;@march=rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zdinx_zicsr@mabi=ilp32@mtune=arc-v-rmx-100-series
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zdinx_zicsr/ilp32/rmx500;@march=rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zdinx_zicsr@mabi=ilp32@mtune=arc-v-rmx-500-series
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>rv32imac_zcb_zcmp_zba_zbb_zbs_zicsr/ilp32/rhx100;@march=rv32imac_zcb_zcmp_zba_zbb_zbs_zicsr@mabi=ilp32@mtune=arc-v-rhx-100-series
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>rv32imafc_zcb_zcmp_zba_zbb_zbs_zicsr/ilp32f/rhx100;@march=rv32imafc_zcb_zcmp_zba_zbb_zbs_zicsr@mabi=ilp32f@mtune=arc-v-rhx-100-series
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>rv32imafd_zca_zcb_zcmp_zba_zbb_zbs_zicsr/ilp32d/rhx100;@march=rv32imafd_zca_zcb_zcmp_zba_zbb_zbs_zicsr@mabi=ilp32d@mtune=arc-v-rhx-100-series
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>rv64imac_zcb_zba_zbb_zbs_zicsr/lp64/rmx100/medany;@march=rv64imac_zcb_zba_zbb_zbs_zicsr@mabi=lp64@mtune=arc-v-rmx-100-series@mcmodel=medany
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>rv64imafdc_zcb_zba_zbb_zbs_zicsr/lp64d/rmx100/medany;@march=rv64imafdc_zcb_zba_zbb_zbs_zicsr@mabi=lp64d@mtune=arc-v-rmx-100-series@mcmodel=medany
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>rv32e/ilp32e;@march=rv32e@mabi=ilp32e
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>rv32em/ilp32e;@march=rv32em@mabi=ilp32e
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>rv32ea/ilp32e;@march=rv32ea@mabi=ilp32e
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>rv32ema/ilp32e;@march=rv32ema@mabi=ilp32e
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>rv32emac_zcb_zba_zbb_zbs_zfinx_zdinx/ilp32e;@march=rv32emac_zcb_zba_zbb_zbs_zfinx_zdinx@mabi=ilp32e
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>rv32i/ilp32;@march=rv32i@mabi=ilp32
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>rv32i/ilp32/rmx500;@march=rv32i@mabi=ilp32@mtune=arc-v-rmx-500-series
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>rv32i/ilp32/rhx100;@march=rv32i@mabi=ilp32@mtune=arc-v-rhx-100-series
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>rv32ic/ilp32;@march=rv32ic@mabi=ilp32
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>rv32ic/ilp32/rmx500;@march=rv32ic@mabi=ilp32@mtune=arc-v-rmx-500-series
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>rv32ic/ilp32/rhx100;@march=rv32ic@mabi=ilp32@mtune=arc-v-rhx-100-series
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>rv32im/ilp32;@march=rv32im@mabi=ilp32
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>...
 </span></code></pre></div>
 <p>However, sometimes a particular configuration is needed which is not shipped with a prebuilt toolchain.
 To achieve this it's necessary to build GNU toolchain from scratch. The easiest way to build a custom toolchain
 for another custom configuration is to use Crosstool-NG. You can find a comprehensive guide about how to get and prepare
 Crosstool-NG here: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain.</p>
 <p>Checkout and build Crosstool-NG:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ git clone -b arc-2024.12 https://github.com/foss-for-synopsys-dwc-arc-processors/crosstool-ng
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ git clone -b arc-2025.06 https://github.com/foss-for-synopsys-dwc-arc-processors/crosstool-ng
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$ ./bootstrap
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>$ ./configure --enable-local
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>$ make
 </span></code></pre></div>
-<p>Select a default ARC-V configuration file and enter a configuration menu:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ ./ct-ng snps-riscv64-unknown-elf
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$ ./ct-ng menuconfig
+<p>Select ARC-V configuration file for Newlib-based toolchain:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ ./ct-ng riscv64-snps-elf-newlib
 </span></code></pre></div>
-<p>For example, if you want to build Crosstool-NG for
+<p>Or select ARC-V configuration file for Picolibc-based toolchain:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ ./ct-ng riscv64-snps-elf-picolibc
+</span></code></pre></div>
+<p>Enter a configuration menu:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$ ./ct-ng menuconfig
+</span></code></pre></div>
+<p>For example, if you want to build a toolchain only for
 <code>-march=rv32imafc_zicond_zicsr_zifencei -mabi=ilp32f -mtune=arc-v-rmx-100-series</code>
 then do these steps:</p>
 <ol>
@@ -3259,10 +3238,14 @@ then do these steps:</p>
 <li>Set <code>Target Options -&gt; Generate code for the specific ABI</code> to <code>ilp32f</code>.</li>
 <li>Set <code>Target Options -&gt; Tune for CPU</code> to <code>-mtune=arc-v-rmx-100-series</code>.</li>
 </ol>
+<p>If you want to set extra GCC options for target libraries you can do this
+through <code>Target Options -&gt; Target CFLAGS</code>. For example, you can add
+<code>-mstrict-align</code> to make all target code to be aligned.</p>
 <p>Then build the toolchain as usual:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ ./ct-ng build
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ ./ct-ng build
 </span></code></pre></div>
-<p>The toolchain may be found in <code>riscv64-unknown-elf</code> directory. It uses
+<p>The toolchain may be found in <code>riscv64-snps-elf-newlib</code> or 
+<code>riscv64-snps-elf-picolibc</code> directory. It uses
 <code>-march=rv32imafc_zicond_zicsr_zifencei -mabi=ilp32f -mtune=arc-v-rmx-100-series</code>
 options by default.</p>
 
