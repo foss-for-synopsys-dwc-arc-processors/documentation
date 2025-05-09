@@ -8,45 +8,19 @@ of available configurations this way (they are described in
 ```
 $ riscv64-snps-elf-gcc -print-multi-lib
 .;
-rv32e/ilp32e/rmx100;@march=rv32e@mabi=ilp32e@mtune=arc-v-rmx-100-series
+rv32e/ilp32e;@march=rv32e@mabi=ilp32e
+rv32em/ilp32e;@march=rv32em@mabi=ilp32e
+rv32ea/ilp32e;@march=rv32ea@mabi=ilp32e
+rv32ema/ilp32e;@march=rv32ema@mabi=ilp32e
+rv32emac_zcb_zba_zbb_zbs_zfinx_zdinx/ilp32e;@march=rv32emac_zcb_zba_zbb_zbs_zfinx_zdinx@mabi=ilp32e
 rv32i/ilp32;@march=rv32i@mabi=ilp32
-rv32i/ilp32/rmx100;@march=rv32i@mabi=ilp32@mtune=arc-v-rmx-100-series
 rv32i/ilp32/rmx500;@march=rv32i@mabi=ilp32@mtune=arc-v-rmx-500-series
 rv32i/ilp32/rhx100;@march=rv32i@mabi=ilp32@mtune=arc-v-rhx-100-series
-rv32ia/ilp32/rmx100;@march=rv32ia@mabi=ilp32@mtune=arc-v-rmx-100-series
-rv32ia/ilp32/rmx500;@march=rv32ia@mabi=ilp32@mtune=arc-v-rmx-500-series
-rv32ia/ilp32/rhx100;@march=rv32ia@mabi=ilp32@mtune=arc-v-rhx-100-series
-rv32iac_zicsr/ilp32/rmx100;@march=rv32iac_zicsr@mabi=ilp32@mtune=arc-v-rmx-100-series
-rv32iac_zicsr/ilp32/rmx500;@march=rv32iac_zicsr@mabi=ilp32@mtune=arc-v-rmx-500-series
-rv32imc_zicsr/ilp32/rmx100;@march=rv32imc_zicsr@mabi=ilp32@mtune=arc-v-rmx-100-series
-rv32imc_zicsr/ilp32/rmx500;@march=rv32imc_zicsr@mabi=ilp32@mtune=arc-v-rmx-500-series
-rv32imac_zicsr/ilp32/rmx100;@march=rv32imac_zicsr@mabi=ilp32@mtune=arc-v-rmx-100-series
-rv32imac_zicsr/ilp32/rmx500;@march=rv32imac_zicsr@mabi=ilp32@mtune=arc-v-rmx-500-series
-rv32imac_zicsr/ilp32/rhx100;@march=rv32imac_zicsr@mabi=ilp32@mtune=arc-v-rhx-100-series
-rv32imafc/ilp32f/rhx100;@march=rv32imafc@mabi=ilp32f@mtune=arc-v-rhx-100-series
-rv32imafdc/ilp32d/rhx100;@march=rv32imafdc@mabi=ilp32d@mtune=arc-v-rhx-100-series
-rv64i/lp64/rmx100/medany;@march=rv64i@mabi=lp64@mtune=arc-v-rmx-100-series@mcmodel=medany
-rv64ia/lp64/rmx100/medany;@march=rv64ia@mabi=lp64@mtune=arc-v-rmx-100-series@mcmodel=medany
-rv64imac_zicsr/lp64/rmx100/medany;@march=rv64imac_zicsr@mabi=lp64@mtune=arc-v-rmx-100-series@mcmodel=medany
-rv64imafdc/lp64d/rmx100/medany;@march=rv64imafdc@mabi=lp64d@mtune=arc-v-rmx-100-series@mcmodel=medany
-rv32emac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zdinx_zicsr/ilp32e/rmx100;@march=rv32emac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zdinx_zicsr@mabi=ilp32e@mtune=arc-v-rmx-100-series
-rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr/ilp32/rmx100;@march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr@mabi=ilp32@mtune=arc-v-rmx-100-series
-rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr/ilp32/rmx500;@march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr@mabi=ilp32@mtune=arc-v-rmx-500-series
-rv32im_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr/ilp32/rmx100;@march=rv32im_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr@mabi=ilp32@mtune=arc-v-rmx-100-series
-rv32im_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr/ilp32/rmx500;@march=rv32im_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr@mabi=ilp32@mtune=arc-v-rmx-500-series
-rv32imc_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr/ilp32/rmx100;@march=rv32imc_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr@mabi=ilp32@mtune=arc-v-rmx-100-series
-rv32imc_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr/ilp32/rmx500;@march=rv32imc_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr@mabi=ilp32@mtune=arc-v-rmx-500-series
-rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr/ilp32/rmx100;@march=rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr@mabi=ilp32@mtune=arc-v-rmx-100-series
-rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr/ilp32/rmx500;@march=rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr@mabi=ilp32@mtune=arc-v-rmx-500-series
-rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zicsr/ilp32/rmx100;@march=rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zicsr@mabi=ilp32@mtune=arc-v-rmx-100-series
-rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zicsr/ilp32/rmx500;@march=rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zicsr@mabi=ilp32@mtune=arc-v-rmx-500-series
-rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zdinx_zicsr/ilp32/rmx100;@march=rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zdinx_zicsr@mabi=ilp32@mtune=arc-v-rmx-100-series
-rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zdinx_zicsr/ilp32/rmx500;@march=rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zdinx_zicsr@mabi=ilp32@mtune=arc-v-rmx-500-series
-rv32imac_zcb_zcmp_zba_zbb_zbs_zicsr/ilp32/rhx100;@march=rv32imac_zcb_zcmp_zba_zbb_zbs_zicsr@mabi=ilp32@mtune=arc-v-rhx-100-series
-rv32imafc_zcb_zcmp_zba_zbb_zbs_zicsr/ilp32f/rhx100;@march=rv32imafc_zcb_zcmp_zba_zbb_zbs_zicsr@mabi=ilp32f@mtune=arc-v-rhx-100-series
-rv32imafd_zca_zcb_zcmp_zba_zbb_zbs_zicsr/ilp32d/rhx100;@march=rv32imafd_zca_zcb_zcmp_zba_zbb_zbs_zicsr@mabi=ilp32d@mtune=arc-v-rhx-100-series
-rv64imac_zcb_zba_zbb_zbs_zicsr/lp64/rmx100/medany;@march=rv64imac_zcb_zba_zbb_zbs_zicsr@mabi=lp64@mtune=arc-v-rmx-100-series@mcmodel=medany
-rv64imafdc_zcb_zba_zbb_zbs_zicsr/lp64d/rmx100/medany;@march=rv64imafdc_zcb_zba_zbb_zbs_zicsr@mabi=lp64d@mtune=arc-v-rmx-100-series@mcmodel=medany
+rv32ic/ilp32;@march=rv32ic@mabi=ilp32
+rv32ic/ilp32/rmx500;@march=rv32ic@mabi=ilp32@mtune=arc-v-rmx-500-series
+rv32ic/ilp32/rhx100;@march=rv32ic@mabi=ilp32@mtune=arc-v-rhx-100-series
+rv32im/ilp32;@march=rv32im@mabi=ilp32
+...
 ```
 
 However, sometimes a particular configuration is needed which is not shipped with a prebuilt toolchain.
@@ -57,20 +31,31 @@ Crosstool-NG here: https://github.com/foss-for-synopsys-dwc-arc-processors/toolc
 Checkout and build Crosstool-NG:
 
 ```
-$ git clone -b arc-2024.12 https://github.com/foss-for-synopsys-dwc-arc-processors/crosstool-ng
+$ git clone -b arc-2025.06 https://github.com/foss-for-synopsys-dwc-arc-processors/crosstool-ng
 $ ./bootstrap
 $ ./configure --enable-local
 $ make
 ```
 
-Select a default ARC-V configuration file and enter a configuration menu:
+Select ARC-V configuration file for Newlib-based toolchain:
 
 ```
-$ ./ct-ng snps-riscv64-unknown-elf
+$ ./ct-ng riscv64-snps-elf-newlib
+```
+
+Or select ARC-V configuration file for Picolibc-based toolchain:
+
+```
+$ ./ct-ng riscv64-snps-elf-picolibc
+```
+
+Enter a configuration menu:
+
+```
 $ ./ct-ng menuconfig
 ```
 
-For example, if you want to build Crosstool-NG for
+For example, if you want to build a toolchain only for
 `-march=rv32imafc_zicond_zicsr_zifencei -mabi=ilp32f -mtune=arc-v-rmx-100-series`
 then do these steps:
 
@@ -79,12 +64,17 @@ then do these steps:
 3. Set `Target Options -> Generate code for the specific ABI` to `ilp32f`.
 4. Set `Target Options -> Tune for CPU` to `-mtune=arc-v-rmx-100-series`.
 
+If you want to set extra GCC options for target libraries you can do this
+through `Target Options -> Target CFLAGS`. For example, you can add
+`-mstrict-align` to make all target code to be aligned.
+
 Then build the toolchain as usual:
 
 ```
 $ ./ct-ng build
 ```
 
-The toolchain may be found in `riscv64-unknown-elf` directory. It uses
+The toolchain may be found in `riscv64-snps-elf-newlib` or 
+`riscv64-snps-elf-picolibc` directory. It uses
 `-march=rv32imafc_zicond_zicsr_zifencei -mabi=ilp32f -mtune=arc-v-rmx-100-series`
 options by default.
