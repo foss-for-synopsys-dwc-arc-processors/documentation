@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../building-picolibc/">
       
       
         <link rel="next" href="../nsim/">
@@ -19,7 +19,7 @@
     
     
       
-        <title>Building Applications - embARC Documentation Site for ARC Classic and ARC-V</title>
+        <title>Understanding ARC-V configurations - embARC Documentation Site for ARC Classic and ARC-V</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#building-applications" class="md-skip">
+        <a href="#understanding-arc-v-configurations" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Building Applications
+              Understanding ARC-V configurations
             
           </span>
         </div>
@@ -3045,6 +3045,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -3071,6 +3075,34 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../building-newlib/" class="md-nav__link">
+        Building applications with Newlib
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building-picolibc/" class="md-nav__link">
+        Building applications with Picolibc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -3083,12 +3115,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Building Applications
+          Understanding ARC-V configurations
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Building Applications
+        Understanding ARC-V configurations
       </a>
       
         
@@ -3107,29 +3139,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    Getting Started
+  <a href="#how-multilib-works" class="md-nav__link">
+    How multilib works
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-custom-linker-script" class="md-nav__link">
-    Using Custom Linker Script
+  <a href="#configurations-for-rmx-100-mini-targets" class="md-nav__link">
+    Configurations for RMX-100 mini targets
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#understanding-arc-v-configurations" class="md-nav__link">
-    Understanding ARC-V Configurations
+  <a href="#configurations-for-rmx-100-targets" class="md-nav__link">
+    Configurations for RMX-100 targets
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tuning-instruction-scheduling" class="md-nav__link">
-    Tuning Instruction Scheduling
+  <a href="#configurations-for-rmx-500-targets" class="md-nav__link">
+    Configurations for RMX-500 targets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurations-for-rhx-100-targets" class="md-nav__link">
+    Configurations for RHX-100 targets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurations-for-rpx-100-targets" class="md-nav__link">
+    Configurations for RPX-100 targets
   </a>
   
 </li>
@@ -3232,29 +3278,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    Getting Started
+  <a href="#how-multilib-works" class="md-nav__link">
+    How multilib works
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-custom-linker-script" class="md-nav__link">
-    Using Custom Linker Script
+  <a href="#configurations-for-rmx-100-mini-targets" class="md-nav__link">
+    Configurations for RMX-100 mini targets
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#understanding-arc-v-configurations" class="md-nav__link">
-    Understanding ARC-V Configurations
+  <a href="#configurations-for-rmx-100-targets" class="md-nav__link">
+    Configurations for RMX-100 targets
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tuning-instruction-scheduling" class="md-nav__link">
-    Tuning Instruction Scheduling
+  <a href="#configurations-for-rmx-500-targets" class="md-nav__link">
+    Configurations for RMX-500 targets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurations-for-rhx-100-targets" class="md-nav__link">
+    Configurations for RHX-100 targets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurations-for-rpx-100-targets" class="md-nav__link">
+    Configurations for RPX-100 targets
   </a>
   
 </li>
@@ -3277,100 +3337,49 @@
   
 
 
-<h1 id="building-applications">Building Applications<a class="headerlink" href="#building-applications" title="Permanent link">&para;</a></h1>
-<p>GNU toolchain for ARC-V targets uses <code>riscv64-snps-elf</code> prefix for
-all tools. For example, GCC binary has name <code>riscv64-snps-elf-gcc</code>.</p>
-<p>Usually, to compile an application you need to set target options:</p>
-<ol>
-<li><code>-march</code> - stands for RISC-V ISA.</li>
-<li><code>-mabi</code> - stands for ABI.</li>
-<li><code>-mtune</code> - stands for a particular GCC instruction scheduling optimization, 
-   refer <a href="#tuning-instruction-scheduling">Tuning Instruction Scheduling</a>
-   for ARC-V specific values .</li>
-<li><code>-mcmodel</code> - <code>medlow</code> for <code>rv32</code> targets and <code>medany</code> for <code>rv64</code> targets.</li>
-</ol>
-<p>All together they  correspond to a particular prebuilt standard library. Refer
-<a href="#understanding-arc-v-configurations">Understanding ARC-V Configurations</a> for details.</p>
-<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
-<p>Consider a simple code example:</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
-</span></code></pre></div>
-<p>If I want to build it for the base RMX-100 target, I would use this set of options:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ riscv64-snps-elf-gcc \
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>        -march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr \
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        -mabi=ilp32 \
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        -mtune=arc-v-rmx-100-series \
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        example.c -o example.elf
-</span></code></pre></div>
-<p>By default, GCC links applications with <code>libgloss.a</code> library that provides a set
-of <code>ecall</code> based input/output capabilities like <code>printf</code>, <code>fopen</code>, etc. To link an
-application with <code>ebreak</code> based <code>libsemihost.a</code> library use <code>-specs=semihost.specs</code>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ riscv64-snps-elf-gcc \
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>        -march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr \
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        -mabi=ilp32 \
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        -mtune=arc-v-rmx-100-series \
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        -specs=semihost.specs \
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        example.c -o example.elf
-</span></code></pre></div>
-<p>Refer to <a href="../nsim/">Running on nSIM</a> and <a href="../qemu/">Running on QEMU</a> to learn how
-to run ARC-V examples on nSIM or QEMU simulator.</p>
-<h2 id="using-custom-linker-script">Using Custom Linker Script<a class="headerlink" href="#using-custom-linker-script" title="Permanent link">&para;</a></h2>
-<p>GNU toolchain for ARC-V is shipped with a custom ARC-V specific startup code
-and a custom linker script. They are intended to be used in pair by passing
-<code>-specs=arcv.specs -T arcv.ld</code> to GCC. Here is an example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ riscv64-snps-elf-gcc \
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>        -march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr \
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        -mabi=ilp32 \
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        -mtune=arc-v-rmx-100-series \
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        -specs=semihost.specs \
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        -specs=arcv.specs \
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        -T arcv.ld \
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        example.c -o example.elf
-</span></code></pre></div>
-<p>Hot does it differ from using the standard Newlib startup code and the standard
-GCC linker script:</p>
-<ol>
-<li>ARC-V caches are turned on startup.</li>
-<li>Stack is initialized correctly (the standard Newlib startup code does not initialize it).</li>
-<li>Command line arguments are processed through Semihosting interface if an application
-   is linked with <code>-specs=semihost.specs</code> option.</li>
-</ol>
-<p>When <code>arcv.ld</code> linker script is used, base address and size of code or data section
-may be set through <code>-Wl,-defsym=</code> option:</p>
-<ol>
-<li><code>-Wl,-defsym=txtmem_addr=0x80000000</code> - set <code>0x80000000</code> as base address for code sections.</li>
-<li><code>-Wl,-defsym=txtmem_len=1M</code> - set code sections size to 1MB.</li>
-<li><code>-Wl,-defsym=datamem_addr=0x80200000</code> - set <code>0x80200000</code> as base address for data sections.</li>
-<li><code>-Wl,-defsym=datamem_len=1M</code> - set code sections size to 1MB.</li>
-</ol>
-<p>Full command line with custom placement of code and data section:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$ riscv64-snps-elf-gcc \
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>        -march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr \
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        -mabi=ilp32 \
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        -mtune=arc-v-rmx-100-series \
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        -Wl,-defsym=txtmem_addr=0x80000000 \
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        -Wl,-defsym=txtmem_len=1M \
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        -Wl,-defsym=datamem_addr=0x80200000 \
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        -Wl,-defsym=datamem_len=1M \
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        -specs=semihost.specs \
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        -specs=arcv.specs \
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        -T arcv.ld \
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>        example.c -o example.elf
-</span></code></pre></div>
-<p>Using custom code and data sections is essential for 64-bit targets. By default,
-<code>arcv.ld</code> linker script puts code to <code>0x0</code> and data to <code>0x80000000</code>. However,
-this memory layout may be not acceptable for 64-bit targets. That is why in
-the GNU toolchain 64-bit targets are available only with <code>medany</code> memory model.</p>
-<h2 id="understanding-arc-v-configurations">Understanding ARC-V Configurations<a class="headerlink" href="#understanding-arc-v-configurations" title="Permanent link">&para;</a></h2>
+<h1 id="understanding-arc-v-configurations">Understanding ARC-V configurations<a class="headerlink" href="#understanding-arc-v-configurations" title="Permanent link">&para;</a></h1>
 <p>GNU toolchain for ARC-V is shipped with a set of prebuilt libraries for each
-available configuration. A configuration is a combination of <code>-march</code>, <code>-mabi</code>,
-<code>-mtune</code> and <code>-mcmodel</code> values. The default value for <code>-mtune</code> (if it's not passed
-explicitly) is <code>arc-v-rmx-100-series</code> and the default value for <code>-mcmodel</code> is
-<code>medlow</code>.</p>
-<p>Here is a list of all combinations of options for which prebuilt libraries are
-presented in the toolchain:</p>
+available configuration (so called <strong>multilib</strong>). A configuration is a combination of
+<code>-march</code>, <code>-mabi</code>, <code>-mtune</code> and <code>-mcmodel</code> values. The default value for <code>-mtune</code>
+(if it's not passed explicitly) is <code>arc-v-rmx-100-series</code> and the default value for
+<code>-mcmodel</code> is <code>medlow</code>.</p>
+<p>Below you can find lists of all combinations of options for which prebuilt libraries are
+presented in the toolchain.</p>
+<h2 id="how-multilib-works">How multilib works<a class="headerlink" href="#how-multilib-works" title="Permanent link">&para;</a></h2>
+<p>On linkage stage, when a set of target options is passed, GCC tries to select standard libraries
+that match this set of options. If you are not sure what prebuilt libraries are selected for linking
+with an application, you can use <code>-print-multi-os-directory</code> option to check this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ riscv64-snps-elf-gcc -march=rv32imafd_zca_zcmp -mabi=ilp32d -mtune=arc-v-rhx-100-series -print-multi-os-directory
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>rv32imafd_zca/ilp32d/rhx100
+</span></code></pre></div>
+<p>Output tells that the library compiled with <code>-march=rv32imafd_zca -mabi=ilp32d -mtune=arc-v-rhx-100-series</code>
+is chosen for linking. <code>-march=rv32imafd_zca_zcmp</code> is a superset of <code>-march=rv32imafd_zca</code> and the most
+compatible variant is chosen.</p>
+<p>Consider another example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ riscv64-snps-elf-gcc -march=rv32imafd -mabi=ilp32d -mtune=arc-v-rhx-100-series -print-multi-os-directory
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>.
+</span></code></pre></div>
+<p>There is no prebuilt libraries for this set of options since the nearest compatible <code>-march</code>
+value for this combination is <code>rv32imafd_zca</code>. Thus, output is just "." . That means, that
+the default library is chosen.</p>
+<p>You can find a full list of all multilib configurations this way:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ riscv64-snps-elf-gcc -print-multi-lib
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>.;
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>rv32e/ilp32e;@march=rv32e@mabi=ilp32e
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>rv32em/ilp32e;@march=rv32em@mabi=ilp32e
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>rv32ea/ilp32e;@march=rv32ea@mabi=ilp32e
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>rv32ema/ilp32e;@march=rv32ema@mabi=ilp32e
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>rv32emac_zcb_zba_zbb_zbs_zfinx_zdinx/ilp32e;@march=rv32emac_zcb_zba_zbb_zbs_zfinx_zdinx@mabi=ilp32e
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>rv32i/ilp32;@march=rv32i@mabi=ilp32
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>rv32i/ilp32/rmx500;@march=rv32i@mabi=ilp32@mtune=arc-v-rmx-500-series
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>rv32i/ilp32/rhx100;@march=rv32i@mabi=ilp32@mtune=arc-v-rhx-100-series
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>rv32ic/ilp32;@march=rv32ic@mabi=ilp32
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>rv32ic/ilp32/rmx500;@march=rv32ic@mabi=ilp32@mtune=arc-v-rmx-500-series
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>rv32ic/ilp32/rhx100;@march=rv32ic@mabi=ilp32@mtune=arc-v-rhx-100-series
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>rv32im/ilp32;@march=rv32im@mabi=ilp32
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>...
+</span></code></pre></div>
+<h2 id="configurations-for-rmx-100-mini-targets">Configurations for RMX-100 mini targets<a class="headerlink" href="#configurations-for-rmx-100-mini-targets" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -3390,137 +3399,40 @@ presented in the toolchain:</p>
 <td><code>medlow</code></td>
 </tr>
 <tr>
-<td>Base RMX-100 mini + large set of extensions</td>
-<td><code>rv32emac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zdinx_zicsr</code></td>
+<td>Base RMX-100 mini + <code>M</code></td>
+<td><code>rv32em</code></td>
 <td><code>ilp32e</code></td>
 <td><code>arc-v-rmx-100-series</code></td>
 <td><code>medlow</code></td>
 </tr>
 <tr>
-<td>Base RMX-100</td>
-<td><code>rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr</code></td>
-<td><code>ilp32</code></td>
+<td>Base RMX-100 mini + <code>A</code></td>
+<td><code>rv32ea</code></td>
+<td><code>ilp32e</code></td>
 <td><code>arc-v-rmx-100-series</code></td>
 <td><code>medlow</code></td>
 </tr>
 <tr>
-<td>Base RMX-100 + <code>m</code></td>
-<td><code>rv32im_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr</code></td>
-<td><code>ilp32</code></td>
+<td>Base RMX-100 mini + <code>MA</code></td>
+<td><code>rv32ema</code></td>
+<td><code>ilp32e</code></td>
 <td><code>arc-v-rmx-100-series</code></td>
 <td><code>medlow</code></td>
 </tr>
 <tr>
-<td>Base RMX-100 + <code>mc</code></td>
-<td><code>rv32imc_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr</code></td>
-<td><code>ilp32</code></td>
+<td>Full-featured RMX-100 mini</td>
+<td><code>rv32emac_zcb_zba_zbb_zbs_zfinx_zdinx</code></td>
+<td><code>ilp32e</code></td>
 <td><code>arc-v-rmx-100-series</code></td>
 <td><code>medlow</code></td>
-</tr>
-<tr>
-<td>Base RMX-100 + <code>mac</code></td>
-<td><code>rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr</code></td>
-<td><code>ilp32</code></td>
-<td><code>arc-v-rmx-100-series</code></td>
-<td><code>medlow</code></td>
-</tr>
-<tr>
-<td>Base RMX-100 + <code>mac_zfinx</code></td>
-<td><code>rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zicsr</code></td>
-<td><code>ilp32</code></td>
-<td><code>arc-v-rmx-100-series</code></td>
-<td><code>medlow</code></td>
-</tr>
-<tr>
-<td>Base RMX-100 + <code>mac_zfinx_zdinx</code></td>
-<td><code>rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zdinx_zicsr</code></td>
-<td><code>ilp32</code></td>
-<td><code>arc-v-rmx-100-series</code></td>
-<td><code>medlow</code></td>
-</tr>
-<tr>
-<td>Base RMX-500</td>
-<td><code>rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr</code></td>
-<td><code>ilp32</code></td>
-<td><code>arc-v-rmx-500-series</code></td>
-<td><code>medlow</code></td>
-</tr>
-<tr>
-<td>Base RMX-500 + <code>m</code></td>
-<td><code>rv32im_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr</code></td>
-<td><code>ilp32</code></td>
-<td><code>arc-v-rmx-500-series</code></td>
-<td><code>medlow</code></td>
-</tr>
-<tr>
-<td>Base RMX-500 + <code>mc</code></td>
-<td><code>rv32imc_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr</code></td>
-<td><code>ilp32</code></td>
-<td><code>arc-v-rmx-500-series</code></td>
-<td><code>medlow</code></td>
-</tr>
-<tr>
-<td>Base RMX-500 + <code>mac</code></td>
-<td><code>rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr</code></td>
-<td><code>ilp32</code></td>
-<td><code>arc-v-rmx-500-series</code></td>
-<td><code>medlow</code></td>
-</tr>
-<tr>
-<td>Base RMX-500 + <code>mac_zfinx</code></td>
-<td><code>rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zicsr</code></td>
-<td><code>ilp32</code></td>
-<td><code>arc-v-rmx-500-series</code></td>
-<td><code>medlow</code></td>
-</tr>
-<tr>
-<td>Base RMX-500 + <code>mac_zfinx_zdinx</code></td>
-<td><code>rv32imac_zcb_zcmp_zcmt_zba_zbb_zbs_zfinx_zdinx_zicsr</code></td>
-<td><code>ilp32</code></td>
-<td><code>arc-v-rmx-500-series</code></td>
-<td><code>medlow</code></td>
-</tr>
-<tr>
-<td>Base RHX-100</td>
-<td><code>rv32imac_zcb_zcmp_zba_zbb_zbs_zicsr</code></td>
-<td><code>ilp32</code></td>
-<td><code>arc-v-rhx-100-series</code></td>
-<td><code>medlow</code></td>
-</tr>
-<tr>
-<td>Base RHX-100 + <code>f</code></td>
-<td><code>rv32imafc_zcb_zcmp_zba_zbb_zbs_zicsr</code></td>
-<td><code>ilp32f</code></td>
-<td><code>arc-v-rhx-100-series</code></td>
-<td><code>medlow</code></td>
-</tr>
-<tr>
-<td>Base RHX-100 + <code>fd</code></td>
-<td><code>rv32imafd_zca_zcb_zcmp_zba_zbb_zbs_zicsr</code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
-<td><code>ilp32d</code></td>
-<td><code>arc-v-rhx-100-series</code></td>
-<td><code>medlow</code></td>
-</tr>
-<tr>
-<td>Base RPX-100</td>
-<td><code>rv64imac_zcb_zba_zbb_zbs_zicsr</code></td>
-<td><code>lp64</code></td>
-<td><code>arc-v-rmx-100-series</code><sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
-<td><code>medany[^3]</code></td>
-</tr>
-<tr>
-<td>Base RPX-100 + <code>fd</code></td>
-<td><code>rv64imafdc_zcb_zba_zbb_zbs_zicsr</code></td>
-<td><code>lp64d</code></td>
-<td><code>arc-v-rmx-100-series</code><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
-<td><code>medany</code></td>
 </tr>
 </tbody>
 </table>
-<p>Here is a list of fallback configurations that don't match any ARC-V profile:</p>
+<h2 id="configurations-for-rmx-100-targets">Configurations for RMX-100 targets<a class="headerlink" href="#configurations-for-rmx-100-targets" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
+<th>ARC-V profile</th>
 <th><code>-march</code></th>
 <th><code>-mabi</code></th>
 <th><code>-mtune</code></th>
@@ -3529,177 +3441,442 @@ presented in the toolchain:</p>
 </thead>
 <tbody>
 <tr>
+<td>Generic RISC-V</td>
 <td><code>rv32i</code></td>
 <td><code>ilp32</code></td>
 <td><code>arc-v-rmx-100-series</code></td>
 <td><code>medlow</code></td>
 </tr>
 <tr>
+<td>Generic RISC-V</td>
+<td><code>rv32ic</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv32im</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv32imc</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv32ia</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv32ima</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv32iac</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv32imac</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Base RMX-100</td>
+<td><code>rv32ic_zcb_zba_zbb_zbs</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Base RMX-100 + <code>M</code></td>
+<td><code>rv32imc_zcb_zba_zbb_zbs</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Base RMX-100 + <code>MA</code></td>
+<td><code>rv32imac_zcb_zba_zbb_zbs</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Base RMX-100 + <code>MA</code>, <code>Zfinx</code></td>
+<td><code>rv32imac_zcb_zba_zbb_zbs_zfinx</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Base RMX-100 + <code>MA</code>, <code>Zfinx</code>, <code>Zdinx</code></td>
+<td><code>rv32imac_zcb_zba_zbb_zbs_zfinx_zdinx</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Base RMX-100 without <code>C</code></td>
+<td><code>rv32i_zba_zbb_zbs</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Base RMX-100 + <code>M</code> without <code>C</code></td>
+<td><code>rv32im_zba_zbb_zbs</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Base RMX-100 + <code>MA</code> without <code>C</code></td>
+<td><code>rv32ima_zba_zbb_zbs</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Base RMX-100 + <code>MA</code>, <code>Zfinx</code> without <code>C</code></td>
+<td><code>rv32ima_zba_zbb_zbs_zfinx</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Base RMX-100 + <code>MA</code>, <code>Zfinx</code>, <code>Zdinx</code> without <code>C</code></td>
+<td><code>rv32ima_zba_zbb_zbs_zfinx_zdinx</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="configurations-for-rmx-500-targets">Configurations for RMX-500 targets<a class="headerlink" href="#configurations-for-rmx-500-targets" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ARC-V profile</th>
+<th><code>-march</code></th>
+<th><code>-mabi</code></th>
+<th><code>-mtune</code></th>
+<th><code>-mcmodel</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generic RISC-V</td>
 <td><code>rv32i</code></td>
 <td><code>ilp32</code></td>
-<td><code>arc-v-rmx-500-series</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
 <td><code>medlow</code></td>
 </tr>
 <tr>
+<td>Generic RISC-V</td>
+<td><code>rv32ic</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv32im</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv32imc</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv32ia</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv32ima</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv32iac</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv32imac</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Base RMX-500</td>
+<td><code>rv32ic_zcb_zba_zbb_zbs</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Base RMX-500 + <code>M</code></td>
+<td><code>rv32imc_zcb_zba_zbb_zbs</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Base RMX-500 + <code>MA</code></td>
+<td><code>rv32imac_zcb_zba_zbb_zbs</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Base RMX-500 + <code>MA</code>, <code>Zfinx</code></td>
+<td><code>rv32imac_zcb_zba_zbb_zbs_zfinx</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Base RMX-500 + <code>MA</code>, <code>Zfinx</code>, <code>Zdinx</code></td>
+<td><code>rv32imac_zcb_zba_zbb_zbs_zfinx_zdinx</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rmx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="configurations-for-rhx-100-targets">Configurations for RHX-100 targets<a class="headerlink" href="#configurations-for-rhx-100-targets" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ARC-V profile</th>
+<th><code>-march</code></th>
+<th><code>-mabi</code></th>
+<th><code>-mtune</code></th>
+<th><code>-mcmodel</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generic RISC-V</td>
 <td><code>rv32i</code></td>
 <td><code>ilp32</code></td>
 <td><code>arc-v-rhx-100-series</code></td>
 <td><code>medlow</code></td>
 </tr>
 <tr>
-<td><code>rv32ia</code></td>
+<td>Generic RISC-V</td>
+<td><code>rv32ic</code></td>
 <td><code>ilp32</code></td>
-<td><code>arc-v-rmx-100-series</code></td>
+<td><code>arc-v-rhx-100-series</code></td>
 <td><code>medlow</code></td>
 </tr>
 <tr>
-<td><code>rv32ia</code></td>
+<td>Generic RISC-V</td>
+<td><code>rv32im</code></td>
 <td><code>ilp32</code></td>
-<td><code>arc-v-rmx-500-series</code></td>
+<td><code>arc-v-rhx-100-series</code></td>
 <td><code>medlow</code></td>
 </tr>
 <tr>
+<td>Generic RISC-V</td>
+<td><code>rv32imc</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rhx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
 <td><code>rv32ia</code></td>
 <td><code>ilp32</code></td>
 <td><code>arc-v-rhx-100-series</code></td>
 <td><code>medlow</code></td>
 </tr>
 <tr>
-<td><code>rv32imc_zicsr</code></td>
-<td><code>ilp32</code></td>
-<td><code>arc-v-rmx-100-series</code></td>
-<td><code>medlow</code></td>
-</tr>
-<tr>
-<td><code>rv32imc_zicsr</code></td>
-<td><code>ilp32</code></td>
-<td><code>arc-v-rmx-500-series</code></td>
-<td><code>medlow</code></td>
-</tr>
-<tr>
-<td><code>rv32iac_zicsr</code></td>
-<td><code>ilp32</code></td>
-<td><code>arc-v-rmx-100-series</code></td>
-<td><code>medlow</code></td>
-</tr>
-<tr>
-<td><code>rv32iac_zicsr</code></td>
-<td><code>ilp32</code></td>
-<td><code>arc-v-rmx-500-series</code></td>
-<td><code>medlow</code></td>
-</tr>
-<tr>
-<td><code>rv32imac_zicsr</code></td>
-<td><code>ilp32</code></td>
-<td><code>arc-v-rmx-100-series</code></td>
-<td><code>medlow</code></td>
-</tr>
-<tr>
-<td><code>rv32imac_zicsr</code></td>
-<td><code>ilp32</code></td>
-<td><code>arc-v-rmx-500-series</code></td>
-<td><code>medlow</code></td>
-</tr>
-<tr>
-<td><code>rv32imac_zicsr</code></td>
+<td>Generic RISC-V</td>
+<td><code>rv32ima</code></td>
 <td><code>ilp32</code></td>
 <td><code>arc-v-rhx-100-series</code></td>
 <td><code>medlow</code></td>
 </tr>
 <tr>
-<td><code>rv32imafc_zicsr</code></td>
+<td>Generic RISC-V</td>
+<td><code>rv32iac</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rhx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv32imac</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rhx-100-series</code></td>
+<td><code>medlow</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv32imafc</code></td>
 <td><code>ilp32f</code></td>
 <td><code>arc-v-rhx-100-series</code></td>
 <td><code>medlow</code></td>
 </tr>
 <tr>
-<td><code>rv32imafdc_zicsr</code></td>
+<td>Generic RISC-V</td>
+<td><code>rv32imafd_zca</code><sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
 <td><code>ilp32d</code></td>
 <td><code>arc-v-rhx-100-series</code></td>
 <td><code>medlow</code></td>
 </tr>
 <tr>
-<td><code>rv64i</code></td>
-<td><code>lp64</code></td>
-<td><code>arc-v-rmx-100-series</code></td>
-<td><code>medany</code></td>
+<td>Base RHX-100</td>
+<td><code>rv32imac_zcb_zba_zbb_zbs</code></td>
+<td><code>ilp32</code></td>
+<td><code>arc-v-rhx-100-series</code></td>
+<td><code>medlow</code></td>
 </tr>
 <tr>
-<td><code>rv64ia</code></td>
-<td><code>lp64</code></td>
-<td><code>arc-v-rmx-100-series</code></td>
-<td><code>medany</code></td>
+<td>Base RHX-100 + <code>F</code></td>
+<td><code>rv32imafc_zcb_zba_zbb_zbs</code></td>
+<td><code>ilp32f</code></td>
+<td><code>arc-v-rhx-100-series</code></td>
+<td><code>medlow</code></td>
 </tr>
 <tr>
-<td><code>rv64imac_zicsr</code></td>
-<td><code>lp64</code></td>
-<td><code>arc-v-rmx-100-series</code></td>
-<td><code>medany</code></td>
-</tr>
-<tr>
-<td><code>rv64imafdc</code></td>
-<td><code>lp64d</code></td>
-<td><code>arc-v-rmx-100-series</code></td>
-<td><code>medany</code></td>
+<td>Base RHX-100 + <code>FD</code></td>
+<td><code>rv32imafd_zca_zcb_zba_zbb_zbs</code><sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td><code>ilp32d</code></td>
+<td><code>arc-v-rhx-100-series</code></td>
+<td><code>medlow</code></td>
 </tr>
 </tbody>
 </table>
-<p>On linkage stage, when a set of target options is passed, GCC tries to select standard libraries
-that match this set of options. If you are not sure what prebuilt libraries are selected for linking
-with an application, you can use <code>-print-multi-os-directory</code> option to check this:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ riscv64-snps-elf-gcc -march=rv32imac_zcb_zcmp_zba_zbb_zbs_zicsr -mabi=ilp32 -mtune=arc-v-rhx-100-series -print-multi-os-directory
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>rv32imac_zcb_zcmp_zba_zbb_zbs_zicsr/ilp32/rhx100
-</span></code></pre></div>
-<p>If <code>zcb</code> is removed from <code>-march</code>, then GCC selects a configuration that may be compatible with
-this set of options:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$ riscv64-snps-elf-gcc -march=rv32imac_zcmp_zba_zbb_zbs_zicsr -mabi=ilp32 -mtune=arc-v-rhx-100-series -print-multi-os-directory
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>rv32imac_zicsr/ilp32/rhx100
-</span></code></pre></div>
-<h2 id="tuning-instruction-scheduling">Tuning Instruction Scheduling<a class="headerlink" href="#tuning-instruction-scheduling" title="Permanent link">&para;</a></h2>
-<p>GCC instruction scheduling may be tuned for different ARC-V
-targets using <code>-mtune=</code> option:</p>
+<h2 id="configurations-for-rpx-100-targets">Configurations for RPX-100 targets<a class="headerlink" href="#configurations-for-rpx-100-targets" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Feature</th>
-<th>Option</th>
+<th>ARC-V profile</th>
+<th><code>-march</code></th>
+<th><code>-mabi</code></th>
+<th><code>-mtune</code></th>
+<th><code>-mcmodel</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Tune for RMX-100 targets</td>
-<td><code>-mtune=arc-v-rmx-100-series</code></td>
+<td>Generic RISC-V</td>
+<td><code>rv64i</code></td>
+<td><code>lp64</code></td>
+<td><code>arc-v-rpx-100-series</code></td>
+<td><code>medany</code><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
 </tr>
 <tr>
-<td>Tune for RMX-500 targets</td>
-<td><code>-mtune=arc-v-rmx-500-series</code></td>
+<td>Generic RISC-V</td>
+<td><code>rv64ic</code></td>
+<td><code>lp64</code></td>
+<td><code>arc-v-rpx-100-series</code></td>
+<td><code>medany</code></td>
 </tr>
 <tr>
-<td>Tune for RHX-100 targets</td>
-<td><code>-mtune=arc-v-rhx-100-series</code></td>
+<td>Generic RISC-V</td>
+<td><code>rv64im</code></td>
+<td><code>lp64</code></td>
+<td><code>arc-v-rpx-100-series</code></td>
+<td><code>medany</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv64imc</code></td>
+<td><code>lp64</code></td>
+<td><code>arc-v-rpx-100-series</code></td>
+<td><code>medany</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv64ia</code></td>
+<td><code>lp64</code></td>
+<td><code>arc-v-rpx-100-series</code></td>
+<td><code>medany</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv64ima</code></td>
+<td><code>lp64</code></td>
+<td><code>arc-v-rpx-100-series</code></td>
+<td><code>medany</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv64iac</code></td>
+<td><code>lp64</code></td>
+<td><code>arc-v-rpx-100-series</code></td>
+<td><code>medany</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv64imac</code></td>
+<td><code>lp64</code></td>
+<td><code>arc-v-rpx-100-series</code></td>
+<td><code>medany</code></td>
+</tr>
+<tr>
+<td>Generic RISC-V</td>
+<td><code>rv64imafdc</code></td>
+<td><code>lp64d</code></td>
+<td><code>arc-v-rpx-100-series</code></td>
+<td><code>medany</code></td>
+</tr>
+<tr>
+<td>Base RPX-100</td>
+<td><code>rv64imac_zcb_zba_zbb_zbs</code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td><code>lp64</code></td>
+<td><code>arc-v-rpx-100-series</code></td>
+<td><code>medany</code></td>
+</tr>
+<tr>
+<td>Base RPX-100</td>
+<td><code>rv64imafdc_zcb_zba_zbb_zbs</code></td>
+<td><code>lp64d</code></td>
+<td><code>arc-v-rpx-100-series</code></td>
+<td><code>medany</code></td>
 </tr>
 </tbody>
 </table>
-<p>For RMX-100 targets it's also possible to choose a version of MPY unit using <code>-param=arcv-mpy-option=</code> option:</p>
-<ul>
-<li><code>-param=arcv-mpy-option=1c</code></li>
-<li><code>-param=arcv-mpy-option=2c</code> (default)</li>
-<li><code>-param=arcv-mpy-option=10c</code></li>
-</ul>
-<p>Note that all <code>-mtune</code> values for ARC-V assume that fast unaligned access is supported
-(<code>__riscv_misaligned_fast == 1</code>) by targets. This assumption may be overwritten by
-<code>-mstrict-align</code> when building an application or toolchain libraries itself.</p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
-<p>Note that this configuration does not include <code>zcd</code> in <code>-march</code> since it's not supported by RHX-100.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Note that this configuration does not include <code>zcd</code> in <code>-march</code> since it's not supported by RHX-100.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>There is no <code>-mtune</code> option for RPX-100 targets in the GNU toolchain yet. Thus, a default <code>-mtune</code> value is used.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-<li id="fn:3">
-<p>In the GNU toolchain 64-bit targets are available only for <code>-mcmodel=medany</code> memory model.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>In the GNU toolchain 64-bit targets are available only for <code>-mcmodel=medany</code> memory model.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

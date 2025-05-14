@@ -9,24 +9,24 @@
       
       
       
-        <link rel="prev" href="../nsim/">
+        <link rel="prev" href="../building-newlib/">
       
       
-        <link rel="next" href="../vdk/">
+        <link rel="next" href="../multilib/">
       
-      <link rel="icon" href="../../../assets/favicon.ico">
+      <link rel="icon" href="../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>Running Linux on nSIM Using MetaWare Debugger - embARC Documentation Site for ARC Classic and ARC-V</title>
+        <title>Building applications with Picolibc - embARC Documentation Site for ARC Classic and ARC-V</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -42,9 +42,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/extra.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#running-linux-on-nsim-using-metaware-debugger" class="md-skip">
+        <a href="#building-applications-with-picolibc" class="md-skip">
           Skip to content
         </a>
       
@@ -89,9 +89,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="embARC Documentation Site for ARC Classic and ARC-V" class="md-header__button md-logo" aria-label="embARC Documentation Site for ARC Classic and ARC-V" data-md-component="logo">
+    <a href="../.." title="embARC Documentation Site for ARC Classic and ARC-V" class="md-header__button md-logo" aria-label="embARC Documentation Site for ARC Classic and ARC-V" data-md-component="logo">
       
-  <img src="../../../assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Running Linux on nSIM Using MetaWare Debugger
+              Building applications with Picolibc
             
           </span>
         </div>
@@ -181,7 +181,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         Home
       </a>
     </li>
@@ -197,7 +197,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../toolchain/" class="md-tabs__link">
+      <a href="../../toolchain/" class="md-tabs__link">
         Toolchain
       </a>
     </li>
@@ -213,7 +213,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../simulators/qemu/" class="md-tabs__link">
+      <a href="../../simulators/qemu/" class="md-tabs__link">
         Simulators
       </a>
     </li>
@@ -229,8 +229,56 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../baremetal/" class="md-tabs__link">
+      <a href="../../baremetal/" class="md-tabs__link">
         Baremetal
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../linux/" class="md-tabs__link">
+        Linux
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../platforms/" class="md-tabs__link">
+        Boards
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../eclipse/" class="md-tabs__link">
+        Eclipse IDE
       </a>
     </li>
   
@@ -247,55 +295,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link md-tabs__link--active">
-        Linux
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../platforms/" class="md-tabs__link">
-        Boards
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../eclipse/" class="md-tabs__link">
-        Eclipse IDE
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../arcv/" class="md-tabs__link">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         ARC-V
       </a>
     </li>
@@ -329,9 +329,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="embARC Documentation Site for ARC Classic and ARC-V" class="md-nav__button md-logo" aria-label="embARC Documentation Site for ARC Classic and ARC-V" data-md-component="logo">
+    <a href="../.." title="embARC Documentation Site for ARC Classic and ARC-V" class="md-nav__button md-logo" aria-label="embARC Documentation Site for ARC Classic and ARC-V" data-md-component="logo">
       
-  <img src="../../../assets/logo.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     embARC Documentation Site for ARC Classic and ARC-V
@@ -381,7 +381,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../..">Home</a>
+          <a href="../..">Home</a>
           
             <label for="__nav_1">
               <span class="md-nav__icon md-icon"></span>
@@ -404,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../home/processors/" class="md-nav__link">
+      <a href="../../home/processors/" class="md-nav__link">
         Synopsys ARC Processors
       </a>
     </li>
@@ -418,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../home/faq/" class="md-nav__link">
+      <a href="../../home/faq/" class="md-nav__link">
         Frequently Asked Questions
       </a>
     </li>
@@ -466,7 +466,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../toolchain/">Toolchain</a>
+          <a href="../../toolchain/">Toolchain</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -526,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../toolchain/options/arcv3/" class="md-nav__link">
+      <a href="../../toolchain/options/arcv3/" class="md-nav__link">
         Options for ARCv3
       </a>
     </li>
@@ -540,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../toolchain/options/arcv2/" class="md-nav__link">
+      <a href="../../toolchain/options/arcv2/" class="md-nav__link">
         Options for ARCv2
       </a>
     </li>
@@ -554,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../toolchain/options/arcompact/" class="md-nav__link">
+      <a href="../../toolchain/options/arcompact/" class="md-nav__link">
         Options for ARCompact
       </a>
     </li>
@@ -624,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../toolchain/advanced/optimizations/" class="md-nav__link">
+      <a href="../../toolchain/advanced/optimizations/" class="md-nav__link">
         Optimization Options
       </a>
     </li>
@@ -638,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../toolchain/advanced/custom-instructions/" class="md-nav__link">
+      <a href="../../toolchain/advanced/custom-instructions/" class="md-nav__link">
         Custom instructions
       </a>
     </li>
@@ -652,7 +652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../toolchain/advanced/apex-header/" class="md-nav__link">
+      <a href="../../toolchain/advanced/apex-header/" class="md-nav__link">
         Migrating APEX Header
       </a>
     </li>
@@ -666,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../toolchain/advanced/intrinsics/" class="md-nav__link">
+      <a href="../../toolchain/advanced/intrinsics/" class="md-nav__link">
         Intrinsics
       </a>
     </li>
@@ -680,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../toolchain/advanced/sanitizers/" class="md-nav__link">
+      <a href="../../toolchain/advanced/sanitizers/" class="md-nav__link">
         Sanitizers
       </a>
     </li>
@@ -694,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../toolchain/advanced/jli/" class="md-nav__link">
+      <a href="../../toolchain/advanced/jli/" class="md-nav__link">
         JLI Instructions
       </a>
     </li>
@@ -708,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../toolchain/advanced/secure-shield/" class="md-nav__link">
+      <a href="../../toolchain/advanced/secure-shield/" class="md-nav__link">
         SecureShield Programming
       </a>
     </li>
@@ -722,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../toolchain/advanced/small-data/" class="md-nav__link">
+      <a href="../../toolchain/advanced/small-data/" class="md-nav__link">
         Small Data Sections
       </a>
     </li>
@@ -736,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../toolchain/advanced/64-bit-operations/" class="md-nav__link">
+      <a href="../../toolchain/advanced/64-bit-operations/" class="md-nav__link">
         Impact of 64-bit Integral Operation on GCC Toolchain
       </a>
     </li>
@@ -816,7 +816,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../audio/">Audio</a>
+          <a href="../../audio/">Audio</a>
           
             <label for="__nav_2_4_1">
               <span class="md-nav__icon md-icon"></span>
@@ -872,7 +872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../audio/overview/" class="md-nav__link">
+      <a href="../../audio/overview/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -886,7 +886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../audio/getting-started/" class="md-nav__link">
+      <a href="../../audio/getting-started/" class="md-nav__link">
         Getting Started
       </a>
     </li>
@@ -950,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../audio/codecs/" class="md-nav__link">
+      <a href="../../audio/codecs/" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -964,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../audio/codec-bt-cvsd/" class="md-nav__link">
+      <a href="../../audio/codec-bt-cvsd/" class="md-nav__link">
         BT-CVSD
       </a>
     </li>
@@ -978,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../audio/codec-gsm-fr/" class="md-nav__link">
+      <a href="../../audio/codec-gsm-fr/" class="md-nav__link">
         GSM-FR
       </a>
     </li>
@@ -992,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../audio/codec-g711/" class="md-nav__link">
+      <a href="../../audio/codec-g711/" class="md-nav__link">
         G.711
       </a>
     </li>
@@ -1006,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../audio/codec-g722/" class="md-nav__link">
+      <a href="../../audio/codec-g722/" class="md-nav__link">
         G.722 (Appendix IV)
       </a>
     </li>
@@ -1020,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../audio/codec-g726/" class="md-nav__link">
+      <a href="../../audio/codec-g726/" class="md-nav__link">
         G.726
       </a>
     </li>
@@ -1034,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../audio/codec-ldac/" class="md-nav__link">
+      <a href="../../audio/codec-ldac/" class="md-nav__link">
         LDAC Encoder
       </a>
     </li>
@@ -1090,7 +1090,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../ml/">Machine Learning</a>
+          <a href="../../ml/">Machine Learning</a>
           
             <label for="__nav_2_4_2">
               <span class="md-nav__icon md-icon"></span>
@@ -1113,7 +1113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ml/mli/" class="md-nav__link">
+      <a href="../../ml/mli/" class="md-nav__link">
         embARC MLI
       </a>
     </li>
@@ -1127,7 +1127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ml/caffe-framework/" class="md-nav__link">
+      <a href="../../ml/caffe-framework/" class="md-nav__link">
         Caffe Framework for EV6x
       </a>
     </li>
@@ -1141,7 +1141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ml/caffe-models/" class="md-nav__link">
+      <a href="../../ml/caffe-models/" class="md-nav__link">
         Caffe Models for EV6x
       </a>
     </li>
@@ -1155,7 +1155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ml/opencv/" class="md-nav__link">
+      <a href="../../ml/opencv/" class="md-nav__link">
         OpenCV for EV6x
       </a>
     </li>
@@ -1169,7 +1169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ml/gsl/" class="md-nav__link">
+      <a href="../../ml/gsl/" class="md-nav__link">
         GSL for EV6x
       </a>
     </li>
@@ -1212,7 +1212,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../iot/">IoT</a>
+          <a href="../../iot/">IoT</a>
           
             <label for="__nav_2_4_3">
               <span class="md-nav__icon md-icon"></span>
@@ -1235,7 +1235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../iot/embarc-osp/" class="md-nav__link">
+      <a href="../../iot/embarc-osp/" class="md-nav__link">
         embARC OSP
       </a>
     </li>
@@ -1249,7 +1249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../iot/embarc-bsp/" class="md-nav__link">
+      <a href="../../iot/embarc-bsp/" class="md-nav__link">
         embARC BSP
       </a>
     </li>
@@ -1312,7 +1312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../toolchain/testing/dejagnu/" class="md-nav__link">
+      <a href="../../toolchain/testing/dejagnu/" class="md-nav__link">
         Running DejaGNU Tests
       </a>
     </li>
@@ -1326,7 +1326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../toolchain/testing/glibc/" class="md-nav__link">
+      <a href="../../toolchain/testing/glibc/" class="md-nav__link">
         Running Glibc Tests
       </a>
     </li>
@@ -1388,7 +1388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulators/qemu/" class="md-nav__link">
+      <a href="../../simulators/qemu/" class="md-nav__link">
         QEMU
       </a>
     </li>
@@ -1402,7 +1402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../simulators/nsim/" class="md-nav__link">
+      <a href="../../simulators/nsim/" class="md-nav__link">
         nSIM
       </a>
     </li>
@@ -1448,7 +1448,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../baremetal/">Baremetal</a>
+          <a href="../../baremetal/">Baremetal</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -1506,7 +1506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../baremetal/simulators/nsim/" class="md-nav__link">
+      <a href="../../baremetal/simulators/nsim/" class="md-nav__link">
         Building Applications and Debugging on nSIM
       </a>
     </li>
@@ -1520,7 +1520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../baremetal/simulators/qemu/" class="md-nav__link">
+      <a href="../../baremetal/simulators/qemu/" class="md-nav__link">
         Building Applications and Debugging on QEMU
       </a>
     </li>
@@ -1584,7 +1584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../baremetal/hardware/hsdk/" class="md-nav__link">
+      <a href="../../baremetal/hardware/hsdk/" class="md-nav__link">
         HS Development Kit
       </a>
     </li>
@@ -1598,7 +1598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../baremetal/hardware/emsdp/" class="md-nav__link">
+      <a href="../../baremetal/hardware/emsdp/" class="md-nav__link">
         EM Software Development Platform
       </a>
     </li>
@@ -1612,7 +1612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../baremetal/hardware/iotdk/" class="md-nav__link">
+      <a href="../../baremetal/hardware/iotdk/" class="md-nav__link">
         IoT Development Kit
       </a>
     </li>
@@ -1626,7 +1626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../baremetal/hardware/emsk/" class="md-nav__link">
+      <a href="../../baremetal/hardware/emsk/" class="md-nav__link">
         🕥 EM Starter Kit
       </a>
     </li>
@@ -1640,7 +1640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../baremetal/hardware/axs-openocd/" class="md-nav__link">
+      <a href="../../baremetal/hardware/axs-openocd/" class="md-nav__link">
         🕥 AXS with OpenOCD
       </a>
     </li>
@@ -1654,7 +1654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../baremetal/hardware/axs-ashling/" class="md-nav__link">
+      <a href="../../baremetal/hardware/axs-ashling/" class="md-nav__link">
         🕥 AXS with Ashling Opella-XD
       </a>
     </li>
@@ -1716,7 +1716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../baremetal/general/memory/" class="md-nav__link">
+      <a href="../../baremetal/general/memory/" class="md-nav__link">
         Linker Scripts and Memory Maps
       </a>
     </li>
@@ -1730,7 +1730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../baremetal/general/specs/" class="md-nav__link">
+      <a href="../../baremetal/general/specs/" class="md-nav__link">
         Specs Files
       </a>
     </li>
@@ -1744,7 +1744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../baremetal/general/interrupts/" class="md-nav__link">
+      <a href="../../baremetal/general/interrupts/" class="md-nav__link">
         Writing Interrupt Handlers
       </a>
     </li>
@@ -1758,7 +1758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../baremetal/general/heap-and-stack/" class="md-nav__link">
+      <a href="../../baremetal/general/heap-and-stack/" class="md-nav__link">
         Heap and Stack Size
       </a>
     </li>
@@ -1772,7 +1772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../baremetal/general/tcf/" class="md-nav__link">
+      <a href="../../baremetal/general/tcf/" class="md-nav__link">
         Using TCF
       </a>
     </li>
@@ -1799,16 +1799,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
         
@@ -1831,7 +1829,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">Linux</a>
+          <a href="../../linux/">Linux</a>
           
             <label for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
@@ -1839,7 +1837,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Linux
@@ -1893,7 +1891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building/buildroot/" class="md-nav__link">
+      <a href="../../linux/building/buildroot/" class="md-nav__link">
         Building Linux kernel with Filesystem Using Buildroot
       </a>
     </li>
@@ -1907,7 +1905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building/separate/" class="md-nav__link">
+      <a href="../../linux/building/separate/" class="md-nav__link">
         Building Linux kernel and Filesystem Separately
       </a>
     </li>
@@ -1921,7 +1919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building/configure/" class="md-nav__link">
+      <a href="../../linux/building/configure/" class="md-nav__link">
         Configuring Buildroot and Linux Kernel
       </a>
     </li>
@@ -1935,7 +1933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../building/toolchain/" class="md-nav__link">
+      <a href="../../linux/building/toolchain/" class="md-nav__link">
         Using External Toolchains
       </a>
     </li>
@@ -1954,18 +1952,16 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
       
       
         
@@ -1984,7 +1980,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5_3">
           <span class="md-nav__icon md-icon"></span>
           Running Linux on simulators
@@ -1997,7 +1993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nsim/" class="md-nav__link">
+      <a href="../../linux/simulators/nsim/" class="md-nav__link">
         Building Linux for a Simulation and Running on nSIM
       </a>
     </li>
@@ -2009,73 +2005,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Running Linux on nSIM Using MetaWare Debugger
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../linux/simulators/metaware/" class="md-nav__link">
         Running Linux on nSIM Using MetaWare Debugger
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#preface" class="md-nav__link">
-    Preface
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-single-core-arc-hs38-linux-kernel" class="md-nav__link">
-    Running Single-Core ARC HS38 Linux Kernel
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-multi-core-arc-hs38-linux-kernel" class="md-nav__link">
-    Running Multi-Core ARC HS38 Linux Kernel
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-arc770-linux-kernel" class="md-nav__link">
-    Running ARC770 Linux Kernel
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2087,7 +2021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vdk/" class="md-nav__link">
+      <a href="../../linux/simulators/vdk/" class="md-nav__link">
         Running Linux on VDK
       </a>
     </li>
@@ -2101,7 +2035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../qemu/" class="md-nav__link">
+      <a href="../../linux/simulators/qemu/" class="md-nav__link">
         Running Linux on QEMU
       </a>
     </li>
@@ -2159,7 +2093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hsdk/build/" class="md-nav__link">
+      <a href="../../linux/hsdk/build/" class="md-nav__link">
         Building and running Linux
       </a>
     </li>
@@ -2173,7 +2107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hsdk/uboot-build/" class="md-nav__link">
+      <a href="../../linux/hsdk/uboot-build/" class="md-nav__link">
         Building U-Boot
       </a>
     </li>
@@ -2187,7 +2121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hsdk/uboot-commands/" class="md-nav__link">
+      <a href="../../linux/hsdk/uboot-commands/" class="md-nav__link">
         U-Boot command reference
       </a>
     </li>
@@ -2243,7 +2177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../axs/build/" class="md-nav__link">
+      <a href="../../linux/axs/build/" class="md-nav__link">
         Building and running Linux
       </a>
     </li>
@@ -2257,7 +2191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../axs/uboot/" class="md-nav__link">
+      <a href="../../linux/axs/uboot/" class="md-nav__link">
         Flashing U-Boot
       </a>
     </li>
@@ -2315,7 +2249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ebpf/cross/" class="md-nav__link">
+      <a href="../../linux/ebpf/cross/" class="md-nav__link">
         Cross-compiling eBPF Programs
       </a>
     </li>
@@ -2329,7 +2263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ebpf/build/" class="md-nav__link">
+      <a href="../../linux/ebpf/build/" class="md-nav__link">
         Building Linux Image for Working with eBPF in QEMU
       </a>
     </li>
@@ -2343,7 +2277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ebpf/clang/" class="md-nav__link">
+      <a href="../../linux/ebpf/clang/" class="md-nav__link">
         Building Clang with eBPF Target for ARC HS Hosts
       </a>
     </li>
@@ -2394,7 +2328,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../platforms/">Boards</a>
+          <a href="../../platforms/">Boards</a>
           
             <label for="__nav_6">
               <span class="md-nav__icon md-icon"></span>
@@ -2462,7 +2396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../platforms/get-openocd/" class="md-nav__link">
+      <a href="../../platforms/get-openocd/" class="md-nav__link">
         Getting OpenOCD
       </a>
     </li>
@@ -2476,7 +2410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../platforms/use-openocd/" class="md-nav__link">
+      <a href="../../platforms/use-openocd/" class="md-nav__link">
         Using OpenOCD
       </a>
     </li>
@@ -2490,7 +2424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../platforms/mdb/" class="md-nav__link">
+      <a href="../../platforms/mdb/" class="md-nav__link">
         Using MetaWare Debugger
       </a>
     </li>
@@ -2504,7 +2438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../platforms/winusb/" class="md-nav__link">
+      <a href="../../platforms/winusb/" class="md-nav__link">
         Installing WinUSB on Windows
       </a>
     </li>
@@ -2518,7 +2452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../platforms/digilent/" class="md-nav__link">
+      <a href="../../platforms/digilent/" class="md-nav__link">
         Installing Digilent Adept
       </a>
     </li>
@@ -2532,7 +2466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../platforms/reset/" class="md-nav__link">
+      <a href="../../platforms/reset/" class="md-nav__link">
         Resetting Boards
       </a>
     </li>
@@ -2546,7 +2480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../platforms/bit-file-fpga/" class="md-nav__link">
+      <a href="../../platforms/bit-file-fpga/" class="md-nav__link">
         Writing Bit-file into FPGA with Digilent HS Cable
       </a>
     </li>
@@ -2612,7 +2546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../platforms/board-hsdk-4xd/" class="md-nav__link">
+      <a href="../../platforms/board-hsdk-4xd/" class="md-nav__link">
         ARC HS Development Kit 4xD
       </a>
     </li>
@@ -2626,7 +2560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../platforms/board-hsdk/" class="md-nav__link">
+      <a href="../../platforms/board-hsdk/" class="md-nav__link">
         ARC HS Development Kit
       </a>
     </li>
@@ -2640,7 +2574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../platforms/board-emsdp/" class="md-nav__link">
+      <a href="../../platforms/board-emsdp/" class="md-nav__link">
         ARC EM Software Development Platform
       </a>
     </li>
@@ -2654,7 +2588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../platforms/board-iot/" class="md-nav__link">
+      <a href="../../platforms/board-iot/" class="md-nav__link">
         ARC IoT Development Kit
       </a>
     </li>
@@ -2668,7 +2602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../platforms/board-emsk/" class="md-nav__link">
+      <a href="../../platforms/board-emsk/" class="md-nav__link">
         🕥 ARC EM Starter Kit
       </a>
     </li>
@@ -2682,7 +2616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../platforms/board-axs103/" class="md-nav__link">
+      <a href="../../platforms/board-axs103/" class="md-nav__link">
         🕥 ARC AXS103 Software Development Platform
       </a>
     </li>
@@ -2696,7 +2630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../platforms/board-axs101/" class="md-nav__link">
+      <a href="../../platforms/board-axs101/" class="md-nav__link">
         🕥 ARC AXS101 Software Development Platform
       </a>
     </li>
@@ -2749,7 +2683,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../eclipse/">Eclipse IDE</a>
+          <a href="../../eclipse/">Eclipse IDE</a>
           
             <label for="__nav_7">
               <span class="md-nav__icon md-icon"></span>
@@ -2811,7 +2745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../eclipse/installation/windows/" class="md-nav__link">
+      <a href="../../eclipse/installation/windows/" class="md-nav__link">
         Installing on Windows
       </a>
     </li>
@@ -2825,7 +2759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../eclipse/installation/linux/" class="md-nav__link">
+      <a href="../../eclipse/installation/linux/" class="md-nav__link">
         Installing on Linux
       </a>
     </li>
@@ -2839,7 +2773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../eclipse/installation/manual/" class="md-nav__link">
+      <a href="../../eclipse/installation/manual/" class="md-nav__link">
         Manual Installation
       </a>
     </li>
@@ -2853,7 +2787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../eclipse/installation/preferences/" class="md-nav__link">
+      <a href="../../eclipse/installation/preferences/" class="md-nav__link">
         Plugin Preferences
       </a>
     </li>
@@ -2913,7 +2847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../eclipse/getting-started/emsdp/" class="md-nav__link">
+      <a href="../../eclipse/getting-started/emsdp/" class="md-nav__link">
         EM Software Development Platform
       </a>
     </li>
@@ -2927,7 +2861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../eclipse/getting-started/hsdk/" class="md-nav__link">
+      <a href="../../eclipse/getting-started/hsdk/" class="md-nav__link">
         HS Development Kit
       </a>
     </li>
@@ -2941,7 +2875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../eclipse/getting-started/emsk/" class="md-nav__link">
+      <a href="../../eclipse/getting-started/emsk/" class="md-nav__link">
         EM Starter Kit
       </a>
     </li>
@@ -2955,7 +2889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../eclipse/getting-started/nsim/" class="md-nav__link">
+      <a href="../../eclipse/getting-started/nsim/" class="md-nav__link">
         nSIM
       </a>
     </li>
@@ -3015,7 +2949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../eclipse/other/build-settings/" class="md-nav__link">
+      <a href="../../eclipse/other/build-settings/" class="md-nav__link">
         Project Build Settings
       </a>
     </li>
@@ -3029,7 +2963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../eclipse/other/custom-gdb-server/" class="md-nav__link">
+      <a href="../../eclipse/other/custom-gdb-server/" class="md-nav__link">
         Using a Custom GDB Server
       </a>
     </li>
@@ -3043,7 +2977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../eclipse/other/running-gdb-server/" class="md-nav__link">
+      <a href="../../eclipse/other/running-gdb-server/" class="md-nav__link">
         Using a Running GDB Server
       </a>
     </li>
@@ -3057,7 +2991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../eclipse/other/building/" class="md-nav__link">
+      <a href="../../eclipse/other/building/" class="md-nav__link">
         Building the Eclipse Plugin
       </a>
     </li>
@@ -3084,14 +3018,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
       
       
         
@@ -3118,7 +3054,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../arcv/">ARC-V</a>
+          <a href="../">ARC-V</a>
           
             <label for="__nav_8">
               <span class="md-nav__icon md-icon"></span>
@@ -3126,7 +3062,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           ARC-V
@@ -3141,7 +3077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../arcv/building-newlib/" class="md-nav__link">
+      <a href="../building-newlib/" class="md-nav__link">
         Building applications with Newlib
       </a>
     </li>
@@ -3153,11 +3089,107 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../arcv/building-picolibc/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Building applications with Picolibc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Building applications with Picolibc
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-a-crt0-variant" class="md-nav__link">
+    Choosing a crt0 variant
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-a-system-library" class="md-nav__link">
+    Choosing a system library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tuning-instruction-scheduling" class="md-nav__link">
+    Tuning instruction scheduling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migrating-from-newlib" class="md-nav__link">
+    Migrating from Newlib
+  </a>
+  
+    <nav class="md-nav" aria-label="Migrating from Newlib">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-with-semihosting-and-arc-v-features" class="md-nav__link">
+    Build with semihosting and ARC-V features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-with-semihosting-and-without-arc-v-features" class="md-nav__link">
+    Build with semihosting and without ARC-V features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-offset-and-size-of-text-and-data-sections" class="md-nav__link">
+    Set offset and size of text and data sections
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3169,7 +3201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../arcv/multilib/" class="md-nav__link">
+      <a href="../multilib/" class="md-nav__link">
         Understanding ARC-V configurations
       </a>
     </li>
@@ -3183,7 +3215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../arcv/nsim/" class="md-nav__link">
+      <a href="../nsim/" class="md-nav__link">
         Running on nSIM
       </a>
     </li>
@@ -3197,7 +3229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../arcv/qemu/" class="md-nav__link">
+      <a href="../qemu/" class="md-nav__link">
         Running on QEMU
       </a>
     </li>
@@ -3211,7 +3243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../arcv/custom/" class="md-nav__link">
+      <a href="../custom/" class="md-nav__link">
         Building Toolchains
       </a>
     </li>
@@ -3225,7 +3257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../arcv/testing/" class="md-nav__link">
+      <a href="../testing/" class="md-nav__link">
         Testing Specific RISC-V Extensions
       </a>
     </li>
@@ -3266,30 +3298,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#preface" class="md-nav__link">
-    Preface
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-single-core-arc-hs38-linux-kernel" class="md-nav__link">
-    Running Single-Core ARC HS38 Linux Kernel
+  <a href="#choosing-a-crt0-variant" class="md-nav__link">
+    Choosing a crt0 variant
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-multi-core-arc-hs38-linux-kernel" class="md-nav__link">
-    Running Multi-Core ARC HS38 Linux Kernel
+  <a href="#choosing-a-system-library" class="md-nav__link">
+    Choosing a system library
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-arc770-linux-kernel" class="md-nav__link">
-    Running ARC770 Linux Kernel
+  <a href="#tuning-instruction-scheduling" class="md-nav__link">
+    Tuning instruction scheduling
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migrating-from-newlib" class="md-nav__link">
+    Migrating from Newlib
+  </a>
+  
+    <nav class="md-nav" aria-label="Migrating from Newlib">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-with-semihosting-and-arc-v-features" class="md-nav__link">
+    Build with semihosting and ARC-V features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-with-semihosting-and-without-arc-v-features" class="md-nav__link">
+    Build with semihosting and without ARC-V features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-offset-and-size-of-text-and-data-sections" class="md-nav__link">
+    Set offset and size of text and data sections
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3311,70 +3377,289 @@
   
 
 
-<h1 id="running-linux-on-nsim-using-metaware-debugger">Running Linux on nSIM Using MetaWare Debugger<a class="headerlink" href="#running-linux-on-nsim-using-metaware-debugger" title="Permanent link">&para;</a></h1>
-<h2 id="preface">Preface<a class="headerlink" href="#preface" title="Permanent link">&para;</a></h2>
-<p>It's possible to run a Linux kernel on nSIM simulator using MetaWare debugger. It's just another way of
-running the kernel using nSIM. However, it allows to run not only UP configuration, but SMP configurations too.</p>
-<h2 id="running-single-core-arc-hs38-linux-kernel">Running Single-Core ARC HS38 Linux Kernel<a class="headerlink" href="#running-single-core-arc-hs38-linux-kernel" title="Permanent link">&para;</a></h2>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>The kernel must be built with <code>haps_hs_defconfig</code> Linux configuration.</p>
-</div>
-<p>Passing all configurations manually:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mdb -nsim -av2hs -prop=cpunum=0 -mmuv4 -Xrtc -Xatomic -Xtimer0 -Xtimer1 -Xmpyd -Xqmpyh -Xdiv_rem \
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    -toggle=deadbeef=1 -prop=nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=24 -prop=mmu_pagesize=8192 \
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    -prop=mmu_super_pagesize=2097152 -prop=mmu_stlb_entries=16 -prop=mmu_ntlb_ways=4 -prop=mmu_ntlb_sets=128 \
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    -icache=16384,64,2,o -dcache=16384,64,4,o -prop=nsim_isa_aps_feature=1 -prop=nsim_isa_num_actionpoints=4 \
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    -prop=nsim_isa_ll64_option=1 -prop=nsim_isa_rtc_option=1 -prop=nsim_isa_core=3 -noprofile -run -cl vmlinux
+<h1 id="building-applications-with-picolibc">Building applications with Picolibc<a class="headerlink" href="#building-applications-with-picolibc" title="Permanent link">&para;</a></h1>
+<p>GNU toolchain for ARC-V targets uses <code>riscv64-snps-elf</code> prefix for
+all tools. For example, GCC binary has name <code>riscv64-snps-elf-gcc</code>.</p>
+<p>Usually, to compile an application you need to set target options:</p>
+<ol>
+<li><code>-march</code> - stands for RISC-V ISA.</li>
+<li><code>-mabi</code> - stands for ABI.</li>
+<li><code>-mtune</code> - stands for a particular GCC instruction scheduling optimization, 
+   refer <a href="#tuning-instruction-scheduling">Tuning Instruction Scheduling</a>
+   for ARC-V specific values .</li>
+<li><code>-mcmodel</code> - <code>medlow</code> for <code>rv32</code> targets and <code>medany</code> for <code>rv64</code> targets.</li>
+</ol>
+<p>All together they correspond to a particular prebuilt standard library. Refer
+<a href="../multilib/">Understanding ARC-V configurations</a> for details.</p>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<p>Consider a simple code example:</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>Using a predefined TCF template:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mdb -tcf $NSIM_HOME/etc/tcf/templates/hs38_full.tcf \
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    -prop=nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=24 \
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    -prop=nsim_isa_rtc_option=1 -nsim -noprofile -run -cl vmlinux
+<p>If I want to build it for the base RMX-100 target and link with 
+a semihosting library, I would use this set of options:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ riscv64-snps-elf-gcc \
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>        -march=rv32imafc \
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        -mabi=ilp32f \
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        -mtune=arc-v-rhx-100-series \
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        -specs=picolibc.specs \
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        --crt0=semihost \
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        --oslib=semihost \
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        example.c -o example.elf
 </span></code></pre></div>
-<h2 id="running-multi-core-arc-hs38-linux-kernel">Running Multi-Core ARC HS38 Linux Kernel<a class="headerlink" href="#running-multi-core-arc-hs38-linux-kernel" title="Permanent link">&para;</a></h2>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>The kernel must be built with <code>haps_hs_smp_defconfig</code> Linux configuration.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><code>nsim_connect_*</code> properties are not supported in older nSIM (prior K-2015.06).
-Please check the nSIM documentation to replace them with deprecated <code>nsim_mcip_*</code> properties.</p>
-</div>
-<p>Running 2 cores using a predefined TCF template:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>export NSIM_MULTICORE=1
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>mdb -pset=1 -psetname=core0 -prop=ident=0x00000050 -cmpd=soc \
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    -tcf $NSIM_HOME/etc/tcf/templates/hs38_full.tcf \
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    -prop=nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=0,use_connect=1 \
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    -prop=nsim_connect=2 -prop=nsim_connect_idu=1 -prop=nsim_connect_gfrc=1 \
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    -prop=nsim_connect_ici=1 -prop=isa_counters=1 -prop=nsim_isa_pct_counters=8 \
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    -prop=nsim_isa_pct_interrupt=1 -prop=nsim_isa_pct_interrupt=1 \
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    -noprofile vmlinux
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>mdb -tcf $NSIM_HOME/etc/tcf/templates/hs38_full.tcf \
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    -pset=2 -psetname=core1 -prop=ident=0x00000150 -cmpd=soc \
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    -prop=nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=0,use_connect=1 \
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    -prop=nsim_connect=2 -prop=nsim_connect_idu=1 -prop=nsim_connect_gfrc=1 \
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    -prop=nsim_connect_ici=1 -prop=isa_counters=1 -prop=nsim_isa_pct_counters=8 \
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    -prop=nsim_isa_pct_interrupt=1 -prop=nsim_isa_pct_interrupt=1 \
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    -noprofile vmlinux
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>mdb -multifiles=core0,core1 -cmpd=soc -run -cl
+<p>Passing <code>-specs=picolibc.specs</code> for linking with Picolibc is mandatory:</p>
+<ol>
+<li>It allows choosing a proper variant of <code>crt0</code> startup file through <code>--crt0=</code> option (<a href="#choosing-a-crt0-variant">see all variants below</a>).</li>
+<li>It allows choosing a proper variant of a system library through <code>--oslib=</code> option (<a href="#choosing-a-system-library">see all variants below</a>).</li>
+<li>It chooses a custom linker script crafted for Picolibc (<code>picolibc.ld</code>).</li>
+</ol>
+<p>In turn, when <code>picolibc.ld</code> linker script is used, it's possible to configure
+placement and size of code and data sections:</p>
+<ol>
+<li>Set offset of code sections through <code>-Wl,--defsym=__flash=</code> option.</li>
+<li>Set size of code sections through <code>-Wl,--defsym=__flash_size=</code> option.</li>
+<li>Set offset of data sections through <code>-Wl,--defsym=__ram=</code> option.</li>
+<li>Set size of data sections through <code>-Wl,--defsym=__ram_size=</code> option.</li>
+</ol>
+<p>Here is a full example with custom code and data sections:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ riscv64-snps-elf-gcc \
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>        -march=rv32imafc \
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        -mabi=ilp32f \
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        -mtune=arc-v-rhx-100-series \
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        -specs=picolibc.specs \
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        --crt0=semihost \
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        --oslib=semihost \
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        -Wl,--defsym=__flash=0x80000000 \
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        -Wl,--defsym=__flash_size=128K \
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        -Wl,--defsym=__ram=0x80020000 \
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        -Wl,--defsym=__ram_size=128K \
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        example.c -o example.elf
 </span></code></pre></div>
-<p>Running 4 cores using a predefined TCF template:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">NSIM_MULTICORE</span><span class="o">=</span><span class="m">1</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nv">VMLINUX</span><span class="o">=</span><span class="s2">&quot;vmlinux&quot;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nv">COMMON</span><span class="o">=</span><span class="s2">&quot;-tcf </span><span class="nv">$NSIM_HOME</span><span class="s2">/etc/tcf/templates/hs38_full.tcf -prop=nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=0,use_connect=1 -prop=nsim_connect=2 -prop=nsim_connect_idu=1 -prop=nsim_connect_gfrc=1 -prop=nsim_connect_ici=1 -prop=isa_counters=1 -prop=nsim_isa_pct_counters=8 -prop=nsim_isa_pct_interrupt=1 -prop=nsim_isa_pct_interrupt=1 -noprofile&quot;</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">1</span><span class="w"> </span>-psetname<span class="o">=</span>core0<span class="w"> </span>-prop<span class="o">=</span><span class="nv">ident</span><span class="o">=</span>0x00000050<span class="w"> </span>-cmpd<span class="o">=</span>soc<span class="w"> </span><span class="nv">$COMMON</span><span class="w"> </span><span class="nv">$VMLINUX</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">2</span><span class="w"> </span>-psetname<span class="o">=</span>core1<span class="w"> </span>-prop<span class="o">=</span><span class="nv">ident</span><span class="o">=</span>0x00000150<span class="w"> </span>-cmpd<span class="o">=</span>soc<span class="w"> </span><span class="nv">$COMMON</span><span class="w"> </span><span class="nv">$VMLINUX</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">3</span><span class="w"> </span>-psetname<span class="o">=</span>core2<span class="w"> </span>-prop<span class="o">=</span><span class="nv">ident</span><span class="o">=</span>0x00000250<span class="w"> </span>-cmpd<span class="o">=</span>soc<span class="w"> </span><span class="nv">$COMMON</span><span class="w"> </span><span class="nv">$VMLINUX</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">4</span><span class="w"> </span>-psetname<span class="o">=</span>core3<span class="w"> </span>-prop<span class="o">=</span><span class="nv">ident</span><span class="o">=</span>0x00000350<span class="w"> </span>-cmpd<span class="o">=</span>soc<span class="w"> </span><span class="nv">$COMMON</span><span class="w"> </span><span class="nv">$VMLINUX</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>mdb<span class="w"> </span>-multifiles<span class="o">=</span>core0,core1,core2,core3<span class="w"> </span>-cmpd<span class="o">=</span>soc<span class="w"> </span>-run<span class="w"> </span>-cl
+<p>Run the application using nSIM:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ nsimdrv -p nsim_isa_family=rv32 -p nsim_isa_ext=-all.i.m.a.f.c.zicsr -p nsim_semihosting=1 -p enable_exceptions=0 example.elf
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Hello, World!
 </span></code></pre></div>
-<h2 id="running-arc770-linux-kernel">Running ARC770 Linux Kernel<a class="headerlink" href="#running-arc770-linux-kernel" title="Permanent link">&para;</a></h2>
-<p>Passing all configurations manually:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mdb -a7 -nsim -Xlib -prop=nsim_mmu=3 -Xtimer0 -Xtimer1 -icache=16384,64,2,o -dcache=32768,64,4,o \
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    -prop=cpunum=0 -prop=nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=24 -prop=nsim_sc_mem_range_end=0xc0fbffff \
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    -prop=nsim_isa_atomic_option=1 -prop=nsim_isa_num_actionpoints=8 -prop=nsim_isa_aps_feature=1 -noprofile -OK -run -cl vmlinux
+<p>Refer to <a href="../nsim/">Running on nSIM</a> and <a href="../qemu/">Running on QEMU</a> to learn how
+to run ARC-V examples on nSIM or QEMU simulator.</p>
+<h2 id="choosing-a-crt0-variant">Choosing a <code>crt0</code> variant<a class="headerlink" href="#choosing-a-crt0-variant" title="Permanent link">&para;</a></h2>
+<p>A variant of a startup file (<code>crt0.o</code>) is chosen through <code>--crt0=</code> option. See a list of all supported values for this option below.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Uses CSR instructions</th>
+<th>Returns exit code</th>
+<th>Calls constructors</th>
+<th>Reads command line arguments</th>
+<th>Sets traps</th>
+<th>Initializes ARC-V features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Not passing <code>--crt0=</code> value (default)</td>
+<td>No</td>
+<td>No</td>
+<td><strong>Yes</strong></td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>--crt0=hosted</code></td>
+<td>No</td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes</strong></td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>--crt0=minimal</code></td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>--crt0=semihost</code></td>
+<td>No</td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes</strong></td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>--crt0=semihost-trap</code></td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>--crt0=arcv-hosted</code></td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes</strong></td>
+<td>No</td>
+<td>No</td>
+<td><strong>Yes</strong></td>
+</tr>
+<tr>
+<td><code>--crt0=arcv-minimal</code></td>
+<td><strong>Yes</strong></td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td><strong>Yes</strong></td>
+</tr>
+<tr>
+<td><code>--crt0=arcv-semihost</code></td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes</strong></td>
+<td>No</td>
+<td><strong>Yes</strong></td>
+</tr>
+<tr>
+<td><code>--crt0=arcv-semihost-trap</code></td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Empty <code>crt0</code> variant corresponds to <code>--crt0=none</code>. All <code>arcv-*</code> variants enable all available ARC-V caches
+and support of RVV if it's present.</p>
+<h2 id="choosing-a-system-library">Choosing a system library<a class="headerlink" href="#choosing-a-system-library" title="Permanent link">&para;</a></h2>
+<p>So far, Picolibc supports 2 system libraries, and it's chosen through <code>--oslib=</code> option:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--oslib=dummyhost</code></td>
+<td>A simple environment without input/output and exit codes.</td>
+</tr>
+<tr>
+<td><code>--oslib=semihost</code></td>
+<td>Support of Semihosting environment.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tuning-instruction-scheduling">Tuning instruction scheduling<a class="headerlink" href="#tuning-instruction-scheduling" title="Permanent link">&para;</a></h2>
+<p>GCC instruction scheduling may be tuned for different ARC-V
+targets using <code>-mtune=</code> option:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Option</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tune for RMX-100 targets</td>
+<td><code>-mtune=arc-v-rmx-100-series</code></td>
+</tr>
+<tr>
+<td>Tune for RMX-500 targets</td>
+<td><code>-mtune=arc-v-rmx-500-series</code></td>
+</tr>
+<tr>
+<td>Tune for RHX-100 targets</td>
+<td><code>-mtune=arc-v-rhx-100-series</code></td>
+</tr>
+<tr>
+<td>Tune for RPX-100 targets</td>
+<td><code>-mtune=arc-v-rpx-100-series</code></td>
+</tr>
+</tbody>
+</table>
+<p>For RMX-100 targets it's also possible to choose a version of MPY unit using <code>-param=arcv-mpy-option=</code> option:</p>
+<ul>
+<li><code>-param=arcv-mpy-option=1c</code></li>
+<li><code>-param=arcv-mpy-option=2c</code> (default)</li>
+<li><code>-param=arcv-mpy-option=10c</code></li>
+</ul>
+<p>You can choose a number of cycles that a word-size integer load operation takes
+(from 1 to 3, 3 is default) using <code>--param=arcv-ld-cycles=&lt;1,3&gt;</code> option.</p>
+<p>Note that all <code>-mtune</code> values for ARC-V assume that fast unaligned access is supported
+(<code>__riscv_misaligned_fast == 1</code>) by targets. This assumption may be overwritten by
+<code>-mstrict-align</code> when building an application or toolchain libraries itself.</p>
+<h2 id="migrating-from-newlib">Migrating from Newlib<a class="headerlink" href="#migrating-from-newlib" title="Permanent link">&para;</a></h2>
+<h3 id="build-with-semihosting-and-arc-v-features">Build with semihosting and ARC-V features<a class="headerlink" href="#build-with-semihosting-and-arc-v-features" title="Permanent link">&para;</a></h3>
+<p>Using Newlib:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>...
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>-specs=semihost.specs \
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>-specs=arcv.specs \
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>-T arcv.ld \
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>...
+</span></code></pre></div>
+<p>Using Picolibc:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>...
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>-specs=picolibc.specs \
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>--oslib=semihost \
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>--crt0=arcv-semihost \
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>...
+</span></code></pre></div>
+<h3 id="build-with-semihosting-and-without-arc-v-features">Build with semihosting and without ARC-V features<a class="headerlink" href="#build-with-semihosting-and-without-arc-v-features" title="Permanent link">&para;</a></h3>
+<p>Using Newlib:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>...
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>-specs=semihost.specs \
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>-specs=arcv.specs \
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>-T arcv.ld \
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>--crt0=no-csr \
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>...
+</span></code></pre></div>
+<p>Using Picolibc:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>...
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>-specs=picolibc.specs \
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>--oslib=semihost \
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>--crt0=semihost \
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>...
+</span></code></pre></div>
+<h3 id="set-offset-and-size-of-text-and-data-sections">Set offset and size of text and data sections<a class="headerlink" href="#set-offset-and-size-of-text-and-data-sections" title="Permanent link">&para;</a></h3>
+<p>Using Newlib:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>...
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>-specs=semihost.specs \
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>-specs=arcv.specs \
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>-T arcv.ld \
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>-Wl,-defsym=txtmem_addr=0x80000000 \
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>-Wl,-defsym=txtmem_len=128K \
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>-Wl,-defsym=datamem_addr=0x80020000 \
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>-Wl,-defsym=datamem_len=128K \
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>...
+</span></code></pre></div>
+<p>Using Picolibc:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>...
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>-specs=picolibc.specs \
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>--oslib=semihost \
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>--crt0=arcv-semihost \
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>-Wl,--defsym=__flash=0x80000000 \
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>-Wl,--defsym=__flash_size=128K \
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>-Wl,--defsym=__ram=0x80020000 \
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>-Wl,--defsym=__ram_size=128K \
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>...
 </span></code></pre></div>
 
 
@@ -3422,10 +3707,10 @@ Please check the nSIM documentation to replace them with deprecated <code>nsim_m
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.sections", "navigation.indexes", "navigation.top", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.sections", "navigation.indexes", "navigation.top", "content.code.copy"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   </body>

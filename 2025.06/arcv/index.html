@@ -12,7 +12,7 @@
         <link rel="prev" href="../eclipse/other/building/">
       
       
-        <link rel="next" href="building/">
+        <link rel="next" href="building-newlib/">
       
       <link rel="icon" href="../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
@@ -3045,6 +3045,10 @@
         
           
         
+          
+        
+          
+        
       
       
         
@@ -3073,8 +3077,36 @@
   
   
     <li class="md-nav__item">
-      <a href="building/" class="md-nav__link">
-        Building Applications
+      <a href="building-newlib/" class="md-nav__link">
+        Building applications with Newlib
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="building-picolibc/" class="md-nav__link">
+        Building applications with Picolibc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="multilib/" class="md-nav__link">
+        Understanding ARC-V configurations
       </a>
     </li>
   
@@ -3203,7 +3235,7 @@
 
 <h1 id="gnu-toolchain-for-arc-v-targets">GNU Toolchain for ARC-V Targets<a class="headerlink" href="#gnu-toolchain-for-arc-v-targets" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>In <code>arc-2024.12</code> release GNU toolchain for ARC-V targets is based on these
+<p>In <code>arc-2025.06</code> release GNU toolchain for ARC-V targets is based on these
 tools and libraries:</p>
 <ul>
 <li>GCC 14.2 with ARC-V specific patches<ul>
@@ -3230,8 +3262,8 @@ tools and libraries:</p>
 </ul>
 <p>Supported ARC-V specific features:</p>
 <ul>
-<li><a href="#tuning-scheduling">Tuning GCC instruction scheduling</a> for RMX-100, RMX-500 and RHX-100 targets.</li>
-<li>Includes optimized sets of libraries for basic profiles for RMX-100, RMX-500 and RHX-100.</li>
+<li><a href="#tuning-scheduling">Tuning GCC instruction scheduling</a> for RMX-100, RMX-500, RHX-100 and RPX-100 targets.</li>
+<li>Includes optimized sets of libraries for basic profiles for RMX-100, RMX-500, RHX-100 and RPX-100.</li>
 <li>Support of enabling ARC-V caches on startup.</li>
 </ul>
 <p>Because the ARC-V GNU toolchain is built on top of standard components such as GCC, Binutils, and GDB,
