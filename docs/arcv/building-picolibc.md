@@ -84,6 +84,35 @@ Hello, World!
 Refer to [Running on nSIM](./nsim.md) and [Running on QEMU](./qemu.md) to learn how
 to run ARC-V examples on nSIM or QEMU simulator.
 
+## Compiling C++ applications
+
+Consider a simple code example:
+
+```c
+#include <iostream>
+
+int main()
+{
+        std::cout << "Hello, World!" << std::endl;
+        return 0;
+}
+```
+
+For compiling C++ applications use `-specs=picolibcpp.specs`:
+
+```
+$ riscv64-snps-elf-gcc \
+        -march=rv32imafc \
+        -mabi=ilp32f \
+        -mtune=arc-v-rhx-100-series \
+        -specs=picolibcpp.specs \
+        --crt0=semihost \
+        --oslib=semihost \
+        -Wl,--defsym=__flash_size=2M \
+        -Wl,--defsym=__ram_size=2M \
+        example.c -o example.elf
+```
+
 ## Choosing a `crt0` variant
 
 A variant of a startup file (`crt0.o`) is chosen through `--crt0=` option. See a list of all supported values for this option below.
