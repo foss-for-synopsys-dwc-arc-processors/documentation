@@ -177,7 +177,9 @@ nav:
       - eclipse/other/building.md
   - ARC-V:
     - arcv/index.md
-    - arcv/building.md
+    - arcv/building-newlib.md
+    - arcv/building-picolibc.md
+    - arcv/multilib.md
     - arcv/nsim.md
     - arcv/qemu.md
     - arcv/custom.md

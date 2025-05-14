@@ -3,7 +3,7 @@
 The GNU toolchain for ARC-V targets contains a set of precompiled standard libraries
 for different combinations of `-march`, `-mabi` and `-mcmodel`. You can find a list
 of available configurations this way (they are described in
-[Understanding ARC-V Configurations](./building.md#understanding-arc-v-configurations) section):
+[Understanding ARC-V configurations](./multilib.md) section):
 
 ```
 $ riscv64-snps-elf-gcc -print-multi-lib

@@ -2,7 +2,7 @@
 
 ## Overview
 
-In `arc-2024.12` release GNU toolchain for ARC-V targets is based on these
+In `arc-2025.06` release GNU toolchain for ARC-V targets is based on these
 tools and libraries:
 
 * GCC 14.2 with ARC-V specific patches
@@ -21,8 +21,8 @@ tools and libraries:
 
 Supported ARC-V specific features:
 
-* [Tuning GCC instruction scheduling](#tuning-scheduling) for RMX-100, RMX-500 and RHX-100 targets.
-* Includes optimized sets of libraries for basic profiles for RMX-100, RMX-500 and RHX-100.
+* [Tuning GCC instruction scheduling](#tuning-scheduling) for RMX-100, RMX-500, RHX-100 and RPX-100 targets.
+* Includes optimized sets of libraries for basic profiles for RMX-100, RMX-500, RHX-100 and RPX-100.
 * Support of enabling ARC-V caches on startup.
 
 Because the ARC-V GNU toolchain is built on top of standard components such as GCC, Binutils, and GDB,
