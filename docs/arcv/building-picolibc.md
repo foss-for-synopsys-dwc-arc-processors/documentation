@@ -113,6 +113,37 @@ $ riscv64-snps-elf-gcc \
         example.c -o example.elf
 ```
 
+## Using size optimized Picolibc variant
+
+Pass `-specs=nano.specs` option to link an application with a
+size optimized Picolibc variant:
+
+```
+$ riscv64-snps-elf-gcc \
+        -march=rv32imafc \
+        -mabi=ilp32f \
+        -mtune=arc-v-rhx-100-series \
+        -specs=picolibc.specs \
+        -specs=nano.specs \
+        --crt0=semihost \
+        --oslib=semihost \
+        example.c -o example.elf
+```
+
+The table below summarizes differences between the regular Picolibc
+and size optimized one.
+
+| Feature                                          | Picolibc | Picolibc Nano |
+|--------------------------------------------------|----------|---------------|
+| Optimization level                               | `-O3`    | `-Os`         |
+| Support of `long long` format in i/o functions   | Yes      | No            |
+| Support of `long double` format in i/o functions | Yes      | No            |
+| Support of `%b` format in i/o functions          | Yes      | No            |
+| Support of `%n` format in i/o functions          | Yes      | No            |
+| Faster buffered i/o operations                   | Yes      | No            |
+| Multibyte support for UTF-8 charset              | Yes      | No            |
+| Wide character support in `printf`/`scanf`       | Yes      | No            |
+
 ## Choosing a `crt0` variant
 
 A variant of a startup file (`crt0.o`) is chosen through `--crt0=` option. See a list of all supported values for this option below.
