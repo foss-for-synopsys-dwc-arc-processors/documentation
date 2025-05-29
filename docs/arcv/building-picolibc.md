@@ -197,6 +197,29 @@ Note that all `-mtune` values for ARC-V assume that fast unaligned access is sup
 (`__riscv_misaligned_fast == 1`) by targets. This assumption may be overwritten by
 `-mstrict-align` when building an application or toolchain libraries itself.
 
+## Using a linker script optimized for performance
+
+The default Picolibc linker script places `.rodata` section right after code
+sections. However, this approach may lead to decrease in performance since
+addressing through a global pointer may not be available for `.rodata` in this
+case.
+
+If safety of read only regions is not a priority in a particular case,
+`picolibc_perf.ld` linker script may be used to increase performance:
+
+```
+$ riscv64-snps-elf-gcc \
+        -march=rv32imafc \
+        -mabi=ilp32f \
+        -mtune=arc-v-rhx-100-series \
+        -specs=picolibc.specs \
+        -T picolibc_perf.ld \
+        --crt0=semihost \
+        --oslib=semihost \
+        example.c -o example.elf
+```
+
+This linker script places `.rodata` in a data region.
 
 ## Migrating from Newlib
 
