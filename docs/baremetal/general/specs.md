@@ -36,4 +36,3 @@ Also, there are specs files for various development platforms:
 
 * [HS Development Kit](../hardware/hsdk.md)
 * [EM Software Development Platform](../hardware/emsdp.md)
-* [EM Starter Kit](../hardware/emsk.md)

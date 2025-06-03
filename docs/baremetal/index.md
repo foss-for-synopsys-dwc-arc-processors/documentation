@@ -15,7 +15,3 @@ may be run on these platforms:
 1. Simulators: nSIM and QEMU.
 2. Development platforms: HS Development Kit, EM Software Development Platform.
    IoT Development Kit.
-3. Guides for EM Starter Kit and AXS Software Development
-   Platform are presented too but these platform are no longer supported and
-   there is no guarantee that those guides will be applicable for the latest
-   tools.
