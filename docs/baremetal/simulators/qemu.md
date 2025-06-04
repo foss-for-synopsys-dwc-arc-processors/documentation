@@ -1,4 +1,4 @@
-# Building Applications and Debugging on QEMU
+# QEMU
 
 ## Installing QEMU
 
