@@ -2214,7 +2214,7 @@
       
         <li class="md-nav__item">
   <a href="#downloading-a-prebuilt-openocd" class="md-nav__link">
-    Downloading a Prebuilt OpenOCD
+    Downloading a prebuilt OpenOCD
   </a>
   
 </li>
@@ -2222,6 +2222,13 @@
         <li class="md-nav__item">
   <a href="#building-for-linux" class="md-nav__link">
     Building for Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-udev-rules-for-linux" class="md-nav__link">
+    Installing udev rules for Linux
   </a>
   
 </li>
@@ -2989,7 +2996,7 @@
       
         <li class="md-nav__item">
   <a href="#downloading-a-prebuilt-openocd" class="md-nav__link">
-    Downloading a Prebuilt OpenOCD
+    Downloading a prebuilt OpenOCD
   </a>
   
 </li>
@@ -2997,6 +3004,13 @@
         <li class="md-nav__item">
   <a href="#building-for-linux" class="md-nav__link">
     Building for Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-udev-rules-for-linux" class="md-nav__link">
+    Installing udev rules for Linux
   </a>
   
 </li>
@@ -3046,7 +3060,7 @@
 <p>If you are going to use OpenOCD on Windows, then also follow
 <a href="../winusb/">Installing WinUSB on Windows</a> guide to install WinUSB driver.</p>
 </div>
-<h2 id="downloading-a-prebuilt-openocd">Downloading a Prebuilt OpenOCD<a class="headerlink" href="#downloading-a-prebuilt-openocd" title="Permanent link">&para;</a></h2>
+<h2 id="downloading-a-prebuilt-openocd">Downloading a prebuilt OpenOCD<a class="headerlink" href="#downloading-a-prebuilt-openocd" title="Permanent link">&para;</a></h2>
 <p>The easiest way to obtain OpenOCD is to download Eclipse IDE bundle from
 <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases">the releases page</a>:</p>
 <ul>
@@ -3056,13 +3070,15 @@
   <code>bin</code> subdirectory.</li>
 </ul>
 <h2 id="building-for-linux">Building for Linux<a class="headerlink" href="#building-for-linux" title="Permanent link">&para;</a></h2>
-<p>Install prerequisites for Ubuntu 20.04:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libtool<span class="w"> </span>git-core<span class="w"> </span>build-essential<span class="w"> </span>autoconf<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">      </span>automake<span class="w"> </span>texinfo<span class="w"> </span>libusb-1.0-0<span class="w"> </span>libusb-1.0-0-dev<span class="w"> </span>pkg-config
+<p>Install prerequisites for RHEL/AlmaLinux 8:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">      </span>libtool<span class="w"> </span>gcc<span class="w"> </span>autoconf<span class="w"> </span>automake<span class="w"> </span>texinfo<span class="w"> </span>libusb1<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">      </span>libusb1-devel<span class="w"> </span>git<span class="w"> </span>make<span class="w"> </span>which
 </span></code></pre></div>
-<p>Install prerequisites for RHEL/CentOS 7:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>libtool<span class="w"> </span>gcc<span class="w"> </span>autoconf<span class="w"> </span>automake<span class="w"> </span>texinfo<span class="w"> </span>libusb1<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">      </span>libusb1-devel<span class="w"> </span>git<span class="w"> </span>make<span class="w"> </span>which
+<p>Install prerequisites for Ubuntu 22.04:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">      </span>libtool<span class="w"> </span>git<span class="w"> </span>build-essential<span class="w"> </span>autoconf<span class="w"> </span>automake<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">      </span>texinfo<span class="w"> </span>libusb-1.0-0<span class="w"> </span>libusb-1.0-0-dev<span class="w"> </span>pkg-config
 </span></code></pre></div>
 <p>Download OpenOCD sources and checkout the latest release:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>arc-2021.09<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/openocd
@@ -3070,7 +3086,9 @@
 </span></code></pre></div>
 <p>Configure OpenOCD (use your own <code>--prefix</code> path):</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>./bootstrap
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$<span class="w"> </span>./configure<span class="w"> </span>--enable-ftdi<span class="w"> </span>--disable-werror<span class="w"> </span>--disable-doxygen-html<span class="w"> </span>--prefix<span class="o">=</span>/tools/openocd
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$<span class="w"> </span>./configure<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">      </span>--enable-ftdi<span class="w"> </span>--disable-werror<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span>--disable-doxygen-html<span class="w"> </span>--prefix<span class="o">=</span>/tools/openocd
 </span></code></pre></div>
 <p>Also, you can pass <code>--enable-verbose</code> and <code>--enable-verbose-jtag-io</code> options for development activities.</p>
 <p>Build and install:</p>
@@ -3080,30 +3098,31 @@
 <p>Configure your environment (use your own installation path):</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/tools/openocd/bin:<span class="nv">$PATH</span>
 </span></code></pre></div>
-<p>Finally you need to configure udev rules in such way that OpenOCD would be able
+<h2 id="installing-udev-rules-for-linux">Installing udev rules for Linux<a class="headerlink" href="#installing-udev-rules-for-linux" title="Permanent link">&para;</a></h2>
+<p>You should configure udev rules in such way that OpenOCD would be able
 to claim your JTAG debug cable. In common case for ARC this is an FTDI-based
-device. If you already have <code>libftdi</code> package installed on your system, then
-required rules are already provided to <code>udev</code>. Otherwise create file
-<code>/etc/udev/rules.d/99-ftdi.rules</code> with the following contents:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a># Digilent HS1 and similiar products
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;0403&quot;, ATTRS{idProduct}==&quot;6010&quot;, MODE=&quot;0664&quot;, GROUP=&quot;plugdev&quot;
+device.</p>
+<p>For RHEL/AlmaLinux 8 create <code>/etc/udev/rules.d/99-ftdi.rules</code>
+configuration file with the following contents:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a># Digilent HS1 and similar products
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;0403&quot;, ATTRS{idProduct}==&quot;6010&quot;, MODE=&quot;0666&quot;
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a># Digilent HS2
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;0403&quot;, ATTRS{idProduct}==&quot;6014&quot;, MODE=&quot;0664&quot;, GROUP=&quot;plugdev&quot;
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;0403&quot;, ATTRS{idProduct}==&quot;6014&quot;, MODE=&quot;0666&quot;
 </span></code></pre></div>
-<p>In case of CentOS/AlmaLinux/Fedora distributions you need to remove <code>GROUP="plugdev"</code> and set
-<code>0666</code> rights for Digilent devices since <code>plugdev</code> group is not presented there:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a># Digilent HS1 and similiar products
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;0403&quot;, ATTRS{idProduct}==&quot;6010&quot;, MODE=&quot;0666&quot;
+<p>For Ubuntu 22.04 create <code>/etc/udev/rules.d/99-ftdi.rules</code>
+configuration file with the following contents:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a># Digilent HS1 and similar products
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;0403&quot;, ATTRS{idProduct}==&quot;6010&quot;, MODE=&quot;0664&quot;, GROUP=&quot;plugdev&quot;
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a># Digilent HS2
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;0403&quot;, ATTRS{idProduct}==&quot;6014&quot;, MODE=&quot;0666&quot;
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>SUBSYSTEM==&quot;usb&quot;, ATTRS{idVendor}==&quot;0403&quot;, ATTRS{idProduct}==&quot;6014&quot;, MODE=&quot;0664&quot;, GROUP=&quot;plugdev&quot;
 </span></code></pre></div>
-<p>You also can use file <code>contrib/99-openocd.udev</code> supplied with OpenOCD sources,
-however this file doesn't work with Digilent HS2, though on the other hand it
-mentions many other FTDI-based devices.</p>
 <p>Then either reboot your system or reload <code>udev</code> configuration and reconnect debug
 cable to the host computer:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>udevadm<span class="w"> </span>control<span class="w"> </span>--reload-rules
 </span></code></pre></div>
+<p>You can also use <code>contrib/99-openocd.udev</code> file supplied with OpenOCD sources,
+however this file doesn't work with Digilent HS2, though on the other hand it
+mentions many other FTDI-based devices.</p>
 <h2 id="building-for-windows">Building for Windows<a class="headerlink" href="#building-for-windows" title="Permanent link">&para;</a></h2>
 <p>It is possible to use OpenOCD on Windows with FTDI-based debug cables using a
 <code>ftdi</code> interface and <code>libusb</code> driver (further down called <code>ftdi</code>/<code>libusb</code>). Note,
@@ -3112,7 +3131,7 @@ open source ones. This will render Digilent cable unusable by Digilent tools,
 like Adept.</p>
 <p>Install the same prerequisites like for Linux build (except for <code>libusb-dev</code>) and
 MinGW cross-compiler:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libtool<span class="w"> </span>git-core<span class="w"> </span>build-essential<span class="w"> </span>autoconf<span class="w"> </span><span class="se">\</span>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libtool<span class="w"> </span>git-core<span class="w"> </span>build-essential<span class="w"> </span>autoconf<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">      </span>automake<span class="w"> </span>texinfo<span class="w"> </span>pkg-config<span class="w"> </span>wget<span class="w"> </span>gcc-mingw-w64
 </span></code></pre></div>
 <p>Download <a href="http://libusb.info">libusb sources</a> sources. Configure and build them
