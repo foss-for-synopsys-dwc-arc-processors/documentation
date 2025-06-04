@@ -5,7 +5,7 @@
     If you are going to use OpenOCD on Windows, then also follow
     [Installing WinUSB on Windows](./winusb.md) guide to install WinUSB driver.
 
-## Downloading a Prebuilt OpenOCD
+## Downloading a prebuilt OpenOCD
 
 The easiest way to obtain OpenOCD is to download Eclipse IDE bundle from
 [the releases page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases):
@@ -17,18 +17,20 @@ The easiest way to obtain OpenOCD is to download Eclipse IDE bundle from
 
 ## Building for Linux
 
-Install prerequisites for Ubuntu 20.04:
+Install prerequisites for RHEL/AlmaLinux 8:
 
 ```shell
-$ sudo apt-get install libtool git-core build-essential autoconf \
-      automake texinfo libusb-1.0-0 libusb-1.0-0-dev pkg-config
+$ sudo dnf install \
+      libtool gcc autoconf automake texinfo libusb1 \
+      libusb1-devel git make which
 ```
 
-Install prerequisites for RHEL/CentOS 7:
+Install prerequisites for Ubuntu 22.04:
 
 ```shell
-$ sudo yum install libtool gcc autoconf automake texinfo libusb1 \
-      libusb1-devel git make which
+$ sudo apt install \
+      libtool git build-essential autoconf automake \
+      texinfo libusb-1.0-0 libusb-1.0-0-dev pkg-config
 ```
 
 Download OpenOCD sources and checkout the latest release:
@@ -42,7 +44,9 @@ Configure OpenOCD (use your own `--prefix` path):
 
 ```shell
 $ ./bootstrap
-$ ./configure --enable-ftdi --disable-werror --disable-doxygen-html --prefix=/tools/openocd
+$ ./configure \
+      --enable-ftdi --disable-werror \
+      --disable-doxygen-html --prefix=/tools/openocd
 ```
 
 Also, you can pass `--enable-verbose` and `--enable-verbose-jtag-io` options for development activities.
@@ -60,32 +64,31 @@ Configure your environment (use your own installation path):
 $ export PATH=/tools/openocd/bin:$PATH
 ```
 
-Finally you need to configure udev rules in such way that OpenOCD would be able
+## Installing udev rules for Linux
+
+You should configure udev rules in such way that OpenOCD would be able
 to claim your JTAG debug cable. In common case for ARC this is an FTDI-based
-device. If you already have `libftdi` package installed on your system, then
-required rules are already provided to `udev`. Otherwise create file
-`/etc/udev/rules.d/99-ftdi.rules` with the following contents:
+device.
+
+For RHEL/AlmaLinux 8 create `/etc/udev/rules.d/99-ftdi.rules`
+configuration file with the following contents:
 
 ```text
-# Digilent HS1 and similiar products
-SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", MODE="0664", GROUP="plugdev"
-# Digilent HS2
-SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6014", MODE="0664", GROUP="plugdev"
-```
-
-In case of CentOS/AlmaLinux/Fedora distributions you need to remove `GROUP="plugdev"` and set
-`0666` rights for Digilent devices since `plugdev` group is not presented there:
-
-```text
-# Digilent HS1 and similiar products
+# Digilent HS1 and similar products
 SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", MODE="0666"
 # Digilent HS2
 SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6014", MODE="0666"
 ```
 
-You also can use file `contrib/99-openocd.udev` supplied with OpenOCD sources,
-however this file doesn't work with Digilent HS2, though on the other hand it
-mentions many other FTDI-based devices.
+For Ubuntu 22.04 create `/etc/udev/rules.d/99-ftdi.rules`
+configuration file with the following contents:
+
+```text
+# Digilent HS1 and similar products
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", MODE="0664", GROUP="plugdev"
+# Digilent HS2
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6014", MODE="0664", GROUP="plugdev"
+```
 
 Then either reboot your system or reload `udev` configuration and reconnect debug
 cable to the host computer:
@@ -93,6 +96,10 @@ cable to the host computer:
 ```shell
 $ sudo udevadm control --reload-rules
 ```
+
+You can also use `contrib/99-openocd.udev` file supplied with OpenOCD sources,
+however this file doesn't work with Digilent HS2, though on the other hand it
+mentions many other FTDI-based devices.
 
 ## Building for Windows
 
@@ -106,7 +113,7 @@ Install the same prerequisites like for Linux build (except for `libusb-dev`) an
 MinGW cross-compiler:
 
 ```shell
-$ sudo apt-get install libtool git-core build-essential autoconf \
+$ sudo apt install libtool git-core build-essential autoconf \
       automake texinfo pkg-config wget gcc-mingw-w64
 ```
 

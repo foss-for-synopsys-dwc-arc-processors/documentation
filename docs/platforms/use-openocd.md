@@ -170,7 +170,7 @@ For FTDI vendor driver use:
 sudo kextunload FTDIUSBSerialDriver.kext
 ```
 
-## Debugging Multi-core Targets
+## Debugging multi-core targets
 
 OpenOCD starts a distinct GDB server for each core of multi-core target. Here is
 an example for HS Development Kit 4xD:
@@ -263,7 +263,7 @@ You can use an OpenOCD command to change the GDB port this way:
 openocd -c "gdb_port 12345" ...
 ```
 
-## Configurations Files
+## Configurations files
 
 Here is a table of configuration files for OpenOCD 0.9:
 
