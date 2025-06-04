@@ -97,7 +97,6 @@ nav:
       - toolchain/testing/dejagnu.md
       - toolchain/testing/glibc.md
   - Simulators:
-    - simulators/qemu.md
     - simulators/nsim.md
   - Baremetal:
     - baremetal/index.md

@@ -2,7 +2,7 @@
 
 !!! info
 
-    Refer to the main [QEMU](../../simulators/qemu.md) article for information
+    Refer to the main [QEMU](../../baremetal/simulators/qemu.md#installing-qemu) article for information
     on installing QEMU.
 
 ## Preface
