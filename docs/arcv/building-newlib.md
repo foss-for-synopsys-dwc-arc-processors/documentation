@@ -1,5 +1,12 @@
 # Building applications with Newlib
 
+!!! warning
+
+    Newlib is considered as deprecated standard library for ARC-V
+    GNU toolchain. It will be completely removed in the future
+    releases. Please, consider migrating to
+    [the Picolibc-based toolchain](./building-picolibc.md).
+
 GNU toolchain for ARC-V targets uses `riscv64-snps-elf` prefix for
 all tools. For example, GCC binary has name `riscv64-snps-elf-gcc`.
 
@@ -15,7 +22,7 @@ Usually, to compile an application you need to set target options:
 All together they correspond to a particular prebuilt standard library. Refer
 [Understanding ARC-V configurations](./multilib.md) for details.
 
-## Getting Started
+## Getting started
 
 Consider a simple code example:
 
@@ -51,7 +58,7 @@ $ riscv64-snps-elf-gcc \
 Refer to [Running on nSIM](./nsim.md) and [Running on QEMU](./qemu.md) to learn how
 to run ARC-V examples on nSIM or QEMU simulator.
 
-## Using Custom Linker Script
+## Using custom linker script
 
 GNU toolchain for ARC-V is shipped with a custom ARC-V specific startup code
 and a custom linker script. They are intended to be used in pair by passing
@@ -106,7 +113,24 @@ Using custom code and data sections is essential for 64-bit targets. By default,
 this memory layout may be not acceptable for 64-bit targets. That is why in
 the GNU toolchain 64-bit targets are available only with `medany` memory model.
 
-## Tuning Instruction Scheduling
+## Using startup code without CSRs
+
+You can pass `--crt0=no-csr` option to choose a startup code without
+CSRs when `-specs=arcv.specs` is passed:
+
+```
+$ riscv64-snps-elf-gcc \
+        -march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr \
+        -mabi=ilp32 \
+        -mtune=arc-v-rmx-100-series \
+        -specs=semihost.specs \
+        -specs=arcv.specs \
+        --crt0=no-csr \
+        -T arcv.ld \
+        example.c -o example.elf
+```
+
+## Tuning instruction scheduling
 
 GCC instruction scheduling may be tuned for different ARC-V
 targets using `-mtune=` option:

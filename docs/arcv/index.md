@@ -2,23 +2,6 @@
 
 ## Overview
 
-In `arc-2025.06` release GNU toolchain for ARC-V targets is based on these
-tools and libraries:
-
-* GCC 14.2 with ARC-V specific patches
-    * Uses upstream 14.2 release; see [a release announcement](https://lists.gnu.org/archive/html/info-gnu/2024-08/msg00000.html)
-      and [a complete list of changes](https://gcc.gnu.org/gcc-14/changes.html).
-    * Added full support of tuning instructions scheduling for RMX-100, RMX-500 and RHX-100.
-* Binutils 2.43 with ARC-V specific patches
-    * Uses upstream 2.43 release; see [release notes](https://lists.gnu.org/archive/html/info-gnu/2024-08/msg00001.html).
-* GDB 15.1
-    * Uses upstream 15.1 release; see [a release announcement](https://lists.gnu.org/archive/html/info-gnu/2024-07/msg00004.html)
-      and [a complete list of changes](https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;a=blob_plain;f=gdb/NEWS;hb=gdb-15.1-release).
-* Newlib 4.4.0 with ARC-V specific patches
-    * Uses upstream 4.4.0 release; see [release announcement](https://sourceware.org/pipermail/newlib/2023/020873.html).
-    * Caches are enabled automatically when a custom startup file is used.
-    * Added support of passing command line arguments through Semihosting interface (works both for nSIM and QEMU simulators).
-
 Supported ARC-V specific features:
 
 * [Tuning GCC instruction scheduling](#tuning-scheduling) for RMX-100, RMX-500, RHX-100 and RPX-100 targets.
