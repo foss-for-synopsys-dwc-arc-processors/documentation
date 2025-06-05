@@ -12,7 +12,7 @@
         <link rel="prev" href="../eclipse/other/building/">
       
       
-        <link rel="next" href="building-newlib/">
+        <link rel="next" href="building-picolibc/">
       
       <link rel="icon" href="../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
@@ -2792,8 +2792,8 @@
   
   
     <li class="md-nav__item">
-      <a href="building-newlib/" class="md-nav__link">
-        Building applications with Newlib
+      <a href="building-picolibc/" class="md-nav__link">
+        Building applications with Picolibc
       </a>
     </li>
   
@@ -2806,8 +2806,8 @@
   
   
     <li class="md-nav__item">
-      <a href="building-picolibc/" class="md-nav__link">
-        Building applications with Picolibc
+      <a href="building-newlib/" class="md-nav__link">
+        Building applications with Newlib
       </a>
     </li>
   
@@ -2950,31 +2950,6 @@
 
 <h1 id="gnu-toolchain-for-arc-v-targets">GNU Toolchain for ARC-V Targets<a class="headerlink" href="#gnu-toolchain-for-arc-v-targets" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>In <code>arc-2025.06</code> release GNU toolchain for ARC-V targets is based on these
-tools and libraries:</p>
-<ul>
-<li>GCC 14.2 with ARC-V specific patches<ul>
-<li>Uses upstream 14.2 release; see <a href="https://lists.gnu.org/archive/html/info-gnu/2024-08/msg00000.html">a release announcement</a>
-  and <a href="https://gcc.gnu.org/gcc-14/changes.html">a complete list of changes</a>.</li>
-<li>Added full support of tuning instructions scheduling for RMX-100, RMX-500 and RHX-100.</li>
-</ul>
-</li>
-<li>Binutils 2.43 with ARC-V specific patches<ul>
-<li>Uses upstream 2.43 release; see <a href="https://lists.gnu.org/archive/html/info-gnu/2024-08/msg00001.html">release notes</a>.</li>
-</ul>
-</li>
-<li>GDB 15.1<ul>
-<li>Uses upstream 15.1 release; see <a href="https://lists.gnu.org/archive/html/info-gnu/2024-07/msg00004.html">a release announcement</a>
-  and <a href="https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;a=blob_plain;f=gdb/NEWS;hb=gdb-15.1-release">a complete list of changes</a>.</li>
-</ul>
-</li>
-<li>Newlib 4.4.0 with ARC-V specific patches<ul>
-<li>Uses upstream 4.4.0 release; see <a href="https://sourceware.org/pipermail/newlib/2023/020873.html">release announcement</a>.</li>
-<li>Caches are enabled automatically when a custom startup file is used.</li>
-<li>Added support of passing command line arguments through Semihosting interface (works both for nSIM and QEMU simulators).</li>
-</ul>
-</li>
-</ul>
 <p>Supported ARC-V specific features:</p>
 <ul>
 <li><a href="#tuning-scheduling">Tuning GCC instruction scheduling</a> for RMX-100, RMX-500, RHX-100 and RPX-100 targets.</li>

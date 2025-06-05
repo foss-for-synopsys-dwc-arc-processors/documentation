@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../building-picolibc/">
       
       
-        <link rel="next" href="../building-picolibc/">
+        <link rel="next" href="../multilib/">
       
       <link rel="icon" href="../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
@@ -2790,6 +2790,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../building-picolibc/" class="md-nav__link">
+        Building applications with Picolibc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -2827,21 +2841,28 @@
       
         <li class="md-nav__item">
   <a href="#getting-started" class="md-nav__link">
-    Getting Started
+    Getting started
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#using-custom-linker-script" class="md-nav__link">
-    Using Custom Linker Script
+    Using custom linker script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-startup-code-without-csrs" class="md-nav__link">
+    Using startup code without CSRs
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#tuning-instruction-scheduling" class="md-nav__link">
-    Tuning Instruction Scheduling
+    Tuning instruction scheduling
   </a>
   
 </li>
@@ -2850,20 +2871,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../building-picolibc/" class="md-nav__link">
-        Building applications with Picolibc
-      </a>
     </li>
   
 
@@ -2973,21 +2980,28 @@
       
         <li class="md-nav__item">
   <a href="#getting-started" class="md-nav__link">
-    Getting Started
+    Getting started
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#using-custom-linker-script" class="md-nav__link">
-    Using Custom Linker Script
+    Using custom linker script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-startup-code-without-csrs" class="md-nav__link">
+    Using startup code without CSRs
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#tuning-instruction-scheduling" class="md-nav__link">
-    Tuning Instruction Scheduling
+    Tuning instruction scheduling
   </a>
   
 </li>
@@ -3011,6 +3025,13 @@
 
 
 <h1 id="building-applications-with-newlib">Building applications with Newlib<a class="headerlink" href="#building-applications-with-newlib" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Newlib is considered as deprecated standard library for ARC-V
+GNU toolchain. It will be completely removed in the future
+releases. Please, consider migrating to
+<a href="../building-picolibc/">the Picolibc-based toolchain</a>.</p>
+</div>
 <p>GNU toolchain for ARC-V targets uses <code>riscv64-snps-elf</code> prefix for
 all tools. For example, GCC binary has name <code>riscv64-snps-elf-gcc</code>.</p>
 <p>Usually, to compile an application you need to set target options:</p>
@@ -3024,7 +3045,7 @@ all tools. For example, GCC binary has name <code>riscv64-snps-elf-gcc</code>.</
 </ol>
 <p>All together they correspond to a particular prebuilt standard library. Refer
 <a href="../multilib/">Understanding ARC-V configurations</a> for details.</p>
-<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
 <p>Consider a simple code example:</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
@@ -3049,7 +3070,7 @@ application with <code>ebreak</code> based <code>libsemihost.a</code> library us
 </span></code></pre></div>
 <p>Refer to <a href="../nsim/">Running on nSIM</a> and <a href="../qemu/">Running on QEMU</a> to learn how
 to run ARC-V examples on nSIM or QEMU simulator.</p>
-<h2 id="using-custom-linker-script">Using Custom Linker Script<a class="headerlink" href="#using-custom-linker-script" title="Permanent link">&para;</a></h2>
+<h2 id="using-custom-linker-script">Using custom linker script<a class="headerlink" href="#using-custom-linker-script" title="Permanent link">&para;</a></h2>
 <p>GNU toolchain for ARC-V is shipped with a custom ARC-V specific startup code
 and a custom linker script. They are intended to be used in pair by passing
 <code>-specs=arcv.specs -T arcv.ld</code> to GCC. Here is an example:</p>
@@ -3096,7 +3117,20 @@ may be set through <code>-Wl,-defsym=</code> option:</p>
 <code>arcv.ld</code> linker script puts code to <code>0x0</code> and data to <code>0x80000000</code>. However,
 this memory layout may be not acceptable for 64-bit targets. That is why in
 the GNU toolchain 64-bit targets are available only with <code>medany</code> memory model.</p>
-<h2 id="tuning-instruction-scheduling">Tuning Instruction Scheduling<a class="headerlink" href="#tuning-instruction-scheduling" title="Permanent link">&para;</a></h2>
+<h2 id="using-startup-code-without-csrs">Using startup code without CSRs<a class="headerlink" href="#using-startup-code-without-csrs" title="Permanent link">&para;</a></h2>
+<p>You can pass <code>--crt0=no-csr</code> option to choose a startup code without
+CSRs when <code>-specs=arcv.specs</code> is passed:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ riscv64-snps-elf-gcc \
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>        -march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr \
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        -mabi=ilp32 \
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        -mtune=arc-v-rmx-100-series \
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        -specs=semihost.specs \
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        -specs=arcv.specs \
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        --crt0=no-csr \
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        -T arcv.ld \
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        example.c -o example.elf
+</span></code></pre></div>
+<h2 id="tuning-instruction-scheduling">Tuning instruction scheduling<a class="headerlink" href="#tuning-instruction-scheduling" title="Permanent link">&para;</a></h2>
 <p>GCC instruction scheduling may be tuned for different ARC-V
 targets using <code>-mtune=</code> option:</p>
 <table>
