@@ -2,31 +2,33 @@
 
 ## Installing QEMU
 
-It is best to use the latest official QEMU version for the following exercises. As of today,
-it's v9.0 (see [the release notes](https://wiki.qemu.org/ChangeLog/9.0)). The sources are on
-[GitLab](https://gitlab.com/qemu-project/qemu) or in [the official GitHub mirror](https://github.com/qemu/qemu).
-
-To get the latest version of QEMU on your system it might be much easier to build it from sources
-rather than trying to find a pre-built version which suits your host type and operating system.
-
 Detailed instructions for building on Linux are on [QEMU's Wiki](https://wiki.qemu.org/Hosts/Linux).
-First you need to install required additional packages, which depend on the Linux distribution used on the host.
+First you need to install required additional packages, which depend on the Linux distribution used
+on the host.
 
-For example, for Ubuntu 20.04 the following needs to be done:
+Install necessary packages for AlmaLinux 8:
 
-```
-$ apt install build-essential git libglib2.0-dev libfdt-dev \
-              libpixman-1-dev zlib1g-dev ninja-build python3-venv
-```
-
-For AlmaLinux 8 the following needs to be done:
-
-```
-$ dnf install git glib2-devel libfdt-devel pixman-devel zlib-devel \
-              bzip2 ninja-build python3 python38
+```shell
+sudo dnf group install "Development Tools"
+sudo dnf \
+    install git glib2-devel libfdt-devel pixman-devel \
+    zlib-devel bzip2 ninja-build python3 python3-tomli \
+    python38
 ```
 
-After installation of prerequisites you can download sources, configure, and build in the following way:
+Install necessary packages for Ubuntu 22.04:
+
+```shell
+sudo apt install \
+    git cmake ninja-build gperf ccache \
+    dfu-util device-tree-compiler wget \
+    python3-pip python3-setuptools python3-wheel \
+    xz-utils file make gcc gcc-multilib pkg-config \
+    libglib2.0-dev libpixman-1-dev zlib1g-dev
+```
+
+After installation of prerequisites you can download sources, configure and build in the following way
+(use your own `--prefix` value for installation path):
 
 ```
 # Clone v9.0 from GitHub repository
@@ -34,25 +36,26 @@ $ git clone --depth 1 -b stable-9.0 https://github.com/qemu/qemu.git
 $ cd qemu
 
 # Configure QEMU for 32-bit and 64-bit RISC-V targets
-$ ./configure --target-list=riscv32-softmmu,riscv64-softmmu
+$ ./configure \
+        --target-list=riscv32-softmmu,riscv64-softmmu \
+        --prefix=$HOME/qemu
 
-# Build QEMU
+# Build and install QEMU
 $ make
+$ make install
 ```
 
-After the build is complete `qemu-system-riscv32` and `qemu-system-riscv64` are placed in the
-`build` folder, which you can add to the `PATH` environment variable for convenience, and use
-the short binary name instead of the full path.
+After the build is complete `qemu-system-riscv32` and `qemu-system-riscv64` are placed in
+`$HOME/qemu/bin$` folder, which you can add to the `PATH` environment variable for convenience,
+and use the short binary name instead of the full path.
 
-## Code Example
+## Code example
 
 Consider this code example which prints all passed command
 line arguments:
 
 ```c
 #include <stdio.h>
-
-void __wrap__arcv_cache_enable() {}
 
 int main(int argc, char *argv[]) {
     for (int i = 0; i < argc; i++) {
@@ -62,32 +65,39 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-By default, ARC-V specific startup code turns on caches through
-ARC-V specific CSR. However, it's not available in QEMU and to solve
-this issue we added `__wrap__arcv_cache_enable` to overwrite original
-caches initialization function. Also, we will have to pass an extra
-`-Wl,--wrap=_arcv_cache_enable` option to GCC.
+## Build and run for RMX-100
 
-Also, code sections will be placed in `0x80000000` since in default
-QEMU machine DDR is placed at `0x80000000`, where the board jumps on
-start automatically.
-
-## Build and Run for Base RMX-100
-
-Build the application:
+Build with Picolibc-based toolchain:
 
 ```
 $ riscv64-snps-elf-gcc \
-        -march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr \
+        -march=rv32imac_zcb_zba_zbb_zbs \
         -mabi=ilp32 \
         -mtune=arc-v-rmx-100-series \
-        -Wl,--wrap=_arcv_cache_enable \
+        -Wl,-defsym=__flash=0x80000000 \
+        -Wl,-defsym=__flash_size=1M \
+        -Wl,-defsym=__ram=0x80200000 \
+        -Wl,-defsym=__ram_size=1M \
+        -specs=picolibc.specs \
+        --oslib=semihost \
+        --crt0=semihost \
+        args.c -o args.elf
+```
+
+Build with Newlib-based toolchain:
+
+```
+$ riscv64-snps-elf-gcc \
+        -march=rv32imac_zcb_zba_zbb_zbs \
+        -mabi=ilp32 \
+        -mtune=arc-v-rmx-100-series \
         -Wl,-defsym=txtmem_addr=0x80000000 \
         -Wl,-defsym=txtmem_len=1M \
         -Wl,-defsym=datamem_addr=0x80200000 \
         -Wl,-defsym=datamem_len=1M \
         -specs=semihost.specs \
         -specs=arcv.specs \
+        --crt0=no-csr \
         -T arcv.ld \
         args.c -o args.elf
 ```
@@ -111,20 +121,37 @@ $ qemu-system-riscv32 \
 
 ## Build and Run for Base RMX-500
 
-Build the application:
+Build with Picolibc-based toolchain:
 
 ```
 $ riscv64-snps-elf-gcc \
-        -march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr \
+        -march=rv32imac_zcb_zba_zbb_zbs \
         -mabi=ilp32 \
         -mtune=arc-v-rmx-500-series \
-        -Wl,--wrap=_arcv_cache_enable \
+        -Wl,-defsym=__flash=0x80000000 \
+        -Wl,-defsym=__flash_size=1M \
+        -Wl,-defsym=__ram=0x80200000 \
+        -Wl,-defsym=__ram_size=1M \
+        -specs=picolibc.specs \
+        --oslib=semihost \
+        --crt0=semihost \
+        args.c -o args.elf
+```
+
+Build with Newlib-based toolchain:
+
+```
+$ riscv64-snps-elf-gcc \
+        -march=rv32imac_zcb_zba_zbb_zbs \
+        -mabi=ilp32 \
+        -mtune=arc-v-rmx-500-series \
         -Wl,-defsym=txtmem_addr=0x80000000 \
         -Wl,-defsym=txtmem_len=1M \
         -Wl,-defsym=datamem_addr=0x80200000 \
         -Wl,-defsym=datamem_len=1M \
         -specs=semihost.specs \
         -specs=arcv.specs \
+        --crt0=no-csr \
         -T arcv.ld \
         args.c -o args.elf
 ```
@@ -148,20 +175,37 @@ $ qemu-system-riscv32 \
 
 ## Build and Run for Base RHX-100
 
-Build the application:
+Build with Picolibc-based toolchain:
 
 ```
 $ riscv64-snps-elf-gcc \
-        -march=rv32imac_zcb_zcmp_zba_zbb_zbs_zicsr \
-        -mabi=ilp32 \
+        -march=rv32imafc_zcb_zba_zbb_zbs \
+        -mabi=ilp32f \
         -mtune=arc-v-rhx-100-series \
-        -Wl,--wrap=_arcv_cache_enable \
+        -Wl,-defsym=__flash=0x80000000 \
+        -Wl,-defsym=__flash_size=1M \
+        -Wl,-defsym=__ram=0x80200000 \
+        -Wl,-defsym=__ram_size=1M \
+        -specs=picolibc.specs \
+        --oslib=semihost \
+        --crt0=semihost \
+        args.c -o args.elf
+```
+
+Build with Newlib-based toolchain:
+
+```
+$ riscv64-snps-elf-gcc \
+        -march=rv32imafc_zcb_zba_zbb_zbs \
+        -mabi=ilp32f \
+        -mtune=arc-v-rhx-100-series \
         -Wl,-defsym=txtmem_addr=0x80000000 \
         -Wl,-defsym=txtmem_len=1M \
         -Wl,-defsym=datamem_addr=0x80200000 \
         -Wl,-defsym=datamem_len=1M \
         -specs=semihost.specs \
         -specs=arcv.specs \
+        --crt0=no-csr \
         -T arcv.ld \
         args.c -o args.elf
 ```
@@ -173,7 +217,7 @@ $ qemu-system-riscv32 \
         -semihosting \
         -nographic \
         -machine virt \
-        -cpu rv32,f=off,zfa=off,d=off,m=on,a=on,zca=on,zcb=on,zcmp=on,zba=on,zbb=on,zbs=on \
+        -cpu rv32,f=on,zfa=off,d=off,m=on,a=on,zca=on,zcf=on,zcb=on,zcmp=on,zba=on,zbb=on,zbs=on \
         -bios none \
         -kernel args.elf \
         -append "one two three"
@@ -185,21 +229,39 @@ $ qemu-system-riscv32 \
 
 ## Build and Run for Base RPX-100
 
-Build the application:
+Build with Picolibc-based toolchain:
 
 ```
 $ riscv64-snps-elf-gcc \
-        -march=rv64imac_zcb_zba_zbb_zbs_zicsr \
-        -mabi=lp64 \
-        -mtune=arc-v-rmx-100-series \
+        -march=rv64imafdc_zcb_zba_zbb_zbs \
+        -mabi=lp64d \
+        -mtune=arc-v-rpx-100-series \
         -mcmodel=medany \
-        -Wl,--wrap=_arcv_cache_enable \
+        -Wl,-defsym=__flash=0x80000000 \
+        -Wl,-defsym=__flash_size=1M \
+        -Wl,-defsym=__ram=0x80200000 \
+        -Wl,-defsym=__ram_size=1M \
+        -specs=picolibc.specs \
+        --oslib=semihost \
+        --crt0=semihost \
+        args.c -o args.elf
+```
+
+Build with Newlib-based toolchain:
+
+```
+$ riscv64-snps-elf-gcc \
+        -march=rv64imafdc_zcb_zba_zbb_zbs \
+        -mabi=lp64d \
+        -mtune=arc-v-rpx-100-series \
+        -mcmodel=medany \
         -Wl,-defsym=txtmem_addr=0x80000000 \
         -Wl,-defsym=txtmem_len=1M \
         -Wl,-defsym=datamem_addr=0x80200000 \
         -Wl,-defsym=datamem_len=1M \
         -specs=semihost.specs \
         -specs=arcv.specs \
+        --crt0=no-csr \
         -T arcv.ld \
         args.c -o args.elf
 ```
@@ -211,7 +273,7 @@ $ qemu-system-riscv64 \
         -semihosting \
         -nographic \
         -machine virt \
-        -cpu rv64,f=off,zfa=off,d=off,m=on,a=on,zca=on,zcb=on,zba=on,zbb=on,zbs=on \
+        -cpu rv64,f=on,zfa=off,d=on,m=on,a=on,zca=on,zcd=on,zcb=on,zba=on,zbb=on,zbs=on \
         -bios none \
         -kernel args.elf \
         -append "one two three"
@@ -228,20 +290,38 @@ QEMU. On the QEMU side, you need to enable the GDB sever and optionally instruct
 to start the application execution automatically, but instead wait for user input. For that you
 need to pass `-s -S` commands to `qemu-system-riscv32` or `qemu-system-riscv64`.
 
-Build the same example for RMX-100:
+Build with Picolibc-based toolchain:
 
 ```
 $ riscv64-snps-elf-gcc \
-        -march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr \
+        -march=rv32imac_zcb_zba_zbb_zbs \
         -mabi=ilp32 \
         -mtune=arc-v-rmx-100-series \
-        -Wl,--wrap=_arcv_cache_enable \
+        -Wl,-defsym=__flash=0x80000000 \
+        -Wl,-defsym=__flash_size=1M \
+        -Wl,-defsym=__ram=0x80200000 \
+        -Wl,-defsym=__ram_size=1M \
+        -specs=picolibc.specs \
+        --oslib=semihost \
+        --crt0=semihost \
+        -g \
+        args.c -o args.elf
+```
+
+Build with Newlib-based toolchain:
+
+```
+$ riscv64-snps-elf-gcc \
+        -march=rv32imac_zcb_zba_zbb_zbs \
+        -mabi=ilp32 \
+        -mtune=arc-v-rmx-100-series \
         -Wl,-defsym=txtmem_addr=0x80000000 \
         -Wl,-defsym=txtmem_len=1M \
         -Wl,-defsym=datamem_addr=0x80200000 \
         -Wl,-defsym=datamem_len=1M \
         -specs=semihost.specs \
         -specs=arcv.specs \
+        --crt0=no-csr \
         -T arcv.ld \
         -g \
         args.c -o args.elf
@@ -271,14 +351,14 @@ Reading symbols from args.elf...
 Remote debugging using :12345
 0x00001000 in ?? ()
 (gdb) b main
-Breakpoint 1 at 0x800000d6: file args.c, line 8.
+Breakpoint 1 at 0x800000e0: file args.c, line 4.
 (gdb) c
 Continuing.
 
-Breakpoint 1, main (argc=4, argv=0x80200e78 <_argv>) at args.c:8
-8           for (int i = 0; i < argc; i++) {
+Breakpoint 1, main (argc=4, argv=0x8020007c <argv>) at args.c:4
+4	    for (int i = 0; i < argc; i++) {
 (gdb) step
-9               printf("%d: %s\n", i, argv[i]);
+5	        printf("%d: %s\n", i, argv[i]);
 (gdb) c
 Continuing.
 [Inferior 1 (process 1) exited normally]
@@ -288,4 +368,4 @@ Note that the first location where the CPU is waiting for commands is `0x0000100
 `virt` board reset vector location. It is not possible to suppress execution of that reset
 vector code as it’s an essential part of the QEMU board (think of it as a boot-ROM). You
 can only bypass it if you load the target executable from the GDB client with the load command.
-Then execution starts from the loaded application entry point.
+Then execution starts from the loaded application's entry point.
