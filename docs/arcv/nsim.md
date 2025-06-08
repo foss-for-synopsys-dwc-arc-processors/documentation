@@ -16,11 +16,24 @@ int main(int argc, char *argv[]) {
 
 ## Build and Run for Base RMX-100
 
-Build the application:
+Build with Picolibc-based toolchain:
 
 ```
 $ riscv64-snps-elf-gcc \
-        -march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr \
+        -march=rv32imac_zcb_zba_zbb_zbs \
+        -mabi=ilp32 \
+        -mtune=arc-v-rmx-100-series \
+        -specs=picolibc.specs \
+        --oslib=semihost \
+        --crt0=arcv-semihost \
+        args.c -o args.elf
+```
+
+Build with Newlib-based toolchain:
+
+```
+$ riscv64-snps-elf-gcc \
+        -march=rv32imac_zcb_zba_zbb_zbs \
         -mabi=ilp32 \
         -mtune=arc-v-rmx-100-series \
         -specs=semihost.specs \
@@ -33,7 +46,7 @@ Run on nSIM:
 
 ```
 $ nsimdrv -p nsim_isa_family=rv32 \
-          -p nsim_isa_ext=-all.i.c.zcb.zcmp.zcmt.zba.zbb.zbs.zicsr \
+          -p nsim_isa_ext=-all.i.m.a.c.zcb.zba.zbb.zbs.zicsr \
           -p nsim_semihosting=1 \
           -p enable_exceptions=0 \
           -- args.elf one two three
@@ -45,11 +58,24 @@ $ nsimdrv -p nsim_isa_family=rv32 \
 
 ## Build and Run for Base RMX-500
 
-Build the application:
+Build with Picolibc-based toolchain:
 
 ```
 $ riscv64-snps-elf-gcc \
-        -march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr \
+        -march=rv32imac_zcb_zba_zbb_zbs \
+        -mabi=ilp32 \
+        -mtune=arc-v-rmx-500-series \
+        -specs=picolibc.specs \
+        --oslib=semihost \
+        --crt0=arcv-semihost \
+        args.c -o args.elf
+```
+
+Build with Newlib-based toolchain:
+
+```
+$ riscv64-snps-elf-gcc \
+        -march=rv32imac_zcb_zba_zbb_zbs \
         -mabi=ilp32 \
         -mtune=arc-v-rmx-500-series \
         -specs=semihost.specs \
@@ -62,7 +88,7 @@ Run on nSIM:
 
 ```
 $ nsimdrv -p nsim_isa_family=rv32 \
-          -p nsim_isa_ext=-all.i.c.zcb.zcmp.zcmt.zba.zbb.zbs.zicsr \
+          -p nsim_isa_ext=-all.i.m.a.c.zcb.zba.zbb.zbs.zicsr \
           -p nsim_semihosting=1 \
           -p enable_exceptions=0 \
           -- args.elf one two three
@@ -74,12 +100,25 @@ $ nsimdrv -p nsim_isa_family=rv32 \
 
 ## Build and Run for Base RHX-100
 
-Build the application:
+Build with Picolibc-based toolchain:
 
 ```
 $ riscv64-snps-elf-gcc \
-        -march=rv32imac_zcb_zcmp_zba_zbb_zbs_zicsr \
-        -mabi=ilp32 \
+        -march=rv32imafc_zcb_zba_zbb_zbs \
+        -mabi=ilp32f \
+        -mtune=arc-v-rhx-100-series \
+        -specs=picolibc.specs \
+        --oslib=semihost \
+        --crt0=arcv-semihost \
+        args.c -o args.elf
+```
+
+Build with Newlib-based toolchain:
+
+```
+$ riscv64-snps-elf-gcc \
+        -march=rv32imafc_zcb_zba_zbb_zbs \
+        -mabi=ilp32f \
         -mtune=arc-v-rhx-100-series \
         -specs=semihost.specs \
         -specs=arcv.specs \
@@ -91,7 +130,7 @@ Run on nSIM:
 
 ```
 $ nsimdrv -p nsim_isa_family=rv32 \
-          -p nsim_isa_ext=-all.i.m.a.c.zcb.zcmp.zba.zbb.zbs.zicsr \
+          -p nsim_isa_ext=-all.i.m.a.f.c.zcb.zba.zbb.zbs.zicsr \
           -p nsim_semihosting=1 \
           -p enable_exceptions=0 \
           -- args.elf one two three
@@ -103,18 +142,28 @@ $ nsimdrv -p nsim_isa_family=rv32 \
 
 ## Build and Run for Base RPX-100
 
-Build the application:
+Build with Picolibc-based toolchain:
 
 ```
 $ riscv64-snps-elf-gcc \
-        -march=rv64imac_zcb_zba_zbb_zbs_zicsr \
-        -mabi=lp64 \
-        -mtune=arc-v-rmx-100-series \
+        -march=rv64imafdc_zcb_zba_zbb_zbs \
+        -mabi=lp64d \
+        -mtune=arc-v-rpx-100-series \
         -mcmodel=medany \
-        -Wl,-defsym=txtmem_addr=0x80000000 \
-        -Wl,-defsym=txtmem_len=1M \
-        -Wl,-defsym=datamem_addr=0x80200000 \
-        -Wl,-defsym=datamem_len=1M \
+        -specs=picolibc.specs \
+        --oslib=semihost \
+        --crt0=arcv-semihost \
+        args.c -o args.elf
+```
+
+Build with Newlib-based toolchain:
+
+```
+$ riscv64-snps-elf-gcc \
+        -march=rv64imafdc_zcb_zba_zbb_zbs \
+        -mabi=lp64d \
+        -mtune=arc-v-rpx-100-series \
+        -mcmodel=medany \
         -specs=semihost.specs \
         -specs=arcv.specs \
         -T arcv.ld \
@@ -125,7 +174,7 @@ Run on nSIM:
 
 ```
 $ nsimdrv -p nsim_isa_family=rv64 \
-          -p nsim_isa_ext=-all.i.m.a.c.zcb.zba.zbb.zbs.zicsr \
+          -p nsim_isa_ext=-all.i.m.a.f.d.c.zcb.zba.zbb.zbs.zicsr \
           -p nsim_semihosting=1 \
           -p enable_exceptions=0 \
           -- args.elf one two three
