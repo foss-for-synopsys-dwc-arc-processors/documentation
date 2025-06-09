@@ -3205,12 +3205,12 @@ instead of <code>-prop=nsim_mem-dev=&lt;...&gt;</code> property presented in the
 </ul>
 </div>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>Clone a repository and create a build directory:</p>
+<p>Clone the Buildroot repository:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Clone the latest Buildroot</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span><span class="m">2024</span>.11.1<span class="w"> </span>https://git.busybox.net/buildroot
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span><span class="m">2025</span>.02.3<span class="w"> </span>https://git.busybox.net/buildroot
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># ... or use a custom repository for support of ARCv3 targets</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>arc-2024.12<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>arc-2025.06<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">cd</span><span class="w"> </span>buildroot
 </span></code></pre></div>
 <h2 id="building-images-without-a-preinstalled-toolchain">Building Images Without a Preinstalled Toolchain<a class="headerlink" href="#building-images-without-a-preinstalled-toolchain" title="Permanent link">&para;</a></h2>
@@ -3360,60 +3360,53 @@ a single core then change it to <code>haps_hs</code> through <code>make menuconf
 </span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>        -prop nsim_isa_fp_div_option=1 -prop nsim_isa_fp_dp_option=1 -prop nsim_isa_fp_hp_option=1 -prop nsim_isa_fp_vec_option=1 \
 </span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>        -prop nsim_isa_fp_wide_option=1 output/images/loader
 </span></code></pre></div>
-<p>Run the image using a predefined TCF file:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>nsimdrv -tcf $NSIM_HOME/etc/tcf/templates/hs58_full.tcf -prop icache=16384,64,4 -prop dcache=16384,64,2 \
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>        -prop nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=24 -prop nsim_isa_number_of_external_interrupts=32 \
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>        -prop nsim_isa_has_fp=1 -prop nsim_isa_fp_dds_option=1 -prop nsim_isa_fp_div_option=1 -prop nsim_isa_fp_dp_option=1 \
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>        -prop nsim_isa_fp_hp_option=1 -prop nsim_isa_fp_vec_option=1 -prop nsim_isa_fp_wide_option=1 \
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>        output/images/loader
-</span></code></pre></div>
 <h3 id="hs6x-targets">HS6x Targets<a class="headerlink" href="#hs6x-targets" title="Permanent link">&para;</a></h3>
 <p>Before running the image using nSIM create a corresponding configuration file <code>hs6x.props</code>
 (use <code>nsim_fast=1</code> option if you have nSIM Pro license):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>nsim_fast=0
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>nsim_isa_dual_issue_option=1
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>nsim_isa_has_hw_pf=1
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>nsim_isa_m128_option=1
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>nsim_isa_has_hw_pf=1
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>nsim_isa_vec64=1
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>nsim_isa_family=arc64
-</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>nsim_isa_enable_timer_0=1
-</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>nsim_isa_enable_timer_1=1
-</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>nsim_isa_rtc_option=1
-</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>nsim_isa_addr_size=64
-</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>nsim_isa_pc_size=64
-</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>icache=16384,64,4,o
-</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>dcache=16384,64,4,o
-</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>mmu_version=16
-</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>mmu_pagesize=4096
-</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>mmu_address_space=48
-</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=24
-</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>nsim_isa_mpy_option=9
-</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>nsim_isa_mpy64=1
-</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>nsim_isa_div64_option=1
-</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>nsim_isa_div_rem_option=2
-</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>nsim_isa_atomic_option=2
-</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>nsim_isa_has_fp=1
-</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>nsim_isa_fp_dds_option=1
-</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>nsim_isa_fp_div_option=1
-</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>nsim_isa_fp_dp_option=1
-</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>nsim_isa_fp_hp_option=1
-</span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>nsim_isa_fp_vec_option=1
-</span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>nsim_isa_fp_wide_option=1
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>nsim_fast=0
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>nsim_isa_dual_issue_option=1
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>nsim_isa_has_hw_pf=1
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>nsim_isa_m128_option=1
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>nsim_isa_has_hw_pf=1
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>nsim_isa_vec64=1
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>nsim_isa_family=arc64
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>nsim_isa_enable_timer_0=1
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>nsim_isa_enable_timer_1=1
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>nsim_isa_rtc_option=1
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>nsim_isa_addr_size=64
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>nsim_isa_pc_size=64
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>icache=16384,64,4,o
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>dcache=16384,64,4,o
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>mmu_version=16
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>mmu_pagesize=4096
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>mmu_address_space=48
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=24
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>nsim_isa_mpy_option=9
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>nsim_isa_mpy64=1
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>nsim_isa_div64_option=1
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>nsim_isa_div_rem_option=2
+</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>nsim_isa_atomic_option=2
+</span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>nsim_isa_has_fp=1
+</span><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>nsim_isa_fp_dds_option=1
+</span><span id="__span-11-26"><a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>nsim_isa_fp_div_option=1
+</span><span id="__span-11-27"><a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>nsim_isa_fp_dp_option=1
+</span><span id="__span-11-28"><a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>nsim_isa_fp_hp_option=1
+</span><span id="__span-11-29"><a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>nsim_isa_fp_vec_option=1
+</span><span id="__span-11-30"><a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>nsim_isa_fp_wide_option=1
 </span></code></pre></div>
 <p>Then run the image using nSIM:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>nsimdrv<span class="w"> </span>-propsfile<span class="w"> </span>hs6x.props<span class="w"> </span>output/images/loader
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>nsimdrv<span class="w"> </span>-propsfile<span class="w"> </span>hs6x.props<span class="w"> </span>output/images/loader
 </span></code></pre></div>
 <p>Also, you can run the images without a property file:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>nsimdrv -prop nsim_isa_dual_issue_option=1 -prop nsim_isa_has_hw_pf=1 -prop nsim_isa_m128_option=1 \
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>        -prop nsim_isa_vec64=1 -prop nsim_isa_family=arc64 -prop nsim_isa_enable_timer_0=1 -prop nsim_isa_enable_timer_1=1 \
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>        -prop nsim_isa_rtc_option=1 -prop nsim_isa_addr_size=64 -prop nsim_isa_pc_size=64 -prop icache=16384,64,4,o \
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>        -prop dcache=16384,64,4,o -prop mmu_version=16 -prop mmu_pagesize=4096 -prop mmu_address_space=48 \
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>        -prop nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=24 -prop nsim_isa_mpy_option=9 -prop nsim_isa_mpy64=1 \
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>        -prop nsim_isa_div64_option=1 -prop nsim_isa_div_rem_option=2 -prop nsim_isa_atomic_option=2 -prop nsim_isa_has_fp=1 \
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>        -prop nsim_isa_fp_dds_option=1 -prop nsim_isa_fp_div_option=1 -prop nsim_isa_fp_dp_option=1 -prop nsim_isa_fp_hp_option=1 \
-</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>        -prop nsim_isa_fp_vec_option=1 -prop nsim_isa_fp_wide_option=1 \
-</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>        output/images/loader
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>nsimdrv -prop nsim_isa_dual_issue_option=1 -prop nsim_isa_has_hw_pf=1 -prop nsim_isa_m128_option=1 \
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>        -prop nsim_isa_vec64=1 -prop nsim_isa_family=arc64 -prop nsim_isa_enable_timer_0=1 -prop nsim_isa_enable_timer_1=1 \
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>        -prop nsim_isa_rtc_option=1 -prop nsim_isa_addr_size=64 -prop nsim_isa_pc_size=64 -prop icache=16384,64,4,o \
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>        -prop dcache=16384,64,4,o -prop mmu_version=16 -prop mmu_pagesize=4096 -prop mmu_address_space=48 \
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>        -prop nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=24 -prop nsim_isa_mpy_option=9 -prop nsim_isa_mpy64=1 \
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>        -prop nsim_isa_div64_option=1 -prop nsim_isa_div_rem_option=2 -prop nsim_isa_atomic_option=2 -prop nsim_isa_has_fp=1 \
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>        -prop nsim_isa_fp_dds_option=1 -prop nsim_isa_fp_div_option=1 -prop nsim_isa_fp_dp_option=1 -prop nsim_isa_fp_hp_option=1 \
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>        -prop nsim_isa_fp_vec_option=1 -prop nsim_isa_fp_wide_option=1 \
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>        output/images/loader
 </span></code></pre></div>
 <h3 id="arc700-targets">ARC700 Targets<a class="headerlink" href="#arc700-targets" title="Permanent link">&para;</a></h3>
 <p>There is no a Buildroot configuration file for building ARC700 images for
@@ -3421,42 +3414,42 @@ simulators. Read a <a href="#arc-770-with-uclibc-ng">following section</a> to fi
 to build an image.</p>
 <p>Before running the image using nSIM create a corresponding configuration file <code>arc700.props</code>
 (use <code>nsim_fast=1</code> option if you have nSIM Pro license):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>nsim_fast=0
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>nsim_isa_family=a700
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>nsim_isa_atomic_option=1
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>nsim_mmu=3
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>icache=32768,64,2,0
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>dcache=32768,64,4,0
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>nsim_isa_dpfp=none
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>nsim_isa_shift_option=2
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>nsim_isa_swap_option=1
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>nsim_isa_bitscan_option=1
-</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>nsim_isa_sat=1
-</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>nsim_isa_mpy32=1
-</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>nsim_isa_enable_timer_0=1
-</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>nsim_isa_enable_timer_1=1
-</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=24
-</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>isa_counters=1
-</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>nsim_isa_pct_counters=8
-</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>nsim_isa_pct_size=48
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>nsim_fast=0
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>nsim_isa_family=a700
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>nsim_isa_atomic_option=1
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>nsim_mmu=3
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>icache=32768,64,2,0
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>dcache=32768,64,4,0
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>nsim_isa_dpfp=none
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>nsim_isa_shift_option=2
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>nsim_isa_swap_option=1
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>nsim_isa_bitscan_option=1
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>nsim_isa_sat=1
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>nsim_isa_mpy32=1
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>nsim_isa_enable_timer_0=1
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>nsim_isa_enable_timer_1=1
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=24
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>isa_counters=1
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>nsim_isa_pct_counters=8
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>nsim_isa_pct_size=48
 </span></code></pre></div>
 <p>Then run the image using nSIM:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>nsimdrv<span class="w"> </span>-propsfile<span class="w"> </span>arc700.props<span class="w"> </span>output/images/vmlinux
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>nsimdrv<span class="w"> </span>-propsfile<span class="w"> </span>arc700.props<span class="w"> </span>output/images/vmlinux
 </span></code></pre></div>
 <p>Run the image without a property file:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>nsimdrv -prop nsim_isa_family=a700 -prop nsim_isa_atomic_option=1 -prop nsim_mmu=3 -prop icache=32768,64,2,0 \
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>        -prop dcache=32768,64,4,0 -prop nsim_isa_dpfp=none -prop nsim_isa_shift_option=2 -prop nsim_isa_swap_option=1 \
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>        -prop nsim_isa_bitscan_option=1 -prop nsim_isa_sat=1 -prop nsim_isa_mpy32=1 -prop nsim_isa_enable_timer_0=1 \
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>        -prop nsim_isa_enable_timer_1=1 -prop nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=24 -prop isa_counters=1 \
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>        -prop nsim_isa_pct_counters=8 -prop nsim_isa_pct_size=48 output/images/vmlinux
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>nsimdrv -prop nsim_isa_family=a700 -prop nsim_isa_atomic_option=1 -prop nsim_mmu=3 -prop icache=32768,64,2,0 \
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>        -prop dcache=32768,64,4,0 -prop nsim_isa_dpfp=none -prop nsim_isa_shift_option=2 -prop nsim_isa_swap_option=1 \
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>        -prop nsim_isa_bitscan_option=1 -prop nsim_isa_sat=1 -prop nsim_isa_mpy32=1 -prop nsim_isa_enable_timer_0=1 \
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>        -prop nsim_isa_enable_timer_1=1 -prop nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=24 -prop isa_counters=1 \
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>        -prop nsim_isa_pct_counters=8 -prop nsim_isa_pct_size=48 output/images/vmlinux
 </span></code></pre></div>
 <p>Run the image using a predefined TCF file:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>nsimdrv -tcf $NSIM_HOME/etc/tcf/templates/arc770d.tcf -prop nsim_isa_number_of_interrupts=32 \
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>        -prop nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=24 -prop nsim_isa_dpfp=none \
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>        -prop icache=32768,64,2,0 -prop dcache=32768,64,4,0 -prop nsim_isa_dpfp=none \
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>        -prop nsim_isa_swap_option=1 -prop nsim_isa_bitscan_option=1 -prop nsim_isa_sat=1 \
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>        -prop isa_counters=1 -prop nsim_isa_pct_counters=8 -prop nsim_isa_pct_size=48 \
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>        output/images/vmlinux
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>nsimdrv -tcf $NSIM_HOME/etc/tcf/templates/arc770d.tcf -prop nsim_isa_number_of_interrupts=32 \
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>        -prop nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=24 -prop nsim_isa_dpfp=none \
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>        -prop icache=32768,64,2,0 -prop dcache=32768,64,4,0 -prop nsim_isa_dpfp=none \
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>        -prop nsim_isa_swap_option=1 -prop nsim_isa_bitscan_option=1 -prop nsim_isa_sat=1 \
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>        -prop isa_counters=1 -prop nsim_isa_pct_counters=8 -prop nsim_isa_pct_size=48 \
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>        output/images/vmlinux
 </span></code></pre></div>
 <h2 id="building-images-with-a-preinstalled-toolchain">Building Images With a Preinstalled Toolchain<a class="headerlink" href="#building-images-with-a-preinstalled-toolchain" title="Permanent link">&para;</a></h2>
 <p>We assume that a toolchain is preinstalled in <code>/tools/toolchains</code>. Also,
@@ -3516,81 +3509,81 @@ toolchain's installation path in this guide is a path that contains <code>bin</c
 <p>We a going to use the latest Synopsys' development branch of the Linux kernel.
 Also, we use <code>hasp_hs</code> configuration file for the Linux kernel - it corresponds to
 a single core (UP) configuration. Save a custom configuration file in <code>defconfig</code>:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">BR2_arcle</span><span class="o">=</span>y
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nv">BR2_archs38</span><span class="o">=</span>y
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
-</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc-linux-gnu&quot;</span>
-</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
-</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
-</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC</span><span class="o">=</span>y
-</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_INET_RPC</span><span class="o">=</span>n
-</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
-</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_FORTRAN</span><span class="o">=</span>y
-</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HAS_SSP</span><span class="o">=</span>y
-</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
-</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_GIT</span><span class="o">=</span>y
-</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_URL</span><span class="o">=</span><span class="s2">&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux&quot;</span>
-</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION</span><span class="o">=</span><span class="s2">&quot;arc64&quot;</span>
-</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;haps_hs&quot;</span>
-</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="nv">BR2_LINUX_KERNEL_VMLINUX</span><span class="o">=</span>y
-</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nv">BR2_arcle</span><span class="o">=</span>y
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nv">BR2_archs38</span><span class="o">=</span>y
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc-linux-gnu&quot;</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC</span><span class="o">=</span>y
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_INET_RPC</span><span class="o">=</span>n
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_FORTRAN</span><span class="o">=</span>y
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HAS_SSP</span><span class="o">=</span>y
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_GIT</span><span class="o">=</span>y
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_URL</span><span class="o">=</span><span class="s2">&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux&quot;</span>
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION</span><span class="o">=</span><span class="s2">&quot;arc64&quot;</span>
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;haps_hs&quot;</span>
+</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="nv">BR2_LINUX_KERNEL_VMLINUX</span><span class="o">=</span>y
+</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
 </span></code></pre></div>
 <p>Build a Linux image:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>make<span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>defconfig
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>make
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>make<span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>defconfig
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>make
 </span></code></pre></div>
 <h3 id="arc-hs-3x4x-with-uclibc-ng">ARC HS 3x/4x with uClibc-ng<a class="headerlink" href="#arc-hs-3x4x-with-uclibc-ng" title="Permanent link">&para;</a></h3>
 <p>We use <code>haps_hs</code> configuration file for the Linux kernel - it corresponds to
 a single core (UP) configuration. Here is a corresponding configuration file for Buildroot:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nv">BR2_arcle</span><span class="o">=</span>y
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nv">BR2_archs38</span><span class="o">=</span>y
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
-</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
-</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc-linux-uclibc&quot;</span>
-</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
-</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_WCHAR</span><span class="o">=</span>y
-</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
-</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_UCLIBC</span><span class="o">=</span>y
-</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_INET_RPC</span><span class="o">=</span>n
-</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
-</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_FORTRAN</span><span class="o">=</span>y
-</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HAS_SSP</span><span class="o">=</span>y
-</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
-</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_GIT</span><span class="o">=</span>y
-</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_URL</span><span class="o">=</span><span class="s2">&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux&quot;</span>
-</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION</span><span class="o">=</span><span class="s2">&quot;arc64&quot;</span>
-</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;haps_hs&quot;</span>
-</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="nv">BR2_LINUX_KERNEL_VMLINUX</span><span class="o">=</span>y
-</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nv">BR2_arcle</span><span class="o">=</span>y
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nv">BR2_archs38</span><span class="o">=</span>y
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc-linux-uclibc&quot;</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_WCHAR</span><span class="o">=</span>y
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_UCLIBC</span><span class="o">=</span>y
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_INET_RPC</span><span class="o">=</span>n
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_FORTRAN</span><span class="o">=</span>y
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HAS_SSP</span><span class="o">=</span>y
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_GIT</span><span class="o">=</span>y
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_URL</span><span class="o">=</span><span class="s2">&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux&quot;</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION</span><span class="o">=</span><span class="s2">&quot;arc64&quot;</span>
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;haps_hs&quot;</span>
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="nv">BR2_LINUX_KERNEL_VMLINUX</span><span class="o">=</span>y
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
 </span></code></pre></div>
 <p>A process of building and running of the Linux kernel for ARC HS38 based on uClibc-ng
 is the same as for <a href="#arc-hs-3x4x-with-glibc">glibc version</a>.</p>
 <h3 id="arc-770-with-uclibc-ng">ARC 770 with uClibc-ng<a class="headerlink" href="#arc-770-with-uclibc-ng" title="Permanent link">&para;</a></h3>
 <p>We use <code>nsim_700</code> configuration file for the Linux kernel - it corresponds to
 a single core (UP) configuration. Here is a corresponding configuration file for Buildroot:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nv">BR2_arcle</span><span class="o">=</span>y
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nv">BR2_arc770d</span><span class="o">=</span>y
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
-</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc700-linux-uclibc&quot;</span>
-</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_UCLIBC</span><span class="o">=</span>y
-</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
-</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_WCHAR</span><span class="o">=</span>y
-</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HAS_SSP</span><span class="o">=</span>y
-</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
-</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
-</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
-</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_GIT</span><span class="o">=</span>y
-</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_URL</span><span class="o">=</span><span class="s2">&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux&quot;</span>
-</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION</span><span class="o">=</span><span class="s2">&quot;arc64&quot;</span>
-</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;nsim_700&quot;</span>
-</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="nv">BR2_LINUX_KERNEL_VMLINUX</span><span class="o">=</span>y
-</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nv">BR2_arcle</span><span class="o">=</span>y
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nv">BR2_arc770d</span><span class="o">=</span>y
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc700-linux-uclibc&quot;</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_UCLIBC</span><span class="o">=</span>y
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_WCHAR</span><span class="o">=</span>y
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HAS_SSP</span><span class="o">=</span>y
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_GIT</span><span class="o">=</span>y
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_URL</span><span class="o">=</span><span class="s2">&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux&quot;</span>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION</span><span class="o">=</span><span class="s2">&quot;arc64&quot;</span>
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;nsim_700&quot;</span>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="nv">BR2_LINUX_KERNEL_VMLINUX</span><span class="o">=</span>y
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
 </span></code></pre></div>
 <p>Build a Linux image:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>make<span class="w"> </span>-C<span class="w"> </span>..<span class="w"> </span><span class="nv">O</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>build/defconfig
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>make
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>make<span class="w"> </span>-C<span class="w"> </span>..<span class="w"> </span><span class="nv">O</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>build/defconfig
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>make
 </span></code></pre></div>
 <h3 id="arc-hs5x-with-uclibc-ng">ARC HS5x with uClibc-ng<a class="headerlink" href="#arc-hs5x-with-uclibc-ng" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -3602,96 +3595,96 @@ A custom <code>loader</code> image is generated to distinguish it from a default
 </div>
 <p>We use <code>haps_hs5x</code> configuration file for the Linux kernel - it corresponds to
 a single core (UP) configuration. Here is a corresponding configuration file for Buildroot:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nv">BR2_arcle</span><span class="o">=</span>y
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="nv">BR2_arc32</span><span class="o">=</span>y
-</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
-</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
-</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_UCLIBC</span><span class="o">=</span>y
-</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc32-linux-uclibc&quot;</span>
-</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
-</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_INET_RPC</span><span class="o">=</span>n
-</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
-</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_WCHAR</span><span class="o">=</span>y
-</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HAS_SSP</span><span class="o">=</span>y
-</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
-</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="c1"># BR2_STRIP_strip is not set</span>
-</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="nv">BR2_ROOTFS_POST_IMAGE_SCRIPT</span><span class="o">=</span><span class="s2">&quot;board/synopsys/arc64/post-image.sh&quot;</span>
-</span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a><span class="nv">BR2_ROOTFS_POST_SCRIPT_ARGS</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>LINUX_DIR<span class="k">)</span><span class="s2">&quot;</span>
-</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
-</span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_GIT</span><span class="o">=</span>y
-</span><span id="__span-24-18"><a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_URL</span><span class="o">=</span><span class="s2">&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux.git&quot;</span>
-</span><span id="__span-24-19"><a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION</span><span class="o">=</span><span class="s2">&quot;arc64&quot;</span>
-</span><span id="__span-24-20"><a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;haps_hs5x&quot;</span>
-</span><span id="__span-24-21"><a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a><span class="nv">BR2_LINUX_KERNEL_IMAGE_TARGET_CUSTOM</span><span class="o">=</span>y
-</span><span id="__span-24-22"><a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a><span class="nv">BR2_LINUX_KERNEL_IMAGE_TARGET_NAME</span><span class="o">=</span><span class="s2">&quot;loader&quot;</span>
-</span><span id="__span-24-23"><a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nv">BR2_arcle</span><span class="o">=</span>y
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nv">BR2_arc32</span><span class="o">=</span>y
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_UCLIBC</span><span class="o">=</span>y
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc32-linux-uclibc&quot;</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_INET_RPC</span><span class="o">=</span>n
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_WCHAR</span><span class="o">=</span>y
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HAS_SSP</span><span class="o">=</span>y
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="c1"># BR2_STRIP_strip is not set</span>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="nv">BR2_ROOTFS_POST_IMAGE_SCRIPT</span><span class="o">=</span><span class="s2">&quot;board/synopsys/arc64/post-image.sh&quot;</span>
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="nv">BR2_ROOTFS_POST_SCRIPT_ARGS</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>LINUX_DIR<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
+</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_GIT</span><span class="o">=</span>y
+</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_URL</span><span class="o">=</span><span class="s2">&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux.git&quot;</span>
+</span><span id="__span-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION</span><span class="o">=</span><span class="s2">&quot;arc64&quot;</span>
+</span><span id="__span-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;haps_hs5x&quot;</span>
+</span><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="nv">BR2_LINUX_KERNEL_IMAGE_TARGET_CUSTOM</span><span class="o">=</span>y
+</span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a><span class="nv">BR2_LINUX_KERNEL_IMAGE_TARGET_NAME</span><span class="o">=</span><span class="s2">&quot;loader&quot;</span>
+</span><span id="__span-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
 </span></code></pre></div>
 <p>Build a Linux image:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>make<span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>defconfig
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>make
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>make<span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>defconfig
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>make
 </span></code></pre></div>
 <h3 id="arc-hs5x-with-glibc">ARC HS5x with glibc<a class="headerlink" href="#arc-hs5x-with-glibc" title="Permanent link">&para;</a></h3>
 <p>We use <code>haps_hs5x</code> configuration file for the Linux kernel - it corresponds to
 a single core (UP) configuration. Here is a corresponding configuration file for Buildroot:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nv">BR2_arcle</span><span class="o">=</span>y
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nv">BR2_arc32</span><span class="o">=</span>y
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
-</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
-</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC</span><span class="o">=</span>y
-</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc32-linux-gnu&quot;</span>
-</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
-</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_INET_RPC</span><span class="o">=</span>n
-</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
-</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_WCHAR</span><span class="o">=</span>y
-</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HAS_SSP</span><span class="o">=</span>y
-</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
-</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="c1"># BR2_STRIP_strip is not set</span>
-</span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="nv">BR2_ROOTFS_POST_IMAGE_SCRIPT</span><span class="o">=</span><span class="s2">&quot;board/synopsys/arc64/post-image.sh&quot;</span>
-</span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a><span class="nv">BR2_ROOTFS_POST_SCRIPT_ARGS</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>LINUX_DIR<span class="k">)</span><span class="s2">&quot;</span>
-</span><span id="__span-26-16"><a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
-</span><span id="__span-26-17"><a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_GIT</span><span class="o">=</span>y
-</span><span id="__span-26-18"><a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_URL</span><span class="o">=</span><span class="s2">&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux.git&quot;</span>
-</span><span id="__span-26-19"><a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION</span><span class="o">=</span><span class="s2">&quot;arc64&quot;</span>
-</span><span id="__span-26-20"><a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;haps_hs5x&quot;</span>
-</span><span id="__span-26-21"><a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a><span class="nv">BR2_LINUX_KERNEL_IMAGE_TARGET_CUSTOM</span><span class="o">=</span>y
-</span><span id="__span-26-22"><a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a><span class="nv">BR2_LINUX_KERNEL_IMAGE_TARGET_NAME</span><span class="o">=</span><span class="s2">&quot;loader&quot;</span>
-</span><span id="__span-26-23"><a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nv">BR2_arcle</span><span class="o">=</span>y
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nv">BR2_arc32</span><span class="o">=</span>y
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC</span><span class="o">=</span>y
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc32-linux-gnu&quot;</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_INET_RPC</span><span class="o">=</span>n
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_WCHAR</span><span class="o">=</span>y
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HAS_SSP</span><span class="o">=</span>y
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
+</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="c1"># BR2_STRIP_strip is not set</span>
+</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="nv">BR2_ROOTFS_POST_IMAGE_SCRIPT</span><span class="o">=</span><span class="s2">&quot;board/synopsys/arc64/post-image.sh&quot;</span>
+</span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="nv">BR2_ROOTFS_POST_SCRIPT_ARGS</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>LINUX_DIR<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-25-16"><a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
+</span><span id="__span-25-17"><a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_GIT</span><span class="o">=</span>y
+</span><span id="__span-25-18"><a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_URL</span><span class="o">=</span><span class="s2">&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux.git&quot;</span>
+</span><span id="__span-25-19"><a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION</span><span class="o">=</span><span class="s2">&quot;arc64&quot;</span>
+</span><span id="__span-25-20"><a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;haps_hs5x&quot;</span>
+</span><span id="__span-25-21"><a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a><span class="nv">BR2_LINUX_KERNEL_IMAGE_TARGET_CUSTOM</span><span class="o">=</span>y
+</span><span id="__span-25-22"><a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a><span class="nv">BR2_LINUX_KERNEL_IMAGE_TARGET_NAME</span><span class="o">=</span><span class="s2">&quot;loader&quot;</span>
+</span><span id="__span-25-23"><a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
 </span></code></pre></div>
 <p>Build a Linux image:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>make<span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>defconfig
-</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>make
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>make<span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>defconfig
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>make
 </span></code></pre></div>
 <h3 id="arc-hs6x-with-glibc">ARC HS6x with glibc<a class="headerlink" href="#arc-hs6x-with-glibc" title="Permanent link">&para;</a></h3>
 <p>We use <code>haps_arc64</code> configuration file for the Linux kernel - it corresponds to
 a single core (UP) configuration. Here is a corresponding configuration file for Buildroot:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nv">BR2_arcle</span><span class="o">=</span>y
-</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="nv">BR2_arc64</span><span class="o">=</span>y
-</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
-</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
-</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC</span><span class="o">=</span>y
-</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc64-linux-gnu&quot;</span>
-</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
-</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_INET_RPC</span><span class="o">=</span>n
-</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
-</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_WCHAR</span><span class="o">=</span>y
-</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HAS_SSP</span><span class="o">=</span>y
-</span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
-</span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_FORTRAN</span><span class="o">=</span>y
-</span><span id="__span-28-14"><a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a><span class="c1"># BR2_STRIP_strip is not set</span>
-</span><span id="__span-28-15"><a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a><span class="nv">BR2_ROOTFS_POST_IMAGE_SCRIPT</span><span class="o">=</span><span class="s2">&quot;board/synopsys/arc64/post-image.sh&quot;</span>
-</span><span id="__span-28-16"><a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a><span class="nv">BR2_ROOTFS_POST_SCRIPT_ARGS</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>LINUX_DIR<span class="k">)</span><span class="s2">&quot;</span>
-</span><span id="__span-28-17"><a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
-</span><span id="__span-28-18"><a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_GIT</span><span class="o">=</span>y
-</span><span id="__span-28-19"><a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_URL</span><span class="o">=</span><span class="s2">&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux.git&quot;</span>
-</span><span id="__span-28-20"><a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION</span><span class="o">=</span><span class="s2">&quot;arc64&quot;</span>
-</span><span id="__span-28-21"><a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;haps_arc64&quot;</span>
-</span><span id="__span-28-22"><a id="__codelineno-28-22" name="__codelineno-28-22" href="#__codelineno-28-22"></a><span class="nv">BR2_LINUX_KERNEL_IMAGE_TARGET_CUSTOM</span><span class="o">=</span>y
-</span><span id="__span-28-23"><a id="__codelineno-28-23" name="__codelineno-28-23" href="#__codelineno-28-23"></a><span class="nv">BR2_LINUX_KERNEL_IMAGE_TARGET_NAME</span><span class="o">=</span><span class="s2">&quot;loader&quot;</span>
-</span><span id="__span-28-24"><a id="__codelineno-28-24" name="__codelineno-28-24" href="#__codelineno-28-24"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nv">BR2_arcle</span><span class="o">=</span>y
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="nv">BR2_arc64</span><span class="o">=</span>y
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL</span><span class="o">=</span>y
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM</span><span class="o">=</span>y
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CUSTOM_GLIBC</span><span class="o">=</span>y
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_PATH</span><span class="o">=</span><span class="s2">&quot;/tools/toolchains/arc64-linux-gnu&quot;</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_GCC_14</span><span class="o">=</span>y
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_INET_RPC</span><span class="o">=</span>n
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HEADERS_5_16</span><span class="o">=</span>y
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_WCHAR</span><span class="o">=</span>y
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_HAS_SSP</span><span class="o">=</span>y
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_CXX</span><span class="o">=</span>y
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="nv">BR2_TOOLCHAIN_EXTERNAL_FORTRAN</span><span class="o">=</span>y
+</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="c1"># BR2_STRIP_strip is not set</span>
+</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="nv">BR2_ROOTFS_POST_IMAGE_SCRIPT</span><span class="o">=</span><span class="s2">&quot;board/synopsys/arc64/post-image.sh&quot;</span>
+</span><span id="__span-27-16"><a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="nv">BR2_ROOTFS_POST_SCRIPT_ARGS</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>LINUX_DIR<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-27-17"><a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a><span class="nv">BR2_LINUX_KERNEL</span><span class="o">=</span>y
+</span><span id="__span-27-18"><a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_GIT</span><span class="o">=</span>y
+</span><span id="__span-27-19"><a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_URL</span><span class="o">=</span><span class="s2">&quot;https://github.com/foss-for-synopsys-dwc-arc-processors/linux.git&quot;</span>
+</span><span id="__span-27-20"><a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a><span class="nv">BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION</span><span class="o">=</span><span class="s2">&quot;arc64&quot;</span>
+</span><span id="__span-27-21"><a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a><span class="nv">BR2_LINUX_KERNEL_DEFCONFIG</span><span class="o">=</span><span class="s2">&quot;haps_arc64&quot;</span>
+</span><span id="__span-27-22"><a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a><span class="nv">BR2_LINUX_KERNEL_IMAGE_TARGET_CUSTOM</span><span class="o">=</span>y
+</span><span id="__span-27-23"><a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a><span class="nv">BR2_LINUX_KERNEL_IMAGE_TARGET_NAME</span><span class="o">=</span><span class="s2">&quot;loader&quot;</span>
+</span><span id="__span-27-24"><a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a><span class="nv">BR2_TARGET_ROOTFS_INITRAMFS</span><span class="o">=</span>y
 </span></code></pre></div>
 <p>Build a Linux image:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>make<span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>defconfig
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>make
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>make<span class="w"> </span>defconfig<span class="w"> </span><span class="nv">DEFCONFIG</span><span class="o">=</span>defconfig
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>make
 </span></code></pre></div>
 
 
