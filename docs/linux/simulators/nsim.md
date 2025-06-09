@@ -15,14 +15,14 @@
 
 ## Prerequisites
 
-Clone a repository and create a build directory:
+Clone the Buildroot repository:
 
 ```shell
 # Clone the latest Buildroot
-git clone -b 2024.11.1 https://git.busybox.net/buildroot
+git clone -b 2025.02.3 https://git.busybox.net/buildroot
 
 # ... or use a custom repository for support of ARCv3 targets
-git clone -b arc-2024.12 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
+git clone -b arc-2025.06 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
 cd buildroot
 ```
 
@@ -207,16 +207,6 @@ nsimdrv -prop nsim_isa_family=av3hs -prop nsim_isa_dc_hw_prefetch=1 -prop nsim_i
         -prop nsim_isa_number_of_external_interrupts=32 -prop nsim_isa_has_fp=1 -prop nsim_isa_fp_dds_option=1 \
         -prop nsim_isa_fp_div_option=1 -prop nsim_isa_fp_dp_option=1 -prop nsim_isa_fp_hp_option=1 -prop nsim_isa_fp_vec_option=1 \
         -prop nsim_isa_fp_wide_option=1 output/images/loader
-```
-
-Run the image using a predefined TCF file:
-
-```text
-nsimdrv -tcf $NSIM_HOME/etc/tcf/templates/hs58_full.tcf -prop icache=16384,64,4 -prop dcache=16384,64,2 \
-        -prop nsim_mem-dev=uart0,kind=dwuart,base=0xf0000000,irq=24 -prop nsim_isa_number_of_external_interrupts=32 \
-        -prop nsim_isa_has_fp=1 -prop nsim_isa_fp_dds_option=1 -prop nsim_isa_fp_div_option=1 -prop nsim_isa_fp_dp_option=1 \
-        -prop nsim_isa_fp_hp_option=1 -prop nsim_isa_fp_vec_option=1 -prop nsim_isa_fp_wide_option=1 \
-        output/images/loader
 ```
 
 ### HS6x Targets
