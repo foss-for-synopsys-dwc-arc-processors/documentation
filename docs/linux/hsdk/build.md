@@ -27,9 +27,8 @@ for ARC HS Development Kit.
 Clone Buildroot from the upstream repository:
 
 ```text
-git clone -b 2024.11.1 https://git.busybox.net/buildroot
+git clone -b 2025.02.3 https://git.busybox.net/buildroot
 cd buildroot
-git checkout 2024.05
 ```
 
 ## Building the Linux Kernel and Booting Using U-Boot

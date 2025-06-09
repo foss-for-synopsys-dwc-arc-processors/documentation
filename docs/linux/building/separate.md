@@ -15,9 +15,9 @@ Clone Buildroot:
 
 ```shell
 # Clone the latest Buildroot
-git clone -b 2024.11.1 https://git.busybox.net/buildroot
+git clone -b 2025.02.3 https://git.busybox.net/buildroot
 # ... or use a custom repository for support of ARCv3 targets
-git clone -b arc-2024.12 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
+git clone -b arc-2025.06 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
 cd buildroot
 ```
 

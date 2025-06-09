@@ -6,7 +6,7 @@ Stable Buildroot releases are published every three months. Tarballs are availab
 (<http://buildroot.org/downloads/>). However, you can clone an upstream Git repository:
 
 ```shell
-git clone -b 2024.11.1 https://git.busybox.net/buildroot
+git clone -b 2025.02.3 https://git.busybox.net/buildroot
 cd buildroot
 ```
 
@@ -14,7 +14,7 @@ Upstream Buildroot does not support ARCv3 families. If you are going to build Li
 consider using a separate Synopsys repository with patches for support of ARC HS5x and ARC HS6x:
 
 ```shell
-git clone -b arc-2024.12 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
+git clone -b arc-2025.06 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
 cd buildroot
 ```
 
