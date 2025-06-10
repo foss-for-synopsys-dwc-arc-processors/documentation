@@ -177,5 +177,94 @@ That means Ethernet PHY became alive a bit too late. And that means that it's
 required to execute DHCP discovery once again from console:
 
 ```shell
-udhcpc
+# udhcpc
+udhcpc: started, v1.36.1
+udhcpc: broadcasting discover
+udhcpc: broadcasting discover
+udhcpc: broadcasting select for 192.168.1.102, server 192.168.1.1
+udhcpc: lease of 192.168.1.102 obtained from 192.168.1.1, lease time 43200
+deleting routers
+adding dns 192.168.1.1
+```
+
+## Debugging applications using gdbserver
+
+Create `overlay` directory in Buildroot sources' directory and add
+a sample file for a program:
+
+```c
+#include <stdio.h>
+
+int main()
+{
+        printf("Hello, World!\n");
+        return 0;
+}
+```
+
+After building the Linux image compile the program and save it to the `overlay`
+directory:
+
+```bash
+$ ./output/host/bin/arc-buildroot-linux-gnu-gcc -g -O2 overlay/main.c -o overlay/main
+```
+
+Set these options to build a host GDB and a native `gdbserver`:
+
+```text
+Toolchain -> Build cross gdb for the host
+Target packages -> Debugging, profiling and benchmark -> gdb -> gdbserver
+```
+
+Rebuild the image:
+
+```bash
+$ make
+```
+
+Connect to the board through UART, log in and initialize Ethernet connection:
+
+```shell
+# udhcpc
+udhcpc: started, v1.36.1
+udhcpc: broadcasting discover
+udhcpc: broadcasting discover
+udhcpc: broadcasting select for 192.168.1.102, server 192.168.1.1
+udhcpc: lease of 192.168.1.102 obtained from 192.168.1.1, lease time 43200
+deleting routers
+adding dns 192.168.1.1
+```
+
+In this case the board obtains `192.168.1.102` address. Run `gdbserver` on
+the board:
+
+```bash
+# cd /
+# gdbserver :51000 main
+Process /main created; pid = 219
+Listening on port 51000
+```
+
+Connect to `gdbserver` using the host GDB:
+
+```
+$ ./output/host/bin/arc-buildroot-linux-gnu-gdb -q overlay/main
+Reading symbols from overlay/main...
+(gdb) set sysroot ./output/target
+(gdb) target remote 192.168.1.102:51000
+Remote debugging using 192.168.1.102:51000
+Reading symbols from ./output/target/lib/ld-linux-arc.so.2...
+(No debugging symbols found in ./output/target/lib/ld-linux-arc.so.2)
+0x20010098 in __start () from ./output/target/lib/ld-linux-arc.so.2
+(gdb) break main
+Breakpoint 1 at 0x4000048a: file overlay/main.c, line 5.
+(gdb) continue
+Continuing.
+
+Breakpoint 1, main () at overlay/main.c:5
+5               printf("Hello, World!\n");
+(gdb) continue
+Continuing.
+[Inferior 1 (process 219) exited normally]
+(gdb) quit
 ```
