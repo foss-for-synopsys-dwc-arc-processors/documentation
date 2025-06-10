@@ -3034,12 +3034,9 @@ for ARC HS38 target.</p>
 <p>Suppose, that a glibc-based toolchain for ARC HS38 is preinstalled in
 <code>/tools/toolchains/arc-linux-gnu</code>.</p>
 <h2 id="building-root-filesystem">Building Root Filesystem<a class="headerlink" href="#building-root-filesystem" title="Permanent link">&para;</a></h2>
-<p>Clone Buildroot:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Clone the latest Buildroot</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span><span class="m">2025</span>.02.3<span class="w"> </span>https://git.busybox.net/buildroot
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># ... or use a custom repository for support of ARCv3 targets</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>arc-2025.06<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">cd</span><span class="w"> </span>buildroot
+<p>Clone the Buildroot repository:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>arc-2025.06<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>buildroot
 </span></code></pre></div>
 <p>Use <code>snps_archs38_haps_defconfig</code> configuration file for this example and enter
 a configuration menu:</p>
