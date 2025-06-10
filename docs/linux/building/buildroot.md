@@ -2,16 +2,7 @@
 
 ## Getting Buildroot
 
-Stable Buildroot releases are published every three months. Tarballs are available for each stable release
-(<http://buildroot.org/downloads/>). However, you can clone an upstream Git repository:
-
-```shell
-git clone -b 2025.02.3 https://git.busybox.net/buildroot
-cd buildroot
-```
-
-Upstream Buildroot does not support ARCv3 families. If you are going to build Linux for ARCv3 then
-consider using a separate Synopsys repository with patches for support of ARC HS5x and ARC HS6x:
+Clone the Buildroot repository:
 
 ```shell
 git clone -b arc-2025.06 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot

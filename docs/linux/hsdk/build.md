@@ -24,10 +24,10 @@ for ARC HS Development Kit.
 
 ## Preparing Buildroot for Building Images
 
-Clone Buildroot from the upstream repository:
+Clone the Buildroot repository:
 
-```text
-git clone -b 2025.02.3 https://git.busybox.net/buildroot
+```shell
+git clone -b arc-2025.06 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
 cd buildroot
 ```
 

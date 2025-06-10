@@ -11,12 +11,9 @@ Suppose, that a glibc-based toolchain for ARC HS38 is preinstalled in
 
 ## Building Root Filesystem
 
-Clone Buildroot:
+Clone the Buildroot repository:
 
 ```shell
-# Clone the latest Buildroot
-git clone -b 2025.02.3 https://git.busybox.net/buildroot
-# ... or use a custom repository for support of ARCv3 targets
 git clone -b arc-2025.06 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
 cd buildroot
 ```
