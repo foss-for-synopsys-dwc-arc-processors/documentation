@@ -19,7 +19,7 @@
     
     
       
-        <title>GNU Toolchain for ARC-V Targets - embARC Documentation Site for ARC Classic and ARC-V</title>
+        <title>GNU toolchain for ARC-V targets - embARC Documentation Site for ARC Classic and ARC-V</title>
       
     
     
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GNU Toolchain for ARC-V Targets
+              GNU toolchain for ARC-V targets
             
           </span>
         </div>
@@ -2910,28 +2910,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#known-issues" class="md-nav__link">
-    Known issues
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2948,13 +2926,12 @@
   
 
 
-<h1 id="gnu-toolchain-for-arc-v-targets">GNU Toolchain for ARC-V Targets<a class="headerlink" href="#gnu-toolchain-for-arc-v-targets" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Supported ARC-V specific features:</p>
+<h1 id="gnu-toolchain-for-arc-v-targets">GNU toolchain for ARC-V targets<a class="headerlink" href="#gnu-toolchain-for-arc-v-targets" title="Permanent link">&para;</a></h1>
+<p>GNU toolchain for ARC-V targets supports all ARC-V targets:</p>
 <ul>
-<li><a href="#tuning-scheduling">Tuning GCC instruction scheduling</a> for RMX-100, RMX-500, RHX-100 and RPX-100 targets.</li>
+<li><a href="#tuning-scheduling">Tuning GCC instruction scheduling</a> for RMX-100, RMX-500, RHX-100 and RPX-100.</li>
 <li>Includes optimized sets of libraries for basic profiles for RMX-100, RMX-500, RHX-100 and RPX-100.</li>
-<li>Support of enabling ARC-V caches on startup.</li>
+<li>Enabling ARC-V caches on startup.</li>
 </ul>
 <p>Because the ARC-V GNU toolchain is built on top of standard components such as GCC, Binutils, and GDB,
 all functionality of these tools stays in place and can be studied in detail in the corresponding manuals:</p>
@@ -2962,21 +2939,6 @@ all functionality of these tools stays in place and can be studied in detail in 
 <li><a href="https://gcc.gnu.org/onlinedocs/14.2.0/">GCC documentation</a></li>
 <li><a href="https://sourceware.org/binutils/docs-2.43/">Binutils documentation</a></li>
 <li><a href="https://www.sourceware.org/gdb/documentation/">GDB documentation</a></li>
-</ul>
-<h2 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
-<ul>
-<li>The size-optimized Newlib Nano configuration (used when <code>-specs=nano.specs</code> is passed to GCC) does not
-  support <code>printf()</code> for <code>float</code> and <code>double</code> types by default. If you need that feature, pass <code>-u _printf_float</code>
-  to GCC when you compile your applications. This option picks up support of <code>float</code> and <code>double</code> for size
-  optimized <code>printf()</code> on demand.</li>
-<li>Some complex combinations of <code>-march=</code> and <code>-mabi=</code> options might lead to unpredictable errors during
-  compilation. Such issues are related to general support of RISC-V extensions in GCC.
-  Refer <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/issues/610">#610</a> for details.</li>
-<li>There is an issue in GCC that prevents matching <code>-march</code> configurations like <code>rv32imc</code> and <code>rv32im_zca</code>
-  as compatible and interchangeable. Refer <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/issues/653">#653</a>
-  for details.</li>
-<li>Using selective scheduler with a specific set of options may lead to incorrect code generation. Refer
-  <a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=118153">Bug 118153</a> for details.</li>
 </ul>
 
 
