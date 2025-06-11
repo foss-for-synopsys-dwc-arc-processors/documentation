@@ -2270,7 +2270,14 @@
       
         <li class="md-nav__item">
   <a href="#using-another-gdb-port" class="md-nav__link">
-    Using Another GDB Port
+    Using another GDB port
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-a-board-with-a-particular-serial-number" class="md-nav__link">
+    Connecting to a board with a particular serial number
   </a>
   
 </li>
@@ -3052,7 +3059,14 @@
       
         <li class="md-nav__item">
   <a href="#using-another-gdb-port" class="md-nav__link">
-    Using Another GDB Port
+    Using another GDB port
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-a-board-with-a-particular-serial-number" class="md-nav__link">
+    Connecting to a board with a particular serial number
   </a>
   
 </li>
@@ -3263,9 +3277,40 @@ actions bypassing GDB or even OpenOCD. For example it is possible to write/read
 core and aux registers. However some command for register access will be
 removed in future, when ARC OpenOCD will fully support flexible register
 configurations.</p>
-<h2 id="using-another-gdb-port">Using Another GDB Port<a class="headerlink" href="#using-another-gdb-port" title="Permanent link">&para;</a></h2>
+<h2 id="using-another-gdb-port">Using another GDB port<a class="headerlink" href="#using-another-gdb-port" title="Permanent link">&para;</a></h2>
 <p>You can use an OpenOCD command to change the GDB port this way:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>openocd -c &quot;gdb_port 12345&quot; ...
+</span></code></pre></div>
+<h2 id="connecting-to-a-board-with-a-particular-serial-number">Connecting to a board with a particular serial number<a class="headerlink" href="#connecting-to-a-board-with-a-particular-serial-number" title="Permanent link">&para;</a></h2>
+<p>If several boards are connected to the host, then OpenOCD will choose
+the first detected one. To choose a board with a particular serial number
+it's necessary to create a custom board configuration file and specify
+a serial number explicitly.</p>
+<p>Here is an example for HSDK (a serial number is set through <code>ftdi_serial</code> variable):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>$ cat snps_hsdk.cfg 
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>source [find interface/ftdi/snps_sdp.cfg]
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>ftdi_serial &quot;251642000213&quot;
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>adapter_khz 10000
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>transport select jtag
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>source [find target/snps_hsdk.cfg]
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>init
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>reset halt
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>$ openocd -f ./snps_hsdk.cfg
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>...
+</span></code></pre></div>
+<p>Here is an example for EM SDP:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>$ cat snps_em_sk_v2.3.cfg 
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>source [find interface/ftdi/digilent-hs1.cfg]
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>ftdi_serial &quot;210203826102&quot;
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>adapter_khz 5000
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>transport select jtag
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>source [find target/snps_em_sk_fpga.cfg]
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>init
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>reset halt
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>$ openocd -f ./snps_em_sk_v2.3.cfg
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>...
 </span></code></pre></div>
 <h2 id="configurations-files">Configurations files<a class="headerlink" href="#configurations-files" title="Permanent link">&para;</a></h2>
 <p>Here is a table of configuration files for OpenOCD 0.9:</p>
