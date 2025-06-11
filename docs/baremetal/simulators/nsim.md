@@ -2,18 +2,7 @@
 
 nSIM supports running and debugging applications built with GNU toolchain for all ARC families.
 
-There is no a definite match between TCF templates for nSIM and `-mcpu` values for GNU toolchain.
-If you want to build a program using GNU toolchain and run it on nSIM simulator , then you have two
-ways of finding right nSIM options:
-
-1. Find proper nSIM options in corresponding [Target Options](../../toolchain/index.md) sections for
-   different targets.
-2. Use default TCF templates and additional nSIM options. You can find matching templates in the same
-   sections of [Target Options](../../toolchain/index.md).
-
-Note that you need to pass `-on nsim_isa_big_endian` to nSIM for big endian targets.
-
-## Building and Debugging Applications
+## Building and debugging applications
 
 Suppose that `main.c` contains an application to be debugged on nSIM:
 
@@ -96,6 +85,72 @@ $ arc-snps-elf-gcc -mcpu=archs -specs=hl.specs main.c -o main.elf
 $ nsimdrv -tcf $NSIM_HOME/etc/tcf/templates/hs38_full.tcf main.elf
 Hello, World!
 ```
+
+See [Specs files](../general/specs.md) for detailed information about `.specs` files.
+
+## Linking with size-optimized libraries
+
+You can link your application with size-optimized versions of libraries
+using `-specs=nano.specs`:
+
+```
+$ arc-snps-elf-gcc -mcpu=archs -specs=hl.specs -specs=nano.specs main.c -o main.elf
+$ size main.elf
+   text    data     bss     dec     hex filename
+   5336    1564     472    7372    1ccc main.elf
+```
+
+Compare code size:
+
+```
+$ arc-snps-elf-gcc -mcpu=archs -specs=hl.specs main.c -o main.elf
+$ size main.elf
+   text    data     bss     dec     hex filename
+  12396    2848     788   16032    3ea0 main.elf
+```
+
+## Building for big endian targets
+
+To produce binaries for big-endian targets it's necessary to use `arceb-*`
+toolchains (except ARCv3 toolchain which does not support big endian).
+Also, you need to pass `-on nsim_isa_big_endian` to nSIM for big endian targets:
+
+```
+$ arceb-snps-elf-gcc -mcpu=archs -specs=nsim.specs main.c -o main.elf
+$ nsimdrv -tcf $NSIM_HOME/etc/tcf/templates/hs38_full.tcf -on nsim_emt -on nsim_isa_big_endian main.elf
+Hello, World!
+```
+
+## Choosing nSIM templates
+
+Different GCC options for ARC targets require different nSIM options for successful
+execution of binaries. You can find them on corresponding pages for [ARCompact](../../toolchain/options/arcompact.md),
+[ARCv2 HS](../../toolchain/options/arcv2.md#compatibility-for-predefined-targets-for-arc-hs),
+[ARCv2 EM](../../toolchain/options/arcv2.md#compatibility-for-predefined-targets-for-arc-em) and
+[ARCv3](../../toolchain/options/arcv3.md#compatibility-for-predefined-targets).
+
+You can match `-mcpu` values for GCC with corresponding `-tcf` templates for nSIM using a table
+below.
+
+| Compiler             | `-mcpu`      | TCF             | Additional nSIM options                                                                                        |
+|----------------------|--------------|-----------------|----------------------------------------------------------------------------------------------------------------|
+| `arc-snps-elf-gcc`   | `hs`         | `hs36_base.tcf` |                                                                                                                |
+| `arc-snps-elf-gcc`   | `hs34`       | `hs36.tcf`      |                                                                                                                |
+| `arc-snps-elf-gcc`   | `hs38`       | `hs38_full.tcf` |                                                                                                                |
+| `arc-snps-elf-gcc`   | `hs38_linux` | `hs38_full.tcf` | `-on nsim_isa_fpud_option -on nsim_isa_fpud_div_option -on nsim_isa_fpu_mac_option -on nsim_isa_fpu_hp_option` |
+| `arc-snps-elf-gcc`   | `archs`      | `hs38_full.tcf` | `-p nsim_isa_mpy_option=2`                                                                                     |
+| `arc-snps-elf-gcc`   | `em`         | `em6_mini.tcf`  | `-p nsim_isa_shift_option=3 -p nsim_isa_rgf_num_regs=32`                                                       |
+| `arc-snps-elf-gcc`   | `em4`        | `em6_mini.tcf`  | `-p nsim_isa_shift_option=3 -p nsim_isa_rgf_num_regs=32`                                                       |
+| `arc-snps-elf-gcc`   | `em4_dmips`  | `em6_dmips.tcf` |                                                                                                                |
+| `arc-snps-elf-gcc`   | `em4_fpus`   | `em6_dmips.tcf` | `-on nsim_isa_fpus_option`                                                                                     |
+| `arc-snps-elf-gcc`   | `em4_fpuda`  | `em6_dmips.tcf` | `-on nsim_isa_fpus_option -on nsim_isa_fpuda_option`                                                           |
+| `arc-snps-elf-gcc`   | `arcem`      | `em6_dmips.tcf` | `-off nsim_isa_bitscan_option -off nsim_isa_div_rem_option`                                                    |
+| `arc-snps-elf-gcc`   | `arc700`     | `arc770d.tcf`   |                                                                                                                |
+| `arc-snps-elf-gcc`   | `arc600`     | `arc625d.tcf`   |                                                                                                                |
+| `arc64-snps-elf-gcc` | `hs5x`       | `hs58_full.tcf` | `-on nsim_isa_ll64_option`                                                                                     |
+| `arc64-snps-elf-gcc` | `hs58`       | `hs58_full.tcf` | `-on nsim_isa_ll64_option`                                                                                     |
+| `arc64-snps-elf-gcc` | `hs6x`       | `hs68_full.tcf` |                                                                                                                |
+| `arc64-snps-elf-gcc` | `hs68`       | `hs68_full.tcf` |                                                                                                                |
 
 ## Profiling and nCAM
 
