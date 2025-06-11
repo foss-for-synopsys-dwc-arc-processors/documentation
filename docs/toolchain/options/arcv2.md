@@ -125,8 +125,8 @@ ARC EM as they defined in ARChitect.
 A particular ARCv2 target is selected by `-mcpu=` option. Each `-mcpu=` value selects
 a corresponding prebuilt library and a set of options:
 
-* [`-mcpu=` values for ARC HS](#selecting-arc-hs-targets): `hs`, `hs34`, `archs`, `hs38`, `hs4x`, `hs4xd`, `hs38_linux`.
-* [`-mcpu=` values for ARC EM](#selecting-arc-em-targets): `em`, `em_mini`, `em4`, `arcem`, `em4_dmips`, `em4_fpus`, `em4_fpuda`, `quarkse_em`.
+* [`-mcpu=` values for ARC HS](#selecting-targets-for-arc-hs): `hs`, `hs34`, `archs`, `hs38`, `hs4x`, `hs4xd`, `hs38_linux`.
+* [`-mcpu=` values for ARC EM](#selecting-targets-for-arc-em): `em`, `em_mini`, `em4`, `arcem`, `em4_dmips`, `em4_fpus`, `em4_fpuda`, `quarkse_em`.
 
 Here is a table of default values for targets options for base ARC HS (`-mcpu=hs`) and ARC EM (`-mcpu=em`) configurations:
 
