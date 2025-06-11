@@ -255,12 +255,51 @@ core and aux registers. However some command for register access will be
 removed in future, when ARC OpenOCD will fully support flexible register
 configurations.
 
-## Using Another GDB Port
+## Using another GDB port
 
 You can use an OpenOCD command to change the GDB port this way:
 
 ```text
 openocd -c "gdb_port 12345" ...
+```
+
+## Connecting to a board with a particular serial number
+
+If several boards are connected to the host, then OpenOCD will choose
+the first detected one. To choose a board with a particular serial number
+it's necessary to create a custom board configuration file and specify
+a serial number explicitly.
+
+Here is an example for HSDK (a serial number is set through `ftdi_serial` variable):
+
+```
+$ cat snps_hsdk.cfg 
+source [find interface/ftdi/snps_sdp.cfg]
+ftdi_serial "251642000213"
+adapter_khz 10000
+transport select jtag
+source [find target/snps_hsdk.cfg]
+init
+reset halt
+
+$ openocd -f ./snps_hsdk.cfg
+...
+```
+
+Here is an example for EM SDP:
+
+```
+$ cat snps_em_sk_v2.3.cfg 
+source [find interface/ftdi/digilent-hs1.cfg]
+ftdi_serial "210203826102"
+adapter_khz 5000
+transport select jtag
+source [find target/snps_em_sk_fpga.cfg]
+init
+reset halt
+
+$ openocd -f ./snps_em_sk_v2.3.cfg
+...
 ```
 
 ## Configurations files
