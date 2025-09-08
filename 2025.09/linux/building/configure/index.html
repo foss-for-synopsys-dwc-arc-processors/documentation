@@ -3133,7 +3133,7 @@ path to the configuration file:</p>
 </span></code></pre></div>
 <h2 id="building-in-a-separate-directory">Building in a Separate Directory<a class="headerlink" href="#building-in-a-separate-directory" title="Permanent link">&para;</a></h2>
 <p>It's a good practice to build Linux images out of the main source tree:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>arc-2025.06<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>arc-2025.09<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>mkdir<span class="w"> </span>buildroot/build
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">cd</span><span class="w"> </span>buildroot/build
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>make<span class="w"> </span>-C<span class="w"> </span>..<span class="w"> </span><span class="nv">O</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="w"> </span>snps_archs38_haps_defconfig
