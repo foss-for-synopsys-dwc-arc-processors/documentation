@@ -27,7 +27,7 @@ for ARC HS Development Kit.
 Clone the Buildroot repository:
 
 ```shell
-git clone -b arc-2025.06 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
+git clone -b arc-2025.09 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
 cd buildroot
 ```
 

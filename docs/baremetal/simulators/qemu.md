@@ -30,7 +30,7 @@ sudo apt install \
 Then prepare sources and a build directory:
 
 ```bash
-git clone -b arc-2025.06 https://github.com/foss-for-synopsys-dwc-arc-processors/qemu
+git clone -b arc-2025.09 https://github.com/foss-for-synopsys-dwc-arc-processors/qemu
 mkdir -p qemu/build
 cd qemu/build
 ```

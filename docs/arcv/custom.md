@@ -31,7 +31,7 @@ Crosstool-NG here: https://github.com/foss-for-synopsys-dwc-arc-processors/toolc
 Checkout and build Crosstool-NG:
 
 ```
-$ git clone -b arc-2025.06 https://github.com/foss-for-synopsys-dwc-arc-processors/crosstool-ng
+$ git clone -b arc-2025.09 https://github.com/foss-for-synopsys-dwc-arc-processors/crosstool-ng
 $ ./bootstrap
 $ ./configure --enable-local
 $ make
