@@ -3217,9 +3217,9 @@ kernel configuration file. If you are going to run an image on nSIM with
 a single core then change it to <code>haps_hs</code> through <code>make menuconfig</code>
 (<code>Kernel</code> -&gt; <code>Defconfig name</code> -&gt; <code>haps_hs</code>).</p>
 </div>
-<p>You can configure Buildroot for HS3x/HS4x targets using these commands:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>make<span class="w"> </span>snps_archs38_haps_defconfig<span class="w"> </span><span class="c1"># nSIM and QEMU</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>make<span class="w"> </span>snps_archs38_hsdk_defconfig<span class="w"> </span><span class="c1"># HS Development Kit</span>
+<p>You can configure Buildroot for ARC700 and HS4x targets using these commands:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>make<span class="w"> </span>snps_arc700_nsim_defconfig<span class="w">  </span><span class="c1"># ARCompact ARC700, nSIM</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>make<span class="w"> </span>snps_archs38_haps_defconfig<span class="w"> </span><span class="c1"># ARCv2 HS4x, nSIM and QEMU</span>
 </span></code></pre></div>
 <p>You can configure Buildroot for HS5x/HS6x targets using these commands
 (available only in <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot">https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot</a>)</p>
