@@ -31,11 +31,11 @@ cd buildroot
     a single core then change it to `haps_hs` through `make menuconfig`
     (`Kernel` -> `Defconfig name` -> `haps_hs`).
 
-You can configure Buildroot for HS3x/HS4x targets using these commands:
+You can configure Buildroot for ARC700 and HS4x targets using these commands:
 
 ```shell
-make snps_archs38_haps_defconfig # nSIM and QEMU
-make snps_archs38_hsdk_defconfig # HS Development Kit
+make snps_arc700_nsim_defconfig  # ARCompact ARC700, nSIM
+make snps_archs38_haps_defconfig # ARCv2 HS4x, nSIM and QEMU
 ```
 
 You can configure Buildroot for HS5x/HS6x targets using these commands
