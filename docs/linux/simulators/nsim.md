@@ -330,19 +330,19 @@ toolchain's installation path in this guide is a path that contains `bin` direct
 
 | ARC processors family | Standard library | Toolchain's installation path           | Version                            |
 |-----------------------|------------------|-----------------------------------------|------------------------------------|
-| ARC HS 6x             | glibc            | `/tools/toolchains/arc64-linux-gnu`     | [2024.12][arc64_glibc_toolchain]   |
-| ARC HS 5x             | glibc            | `/tools/toolchains/arc32-linux-gnu`     | [2024.12][arc32_glibc_toolchain]   |
-| ARC HS 5x             | uClibc-ng        | `/tools/toolchains/arc32-linux-uclibc`  | [2024.12][arc32_uclibc_toolchain]  |
-| ARC HS 3x/4x          | glibc            | `/tools/toolchains/arc-linux-gnu`       | [2024.12][archs_glibc_toolchain]   |
-| ARC HS 3x/4x          | uClibc-ng        | `/tools/toolchains/arc-linux-uclibc`    | [2024.12][archs_uclibc_toolchain]  |
-| ARC 700               | uClibc-ng        | `/tools/toolchains/arc700-linux-uclibc` | [2024.12][arc700_uclibc_toolchain] |
+| ARC HS 6x             | glibc            | `/tools/toolchains/arc64-linux-gnu`     | [2025.09][arc64_glibc_toolchain]   |
+| ARC HS 5x             | glibc            | `/tools/toolchains/arc32-linux-gnu`     | [2025.09][arc32_glibc_toolchain]   |
+| ARC HS 5x             | uClibc-ng        | `/tools/toolchains/arc32-linux-uclibc`  | [2025.09][arc32_uclibc_toolchain]  |
+| ARC HS 3x/4x          | glibc            | `/tools/toolchains/arc-linux-gnu`       | [2025.09][archs_glibc_toolchain]   |
+| ARC HS 3x/4x          | uClibc-ng        | `/tools/toolchains/arc-linux-uclibc`    | [2025.09][archs_uclibc_toolchain]  |
+| ARC 700               | uClibc-ng        | `/tools/toolchains/arc700-linux-uclibc` | [2025.09][arc700_uclibc_toolchain] |
 
-[arc64_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.12-rc1/arc_gnu_2024.12-rc1_prebuilt_arc64_glibc_linux_install.tar.xz
-[arc32_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.12-rc1/arc_gnu_2024.12-rc1_prebuilt_arc32_glibc_linux_install.tar.xz
-[arc32_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.12-rc1/arc_gnu_2024.12-rc1_prebuilt_arc32_uclibc_linux_install.tar.xz
-[archs_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.12-rc1/arc_gnu_2024.12-rc1_prebuilt_glibc_le_archs_linux_install.tar.xz
-[archs_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.12-rc1/arc_gnu_2024.12-rc1_prebuilt_uclibc_le_archs_linux_install.tar.xz
-[arc700_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2024.12-rc1/arc_gnu_2024.12-rc1_prebuilt_uclibc_le_arc700_linux_install.tar.xz
+[arc64_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2025.09-rc1/arc_gnu_2025.09-rc1_prebuilt_arc64_glibc_linux_install.tar.xz
+[arc32_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2025.09-rc1/arc_gnu_2025.09-rc1_prebuilt_arc32_glibc_linux_install.tar.xz
+[arc32_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2025.09-rc1/arc_gnu_2025.09-rc1_prebuilt_arc32_uclibc_linux_install.tar.xz
+[archs_glibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2025.09-rc1/arc_gnu_2025.09-rc1_prebuilt_glibc_le_archs_linux_install.tar.xz
+[archs_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2025.09-rc1/arc_gnu_2025.09-rc1_prebuilt_uclibc_le_archs_linux_install.tar.xz
+[arc700_uclibc_toolchain]: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/download/arc-2025.09-rc1/arc_gnu_2025.09-rc1_prebuilt_uclibc_le_arc700_linux_install.tar.xz
 
 ### ARC HS 3x/4x with glibc
 
