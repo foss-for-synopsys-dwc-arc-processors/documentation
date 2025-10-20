@@ -62,7 +62,7 @@ then do these steps:
 1. Unselect `Target Options -> Build a multilib toolchain`.
 2. Set `Target Options -> Architecture Level` to `rv32imafc_zicond_zicsr_zifencei`.
 3. Set `Target Options -> Generate code for the specific ABI` to `ilp32f`.
-4. Set `Target Options -> Tune for CPU` to `-mtune=arc-v-rmx-100-series`.
+4. Set `Target Options -> Tune for CPU` to `arc-v-rmx-100-series`.
 
 If you want to set extra GCC options for target libraries you can do this
 through `Target Options -> Target CFLAGS`. For example, you can add
