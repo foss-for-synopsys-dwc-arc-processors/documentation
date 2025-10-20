@@ -74,7 +74,7 @@ Then build the toolchain as usual:
 $ ./ct-ng build
 ```
 
-The toolchain may be found in `riscv64-snps-elf-newlib` or 
-`riscv64-snps-elf-picolibc` directory. It uses
+The toolchain may be found in `snps-riscv64-unknown-elf` or 
+`snps-riscv64-snps-elf-picolibc` directory. It uses
 `-march=rv32imafc_zicond_zicsr_zifencei -mabi=ilp32f -mtune=arc-v-rmx-100-series`
 options by default.
