@@ -40,13 +40,13 @@ $ make
 Select ARC-V configuration file for Newlib-based toolchain:
 
 ```
-$ ./ct-ng riscv64-snps-elf-newlib
+$ ./ct-ng snps-riscv64-unknown-elf
 ```
 
 Or select ARC-V configuration file for Picolibc-based toolchain:
 
 ```
-$ ./ct-ng riscv64-snps-elf-picolibc
+$ ./ct-ng snps-riscv64-snps-elf-picolibc
 ```
 
 Enter a configuration menu:
