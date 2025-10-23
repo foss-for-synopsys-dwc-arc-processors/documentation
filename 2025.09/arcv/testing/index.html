@@ -2921,6 +2921,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#arc-v-micro-dsp-extension" class="md-nav__link">
+    ARC-V micro-DSP Extension
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2972,6 +2979,13 @@
         <li class="md-nav__item">
   <a href="#zcb-extension" class="md-nav__link">
     Zcb Extension
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arc-v-micro-dsp-extension" class="md-nav__link">
+    ARC-V micro-DSP Extension
   </a>
   
 </li>
@@ -3074,6 +3088,40 @@ generates a full 32-bit encoding as in the example below.</p>
 </span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>00000000 &lt;test&gt;:
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>   0:   00b50533                add     a0,a0,a1
 </span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>   4:   00008067                ret
+</span></code></pre></div>
+<h2 id="arc-v-micro-dsp-extension">ARC-V micro-DSP Extension<a class="headerlink" href="#arc-v-micro-dsp-extension" title="Permanent link">&para;</a></h2>
+<p>You can check support of micro-DSP instructions using examples from
+MetaWare Development Toolkit. Ensure, that environment for MetaWare
+Development Toolkit is configured properly and <code>METAWARE_HOME</code> variable
+is set.</p>
+<p>Copy the FFT example, build it using Picolibc-based toolchain and run
+it using nSIM:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ cp -f ${METAWARE_HOME}/examples/arcv_micro_dsp/micro_fft/test.c ./test.c
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>$ riscv64-snps-elf-gcc \
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    -march=rv32e_zicsr_zifencei_zihintpause_zca_zcb_zcmp_zcmt_zba_zbb_zbs_zicond_zicbom_zicbop_xarcvudsp \
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    -mno-strict-align -mabi=ilp32e -mtune=arc-v-rmx-100-series --param arcv-mpy-option=1c \
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    -specs=picolibc.specs --crt0=arcv-semihost --oslib=semihost -DTYPE=short -DTYPE_W=int \
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    -DSCALE_DOWN=16 -DPASS_DOWNSCALE=1 -DFFT_LOG2_LEN=9 -DEL_SIZE=16 -DPREGENERATED_REFERENCE \
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    -DNEED_BITREV_REORDER -DBITREV_INSTRUCTION_ -DGENERATE_REFERENCE_ \
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    test.c -o test.elf
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>$ nsimdrv -tcf=${METAWARE_HOME}/tcf/rmx100_udsp.tcf -on nsim_semihosting -on nsim_ncam_experimental_option test.elf
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>Preparation: 54
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>Cycles: 621213
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>SNR:  55.1531 dB
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>PASS
+</span></code></pre></div>
+<p>It's expected that the sample prints <code>PASS</code>. Also, verify that the
+binary contains micro-DSP instructions:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$ riscv64-snps-elf-objdump -d test.elf | grep &quot;arcv\.&quot;
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>     212:       84e7a757                arcv.xvsadd.vv  a4,a5,a4,e16,m1
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>     224:       a6e6a757                arcv.xvsra.vx   a4,a3,a4,e16,m1
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>     23c:       8cf72757                arcv.xvssub.vv  a4,a4,a5,e16,m1
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>     250:       a6e6a757                arcv.xvsra.vx   a4,a3,a4,e16,m1
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>     2d0:       20f727db                arcv.xvscmul.vv a5,a4,a5,e16,m1
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>     2f8:       84e7a7d7                arcv.xvsadd.vv  a5,a5,a4,e16,m1
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>     2fe:       a6f72757                arcv.xvsra.vx   a4,a4,a5,e16,m1
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>     310:       8cf727d7                arcv.xvssub.vv  a5,a4,a5,e16,m1
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>     316:       a6f72757                arcv.xvsra.vx   a4,a4,a5,e16,m1
 </span></code></pre></div>
 
 
