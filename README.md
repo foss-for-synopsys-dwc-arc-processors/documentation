@@ -46,6 +46,12 @@ command:
 mike deploy --push 2025.09
 ```
 
+Publish and update the `latest` alias:
+
+```shell
+mike deploy --push --update-aliases 2025.09 latest
+```
+
 List all deployed documentation versions:
 
 ```shell
