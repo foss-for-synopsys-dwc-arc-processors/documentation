@@ -9,6 +9,6 @@ GNU toolchain for ARC-V targets supports all ARC-V targets:
 Because the ARC-V GNU toolchain is built on top of standard components such as GCC, Binutils, and GDB,
 all functionality of these tools stays in place and can be studied in detail in the corresponding manuals:
 
-* [GCC documentation](https://gcc.gnu.org/onlinedocs/14.2.0/)
+* [GCC documentation](https://gcc.gnu.org/onlinedocs/15.2.0/)
 * [Binutils documentation](https://sourceware.org/binutils/docs-2.43/)
 * [GDB documentation](https://www.sourceware.org/gdb/documentation/)
