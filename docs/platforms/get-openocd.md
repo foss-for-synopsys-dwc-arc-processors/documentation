@@ -5,7 +5,7 @@
     If you are going to use OpenOCD on Windows, then also follow
     [Installing WinUSB on Windows](./winusb.md) guide to install WinUSB driver.
 
-## Downloading a prebuilt OpenOCD
+## Downloading a Prebuilt OpenOCD
 
 The easiest way to obtain OpenOCD is to download Eclipse IDE bundle from
 [the releases page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases):
@@ -36,7 +36,7 @@ $ sudo apt install \
 Download OpenOCD sources and checkout the latest release:
 
 ```shell
-$ git clone -b arc-2021.09 https://github.com/foss-for-synopsys-dwc-arc-processors/openocd
+$ git clone -b arc-2026.03 https://github.com/foss-for-synopsys-dwc-arc-processors/openocd
 $ cd openocd
 ```
 
@@ -64,7 +64,7 @@ Configure your environment (use your own installation path):
 $ export PATH=/tools/openocd/bin:$PATH
 ```
 
-## Installing udev rules for Linux
+## Installing udev Rules for Linux
 
 You should configure udev rules in such way that OpenOCD would be able
 to claim your JTAG debug cable. In common case for ARC this is an FTDI-based
@@ -185,7 +185,7 @@ $ make
 $ make install
 ```
 
-## Running internal testsuite
+## Running Internal Testsuite
 
 There is a set of internal test for ARC and OpenOCD. This testsuite aim is to
 catch some issues with OpenOCD, JTAG or hardware. To run test suite: source

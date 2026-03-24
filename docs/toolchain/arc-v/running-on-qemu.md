@@ -49,7 +49,7 @@ After the build is complete `qemu-system-riscv32` and `qemu-system-riscv64` are 
 `$HOME/qemu/bin$` folder, which you can add to the `PATH` environment variable for convenience,
 and use the short binary name instead of the full path.
 
-## Code example
+## Code Example
 
 Consider this code example which prints all passed command
 line arguments:
@@ -65,7 +65,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-## Build and run for RMX-100
+## Build and Run for Base RMX-100
 
 Build with Picolibc-based toolchain:
 

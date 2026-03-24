@@ -1,14 +1,61 @@
 # Toolchains for ARC Processors
 
+## System Requirements
+
+GNU toolchain for ARC has the same standard prerequisites as an upstream GNU toolchain
+as documented in the GNU toolchain user guide or on [the GCC website](http://gcc.gnu.org/install/prerequisites.html).
+
+Prebuilt toolchain on [the release page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases)
+are supported on these systems for x86-64 targets:
+
+1. Ubuntu 22.04
+2. RedHat Enterprise Linux (RHEL) 8.x and compatible alternatives
+3. Windows 11
+
+Note that [the TCF wrapper](./arc-v/getting-started-picolibc.md#using-the-tcf-wrapper) and
+[the Buildlib tool](./arc-v/multilib.md#using-buildlib-for-building-libraries) are not supported for
+Windows hosts.
+
+[The Buildlib tool](./arc-v/multilib.md#using-buildlib-for-building-libraries) tool has extra requirements:
+
+1. Python 3.8 or higher is required. The default RedHat 8.x setup does not
+   meet this requirement. You can install it using `dnf` and then use `python3.8`
+   for running the Buildlib script:
+
+    ```
+    $ sudo dnf install python3.8
+    $ python3.8 riscv64-snps-elf-buildlib ...
+    ```
+
+2. Meson 0.61 is or higher required. The default RedHat 8.x setup does not
+   meet this requirement. You can install it in a user environment using `pip3`:
+
+    ```
+    $ pip3 install --user --upgrade meson
+    ```
+
+    Then reboot the system or logout and login again.
+
 ## Toolchains for Baremetal Targets
 
 GNU toolchains for baremetal ARC targets consist of GCC, Binutils, GDB and
-a standard library. [Newlib](https://sourceware.org/newlib/) standard library
-is used for building baremetal applications. This table depicts which GCC driver
-should be used depending on ISA:
+a standard library. There are two versions of baremetal toolchain with different
+standard libraries: Picolibc and Newlib. There is
+[a separate page for ARC Classic toolchain with Picolibc](./arc-classic/getting-started-picolibc.md)
+since it's still under development.
+
+ARCompact, ARCv2 and ARCv3 families are supported for ARC Classic targets.
+GNU toolchain for ARC-V targets supports all ARC-V families:
+
+* Tuning GCC instruction scheduling for RMX-100, RMX-500, RHX-100 and RPX-100.
+* Includes optimized sets of libraries for basic profiles for RMX-100, RMX-500, RHX-100 and RPX-100.
+* Enabling ARC-V caches on startup.
+
+This table depicts which GCC driver should be used depending on ISA:
 
 | ISA       | Driver/Triplet    | Driver/Triplet (alias) | Families           | Endianness |
 |-----------|-------------------|------------------------|--------------------|------------|
+| ARC-V     | `riscv64-snps-elf`| -                      | RMX, RHX, RPX      | Little     |
 | ARCv3     | `arc64-elf-gcc`   | `arc64-snps-elf-gcc`   | ARC HS6x, ARC HS5x | Little[^1] |
 | ARCv2     | `arc-elf32-gcc`   | `arc-snps-elf-gcc`     | ARC HS, ARC EM     | Little     |
 | ARCv2     | `arceb-elf32-gcc` | `arceb-snps-elf-gcc`   | ARC HS, ARC EM     | Big        |
@@ -27,10 +74,10 @@ families. However, you can configure the toolchain for HS5x with `arc32-elf-` pr
 [Crosstool-NG](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain#crosstool-ng-configuration-manual-tuning)
 configuration menu.
 
-## Toolchains for Linux Targets
+## Toolchains for Linux Targets for ARC Classic
 
-There is a set of GNU toolchains for ARC processors which allow to build and debug
-applications for Linux. The Linux kernel itself for ARC processors may be built using
+There is a set of GNU toolchains for ARC Classic processors which allow to build and debug
+applications for Linux. The Linux kernel itself for ARC Classic processors may be built using
 both baremetal and Linux toolchains.
 
 Linux toolchains are presented for all ARC processor families except ARC EM and ARC 600.
@@ -51,7 +98,7 @@ different toolchains! For example, if you want to build applications for ARC 700
 then you need to use a particular toolchain for ARC 700 and the same is applicable for ARC HS,
 though they have the same names.
 
-## Native Toolchains for Linux Targets
+## Native Toolchains for Linux Targets for ARC Classic
 
 Native toolchains are toolchains that can be used on the targets Linux system
 natively. Here is a list of native toolchains which are available on
@@ -96,5 +143,12 @@ There are several ways of getting the toolchain:
 2. You can build toolchains using Crosstool-NG build system. Follow instructions presented in
    `README.md` of main [toolchain's repository](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain)
    on GitHub.
-3. You can build some of toolchains using scripts from [arc-gnu-toolchain](https://github.com/foss-for-synopsys-dwc-arc-processors/arc-gnu-toolchain)
-   repository. These scripts are based on the [RISC-V scripts](https://github.com/riscv/riscv-gnu-toolchain).
+
+## Resources
+
+Because the ARC toolchains are built on top of standard components such as GCC, Binutils, and GDB,
+all functionality of these tools stays in place and can be studied in detail in the corresponding manuals:
+
+* [GCC documentation](https://gcc.gnu.org/onlinedocs/15.2.0/)
+* [Binutils documentation](https://sourceware.org/binutils/docs-2.45/)
+* [GDB documentation](https://www.sourceware.org/gdb/documentation/)

@@ -1,4 +1,4 @@
-# Testing Specific RISC-V Extensions
+# Testing RISC-V Extensions
 
 One of the benefits of RISC-V ISA is its extensibility. As a matter of fact,
 only a handful of instructions form the minimally required base. But the most

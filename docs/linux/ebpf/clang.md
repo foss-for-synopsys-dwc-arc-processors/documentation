@@ -7,25 +7,6 @@ you need to properly build Clang for ARC. There is no need for
 all possible targets, so we are going to build Clang with
 support of eBPF target only.
 
-## Notes for CentOS 7
-
-It's necessary to install the latest available development tools for CentOS 7
-to make it possible to build ``clang``. Use ``centos-release-scl`` repository
-to install the latest tools and enable them:
-
-```shell
-sudo yum install centos-release-scl
-sudo yum install devtoolset-9
-scl enable devtoolset-9 bash
-```
-
-Also `llvm` build system requires new CMake. Install `cmake3` packages
-and use it instead of `cmake`:
-
-```shell
-sudo yum install cmake3
-```
-
 ## Notes for Ubuntu 18.04
 
 `llvm` build system requires new CMake. To install it on Ubuntu 18.04

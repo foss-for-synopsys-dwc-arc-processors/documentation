@@ -1,19 +1,4 @@
-# Building applications with Picolibc
-
-GNU toolchain for ARC-V targets uses `riscv64-snps-elf` prefix for
-all tools. For example, GCC binary has name `riscv64-snps-elf-gcc`.
-
-Usually, to compile an application you need to set target options:
-
-1. `-march` - stands for RISC-V ISA.
-2. `-mabi` - stands for ABI.
-3. `-mtune` - stands for a particular GCC instruction scheduling optimization, 
-   refer [Tuning Instruction Scheduling](#tuning-instruction-scheduling)
-   for ARC-V specific values .
-4. `-mcmodel` - `medlow` for `rv32` targets and `medany` for `rv64` targets.
-
-All together they correspond to a particular prebuilt standard library. Refer
-[Understanding ARC-V configurations](./multilib.md) for details.
+# Getting Started with Picolibc
 
 ## Getting Started
 
@@ -29,14 +14,26 @@ int main()
 }
 ```
 
+To compile an application you need to set target options:
+
+1. `-march` - stands for RISC-V ISA.
+2. `-mabi` - stands for ABI.
+3. `-mtune` - stands for a particular GCC instruction scheduling optimization, 
+   refer [Tuning Instruction Scheduling](#tuning-instruction-scheduling)
+   for ARC-V specific values .
+4. `-mcmodel` - `medlow` for `rv32` targets and `medany` for `rv64` targets.
+
+All together they correspond to a particular prebuilt standard library. Refer
+[Understanding ARC-V configurations](./multilib.md) for details.
+
 If I want to build it for the base RMX-100 target and link with 
 a semihosting library, I would use this set of options:
 
 ```
 $ riscv64-snps-elf-gcc \
-        -march=rv32imafc \
-        -mabi=ilp32f \
-        -mtune=arc-v-rhx-100-series \
+        -march=rv32ic_zcb_zba_zbb_zbs \
+        -mabi=ilp32 \
+        -mtune=arc-v-rmx-100-series \
         -specs=picolibc.specs \
         --crt0=semihost \
         --oslib=semihost \
@@ -61,9 +58,9 @@ Here is a full example with custom code and data sections:
 
 ```
 $ riscv64-snps-elf-gcc \
-        -march=rv32imafc \
-        -mabi=ilp32f \
-        -mtune=arc-v-rhx-100-series \
+        -march=rv32ic_zcb_zba_zbb_zbs \
+        -mabi=ilp32 \
+        -mtune=arc-v-rmx-100-series \
         -specs=picolibc.specs \
         --crt0=semihost \
         --oslib=semihost \
@@ -77,16 +74,16 @@ $ riscv64-snps-elf-gcc \
 Run the application using nSIM:
 
 ```
-$ nsimdrv -p nsim_isa_family=rv32 -p nsim_isa_ext=-all.i.m.a.f.c.zicsr -p nsim_semihosting=1 -p enable_exceptions=0 example.elf
+$ nsimdrv -p nsim_isa_family=rv32 -p nsim_isa_ext=-all.i.c.zcb.zba.zbb.zbs.zicsr -p nsim_semihosting=1 example.elf
 Hello, World!
 ```
 
-Refer to [Running on nSIM](./nsim.md) and [Running on QEMU](./qemu.md) to learn how
+Refer to [Running on nSIM](./running-on-nsim.md) and [Running on QEMU](./running-on-qemu.md) to learn how
 to run ARC-V examples on nSIM or QEMU simulator.
 
-## Compiling C++ applications
+## Compiling C++ Applications
 
-Consider a simple code example:
+Consider a simple code example with `example.cpp` filename:
 
 ```c
 #include <iostream>
@@ -101,28 +98,31 @@ int main()
 For compiling C++ applications use `-specs=picolibcpp.specs`:
 
 ```
-$ riscv64-snps-elf-gcc \
-        -march=rv32imafc \
-        -mabi=ilp32f \
-        -mtune=arc-v-rhx-100-series \
+$ riscv64-snps-elf-g++ \
+        -march=rv32ic_zcb_zba_zbb_zbs \
+        -mabi=ilp32 \
+        -mtune=arc-v-rmx-100-series \
         -specs=picolibcpp.specs \
         --crt0=semihost \
         --oslib=semihost \
-        -Wl,--defsym=__flash_size=2M \
-        -Wl,--defsym=__ram_size=2M \
-        example.c -o example.elf
+        -Wl,--defsym=__flash_size=4M \
+        -Wl,--defsym=__ram_size=4M \
+        example.cpp -o example.elf
+
+$ nsimdrv -p nsim_isa_family=rv32 -p nsim_isa_ext=-all.i.c.zcb.zba.zbb.zbs.zicsr -p nsim_semihosting=1 example.elf
+Hello, World!
 ```
 
-## Using size optimized Picolibc variant
+## Using Size Optimized Picolibc Variant
 
 Pass `-specs=nano.specs` option to link an application with a
 size optimized Picolibc variant:
 
 ```
 $ riscv64-snps-elf-gcc \
-        -march=rv32imafc \
-        -mabi=ilp32f \
-        -mtune=arc-v-rhx-100-series \
+        -march=rv32ic_zcb_zba_zbb_zbs \
+        -mabi=ilp32 \
+        -mtune=arc-v-rmx-100-series \
         -specs=picolibc.specs \
         -specs=nano.specs \
         --crt0=semihost \
@@ -144,7 +144,7 @@ and size optimized one.
 | Multibyte support for UTF-8 charset              | Yes      | No            |
 | Wide character support in `printf`/`scanf`       | Yes      | No            |
 
-## Choosing a `crt0` variant
+## Choosing a crt0 Variant
 
 A variant of a startup file (`crt0.o`) is chosen through `--crt0=` option. See a list of all supported values for this option below.
 
@@ -169,10 +169,10 @@ So far, Picolibc supports 2 system libraries, and it's chosen through `--oslib=`
 
 | Option              | Description                                               |
 |---------------------|-----------------------------------------------------------|
-| `--oslib=dummyhost` | A simple environment without input/output and exit codes. |
+| `--oslib=nosys`     | A simple environment without input/output and exit codes. |
 | `--oslib=semihost`  | Support of Semihosting environment.                       |
 
-## Tuning instruction scheduling
+## Tuning Instruction Scheduling
 
 GCC instruction scheduling may be tuned for different ARC-V
 targets using `-mtune=` option:
@@ -197,33 +197,30 @@ Note that all `-mtune` values for ARC-V assume that fast unaligned access is sup
 (`__riscv_misaligned_fast == 1`) by targets. This assumption may be overwritten by
 `-mstrict-align` when building an application or toolchain libraries itself.
 
-## Using a linker script optimized for performance
+## Using the TCF Wrapper
 
-The default Picolibc linker script places `.rodata` section right after code
-sections. However, this approach may lead to decrease in performance since
-addressing through a global pointer may not be available for `.rodata` in this
-case.
+[The TCF Wrapper](https://github.com/foss-for-synopsys-dwc-arc-processors/arcv-tcf-wrapper?tab=readme-ov-file#the-tcf-wrapper) allows
+using TCF configuration files for building binaries using the GNU toolchain.
 
-If safety of read only regions is not a priority in a particular case,
-`picolibc_perf.ld` linker script may be used to increase performance:
+Suppose that the environment is configured for nSIM and `NSIM_HOME` variable is set.
+Here is an example of using the TCF wrapper with `rmx100_dmips.tcf` configuration file:
 
 ```
-$ riscv64-snps-elf-gcc \
-        -march=rv32imafc \
-        -mabi=ilp32f \
-        -mtune=arc-v-rhx-100-series \
+$ riscv64-snps-elf-tcf-gcc \
+        -tcf=$NSIM_HOME/etc/tcf/templates/rmx100_dmips.tcf \
+        -tcf-with-memory-defines \
         -specs=picolibc.specs \
-        -T picolibc_perf.ld \
-        --crt0=semihost \
         --oslib=semihost \
+        --crt0=semihost \
         example.c -o example.elf
-```
 
-This linker script places `.rodata` in a data region.
+$ nsimdrv -tcf=$NSIM_HOME/etc/tcf/templates/rmx100_dmips.tcf -p nsim_semihosting=1 example.elf
+Hello, World!
+```
 
 ## Migrating from Newlib
 
-### Build with semihosting and ARC-V features
+### Build with Semihosting and ARC-V Features
 
 Using Newlib:
 
@@ -245,7 +242,7 @@ Using Picolibc:
 ...
 ```
 
-### Build with semihosting and without ARC-V features
+### Build with Semihosting and Without ARC-V Features
 
 Using Newlib:
 
@@ -268,7 +265,7 @@ Using Picolibc:
 ...
 ```
 
-### Set offset and size of text and data sections
+### Set Offset and Size of Text and Data Sections
 
 Using Newlib:
 

@@ -1,12 +1,5 @@
 # Eclipse IDE
 
-!!! warning
-
-    Note that Ashling Opella-XD is EOL (End of Life) and Eclipse IDE may not
-    support the latest versions of the probe. Refer
-    [the old documentation site](https://foss-for-synopsys-dwc-arc-processors.github.io/toolchain/)
-    for guides related to Ashling Opella-XD.
-
 The ARC GNU Eclipse IDE consists of the Eclipse IDE combined with an Eclipse
 CDT Managed Build Extension plug-in for the ARC GNU Toolchain and GDB embedded
 debugger plug-in for ARC, based on the Zylin Embedded CDT plug-in.  The ARC GNU
@@ -36,7 +29,7 @@ The ARC GNU IDE provides support for the following functionality:
 
 ARC GNU plugins for Eclipse have following requirements to the system:
 
-* OS: Windows 10, Ubuntu Linux 16.04 LTS and CentOS 7 development host systems
+* OS: Windows 10, Ubuntu Linux 22.04 LTS and CentOS 9 development host systems
 * Eclipse 2018-12 (part of Windows installer)
 * CDT version 9.6.0 (part of Windows installer)
 * Java VM version >= 1.8 is required (part of Windows installer)

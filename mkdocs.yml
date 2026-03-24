@@ -1,7 +1,7 @@
 site_name: embARC Documentation Site for ARC Classic and ARC-V
 repo_url: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain
 repo_name: GNU ARC Toolchain
-copyright: Copyright &copy; 2016 - 2025 Synopsys
+copyright: Copyright &copy; 2016 - 2026 Synopsys
 theme:
   name: material
   highlightjs: true
@@ -50,72 +50,68 @@ markdown_extensions:
 nav:
   - Home:
     - index.md
+    - home/release.md
     - home/processors.md
-    - home/faq.md
   - Toolchain:
     - toolchain/index.md
-    - Target Options:
-      - toolchain/options/arcv3.md
-      - toolchain/options/arcv2.md
-      - toolchain/options/arcompact.md
-    - Advanced:
-      - toolchain/advanced/optimizations.md
-      - toolchain/advanced/custom-instructions.md
-      - toolchain/advanced/apex-header.md
-      - toolchain/advanced/intrinsics.md
-      - toolchain/advanced/sanitizers.md
-      - toolchain/advanced/jli.md
-      - toolchain/advanced/secure-shield.md
-      - toolchain/advanced/small-data.md
-      - toolchain/advanced/64-bit-operations.md
-    - Libraries:
-      - Audio:
-        - audio/index.md
-        - General:
-          - audio/overview.md
-          - audio/getting-started.md
-        - Codecs:
-          - audio/codecs.md
-          - audio/codec-bt-cvsd.md
-          - audio/codec-gsm-fr.md
-          - audio/codec-g711.md
-          - audio/codec-g722.md
-          - audio/codec-g726.md
-          - audio/codec-ldac.md
-      - Machine Learning:
-        - ml/index.md
-        - embARC MLI: ml/mli.md
-        - Caffe Framework for EV6x: ml/caffe-framework.md
-        - Caffe Models for EV6x: ml/caffe-models.md
-        - OpenCV for EV6x: ml/opencv.md
-        - GSL for EV6x: ml/gsl.md
-      - IoT:
-        - iot/index.md
-        - embARC OSP: iot/embarc-osp.md
-        - embARC BSP: iot/embarc-bsp.md
-    - Testing:
-      - toolchain/testing/dejagnu.md
-      - toolchain/testing/glibc.md
-  - Baremetal:
-    - baremetal/index.md
-    - Simulators:
-      - baremetal/simulators/nsim.md
-      - baremetal/simulators/qemu.md
-    - Development platforms:
-      - baremetal/hardware/hsdk.md
-      - baremetal/hardware/emsdp.md
-      - baremetal/hardware/iotdk.md
-    - General Topics:
-      - baremetal/general/memory.md
-      - baremetal/general/specs.md
-      - baremetal/general/interrupts.md
-      - baremetal/general/heap-and-stack.md
-      - baremetal/general/tcf.md
+    - toolchain/building-toolchains.md
+    - ARC-V:
+      - toolchain/arc-v/getting-started-picolibc.md
+      - toolchain/arc-v/getting-started-newlib.md
+      - toolchain/arc-v/running-on-nsim.md
+      - toolchain/arc-v/running-on-qemu.md
+      - toolchain/arc-v/multilib.md
+      - toolchain/arc-v/testing.md
+    - ARC Classic:
+      - toolchain/arc-classic/getting-started-nsim.md
+      - toolchain/arc-classic/getting-started-qemu.md
+      - toolchain/arc-classic/getting-started-picolibc.md
+      - toolchain/arc-classic/arcv3.md
+      - toolchain/arc-classic/arcv2.md
+      - toolchain/arc-classic/arcompact.md
+      - toolchain/arc-classic/memory.md
+      - toolchain/arc-classic/faq.md
+      - Advanced Topics:
+        - toolchain/arc-classic/advanced/optimizations.md
+        - toolchain/arc-classic/advanced/custom-instructions.md
+        - toolchain/arc-classic/advanced/apex-header.md
+        - toolchain/arc-classic/advanced/intrinsics.md
+        - toolchain/arc-classic/advanced/sanitizers.md
+        - toolchain/arc-classic/advanced/jli.md
+        - toolchain/arc-classic/advanced/secure-shield.md
+        - toolchain/arc-classic/advanced/small-data.md
+        - toolchain/arc-classic/advanced/64-bit-operations.md
+        - toolchain/arc-classic/advanced/interrupts.md
+        - toolchain/arc-classic/advanced/tcf.md
+      - Libraries:
+        - Audio:
+          - toolchain/arc-classic/libs/audio/index.md
+          - General:
+            - toolchain/arc-classic/libs/audio/overview.md
+            - toolchain/arc-classic/libs/audio/getting-started.md
+          - Codecs:
+            - toolchain/arc-classic/libs/audio/codecs.md
+            - toolchain/arc-classic/libs/audio/codec-bt-cvsd.md
+            - toolchain/arc-classic/libs/audio/codec-gsm-fr.md
+            - toolchain/arc-classic/libs/audio/codec-g711.md
+            - toolchain/arc-classic/libs/audio/codec-g722.md
+            - toolchain/arc-classic/libs/audio/codec-g726.md
+            - toolchain/arc-classic/libs/audio/codec-ldac.md
+        - Machine Learning:
+          - toolchain/arc-classic/libs/ml/index.md
+          - embARC MLI: toolchain/arc-classic/libs/ml/mli.md
+          - Caffe Framework for EV6x: toolchain/arc-classic/libs/ml/caffe-framework.md
+          - Caffe Models for EV6x: toolchain/arc-classic/libs/ml/caffe-models.md
+          - OpenCV for EV6x: toolchain/arc-classic/libs/ml/opencv.md
+          - GSL for EV6x: toolchain/arc-classic/libs/ml/gsl.md
+        - IoT:
+          - toolchain/arc-classic/libs/iot/index.md
+          - embARC OSP: toolchain/arc-classic/libs/iot/embarc-osp.md
+          - embARC BSP: toolchain/arc-classic/libs/iot/embarc-bsp.md
   - Linux:
     - linux/index.md
     - Building Linux:
       - linux/building/buildroot.md
-      - linux/building/separate.md
       - linux/building/configure.md
       - linux/building/toolchain.md
     - Running Linux on simulators:
@@ -130,21 +126,19 @@ nav:
       - linux/ebpf/cross.md
       - linux/ebpf/build.md
       - linux/ebpf/clang.md
-  - Boards:
+  - Development Platforms:
     - platforms/index.md
-    - Using Boards:
+    - Boards:
+      - platforms/board-hsdk.md
+      - platforms/board-emsdp.md
+    - OpenOCD:
       - platforms/get-openocd.md
       - platforms/use-openocd.md
+    - Other guides:
       - platforms/mdb.md
       - platforms/winusb.md
       - platforms/digilent.md
       - platforms/reset.md
-      - platforms/bit-file-fpga.md
-    - Boards Documentation:
-      - platforms/board-hsdk-4xd.md
-      - platforms/board-hsdk.md
-      - platforms/board-emsdp.md
-      - platforms/board-iot.md
   - Eclipse IDE:
     - eclipse/index.md
     - Installation:
@@ -161,12 +155,3 @@ nav:
       - eclipse/other/custom-gdb-server.md
       - eclipse/other/running-gdb-server.md
       - eclipse/other/building.md
-  - ARC-V:
-    - arcv/index.md
-    - arcv/building-picolibc.md
-    - arcv/building-newlib.md
-    - arcv/multilib.md
-    - arcv/nsim.md
-    - arcv/qemu.md
-    - arcv/custom.md
-    - arcv/testing.md

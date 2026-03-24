@@ -5,7 +5,6 @@
     Consider reading these guides firstly:
 
     * [Configuring HS Development Kit](../../platforms/board-hsdk.md)
-    * [Configuring HS Development Kit 4xD](../../platforms/board-hsdk-4xd.md)
     * [Installing WinUSB driver on Windows](../../platforms/winusb.md)
 
 ## Creating the Project

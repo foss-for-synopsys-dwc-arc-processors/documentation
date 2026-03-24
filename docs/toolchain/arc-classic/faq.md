@@ -7,7 +7,7 @@ GCC option `-mcpu=` supports both `hs34` and `hs38` values, but they are differe
 more features, like `-mll64` which are not present in `hs34`. ARC HS IPlib template `hs38` doesn’t
 contain double-word load/store, therefore -mcpu=hs38 is not compatible with this template.
 `-mcpu=hs34`, however, is compatible and that is why TCF generator uses this value. Refer
-[Target Options](../toolchain/index.md) sections for a full list of possible `-mcpu`
+[Target Options](../index.md) sections for a full list of possible `-mcpu`
 values and what IPlibrary templates they correspond to.
 
 ## There are `can’t resolve symbol` error messages when using `gdbserver` on Linux for ARC targets
@@ -28,35 +28,3 @@ GDB uses Expat library to parse XML files. Support of XML files is optional for 
 be built without Expat available, however for ARC it usually required to have support of XML to read
 target description files. Mentioned error message might happen if GDB has been built without available
 development files for the Expat. On Linux systems those should be available as package in package manager.
-
-## How to reset ARC SDP board programmatically (without pressing `Reset` button)?
-
-It is possible to reset ARC SDP board without touching the physical button on the board.
-This can be done using the special OpenOCD script:
-
-```shell
-$ openocd -f test/arc/reset_sdp.tcl
-```
-
-Note that OpenOCD will crash with a segmentation fault after executing this script - this is expected
-and happens only after board has been reset, but that means that other OpenOCD scripts cannot be used
-in chain with `reset_sdp.tcl`, first OpenOCD should be invoked to reset the board, second it should be
-invoked to run as an actual debugger.
-
-## Can I program FPGA's in ARC EM Starter Kit or in ARC SDP?
-
-OpenOCD has some support for programming of FPGA’s over JTAG, however it is not officially
-supported for ARC development systems.
-
-## When debugging ARC EM core in AXS101 with Ashling Opella-XD and GDBserver I get an error messages and GDB shows that all memory and registers are zeroes
-
-Decrease a JTAG frequency to no more than 5MHz using an Ashling GDBserver option `--jtag-frequency`.
-This particular problem can be noted if GDBserver prints:
-
-```text
-Error: Core is running (unexpected), attempting to halt...
-Error: Core is running (unexpected), attempting to halt...
-Error: Unable to halt core
-```
-
-While GDB shows that whole memory is just zeroes and all register values are also zeroes.
