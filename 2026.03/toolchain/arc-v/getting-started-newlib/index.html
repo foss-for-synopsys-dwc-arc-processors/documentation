@@ -589,6 +589,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-the-tcf-wrapper" class="md-nav__link">
+    Using the TCF Wrapper
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2059,7 +2066,7 @@
   
     <li class="md-nav__item">
       <a href="../../../platforms/board-hsdk/" class="md-nav__link">
-        ARC HS Development Kit 4xD
+        ARC HS Development Kit
       </a>
     </li>
   
@@ -2678,6 +2685,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-the-tcf-wrapper" class="md-nav__link">
+    Using the TCF Wrapper
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2880,6 +2894,22 @@ targets using <code>-mtune=</code> option:</p>
 <p>Note that all <code>-mtune</code> values for ARC-V assume that fast unaligned access is supported
 (<code>__riscv_misaligned_fast == 1</code>) by targets. This assumption may be overwritten by
 <code>-mstrict-align</code> when building an application or toolchain libraries itself.</p>
+<h2 id="using-the-tcf-wrapper">Using the TCF Wrapper<a class="headerlink" href="#using-the-tcf-wrapper" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/foss-for-synopsys-dwc-arc-processors/arcv-tcf-wrapper?tab=readme-ov-file#the-tcf-wrapper">The TCF Wrapper</a> allows
+using TCF configuration files for building binaries using the GNU toolchain.</p>
+<p>Suppose that the environment is configured for nSIM and <code>NSIM_HOME</code> variable is set.
+Here is an example of using the TCF wrapper with <code>rmx100_dmips.tcf</code> configuration file:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$ riscv64-snps-elf-tcf-gcc \
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>        -tcf=$NSIM_HOME/etc/tcf/templates/rmx100_dmips.tcf \
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>        -tcf-with-memory-defines \
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>        -specs=picolibc.specs \
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>        --oslib=semihost \
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>        --crt0=semihost \
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>        example.c -o example.elf
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>$ nsimdrv -tcf=$NSIM_HOME/etc/tcf/templates/rmx100_dmips.tcf -p nsim_semihosting=1 example.elf
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>Hello, World!
+</span></code></pre></div>
 
 
 
