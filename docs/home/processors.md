@@ -39,5 +39,41 @@ RISC-V ISA, includes high-performance, mid-range, and ultra-low power
 families, as well as functional safety (FS) versions, to address a broad
 range of application workloads.
 
-A detailed overview of Synopsys ARC-V processors may be found on
-[ARC-V Getting Started page](https://foss-for-synopsys-dwc-arc-processors.github.io/arc-v-getting-started/overview.html).
+### ARC-V RMX-100 and RMX-500 Series
+
+The 32-bit ARC-V RMX series includes the three-stage-pipeline RMX-100 and the five-stage-pipeline RMX-500 processors,
+which are optimized for ultra-low power embedded applications. The processors offer optional DSP support for greater
+signal processing efficiency. The RMX-100 processor offers support for ISO 26262 functional-safety compliance
+(QM and ASIL-D), and the RMX-500 processor offers support for functional-safety compliance (QM, ASIL-D, ASIL-B,
+and hybrid mode), as well as ISO 21434 cybersecurity compliance.
+
+More information is available on the Synopsys website:
+
+* [Power-Efficient RISC-V Processors for Embedded Applications](https://www.synopsys.com/designware-ip/processor-solutions/arc-v-processors/arc-v-rmx.html)
+* [Synopsys ARC-V RMX-100 Processor IP](https://www.synopsys.com/dw/ipdir.php?ds=arc-v-rmx-100)
+* [Synopsys ARC-V RMX-500 Processor IP](https://www.synopsys.com/dw/ipdir.php?ds=arc-v-rmx-500)
+
+### ARC-V RHX Series
+
+The 32-bit ARC-V RHX-100 series consists of superscalar, single-core and multicore processors optimized
+for efficient real-time applications. It includes support for coherent accelerators and real-time hardware
+virtualization as well as optional RVV extensions (RHX-100V/105V). For safety-critical applications, the
+RHX-100 series offers functional-safety-compliant versions of all the processors in the series.
+
+More information is available on the Synopsys website:
+
+* [Maximum Performance Efficiency for Real-time Applications](https://www.synopsys.com/designware-ip/processor-solutions/arc-v-processors/arc-v-rhx.html)
+* [Synopsys ARC-V RHX-100 Processor IP](https://www.synopsys.com/dw/ipdir.php?ds=arc-v-rhx-100)
+
+### ARC-V RPX Processors
+
+The 64-bit ARC-V RPX-100 series consists of multicore processors with 64-bit RISC-V defined profile
+support for both user and supervisor modes. The multicore ARC-V RPX-105 supports SMP Linux and shared
+L3 cache. It offers configurations up to 16 cores and is optimized for efficient host processing
+performance for a variety of applications. The RPX-100 series also offers functional-safety- compliant
+versions of its processors.
+
+More information is available on the Synopsys website:
+
+* [Maximum Performance Efficiency for Host Applications](https://www.synopsys.com/designware-ip/processor-solutions/arc-v-processors/arc-v-rpx.html)
+* [ARC-V RPX-100 Processor IP](https://www.synopsys.com/dw/ipdir.php?ds=arc-v-rpx-100)

@@ -170,7 +170,7 @@ For FTDI vendor driver use:
 sudo kextunload FTDIUSBSerialDriver.kext
 ```
 
-## Debugging multi-core targets
+## Debugging Multi-Core Targets
 
 OpenOCD starts a distinct GDB server for each core of multi-core target. Here is
 an example for HS Development Kit 4xD:
@@ -228,7 +228,7 @@ arc-elf32-gdb -ex "target remote :3333" -ex "load" -ex "c" vmlinux
 arc-elf32-gdb -ex "target remote :3336" -ex "load" -ex "c" vmlinux
 ```
 
-## Advanced debug commands
+## Advanced Debug Commands
 
 With the GDB `monitor` command, you have an access to the core without
 any interference from GDB. With other words, GDB has no notion of
@@ -255,7 +255,7 @@ core and aux registers. However some command for register access will be
 removed in future, when ARC OpenOCD will fully support flexible register
 configurations.
 
-## Using another GDB port
+## Using Another GDB port
 
 You can use an OpenOCD command to change the GDB port this way:
 
@@ -263,7 +263,7 @@ You can use an OpenOCD command to change the GDB port this way:
 openocd -c "gdb_port 12345" ...
 ```
 
-## Connecting to a board with a particular serial number
+## Connecting to a Board with a Particular Serial Number
 
 If several boards are connected to the host, then OpenOCD will choose
 the first detected one. To choose a board with a particular serial number
@@ -302,7 +302,7 @@ $ openocd -f ./snps_em_sk_v2.3.cfg
 ...
 ```
 
-## Configurations files
+## Configurations Files
 
 Here is a table of configuration files for OpenOCD 0.9:
 

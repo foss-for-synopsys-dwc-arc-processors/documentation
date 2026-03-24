@@ -2,7 +2,7 @@
 
 !!! info
 
-    Refer to the main [QEMU](../../baremetal/simulators/qemu.md#installing-qemu) article for information
+    Refer to the main [QEMU](../../toolchain/arc-classic/getting-started-qemu.md) article for information
     on installing QEMU.
 
 ## Preface
@@ -10,13 +10,13 @@
 It's possible to run on QEMU the same Linux images as for nSIM/HAPS. A process of building of Linux
 images is completely same.
 
-## Running for ARC HS 3x/4x
+## Running for ARC HS3x/4x
 
 ```shell
 qemu-system-arc -M virt -cpu archs -display none -nographic -monitor none -m 2G -kernel vmlinux
 ```
 
-## Running for ARC HS 5x
+## Running for ARC HS5x
 
 !!! info
 
@@ -30,7 +30,7 @@ qemu-system-arc -M virt -cpu archs -display none -nographic -monitor none -m 2G 
 qemu-system-arc -M virt,ram_start=0 -cpu hs5x -m 2G -display none -nographic -monitor none -kernel loader
 ```
 
-## Running for ARC HS 6x
+## Running for ARC HS6x
 
 ```shell
 qemu-system-arc64 -M virt,ram_start=0 -cpu hs6x -m 2G -display none -nographic -monitor none -kernel loader
@@ -227,9 +227,6 @@ otherwise things will go seriously wrong (QEMU creates FAT table on start and th
 Install and configure NFS on CentOS or Fedora:
 
 ```shell
-# For CentOS 7
-sudo yum install nfs-utils
-
 # For Fedora
 sudo dnf install nfs-utils
 

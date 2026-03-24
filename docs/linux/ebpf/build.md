@@ -38,19 +38,6 @@ Standard development tools must be installed on your host: `make`,
 `cmake`, `git`, `rsync`, `gcc`, `binutils`, `clang` (for building eBPF
 programs).
 
-### Notes for CentOS 7
-
-It is necessary to install the latest available development tools for
-CentOS 7 to make it possible to build everything without problems. Use
-`centos-release-scl` repository to install the latest tools and Git.
-Then, have them enabled.
-
-```shell
-sudo yum install centos-release-scl
-sudo yum install devtoolset-9 rh-git227
-scl enable devtoolset-9 rh-git227 bash
-```
-
 ## Preparing Tools and Libraries
 
 We are going to build and install some tools an libraries manually:
@@ -431,14 +418,6 @@ insmod test_bpf.ko test_range=42,142
 
 ## Building and Running eBPF Programs
 
-!!! warning
-
-    Old operating systems like CentOS 7 and Ubuntu 18.04 contain old
-    versions of `clang` which may not be sufficient for building modern eBPF
-    programs. If building eBPF programs fails then try to build the latest
-    `clang` with eBPF target following [a corresponding guide](./clang.md)
-    and put it into `PATH`.
-
 Testbench contains a bunch of examples of eBPF programs. You can build
 and load them using these commands from the root directory of the
 testbench:
@@ -469,15 +448,11 @@ or run `make help` for information about available commands.
 
 ## Using NFS for Building eBPF Programs Right on the Target
 
-### Configuring NFS in CentOS 7 or Fedora
+### Configuring NFS in Fedora
 
 Install NFS to the host:
 
 ```shell
-# For CentOS 7
-sudo yum install nfs-utils
-
-# For Fedora
 sudo dnf install nfs-utils
 ```
 

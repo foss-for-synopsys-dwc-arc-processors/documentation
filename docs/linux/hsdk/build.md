@@ -2,9 +2,9 @@
 
 ## Preparing the Board
 
-The ARC HSDK development system is based on a custom designed Synopsys ARC SoC containing the ARC HS38x4 (quad core) processor. Please refer to board's documentation for detailed information about how to setup the board for initial operation:
+The ARC HSDK development system is based on a custom designed Synopsys ARC SoC containing the ARC HS38x4 (quad core)
+processor. Please refer to board's documentation for detailed information about how to setup the board for initial operation:
 
-* [ARC HS Development Kit 4xD](../../platforms/board-hsdk-4xd.md)
 * [ARC HS Development Kit](../../platforms/board-hsdk.md)
 
 In short, preparation of HSDK board consists of following steps:
@@ -19,7 +19,7 @@ The image below shows a correct board setup:
 
 ## Connecting to the Serial Terminal
 
-Follow [the corresponding guide](../../platforms/board-hsdk-4xd.md#connecting-to-the-serial-terminal)
+Follow [the corresponding guide](../../platforms/board-hsdk.md#connecting-to-the-serial-terminal)
 for ARC HS Development Kit.
 
 ## Preparing Buildroot for Building Images
@@ -27,7 +27,7 @@ for ARC HS Development Kit.
 Clone the Buildroot repository:
 
 ```shell
-git clone -b arc-2025.09 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
+git clone -b arc-2026.03 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
 cd buildroot
 ```
 
@@ -48,9 +48,12 @@ Building takes some time but usually less than an hour on modern machines.
 Note that build will produce following files in `output/images` folder:
 
 * `sdcard.img` - binary image to be deployed on a micro-SD card, containing everything required to boot into user shell
-* `rootfs.cpio`, rootfs.tar - these 2 files contain minimalistic rootfs, for example "rootfs.cpio" could be re-used when manually building Linux kernel for ARC boards.
-* `u-boot.bin` - this is a binary image of U-Boot bootloader, it is meant to be programmed in the ARC HSDK SPI flash and then autostart on power-on.
-* `uImage` - this is Linux kernel prepared for loading by U-Boot bootloader. When `u-boot.bin` is programmed in HSDK' SPI flash and autostarts on power-on it will attempt to find uImage on the first partition of the SD-card.
+* `rootfs.cpio`, rootfs.tar - these 2 files contain minimalistic rootfs, for example "rootfs.cpio" could be re-used
+  when manually building Linux kernel for ARC boards.
+* `u-boot.bin` - this is a binary image of U-Boot bootloader, it is meant to be programmed in the ARC HSDK SPI flash
+  and then autostart on power-on.
+* `uImage` - this is Linux kernel prepared for loading by U-Boot bootloader. When `u-boot.bin` is programmed in HSDK'
+  SPI flash and autostarts on power-on it will attempt to find uImage on the first partition of the SD-card.
 
 Then you can write `sdcard.img` to micro-SD card:
 
@@ -77,10 +80,22 @@ Choose this option (corresponds to `BR2_LINUX_KERNEL_UIMAGE=n` and `BR2_LINUX_KE
 Kernel -> Kernel binary format -> vmlinux
 ```
 
+Turn off building U-Boot (corresponds to `BR2_TARGET_UBOOT=n`):
+
+```text
+Bootloaders -> [ ] U-Boot
+```
+
 Completely delete content for this option (`BR2_ROOTFS_POST_IMAGE_SCRIPT=""`):
 
 ```text
 System configuration -> Custom scripts to run after creating filesystem images
+```
+
+Integrate the root filesystem inside the kernel image (`BR2_TARGET_ROOTFS_INITRAMFS=y`):
+
+```text
+Filesystem images -> [*] initial RAM filesystem linked into linux kernel
 ```
 
 Then build the Linux kernel:
@@ -187,7 +202,7 @@ deleting routers
 adding dns 192.168.1.1
 ```
 
-## Debugging applications using gdbserver
+## Debugging Applications Using gdbserver
 
 Create `overlay` directory in Buildroot sources' directory and add
 a sample file for a program:

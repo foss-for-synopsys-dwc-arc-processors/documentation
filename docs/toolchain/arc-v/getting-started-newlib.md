@@ -1,16 +1,20 @@
-# Building applications with Newlib
+# Getting Started with Newlib
 
-!!! warning
+## Getting Started
 
-    Newlib is considered as deprecated standard library for ARC-V
-    GNU toolchain. It will be completely removed in the future
-    releases. Please, consider migrating to
-    [the Picolibc-based toolchain](./building-picolibc.md).
+Consider a simple code example:
 
-GNU toolchain for ARC-V targets uses `riscv64-snps-elf` prefix for
-all tools. For example, GCC binary has name `riscv64-snps-elf-gcc`.
+```c
+#include <stdio.h>
 
-Usually, to compile an application you need to set target options:
+int main()
+{
+        printf("Hello, World!\n");
+        return 0;
+}
+```
+
+To compile an application you need to set target options:
 
 1. `-march` - stands for RISC-V ISA.
 2. `-mabi` - stands for ABI.
@@ -22,43 +26,36 @@ Usually, to compile an application you need to set target options:
 All together they correspond to a particular prebuilt standard library. Refer
 [Understanding ARC-V configurations](./multilib.md) for details.
 
-## Getting started
-
-Consider a simple code example:
-
-```c
-int main() {
-    return 0;
-}
-```
-
-If I want to build it for the base RMX-100 target, I would use this set of options:
+If I want to build it for the base RMX-100 target,
+I would use this set of options:
 
 ```
 $ riscv64-snps-elf-gcc \
-        -march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr \
-        -mabi=ilp32 \
-        -mtune=arc-v-rmx-100-series \
-        example.c -o example.elf
-```
-
-By default, GCC links applications with `libgloss.a` library that provides a set
-of `ecall` based input/output capabilities like `printf`, `fopen`, etc. To link an
-application with `ebreak` based `libsemihost.a` library use `-specs=semihost.specs`:
-
-```
-$ riscv64-snps-elf-gcc \
-        -march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr \
+        -march=rv32ic_zcb_zba_zbb_zbs \
         -mabi=ilp32 \
         -mtune=arc-v-rmx-100-series \
         -specs=semihost.specs \
         example.c -o example.elf
 ```
 
-Refer to [Running on nSIM](./nsim.md) and [Running on QEMU](./qemu.md) to learn how
+Run the semihosting-based application using nSIM:
+
+```
+$ nsimdrv -p nsim_isa_family=rv32 -p nsim_isa_ext=-all.i.c.zcb.zba.zbb.zbs.zicsr -p nsim_semihosting=1 example.elf
+Hello, World!
+```
+
+!!! note
+
+    By default, GCC links applications with `libgloss.a` library that provides a set
+    of `ecall` based input/output capabilities like `printf`, `fopen`, etc. To link an
+    application with `ebreak` based `libsemihost.a` library we use `-specs=semihost.specs`
+    in the example.
+
+Refer to [Running on nSIM](./running-on-nsim.md) and [Running on QEMU](./running-on-qemu.md) to learn how
 to run ARC-V examples on nSIM or QEMU simulator.
 
-## Using custom linker script
+## Using a Custom Linker Script
 
 GNU toolchain for ARC-V is shipped with a custom ARC-V specific startup code
 and a custom linker script. They are intended to be used in pair by passing
@@ -66,7 +63,7 @@ and a custom linker script. They are intended to be used in pair by passing
 
 ```
 $ riscv64-snps-elf-gcc \
-        -march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr \
+        -march=rv32ic_zcb_zba_zbb_zbs \
         -mabi=ilp32 \
         -mtune=arc-v-rmx-100-series \
         -specs=semihost.specs \
@@ -95,7 +92,7 @@ Full command line with custom placement of code and data section:
 
 ```
 $ riscv64-snps-elf-gcc \
-        -march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr \
+        -march=rv32ic_zcb_zba_zbb_zbs \
         -mabi=ilp32 \
         -mtune=arc-v-rmx-100-series \
         -Wl,-defsym=txtmem_addr=0x80000000 \
@@ -113,14 +110,63 @@ Using custom code and data sections is essential for 64-bit targets. By default,
 this memory layout may be not acceptable for 64-bit targets. That is why in
 the GNU toolchain 64-bit targets are available only with `medany` memory model.
 
-## Using startup code without CSRs
+## Compiling C++ Applications
+
+Consider a simple code example with `example.cpp` filename:
+
+```cpp
+#include <iostream>
+
+int main()
+{
+        std::cout << "Hello, World!" << std::endl;
+        return 0;
+}
+```
+
+Compile and run:
+
+```
+$ riscv64-snps-elf-g++ \
+        -march=rv32ic_zcb_zba_zbb_zbs \
+        -mabi=ilp32 \
+        -mtune=arc-v-rmx-100-series \
+        -Wl,-defsym=txtmem_len=4M \
+        -Wl,-defsym=datamem_len=4M \
+        -specs=semihost.specs \
+        -specs=arcv.specs \
+        -T arcv.ld \
+        example.cpp -o example.elf
+
+$ nsimdrv -p nsim_isa_family=rv32 -p nsim_isa_ext=-all.i.c.zcb.zba.zbb.zbs.zicsr -p nsim_semihosting=1 example.elf
+Hello, World!
+```
+
+## Using Size Optimized Newlib Variant
+
+Pass `-specs=nano.specs` option to link an application with a
+size optimized Newlib variant:
+
+```
+$ riscv64-snps-elf-gcc \
+        -march=rv32ic_zcb_zba_zbb_zbs \
+        -mabi=ilp32 \
+        -mtune=arc-v-rmx-100-series \
+        -specs=semihost.specs \
+        -specs=arcv.specs \
+        -specs=nano.specs \
+        -T arcv.ld \
+        example.c -o example.elf
+```
+
+## Using Startup Code Without CSRs
 
 You can pass `--crt0=no-csr` option to choose a startup code without
 CSRs when `-specs=arcv.specs` is passed:
 
 ```
 $ riscv64-snps-elf-gcc \
-        -march=rv32ic_zcb_zcmp_zcmt_zba_zbb_zbs_zicsr \
+        -march=rv32ic_zcb_zba_zbb_zbs \
         -mabi=ilp32 \
         -mtune=arc-v-rmx-100-series \
         -specs=semihost.specs \
@@ -130,7 +176,7 @@ $ riscv64-snps-elf-gcc \
         example.c -o example.elf
 ```
 
-## Tuning instruction scheduling
+## Tuning Instruction Scheduling
 
 GCC instruction scheduling may be tuned for different ARC-V
 targets using `-mtune=` option:
@@ -148,6 +194,30 @@ For RMX-100 targets it's also possible to choose a version of MPY unit using `-p
 * `-param=arcv-mpy-option=2c` (default)
 * `-param=arcv-mpy-option=10c`
 
+You can choose a number of cycles that a word-size integer load operation takes
+(from 1 to 3, 3 is default) using `--param=arcv-ld-cycles=<1,3>` option.
+
 Note that all `-mtune` values for ARC-V assume that fast unaligned access is supported
 (`__riscv_misaligned_fast == 1`) by targets. This assumption may be overwritten by
 `-mstrict-align` when building an application or toolchain libraries itself.
+
+## Using the TCF Wrapper
+
+[The TCF Wrapper](https://github.com/foss-for-synopsys-dwc-arc-processors/arcv-tcf-wrapper?tab=readme-ov-file#the-tcf-wrapper) allows
+using TCF configuration files for building binaries using the GNU toolchain.
+
+Suppose that the environment is configured for nSIM and `NSIM_HOME` variable is set.
+Here is an example of using the TCF wrapper with `rmx100_dmips.tcf` configuration file:
+
+```
+$ riscv64-snps-elf-tcf-gcc \
+        -tcf=$NSIM_HOME/etc/tcf/templates/rmx100_dmips.tcf \
+        -tcf-with-memory-defines \
+        -specs=semihost.specs \
+        -specs=arcv.specs \
+        -T arcv.ld \
+        example.c -o example.elf
+
+$ nsimdrv -tcf=$NSIM_HOME/etc/tcf/templates/rmx100_dmips.tcf -p nsim_semihosting=1 example.elf
+Hello, World!
+```

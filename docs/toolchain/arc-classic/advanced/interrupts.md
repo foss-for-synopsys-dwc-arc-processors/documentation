@@ -103,7 +103,7 @@ arc-elf32-gcc -Wl,-marcv2elf -specs=hl.specs -mcpu=hs38 -O0 -g main.c -o main.el
 
 Meaning of the options:
 
-* `-Wl,-marcv2elf` - [a linker emulation](./memory.md) which puts the IVT
+* `-Wl,-marcv2elf` - [a linker emulation](../memory.md) which puts the IVT
   at `0x0`, this it's properly aligned.
 * `-specs=hl.specs` - adds support of hostlink for nSIM simulator. It allows
   to use functions like `printf`.

@@ -1,4 +1,4 @@
-# Understanding ARC-V configurations
+# Understanding ARC-V Configurations
 
 GNU toolchain for ARC-V is shipped with a set of prebuilt libraries for each
 available configuration (so called __multilib__). A configuration is a combination of
@@ -9,7 +9,7 @@ available configuration (so called __multilib__). A configuration is a combinati
 Below you can find lists of all combinations of options for which prebuilt libraries are
 presented in the toolchain.
 
-## How multilib works
+## How Multilib Works
 
 On linkage stage, when a set of target options is passed, GCC tries to select standard libraries
 that match this set of options. If you are not sure what prebuilt libraries are selected for linking
@@ -57,7 +57,7 @@ rv32im/ilp32;@march=rv32im@mabi=ilp32
 ```
 
 
-## Configurations for RMX-100 mini targets
+## Configurations for RMX-100 mini Targets
 
 | ARC-V profile              | `-march`                               | `-mabi`  | `-mtune`               | `-mcmodel` |
 |----------------------------|----------------------------------------|----------|------------------------|------------|
@@ -67,7 +67,7 @@ rv32im/ilp32;@march=rv32im@mabi=ilp32
 | Base RMX-100 mini + `MA`   | `rv32ema`                              | `ilp32e` | `arc-v-rmx-100-series` | `medlow`   |
 | Full-featured RMX-100 mini | `rv32emac_zcb_zba_zbb_zbs_zfinx_zdinx` | `ilp32e` | `arc-v-rmx-100-series` | `medlow`   |
 
-## Configurations for RMX-100 targets
+## Configurations for RMX-100 Targets
 
 | ARC-V profile                                     | `-march`                               | `-mabi` | `-mtune`               | `-mcmodel` |
 |---------------------------------------------------|----------------------------------------|---------|------------------------|------------|
@@ -90,25 +90,27 @@ rv32im/ilp32;@march=rv32im@mabi=ilp32
 | Base RMX-100 + `MA`, `Zfinx` without `C`          | `rv32ima_zba_zbb_zbs_zfinx`            | `ilp32` | `arc-v-rmx-100-series` | `medlow`   |
 | Base RMX-100 + `MA`, `Zfinx`, `Zdinx` without `C` | `rv32ima_zba_zbb_zbs_zfinx_zdinx`      | `ilp32` | `arc-v-rmx-100-series` | `medlow`   |
 
-## Configurations for RMX-500 targets
+## Configurations for RMX-500 Targets
 
-| ARC-V profile                         | `-march`                               | `-mabi` | `-mtune`               | `-mcmodel` |
-|---------------------------------------|----------------------------------------|---------|------------------------|------------|
-| Generic RISC-V                        | `rv32i`                                | `ilp32` | `arc-v-rmx-100-series` | `medlow`   |
-| Generic RISC-V                        | `rv32ic`                               | `ilp32` | `arc-v-rmx-100-series` | `medlow`   |
-| Generic RISC-V                        | `rv32im`                               | `ilp32` | `arc-v-rmx-100-series` | `medlow`   |
-| Generic RISC-V                        | `rv32imc`                              | `ilp32` | `arc-v-rmx-100-series` | `medlow`   |
-| Generic RISC-V                        | `rv32ia`                               | `ilp32` | `arc-v-rmx-100-series` | `medlow`   |
-| Generic RISC-V                        | `rv32ima`                              | `ilp32` | `arc-v-rmx-100-series` | `medlow`   |
-| Generic RISC-V                        | `rv32iac`                              | `ilp32` | `arc-v-rmx-100-series` | `medlow`   |
-| Generic RISC-V                        | `rv32imac`                             | `ilp32` | `arc-v-rmx-100-series` | `medlow`   |
-| Base RMX-500                          | `rv32ic_zcb_zba_zbb_zbs`               | `ilp32` | `arc-v-rmx-100-series` | `medlow`   |
-| Base RMX-500 + `M`                    | `rv32imc_zcb_zba_zbb_zbs`              | `ilp32` | `arc-v-rmx-100-series` | `medlow`   |
-| Base RMX-500 + `MA`                   | `rv32imac_zcb_zba_zbb_zbs`             | `ilp32` | `arc-v-rmx-100-series` | `medlow`   |
-| Base RMX-500 + `MA`, `Zfinx`          | `rv32imac_zcb_zba_zbb_zbs_zfinx`       | `ilp32` | `arc-v-rmx-100-series` | `medlow`   |
-| Base RMX-500 + `MA`, `Zfinx`, `Zdinx` | `rv32imac_zcb_zba_zbb_zbs_zfinx_zdinx` | `ilp32` | `arc-v-rmx-100-series` | `medlow`   |
+| ARC-V profile                         | `-march`                               | `-mabi`  | `-mtune`               | `-mcmodel` |
+|---------------------------------------|----------------------------------------|----------|------------------------|------------|
+| Generic RISC-V                        | `rv32i`                                | `ilp32`  | `arc-v-rmx-500-series` | `medlow`   |
+| Generic RISC-V                        | `rv32ic`                               | `ilp32`  | `arc-v-rmx-500-series` | `medlow`   |
+| Generic RISC-V                        | `rv32im`                               | `ilp32`  | `arc-v-rmx-500-series` | `medlow`   |
+| Generic RISC-V                        | `rv32imc`                              | `ilp32`  | `arc-v-rmx-500-series` | `medlow`   |
+| Generic RISC-V                        | `rv32ia`                               | `ilp32`  | `arc-v-rmx-500-series` | `medlow`   |
+| Generic RISC-V                        | `rv32ima`                              | `ilp32`  | `arc-v-rmx-500-series` | `medlow`   |
+| Generic RISC-V                        | `rv32iac`                              | `ilp32`  | `arc-v-rmx-500-series` | `medlow`   |
+| Generic RISC-V                        | `rv32imac`                             | `ilp32`  | `arc-v-rmx-500-series` | `medlow`   |
+| Base RMX-500                          | `rv32ic_zcb_zba_zbb_zbs`               | `ilp32`  | `arc-v-rmx-500-series` | `medlow`   |
+| Base RMX-500 + `M`                    | `rv32imc_zcb_zba_zbb_zbs`              | `ilp32`  | `arc-v-rmx-500-series` | `medlow`   |
+| Base RMX-500 + `MA`                   | `rv32imac_zcb_zba_zbb_zbs`             | `ilp32`  | `arc-v-rmx-500-series` | `medlow`   |
+| Base RMX-500 + `MA`, `Zfinx`          | `rv32imac_zcb_zba_zbb_zbs_zfinx`       | `ilp32`  | `arc-v-rmx-500-series` | `medlow`   |
+| Base RMX-500 + `MA`, `Zfinx`, `Zdinx` | `rv32imac_zcb_zba_zbb_zbs_zfinx_zdinx` | `ilp32`  | `arc-v-rmx-500-series` | `medlow`   |
+| Base RMX-500 + `MA`, `F    `          | `rv32imafc_zcb_zba_zbb_zbs`            | `ilp32f` | `arc-v-rmx-500-series` | `medlow`   |
+| Base RMX-500 + `MA`, `FD`             | `rv32imafd_zca_zcb_zba_zbb_zbs`        | `ilp32d` | `arc-v-rmx-500-series` | `medlow`   |
 
-## Configurations for RHX-100 targets
+## Configurations for RHX-100 Targets
 
 | ARC-V profile       | `-march`                            | `-mabi`  | `-mtune`               | `-mcmodel` |
 |---------------------|-------------------------------------|----------|------------------------|------------|
@@ -126,7 +128,7 @@ rv32im/ilp32;@march=rv32im@mabi=ilp32
 | Base RHX-100 + `F`  | `rv32imafc_zcb_zba_zbb_zbs`         | `ilp32f` | `arc-v-rhx-100-series` | `medlow`   |
 | Base RHX-100 + `FD` | `rv32imafd_zca_zcb_zba_zbb_zbs`[^1] | `ilp32d` | `arc-v-rhx-100-series` | `medlow`   |
 
-## Configurations for RPX-100 targets
+## Configurations for RPX-100 Targets
 
 | ARC-V profile  | `-march`                       | `-mabi` | `-mtune`               | `-mcmodel`   |
 |----------------|--------------------------------|---------|------------------------|--------------|
@@ -141,6 +143,63 @@ rv32im/ilp32;@march=rv32im@mabi=ilp32
 | Generic RISC-V | `rv64imafdc`                   | `lp64d` | `arc-v-rpx-100-series` | `medany`     |
 | Base RPX-100   | `rv64imac_zcb_zba_zbb_zbs`[^1] | `lp64`  | `arc-v-rpx-100-series` | `medany`     |
 | Base RPX-100   | `rv64imafdc_zcb_zba_zbb_zbs`   | `lp64d` | `arc-v-rpx-100-series` | `medany`     |
+
+## Using Buildlib for Building Libraries
+
+!!! warning
+
+    Check the [System Requirements](../index.md#system-requirements) for the Buildlib script.
+
+[The Buildlib tool](https://github.com/foss-for-synopsys-dwc-arc-processors/arcv-tcf-wrapper?tab=readme-ov-file#the-buildlib-tool)
+allows building all toolchain libraries for a particular set of
+target and optimization options and then building applications using these
+prebuilt libraries. Buildlib builds `libgcc`, Picolibc, and `libstdc++`.
+
+Consider a simple code example with `hello.c` filename:
+
+```c
+#include <stdio.h>
+
+int main()
+{
+        printf("Hello, World!\n");
+        return 0;
+}
+```
+
+Here is an example of building of libraries for a custom set of
+target options, using them for building an application and
+running this application on nSIM:
+
+```
+$ riscv64-snps-elf-buildlib \
+    --output buildlib \
+    --march rv32imac_zbb \
+    --mabi ilp32 \
+    --mtune arc-v-rmx-100-series \
+    --cflags="-g -O3" \
+    -j 4
+
+...
+
+$ riscv64-snps-elf-tcf-gcc \
+    -march=rv32imac_zbb \
+    -mabi=ilp32 \
+    -mtune=arc-v-rmx-100-series \
+    -tcf-buildlib=./buildlib \
+    -specs=picolibc.specs \
+    --oslib=semihost \
+    --crt0=semihost \
+    hello.c -o hello.elf
+
+$ nsimdrv \
+    -p nsim_isa_family=rv32 \
+    -p nsim_isa_ext=-all.i.m.a.c.zbb.zicsr \
+    -p nsim_semihosting=1 \
+    hello.elf
+
+Hello, World!
+```
 
 [^1]: Note that this configuration does not include `zcd` in `-march` since it's not supported by RHX-100.
 [^2]: In the GNU toolchain 64-bit targets are available only for `-mcmodel=medany` memory model.

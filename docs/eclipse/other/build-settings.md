@@ -41,10 +41,10 @@ Options for the linker may be found on **ARC GNU C Linker** → **General** page
 Here is a list of the most important options:
 
 * **Enable nano.specs ...** enables using nano version of Newlib standard
-  library. Refer [Specs Files](../../baremetal/general/specs.md) for further
+  library. Refer [Specs Files](../../toolchain/arc-classic/getting-started-nsim.md#specs-files) for further
   information.
 * **Use GCC specs file** select a specs file for a particular platform.
-  Refer [Specs Files](../../baremetal/general/specs.md) for further
+  Refer [Specs Files](../../toolchain/arc-classic/getting-started-nsim.md#specs-files) for further
   information about specs files.
 
 ![Linker Options](images/properties-linker.png)

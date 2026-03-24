@@ -1,9 +1,5 @@
 # Building U-Boot for HS Development Kit
 
-!!! warning
-
-    This article is under construction!
-
 !!! info
 
     * Follow [How to Get The Toolchain](../../toolchain/index.md#how-to-get-the-toolchain)
@@ -72,7 +68,7 @@ Digilent
 mdb -digilent -prop=dig_speed=10000000 u-boot
 ```
 
-## Preparing U-Boot for automatic load of Linux kernel
+## Preparing U-Boot for Automatic Load of Linux Kernel
 
 Once U-Boot is loaded on the HSDK board it could be used for loading Linux kernel image from different media manually and automatically.
 
