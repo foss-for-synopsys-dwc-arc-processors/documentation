@@ -2875,6 +2875,15 @@ manually (use your own prefix):</p>
 <p>Then configure your environment:</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/tools/autoconf2.71/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
 </span></code></pre></div>
+<p>RHEL/AlmaLinux 8 is shipped with Meson 0.58. However, at least Meson 0.61
+is required for building Picolibc toolchain. You can install Meson
+in a virtual Python environment and then activate it before using Crosstool-NG:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>$<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>meson
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>$<span class="w"> </span>meson<span class="w"> </span>--version
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="m">0</span>.61.5
+</span></code></pre></div>
 <h3 id="locale-installation-for-building-uclibc">Locale installation for building uClibc<a class="headerlink" href="#locale-installation-for-building-uclibc" title="Permanent link">&para;</a></h3>
 <p>For building uClibc it is required to have <code>en_US.UTF-8</code> locale installed on the
 build host (otherwise build fails, for details see <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/issues/207">https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/issues/207</a>). In case
@@ -2888,7 +2897,7 @@ distributions it is <code>locales</code>.</p>
 <p>Enable &amp; generate <code>en_US.UTF-8</code> locale</p>
 </li>
 </ul>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># sed -i -e &#39;s/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/&#39; /etc/locale.gen &amp;&amp; locale-gen</span>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># sed -i -e &#39;s/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/&#39; /etc/locale.gen &amp;&amp; locale-gen</span>
 </span></code></pre></div>
 <h2 id="preparing-crosstool-ng">Preparing Crosstool-NG<a class="headerlink" href="#preparing-crosstool-ng" title="Permanent link">&para;</a></h2>
 <p>To simplify toolchain building process we use a powerful, flexible and rather
@@ -2897,12 +2906,12 @@ and bash scripts which hide all the magic &amp; complexity needed to properly
 configure, build &amp; install all the components of the GNU toolchain.</p>
 <p>Still, Crosstool-NG is distributed in sources and needs to be built before use.
 Though it is as simple as:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/crosstool-ng.git
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">cd</span><span class="w"> </span>crosstool-ng
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>git<span class="w"> </span>checkout<span class="w"> </span>arc-2026.03
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>./bootstrap
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>./configure<span class="w"> </span>--enable-local
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>make
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/foss-for-synopsys-dwc-arc-processors/crosstool-ng.git
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">cd</span><span class="w"> </span>crosstool-ng
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>git<span class="w"> </span>checkout<span class="w"> </span>arc-2026.03
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>./bootstrap
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>./configure<span class="w"> </span>--enable-local
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>make
 </span></code></pre></div>
 <h2 id="building-the-toolchain">Building the Toolchain<a class="headerlink" href="#building-the-toolchain" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
@@ -2950,8 +2959,8 @@ Windows hosts or <a href="https://github.com/tpoechtrager/osxcross">OSXCross</a>
 <li><code>snps-riscv64-elf-win-picolibc</code> - Bare-metal cross-toolchain for ARC-V processors with Picolibc standard library for 64-bit Windows hosts</li>
 </ol>
 <p>For example, configure and build <code>snps-arc-multilib-elf32</code> sample:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>./ct-ng<span class="w"> </span>snps-arc-multilib-elf32
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>./ct-ng<span class="w"> </span>build
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>./ct-ng<span class="w"> </span>snps-arc-multilib-elf32
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>./ct-ng<span class="w"> </span>build
 </span></code></pre></div>
 <h3 id="manual-tuning-of-crosstool-ng-configurations-for-arc-classic">Manual tuning of Crosstool-NG Configurations for ARC Classic<a class="headerlink" href="#manual-tuning-of-crosstool-ng-configurations-for-arc-classic" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
@@ -2976,34 +2985,34 @@ projects like the Linux kernel, uClibc, Buildroot and many others.</p>
 for different combinations of <code>-march</code>, <code>-mabi</code> and <code>-mcmodel</code>. You can find a list
 of available configurations this way (they are described in
 <a href="../arc-v/multilib/">Understanding ARC-V configurations</a> section):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$ riscv64-snps-elf-gcc -print-multi-lib
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>.;
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>rv32e/ilp32e;@march=rv32e@mabi=ilp32e
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>rv32em/ilp32e;@march=rv32em@mabi=ilp32e
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>rv32ea/ilp32e;@march=rv32ea@mabi=ilp32e
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>rv32ema/ilp32e;@march=rv32ema@mabi=ilp32e
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>rv32emac_zcb_zba_zbb_zbs_zfinx_zdinx/ilp32e;@march=rv32emac_zcb_zba_zbb_zbs_zfinx_zdinx@mabi=ilp32e
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>rv32i/ilp32;@march=rv32i@mabi=ilp32
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>rv32i/ilp32/rmx500;@march=rv32i@mabi=ilp32@mtune=arc-v-rmx-500-series
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>rv32i/ilp32/rhx100;@march=rv32i@mabi=ilp32@mtune=arc-v-rhx-100-series
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>rv32ic/ilp32;@march=rv32ic@mabi=ilp32
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>rv32ic/ilp32/rmx500;@march=rv32ic@mabi=ilp32@mtune=arc-v-rmx-500-series
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>rv32ic/ilp32/rhx100;@march=rv32ic@mabi=ilp32@mtune=arc-v-rhx-100-series
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>rv32im/ilp32;@march=rv32im@mabi=ilp32
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>...
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$ riscv64-snps-elf-gcc -print-multi-lib
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>.;
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>rv32e/ilp32e;@march=rv32e@mabi=ilp32e
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>rv32em/ilp32e;@march=rv32em@mabi=ilp32e
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>rv32ea/ilp32e;@march=rv32ea@mabi=ilp32e
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>rv32ema/ilp32e;@march=rv32ema@mabi=ilp32e
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>rv32emac_zcb_zba_zbb_zbs_zfinx_zdinx/ilp32e;@march=rv32emac_zcb_zba_zbb_zbs_zfinx_zdinx@mabi=ilp32e
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>rv32i/ilp32;@march=rv32i@mabi=ilp32
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>rv32i/ilp32/rmx500;@march=rv32i@mabi=ilp32@mtune=arc-v-rmx-500-series
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>rv32i/ilp32/rhx100;@march=rv32i@mabi=ilp32@mtune=arc-v-rhx-100-series
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>rv32ic/ilp32;@march=rv32ic@mabi=ilp32
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>rv32ic/ilp32/rmx500;@march=rv32ic@mabi=ilp32@mtune=arc-v-rmx-500-series
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>rv32ic/ilp32/rhx100;@march=rv32ic@mabi=ilp32@mtune=arc-v-rhx-100-series
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>rv32im/ilp32;@march=rv32im@mabi=ilp32
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>...
 </span></code></pre></div>
 <p>However, sometimes a particular configuration is needed which is not shipped with a prebuilt toolchain.
 To achieve this it's necessary to build GNU toolchain from scratch. The easiest way to build a custom toolchain
 for another custom configuration is to use Crosstool-NG. You can find a comprehensive guide about how to get and prepare
 Crosstool-NG here: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain.</p>
 <p>Select ARC-V configuration file for Newlib-based toolchain:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$ ./ct-ng snps-riscv64-unknown-elf
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$ ./ct-ng snps-riscv64-unknown-elf
 </span></code></pre></div>
 <p>Or select ARC-V configuration file for Picolibc-based toolchain:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$ ./ct-ng snps-riscv64-snps-elf-picolibc
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$ ./ct-ng snps-riscv64-snps-elf-picolibc
 </span></code></pre></div>
 <p>Enter a configuration menu:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$ ./ct-ng menuconfig
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$ ./ct-ng menuconfig
 </span></code></pre></div>
 <p>For example, if you want to build a toolchain only for
 <code>-march=rv32imafc_zicond_zicsr_zifencei -mabi=ilp32f -mtune=arc-v-rmx-100-series</code>
@@ -3018,7 +3027,7 @@ then do these steps:</p>
 through <code>Target Options -&gt; Target CFLAGS</code>. For example, you can add
 <code>-mstrict-align</code> to make all target code to be aligned.</p>
 <p>Then build the toolchain as usual:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$ ./ct-ng build
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$ ./ct-ng build
 </span></code></pre></div>
 <p>The toolchain may be found in <code>snps-riscv64-unknown-elf</code> or 
 <code>snps-riscv64-snps-elf-picolibc</code> directory. It uses
@@ -3054,15 +3063,15 @@ There're multiple ways to get MinGW installed:</p>
 <li>On Ubuntu 22.04 that can be done with: <code>sudo apt install mingw-w64</code></li>
 <li>
 <p>On RHEL/AlmaLinux 8.x it's a bit more challenging:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>dnf-plugins-core
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>config-manager<span class="w"> </span>--set-enabled<span class="w"> </span>powertools
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>mingw32-gcc
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>dnf-plugins-core
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>config-manager<span class="w"> </span>--set-enabled<span class="w"> </span>powertools
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>mingw32-gcc
 </span></code></pre></div>
 </li>
 <li>
 <p>Or it could be built with help of that same Crosstool-NG:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>./ct-ng<span class="w"> </span>x86_64-w64-mingw32
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>./ct-ng<span class="w"> </span>build
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>./ct-ng<span class="w"> </span>x86_64-w64-mingw32
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>./ct-ng<span class="w"> </span>build
 </span></code></pre></div>
 </li>
 </ul>
