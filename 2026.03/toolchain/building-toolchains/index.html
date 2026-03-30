@@ -2876,14 +2876,11 @@ manually (use your own prefix):</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/tools/autoconf2.71/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
 </span></code></pre></div>
 <p>RHEL/AlmaLinux 8 is shipped with Meson 0.58. However, at least Meson 0.61
-is required for building Picolibc toolchain. You can install Meson
-in a virtual Python environment and then activate it before using Crosstool-NG:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>$<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>meson
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>$<span class="w"> </span>meson<span class="w"> </span>--version
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="m">0</span>.61.5
+is required for building Picolibc toolchain. You can install it in a user
+environment using <code>pip3</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$ pip3 install --user --upgrade meson
 </span></code></pre></div>
+<p>Then reboot the system or logout and login again.</p>
 <h3 id="locale-installation-for-building-uclibc">Locale installation for building uClibc<a class="headerlink" href="#locale-installation-for-building-uclibc" title="Permanent link">&para;</a></h3>
 <p>For building uClibc it is required to have <code>en_US.UTF-8</code> locale installed on the
 build host (otherwise build fails, for details see <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/issues/207">https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/issues/207</a>). In case

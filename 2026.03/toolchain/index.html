@@ -2559,6 +2559,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#system-requirements" class="md-nav__link">
+    System Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#toolchains-for-baremetal-targets" class="md-nav__link">
     Toolchains for Baremetal Targets
   </a>
@@ -2619,6 +2626,34 @@
 
 
 <h1 id="toolchains-for-arc-processors">Toolchains for ARC Processors<a class="headerlink" href="#toolchains-for-arc-processors" title="Permanent link">&para;</a></h1>
+<h2 id="system-requirements">System Requirements<a class="headerlink" href="#system-requirements" title="Permanent link">&para;</a></h2>
+<p>GNU toolchain for ARC has the same standard prerequisites as an upstream GNU toolchain
+as documented in the GNU toolchain user guide or on <a href="http://gcc.gnu.org/install/prerequisites.html">the GCC website</a>.</p>
+<p>Prebuilt toolchain on <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases">the release page</a>
+are supported on these systems for x86-64 targets:</p>
+<ol>
+<li>Ubuntu 22.04</li>
+<li>RedHat Enterprise Linux (RHEL) 8.x and compatible alternatives</li>
+<li>Windows 11</li>
+</ol>
+<p><a href="arc-v/multilib/#using-buildlib-for-building-libraries">The Buildlib tool</a> tool has extra requirements:</p>
+<ol>
+<li>
+<p>Python 3.8 or higher is required. The default RedHat 8.x setup does not
+   meet this requirement. You can install it using <code>dnf</code> and then use <code>python3.8</code>
+   for running the Buildlib script:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ sudo dnf install python3.8
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>$ python3.8 riscv64-snps-elf-buildlib ...
+</span></code></pre></div>
+</li>
+<li>
+<p>Meson 0.61 is or higher required. The default RedHat 8.x setup does not
+   meet this requirement. You can install it in a user environment using <code>pip3</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ pip3 install --user --upgrade meson
+</span></code></pre></div>
+<p>Then reboot the system or logout and login again.</p>
+</li>
+</ol>
 <h2 id="toolchains-for-baremetal-targets">Toolchains for Baremetal Targets<a class="headerlink" href="#toolchains-for-baremetal-targets" title="Permanent link">&para;</a></h2>
 <p>GNU toolchains for baremetal ARC targets consist of GCC, Binutils, GDB and
 a standard library. There are two versions of baremetal toolchain with different
