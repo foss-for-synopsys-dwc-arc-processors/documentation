@@ -367,9 +367,88 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Release notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Release notes
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#toolchain-and-ide-components-versions" class="md-nav__link">
+    Toolchain and IDE Components Versions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-features-and-enhancements" class="md-nav__link">
+    New Features and Enhancements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binary-distribution" class="md-nav__link">
+    Binary distribution
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toolchain-components" class="md-nav__link">
+    Toolchain Components
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    Known issues
+  </a>
+  
+    <nav class="md-nav" aria-label="Known issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arc-classic" class="md-nav__link">
+    ARC Classic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arc-v" class="md-nav__link">
+    ARC-V
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2562,6 +2641,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#toolchain-and-ide-components-versions" class="md-nav__link">
+    Toolchain and IDE Components Versions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-features-and-enhancements" class="md-nav__link">
+    New Features and Enhancements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binary-distribution" class="md-nav__link">
+    Binary distribution
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toolchain-components" class="md-nav__link">
+    Toolchain Components
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    Known issues
+  </a>
+  
+    <nav class="md-nav" aria-label="Known issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arc-classic" class="md-nav__link">
+    ARC Classic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arc-v" class="md-nav__link">
+    ARC-V
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2579,6 +2721,102 @@
 
 
 <h1 id="release-notes">Release notes<a class="headerlink" href="#release-notes" title="Permanent link">&para;</a></h1>
+<p>This is a release notes page of 2026.03 version of the GNU Toolchain for
+DesignWare ARC 600, ARC 700, EM, HS3x/4x, HS5x, HS6x and ARC-V processors.</p>
+<p>More information about ARC-V processors can be found on Synopsys
+website on <a href="https://www.synopsys.com/designware-ip/processor-solutions/arc-v-processors/arc-v-rmx.html">Power-Efficient RISC-V Processors for Embedded Applications</a> and
+on <a href="https://www.synopsys.com/designware-ip/processor-solutions/arc-v-processors/arc-v-rhx.html">Maximum Performance Efficiency for Real-time Applications</a>.</p>
+<p>Binary distributions may be found on the <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/tag/arc-2026.03-rc1">GitHub Release Page</a>.</p>
+<h2 id="toolchain-and-ide-components-versions">Toolchain and IDE Components Versions<a class="headerlink" href="#toolchain-and-ide-components-versions" title="Permanent link">&para;</a></h2>
+<ul>
+<li>GCC 15.2 with ARC patches</li>
+<li>Binutils 2.45.1 with ARC patches</li>
+<li>GDB 17.1 with ARC patches</li>
+<li>Newlib 4.5.0 with ARC patches</li>
+<li>Picolibc 1.8.11 with ARC patches</li>
+<li>uClibc-ng v1.0.55 with ARC patches</li>
+<li>glibc 2.42 with ARC patches</li>
+</ul>
+<p>This release of GNU toolchain is supported by CGEN IPlib (TCF generator) version 1.0.53 and later.</p>
+<h2 id="new-features-and-enhancements">New Features and Enhancements<a class="headerlink" href="#new-features-and-enhancements" title="Permanent link">&para;</a></h2>
+<p>ARC-V targets:</p>
+<ul>
+<li>Performance tuning for ARC-V targets with <code>-mtune=arc-v-rmx-500-series</code> and <code>-mtune=arc-v-rpx-100-series</code></li>
+<li>Implemented experimental loop optimization improvements</li>
+<li>Added support of LTO for APEX intrinsics</li>
+<li>Added support of RVA23 profile</li>
+<li>Updated support of XARCV to v1.8.1 specification</li>
+<li>Added <a href="https://foss-for-synopsys-dwc-arc-processors.github.io/documentation/2026.03/toolchain/arc-v/multilib/#using-buildlib-for-building-libraries">Buildlib tool</a> for building target libraries </li>
+</ul>
+<p>ARC Classic targets:</p>
+<ul>
+<li>Added experimental support of Picolibc for ARC Classic targets </li>
+</ul>
+<h2 id="binary-distribution">Binary distribution<a class="headerlink" href="#binary-distribution" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Supported host operating systems: Windows 11 64-bit, Ubuntu 22.04, RHEL/AlmaLinux 8.x</li>
+<li>Prebuilt bare-metal toolchains for 64-bit Windows &amp; Linux hosts, see table with references and list of artifacts below.</li>
+</ul>
+<h2 id="toolchain-components">Toolchain Components<a class="headerlink" href="#toolchain-components" title="Permanent link">&para;</a></h2>
+<p>For this release binary distributions of ARC GNU tools for all supported processor families (both ARC Classic and ARC-V) are produced from the same sources of corresponding tools.</p>
+<p>Here is a list of GitHub issues addressed in this release: <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/issues?q=is%3Aissue%20milestone%3A2026.03%20is%3Aclosed">GitHub issues for 2026.03</a>. Note, though, this list only contains issues filed against ARC GNU toolchain. Bugs and enhancements made in upstream open-source projects of each toolchain component could be found in the corresponding bug-tracking system.</p>
+<ul>
+<li>GCC 15.2 with ARC patches</li>
+<li>Sources used for the release: <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/gcc/releases/tag/arc-2026.03-rc1">https://github.com/foss-for-synopsys-dwc-arc-processors/gcc/releases/tag/arc-2026.03-rc1</a></li>
+<li>Uses upstream 15.2 release, see release announcement (<a href="https://lists.gnu.org/archive/html/info-gnu/2025-04/msg00015.html">15.1</a> and <a href="https://lists.gnu.org/archive/html/info-gnu/2025-08/msg00002.html">15.2</a>) and <a href="https://gcc.gnu.org/gcc-15/changes.html">complete list of changes</a>.</li>
+<li>Performance tuning for ARC-V targets with <code>-mtune=arc-v-rmx-500-series</code> and <code>-mtune=arc-v-rpx-100-series</code></li>
+<li>Implemented experimental loop optimization improvements</li>
+<li>Added support of LTO for APEX intrinsics</li>
+<li>Added support of RVA23 profile</li>
+<li>Updated support of XARCV to v1.8.1 specification</li>
+<li>Binutils 2.45.1 with ARC patches</li>
+<li>Sources used for the release: <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/binutils-gdb/releases/tag/arc-2026.03-rc1">https://github.com/foss-for-synopsys-dwc-arc-processors/binutils-gdb/releases/tag/arc-2026.03-rc1</a></li>
+<li>Uses upstream 2.45.1 release, see <a href="https://sourceware.org/pipermail/binutils/2025-July/142967.html">release notes</a>.</li>
+<li>GDB 17.1 with ARC patches</li>
+<li>Sources used for the release: <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/binutils-gdb/tree/arc-2026.03-rc1-gdb">https://github.com/foss-for-synopsys-dwc-arc-processors/binutils-gdb/tree/arc-2026.03-rc1-gdb</a></li>
+<li>Uses upstream 17.1 release, see <a href="https://sourceware.org/pipermail/gdb-announce/2024/000141.html">release announcement</a> and <a href="https://lists.gnu.org/archive/html/info-gnu/2025-12/msg00007.html">complete list of changes</a> for major changes.</li>
+<li>Newlib 4.5.0 with ARC patches</li>
+<li>Sources used for the release: <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/newlib/releases/tag/arc-2026.03-rc1">https://github.com/foss-for-synopsys-dwc-arc-processors/newlib/releases/tag/arc-2026.03-rc1</a></li>
+<li>Uses upstream 4.5.0 release.</li>
+<li>Picolibc 1.8.11 with ARC patches</li>
+<li>Sources used for the release: <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/picolibc/releases/tag/arc-2026.03-rc1">https://github.com/foss-for-synopsys-dwc-arc-processors/picolibc/releases/tag/arc-2026.03-rc1</a></li>
+<li>Uses upstream 1.8.11 release, see <a href="https://github.com/picolibc/picolibc/releases/tag/1.8.11">release announcement</a>.</li>
+<li>Added experimental support of Picolibc for ARC Classic targets </li>
+<li>uClibc-ng 1.0.55 with ARC patches</li>
+<li>Sources used for the release: <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/uClibc/releases/tag/arc-2026.03-rc1">https://github.com/foss-for-synopsys-dwc-arc-processors/uClibc/releases/tag/arc-2026.03-rc1</a></li>
+<li>Uses upstream 1.0.55 release, see <a href="https://cgit.uclibc-ng.org/cgi/cgit/uclibc-ng.git/tag/?h=v1.0.55">release announcement</a>.</li>
+<li>glibc 2.42 with ARC patches</li>
+<li>Sources used for the release: <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/glibc/releases/tag/arc-2026.03-rc1">https://github.com/foss-for-synopsys-dwc-arc-processors/glibc/releases/tag/arc-2026.03-rc1</a></li>
+<li>Uses upstream 2.42 release, see <a href="https://lists.gnu.org/archive/html/info-gnu/2025-07/msg00011.html">release announcement</a> and <a href="https://sourceware.org/glibc/wiki/Release/2.42">complete list of changes</a>.</li>
+</ul>
+<h2 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
+<h3 id="arc-classic">ARC Classic<a class="headerlink" href="#arc-classic" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Newlib's <code>libgloss</code> doesn't support RF16 configuration of ARC cores when building for nSIM with <code>-specs=nsim.specs</code>, see #231. Use <code>-specs=hl.specs</code> instead for RF 16 configurations.</p>
+</li>
+<li>
+<p>Non-multilib toolchain doesn't contain <code>libgloss</code> libraries for nSIM and development boards, see #262.</p>
+</li>
+<li>
+<p><code>libcrypt.so.1</code> is not included in the toolchain (starting from glibc 2.38 <code>libcrypt.so.1</code> is not built by default and will be removed from glibc in the future), please use <code>libcrypt</code> implemented by external libraries such as <a href="https://github.com/besser82/libxcrypt">libxcrypt</a> instead of relying on Glibc internal implementation.</p>
+</li>
+<li>
+<p>Eclipse IDE for ARCompact does not support selecting <code>-specs=</code> options in project's configuration menu. Consider passing this options (e.g., <code>-specs=nsim.specs</code> for nSIM) in "ARC GNU Linker" field of projects configuration dialog (C/C++ Build -&gt; Settings -&gt; Top Settings -&gt; ARC GNU Linker).</p>
+</li>
+</ol>
+<h3 id="arc-v">ARC-V<a class="headerlink" href="#arc-v" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Some complex combinations of <code>-march=</code> and <code>-mabi=</code> options may lead to unpredictable errors during compilation. Such issues are related to general support of RISC-V extensions in GCC. Refer <a href="https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/issues/610">#610</a> for details.</p>
+</li>
+<li>
+<p>The size-optimized Newlib Nano configuration (used when <code>-specs=nano.specs</code> is passed to GCC) does not support <code>printf()</code> for <code>float</code> and <code>double</code> by default. Nano <code>printf()</code> is size-optimized and does not include support of <code>float</code> and <code>double</code>. If you need that feature, pass <code>-u _printf_float</code> to GCC when you compile your applications. This option picks up support of <code>float</code> and <code>double</code> for size optimized <code>printf()</code> on demand.</p>
+</li>
+<li>
+<p>Using selective scheduler with a specific set of options may lead to incorrect code generation. Refer <a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=118153">Bug 118153</a> for details.</p>
+</li>
+</ol>
 
 
 
