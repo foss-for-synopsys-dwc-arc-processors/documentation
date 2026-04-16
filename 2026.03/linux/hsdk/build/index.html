@@ -2843,22 +2843,25 @@ go to the configuration menu:</p>
 <p>Completely delete content for this option (<code>BR2_ROOTFS_POST_IMAGE_SCRIPT=""</code>):</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>System configuration -&gt; Custom scripts to run after creating filesystem images
 </span></code></pre></div>
+<p>Integrate the root filesystem inside the kernel image (<code>BR2_TARGET_ROOTFS_INITRAMFS=y</code>):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Filesystem images -&gt; [*] initial RAS filesystem linked into linux kernel
+</span></code></pre></div>
 <p>Then build the Linux kernel:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>make
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>make
 </span></code></pre></div>
 <h3 id="loading-using-mdb-and-ashling-opella-xd-jtag-probe">Loading Using MDB and Ashling Opella-XD JTAG probe<a class="headerlink" href="#loading-using-mdb-and-ashling-opella-xd-jtag-probe" title="Permanent link">&para;</a></h3>
 <p>Make sure that JTAG-probe is attached to the board. Then use these commands for MetaWare Debugger:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">1</span><span class="w"> </span>-psetname<span class="o">=</span>core0<span class="w"> </span>-DLL<span class="o">=</span>opxdarc.so<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_frequency</span><span class="o">=</span>12MHz<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_optimise</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>-memxfersize<span class="o">=</span>0x8000<span class="w"> </span>output/images/vmlinux
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">2</span><span class="w"> </span>-psetname<span class="o">=</span>core1<span class="w"> </span>-DLL<span class="o">=</span>opxdarc.so<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_frequency</span><span class="o">=</span>12MHz<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_optimise</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>output/images/vmlinux
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>mdb<span class="w"> </span>-multifiles<span class="o">=</span>core0,core1<span class="w"> </span>-run<span class="w"> </span>-cl
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">1</span><span class="w"> </span>-psetname<span class="o">=</span>core0<span class="w"> </span>-DLL<span class="o">=</span>opxdarc.so<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_frequency</span><span class="o">=</span>12MHz<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_optimise</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>-memxfersize<span class="o">=</span>0x8000<span class="w"> </span>output/images/vmlinux
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">2</span><span class="w"> </span>-psetname<span class="o">=</span>core1<span class="w"> </span>-DLL<span class="o">=</span>opxdarc.so<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_frequency</span><span class="o">=</span>12MHz<span class="w"> </span>-prop<span class="o">=</span><span class="nv">jtag_optimise</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>output/images/vmlinux
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>mdb<span class="w"> </span>-multifiles<span class="o">=</span>core0,core1<span class="w"> </span>-run<span class="w"> </span>-cl
 </span></code></pre></div>
 <h3 id="loading-using-mdb-and-digilent-hs1hs2-probe">Loading Using MDB and Digilent HS1/HS2 probe<a class="headerlink" href="#loading-using-mdb-and-digilent-hs1hs2-probe" title="Permanent link">&para;</a></h3>
 <p>Make sure that USB cable is attached to the board and <a href="https://digilent.com/shop/software/digilent-adept/download">Digilent Adept runtime and utilitied</a> are installed. Then use these commands for MetaWare Debugger:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">1</span><span class="w"> </span>-psetname<span class="o">=</span>core0<span class="w"> </span>-digilent<span class="w"> </span>output/images/vmlinux
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">2</span><span class="w"> </span>-psetname<span class="o">=</span>core1<span class="w"> </span>-digilent<span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>output/images/vmlinux
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">3</span><span class="w"> </span>-psetname<span class="o">=</span>core2<span class="w"> </span>-digilent<span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>output/images/vmlinux
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">4</span><span class="w"> </span>-psetname<span class="o">=</span>core3<span class="w"> </span>-digilent<span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>output/images/vmlinux
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>mdb<span class="w"> </span>-multifiles<span class="o">=</span>core0,core1,core2,core3<span class="w"> </span>-OK
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">1</span><span class="w"> </span>-psetname<span class="o">=</span>core0<span class="w"> </span>-digilent<span class="w"> </span>output/images/vmlinux
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">2</span><span class="w"> </span>-psetname<span class="o">=</span>core1<span class="w"> </span>-digilent<span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>output/images/vmlinux
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">3</span><span class="w"> </span>-psetname<span class="o">=</span>core2<span class="w"> </span>-digilent<span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>output/images/vmlinux
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>mdb<span class="w"> </span>-pset<span class="o">=</span><span class="m">4</span><span class="w"> </span>-psetname<span class="o">=</span>core3<span class="w"> </span>-digilent<span class="w"> </span>-prop<span class="o">=</span><span class="nv">download</span><span class="o">=</span><span class="m">2</span><span class="w"> </span>output/images/vmlinux
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>mdb<span class="w"> </span>-multifiles<span class="o">=</span>core0,core1,core2,core3<span class="w"> </span>-OK
 </span></code></pre></div>
 <h3 id="loading-using-openocd-and-digilent-hs1hs2-probe">Loading Using OpenOCD and Digilent HS1/HS2 probe<a class="headerlink" href="#loading-using-openocd-and-digilent-hs1hs2-probe" title="Permanent link">&para;</a></h3>
 <p>It's possible to use OpenOCD and Digilent HS1/HS2 probe for loading and debugging
@@ -2869,116 +2872,116 @@ file.</p>
 <p>Then GDB servers for all 4 cores are started: 3333 — for the 4th core, 3336 — for
 the 1st core. You can debug Linux in a single core mode by connecting to
 the 1st core (which is on 3336 port):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$ arc-elf32-gdb output/images/vmlinux
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>(gdb) target remote :3336
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Remote debugging using :3336
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>0xbff8a400 in ?? ()
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>(gdb) load
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>Loading section .vector, size 0x2000 lma 0x90000000
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>Loading section .init.ramfs, size 0x370d7c lma 0x90002000
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>Loading section .init.data, size 0x59c4 lma 0x90372d80
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>...
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>Start address 0x9037e000, load size 12871904
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>Transfer rate: 354 KB/sec, 15019 bytes/write.
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>(gdb) c
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$ arc-elf32-gdb output/images/vmlinux
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>(gdb) target remote :3336
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Remote debugging using :3336
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>0xbff8a400 in ?? ()
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>(gdb) load
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>Loading section .vector, size 0x2000 lma 0x90000000
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>Loading section .init.ramfs, size 0x370d7c lma 0x90002000
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>Loading section .init.data, size 0x59c4 lma 0x90372d80
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>...
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>Start address 0x9037e000, load size 12871904
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>Transfer rate: 354 KB/sec, 15019 bytes/write.
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>(gdb) c
 </span></code></pre></div>
 <p>To debug all cores it is necessary to run GDB for each core separately
 (cores 2-4 must be initialized first):</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Load and run core #2</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>arc-elf32-gdb<span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;target remote :3335&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;load&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="w"> </span>output/images/vmlinux
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># Load and run core #3</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>arc-elf32-gdb<span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;target remote :3334&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;load&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="w"> </span>output/images/vmlinux
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1"># Load and run core #4</span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>arc-elf32-gdb<span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;target remote :3333&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;load&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="w"> </span>output/images/vmlinux
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="c1"># Load and run core #1 (main one)</span>
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>arc-elf32-gdb<span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;target remote :3336&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;load&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="w"> </span>output/images/vmlinux
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Load and run core #2</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>arc-elf32-gdb<span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;target remote :3335&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;load&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="w"> </span>output/images/vmlinux
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Load and run core #3</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>arc-elf32-gdb<span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;target remote :3334&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;load&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="w"> </span>output/images/vmlinux
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="c1"># Load and run core #4</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>arc-elf32-gdb<span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;target remote :3333&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;load&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="w"> </span>output/images/vmlinux
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="c1"># Load and run core #1 (main one)</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>arc-elf32-gdb<span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;target remote :3336&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;load&quot;</span><span class="w"> </span>-ex<span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="w"> </span>output/images/vmlinux
 </span></code></pre></div>
 <h2 id="working-with-linux-after-loading-the-kernel">Working with Linux After Loading the Kernel<a class="headerlink" href="#working-with-linux-after-loading-the-kernel" title="Permanent link">&para;</a></h2>
 <p>Enter <code>root</code> as login and proceed with an empty password.</p>
 <p>Note if you see following while booting:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>udhcpc<span class="w"> </span><span class="o">(</span>v1.23.2<span class="o">)</span><span class="w"> </span>started
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Sending<span class="w"> </span>discover...
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Sending<span class="w"> </span>discover...
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>Sending<span class="w"> </span>discover...
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>No<span class="w"> </span>lease,<span class="w"> </span>failing
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>...
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>stmmaceth<span class="w"> </span>e0018000.ethernet<span class="w"> </span>eth0:<span class="w"> </span>Link<span class="w"> </span>is<span class="w"> </span>Up<span class="w"> </span>-<span class="w"> </span>100Mbps/Full<span class="w"> </span>-<span class="w"> </span>flow<span class="w"> </span>control<span class="w"> </span>rx/tx
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>udhcpc<span class="w"> </span><span class="o">(</span>v1.23.2<span class="o">)</span><span class="w"> </span>started
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Sending<span class="w"> </span>discover...
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Sending<span class="w"> </span>discover...
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>Sending<span class="w"> </span>discover...
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>No<span class="w"> </span>lease,<span class="w"> </span>failing
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>...
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>stmmaceth<span class="w"> </span>e0018000.ethernet<span class="w"> </span>eth0:<span class="w"> </span>Link<span class="w"> </span>is<span class="w"> </span>Up<span class="w"> </span>-<span class="w"> </span>100Mbps/Full<span class="w"> </span>-<span class="w"> </span>flow<span class="w"> </span>control<span class="w"> </span>rx/tx
 </span></code></pre></div>
 <p>That means Ethernet PHY became alive a bit too late. And that means that it's
 required to execute DHCP discovery once again from console:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># udhcpc</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>udhcpc:<span class="w"> </span>started,<span class="w"> </span>v1.36.1
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>udhcpc:<span class="w"> </span>broadcasting<span class="w"> </span>discover
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>udhcpc:<span class="w"> </span>broadcasting<span class="w"> </span>discover
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>udhcpc:<span class="w"> </span>broadcasting<span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">192</span>.168.1.102,<span class="w"> </span>server<span class="w"> </span><span class="m">192</span>.168.1.1
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>udhcpc:<span class="w"> </span>lease<span class="w"> </span>of<span class="w"> </span><span class="m">192</span>.168.1.102<span class="w"> </span>obtained<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.1.1,<span class="w"> </span>lease<span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="m">43200</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>deleting<span class="w"> </span>routers
-</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>adding<span class="w"> </span>dns<span class="w"> </span><span class="m">192</span>.168.1.1
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># udhcpc</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>udhcpc:<span class="w"> </span>started,<span class="w"> </span>v1.36.1
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>udhcpc:<span class="w"> </span>broadcasting<span class="w"> </span>discover
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>udhcpc:<span class="w"> </span>broadcasting<span class="w"> </span>discover
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>udhcpc:<span class="w"> </span>broadcasting<span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">192</span>.168.1.102,<span class="w"> </span>server<span class="w"> </span><span class="m">192</span>.168.1.1
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>udhcpc:<span class="w"> </span>lease<span class="w"> </span>of<span class="w"> </span><span class="m">192</span>.168.1.102<span class="w"> </span>obtained<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.1.1,<span class="w"> </span>lease<span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="m">43200</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>deleting<span class="w"> </span>routers
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>adding<span class="w"> </span>dns<span class="w"> </span><span class="m">192</span>.168.1.1
 </span></code></pre></div>
 <h2 id="debugging-applications-using-gdbserver">Debugging Applications Using gdbserver<a class="headerlink" href="#debugging-applications-using-gdbserver" title="Permanent link">&para;</a></h2>
 <p>Create <code>overlay</code> directory in Buildroot sources' directory and add
 a sample file for a program:</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">{</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="p">}</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">{</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>After building the Linux image compile the program and save it to the <code>overlay</code>
 directory:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>./output/host/bin/arc-buildroot-linux-gnu-gcc<span class="w"> </span>-g<span class="w"> </span>-O2<span class="w"> </span>overlay/main.c<span class="w"> </span>-o<span class="w"> </span>overlay/main
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>./output/host/bin/arc-buildroot-linux-gnu-gcc<span class="w"> </span>-g<span class="w"> </span>-O2<span class="w"> </span>overlay/main.c<span class="w"> </span>-o<span class="w"> </span>overlay/main
 </span></code></pre></div>
 <p>Set these options to build a host GDB and a native <code>gdbserver</code>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Toolchain -&gt; Build cross gdb for the host
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>Target packages -&gt; Debugging, profiling and benchmark -&gt; gdb -&gt; gdbserver
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Toolchain -&gt; Build cross gdb for the host
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>Target packages -&gt; Debugging, profiling and benchmark -&gt; gdb -&gt; gdbserver
 </span></code></pre></div>
 <p>Rebuild the image:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>make
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>make
 </span></code></pre></div>
 <p>Connect to the board through UART, log in and initialize Ethernet connection:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># udhcpc</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>udhcpc:<span class="w"> </span>started,<span class="w"> </span>v1.36.1
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>udhcpc:<span class="w"> </span>broadcasting<span class="w"> </span>discover
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>udhcpc:<span class="w"> </span>broadcasting<span class="w"> </span>discover
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>udhcpc:<span class="w"> </span>broadcasting<span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">192</span>.168.1.102,<span class="w"> </span>server<span class="w"> </span><span class="m">192</span>.168.1.1
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>udhcpc:<span class="w"> </span>lease<span class="w"> </span>of<span class="w"> </span><span class="m">192</span>.168.1.102<span class="w"> </span>obtained<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.1.1,<span class="w"> </span>lease<span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="m">43200</span>
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>deleting<span class="w"> </span>routers
-</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>adding<span class="w"> </span>dns<span class="w"> </span><span class="m">192</span>.168.1.1
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># udhcpc</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>udhcpc:<span class="w"> </span>started,<span class="w"> </span>v1.36.1
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>udhcpc:<span class="w"> </span>broadcasting<span class="w"> </span>discover
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>udhcpc:<span class="w"> </span>broadcasting<span class="w"> </span>discover
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>udhcpc:<span class="w"> </span>broadcasting<span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">192</span>.168.1.102,<span class="w"> </span>server<span class="w"> </span><span class="m">192</span>.168.1.1
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>udhcpc:<span class="w"> </span>lease<span class="w"> </span>of<span class="w"> </span><span class="m">192</span>.168.1.102<span class="w"> </span>obtained<span class="w"> </span>from<span class="w"> </span><span class="m">192</span>.168.1.1,<span class="w"> </span>lease<span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="m">43200</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>deleting<span class="w"> </span>routers
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>adding<span class="w"> </span>dns<span class="w"> </span><span class="m">192</span>.168.1.1
 </span></code></pre></div>
 <p>In this case the board obtains <code>192.168.1.102</code> address. Run <code>gdbserver</code> on
 the board:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># cd /</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="c1"># gdbserver :51000 main</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>Process<span class="w"> </span>/main<span class="w"> </span>created<span class="p">;</span><span class="w"> </span><span class="nv">pid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">219</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>Listening<span class="w"> </span>on<span class="w"> </span>port<span class="w"> </span><span class="m">51000</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># cd /</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="c1"># gdbserver :51000 main</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>Process<span class="w"> </span>/main<span class="w"> </span>created<span class="p">;</span><span class="w"> </span><span class="nv">pid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">219</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>Listening<span class="w"> </span>on<span class="w"> </span>port<span class="w"> </span><span class="m">51000</span>
 </span></code></pre></div>
 <p>Connect to <code>gdbserver</code> using the host GDB:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$ ./output/host/bin/arc-buildroot-linux-gnu-gdb -q overlay/main
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>Reading symbols from overlay/main...
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>(gdb) set sysroot ./output/target
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>(gdb) target remote 192.168.1.102:51000
-</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>Remote debugging using 192.168.1.102:51000
-</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>Reading symbols from ./output/target/lib/ld-linux-arc.so.2...
-</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>(No debugging symbols found in ./output/target/lib/ld-linux-arc.so.2)
-</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>0x20010098 in __start () from ./output/target/lib/ld-linux-arc.so.2
-</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>(gdb) break main
-</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>Breakpoint 1 at 0x4000048a: file overlay/main.c, line 5.
-</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>(gdb) continue
-</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>Continuing.
-</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>
-</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>Breakpoint 1, main () at overlay/main.c:5
-</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>5               printf(&quot;Hello, World!\n&quot;);
-</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>(gdb) continue
-</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>Continuing.
-</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>[Inferior 1 (process 219) exited normally]
-</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>(gdb) quit
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>$ ./output/host/bin/arc-buildroot-linux-gnu-gdb -q overlay/main
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>Reading symbols from overlay/main...
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>(gdb) set sysroot ./output/target
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>(gdb) target remote 192.168.1.102:51000
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>Remote debugging using 192.168.1.102:51000
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>Reading symbols from ./output/target/lib/ld-linux-arc.so.2...
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>(No debugging symbols found in ./output/target/lib/ld-linux-arc.so.2)
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>0x20010098 in __start () from ./output/target/lib/ld-linux-arc.so.2
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>(gdb) break main
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>Breakpoint 1 at 0x4000048a: file overlay/main.c, line 5.
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>(gdb) continue
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>Continuing.
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>Breakpoint 1, main () at overlay/main.c:5
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>5               printf(&quot;Hello, World!\n&quot;);
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>(gdb) continue
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>Continuing.
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>[Inferior 1 (process 219) exited normally]
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>(gdb) quit
 </span></code></pre></div>
 
 
