@@ -87,8 +87,6 @@ Here is a list of GitHub issues addressed in this release: [GitHub issues for 20
 
 4. Eclipse IDE for ARCompact does not support selecting `-specs=` options in project's configuration menu. Consider passing this options (e.g., `-specs=nsim.specs` for nSIM) in "ARC GNU Linker" field of projects configuration dialog (C/C++ Build -> Settings -> Top Settings -> ARC GNU Linker).
 
-5. `arc-snps-elf-tcf-gcc` and `tcftool` are distribute as non-executables. Use chmod +x command to set correct rights for these binaries.
-
 ### ARC-V
 
 1. Some complex combinations of `-march=` and `-mabi=` options may lead to unpredictable errors during compilation. Such issues are related to general support of RISC-V extensions in GCC. Refer [#610](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/issues/610) for details.
