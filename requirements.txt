@@ -1,3 +1,4 @@
+setuptools==84.0.0
 certifi==2024.7.4
 charset-normalizer==3.2.0
 click==8.1.6
@@ -15,9 +16,9 @@ mkdocs-glightbox==0.3.4
 mkdocs-material==9.1.21
 mkdocs-material-extensions==1.1.1
 mkdocs-table-reader-plugin==2.0.1
-numpy==1.25.1
+numpy==1.26.4
 packaging==23.1
-pandas==2.0.3
+pandas==2.2.3
 pathspec==0.11.2
 platformdirs==3.10.0
 Pygments==2.15.1
