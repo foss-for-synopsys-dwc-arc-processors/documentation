@@ -13,7 +13,7 @@ You can find documentation pages related to Linux kernel on the sidebar for
 the current section. Other useful resources:
 
 * [Source Repository](https://kernel.org)
-* [Support](https://github.com/foss-for-synopsys-dwc-arc-processors/linux/issues)
+* [Support](https://github.com/foss-for-mips-arc-processors/linux/issues)
 * [Mailing List](http://lists.infradead.org/mailman/listinfo/linux-snps-arc)
 
 ## Automotive Grade Linux
@@ -29,18 +29,18 @@ new features and technologies. This project contains required components and
 instructions and build and run AGL on ARC HS Processors. A prebuilt
 demonstration image for the ARC HSDK platform is also available.
 
-* [Source Repository](https://github.com/foss-for-synopsys-dwc-arc-processors/meta-synopsys/tree/snps_agl_2018.09)
-* [Download ARC HSDK Image](https://github.com/foss-for-synopsys-dwc-arc-processors/meta-agl/releases/tag/synopsys_flounder_5991_RC1)
-* [Documentation](https://github.com/foss-for-synopsys-dwc-arc-processors/meta-synopsys/tree/snps_agl_2018.09/README.md)
-* [Support](https://github.com/foss-for-synopsys-dwc-arc-processors/meta-synopsys/issues)
+* [Source Repository](https://github.com/foss-for-mips-arc-processors/meta-synopsys/tree/snps_agl_2018.09)
+* [Download ARC HSDK Image](https://github.com/foss-for-mips-arc-processors/meta-agl/releases/tag/synopsys_flounder_5991_RC1)
+* [Documentation](https://github.com/foss-for-mips-arc-processors/meta-synopsys/tree/snps_agl_2018.09/README.md)
+* [Support](https://github.com/foss-for-mips-arc-processors/meta-synopsys/issues)
 
 ## Linux Test Project
 
 The Linux Test Project (LTP) is a test suite to test Embedded Linux
 implementations. A port of LTP with support for the ARC architecture is provided.
 
-* [Source Repository](https://github.com/foss-for-synopsys-dwc-arc-processors/ltp)
-* [Documentation](https://github.com/foss-for-synopsys-dwc-arc-processors/ltp/wiki/Linux-Test-Project-for-ARC)
+* [Source Repository](https://github.com/foss-for-mips-arc-processors/ltp)
+* [Documentation](https://github.com/foss-for-mips-arc-processors/ltp/wiki/Linux-Test-Project-for-ARC)
 * [Mailing List](http://lists.infradead.org/mailman/listinfo/linux-snps-arc)
 
 ## LMBench
@@ -48,8 +48,8 @@ implementations. A port of LTP with support for the ARC architecture is provided
 LMBench is standard OS benchmarking suite written by Larry McVoy and Carl
 Staelin. A port of LMBench with support for the ARC architecture is provided.
 
-* [Source Repository](https://github.com/foss-for-synopsys-dwc-arc-processors/lmbench)
-* [Documentation](https://github.com/foss-for-synopsys-dwc-arc-processors/lmbench/wiki/LMBench-for-ARC-Linux)
+* [Source Repository](https://github.com/foss-for-mips-arc-processors/lmbench)
+* [Documentation](https://github.com/foss-for-mips-arc-processors/lmbench/wiki/LMBench-for-ARC-Linux)
 * [Mailing List](http://lists.infradead.org/mailman/listinfo/linux-snps-arc)
 
 ## U-Boot
@@ -80,8 +80,8 @@ directly upstream in strace project.
 Linux Foundation project for building embedded linux distributions, based
 on OpenEmbedded project.
 
-* [Source Repository](https://github.com/foss-for-synopsys-dwc-arc-processors/meta-synopsys)
-* [Download Latest Release](https://github.com/foss-for-synopsys-dwc-arc-processors/meta-synopsys/archive/morty.zip)
+* [Source Repository](https://github.com/foss-for-mips-arc-processors/meta-synopsys)
+* [Download Latest Release](https://github.com/foss-for-mips-arc-processors/meta-synopsys/archive/morty.zip)
 * [Documentation](https://docs.yoctoproject.org)
 * [Mailing List](https://www.yoctoproject.org/community/mailing-lists/)
 

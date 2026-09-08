@@ -8,7 +8,7 @@
 ## Downloading a Prebuilt OpenOCD
 
 The easiest way to obtain OpenOCD is to download Eclipse IDE bundle from
-[the releases page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases):
+[the releases page](https://github.com/foss-for-mips-arc-processors/toolchain/releases):
 
 * For Windows download and install Eclipse IDE bundle with toolchains and OpenOCD.
   OpenOCD itself resides in the default installation directory `C:\arc_gnu\bin`.
@@ -36,7 +36,7 @@ $ sudo apt install \
 Download OpenOCD sources and checkout the latest release:
 
 ```shell
-$ git clone -b arc-2026.03 https://github.com/foss-for-synopsys-dwc-arc-processors/openocd
+$ git clone -b arc-2026.03 https://github.com/foss-for-mips-arc-processors/openocd
 $ cd openocd
 ```
 
@@ -134,7 +134,7 @@ $ make install
 Download OpenOCD sources:
 
 ```shell
-$ git clone -b arc-2021.09 https://github.com/foss-for-synopsys-dwc-arc-processors/openocd
+$ git clone -b arc-2021.09 https://github.com/foss-for-mips-arc-processors/openocd
 $ cd openocd
 ```
 
@@ -177,7 +177,7 @@ to install OpenOCD for macOS. Additionally, you have to install `libftdi`
 for Apple M1 targets:
 
 ```shell
-$ git clone -b arc-2021.09 https://github.com/foss-for-synopsys-dwc-arc-processors/openocd
+$ git clone -b arc-2021.09 https://github.com/foss-for-mips-arc-processors/openocd
 $ cd openocd
 $ ./bootstrap
 $ CCACHE=none ./configure --enable-ftdi --disable-werror --disable-doxygen-html --prefix=/opt/openocd

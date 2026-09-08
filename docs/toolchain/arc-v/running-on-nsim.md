@@ -186,6 +186,6 @@ $ nsimdrv -p nsim_isa_family=rv64 \
 
 ## Debugging Using LLDB
 
-For detailed information on how to debug an application with the Synopsys
+For detailed information on how to debug an application with the MIPS
 LLDB Debugger and Visual Studio Code IDE, see the following page:
-[The MetaWare Development Toolkit](https://foss-for-synopsys-dwc-arc-processors.github.io/arc-v-getting-started/synopsys-tools/mwdt.html).
+[The MetaWare Development Toolkit](https://foss-for-mips-arc-processors.github.io/arc-v-getting-started/synopsys-tools/mwdt.html).

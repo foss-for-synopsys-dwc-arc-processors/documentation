@@ -4,8 +4,8 @@
 
 This is a comprehensive guide about creating an environment for
 building, running and debugging eBPF programs for ARC processors using
-[GNU toolchain](https://github.com/foss-for-synopsys-dwc-arc-processors/arc-gnu-toolchain)
-and [QEMU](https://github.com/foss-for-synopsys-dwc-arc-processors/qemu).
+[GNU toolchain](https://github.com/foss-for-mips-arc-processors/arc-gnu-toolchain)
+and [QEMU](https://github.com/foss-for-mips-arc-processors/qemu).
 Though we consider ARC HS 3x/4x on QEMU as a reference platform, the
 same guide is applicable for boards like HS Development Kit.
 
@@ -32,7 +32,7 @@ this guide.
 
 The latest release may be downloaded here ("Linux/glibc ARC HS" variant):
 
-- <https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases>
+- <https://github.com/foss-for-mips-arc-processors/toolchain/releases>
 
 Standard development tools must be installed on your host: `make`,
 `cmake`, `git`, `rsync`, `gcc`, `binutils`, `clang` (for building eBPF
@@ -134,7 +134,7 @@ for Buildroot and Linux kernel which simplify setup of the environment
 for working with eBPF. We are going to use it as a working directory.
 
 ```shell
-git clone --recurse-submodules https://github.com/foss-for-synopsys-dwc-arc-processors/arc-bpf-testbench
+git clone --recurse-submodules https://github.com/foss-for-mips-arc-processors/arc-bpf-testbench
 cd arc-bpf-testbench
 ```
 
@@ -170,7 +170,7 @@ Clone repository of the Linux kernel with the latest patches for support
 of eBPF with JIT and copy a corresponding configuration file:
 
 ```shell
-git clone -b bpf-early-access https://github.com/foss-for-synopsys-dwc-arc-processors/linux
+git clone -b bpf-early-access https://github.com/foss-for-mips-arc-processors/linux
 mkdir linux/build
 cp extras/linux/qemu_hs4x_ebpf_defconfig linux/arch/arc/configs
 ```
@@ -313,7 +313,7 @@ the moment such entries are not supported by `pahole`. So, it's
 necessary to disable generating BTF for floats. It's already done in
 `bpf-early-access` branch but if you want to build the Linux kernel from
 another branch or repository with BTF information you can apply
-[this patch](https://github.com/foss-for-synopsys-dwc-arc-processors/linux/commit/b17d1955b67493afe37430694c8982411336fc4c):
+[this patch](https://github.com/foss-for-mips-arc-processors/linux/commit/b17d1955b67493afe37430694c8982411336fc4c):
 
 ```diff
 diff --git a/scripts/pahole-flags.sh b/scripts/pahole-flags.sh
@@ -443,7 +443,7 @@ Run a program:
 make run-minimal
 ```
 
-Explore `README.md` for [ARC eBPF Testbench](https://github.com/foss-for-synopsys-dwc-arc-processors/arc-bpf-testbench)
+Explore `README.md` for [ARC eBPF Testbench](https://github.com/foss-for-mips-arc-processors/arc-bpf-testbench)
 or run `make help` for information about available commands.
 
 ## Using NFS for Building eBPF Programs Right on the Target
@@ -529,7 +529,7 @@ sshfs -o idmap=user,allow_other user@10.42.0.1:/nfs /nfs
 (the full path to Clang root directory must be `/nfs/clang`).
 
 Download, unpack and place a native glibc ARC HS
-[toolchain](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases)
+[toolchain](https://github.com/foss-for-mips-arc-processors/toolchain/releases)
 into `/nfs/arc-linux-gnu`.
 
 Copy `/tools/arc-linux-gnu/sysroot` to `/nfs/sysroot`. Also build

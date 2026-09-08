@@ -5,7 +5,7 @@
 GNU toolchain for ARC has the same standard prerequisites as an upstream GNU toolchain
 as documented in the GNU toolchain user guide or on [the GCC website](http://gcc.gnu.org/install/prerequisites.html).
 
-Prebuilt toolchain on [the release page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases)
+Prebuilt toolchain on [the release page](https://github.com/foss-for-mips-arc-processors/toolchain/releases)
 are supported on these systems for x86-64 targets:
 
 1. Ubuntu 22.04
@@ -68,10 +68,10 @@ Note that binaries for both ARCv1 and ARCv2 may be built using a single `arc-elf
 that there is a single toolchain for two ISAs.
 
 Prebuilt toolchains for ARCv3 families on
-[the release page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases)
+[the release page](https://github.com/foss-for-mips-arc-processors/toolchain/releases)
 are configured with `arc64-elf-` prefix only and work both with HS5x and HS6x
 families. However, you can configure the toolchain for HS5x with `arc32-elf-` prefix using
-[Crosstool-NG](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain#crosstool-ng-configuration-manual-tuning)
+[Crosstool-NG](https://github.com/foss-for-mips-arc-processors/toolchain#crosstool-ng-configuration-manual-tuning)
 configuration menu.
 
 ## Toolchains for Linux Targets for ARC Classic
@@ -102,7 +102,7 @@ though they have the same names.
 
 Native toolchains are toolchains that can be used on the targets Linux system
 natively. Here is a list of native toolchains which are available on
-[a release page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases):
+[a release page](https://github.com/foss-for-mips-arc-processors/toolchain/releases):
 
 | Family      | Standard library | Driver/Triplet           |
 |-------------|------------------|--------------------------|
@@ -112,7 +112,7 @@ natively. Here is a list of native toolchains which are available on
 
 ## Eclipse IDE Package
 
-Eclipse IDE bundle is also available on [a release page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases).
+Eclipse IDE bundle is also available on [a release page](https://github.com/foss-for-mips-arc-processors/toolchain/releases).
 The bundle may contains different components depending on the host platform:
 
 | Component                                           | Linux | Windows |
@@ -137,11 +137,11 @@ to make all toolchain binaries available. Eclipse IDE may be launched by
 
 There are several ways of getting the toolchain:
 
-1. Download the latest release of the prebuilt toolchain on [the release page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases)
-   of main [toolchain's repository](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain). Also, Eclipse IDE
+1. Download the latest release of the prebuilt toolchain on [the release page](https://github.com/foss-for-mips-arc-processors/toolchain/releases)
+   of main [toolchain's repository](https://github.com/foss-for-mips-arc-processors/toolchain). Also, Eclipse IDE
    is available for downloading which is shipped with some of toolchains and OpenOCD.
 2. You can build toolchains using Crosstool-NG build system. Follow instructions presented in
-   `README.md` of main [toolchain's repository](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain)
+   `README.md` of main [toolchain's repository](https://github.com/foss-for-mips-arc-processors/toolchain)
    on GitHub.
 
 ## Resources

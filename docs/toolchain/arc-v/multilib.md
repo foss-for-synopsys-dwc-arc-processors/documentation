@@ -150,7 +150,7 @@ rv32im/ilp32;@march=rv32im@mabi=ilp32
 
     Check the [System Requirements](../index.md#system-requirements) for the Buildlib script.
 
-[The Buildlib tool](https://github.com/foss-for-synopsys-dwc-arc-processors/arcv-tcf-wrapper?tab=readme-ov-file#the-buildlib-tool)
+[The Buildlib tool](https://github.com/foss-for-mips-arc-processors/arcv-tcf-wrapper?tab=readme-ov-file#the-buildlib-tool)
 allows building all toolchain libraries for a particular set of
 target and optimization options and then building applications using these
 prebuilt libraries. Buildlib builds `libgcc`, Picolibc, and `libstdc++`.

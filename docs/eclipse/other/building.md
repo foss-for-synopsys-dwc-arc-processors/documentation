@@ -50,7 +50,7 @@ tar -xf eclipse-cpp-2020-03-R-incubation-win32-x86_64.zip
 Clone a plugin's repository:
 
 ```shell
-$ git clone https://github.com/foss-for-synopsys-dwc-arc-processors/arc_gnu_eclipse
+$ git clone https://github.com/foss-for-mips-arc-processors/arc_gnu_eclipse
 ```
 
 ## Building the Plugin

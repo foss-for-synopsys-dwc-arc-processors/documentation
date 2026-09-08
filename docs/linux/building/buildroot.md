@@ -5,7 +5,7 @@
 Clone the Buildroot repository:
 
 ```shell
-git clone -b arc-2026.03 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
+git clone -b arc-2026.03 https://github.com/foss-for-mips-arc-processors/buildroot
 cd buildroot
 ```
 

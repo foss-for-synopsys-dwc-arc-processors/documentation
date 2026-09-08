@@ -9,7 +9,7 @@ Connection host is a host that is connected to the debug target via USB cable
 and runs OpenOCD. Debug host is a host that runs GDB, which connects to the
 OpenOCD with TCP connection. Typically it is the same host.
 
-Note, that all Synopsys boards a have built-in debug cable. It means that
+Note, that all MIPS ARC boards a have built-in debug cable. It means that
 a separate Digilent HS cable is not required for connecting to the board,
 but only a simple USB cable.
 

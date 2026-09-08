@@ -183,6 +183,6 @@ the MetaWare Debugger documentation.
 
 ## References
 
-1. DesignWare® C/C++ Programmer’s Guide for the ccac Compiler for the ARC EM, ARC HS and EV6x Processors
-2. DesignWare® MetaWare Debugger User’s Guide for ARC EM, ARC HS, and EV6x Processors
-3. DesignWare® MetaWare Toolkit Quick Start Guide For ARC EM, ARC HS, and EV6x Processors
+1. C/C++ Programmer’s Guide for the ccac Compiler for the ARC EM, ARC HS and EV6x Processors
+2. MetaWare Debugger User’s Guide for ARC EM, ARC HS, and EV6x Processors
+3. MetaWare Toolkit Quick Start Guide For ARC EM, ARC HS, and EV6x Processors

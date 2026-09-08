@@ -3,7 +3,7 @@
 ## Preface
 
 This guide contains a bunch of recipes which may be useful while building Linux kernel
-for Synopsys ARC processors. Consider reading [the Buildroot user manual](https://buildroot.org/downloads/manual/manual.html) for details.
+for MIPS ARC processors. Consider reading [the Buildroot user manual](https://buildroot.org/downloads/manual/manual.html) for details.
 
 ## Configuration Files
 
@@ -52,7 +52,7 @@ BR2_TARGET_ROOTFS_INITRAMFS=y
 You can place a custom configuration file in `config` directory in Buildroot's source tree.
 It allows you to use custom configuration files as usual:
 
-```sgell
+```shell
 make my_defconfig
 ```
 
@@ -72,7 +72,7 @@ $ make defconfig DEFCONFIG=my_defconfig
 It's a good practice to build Linux images out of the main source tree:
 
 ```shell
-git clone -b arc-2026.03 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
+git clone -b arc-2026.03 https://github.com/foss-for-mips-arc-processors/buildroot
 mkdir buildroot/build
 cd buildroot/build
 make -C .. O=$(pwd) snps_archs38_haps_defconfig
@@ -100,7 +100,7 @@ consider using `arc64` branch of the development repository:
 
 ```text
 Kernel -> Kernel version -> Custom Git repository
-       -> URL of custom repository -> https://github.com/foss-for-synopsys-dwc-arc-processors/linux
+       -> URL of custom repository -> https://github.com/foss-for-mips-arc-processors/linux
        -> Custom repository version -> arc64
 ```
 
@@ -108,7 +108,7 @@ This set of options corresponds to these configuration lines:
 
 ```text
 BR2_LINUX_KERNEL_CUSTOM_GIT=y
-BR2_LINUX_KERNEL_CUSTOM_REPO_URL="https://github.com/foss-for-synopsys-dwc-arc-processors/linux"
+BR2_LINUX_KERNEL_CUSTOM_REPO_URL="https://github.com/foss-for-mips-arc-processors/linux"
 BR2_LINUX_KERNEL_CUSTOM_REPO_VERSION="arc64"
 ```
 

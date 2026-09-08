@@ -3,7 +3,7 @@
 ## Installing Eclipse IDE
 
 Eclipse IDE for ARC GNU toolchain may be downloaded as `.tar.gz` archive from
-the [releases page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases).
+the [releases page](https://github.com/foss-for-mips-arc-processors/toolchain/releases).
 It contains toolchains, OpenOCD and Eclipse itself.
 
 ## Adjusting Rights for `/var/lock`

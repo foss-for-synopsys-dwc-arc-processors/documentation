@@ -32,7 +32,7 @@ Moreover, even MinGW cross-toolchain might be built with Crosstool-NG right in p
 amount of external dependencies.
 
 So our recommendation is to either use a pre-built toolchain for Linux, Windows or macOS
-(could be found on [releases](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases) page)
+(could be found on [releases](https://github.com/foss-for-mips-arc-processors/toolchain/releases) page)
 or build in a true Linux environment, be it a real Linux host or a virtual machine.
 
 And due to requirements of some toolchain components for building from source as well as for
@@ -113,7 +113,7 @@ Then reboot the system or logout and login again.
 ### Locale installation for building uClibc
 
 For building uClibc it is required to have `en_US.UTF-8` locale installed on the
-build host (otherwise build fails, for details see <https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/issues/207>). In case
+build host (otherwise build fails, for details see <https://github.com/foss-for-mips-arc-processors/toolchain/issues/207>). In case
 `en_US.UTF-8` is missing the following needs to be done:
 
 * Install package with locales. In case of Debian or Debian-based Linux
@@ -136,7 +136,7 @@ Still, Crosstool-NG is distributed in sources and needs to be built before use.
 Though it is as simple as:
 
 ```shell
-git clone https://github.com/foss-for-synopsys-dwc-arc-processors/crosstool-ng.git
+git clone https://github.com/foss-for-mips-arc-processors/crosstool-ng.git
 cd crosstool-ng
 git checkout arc-2026.03
 ./bootstrap
@@ -155,7 +155,7 @@ Once Crosstool-NG is built and ready for use it's very easy to get a toolchain
 of choice to be built. One just needs to decide on configuration options
 to be used for toolchain building or use one of the existing pre-defined
 settings (which mirror configuration of pre-built toolchains we distribute
-via <https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases>).
+via <https://github.com/foss-for-mips-arc-processors/toolchain/releases>).
 
 ### Crosstool-NG configuration using pre-configured samples
 
@@ -309,7 +309,7 @@ Windows hosts is built on Linux host. Build scripts expected to be run in
 Unix-like environment, so it is often faster and easier to build toolchain on
 Linux, than do this on Windows using environments like Cygwin and MSYS. While
 those allow toolchain to be built on Windows natively this way is not
-officially supported and not recommended by Synopsys, due to severe performance
+officially supported and not recommended by MIPS, due to severe performance
 penalty of those environments on build time and possible compatibility issue.
 
 Some limitations apply:

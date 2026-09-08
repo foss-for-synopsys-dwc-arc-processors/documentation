@@ -2,7 +2,7 @@
 
 ## Preparing the Board
 
-The ARC HSDK development system is based on a custom designed Synopsys ARC SoC containing the ARC HS38x4 (quad core)
+The ARC HSDK development system is based on a custom designed MIPS ARC SoC containing the ARC HS38x4 (quad core)
 processor. Please refer to board's documentation for detailed information about how to setup the board for initial operation:
 
 * [ARC HS Development Kit](../../platforms/board-hsdk.md)
@@ -27,7 +27,7 @@ for ARC HS Development Kit.
 Clone the Buildroot repository:
 
 ```shell
-git clone -b arc-2026.03 https://github.com/foss-for-synopsys-dwc-arc-processors/buildroot
+git clone -b arc-2026.09 https://github.com/foss-for-mips-arc-processors/buildroot
 cd buildroot
 ```
 

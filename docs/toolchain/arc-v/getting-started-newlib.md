@@ -203,7 +203,7 @@ Note that all `-mtune` values for ARC-V assume that fast unaligned access is sup
 
 ## Using the TCF Wrapper
 
-[The TCF Wrapper](https://github.com/foss-for-synopsys-dwc-arc-processors/arcv-tcf-wrapper?tab=readme-ov-file#the-tcf-wrapper) allows
+[The TCF Wrapper](https://github.com/foss-for-mips-arc-processors/arcv-tcf-wrapper?tab=readme-ov-file#the-tcf-wrapper) allows
 using TCF configuration files for building binaries using the GNU toolchain.
 
 Suppose that the environment is configured for nSIM and `NSIM_HOME` variable is set.

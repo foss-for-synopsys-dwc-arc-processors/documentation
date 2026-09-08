@@ -6,7 +6,7 @@
 
 The embARC Open Software Platform (OSP) is an open source software distribution
 for embedded applications on ARC® Processors. The embARC OSP distribution is
-managed by Synopsys for the community and all contributions are welcomed
+managed by MIPS for the community and all contributions are welcomed
 (requires CLA).
 
 Refer [the corresponding page](embarc-osp.md) for details.
@@ -15,7 +15,7 @@ Refer [the corresponding page](embarc-osp.md) for details.
 
 ![Logo embARC](images/logo-embarc.png)
 
-The embARC Board support Package (BSP) for DesignWare® ARC® EM Starter Kit
+The embARC Board support Package (BSP) for MIPS ARC EM Starter Kit
 (EMSK) is a software distribution aimed at facilitating the development and
 evaluation of embedded systems based on ARCv2 processors. It is designed to
 provide a minimal board support package for ARC EMSK users by defining
@@ -72,9 +72,9 @@ NuttX is a small footprint real-time operating system that implements POSIX and
 ANSI standards supplemented by APIs adapted from other common RTOSes. NuttX is
 sponsored by the Apache Software Foundation.
 
-* [Source Repository](https://github.com/foss-for-synopsys-dwc-arc-processors/nuttx)
+* [Source Repository](https://github.com/foss-for-mips-arc-processors/nuttx)
 * [Documentation](https://nuttx.apache.org/docs/latest/)
-* [Support](https://github.com/foss-for-synopsys-dwc-arc-processors/nuttx/issues)
+* [Support](https://github.com/foss-for-mips-arc-processors/nuttx/issues)
 
 ## TencentOS tiny
 
@@ -98,8 +98,8 @@ Huawei LiteOS is an IoT-oriented software platform that integrates an IoT
 operating system and middleware. It is lightweight, with a kernel as small
 as 10 KB, and energy efficient.
 
-* [Source Repository](https://github.com/foss-for-synopsys-dwc-arc-processors/LiteOS_Kernel)
-* [Documentation](https://github.com/foss-for-synopsys-dwc-arc-processors/LiteOS_Kernel/blob/master/README.md)
+* [Source Repository](https://github.com/foss-for-mips-arc-processors/LiteOS_Kernel)
+* [Documentation](https://github.com/foss-for-mips-arc-processors/LiteOS_Kernel/blob/master/README.md)
 * [Support](https://github.com/LiteOS/LiteOS/issues)
 
 ## Contiki OS
@@ -122,7 +122,7 @@ the world. RIOT implements all relevant open standards supporting an Internet
 of Things that is connected, secure, durable, and privacy-friendly. A port to
 the ARC EM Processor has been contributed by the community.
 
-* [Source Repository](https://github.com/foss-for-synopsys-dwc-arc-processors/RIOT)
+* [Source Repository](https://github.com/foss-for-mips-arc-processors/RIOT)
 * [Documentation](https://doc.riot-os.org)
 * [Support](https://www.riot-os.org/community.html)
 
@@ -138,6 +138,6 @@ ASP (Advanced Standard Profile) has been developed by extending and improving
 TOPPERS/JSP, a real-time kernel based on the standard profile of μITRON4.0.
 Support for the ARC architecture is available below.
 
-* [Source Repository](https://github.com/foss-for-synopsys-dwc-arc-processors/toppers-asp)
+* [Source Repository](https://github.com/foss-for-mips-arc-processors/toppers-asp)
 * [Documentation](https://www.toppers.jp/en/asp-kernel.html)
 * [Support](https://www.toppers.jp/en/community.html)

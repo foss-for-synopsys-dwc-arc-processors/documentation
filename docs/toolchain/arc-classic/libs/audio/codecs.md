@@ -74,7 +74,7 @@ products.
 ### ITU-T Basop Optimization
 
 To improve performance of ITU-T and ETSI/3GPP codecs at early optimization step,
-use Synopsys MetaWare Development Tools which efficiently replace
+use MIPS MetaWare Development Tools which efficiently replace
 [ITU-T G.191 STL basic operators](https://www.itu.int/rec/T-REC-G.191/en) with
 ARCv2 fixed point intrinsics at compile time.
 

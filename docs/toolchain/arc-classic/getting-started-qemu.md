@@ -30,7 +30,7 @@ sudo apt install \
 Then prepare sources and a build directory:
 
 ```bash
-git clone -b arc-2026.03 https://github.com/foss-for-synopsys-dwc-arc-processors/qemu
+git clone -b arc-2026.03 https://github.com/foss-for-mips-arc-processors/qemu
 mkdir -p qemu/build
 cd qemu/build
 ```
@@ -51,7 +51,7 @@ Configure QEMU inside of the build directory (use your own `--prefix` value for 
 
 If you face an error then consider using `--disable-werror` configure option to
 try to eliminate it. Also, consider reporting a bug on
-[toolchain's GitHub page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/issues/new).
+[toolchain's GitHub page](https://github.com/foss-for-mips-arc-processors/toolchain/issues/new).
 
 What options are responsible for what:
 

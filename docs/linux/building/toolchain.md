@@ -10,7 +10,7 @@ toolchain.
 By default, Buildroot builds a Linux toolchain for ARC from scratch and may use
 relatively old sources for tools like GCC, Binutils, etc. If you want to use
 the latest available toolchain for ARC processors, then consider using
-prebuilt components from [the official releases page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases).
+prebuilt components from [the official releases page](https://github.com/foss-for-mips-arc-processors/toolchain/releases).
 
 Here is an example of how you can select the external toolchain for ARC HS3x/4x
 targets based on glibc:

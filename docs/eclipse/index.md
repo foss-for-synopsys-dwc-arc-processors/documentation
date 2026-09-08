@@ -21,7 +21,7 @@ The ARC GNU IDE provides support for the following functionality:
     * GAS assembler
     * Size binutils utility, etc.
 
-* Support for Synopsys EM Starter Kit and AXS10x.
+* Support for MIPS ARC EM Starter Kit and AXS10x.
 * Configuration of debug and run configurations for supported FPGA Development
   Systems and debug probes (Digilent HS1/HS2 or Ashling Opella-XD).
 * GDB-based debugging using **Debug** perspective providing detailed debug
@@ -29,7 +29,7 @@ The ARC GNU IDE provides support for the following functionality:
 
 ARC GNU plugins for Eclipse have following requirements to the system:
 
-* OS: Windows 10, Ubuntu Linux 22.04 LTS and CentOS 9 development host systems
+* OS: Windows 10, Ubuntu Linux 22.04 LTS and CentOS 8 development host systems
 * Eclipse 2018-12 (part of Windows installer)
 * CDT version 9.6.0 (part of Windows installer)
 * Java VM version >= 1.8 is required (part of Windows installer)

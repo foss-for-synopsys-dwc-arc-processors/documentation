@@ -4,7 +4,7 @@
 
 ## Overview
 
-The DesignWare® ARC® EM Software Development Platform (SDP) is a flexible
+The MIPS ARC EM Software Development Platform (SDP) is a flexible
 platform for rapid software development on ARC EM processors and subsystems.
 It is intended to accelerate software development and debug of ARC EM
 processor-based systems for a wide range of ultra-low power embedded
@@ -15,7 +15,7 @@ and interfaces for extensibility. Downloadable platform packages containing
 different hardware configurations enable the board to be programmed with
 different ARC EM processors and subsystems. The packages also contain the
 necessary software configuration information for the toolchain and embARC Open
-Software Platform. The development platform is supported by Synopsys’
+Software Platform. The development platform is supported by MIPS
 ARC MetaWare Development Toolkit, which includes a compiler, debugger and
 libraries optimized for maximum performance with minimal code size. The embARC
 Open Software Platform (OSP), available online from embARC.org, gives
@@ -252,10 +252,10 @@ Programming succeeded.
 ## Useful Links
 
 * [ARC EM Software Development Platform - User Guide](files/ARC_EM_SDP_User_Guide.pdf)
-* [Official Synopsys Page](https://www.synopsys.com/designware-ip/processor-solutions/arc-em-software-development-platform.html)
-* [embARC Open Software Platform Documentation](https://foss-for-synopsys-dwc-arc-processors.github.io/embarc_osp)
-* [embARC Open Software Platform Releases Page](https://github.com/foss-for-synopsys-dwc-arc-processors/embarc_osp/releases)
+* [Official MIPS Page](https://mips.com/processor-solutions/arc-em-software-development-platform/)
+* [embARC Open Software Platform Documentation](https://foss-for-mips-arc-processors.github.io/embarc_osp)
+* [embARC Open Software Platform Releases Page](https://github.com/foss-for-mips-arc-processors/embarc_osp/releases)
 
 ## Support
 
-* [Ask a question, report a bug or request an enhancement](https://github.com/foss-for-synopsys-dwc-arc-processors/ARC-Development-Systems-Forum/wiki/Reporting-a-bug)
+* [Ask a question, report a bug or request an enhancement](https://github.com/foss-for-mips-arc-processors/ARC-Development-Systems-Forum/wiki/Reporting-a-bug)

@@ -13,7 +13,7 @@ directory, then extract it to `eclipse` directory and rename to `jre`.
 
 ## Downloading the Plugin
 
-User can get the latest plugin from [the release page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases/).
+User can get the latest plugin from [the release page](https://github.com/foss-for-mips-arc-processors/toolchain/releases/).
 For example, filename of the archive with the plugin for 2023.03 release
 is `arc_gnu_2023.03_ide_plugins.zip`.
 

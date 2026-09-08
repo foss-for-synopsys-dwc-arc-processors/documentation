@@ -1,7 +1,7 @@
 site_name: embARC Documentation Site for ARC Classic and ARC-V
-repo_url: https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain
+repo_url: https://github.com/foss-for-mips-arc-processors/toolchain
 repo_name: GNU ARC Toolchain
-copyright: Copyright &copy; 2016 - 2026 Synopsys
+copyright: Copyright &copy; 2016 - 2026 MIPS Holding, Inc
 theme:
   name: material
   highlightjs: true

@@ -2,7 +2,7 @@
 
 !!! info
 
-    You can use [the testbench](https://github.com/foss-for-synopsys-dwc-arc-processors/arc-bpf-testbench)
+    You can use [the testbench](https://github.com/foss-for-mips-arc-processors/arc-bpf-testbench)
     that automates all the above steps for building eBPF programs for ARC.
 
 ## Preface

@@ -3,7 +3,7 @@
 ## Using `rff-reset`
 
 You can use the `rff-reset` utility to reset ARC development boards.
-Follow instructions in the [`rff-rtdi-reset` repository](https://github.com/foss-for-synopsys-dwc-arc-processors/rff-ftdi-reset)
+Follow instructions in the [`rff-rtdi-reset` repository](https://github.com/foss-for-mips-arc-processors/rff-ftdi-reset)
 to install and use the utility.
 
 Here is an example for a case when only one board is connected to the host:

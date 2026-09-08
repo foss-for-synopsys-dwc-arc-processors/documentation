@@ -26,7 +26,7 @@ optimizations:
 In general, 32-bit data types provide the best efficiency cycle-wise and code-size-wise.
 
 embARC Audio codec collection is an OOB (Out-Of-the Box) optimized library of
-speech and audio codecs for ARCv2DSP. For better optimization, contact Synopsys.
+speech and audio codecs for ARCv2DSP. For better optimization, contact MIPS.
 
 ## Out-Of-the-Box Optimizations
 
@@ -51,7 +51,7 @@ minimal effort. This typically includes following steps:
 
 * **AGU** - Address Generation Unit
 * **API** - Application Programming Interface
-* **ARCv2DSP** - Synopsys DesignWare® ARC® Processors Family of 32-bit CPUs
+* **ARCv2DSP** - MIPS ARC Processors Family of 32-bit CPUs
 * **ARC EMxD** - Family of 32-bit ARC Processor Cores. Single-core, 3-Step Pipeline, ARCv2DSP
 * **ARC HS4xD** - Family of 32-bit ARC Processor Cores. Multi-core, Dual-Issue, 10-Step Pipeline, ARCv2DSP
 * **CCAC** - MetaWare Compiler

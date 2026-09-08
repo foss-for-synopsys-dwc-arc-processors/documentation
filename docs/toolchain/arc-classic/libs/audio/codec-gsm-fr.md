@@ -12,9 +12,9 @@ this codec is 13 kbit/s, or 1.625 bits/audio sample (often padded out to
 The source code is based on the original GSM-FR code ([3GPP TS 06.10](http://www.quut.com/gsm/))
 created by Jutta Degener and Carsten Bormann, Technische Universitaet Berlin,
 and then updated to 18 path level. The Application of this codec is to get
-RPE-LTP from [G722](https://github.com/foss-for-synopsys-dwc-arc-processors/G722/tree/master/rpeltp),
-commit [eddb5a231b51](https://github.com/foss-for-synopsys-dwc-arc-processors/G722/commit/eddb5a231b51),
-and [G711](https://github.com/foss-for-synopsys-dwc-arc-processors/G722/tree/master/g711),
+RPE-LTP from [G722](https://github.com/foss-for-mips-arc-processors/G722/tree/master/rpeltp),
+commit [eddb5a231b51](https://github.com/foss-for-mips-arc-processors/G722/commit/eddb5a231b51),
+and [G711](https://github.com/foss-for-mips-arc-processors/G722/tree/master/g711),
 the same commit, for α-law and µ-law compression. Test sequences are taken from
 [3GPP TS 06.10](http://www.3gpp.org/ftp/Specs/archive/06_series/06.10/0610-820.zip)
 version 8.2.0 Release 99, June 2001, and this codec passes the test cases successfully.

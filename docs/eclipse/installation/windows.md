@@ -3,7 +3,7 @@
 ## Using the Installer for Windows
 
 Windows users are advised to use our Windows installer for Eclipse for GNU Toolchain for IDE,
-that can be downloaded from this [releases page](https://github.com/foss-for-synopsys-dwc-arc-processors/toolchain/releases).
+that can be downloaded from this [releases page](https://github.com/foss-for-mips-arc-processors/toolchain/releases).
 Installer already contains all of the necessary components. ARC GNU IDE should be installed in the path no longer
 than 50 characters and cannot contain white spaces.
 
